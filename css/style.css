@@ -621,6 +621,19 @@ button:disabled {
 .result-box .r-body { flex: 1; min-width: 0; }
 .result-box button { margin-top: 12px; }
 
+/* ---------- resize nudge: shown when a target size wasn't reachable at the
+   original resolution with resizing off, offering a one-click way to retry
+   with resizing on instead of leaving the user stuck. ---------- */
+.resize-nudge {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+.resize-nudge p { margin: 0 0 10px; color: var(--text); font-weight: 500; }
+.resize-nudge button { margin-top: 0; }
+
 /* ---------- cards ---------- */
 .grid-cards {
   display: grid;

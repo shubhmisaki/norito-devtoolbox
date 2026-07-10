@@ -177,7 +177,11 @@
     return last;
   }
 
-  els.compressBtn.addEventListener("click", async () => {
+  // Pulled out of the click handler so the "enable resizing and try again"
+  // nudge button (built below, only shown when resizing is off and the
+  // target wasn't reached) can re-run the exact same flow after flipping
+  // the checkbox, without the user having to click Compress a second time.
+  async function runCompress() {
     if (!currentImg) return;
     const target = parseSize(els.size.value, els.unit.value);
     if (target === null || target <= 0) {
@@ -224,6 +228,13 @@
 
       let statusLine;
       let state;
+      // Three outcomes: (1) hit the target, (2) missed it even with resizing
+      // allowed (nothing more we can offer, per design: resizing on changes
+      // nothing about this messaging), or (3) missed it with resizing OFF,
+      // which is the one case where there's a concrete next step to offer:
+      // this is the floor for quality-only compression at the original
+      // resolution, and enabling resizing is what actually gets past it.
+      const hitFloorWithoutResize = !withinTarget && !allowResize;
       if (withinTarget) {
         statusLine = fmt(I18N.status_within_target || "within your target, at {dims}.", { dims: dimsNote });
         state = "ok";
@@ -231,18 +242,37 @@
         statusLine = fmt(I18N.status_closest_resized || "closest achievable size (target was too small even after resizing), at {dims}.", { dims: dimsNote });
         state = "neutral";
       } else {
-        statusLine = fmt(I18N.status_closest_noresize || "closest achievable size at {dims}. Quality reduction alone couldn't reach your target. Turn on \"Allow resizing\" above for a smaller file.", { dims: dimsNote });
+        statusLine = fmt(I18N.status_closest_noresize || "the smallest size possible without resizing, at {dims}.", { dims: dimsNote });
         state = "neutral";
       }
+
+      const nudgeHtml = hitFloorWithoutResize
+        ? `<div class="resize-nudge"><p>${fmt(
+            I18N.resize_nudge_question ||
+              "This is the smallest file we can get without resizing. Want to enable resizing to reach {target}?",
+            { target: formatBytes(target) }
+          )}</p><button type="button" id="resizeRetryBtn" class="secondary">${
+            I18N.enable_resize_retry_btn || "Enable resizing & compress again"
+          }</button></div>`
+        : "";
 
       setResult(
         fmt(I18N.result_success || "<strong>Image compressed successfully.</strong> <strong>{size}</strong>. {statusLine}",
           { size: formatBytes(blob.size), statusLine }) +
+        nudgeHtml +
         `<br><br><button id="dlBtn">${fmt(I18N.download_button || "Download {filename}", { filename })}</button>`,
         state
       );
       const dlBtn = document.getElementById("dlBtn");
       dlBtn.addEventListener("click", () => downloadBlob(blob, filename));
+      const resizeRetryBtn = document.getElementById("resizeRetryBtn");
+      if (resizeRetryBtn) {
+        resizeRetryBtn.addEventListener("click", () => {
+          els.allowResize.checked = true;
+          savePref("allowResize", true);
+          runCompress();
+        });
+      }
       els.result.scrollIntoView({ behavior: "smooth", block: "center" });
       pulseHighlight(dlBtn);
       finishedState = state;
@@ -261,5 +291,7 @@
     // checkmark morph is the last thing to touch the button, not undone by
     // the finally block's textContent reset happening in the same tick.
     if (finishedState === "ok") celebrateSuccess(els.compressBtn, els.result);
-  });
+  }
+
+  els.compressBtn.addEventListener("click", runCompress);
 })();
