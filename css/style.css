@@ -548,9 +548,9 @@ button.btn-pop { animation: btnPop 0.38s var(--ease); }
   filter: drop-shadow(0 3px 5px rgba(41, 32, 46, 0.16));
 }
 .mascot-face svg { display: block; width: 100%; height: 100%; }
-/* 20% larger on desktop viewports (above the mobile nav breakpoint) */
+/* 2x the base size on desktop viewports (above the mobile nav breakpoint) */
 @media (min-width: 761px) {
-  .mascot-face { width: 53px; }
+  .mascot-face { width: 88px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mascot-toast { transition: opacity 0.2s ease; }
