@@ -18,8 +18,14 @@
   let currentImg = null;
   let currentFile = null;
 
-  // Remember format/unit/resize choices between visits: nice-to-have only,
-  // silently no-ops if localStorage is unavailable.
+  // Remember unit/resize choices between visits: nice-to-have only, silently
+  // no-ops if localStorage is unavailable. Output format is deliberately
+  // NOT persisted here (see handleFile below): it used to be, but that
+  // meant picking PNG once to test something would silently stick as the
+  // default for every future upload, including plain photos, where PNG
+  // almost never beats the original size. Format now auto-matches whatever
+  // file you just uploaded instead, which is the sane default for "just
+  // compress this" use and avoids that trap entirely.
   const PREFS_KEY = "norito:compress-image";
   function loadPrefs() {
     try { return JSON.parse(localStorage.getItem(PREFS_KEY)) || {}; } catch (e) { return {}; }
@@ -34,11 +40,9 @@
   (function restorePrefs() {
     const p = loadPrefs();
     if (p.unit) els.unit.value = p.unit;
-    if (p.format) els.format.value = p.format;
     if (typeof p.allowResize === "boolean" && els.allowResize) els.allowResize.checked = p.allowResize;
   })();
   els.unit.addEventListener("change", () => savePref("unit", els.unit.value));
-  els.format.addEventListener("change", () => savePref("format", els.format.value));
   if (els.allowResize) {
     els.allowResize.addEventListener("change", () => savePref("allowResize", els.allowResize.checked));
   }
@@ -57,6 +61,18 @@
     });
   }
 
+  // Picks a sensible starting output format for a freshly uploaded file:
+  // matches the upload's own type (PNG stays PNG, WebP stays WebP), falling
+  // back to JPEG for JPEGs and anything else canvas can decode but PNG/WebP
+  // don't apply to. This runs on every upload, overriding whatever format
+  // was selected for a previous file, since the right format is a property
+  // of the image you just picked, not a fixed personal preference.
+  function defaultFormatFor(fileType) {
+    if (fileType === "image/png") return "png";
+    if (fileType === "image/webp") return "webp";
+    return "jpeg";
+  }
+
   async function handleFile(file) {
     if (!file || !file.type.startsWith("image/")) {
       setResult(I18N_C.please_choose_image || "Please choose an image file.", false);
@@ -67,6 +83,7 @@
     els.originalInfo.textContent =
       `${file.name}, ${currentImg.width}×${currentImg.height}, ${formatBytes(file.size)}`;
     els.originalInfo.style.display = "block";
+    els.format.value = defaultFormatFor(file.type);
     els.compressBtn.disabled = false;
   }
 
@@ -501,24 +518,19 @@
         return;
       }
 
-      // Hard floor: never hand back something bigger than what the user
-      // started with. If every lever we have (quality, palette reduction,
-      // resizing) still produces a result larger than the original file,
-      // that's not a compression result worth offering, fall back to the
-      // original file unchanged rather than a regression dressed up as
-      // "compressed."
-      let blob = outcome.blob;
-      let resized = outcome.resized;
-      let outW = outcome.width;
-      let outH = outcome.height;
+      // We always hand back the actual best-effort result here, the
+      // smallest file our search found at the original dimensions (never
+      // resized unless the user opted in). We used to silently swap this
+      // out for the untouched original file whenever the best attempt was
+      // larger, but that just hid a real (if imperfect) compression result
+      // behind a no-op. Now we're honest about it instead: if it landed
+      // bigger than the original, the headline below says so plainly.
+      const blob = outcome.blob;
+      const resized = outcome.resized;
+      const outW = outcome.width;
+      const outH = outcome.height;
       const originalSize = currentFile ? currentFile.size : null;
-      const usedOriginalFallback = originalSize != null && blob.size > originalSize;
-      if (usedOriginalFallback) {
-        blob = currentFile;
-        resized = false;
-        outW = currentImg.width;
-        outH = currentImg.height;
-      }
+      const largerThanOriginal = originalSize != null && blob.size > originalSize;
 
       const url = URL.createObjectURL(blob);
       els.preview.src = url;
@@ -526,9 +538,7 @@
       if (els.previewHint) els.previewHint.style.display = "none";
 
       const ext = { jpeg: "jpg", webp: "webp", png: "png" }[outFormat];
-      const filename = usedOriginalFallback
-        ? currentFile.name
-        : `compressed_${els.size.value}${els.unit.value}.${ext}`;
+      const filename = `compressed_${els.size.value}${els.unit.value}.${ext}`;
       const withinTarget = blob.size <= target;
       const dimsNote = resized
         ? fmt(I18N.dims_resized || "resized to {w}×{h} (from {ow}×{oh})",
@@ -556,25 +566,25 @@
         state = "neutral";
       }
 
-      // PNG is lossless: even with palette quantization, some source photos
-      // still won't shrink below their original (lossy) file size, that's
-      // the case the floor guard above just caught. Calling a result that
-      // never actually got smaller "compressed successfully" would be
-      // misleading, so the headline itself changes for that case, not just
-      // the nudge below it.
+      // PNG is lossless, and even quality-based JPEG/WebP re-encoding has a
+      // floor, so some source files genuinely won't shrink below their
+      // original size at these dimensions. Calling that "compressed
+      // successfully" would be misleading, so the headline says so plainly
+      // instead of quietly substituting the original file.
       let headlineKey, headlineVars = { size: formatBytes(blob.size), statusLine };
       if (withinTarget) {
         headlineKey = "result_success";
-      } else if (usedOriginalFallback) {
-        headlineKey = "result_no_gain";
+      } else if (largerThanOriginal) {
+        headlineKey = "result_larger_than_original";
+        headlineVars.origSize = formatBytes(originalSize);
       } else {
         headlineKey = "result_partial";
       }
       const headlineDefaults = {
         result_success: "<strong>Image compressed successfully.</strong> <strong>{size}</strong>. {statusLine}",
         result_partial: "<strong>Reduced as much as we could.</strong> <strong>{size}</strong>. {statusLine}",
-        result_no_gain:
-          "<strong>Couldn't reduce this without making it bigger.</strong> We're giving you your original file unchanged, <strong>{size}</strong>. {statusLine}",
+        result_larger_than_original:
+          "<strong>This is the most we could compress without resizing:</strong> <strong>{size}</strong>, slightly larger than your original ({origSize}). {statusLine}",
       };
 
       let nudgeHtml = "";
@@ -615,7 +625,6 @@
       if (formatRetryBtn) {
         formatRetryBtn.addEventListener("click", () => {
           els.format.value = "jpeg";
-          savePref("format", "jpeg");
           runCompress();
         });
       }
