@@ -191,11 +191,11 @@
     let finishedState = null;
 
     try {
-      const fmt = els.format.value;
-      const mime = { jpeg: "image/jpeg", webp: "image/webp", png: "image/png" }[fmt];
+      const outFormat = els.format.value;
+      const mime = { jpeg: "image/jpeg", webp: "image/webp", png: "image/png" }[outFormat];
       const allowResize = !!(els.allowResize && els.allowResize.checked);
       let outcome;
-      if (fmt === "png") outcome = await compressPng(currentImg, target, allowResize);
+      if (outFormat === "png") outcome = await compressPng(currentImg, target, allowResize);
       else outcome = await compressLossy(currentImg, target, mime, allowResize);
 
       if (!outcome || !outcome.blob) {
@@ -213,7 +213,7 @@
       els.preview.style.display = "block";
       if (els.previewHint) els.previewHint.style.display = "none";
 
-      const ext = { jpeg: "jpg", webp: "webp", png: "png" }[fmt];
+      const ext = { jpeg: "jpg", webp: "webp", png: "png" }[outFormat];
       const filename = `compressed_${els.size.value}${els.unit.value}.${ext}`;
       const withinTarget = blob.size <= target;
       const dimsNote = resized

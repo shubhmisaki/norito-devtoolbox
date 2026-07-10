@@ -7,9 +7,12 @@
     fg: document.getElementById("fg"),
     text: document.getElementById("text"),
     format: document.getElementById("pformat"),
-    swatches: document.getElementById("colorSwatches"),
+    stylePicker: document.getElementById("stylePicker"),
+    customColorsRow: document.getElementById("customColorsRow"),
+    imageUploadRow: document.getElementById("imageUploadRow"),
+    imageDrop: document.getElementById("imageDrop"),
+    bgImageInput: document.getElementById("bgImageInput"),
     canvas: document.getElementById("canvas"),
-    generateBtn: document.getElementById("pGenerateBtn"),
     downloadBtn: document.getElementById("pDownloadBtn"),
     info: document.getElementById("pInfo"),
   };
@@ -17,6 +20,9 @@
   let lastBlob = null;
   let lastW = 600;
   let lastH = 400;
+  let styleMode = "preset"; // "preset" | "custom" | "image"
+  let bgImage = null;
+  let infoTimer = null;
 
   // Remember the output format between visits: nice-to-have only, silently
   // no-ops if localStorage is unavailable.
@@ -35,11 +41,11 @@
     const p = loadPrefs();
     if (p.format) els.format.value = p.format;
   })();
-  els.format.addEventListener("change", () => savePref("format", els.format.value));
+  els.format.addEventListener("change", () => { savePref("format", els.format.value); scheduleUpdate(); });
 
   // Reads a dimension field without ever writing back to it. If the field
   // is empty (the user is mid-edit, clearing it to type a new value) or not
-  // a valid number yet, this falls back silently for the live preview only
+  // a valid number yet, this falls back silently for the live preview only.
   // The input itself is left alone so it can be fully cleared and retyped.
   function getDimension(el, fallback) {
     const raw = el.value.trim();
@@ -60,42 +66,80 @@
     canvas.height = h;
     const ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = els.bg.value;
-    ctx.fillRect(0, 0, w, h);
+    if (styleMode === "image" && bgImage) {
+      const scale = Math.max(w / bgImage.width, h / bgImage.height);
+      const iw = bgImage.width * scale;
+      const ih = bgImage.height * scale;
+      ctx.drawImage(bgImage, (w - iw) / 2, (h - ih) / 2, iw, ih);
+    } else {
+      ctx.fillStyle = els.bg.value;
+      ctx.fillRect(0, 0, w, h);
+    }
 
-    const label = els.text.value.trim() || `${w} × ${h}`;
-    ctx.fillStyle = els.fg.value;
-    const fontSize = Math.max(12, Math.round(Math.min(w, h) / 8));
-    ctx.font = `600 ${fontSize}px -apple-system, Segoe UI, Roboto, sans-serif`;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(label, w / 2, h / 2, w * 0.9);
+    const label = els.text.value.trim() || (styleMode === "image" ? "" : `${w} × ${h}`);
+    if (label) {
+      const fontSize = Math.max(12, Math.round(Math.min(w, h) / 8));
+      ctx.font = `600 ${fontSize}px -apple-system, Segoe UI, Roboto, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      if (styleMode === "image") {
+        // Legibility backdrop so the label reads over a busy photo.
+        const metrics = ctx.measureText(label);
+        const padX = 14, padY = 8;
+        const bw = Math.min(metrics.width + padX * 2, w * 0.92);
+        const bh = fontSize + padY * 2;
+        ctx.fillStyle = "rgba(0,0,0,0.45)";
+        ctx.fillRect(w / 2 - bw / 2, h / 2 - bh / 2, bw, bh);
+      }
+      ctx.fillStyle = els.fg.value;
+      ctx.fillText(label, w / 2, h / 2, w * 0.9);
+    }
 
     return canvas;
   }
 
-  const SWATCHES = [
-    { name: I18N.swatch_brand_pink || "Brand pink", bg: "#ff4d7a", fg: "#ffffff" },
-    { name: I18N.swatch_neutral_gray || "Neutral gray", bg: "#e2e2e2", fg: "#4b5563" },
-    { name: I18N.swatch_slate || "Slate", bg: "#1f2937", fg: "#ffffff" },
-    { name: I18N.swatch_sky_blue || "Sky blue", bg: "#60a5fa", fg: "#ffffff" },
-    { name: I18N.swatch_soft_beige || "Soft beige", bg: "#f5f0e8", fg: "#44403c" },
-    { name: I18N.swatch_mint || "Mint", bg: "#6ee7b7", fg: "#064e3b" },
-  ];
-  SWATCHES.forEach((s) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "swatch-btn";
-    btn.style.background = s.bg;
-    btn.title = s.name;
-    btn.setAttribute("aria-label", s.name);
-    btn.addEventListener("click", () => {
-      els.bg.value = s.bg;
-      els.fg.value = s.fg;
-      draw();
+  // ---- style picker: preset swatches, custom colors, or a background image ----
+  const tiles = Array.from(els.stylePicker.querySelectorAll(".style-tile"));
+  function selectTile(tile) {
+    tiles.forEach((t) => t.classList.remove("active"));
+    tile.classList.add("active");
+    styleMode = tile.dataset.mode;
+    els.customColorsRow.style.display = styleMode === "custom" ? "flex" : "none";
+    els.imageUploadRow.style.display = styleMode === "image" ? "block" : "none";
+    if (styleMode === "preset") {
+      els.bg.value = tile.dataset.bg;
+      els.fg.value = tile.dataset.fg;
+    }
+    scheduleUpdate();
+  }
+  tiles.forEach((tile) => tile.addEventListener("click", () => selectTile(tile)));
+
+  [els.bg, els.fg].forEach((el) => el.addEventListener("input", scheduleUpdate));
+
+  function loadBgImageFile(file) {
+    if (!file || !file.type.startsWith("image/")) return;
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      bgImage = img;
+      scheduleUpdate();
+    };
+    img.src = url;
+  }
+  if (els.imageDrop) {
+    els.imageDrop.addEventListener("click", () => els.bgImageInput.click());
+    els.bgImageInput.addEventListener("change", (e) => loadBgImageFile(e.target.files[0]));
+    ["dragenter", "dragover"].forEach((evt) =>
+      els.imageDrop.addEventListener(evt, (e) => { e.preventDefault(); els.imageDrop.classList.add("drag"); })
+    );
+    ["dragleave", "drop"].forEach((evt) =>
+      els.imageDrop.addEventListener(evt, (e) => { e.preventDefault(); els.imageDrop.classList.remove("drag"); })
+    );
+    els.imageDrop.addEventListener("drop", (e) => {
+      const file = e.dataTransfer.files[0];
+      if (file) loadBgImageFile(file);
     });
-    els.swatches.appendChild(btn);
-  });
+  }
 
   // If a dimension field is left empty when the user clicks away, fill in
   // the size that was actually last rendered, never a hardcoded default,
@@ -118,30 +162,37 @@
     setTimeout(() => el.classList.remove("highlight-pulse"), 1300);
   }
 
-  async function generate() {
+  // Redraws the canvas immediately (cheap, synchronous) and separately
+  // debounces the blob conversion + detail text (async, a bit heavier) so
+  // typing doesn't feel janky. There's no more "Refresh preview" button:
+  // this fires on every change instead.
+  async function updatePreview() {
     const canvas = draw();
-    const fmt = els.format.value;
-    const mime = { png: "image/png", jpg: "image/jpeg", webp: "image/webp" }[fmt];
+    const outFormat = els.format.value;
+    const mime = { png: "image/png", jpg: "image/jpeg", webp: "image/webp" }[outFormat];
     lastBlob = await canvasToBlob(canvas, mime);
     els.info.textContent = window.fmt(I18N.placeholder_ready || "Placeholder ready: {w}×{h}, {size}, {fmt}",
-      { w: canvas.width, h: canvas.height, size: formatBytes(lastBlob.size), fmt: fmt.toUpperCase() });
+      { w: canvas.width, h: canvas.height, size: formatBytes(lastBlob.size), fmt: outFormat.toUpperCase() });
     els.info.style.display = "block";
     els.downloadBtn.disabled = false;
-    pulseHighlight(els.downloadBtn);
-    celebrateSuccess(els.generateBtn);
   }
 
-  els.generateBtn.addEventListener("click", generate);
-  [els.width, els.height, els.bg, els.fg, els.text, els.format].forEach((el) =>
-    el.addEventListener("input", () => draw())
-  );
+  function scheduleUpdate() {
+    draw();
+    clearTimeout(infoTimer);
+    infoTimer = setTimeout(updatePreview, 150);
+  }
+
+  [els.width, els.height, els.text].forEach((el) => el.addEventListener("input", scheduleUpdate));
 
   els.downloadBtn.addEventListener("click", () => {
     if (!lastBlob) return;
-    const fmt = els.format.value;
-    const filename = `placeholder_${lastW}x${lastH}.${fmt === "jpg" ? "jpg" : fmt}`;
+    const outFormat = els.format.value;
+    const filename = `placeholder_${lastW}x${lastH}.${outFormat === "jpg" ? "jpg" : outFormat}`;
     downloadBlob(lastBlob, filename);
+    pulseHighlight(els.downloadBtn);
+    celebrateSuccess(els.downloadBtn);
   });
 
-  draw(); // initial preview
+  scheduleUpdate(); // initial preview
 })();

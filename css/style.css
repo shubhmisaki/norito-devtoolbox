@@ -124,7 +124,7 @@ header.site .wrap {
   letter-spacing: -0.01em;
 }
 .brand img.logo {
-  height: 36px;
+  height: 44px;
   width: auto;
   display: block;
 }
@@ -136,6 +136,26 @@ nav.site-nav {
   flex-wrap: wrap;
   position: relative;
 }
+
+/* ---------- mobile hamburger toggle (button injected by nav.js) ---------- */
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.nav-hamburger:hover { background: var(--bg-subtle); border-color: var(--border-strong); }
+.nav-hamburger .ham-icon-close { display: none; }
+.nav-hamburger.active .ham-icon-open { display: none; }
+.nav-hamburger.active .ham-icon-close { display: block; }
 
 .nav-group { position: relative; }
 
@@ -797,6 +817,19 @@ input[type="range"].slider::-moz-range-thumb {
   border-radius: var(--radius-sm);
   padding: 4px 8px;
 }
+.slider-row .slider-num {
+  width: 76px;
+  flex-shrink: 0;
+  height: 36px;
+  padding: 6px 8px;
+  text-align: center;
+  font-weight: 700;
+}
+.slider-row .slider-suffix {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
 
 /* ---------- strength meter ---------- */
 .strength-track {
@@ -963,6 +996,56 @@ textarea.mono-area:focus { outline: none; border-color: var(--primary); box-shad
 .swatch-btn:focus-visible { box-shadow: var(--shadow-focus); outline: none; }
 .swatch-btn.active { border-color: var(--primary); }
 
+/* ---------- placeholder generator: style picker ---------- */
+.style-picker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.style-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 6px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease), transform 0.1s var(--ease);
+  font-family: inherit;
+}
+.style-tile:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+.style-tile.active { border-color: var(--primary); box-shadow: var(--shadow-focus); }
+.style-tile .tile-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  flex-shrink: 0;
+}
+.style-tile .tile-swatch.custom-swatch {
+  background: conic-gradient(from 0deg, #ff4d7a, #60a5fa, #6ee7b7, #f5f0e8, #ff4d7a);
+}
+.style-tile .tile-swatch.image-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+.style-tile .tile-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.25;
+}
+.style-tile.active .tile-label { color: var(--primary); }
+@media (max-width: 560px) {
+  .style-picker { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ---------- JSON tree view ---------- */
 .json-tree {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
@@ -1007,6 +1090,8 @@ textarea.mono-area:focus { outline: none; border-color: var(--primary); box-shad
   border-radius: var(--radius-sm);
 }
 .md-toolbar button:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--border-strong); }
+.md-toolbar button.md-toolbar-icon { display: inline-flex; align-items: center; justify-content: center; padding: 6px 9px; }
+.md-toolbar-divider { width: 1px; align-self: stretch; background: var(--border); margin: 2px 4px; }
 
 .md-pane {
   border: 1px solid var(--border);
@@ -1075,9 +1160,47 @@ textarea.md-source {
 @media (max-width: 760px) {
   .two-col { grid-template-columns: 1fr; }
   h1 { font-size: 1.85rem; }
-  nav.site-nav { gap: 0; }
-  .nav-cat { padding: 7px 10px; font-size: 0.85rem; }
-  .nav-panel { left: auto; right: 0; }
+
+  /* Collapse the nav into a hamburger-triggered full-width menu. The
+     hamburger button itself is injected by nav.js; here it just needs to
+     become visible, and the nav needs to switch from floating dropdowns
+     to a stacked accordion panel. */
+  .nav-hamburger { display: inline-flex; order: 3; }
+  header.site .wrap { position: relative; }
+  .brand { order: 1; }
+  .lang-switch { order: 2; }
+  nav.site-nav {
+    display: none;
+    order: 4;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    width: 100%;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+  nav.site-nav.mobile-open { display: flex; }
+  .nav-group { width: 100%; }
+  .nav-cat { width: 100%; justify-content: space-between; padding: 10px 12px; font-size: 0.9rem; }
+  .nav-panel {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+    padding: 2px 0 6px 10px;
+    display: none;
+  }
+  .nav-group.open .nav-panel { display: block; }
+  body.nav-open-lock { overflow: hidden; }
 }
 @media (max-width: 560px) {
   .panel { padding: 18px; }

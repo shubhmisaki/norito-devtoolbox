@@ -6,7 +6,7 @@
     fg: document.getElementById("fgColor"),
     bg: document.getElementById("bgColor"),
     size: document.getElementById("qrSize"),
-    sizeOut: document.getElementById("qrSizeOut"),
+    sizeInput: document.getElementById("qrSizeInput"),
     logoInput: document.getElementById("logoInput"),
     logoClear: document.getElementById("logoClear"),
     logoDropzone: document.getElementById("logoDropzone"),
@@ -127,9 +127,26 @@
   els.ecLevel.addEventListener("change", () => { savePref("ecLevel", els.ecLevel.value); render(); });
   els.fg.addEventListener("input", render);
   els.bg.addEventListener("input", render);
+  // Size is editable two ways: drag the slider, or type an exact value.
+  // Typing is clamped only on blur, not on every keystroke, so the field
+  // can be cleared and retyped without fighting the user.
+  const SIZE_MIN = parseInt(els.size.min, 10) || 160;
+  const SIZE_MAX = parseInt(els.size.max, 10) || 1000;
   els.size.addEventListener("input", () => {
-    els.sizeOut.textContent = `${els.size.value}px`;
+    els.sizeInput.value = els.size.value;
     render();
+  });
+  els.sizeInput.addEventListener("input", () => {
+    const n = parseInt(els.sizeInput.value, 10);
+    if (!Number.isFinite(n)) return;
+    els.size.value = Math.max(SIZE_MIN, Math.min(SIZE_MAX, n));
+    render();
+  });
+  els.sizeInput.addEventListener("blur", () => {
+    const n = parseInt(els.sizeInput.value, 10);
+    els.sizeInput.value = Number.isFinite(n)
+      ? Math.max(SIZE_MIN, Math.min(SIZE_MAX, n))
+      : els.size.value;
   });
 
   function loadLogoFile(file) {

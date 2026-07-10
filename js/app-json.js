@@ -207,7 +207,7 @@
       document.execCommand("copy");
     }
     const original = els.copyBtn.innerHTML;
-    els.copyBtn.textContent = I18N_C.copied || "Copied";
+    els.copyBtn.innerHTML = `${NORITO_FACE_ICON} ${I18N_C.copied || "Copied"}`;
     setTimeout(() => { els.copyBtn.innerHTML = original; }, 1200);
   });
 

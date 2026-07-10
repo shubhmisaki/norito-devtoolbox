@@ -10,6 +10,8 @@
     previewPane: document.getElementById("previewPane"),
     downloadMdBtn: document.getElementById("downloadMdBtn"),
     downloadHtmlBtn: document.getElementById("downloadHtmlBtn"),
+    undoBtn: document.getElementById("undoBtn"),
+    redoBtn: document.getElementById("redoBtn"),
   };
 
   if (window.marked && window.marked.setOptions) {
@@ -50,7 +52,78 @@
     }
   }
 
-  els.editor.addEventListener("input", render);
+  // ---- unified undo/redo history: covers both typed text and toolbar
+  // actions, since setting textarea.value programmatically (what the
+  // toolbar buttons do) doesn't register on the browser's native undo
+  // stack. Consecutive typing is coalesced into one step on a short pause,
+  // so undo doesn't have to be replayed one keystroke at a time.
+  const history = { stack: [], index: -1, max: 100 };
+  let typingTimer = null;
+  let suppressCapture = false;
+
+  function snapshot() {
+    return { value: els.editor.value, start: els.editor.selectionStart, end: els.editor.selectionEnd };
+  }
+  function updateUndoRedoButtons() {
+    if (els.undoBtn) els.undoBtn.disabled = history.index <= 0;
+    if (els.redoBtn) els.redoBtn.disabled = history.index >= history.stack.length - 1;
+  }
+  function pushHistory() {
+    if (suppressCapture) return;
+    const snap = snapshot();
+    const top = history.stack[history.index];
+    if (top && top.value === snap.value) return;
+    history.stack = history.stack.slice(0, history.index + 1);
+    history.stack.push(snap);
+    if (history.stack.length > history.max) history.stack.shift();
+    history.index = history.stack.length - 1;
+    updateUndoRedoButtons();
+  }
+  function restoreSnapshot(snap) {
+    suppressCapture = true;
+    els.editor.value = snap.value;
+    els.editor.focus();
+    els.editor.setSelectionRange(snap.start, snap.end);
+    render();
+    suppressCapture = false;
+    updateUndoRedoButtons();
+  }
+  function undo() {
+    if (history.index <= 0) return;
+    if (history.index === history.stack.length - 1) {
+      const snap = snapshot();
+      if (history.stack[history.index].value !== snap.value) history.stack.push(snap);
+    }
+    history.index -= 1;
+    restoreSnapshot(history.stack[history.index]);
+  }
+  function redo() {
+    if (history.index >= history.stack.length - 1) return;
+    history.index += 1;
+    restoreSnapshot(history.stack[history.index]);
+  }
+  history.stack = [snapshot()];
+  history.index = 0;
+  updateUndoRedoButtons();
+
+  // Undo/redo buttons live inside #mdToolbar with data-action="undo"/"redo",
+  // so the toolbar's delegated [data-action] click handler below already
+  // routes clicks on them to undo()/redo() — no separate listener needed
+  // here (adding one double-fires the action on every click).
+  els.editor.addEventListener("keydown", (e) => {
+    const mod = e.ctrlKey || e.metaKey;
+    if (!mod) return;
+    const key = e.key.toLowerCase();
+    if (key === "z" && !e.shiftKey) { e.preventDefault(); undo(); }
+    else if ((key === "z" && e.shiftKey) || key === "y") { e.preventDefault(); redo(); }
+  });
+
+  els.editor.addEventListener("input", () => {
+    render();
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(pushHistory, 500);
+  });
+  els.editor.addEventListener("blur", () => { clearTimeout(typingTimer); pushHistory(); });
 
   // Toolbar: wrap or insert markdown syntax at the cursor.
   function applyWrap(prefix, suffix, placeholder) {
@@ -97,8 +170,14 @@
 
   els.toolbar.querySelectorAll("[data-action]").forEach((btn) => {
     btn.addEventListener("click", () => {
+      if (btn.dataset.action === "undo") { undo(); return; }
+      if (btn.dataset.action === "redo") { redo(); return; }
       const action = ACTIONS[btn.dataset.action];
-      if (action) action();
+      if (!action) return;
+      clearTimeout(typingTimer);
+      pushHistory(); // capture state right before this action
+      action();
+      pushHistory(); // capture state right after
     });
   });
 

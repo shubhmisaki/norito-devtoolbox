@@ -137,6 +137,61 @@
     );
   }
 
+  // Smooths a single-channel mask with a separable box blur (two 1D passes,
+  // sliding-window sums so cost stays linear in pixel count regardless of
+  // radius). Used to knock down the blocky/noisy edges the lightweight
+  // segmentation model produces at its low internal resolution, before that
+  // mask gets used as alpha.
+  function boxBlurMask(data, w, h, radius) {
+    if (radius <= 0) return Uint8ClampedArray.from(data);
+    const tmp = new Float32Array(w * h);
+    const out = new Uint8ClampedArray(w * h);
+    const winSize = radius * 2 + 1;
+
+    for (let y = 0; y < h; y++) {
+      const rowStart = y * w;
+      let sum = 0;
+      for (let x = -radius; x <= radius; x++) {
+        const xi = Math.min(w - 1, Math.max(0, x));
+        sum += data[rowStart + xi];
+      }
+      for (let x = 0; x < w; x++) {
+        tmp[rowStart + x] = sum / winSize;
+        const addXi = Math.min(w - 1, x + radius + 1);
+        const subXi = Math.max(0, x - radius);
+        sum += data[rowStart + addXi] - data[rowStart + subXi];
+      }
+    }
+
+    for (let x = 0; x < w; x++) {
+      let sum = 0;
+      for (let y = -radius; y <= radius; y++) {
+        const yi = Math.min(h - 1, Math.max(0, y));
+        sum += tmp[yi * w + x];
+      }
+      for (let y = 0; y < h; y++) {
+        out[y * w + x] = sum / winSize;
+        const addYi = Math.min(h - 1, y + radius + 1);
+        const subYi = Math.max(0, y - radius);
+        sum += tmp[addYi * w + x] - tmp[subYi * w + x];
+      }
+    }
+    return out;
+  }
+
+  // The raw segmentation mask is a soft probability map: used directly as
+  // alpha (the old behavior) it produces a washed-out, semi-transparent
+  // halo around the subject instead of a clean edge, because every
+  // mid-confidence pixel near the boundary becomes partially see-through.
+  // Blurring first removes blocky noise, then remapping the alpha curve so
+  // anything below ALPHA_LOW is fully transparent and anything above
+  // ALPHA_HIGH is fully opaque (with just a few pixels of soft transition
+  // between) turns that gradient into a crisp silhouette. This is the
+  // single biggest lever for cutout quality without swapping the
+  // underlying model.
+  const ALPHA_LOW = 60;
+  const ALPHA_HIGH = 200;
+
   function composite(image, mask, mode, color) {
     const w = image.width, h = image.height;
     const out = document.createElement("canvas");
@@ -149,10 +204,20 @@
     maskCanvas.width = w; maskCanvas.height = h;
     const mctx = maskCanvas.getContext("2d");
     mctx.drawImage(mask, 0, 0, w, h);
-    const maskData = mctx.getImageData(0, 0, w, h).data;
+    const maskPixels = mctx.getImageData(0, 0, w, h).data;
 
-    for (let i = 0; i < imgData.data.length; i += 4) {
-      const alpha = maskData[i]; // grayscale confidence, 0-255
+    const maskGray = new Uint8ClampedArray(w * h);
+    for (let i = 0, p = 0; i < maskPixels.length; i += 4, p++) {
+      maskGray[p] = maskPixels[i]; // mask is grayscale: R === G === B
+    }
+    const blurred = boxBlurMask(maskGray, w, h, 2);
+
+    for (let i = 0, p = 0; i < imgData.data.length; i += 4, p++) {
+      const raw = blurred[p];
+      let alpha;
+      if (raw <= ALPHA_LOW) alpha = 0;
+      else if (raw >= ALPHA_HIGH) alpha = 255;
+      else alpha = Math.round(((raw - ALPHA_LOW) / (ALPHA_HIGH - ALPHA_LOW)) * 255);
       imgData.data[i + 3] = alpha;
     }
     octx.putImageData(imgData, 0, 0);

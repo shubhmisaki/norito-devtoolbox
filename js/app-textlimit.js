@@ -1,17 +1,46 @@
 (function () {
   const I18N = i18nFor("app-textlimit");
   const I18N_C = i18nFor("common");
-  // Classic lorem-ipsum vocabulary: deliberately meaningless filler text,
-  // the standard choice for placeholder/mockup copy.
-  const LOREM_WORDS = [
-    "lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
-    "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore",
-    "magna", "aliqua", "enim", "ad", "minim", "veniam", "quis", "nostrud",
-    "exercitation", "ullamco", "laboris", "nisi", "aliquip", "ex", "ea", "commodo",
-    "consequat", "duis", "aute", "irure", "in", "reprehenderit", "voluptate",
-    "velit", "esse", "cillum", "eu", "fugiat", "nulla", "pariatur", "excepteur",
-    "sint", "occaecat", "cupidatat", "non", "proident", "sunt", "culpa", "qui",
-    "officia", "deserunt", "mollit", "anim", "id", "est", "laborum",
+  // Real, readable English sentences instead of Lorem Ipsum: assembled in
+  // random order into an exact-length passage, so the output reads like an
+  // actual short piece of writing rather than word salad.
+  const SENTENCE_BANK = [
+    "The kettle whistled just as the rain started tapping against the window.",
+    "She found an old map tucked inside the cover of a secondhand book.",
+    "Morning light spilled across the kitchen table while the coffee brewed.",
+    "He tightened his laces and set off down the gravel path toward the lake.",
+    "A gentle breeze carried the smell of fresh bread from the corner bakery.",
+    "The train pulled into the station two minutes ahead of schedule.",
+    "Somewhere in the garden a cat was quietly stalking a fallen leaf.",
+    "They spread the blanket under the oldest tree in the park and waited for the sun to set.",
+    "The library stayed open late on Thursdays, which was always her favorite night to visit.",
+    "A small crowd gathered on the pier to watch the boats come in.",
+    "He scribbled the idea on a napkin before it could slip out of his head.",
+    "The city looked different from the rooftop, quieter somehow, almost still.",
+    "Snow had settled on the fence posts overnight, turning the yard silver.",
+    "She hummed an old tune while she watered the plants on the balcony.",
+    "The recipe called for more butter than anyone in the house expected.",
+    "A dog barked twice in the distance, then everything went quiet again.",
+    "The museum's newest exhibit traced the history of local shipbuilding.",
+    "He kept a notebook of small observations from every place he traveled.",
+    "The market smelled of citrus and roasted nuts on Saturday mornings.",
+    "Clouds rolled in fast, and the picnic ended earlier than planned.",
+    "She rearranged the bookshelf by color instead of by author, just to see how it looked.",
+    "The old radio still worked, though the reception came and went with the weather.",
+    "A single lamp lit the workshop where he repaired clocks on weekends.",
+    "The children built a fort out of couch cushions and refused to take it apart.",
+    "Wind moved through the wheat field in slow, rolling waves.",
+    "The bakery's ovens ran all night before the holiday rush began.",
+    "He learned to sail on a lake so small you could see both shores at once.",
+    "The letter arrived three weeks late, postmarked from a town she didn't recognize.",
+    "A thin layer of fog hung over the valley until well past nine.",
+    "She kept the ticket stub from their first concert in an old cigar box.",
+    "The garden had gone wild over the summer, but nobody seemed to mind.",
+    "Streetlights flickered on one by one as the sky faded from orange to blue.",
+    "The bridge had stood for over a century and still carried traffic every day.",
+    "He preferred to write letters by hand, even though almost no one wrote back the same way.",
+    "The bookstore cat slept in the window display, undisturbed by passersby.",
+    "A warm loaf of bread sat cooling on the counter, filling the kitchen with its smell.",
   ];
 
   const PRESETS = [50, 100, 250, 1000];
@@ -54,16 +83,19 @@
 
   // Builds filler text whose length is *exactly* targetLen, either counting
   // every character, or only non-space characters, depending on countSpaces.
-  // Words are drawn from a shuffled, cycling copy of LOREM_WORDS so repeated
-  // clicks produce different text at the same length.
+  // Whole sentences are drawn from a shuffled, cycling copy of SENTENCE_BANK
+  // (so repeated clicks produce a different passage at the same length) and
+  // appended as long as they fit in full; only the one sentence that would
+  // overflow the limit gets trimmed, character-precisely, to land exactly
+  // on target. The result reads as an actual passage, not word salad.
   function generateText(targetLen, countSpaces) {
     if (!Number.isFinite(targetLen) || targetLen <= 0) return "";
 
-    let pool = shuffled(LOREM_WORDS);
+    let pool = shuffled(SENTENCE_BANK);
     let poolIndex = 0;
-    function nextWord() {
+    function nextSentence() {
       if (poolIndex >= pool.length) {
-        pool = shuffled(LOREM_WORDS);
+        pool = shuffled(SENTENCE_BANK);
         poolIndex = 0;
       }
       return pool[poolIndex++];
@@ -71,13 +103,21 @@
 
     let text = "";
     let guard = 0;
-    while (guard++ < targetLen + LOREM_WORDS.length) {
+    while (guard++ < targetLen + SENTENCE_BANK.length + 10) {
       const currentLen = countSpaces ? text.length : text.replace(/\s/g, "").length;
       if (currentLen >= targetLen) break;
       const remaining = targetLen - currentLen;
       const sep = text.length > 0 ? " " : "";
-      let piece = sep + nextWord();
+      let piece = sep + nextSentence();
+      const pieceLen = countSpaces ? piece.length : piece.replace(/\s/g, "").length;
 
+      if (pieceLen <= remaining) {
+        text += piece;
+        continue;
+      }
+
+      // This sentence doesn't fit whole: trim it character-precisely so the
+      // total lands exactly on targetLen, same as before.
       if (countSpaces) {
         piece = piece.slice(0, remaining);
       } else {
@@ -92,9 +132,8 @@
         }
         piece = trimmed;
       }
-
-      if (!piece) break;
       text += piece;
+      break;
     }
 
     return text.charAt(0).toUpperCase() + text.slice(1);
@@ -161,7 +200,7 @@
       document.execCommand("copy");
     }
     const original = els.copyBtn.innerHTML;
-    els.copyBtn.textContent = I18N_C.copied || "Copied";
+    els.copyBtn.innerHTML = `${NORITO_FACE_ICON} ${I18N_C.copied || "Copied"}`;
     setTimeout(() => { els.copyBtn.innerHTML = original; }, 1200);
   });
 
