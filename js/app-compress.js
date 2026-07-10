@@ -246,19 +246,53 @@
         state = "neutral";
       }
 
-      const nudgeHtml = hitFloorWithoutResize
-        ? `<div class="resize-nudge"><p>${fmt(
-            I18N.resize_nudge_question ||
-              "This is the smallest file we can get without resizing. Want to enable resizing to reach {target}?",
-            { target: formatBytes(target) }
-          )}</p><button type="button" id="resizeRetryBtn" class="secondary">${
-            I18N.enable_resize_retry_btn || "Enable resizing & compress again"
-          }</button></div>`
-        : "";
+      // PNG is lossless: there's no quality knob at all, so "the smallest
+      // size possible without resizing" is just whatever the original pixels
+      // losslessly encode to. For photos that's frequently *larger* than the
+      // source file (which was often already a lossy JPEG), so unlike the
+      // lossy formats, resizing isn't the highest-leverage fix here, a
+      // format switch almost always is. Also: calling a result that grew
+      // past the original "compressed successfully" is flatly misleading,
+      // so the headline itself changes for that case, not just the nudge.
+      const originalSize = currentFile ? currentFile.size : null;
+      const largerThanOriginal = originalSize != null && blob.size > originalSize;
+
+      let headlineKey, headlineVars = { size: formatBytes(blob.size), statusLine };
+      if (withinTarget) {
+        headlineKey = "result_success";
+      } else if (largerThanOriginal) {
+        headlineKey = "result_no_gain";
+        headlineVars.origSize = formatBytes(originalSize);
+      } else {
+        headlineKey = "result_partial";
+      }
+      const headlineDefaults = {
+        result_success: "<strong>Image compressed successfully.</strong> <strong>{size}</strong>. {statusLine}",
+        result_partial: "<strong>Reduced as much as we could.</strong> <strong>{size}</strong>. {statusLine}",
+        result_no_gain:
+          "<strong>Couldn't make this smaller than your original.</strong> This came out to <strong>{size}</strong>, larger than the original file ({origSize}). {statusLine}",
+      };
+
+      let nudgeHtml = "";
+      if (!withinTarget && outFormat === "png") {
+        nudgeHtml = `<div class="resize-nudge"><p>${
+          I18N.format_nudge_question ||
+          "PNG is lossless, so it often produces larger files than JPEG or WebP for photos. Want to switch to JPEG and compress again?"
+        }</p><button type="button" id="formatRetryBtn" class="secondary">${
+          I18N.switch_to_jpeg_retry_btn || "Switch to JPEG & compress again"
+        }</button></div>`;
+      } else if (hitFloorWithoutResize) {
+        nudgeHtml = `<div class="resize-nudge"><p>${fmt(
+          I18N.resize_nudge_question ||
+            "This is the smallest file we can get without resizing. Want to enable resizing to reach {target}?",
+          { target: formatBytes(target) }
+        )}</p><button type="button" id="resizeRetryBtn" class="secondary">${
+          I18N.enable_resize_retry_btn || "Enable resizing & compress again"
+        }</button></div>`;
+      }
 
       setResult(
-        fmt(I18N.result_success || "<strong>Image compressed successfully.</strong> <strong>{size}</strong>. {statusLine}",
-          { size: formatBytes(blob.size), statusLine }) +
+        fmt(I18N[headlineKey] || headlineDefaults[headlineKey], headlineVars) +
         nudgeHtml +
         `<br><br><button id="dlBtn">${fmt(I18N.download_button || "Download {filename}", { filename })}</button>`,
         state
@@ -270,6 +304,14 @@
         resizeRetryBtn.addEventListener("click", () => {
           els.allowResize.checked = true;
           savePref("allowResize", true);
+          runCompress();
+        });
+      }
+      const formatRetryBtn = document.getElementById("formatRetryBtn");
+      if (formatRetryBtn) {
+        formatRetryBtn.addEventListener("click", () => {
+          els.format.value = "jpeg";
+          savePref("format", "jpeg");
           runCompress();
         });
       }

@@ -19,7 +19,11 @@ window.NORITO_I18N = {
     "status_closest_noresize": "أصغر حجم ممكن دون تغيير الأبعاد، عند {dims}.",
     "resize_nudge_question": "هذا أصغر ملف ممكن دون تغيير الأبعاد. هل تريد تفعيل تغيير الأبعاد للوصول إلى {target}؟",
     "enable_resize_retry_btn": "تفعيل تغيير الأبعاد وإعادة الضغط",
+    "format_nudge_question": "صيغة PNG غير فاقدة للجودة، لذا غالبًا ما تنتج ملفات أكبر من JPEG أو WebP للصور الفوتوغرافية. هل تريد التبديل إلى JPEG وإعادة الضغط؟",
+    "switch_to_jpeg_retry_btn": "التبديل إلى JPEG وإعادة الضغط",
     "result_success": "<strong>تم ضغط الصورة بنجاح.</strong> الحجم <strong>{size}</strong>. {statusLine}",
+    "result_partial": "<strong>تم التقليل بأقصى ما يمكن.</strong> الحجم <strong>{size}</strong>. {statusLine}",
+    "result_no_gain": "<strong>تعذّر جعل الحجم أصغر من الأصل.</strong> نتج عن هذا حجم <strong>{size}</strong>، أكبر من الملف الأصلي ({origSize}). {statusLine}",
     "download_button": "تحميل {filename}",
     "err_generic": "<strong>تعذّر ضغط هذه الصورة.</strong> {msg}. جرّب صورة أخرى، أو غيّر الصيغة وحاول مجددًا.",
     "btn_compress_default": "ضغط إلى الحجم المستهدف"

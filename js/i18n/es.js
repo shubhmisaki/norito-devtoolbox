@@ -19,7 +19,11 @@ window.NORITO_I18N = {
     "status_closest_noresize": "el tamaño más pequeño posible sin redimensionar, con {dims}.",
     "resize_nudge_question": "Este es el archivo más pequeño posible sin redimensionar. ¿Quieres activar el redimensionado para alcanzar {target}?",
     "enable_resize_retry_btn": "Activar redimensionado y comprimir de nuevo",
+    "format_nudge_question": "PNG no tiene pérdida, así que suele producir archivos más grandes que JPEG o WebP en fotos. ¿Quieres cambiar a JPEG y comprimir de nuevo?",
+    "switch_to_jpeg_retry_btn": "Cambiar a JPEG y comprimir de nuevo",
     "result_success": "<strong>Imagen comprimida correctamente.</strong> <strong>{size}</strong>. {statusLine}",
+    "result_partial": "<strong>Se redujo todo lo posible.</strong> <strong>{size}</strong>. {statusLine}",
+    "result_no_gain": "<strong>No se pudo reducir por debajo del original.</strong> Este archivo quedó en <strong>{size}</strong>, más grande que el original ({origSize}). {statusLine}",
     "download_button": "Descargar {filename}",
     "err_generic": "<strong>No se pudo comprimir esa imagen.</strong> {msg}. Prueba con otra imagen, o cambia el formato e inténtalo de nuevo.",
     "btn_compress_default": "Comprimir al objetivo"
