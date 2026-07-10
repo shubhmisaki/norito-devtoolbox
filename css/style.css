@@ -68,17 +68,27 @@
 
   --ease: cubic-bezier(0.2, 0, 0, 1);
 
+  /* type: Poppins for display headings (hero, section titles), Inter for
+     everything else. Falls back to the system stack if the webfont hasn't
+     loaded yet or fails to load. */
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
   font-size: 16px;
 }
 
 * { box-sizing: border-box; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 html, body {
   margin: 0;
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -308,6 +318,7 @@ main { padding: 48px 0 64px; }
 }
 
 h1 {
+  font-family: var(--font-display);
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.12;
@@ -316,6 +327,7 @@ h1 {
   color: var(--text);
 }
 h2 {
+  font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -575,6 +587,46 @@ button:disabled {
 .btn { text-decoration: none; }
 .btn:hover { text-decoration: none; }
 
+/* ---------- hero CTA + stat strip ---------- */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 32px;
+  flex-wrap: wrap;
+}
+.btn-hero {
+  font-size: 0.96rem;
+  padding: 13px 24px;
+  box-shadow: var(--shadow-md);
+}
+.btn-hero svg { transition: transform 0.15s var(--ease); }
+.btn-hero:hover svg { transform: translateY(2px); }
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat { display: flex; flex-direction: column; gap: 2px; }
+.hero-stat strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+.hero-stat span { font-size: 0.8rem; color: var(--text-muted); }
+.hero-stat-sep { width: 1px; height: 26px; background: var(--border); flex-shrink: 0; }
+@media (max-width: 640px) {
+  .hero-stats { gap: 16px; }
+  .hero-stat-sep { display: none; }
+}
+
 /* ---------- dropzone ---------- */
 .dropzone {
   border: 1.5px dashed var(--border-strong);
@@ -748,20 +800,65 @@ img.preview {
 /* ---------- footer ---------- */
 footer.site {
   border-top: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 44px 0 24px;
   color: var(--text-muted);
   font-size: 0.85rem;
   background: var(--bg-subtle);
 }
-footer.site .wrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 28px 40px;
 }
-footer.site .foot-links { display: flex; gap: 18px; }
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.footer-tagline {
+  margin: 0;
+  line-height: 1.55;
+  max-width: 320px;
+  color: var(--text-muted);
+}
+.footer-col h4 {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  margin: 0 0 14px;
+}
+.footer-col { display: flex; flex-direction: column; gap: 9px; }
 footer.site a { color: var(--text-muted); }
 footer.site a:hover { color: var(--primary); }
+.footer-bottom {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-strong);
+  font-size: 0.78rem;
+}
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; margin-bottom: 6px; }
+}
+
+/* ---------- scroll-reveal (cards + section headers fade/slide in) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
 
 /* ---------- ambient background blobs ---------- */
 .bg-blobs {

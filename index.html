@@ -6,6 +6,9 @@
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
 <meta name="google-site-verification" content="72zsb5VI-xvBdNlyvJCxWhj1wV5ZE8b8odoXYf1o9mM" />
 <title>norito: Free Browser-Based Tools for Files, Images &amp; Text</title>
 <meta name="description" content="Free browser-based tools: test files, image compression, placeholders, passwords, QR codes, JSON formatting, and markdown. No uploads, no signup." />
@@ -102,7 +105,19 @@
       formatter and don't want to dig through five settings menus to get it.
     </p>
 
-    <h2 style="margin-top:8px;">Files &amp; images</h2>
+    <div class="hero-actions">
+      <a href="#tools" class="btn btn-hero">Browse all tools<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>10</strong><span>free tools</span></div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat"><strong>0</strong><span>files uploaded</span></div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat"><strong>4</strong><span>languages</span></div>
+    </div>
+
+    <h2 id="tools" style="margin-top:8px;">Files &amp; images</h2>
     <div class="grid-cards">
       <div class="card">
         <div class="icon-chip c-pink">
@@ -232,24 +247,35 @@
 
 <footer class="site">
   <div class="wrap">
-    <span>norito: small tools, one job each.</span>
-    <span class="foot-links">
-      <a href="test-file-generator.html">Test files</a>
-      <a href="compress-image.html">Compress</a>
-      <a href="placeholder-generator.html">Placeholder</a>
-      <a href="remove-background.html">Remove BG</a>
-      <a href="qr-code-generator.html">QR code</a>
-      <a href="password-generator.html">Password</a>
-      <a href="seo-slug-generator.html">Slug</a>
-      <a href="limited-text-generator.html">Text limit</a>
-      <a href="json-formatter.html">JSON</a>
-      <a href="markdown-editor.html">Markdown</a>
-    </span>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">Small utilities that solve one annoying problem each. Everything runs in your browser, nothing is uploaded.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Images</h4>
+        <a href="test-file-generator.html">Test files</a>
+        <a href="compress-image.html">Compress</a>
+        <a href="placeholder-generator.html">Placeholder</a>
+        <a href="remove-background.html">Remove BG</a>
+        <a href="qr-code-generator.html">QR code</a>
+      </div>
+      <div class="footer-col">
+        <h4>Text &amp; dev</h4>
+        <a href="password-generator.html">Password</a>
+        <a href="seo-slug-generator.html">Slug</a>
+        <a href="limited-text-generator.html">Text limit</a>
+        <a href="json-formatter.html">JSON</a>
+        <a href="markdown-editor.html">Markdown</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 norito. All tools run locally in your browser.</div>
   </div>
 </footer>
 
 <script src="js/nav.js"></script>
 <script src="js/lang-switcher.js"></script>
 <script src="js/bg-blobs.js"></script>
+<script src="js/scroll-reveal.js"></script>
 </body>
 </html>

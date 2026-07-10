@@ -6,6 +6,9 @@
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
 <title>norito：免费的浏览器端文件、图片与文本工具</title>
 <meta name="description" content="免费的浏览器端工具集：测试文件生成、图片压缩、占位图、密码生成、二维码、JSON 格式化、Markdown 编辑等。无需上传，无需注册。" />
 <link rel="canonical" href="https://norito.in/zh/" />
@@ -100,7 +103,19 @@
       无需账号，无需上传文件。下面的所有工具都完全在你的浏览器中运行。专为那些你需要一个测试文件、一张更小的图片、一个安全密码或一个快速格式化工具，却不想翻遍五层设置菜单的时刻而生。
     </p>
 
-    <h2 style="margin-top:8px;">文件与图像</h2>
+    <div class="hero-actions">
+      <a href="#tools" class="btn btn-hero">浏览全部工具<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>10</strong><span>免费工具</span></div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat"><strong>0</strong><span>上传的文件</span></div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat"><strong>4</strong><span>支持语言</span></div>
+    </div>
+
+    <h2 id="tools" style="margin-top:8px;">文件与图像</h2>
     <div class="grid-cards">
       <div class="card">
         <div class="icon-chip c-pink">
@@ -220,24 +235,35 @@
 
 <footer class="site">
   <div class="wrap">
-    <span>norito：小而专注的工具，一个工具只做一件事。</span>
-    <span class="foot-links">
-      <a href="test-file-generator.html">测试文件</a>
-      <a href="compress-image.html">压缩图片</a>
-      <a href="placeholder-generator.html">占位图</a>
-      <a href="remove-background.html">去除背景</a>
-      <a href="qr-code-generator.html">二维码</a>
-      <a href="password-generator.html">密码</a>
-      <a href="seo-slug-generator.html">Slug</a>
-      <a href="limited-text-generator.html">限字数文本</a>
-      <a href="json-formatter.html">JSON</a>
-      <a href="markdown-editor.html">Markdown</a>
-    </span>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">小而专注的工具，每个只做一件事。全部在你的浏览器中运行，不会上传任何内容。</p>
+      </div>
+      <div class="footer-col">
+        <h4>图像</h4>
+        <a href="test-file-generator.html">测试文件</a>
+        <a href="compress-image.html">压缩图片</a>
+        <a href="placeholder-generator.html">占位图</a>
+        <a href="remove-background.html">去除背景</a>
+        <a href="qr-code-generator.html">二维码</a>
+      </div>
+      <div class="footer-col">
+        <h4>文本与开发</h4>
+        <a href="password-generator.html">密码</a>
+        <a href="seo-slug-generator.html">Slug</a>
+        <a href="limited-text-generator.html">限字数文本</a>
+        <a href="json-formatter.html">JSON</a>
+        <a href="markdown-editor.html">Markdown</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 norito。所有工具均在本地浏览器中运行。</div>
   </div>
 </footer>
 
 <script src="../js/nav.js"></script>
 <script src="../js/lang-switcher.js"></script>
 <script src="../js/bg-blobs.js"></script>
+<script src="../js/scroll-reveal.js"></script>
 </body>
 </html>
