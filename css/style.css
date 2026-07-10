@@ -193,8 +193,9 @@ nav.site-nav {
 .nav-group.open .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
 .nav-panel a {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 9px;
   padding: 9px 10px;
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -205,6 +206,9 @@ nav.site-nav {
 .nav-panel a.active { background: var(--primary); color: #fff; }
 .nav-panel a.active span { color: rgba(255, 255, 255, 0.85); }
 .nav-panel a span { font-weight: 400; font-size: 0.78rem; color: var(--text-muted); }
+.nav-panel a svg { flex-shrink: 0; margin-top: 2px; color: var(--text-muted); }
+.nav-panel a:hover svg, .nav-panel a.active svg { color: currentColor; }
+.nav-link-body { display: flex; flex-direction: column; gap: 2px; }
 
 /* ---------- language switcher ---------- */
 .lang-switch { position: relative; }

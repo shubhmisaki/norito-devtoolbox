@@ -206,9 +206,9 @@
       els.textOutput.select();
       document.execCommand("copy");
     }
-    const original = els.copyBtn.textContent;
+    const original = els.copyBtn.innerHTML;
     els.copyBtn.textContent = I18N_C.copied || "Copied";
-    setTimeout(() => { els.copyBtn.textContent = original; }, 1200);
+    setTimeout(() => { els.copyBtn.innerHTML = original; }, 1200);
   });
 
   els.downloadBtn.addEventListener("click", () => {
