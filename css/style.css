@@ -603,30 +603,6 @@ button:disabled {
 .btn-hero svg { transition: transform 0.15s var(--ease); }
 .btn-hero:hover svg { transform: translateY(2px); }
 
-.hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-  padding-top: 26px;
-  border-top: 1px solid var(--border);
-}
-.hero-stat { display: flex; flex-direction: column; gap: 2px; }
-.hero-stat strong {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1;
-}
-.hero-stat span { font-size: 0.8rem; color: var(--text-muted); }
-.hero-stat-sep { width: 1px; height: 26px; background: var(--border); flex-shrink: 0; }
-@media (max-width: 640px) {
-  .hero-stats { gap: 16px; }
-  .hero-stat-sep { display: none; }
-}
-
 /* ---------- dropzone ---------- */
 .dropzone {
   border: 1.5px dashed var(--border-strong);
