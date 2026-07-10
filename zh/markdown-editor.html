@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>带实时预览的 Markdown 编辑器 | norito</title>
+<meta name="description" content="边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/markdown-editor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/markdown-editor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/markdown-editor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/markdown-editor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="带实时预览的 Markdown 编辑器 | norito" />
+<meta property="og:description" content="边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/markdown-editor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="带实时预览的 Markdown 编辑器 | norito" />
+<meta name="twitter:description" content="边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Markdown 编辑器",
+  "url": "https://norito.in/zh/markdown-editor.html",
+  "description": "边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo logo-mark" src="../assets/norito-mark.svg" alt="" aria-hidden="true" /><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">图像</button>
+        <div class="nav-panel">
+          <a href="compress-image.html">压缩图片<span>压缩到指定文件大小</span></a>
+          <a href="placeholder-generator.html">占位图生成器<span>自定义尺寸的占位图片</span></a>
+          <a href="remove-background.html">去除背景<span>从照片中抠出人像</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">开发工具</button>
+        <div class="nav-panel">
+          <a href="test-file-generator.html">测试文件生成器<span>任意大小的精确测试文件</span></a>
+          <a href="json-formatter.html">JSON 格式化<span>格式化、校验、压缩</span></a>
+          <a href="markdown-editor.html">Markdown 编辑器<span>实时预览，导出为 .md/.html</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">文本</button>
+        <div class="nav-panel">
+          <a href="seo-slug-generator.html">SEO Slug 生成器<span>根据标题生成简洁网址</span></a>
+          <a href="limited-text-generator.html">限字数文本生成器<span>生成指定长度的占位文本</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">实用工具</button>
+        <div class="nav-panel">
+          <a href="password-generator.html">密码生成器<span>随机密码与密码短语</span></a>
+          <a href="qr-code-generator.html">二维码生成器<span>自定义颜色与纠错级别</span></a>
+        </div>
+      </div>
+    </nav>
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Markdown 编辑器</p>
+    <h1>Markdown 编辑器</h1>
+    <p class="lede">
+      左侧编写,右侧实时查看渲染效果。支持同步滚动、格式化工具栏,完成后可导出为 Markdown 或 HTML。
+    </p>
+
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+        <div class="md-toolbar" id="mdToolbar" style="border:none; padding:0; margin:0;">
+          <button type="button" data-action="h1" title="Heading 1">H1</button>
+          <button type="button" data-action="h2" title="Heading 2">H2</button>
+          <button type="button" data-action="bold" title="Bold"><strong>B</strong></button>
+          <button type="button" data-action="italic" title="Italic"><em>I</em></button>
+          <button type="button" data-action="strike" title="Strikethrough"><s>S</s></button>
+          <button type="button" data-action="code" title="Inline code">code</button>
+          <button type="button" data-action="codeblock" title="Code block">{ }</button>
+          <button type="button" data-action="link" title="Link">link</button>
+          <button type="button" data-action="quote" title="Quote">"</button>
+          <button type="button" data-action="ul" title="Bullet list">•</button>
+          <button type="button" data-action="ol" title="Numbered list">1.</button>
+          <button type="button" data-action="table" title="Table">▦</button>
+        </div>
+        <div class="tabs" id="view-tabs">
+          <button type="button" class="tab active" data-value="split">双栏</button>
+          <button type="button" class="tab" data-value="editor">编辑器</button>
+          <button type="button" class="tab" data-value="preview">预览</button>
+        </div>
+      </div>
+
+      <div class="two-col" style="gap:16px;">
+        <div class="md-pane" id="editorPane">
+          <textarea id="mdEditor" class="md-source" spellcheck="false"># 欢迎使用 norito Markdown 编辑器
+
+左侧编写,右侧**实时**渲染,无需点击保存按钮。
+
+## 功能特性
+
+- 双栏预览,滚动同步
+- 上方配有简洁的格式化工具栏
+- 完成后可导出为 `.md` 或 `.html`
+
+> 一切都在你的浏览器中完成。你输入的任何内容都不会被上传到任何地方。
+
+```
+console.log("连代码块也能正常工作");
+```
+
+| 功能 | 状态 |
+| --- | --- |
+| 实时预览 | 已完成 |
+| 导出 | 已完成 |
+</textarea>
+        </div>
+        <div class="md-pane" id="previewPane">
+          <div id="mdPreview" class="md-preview"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+        <span class="note" id="mdCharCount" style="margin:0;">0 characters</span>
+        <div style="display:flex; gap:10px;">
+          <button id="downloadMdBtn" class="secondary">下载 .md</button>
+          <button id="downloadHtmlBtn" class="secondary">下载 .html</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>相关工具</h2>
+      <div class="related-grid">
+        <a class="related-card" href="json-formatter.html">
+          <strong>JSON 格式化</strong>
+          <span>格式化、校验并压缩 JSON，附带树状视图。</span>
+        </a>
+        <a class="related-card" href="limited-text-generator.html">
+          <strong>限字数文本生成器</strong>
+          <span>生成指定字符数的占位文本。</span>
+        </a>
+        <a class="related-card" href="test-file-generator.html">
+          <strong>测试文件生成器</strong>
+          <span>生成任意大小或扩展名的精确测试文件。</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>norito：小而专注的工具，一个工具只做一件事。</span>
+    <span class="foot-links">
+      <a href="test-file-generator.html">测试文件</a>
+      <a href="compress-image.html">压缩图片</a>
+      <a href="placeholder-generator.html">占位图</a>
+      <a href="remove-background.html">去除背景</a>
+      <a href="qr-code-generator.html">二维码</a>
+      <a href="password-generator.html">密码</a>
+      <a href="seo-slug-generator.html">Slug</a>
+      <a href="limited-text-generator.html">限字数文本</a>
+      <a href="json-formatter.html">JSON</a>
+      <a href="markdown-editor.html">Markdown</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/vendor/marked.umd.js"></script>
+<script src="../js/app-markdown.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/lang-switcher.js"></script>
+<script src="../js/bg-blobs.js"></script>
+</body>
+</html>

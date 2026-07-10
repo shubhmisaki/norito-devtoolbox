@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comprimir imagen a un tamaño exacto (100KB, 200KB, 1MB...) | norito</title>
+<meta name="description" content="Comprime una imagen a un tamaño de archivo objetivo, como 100KB, 200KB, 500KB o 1MB, en lugar de andar ajustando un control de calidad. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/compress-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/compress-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/compress-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/compress-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/compress-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/compress-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Comprimir imagen a un tamaño exacto (100KB, 200KB, 1MB...) | norito" />
+<meta property="og:description" content="Comprime una imagen a un tamaño de archivo objetivo, como 100KB, 200KB, 500KB o 1MB, en lugar de andar ajustando un control de calidad. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/compress-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Comprimir imagen a un tamaño exacto (100KB, 200KB, 1MB...) | norito" />
+<meta name="twitter:description" content="Comprime una imagen a un tamaño de archivo objetivo, como 100KB, 200KB, 500KB o 1MB, en lugar de andar ajustando un control de calidad. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Comprimir imagen",
+  "url": "https://norito.in/es/compress-image.html",
+  "description": "Comprime una imagen a un tamaño de archivo objetivo, como 100KB, 200KB, 500KB o 1MB, en lugar de andar ajustando un control de calidad. Funciona por completo en tu navegador.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo logo-mark" src="../assets/norito-mark.svg" alt="" aria-hidden="true" /><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Imágenes</button>
+        <div class="nav-panel">
+          <a href="compress-image.html">Comprimir imagen<span>Reduce a un tamaño de archivo objetivo</span></a>
+          <a href="placeholder-generator.html">Generador de marcadores<span>Imágenes de relleno a medida</span></a>
+          <a href="remove-background.html">Quitar fondo<span>Recorta a una persona de una foto</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Desarrollo</button>
+        <div class="nav-panel">
+          <a href="test-file-generator.html">Generador de archivos de prueba<span>Archivos de relleno del tamaño exacto</span></a>
+          <a href="json-formatter.html">Formateador JSON<span>Formatea, valida y minifica</span></a>
+          <a href="markdown-editor.html">Editor Markdown<span>Vista previa en vivo, exporta a .md/.html</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Texto</button>
+        <div class="nav-panel">
+          <a href="seo-slug-generator.html">Generador de slugs SEO<span>URLs limpias a partir de títulos</span></a>
+          <a href="limited-text-generator.html">Generador de texto limitado<span>Texto de relleno con longitud exacta</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Utilidades</button>
+        <div class="nav-panel">
+          <a href="password-generator.html">Generador de contraseñas<span>Contraseñas y frases aleatorias</span></a>
+          <a href="qr-code-generator.html">Generador de códigos QR<span>Colores personalizados, corrección de errores</span></a>
+        </div>
+      </div>
+    </nav>
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Comprimir a un tamaño</p>
+    <h1>Comprimir imagen a un tamaño objetivo</h1>
+    <p class="lede">
+      Olvídate de adivinar con el control de calidad. Dile el tamaño que necesitas, digamos 100 KB, y encuentra la mejor calidad que encaja, manteniendo el ancho y alto originales de tu imagen por defecto.
+    </p>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Haz clic para elegir una imagen</strong>, arrástrala aquí o pégala con Ctrl+V</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Se queda en tu dispositivo, no se sube nada.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field-row" style="margin-top:20px;">
+          <div class="field">
+            <label for="targetSize">Tamaño objetivo</label>
+            <div class="size-unit-group">
+              <select id="targetUnit">
+                <option value="B">Bytes</option>
+                <option value="KB" selected>KB</option>
+                <option value="MB">MB</option>
+              </select>
+              <input type="number" id="targetSize" value="100" min="0" step="any" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="format">Formato de salida</label>
+            <select id="format">
+              <option value="jpeg" selected>JPEG (mejor control de tamaño)</option>
+              <option value="webp">WebP</option>
+              <option value="png">PNG (sin pérdida, tamaño variable)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-row" style="margin-bottom:20px;">
+          <div>
+            <div class="option-label">Permitir redimensionar</div>
+            <div class="option-hint">Desactivado por defecto. Mantiene el ancho y alto originales. Actívalo para reducir también las dimensiones, para objetivos más pequeños que la calidad por sí sola no puede alcanzar.</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="allowResize" /><span class="track"></span></label>
+        </div>
+
+        <button id="compressBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 14h6m0 0v6m0-6-7 7M20 10h-6m0 0V4m0 6 7-7"/></svg>
+          Comprimir al objetivo
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Vista previa comprimida" />
+          <p class="note" id="previewHint" style="margin-top:0;">Tu imagen comprimida aparecerá aquí una vez generada.</p>
+        </div>
+        <p class="note">
+          Para JPEG/WebP, busca por bisección la calidad al tamaño original de tu imagen. Si "Permitir redimensionar" está desactivado y la calidad por sí sola no puede alcanzar el objetivo, obtendrás el tamaño más pequeño posible sin cambiar las dimensiones. PNG no tiene pérdida, así que alcanzar un objetivo pequeño necesita el redimensionado activado. JPEG o WebP te acercarán mucho más a un objetivo pequeño a tamaño completo.
+        </p>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>Herramientas relacionadas</h2>
+      <div class="related-grid">
+        <a class="related-card" href="placeholder-generator.html">
+          <strong>Generador de marcadores</strong>
+          <span>Imágenes de marcador instantáneas, de cualquier tamaño y color.</span>
+        </a>
+        <a class="related-card" href="remove-background.html">
+          <strong>Quitar fondo</strong>
+          <span>Recorta a una persona de una foto, directamente en tu navegador.</span>
+        </a>
+        <a class="related-card" href="test-file-generator.html">
+          <strong>Generador de archivos de prueba</strong>
+          <span>Archivos de relleno del tamaño o extensión exactos.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>norito: herramientas pequeñas, cada una con un solo trabajo.</span>
+    <span class="foot-links">
+      <a href="test-file-generator.html">Archivos de prueba</a>
+      <a href="compress-image.html">Comprimir</a>
+      <a href="placeholder-generator.html">Marcador</a>
+      <a href="remove-background.html">Quitar fondo</a>
+      <a href="qr-code-generator.html">Código QR</a>
+      <a href="password-generator.html">Contraseña</a>
+      <a href="seo-slug-generator.html">Slug</a>
+      <a href="limited-text-generator.html">Límite de texto</a>
+      <a href="json-formatter.html">JSON</a>
+      <a href="markdown-editor.html">Markdown</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-compress.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/lang-switcher.js"></script>
+<script src="../js/bg-blobs.js"></script>
+</body>
+</html>

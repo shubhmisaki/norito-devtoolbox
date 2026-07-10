@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JSON 格式化、校验与树状视图工具 | norito</title>
+<meta name="description" content="边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-formatter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-formatter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-formatter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSON 格式化、校验与树状视图工具 | norito" />
+<meta property="og:description" content="边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/json-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JSON 格式化、校验与树状视图工具 | norito" />
+<meta name="twitter:description" content="边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON 格式化",
+  "url": "https://norito.in/zh/json-formatter.html",
+  "description": "边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo logo-mark" src="../assets/norito-mark.svg" alt="" aria-hidden="true" /><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">图像</button>
+        <div class="nav-panel">
+          <a href="compress-image.html">压缩图片<span>压缩到指定文件大小</span></a>
+          <a href="placeholder-generator.html">占位图生成器<span>自定义尺寸的占位图片</span></a>
+          <a href="remove-background.html">去除背景<span>从照片中抠出人像</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">开发工具</button>
+        <div class="nav-panel">
+          <a href="test-file-generator.html">测试文件生成器<span>任意大小的精确测试文件</span></a>
+          <a href="json-formatter.html">JSON 格式化<span>格式化、校验、压缩</span></a>
+          <a href="markdown-editor.html">Markdown 编辑器<span>实时预览，导出为 .md/.html</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">文本</button>
+        <div class="nav-panel">
+          <a href="seo-slug-generator.html">SEO Slug 生成器<span>根据标题生成简洁网址</span></a>
+          <a href="limited-text-generator.html">限字数文本生成器<span>生成指定长度的占位文本</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">实用工具</button>
+        <div class="nav-panel">
+          <a href="password-generator.html">密码生成器<span>随机密码与密码短语</span></a>
+          <a href="qr-code-generator.html">二维码生成器<span>自定义颜色与纠错级别</span></a>
+        </div>
+      </div>
+    </nav>
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSON 格式化</p>
+    <h1>JSON 格式化与校验</h1>
+    <p class="lede">
+      粘贴 JSON,即可实时看到校验和格式化的结果,可选树状视图或纯文本视图。出错时会直接指出具体的行号和列号,而不只是提示“JSON 无效”。
+    </p>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:14px;">
+          <label for="jsonInput">输入</label>
+          <textarea id="jsonInput" class="mono-area" rows="14">{
+  "name": "norito",
+  "tagline": "small tools, one job each",
+  "tools": ["test files", "compress", "json formatter", "qr code"],
+  "version": 1,
+  "public": true,
+  "maintainer": null
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field-row" style="margin-bottom:0;">
+            <div class="field">
+              <label style="visibility:hidden;">View</label>
+              <div class="tabs" id="view-tabs">
+                <button type="button" class="tab active" data-value="tree">树状视图</button>
+                <button type="button" class="tab" data-value="text">文本</button>
+              </div>
+            </div>
+            <div class="field" style="min-width:110px;">
+              <label for="indentSize">缩进</label>
+              <select id="indentSize">
+                <option value="2" selected>2 个空格</option>
+                <option value="4">4 个空格</option>
+                <option value="tab">制表符</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-row" style="margin-bottom:16px;">
+            <span class="option-label">按字母顺序排序键名</span>
+            <label class="switch"><input type="checkbox" id="optSortKeys" /><span class="track"></span></label>
+          </div>
+
+          <div id="treeView" class="json-tree"></div>
+          <textarea id="textOutput" class="mono-area" rows="14" readonly style="display:none;"></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button id="formatBtn">格式化输入</button>
+            <button id="minifyBtn" class="secondary">压缩输入</button>
+            <button id="copyBtn" class="secondary">复制输出</button>
+            <button id="downloadBtn" class="secondary">下载 .json</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>相关工具</h2>
+      <div class="related-grid">
+        <a class="related-card" href="test-file-generator.html">
+          <strong>测试文件生成器</strong>
+          <span>生成任意大小或扩展名的精确测试文件。</span>
+        </a>
+        <a class="related-card" href="markdown-editor.html">
+          <strong>Markdown 编辑器</strong>
+          <span>双栏 Markdown 编辑器，支持实时预览。</span>
+        </a>
+        <a class="related-card" href="qr-code-generator.html">
+          <strong>二维码生成器</strong>
+          <span>自定义颜色并添加中心 Logo 的二维码。</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>norito：小而专注的工具，一个工具只做一件事。</span>
+    <span class="foot-links">
+      <a href="test-file-generator.html">测试文件</a>
+      <a href="compress-image.html">压缩图片</a>
+      <a href="placeholder-generator.html">占位图</a>
+      <a href="remove-background.html">去除背景</a>
+      <a href="qr-code-generator.html">二维码</a>
+      <a href="password-generator.html">密码</a>
+      <a href="seo-slug-generator.html">Slug</a>
+      <a href="limited-text-generator.html">限字数文本</a>
+      <a href="json-formatter.html">JSON</a>
+      <a href="markdown-editor.html">Markdown</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-json.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/lang-switcher.js"></script>
+<script src="../js/bg-blobs.js"></script>
+</body>
+</html>

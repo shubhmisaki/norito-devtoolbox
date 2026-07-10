@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SEO Slug 生成器：根据任意标题生成简洁网址 | norito</title>
+<meta name="description" content="边输入边将标题转换为简洁、利于 SEO 的网址 Slug。支持分隔符、大小写、停用词过滤,以及一次处理多个标题的批量模式。" />
+<link rel="canonical" href="https://norito.in/zh/seo-slug-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/seo-slug-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/seo-slug-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/seo-slug-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/seo-slug-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/seo-slug-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SEO Slug 生成器：根据任意标题生成简洁网址 | norito" />
+<meta property="og:description" content="边输入边将标题转换为简洁、利于 SEO 的网址 Slug。支持分隔符、大小写、停用词过滤,以及一次处理多个标题的批量模式。" />
+<meta property="og:url" content="https://norito.in/zh/seo-slug-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SEO Slug 生成器：根据任意标题生成简洁网址 | norito" />
+<meta name="twitter:description" content="边输入边将标题转换为简洁、利于 SEO 的网址 Slug。支持分隔符、大小写、停用词过滤,以及一次处理多个标题的批量模式。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SEO Slug 生成器",
+  "url": "https://norito.in/zh/seo-slug-generator.html",
+  "description": "边输入边将标题转换为简洁、利于 SEO 的网址 Slug。支持分隔符、大小写、停用词过滤,以及一次处理多个标题的批量模式。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo logo-mark" src="../assets/norito-mark.svg" alt="" aria-hidden="true" /><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">图像</button>
+        <div class="nav-panel">
+          <a href="compress-image.html">压缩图片<span>压缩到指定文件大小</span></a>
+          <a href="placeholder-generator.html">占位图生成器<span>自定义尺寸的占位图片</span></a>
+          <a href="remove-background.html">去除背景<span>从照片中抠出人像</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">开发工具</button>
+        <div class="nav-panel">
+          <a href="test-file-generator.html">测试文件生成器<span>任意大小的精确测试文件</span></a>
+          <a href="json-formatter.html">JSON 格式化<span>格式化、校验、压缩</span></a>
+          <a href="markdown-editor.html">Markdown 编辑器<span>实时预览，导出为 .md/.html</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">文本</button>
+        <div class="nav-panel">
+          <a href="seo-slug-generator.html">SEO Slug 生成器<span>根据标题生成简洁网址</span></a>
+          <a href="limited-text-generator.html">限字数文本生成器<span>生成指定长度的占位文本</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">实用工具</button>
+        <div class="nav-panel">
+          <a href="password-generator.html">密码生成器<span>随机密码与密码短语</span></a>
+          <a href="qr-code-generator.html">二维码生成器<span>自定义颜色与纠错级别</span></a>
+        </div>
+      </div>
+    </nav>
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SEO Slug 生成器</p>
+    <h1>SEO Slug 生成器</h1>
+    <p class="lede">
+      粘贴标题,即可实时生成简洁的网址 Slug。自动去除重音符号、过滤停用词,分隔符任你选择。切换到批量模式,可一次为一整份标题列表生成 Slug。
+    </p>
+
+    <div class="two-col">
+      <div class="panel">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;">
+          <div>
+            <div class="option-label">批量模式</div>
+            <div class="option-hint">每行一个标题</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="batchToggle" /><span class="track"></span></label>
+        </div>
+
+        <div id="singleWrap">
+          <div class="field" style="margin-bottom:16px;">
+            <label for="titleInput">标题</label>
+            <input type="text" id="titleInput" placeholder="例如：2026 年学习 JavaScript 的最佳方法" value="2026 年学习 JavaScript 的最佳方法" />
+          </div>
+          <div class="field" style="margin-bottom:16px;">
+            <label for="output">Slug</label>
+            <input type="text" id="output" class="mono-output" readonly style="font-size:0.95rem; padding:10px 14px;" />
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+            <span class="note" id="charCount" style="margin:0;">0 characters</span>
+            <button id="copyBtn" class="secondary">复制 Slug</button>
+          </div>
+
+          <div class="field" style="margin-bottom:10px;">
+            <label>网址预览</label>
+          </div>
+          <div class="url-preview">
+            <span class="url-scheme">https://</span><span class="url-domain" id="urlDomainPreview">yoursite.com/blog/</span><span class="url-slug" id="urlSlugPreview">your-slug-here</span>
+          </div>
+        </div>
+
+        <div id="batchWrap" style="display:none;">
+          <div class="field" style="margin-bottom:16px;">
+            <label for="batchInput">标题（每行一个）</label>
+            <textarea id="batchInput" class="mono-area" rows="6" placeholder="每行一个标题&#10;这里是另一个标题&#10;还有第三个">改善睡眠的 10 个技巧
+2026 年如何开始做播客
+咖啡文化：欧洲旅行指南</textarea>
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-bottom:12px;">
+            <button id="copyAllBtn" class="secondary">复制所有 Slug</button>
+          </div>
+          <div id="batchResults"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-coral" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            </div>
+            <div>
+              <h3>选项</h3>
+              <p>同时适用于单个和批量模式。</p>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:14px;">
+            <label for="separator">Separator</label>
+            <select id="separator">
+              <option value="-" selected>连字符（-）</option>
+              <option value="_">下划线（_）</option>
+            </select>
+          </div>
+          <div class="field" style="margin-bottom:14px;">
+            <label for="maxLength">最大长度（0 表示不限制）</label>
+            <input type="number" id="maxLength" value="60" min="0" step="1" />
+          </div>
+          <div class="field" style="margin-bottom:6px;">
+            <label for="domainInput">预览域名</label>
+            <input type="text" id="domainInput" value="yoursite.com/blog/" />
+          </div>
+          <div class="option-row">
+            <span class="option-label">转为小写</span>
+            <label class="switch"><input type="checkbox" id="optLowercase" checked /><span class="track"></span></label>
+          </div>
+          <div class="option-row">
+            <div>
+              <div class="option-label">移除停用词</div>
+              <div class="option-hint">去掉“the”“a”“and”等词</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="optRemoveStopwords" /><span class="track"></span></label>
+          </div>
+        </div>
+        <p class="note">
+          谷歌并不要求移除停用词才能给页面排名,但更短的 Slug 更便于阅读和分享。60 个字符是一个安全的默认值,能让大多数 Slug 在搜索结果中保持单行显示。
+        </p>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>相关工具</h2>
+      <div class="related-grid">
+        <a class="related-card" href="limited-text-generator.html">
+          <strong>限字数文本生成器</strong>
+          <span>生成指定字符数的占位文本。</span>
+        </a>
+        <a class="related-card" href="markdown-editor.html">
+          <strong>Markdown 编辑器</strong>
+          <span>双栏 Markdown 编辑器，支持实时预览。</span>
+        </a>
+        <a class="related-card" href="json-formatter.html">
+          <strong>JSON 格式化</strong>
+          <span>格式化、校验并压缩 JSON，附带树状视图。</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>norito：小而专注的工具，一个工具只做一件事。</span>
+    <span class="foot-links">
+      <a href="test-file-generator.html">测试文件</a>
+      <a href="compress-image.html">压缩图片</a>
+      <a href="placeholder-generator.html">占位图</a>
+      <a href="remove-background.html">去除背景</a>
+      <a href="qr-code-generator.html">二维码</a>
+      <a href="password-generator.html">密码</a>
+      <a href="seo-slug-generator.html">Slug</a>
+      <a href="limited-text-generator.html">限字数文本</a>
+      <a href="json-formatter.html">JSON</a>
+      <a href="markdown-editor.html">Markdown</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-slug.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/lang-switcher.js"></script>
+<script src="../js/bg-blobs.js"></script>
+</body>
+</html>

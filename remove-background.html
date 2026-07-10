@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Remove Background from a Photo: Free, In-Browser | norito</title>
+<meta name="description" content="Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export." />
+<link rel="canonical" href="https://norito.in/remove-background.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-background.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/remove-background.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/remove-background.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/remove-background.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-background.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Remove Background from a Photo: Free, In-Browser | norito" />
+<meta property="og:description" content="Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export." />
+<meta property="og:url" content="https://norito.in/remove-background.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Remove Background from a Photo: Free, In-Browser | norito" />
+<meta name="twitter:description" content="Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Remove Background from a Photo",
+  "url": "https://norito.in/remove-background.html",
+  "description": "Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo logo-mark" src="assets/norito-mark.svg" alt="" aria-hidden="true" /><img class="logo logo-word" src="assets/norito-wordmark.svg" alt="norito" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Images</button>
+        <div class="nav-panel">
+          <a href="compress-image.html">Compress Image<span>Shrink to a target file size</span></a>
+          <a href="placeholder-generator.html">Placeholder Generator<span>Custom-size placeholder images</span></a>
+          <a href="remove-background.html">Remove Background<span>Cut a person out of a photo</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Developer</button>
+        <div class="nav-panel">
+          <a href="test-file-generator.html">Test File Generator<span>Byte-exact dummy files, any size</span></a>
+          <a href="json-formatter.html">JSON Formatter<span>Format, validate, minify</span></a>
+          <a href="markdown-editor.html">Markdown Editor<span>Live preview, export as .md/.html</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Text</button>
+        <div class="nav-panel">
+          <a href="seo-slug-generator.html">SEO Slug Generator<span>Clean URL slugs from titles</span></a>
+          <a href="limited-text-generator.html">Limited Text Generator<span>Placeholder text, exact length</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Utilities</button>
+        <div class="nav-panel">
+          <a href="password-generator.html">Password Generator<span>Random passwords &amp; passphrases</span></a>
+          <a href="qr-code-generator.html">QR Code Generator<span>Custom colors, error correction</span></a>
+        </div>
+      </div>
+    </nav>
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Remove Background</p>
+    <h1>Remove Background</h1>
+    <p class="lede">
+      Cut a person out of a photo, entirely in your browser. The image never leaves your device.
+      Built on a lightweight open-source segmentation model, so it works best when a person is
+      clearly the main subject.
+    </p>
+    <div class="result-box" style="margin-bottom:28px;">
+      <span class="r-body">
+        <strong>Heads up:</strong> this uses a small (~5.5 MB) model tuned for people, not general
+        objects or products. Portraits and selfies work best. The model downloads once per
+        browser session, then stays cached.
+      </span>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose a photo</strong>, drag and drop it here, or paste with Ctrl+V</p>
+          <p class="note" style="margin-top:2px;">Works best with one person, clearly in frame.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field-row" style="margin-top:20px;">
+          <div class="field">
+            <label for="bgMode">Result background</label>
+            <select id="bgMode">
+              <option value="transparent" selected>Transparent</option>
+              <option value="color">Solid color</option>
+            </select>
+          </div>
+          <div class="field" id="bgColorField" style="display:none;">
+            <label for="bgColor">Color</label>
+            <input type="color" id="bgColor" value="#ffffff" />
+          </div>
+        </div>
+
+        <button id="processBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
+          Remove background
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Background-removed result" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your cutout will appear here once processed.</p>
+        </div>
+        <button id="downloadBtn" class="secondary" disabled style="width:100%;">Download PNG</button>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related tools</h2>
+      <div class="related-grid">
+        <a class="related-card" href="compress-image.html">
+          <strong>Compress Image</strong>
+          <span>Hit an exact file size instead of guessing quality.</span>
+        </a>
+        <a class="related-card" href="placeholder-generator.html">
+          <strong>Placeholder Generator</strong>
+          <span>Instant placeholder images, any size and color.</span>
+        </a>
+        <a class="related-card" href="qr-code-generator.html">
+          <strong>QR Code Generator</strong>
+          <span>Custom QR codes with colors and a center logo.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>norito: small tools, one job each.</span>
+    <span class="foot-links">
+      <a href="test-file-generator.html">Test files</a>
+      <a href="compress-image.html">Compress</a>
+      <a href="placeholder-generator.html">Placeholder</a>
+      <a href="remove-background.html">Remove BG</a>
+      <a href="qr-code-generator.html">QR code</a>
+      <a href="password-generator.html">Password</a>
+      <a href="seo-slug-generator.html">Slug</a>
+      <a href="limited-text-generator.html">Text limit</a>
+      <a href="json-formatter.html">JSON</a>
+      <a href="markdown-editor.html">Markdown</a>
+    </span>
+  </div>
+</footer>
+
+<script src="js/i18n-runtime.js"></script>
+<script src="js/vendor/mediapipe/selfie_segmentation.js"></script>
+<script src="js/app-removebg.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/lang-switcher.js"></script>
+<script src="js/bg-blobs.js"></script>
+</body>
+</html>

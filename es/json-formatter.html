@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Formateador y validador JSON con vista de árbol | norito</title>
+<meta name="description" content="Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, ordena claves, copia o descarga el resultado. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-formatter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-formatter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-formatter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Formateador y validador JSON con vista de árbol | norito" />
+<meta property="og:description" content="Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, ordena claves, copia o descarga el resultado. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/json-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Formateador y validador JSON con vista de árbol | norito" />
+<meta name="twitter:description" content="Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, ordena claves, copia o descarga el resultado. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Formateador JSON",
+  "url": "https://norito.in/es/json-formatter.html",
+  "description": "Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, ordena claves, copia o descarga el resultado. Funciona en tu navegador.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo logo-mark" src="../assets/norito-mark.svg" alt="" aria-hidden="true" /><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Imágenes</button>
+        <div class="nav-panel">
+          <a href="compress-image.html">Comprimir imagen<span>Reduce a un tamaño de archivo objetivo</span></a>
+          <a href="placeholder-generator.html">Generador de marcadores<span>Imágenes de relleno a medida</span></a>
+          <a href="remove-background.html">Quitar fondo<span>Recorta a una persona de una foto</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Desarrollo</button>
+        <div class="nav-panel">
+          <a href="test-file-generator.html">Generador de archivos de prueba<span>Archivos de relleno del tamaño exacto</span></a>
+          <a href="json-formatter.html">Formateador JSON<span>Formatea, valida y minifica</span></a>
+          <a href="markdown-editor.html">Editor Markdown<span>Vista previa en vivo, exporta a .md/.html</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Texto</button>
+        <div class="nav-panel">
+          <a href="seo-slug-generator.html">Generador de slugs SEO<span>URLs limpias a partir de títulos</span></a>
+          <a href="limited-text-generator.html">Generador de texto limitado<span>Texto de relleno con longitud exacta</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">Utilidades</button>
+        <div class="nav-panel">
+          <a href="password-generator.html">Generador de contraseñas<span>Contraseñas y frases aleatorias</span></a>
+          <a href="qr-code-generator.html">Generador de códigos QR<span>Colores personalizados, corrección de errores</span></a>
+        </div>
+      </div>
+    </nav>
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Formateador JSON</p>
+    <h1>Formateador y validador JSON</h1>
+    <p class="lede">
+      Pega JSON y velo validado y formateado en vivo, como árbol plegable o como texto. Los errores señalan la línea y columna exactas en lugar de solo decir "JSON inválido".
+    </p>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:14px;">
+          <label for="jsonInput">Entrada</label>
+          <textarea id="jsonInput" class="mono-area" rows="14">{
+  "name": "norito",
+  "tagline": "small tools, one job each",
+  "tools": ["test files", "compress", "json formatter", "qr code"],
+  "version": 1,
+  "public": true,
+  "maintainer": null
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field-row" style="margin-bottom:0;">
+            <div class="field">
+              <label style="visibility:hidden;">View</label>
+              <div class="tabs" id="view-tabs">
+                <button type="button" class="tab active" data-value="tree">Vista de árbol</button>
+                <button type="button" class="tab" data-value="text">Texto</button>
+              </div>
+            </div>
+            <div class="field" style="min-width:110px;">
+              <label for="indentSize">Sangría</label>
+              <select id="indentSize">
+                <option value="2" selected>2 espacios</option>
+                <option value="4">4 espacios</option>
+                <option value="tab">Tabulador</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-row" style="margin-bottom:16px;">
+            <span class="option-label">Ordenar claves alfabéticamente</span>
+            <label class="switch"><input type="checkbox" id="optSortKeys" /><span class="track"></span></label>
+          </div>
+
+          <div id="treeView" class="json-tree"></div>
+          <textarea id="textOutput" class="mono-area" rows="14" readonly style="display:none;"></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button id="formatBtn">Formatear entrada</button>
+            <button id="minifyBtn" class="secondary">Minificar entrada</button>
+            <button id="copyBtn" class="secondary">Copiar salida</button>
+            <button id="downloadBtn" class="secondary">Descargar .json</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>Herramientas relacionadas</h2>
+      <div class="related-grid">
+        <a class="related-card" href="test-file-generator.html">
+          <strong>Generador de archivos de prueba</strong>
+          <span>Archivos de relleno del tamaño o extensión exactos.</span>
+        </a>
+        <a class="related-card" href="markdown-editor.html">
+          <strong>Editor Markdown</strong>
+          <span>Editor Markdown de doble panel con vista previa en vivo.</span>
+        </a>
+        <a class="related-card" href="qr-code-generator.html">
+          <strong>Generador de códigos QR</strong>
+          <span>Códigos QR personalizados con colores y logo central.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>norito: herramientas pequeñas, cada una con un solo trabajo.</span>
+    <span class="foot-links">
+      <a href="test-file-generator.html">Archivos de prueba</a>
+      <a href="compress-image.html">Comprimir</a>
+      <a href="placeholder-generator.html">Marcador</a>
+      <a href="remove-background.html">Quitar fondo</a>
+      <a href="qr-code-generator.html">Código QR</a>
+      <a href="password-generator.html">Contraseña</a>
+      <a href="seo-slug-generator.html">Slug</a>
+      <a href="limited-text-generator.html">Límite de texto</a>
+      <a href="json-formatter.html">JSON</a>
+      <a href="markdown-editor.html">Markdown</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-json.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/lang-switcher.js"></script>
+<script src="../js/bg-blobs.js"></script>
+</body>
+</html>
