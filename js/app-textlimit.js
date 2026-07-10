@@ -199,9 +199,10 @@
       els.output.select();
       document.execCommand("copy");
     }
-    const original = els.copyBtn.innerHTML;
-    els.copyBtn.innerHTML = `${NORITO_FACE_ICON} ${I18N_C.copied || "Copied"}`;
-    setTimeout(() => { els.copyBtn.innerHTML = original; }, 1200);
+    const original = els.copyBtn.textContent;
+    els.copyBtn.textContent = I18N_C.copied || "Copied";
+    showMascotToast(I18N_C.copied || "Copied!");
+    setTimeout(() => { els.copyBtn.textContent = original; }, 1200);
   });
 
   // Seed with a first result so the page isn't empty on load.

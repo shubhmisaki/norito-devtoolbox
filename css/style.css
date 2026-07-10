@@ -496,6 +496,67 @@ button.btn-pop { animation: btnPop 0.38s var(--ease); }
 @media (prefers-reduced-motion: reduce) {
   button.btn-pop, .btn-check, .flash-success { animation: none; }
 }
+
+/* ---------- mascot toast: norito pops out of the corner with a comic-style
+   speech bubble on success actions. Flat, minimal, no shadows-as-depth
+   beyond the same --shadow-sm every card uses. ---------- */
+.mascot-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(28px) scale(0.9);
+  transform-origin: bottom right;
+  transition: opacity 0.22s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mascot-toast.show { opacity: 1; transform: translateY(0) scale(1); }
+.mascot-bubble {
+  position: relative;
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 7px 14px;
+  margin-bottom: 10px;
+  margin-right: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+.mascot-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  right: 20px;
+  width: 13px;
+  height: 13px;
+  background: var(--surface);
+  border-right: 1.5px solid var(--border-strong);
+  border-bottom: 1.5px solid var(--border-strong);
+  transform: rotate(45deg);
+}
+.mascot-face {
+  width: 42px;
+  height: 38px;
+  line-height: 0;
+  filter: drop-shadow(0 3px 5px rgba(41, 32, 46, 0.16));
+}
+.mascot-face svg { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .mascot-toast { transition: opacity 0.2s ease; }
+  .mascot-toast.no-motion { transform: none; }
+  .mascot-toast.no-motion.show { transform: none; }
+}
+@media (max-width: 480px) {
+  .mascot-toast { right: 12px; bottom: 12px; }
+  .mascot-face { width: 36px; height: 33px; }
+}
 button.secondary {
   background: transparent;
   border: 1px solid var(--border-strong);

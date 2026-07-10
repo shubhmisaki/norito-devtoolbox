@@ -134,18 +134,20 @@
 
   els.copyBtn.addEventListener("click", () => {
     copyText(els.output.value);
-    const original = els.copyBtn.innerHTML;
-    els.copyBtn.innerHTML = `${NORITO_FACE_ICON} ${I18N_C.copied || "Copied"}`;
-    setTimeout(() => { els.copyBtn.innerHTML = original; }, 1200);
+    const original = els.copyBtn.textContent;
+    els.copyBtn.textContent = I18N_C.copied || "Copied";
+    showMascotToast(I18N_C.copied || "Copied!");
+    setTimeout(() => { els.copyBtn.textContent = original; }, 1200);
   });
 
   els.copyAllBtn.addEventListener("click", () => {
     const lines = (els.batchInput.value || "").split("\n").map((l) => l.trim()).filter(Boolean);
     const slugs = lines.map(slugify).join("\n");
     copyText(slugs);
-    const original = els.copyAllBtn.innerHTML;
-    els.copyAllBtn.innerHTML = `${NORITO_FACE_ICON} ${I18N.copied_all || "Copied all"}`;
-    setTimeout(() => { els.copyAllBtn.innerHTML = original; }, 1200);
+    const original = els.copyAllBtn.textContent;
+    els.copyAllBtn.textContent = I18N.copied_all || "Copied all";
+    showMascotToast(I18N.copied_all || "Copied all!");
+    setTimeout(() => { els.copyAllBtn.textContent = original; }, 1200);
   });
 
   renderSingle();
