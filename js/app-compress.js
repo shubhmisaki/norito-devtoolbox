@@ -157,10 +157,300 @@
     return best || closest;
   }
 
+  // ---- PNG color quantization ----
+  // PNG has no lossy "quality" parameter the way JPEG/WebP do: canvas.toBlob
+  // always writes a full 24/32-bit-per-pixel losslessly-encoded file, which
+  // is why a photo saved as PNG can come out several times *larger* than
+  // the same photo as JPEG, with literally no lever to shrink it besides
+  // resizing. Real PNG optimizers (TinyPNG, pngquant) get 60-80% smaller
+  // files by reducing to a small color palette (still valid PNG, no resize,
+  // no format change); browsers' canvas encoder won't do that for us, so
+  // this implements it directly: median-cut palette generation, a coarse
+  // 3D lookup table for fast nearest-palette-color lookups (needed so a
+  // multi-megapixel photo doesn't require millions of per-pixel distance
+  // comparisons), and Floyd-Steinberg error diffusion so the reduced color
+  // count doesn't produce visible banding.
+
+  // Builds a palette of up to k representative colors from the image using
+  // median-cut quantization. Runs on a bounded sample of pixels (not every
+  // pixel) purely for speed; the palette only needs to represent the
+  // image's color distribution, the actual per-pixel mapping in
+  // ditherToPalette below still sees every pixel.
+  function buildPalette(data, w, h, k) {
+    const total = w * h;
+    const sampleStep = Math.max(1, Math.floor(total / 20000));
+    const samples = [];
+    for (let p = 0; p < total; p += sampleStep) {
+      const i = p * 4;
+      samples.push([data[i], data[i + 1], data[i + 2]]);
+    }
+    if (samples.length === 0) samples.push([0, 0, 0]);
+
+    let boxes = [samples];
+    while (boxes.length < k) {
+      let idx = 0, maxLen = 0;
+      for (let b = 0; b < boxes.length; b++) {
+        if (boxes[b].length > maxLen) { maxLen = boxes[b].length; idx = b; }
+      }
+      if (maxLen <= 1) break; // nothing left worth splitting further
+      const box = boxes[idx];
+
+      let rMin = 255, rMax = 0, gMin = 255, gMax = 0, bMin = 255, bMax = 0;
+      for (const [r, g, b] of box) {
+        if (r < rMin) rMin = r; if (r > rMax) rMax = r;
+        if (g < gMin) gMin = g; if (g > gMax) gMax = g;
+        if (b < bMin) bMin = b; if (b > bMax) bMax = b;
+      }
+      const rRange = rMax - rMin, gRange = gMax - gMin, bRange = bMax - bMin;
+      let axis = 0; // split along whichever channel has the widest spread
+      if (gRange >= rRange && gRange >= bRange) axis = 1;
+      else if (bRange >= rRange && bRange >= gRange) axis = 2;
+
+      box.sort((a, c) => a[axis] - c[axis]);
+      const mid = Math.floor(box.length / 2);
+      boxes.splice(idx, 1, box.slice(0, mid), box.slice(mid));
+    }
+
+    return boxes.filter((b) => b.length).map((box) => {
+      let sr = 0, sg = 0, sb = 0;
+      for (const [r, g, b] of box) { sr += r; sg += g; sb += b; }
+      const n = box.length;
+      return [Math.round(sr / n), Math.round(sg / n), Math.round(sb / n)];
+    });
+  }
+
+  // A coarse 16x16x16 grid mapping any RGB bucket to its nearest palette
+  // entry, precomputed once per palette. Without this, finding the nearest
+  // of e.g. 32 palette colors for every pixel of a 5-megapixel photo would
+  // mean 150M+ distance comparisons; with it, each pixel is a single array
+  // lookup after a cheap bucket calculation.
+  const LUT_LEVELS = 16;
+  function buildLut(palette) {
+    const lut = new Uint8Array(LUT_LEVELS ** 3);
+    const step = 256 / LUT_LEVELS;
+    let b = 0;
+    for (let ri = 0; ri < LUT_LEVELS; ri++) {
+      const r = Math.min(255, Math.round((ri + 0.5) * step));
+      for (let gi = 0; gi < LUT_LEVELS; gi++) {
+        const g = Math.min(255, Math.round((gi + 0.5) * step));
+        for (let bi = 0; bi < LUT_LEVELS; bi++, b++) {
+          const bl = Math.min(255, Math.round((bi + 0.5) * step));
+          let best = 0, bestDist = Infinity;
+          for (let p = 0; p < palette.length; p++) {
+            const [pr, pg, pb] = palette[p];
+            const dr = r - pr, dg = g - pg, db = bl - pb;
+            const dist = dr * dr + dg * dg + db * db;
+            if (dist < bestDist) { bestDist = dist; best = p; }
+          }
+          lut[b] = best;
+        }
+      }
+    }
+    return lut;
+  }
+  function lutIndex(r, g, b) {
+    const step = 256 / LUT_LEVELS;
+    const ri = Math.min(LUT_LEVELS - 1, Math.floor(r / step));
+    const gi = Math.min(LUT_LEVELS - 1, Math.floor(g / step));
+    const bi = Math.min(LUT_LEVELS - 1, Math.floor(b / step));
+    return (ri * LUT_LEVELS + gi) * LUT_LEVELS + bi;
+  }
+
+  // Maps every pixel to its nearest palette color, diffusing the resulting
+  // rounding error to neighboring not-yet-visited pixels (standard
+  // Floyd-Steinberg weights) so a small palette still looks like a smooth
+  // gradient instead of visible banding. Does NOT mutate `data`, it returns
+  // a fresh array of palette indices, so the same getImageData() call can
+  // be reused across every palette-size attempt below instead of re-drawing
+  // the canvas each time.
+  //
+  // Earlier version of this function wrote the palette color straight back
+  // into a 4-byte RGBA buffer and let canvas.toBlob re-encode it as an
+  // ordinary 24-bit truecolor PNG. Verified against real encoders that
+  // approach barely helped (some palette sizes even came out *larger* than
+  // full color): dithering breaks smooth gradients into higher-frequency
+  // noise, and since every pixel was still 3-4 bytes, that noise fights
+  // DEFLATE more than the smaller color count helps it. The only way to get
+  // the real win is writing genuinely 1-byte-per-pixel indexed data, which
+  // is what encodeIndexedPngBlob below does.
+  function ditherToIndices(data, w, h, palette, lut) {
+    const buf = new Float32Array(w * h * 3);
+    for (let p = 0, i = 0; p < w * h; p++, i += 4) {
+      buf[p * 3] = data[i];
+      buf[p * 3 + 1] = data[i + 1];
+      buf[p * 3 + 2] = data[i + 2];
+    }
+    const indices = new Uint8Array(w * h);
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const p = y * w + x;
+        const oi = p * 3;
+        const r = Math.min(255, Math.max(0, buf[oi]));
+        const g = Math.min(255, Math.max(0, buf[oi + 1]));
+        const b = Math.min(255, Math.max(0, buf[oi + 2]));
+        const idx = lut[lutIndex(r, g, b)];
+        indices[p] = idx;
+        const [pr, pg, pb] = palette[idx];
+        const er = r - pr, eg = g - pg, eb = b - pb;
+        if (x + 1 < w) { const q = (p + 1) * 3; buf[q] += er * 7 / 16; buf[q + 1] += eg * 7 / 16; buf[q + 2] += eb * 7 / 16; }
+        if (y + 1 < h) {
+          if (x > 0) { const q = (p + w - 1) * 3; buf[q] += er * 3 / 16; buf[q + 1] += eg * 3 / 16; buf[q + 2] += eb * 3 / 16; }
+          { const q = (p + w) * 3; buf[q] += er * 5 / 16; buf[q + 1] += eg * 5 / 16; buf[q + 2] += eb * 5 / 16; }
+          if (x + 1 < w) { const q = (p + w + 1) * 3; buf[q] += er * 1 / 16; buf[q + 1] += eg * 1 / 16; buf[q + 2] += eb * 1 / 16; }
+        }
+      }
+    }
+    return indices;
+  }
+
+  function isFullyOpaque(data) {
+    for (let i = 3; i < data.length; i += 4) if (data[i] !== 255) return false;
+    return true;
+  }
+
+  // ---- true indexed-color PNG file writer ----
+  // canvas.toBlob has no option to request an indexed-color PNG, browsers
+  // only ever write full truecolor. To actually get 1-byte-per-pixel output
+  // this builds the PNG file directly: signature + IHDR (color type 3) +
+  // PLTE (the palette) + IDAT (the indices, DEFLATE-compressed via the
+  // browser's native CompressionStream, no library needed) + IEND.
+  async function deflateBytes(bytes) {
+    const cs = new CompressionStream("deflate");
+    const writer = cs.writable.getWriter();
+    writer.write(bytes);
+    writer.close();
+    const chunks = [];
+    let total = 0;
+    const reader = cs.readable.getReader();
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value);
+      total += value.length;
+    }
+    const out = new Uint8Array(total);
+    let offset = 0;
+    for (const c of chunks) { out.set(c, offset); offset += c.length; }
+    return out;
+  }
+  const CRC_TABLE = (() => {
+    const t = new Uint32Array(256);
+    for (let n = 0; n < 256; n++) {
+      let c = n;
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+      t[n] = c >>> 0;
+    }
+    return t;
+  })();
+  function crc32(bytes) {
+    let c = 0xffffffff;
+    for (let i = 0; i < bytes.length; i++) c = CRC_TABLE[(c ^ bytes[i]) & 0xff] ^ (c >>> 8);
+    return (c ^ 0xffffffff) >>> 0;
+  }
+  function u32be(n) {
+    return new Uint8Array([(n >>> 24) & 255, (n >>> 16) & 255, (n >>> 8) & 255, n & 255]);
+  }
+  function pngChunk(type, data) {
+    const typeBytes = new Uint8Array(type.split("").map((c) => c.charCodeAt(0)));
+    const body = new Uint8Array(typeBytes.length + data.length);
+    body.set(typeBytes, 0);
+    body.set(data, typeBytes.length);
+    const crc = crc32(body);
+    const out = new Uint8Array(4 + body.length + 4);
+    out.set(u32be(data.length), 0);
+    out.set(body, 4);
+    out.set(u32be(crc), 4 + body.length);
+    return out;
+  }
+  function concatBytes(arrays) {
+    const total = arrays.reduce((s, a) => s + a.length, 0);
+    const out = new Uint8Array(total);
+    let offset = 0;
+    for (const a of arrays) { out.set(a, offset); offset += a.length; }
+    return out;
+  }
+  async function encodeIndexedPngBlob(indices, palette, w, h) {
+    const sig = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+    const ihdr = new Uint8Array(13);
+    new DataView(ihdr.buffer).setUint32(0, w);
+    new DataView(ihdr.buffer).setUint32(4, h);
+    ihdr[8] = 8; // bit depth
+    ihdr[9] = 3; // color type: indexed
+    const plte = new Uint8Array(palette.length * 3);
+    for (let i = 0; i < palette.length; i++) {
+      plte[i * 3] = palette[i][0]; plte[i * 3 + 1] = palette[i][1]; plte[i * 3 + 2] = palette[i][2];
+    }
+    // Raw scanlines, each prefixed with a filter-type byte (0/None: palette
+    // indices aren't smooth gradients, so predictive filtering doesn't
+    // help them the way it helps photographic truecolor data).
+    const raw = new Uint8Array(h * (w + 1));
+    for (let y = 0; y < h; y++) {
+      raw[y * (w + 1)] = 0;
+      raw.set(indices.subarray(y * w, y * w + w), y * (w + 1) + 1);
+    }
+    const idatData = await deflateBytes(raw);
+    const bytes = concatBytes([
+      sig,
+      pngChunk("IHDR", ihdr),
+      pngChunk("PLTE", plte),
+      pngChunk("IDAT", idatData),
+      pngChunk("IEND", new Uint8Array(0)),
+    ]);
+    return new Blob([bytes], { type: "image/png" });
+  }
+
+  // Palette sizes to walk through, largest (best quality) first. 8 is the
+  // floor: fewer colors than that looks posterized, matching the same
+  // "ugly but still an honest attempt" floor the JPEG path allows at
+  // quality 0.01.
+  const PNG_PALETTE_STEPS = [128, 64, 32, 16, 8];
+
   async function compressPng(img, targetBytes, allowResize) {
+    if (!allowResize) {
+      // No resizing: this is PNG's one real size lever. Try full color
+      // first (best quality, and plenty of PNGs, especially graphics and
+      // screenshots, are already small enough here), then walk the color
+      // palette down before admitting we can't hit the target.
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+      const fullColorBlob = await canvasToBlob(canvas, "image/png");
+      let best = { blob: fullColorBlob, width: img.width, height: img.height, resized: false };
+      if (fullColorBlob.size <= targetBytes) return best;
+
+      // The indexed-PNG path needs the Compression Streams API (broadly
+      // supported in current browsers, but feature-detected rather than
+      // assumed) and, for now, a fully opaque image: indexed PNGs only
+      // support one alpha value per palette entry via a tRNS chunk, not
+      // arbitrary per-pixel alpha, so an image with soft/varying
+      // transparency falls through to the JPEG-switch nudge instead, which
+      // is already offered whenever a PNG result misses its target.
+      if (typeof CompressionStream === "function") {
+        const imgData = ctx.getImageData(0, 0, img.width, img.height);
+        if (isFullyOpaque(imgData.data)) {
+          for (const k of PNG_PALETTE_STEPS) {
+            const palette = buildPalette(imgData.data, img.width, img.height, k);
+            const lut = buildLut(palette);
+            const indices = ditherToIndices(imgData.data, img.width, img.height, palette, lut);
+            const qBlob = await encodeIndexedPngBlob(indices, palette, img.width, img.height);
+            if (qBlob.size < best.blob.size) {
+              best = { blob: qBlob, width: img.width, height: img.height, resized: false };
+            }
+            if (qBlob.size <= targetBytes) return best;
+          }
+        }
+      }
+      return best;
+    }
+
+    // Resizing allowed: unchanged, a pure dimension search. Left as-is
+    // deliberately (per design: turning resizing on shouldn't change how
+    // that path behaves).
     let scale = 1.0;
     let last = null;
-    const maxAttempts = allowResize ? 20 : 1;
+    const maxAttempts = 20;
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
       const w = Math.max(1, Math.round(img.width * scale));
       const h = Math.max(1, Math.round(img.height * scale));
@@ -211,20 +501,40 @@
         return;
       }
 
-      const { blob, resized } = outcome;
+      // Hard floor: never hand back something bigger than what the user
+      // started with. If every lever we have (quality, palette reduction,
+      // resizing) still produces a result larger than the original file,
+      // that's not a compression result worth offering, fall back to the
+      // original file unchanged rather than a regression dressed up as
+      // "compressed."
+      let blob = outcome.blob;
+      let resized = outcome.resized;
+      let outW = outcome.width;
+      let outH = outcome.height;
+      const originalSize = currentFile ? currentFile.size : null;
+      const usedOriginalFallback = originalSize != null && blob.size > originalSize;
+      if (usedOriginalFallback) {
+        blob = currentFile;
+        resized = false;
+        outW = currentImg.width;
+        outH = currentImg.height;
+      }
+
       const url = URL.createObjectURL(blob);
       els.preview.src = url;
       els.preview.style.display = "block";
       if (els.previewHint) els.previewHint.style.display = "none";
 
       const ext = { jpeg: "jpg", webp: "webp", png: "png" }[outFormat];
-      const filename = `compressed_${els.size.value}${els.unit.value}.${ext}`;
+      const filename = usedOriginalFallback
+        ? currentFile.name
+        : `compressed_${els.size.value}${els.unit.value}.${ext}`;
       const withinTarget = blob.size <= target;
       const dimsNote = resized
         ? fmt(I18N.dims_resized || "resized to {w}×{h} (from {ow}×{oh})",
-            { w: outcome.width, h: outcome.height, ow: currentImg.width, oh: currentImg.height })
+            { w: outW, h: outH, ow: currentImg.width, oh: currentImg.height })
         : fmt(I18N.dims_original || "original {w}×{h} size",
-            { w: currentImg.width, h: currentImg.height });
+            { w: outW, h: outH });
 
       let statusLine;
       let state;
@@ -246,23 +556,17 @@
         state = "neutral";
       }
 
-      // PNG is lossless: there's no quality knob at all, so "the smallest
-      // size possible without resizing" is just whatever the original pixels
-      // losslessly encode to. For photos that's frequently *larger* than the
-      // source file (which was often already a lossy JPEG), so unlike the
-      // lossy formats, resizing isn't the highest-leverage fix here, a
-      // format switch almost always is. Also: calling a result that grew
-      // past the original "compressed successfully" is flatly misleading,
-      // so the headline itself changes for that case, not just the nudge.
-      const originalSize = currentFile ? currentFile.size : null;
-      const largerThanOriginal = originalSize != null && blob.size > originalSize;
-
+      // PNG is lossless: even with palette quantization, some source photos
+      // still won't shrink below their original (lossy) file size, that's
+      // the case the floor guard above just caught. Calling a result that
+      // never actually got smaller "compressed successfully" would be
+      // misleading, so the headline itself changes for that case, not just
+      // the nudge below it.
       let headlineKey, headlineVars = { size: formatBytes(blob.size), statusLine };
       if (withinTarget) {
         headlineKey = "result_success";
-      } else if (largerThanOriginal) {
+      } else if (usedOriginalFallback) {
         headlineKey = "result_no_gain";
-        headlineVars.origSize = formatBytes(originalSize);
       } else {
         headlineKey = "result_partial";
       }
@@ -270,7 +574,7 @@
         result_success: "<strong>Image compressed successfully.</strong> <strong>{size}</strong>. {statusLine}",
         result_partial: "<strong>Reduced as much as we could.</strong> <strong>{size}</strong>. {statusLine}",
         result_no_gain:
-          "<strong>Couldn't make this smaller than your original.</strong> This came out to <strong>{size}</strong>, larger than the original file ({origSize}). {statusLine}",
+          "<strong>Couldn't reduce this without making it bigger.</strong> We're giving you your original file unchanged, <strong>{size}</strong>. {statusLine}",
       };
 
       let nudgeHtml = "";

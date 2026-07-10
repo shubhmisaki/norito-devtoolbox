@@ -23,7 +23,7 @@ window.NORITO_I18N = {
     "switch_to_jpeg_retry_btn": "التبديل إلى JPEG وإعادة الضغط",
     "result_success": "<strong>تم ضغط الصورة بنجاح.</strong> الحجم <strong>{size}</strong>. {statusLine}",
     "result_partial": "<strong>تم التقليل بأقصى ما يمكن.</strong> الحجم <strong>{size}</strong>. {statusLine}",
-    "result_no_gain": "<strong>تعذّر جعل الحجم أصغر من الأصل.</strong> نتج عن هذا حجم <strong>{size}</strong>، أكبر من الملف الأصلي ({origSize}). {statusLine}",
+    "result_no_gain": "<strong>تعذّر التقليل دون زيادة الحجم.</strong> نعطيك ملفك الأصلي دون تغيير، <strong>{size}</strong>. {statusLine}",
     "download_button": "تحميل {filename}",
     "err_generic": "<strong>تعذّر ضغط هذه الصورة.</strong> {msg}. جرّب صورة أخرى، أو غيّر الصيغة وحاول مجددًا.",
     "btn_compress_default": "ضغط إلى الحجم المستهدف"

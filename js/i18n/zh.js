@@ -23,7 +23,7 @@ window.NORITO_I18N = {
     "switch_to_jpeg_retry_btn": "切换到 JPEG 并重新压缩",
     "result_success": "<strong>图片压缩成功。</strong> 大小为 <strong>{size}</strong>。{statusLine}",
     "result_partial": "<strong>已尽可能缩小。</strong> 大小为 <strong>{size}</strong>。{statusLine}",
-    "result_no_gain": "<strong>无法压缩到比原文件更小。</strong> 生成的文件为 <strong>{size}</strong>,比原文件({origSize})还大。{statusLine}",
+    "result_no_gain": "<strong>无法在不增大体积的情况下压缩。</strong> 我们为你保留了未经改动的原文件,<strong>{size}</strong>。{statusLine}",
     "download_button": "下载 {filename}",
     "err_generic": "<strong>无法压缩该图片。</strong>{msg}。请尝试其他图片,或更换格式后重试。",
     "btn_compress_default": "压缩到目标大小"

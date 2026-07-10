@@ -23,7 +23,7 @@ window.NORITO_I18N = {
     "switch_to_jpeg_retry_btn": "Cambiar a JPEG y comprimir de nuevo",
     "result_success": "<strong>Imagen comprimida correctamente.</strong> <strong>{size}</strong>. {statusLine}",
     "result_partial": "<strong>Se redujo todo lo posible.</strong> <strong>{size}</strong>. {statusLine}",
-    "result_no_gain": "<strong>No se pudo reducir por debajo del original.</strong> Este archivo quedó en <strong>{size}</strong>, más grande que el original ({origSize}). {statusLine}",
+    "result_no_gain": "<strong>No se pudo reducir sin hacerlo más grande.</strong> Te damos tu archivo original sin cambios, <strong>{size}</strong>. {statusLine}",
     "download_button": "Descargar {filename}",
     "err_generic": "<strong>No se pudo comprimir esa imagen.</strong> {msg}. Prueba con otra imagen, o cambia el formato e inténtalo de nuevo.",
     "btn_compress_default": "Comprimir al objetivo"
