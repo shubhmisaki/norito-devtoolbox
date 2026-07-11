@@ -3,26 +3,33 @@
   const blobs = document.querySelectorAll(".bg-blobs .blob");
   if (!blobs.length || reduceMotion) return;
 
-  const strength = [16, -12, 22];
-  let ticking = false;
-  let lastX = 0, lastY = 0;
+  // mouse parallax (existing behavior) layered with a slow, continuous
+  // ambient drift per blob so the background feels alive even when the
+  // user isn't moving the cursor, similar to Stripe's animated gradient mesh.
+  const parallaxStrength = [16, -12, 22];
+  const driftAmp = [14, 18, 10];
+  const driftFreq = [0.00011, 0.00008, 0.00014];
+  const driftPhase = [0, 2.1, 4.2];
+
+  let mouseX = 0, mouseY = 0;
 
   function onMove(e) {
-    lastX = (e.clientX / window.innerWidth) * 2 - 1;
-    lastY = (e.clientY / window.innerHeight) * 2 - 1;
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(apply);
-    }
+    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouseY = (e.clientY / window.innerHeight) * 2 - 1;
   }
-
-  function apply() {
-    blobs.forEach((blob, i) => {
-      const s = strength[i % strength.length];
-      blob.style.transform = `translate(${lastX * s}px, ${lastY * s}px)`;
-    });
-    ticking = false;
-  }
-
   window.addEventListener("mousemove", onMove, { passive: true });
+
+  function frame(t) {
+    blobs.forEach((blob, i) => {
+      const p = parallaxStrength[i % parallaxStrength.length];
+      const amp = driftAmp[i % driftAmp.length];
+      const freq = driftFreq[i % driftFreq.length];
+      const phase = driftPhase[i % driftPhase.length];
+      const driftX = Math.sin(t * freq + phase) * amp;
+      const driftY = Math.cos(t * freq * 1.3 + phase) * amp;
+      blob.style.transform = `translate(${mouseX * p + driftX}px, ${mouseY * p + driftY}px)`;
+    });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();

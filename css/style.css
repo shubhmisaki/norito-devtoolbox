@@ -1003,11 +1003,13 @@ footer.site a:hover { color: var(--primary); }
 .bg-blobs .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
+  filter: blur(85px);
   opacity: 0.4;
   will-change: transform;
   transition: transform 1.2s cubic-bezier(0.2, 0, 0, 1);
 }
+/* each blob layers two offset radial gradients instead of one flat circle,
+   Stripe-style mesh blending rather than a single-hue glow */
 .bg-blobs .blob-1 {
   top: -12%;
   left: -8%;
@@ -1015,7 +1017,9 @@ footer.site a:hover { color: var(--primary); }
   height: 46vw;
   max-width: 620px;
   max-height: 620px;
-  background: radial-gradient(circle, #ffd5da 0%, #fff0f1 55%, transparent 75%);
+  background:
+    radial-gradient(circle at 35% 30%, #ffd5da 0%, transparent 62%),
+    radial-gradient(circle at 65% 70%, #ffe9c2 0%, transparent 65%);
 }
 .bg-blobs .blob-2 {
   bottom: -18%;
@@ -1024,7 +1028,9 @@ footer.site a:hover { color: var(--primary); }
   height: 40vw;
   max-width: 540px;
   max-height: 540px;
-  background: radial-gradient(circle, #fea9bf 0%, #ffe3ea 55%, transparent 75%);
+  background:
+    radial-gradient(circle at 40% 35%, #fea9bf 0%, transparent 62%),
+    radial-gradient(circle at 65% 65%, #d8c9fb 0%, transparent 65%);
 }
 .bg-blobs .blob-3 {
   top: 30%;
@@ -1033,8 +1039,10 @@ footer.site a:hover { color: var(--primary); }
   height: 24vw;
   max-width: 320px;
   max-height: 320px;
-  background: radial-gradient(circle, #ffe1cf 0%, transparent 70%);
-  opacity: 0.3;
+  background:
+    radial-gradient(circle at 40% 40%, #ffe1cf 0%, transparent 60%),
+    radial-gradient(circle at 65% 60%, #c8f3e6 0%, transparent 65%);
+  opacity: 0.32;
 }
 @media (prefers-reduced-motion: reduce) {
   .bg-blobs .blob { transition: none; }
@@ -1046,14 +1054,33 @@ footer.site a:hover { color: var(--primary); }
   opacity: 0.22;
 }
 :root[data-theme="dark"] .bg-blobs .blob-1 {
-  background: radial-gradient(circle, #5c2c3a 0%, #2e1e26 55%, transparent 75%);
+  background:
+    radial-gradient(circle at 35% 30%, #5c2c3a 0%, transparent 62%),
+    radial-gradient(circle at 65% 70%, #4a3a1f 0%, transparent 65%);
 }
 :root[data-theme="dark"] .bg-blobs .blob-2 {
-  background: radial-gradient(circle, #4a2230 0%, #2e1a22 55%, transparent 75%);
+  background:
+    radial-gradient(circle at 40% 35%, #4a2230 0%, transparent 62%),
+    radial-gradient(circle at 65% 65%, #2e2650 0%, transparent 65%);
 }
 :root[data-theme="dark"] .bg-blobs .blob-3 {
-  background: radial-gradient(circle, #4a2f22 0%, transparent 70%);
+  background:
+    radial-gradient(circle at 40% 40%, #4a2f22 0%, transparent 60%),
+    radial-gradient(circle at 65% 60%, #1c3830 0%, transparent 65%);
 }
+
+/* subtle film-grain overlay for a matte, non-flat finish (Stripe/Linear-style
+   texture on top of the gradient mesh). Pure CSS, no markup or asset needed. */
+.bg-blobs::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+:root[data-theme="dark"] .bg-blobs::after { opacity: 0.05; }
 
 /* ---------- toggle switches ---------- */
 .option-row {
@@ -1608,36 +1635,6 @@ textarea.md-source {
   border-color: color-mix(in srgb, var(--glow, var(--primary)) 45%, var(--border));
 }
 
-/* ---------- bento-style featured card ----------
-   One flagship tool per grid gets a wider tile with a soft accent wash and
-   a decorative corner glow, so the grid reads as designed rather than a
-   uniform repeated component. */
-.grid-cards-dense { grid-auto-flow: dense; }
-.card.featured {
-  grid-column: span 2;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--surface) 0%, color-mix(in srgb, var(--glow, var(--teal)) 10%, var(--surface)) 100%);
-}
-.card.featured::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, var(--teal) 0%, transparent 70%);
-  opacity: 0.16;
-  border-radius: 50%;
-  pointer-events: none;
-}
-.card.featured .icon-chip { width: 52px; height: 52px; }
-.card.featured .icon-chip svg { width: 26px; height: 26px; }
-.card.featured h3 { font-size: 1.15rem; }
-@media (max-width: 680px) {
-  .card.featured { grid-column: span 1; }
-}
-
 /* ---------- header search trigger (opens the Cmd+K palette) ---------- */
 .search-trigger {
   display: flex;
@@ -1680,11 +1677,12 @@ textarea.md-source {
   z-index: 300;
   background: color-mix(in srgb, var(--n-900) 45%, transparent);
   backdrop-filter: blur(2px);
-  display: flex;
   align-items: flex-start;
   justify-content: center;
   padding: 12vh 20px 20px;
 }
+.cmdk-overlay[hidden] { display: none; }
+.cmdk-overlay:not([hidden]) { display: flex; }
 .cmdk-modal {
   width: 100%;
   max-width: 560px;
