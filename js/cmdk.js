@@ -1,31 +1,39 @@
 (function () {
-  var TOOLS = [
-    { name: "Test File Generator", desc: "Byte-exact dummy files, any size", href: "test-file-generator.html", cat: "Files & images" },
-    { name: "Compress Image to Size", desc: "Shrink to a target file size", href: "compress-image.html", cat: "Files & images" },
-    { name: "Placeholder Image Generator", desc: "Custom-size placeholder images", href: "placeholder-generator.html", cat: "Files & images" },
-    { name: "Remove Background", desc: "Cut a person out of a photo", href: "remove-background.html", cat: "Files & images" },
-    { name: "QR Code Generator", desc: "Custom colors, error correction", href: "qr-code-generator.html", cat: "Files & images" },
-    { name: "Password Generator", desc: "Random passwords & passphrases", href: "password-generator.html", cat: "Text & dev" },
-    { name: "SEO Slug Generator", desc: "Clean URL slugs from titles", href: "seo-slug-generator.html", cat: "Text & dev" },
-    { name: "Limited Text Generator", desc: "Placeholder text, exact length", href: "limited-text-generator.html", cat: "Text & dev" },
-    { name: "JSON Formatter", desc: "Format, validate, minify", href: "json-formatter.html", cat: "Text & dev" },
-    { name: "Markdown Editor", desc: "Live preview, export as .md/.html", href: "markdown-editor.html", cat: "Text & dev" }
-  ];
-
   var overlay = document.getElementById("cmdkOverlay");
   var input = document.getElementById("cmdkInput");
   var results = document.getElementById("cmdkResults");
   var trigger = document.getElementById("searchTrigger");
   if (!overlay || !input || !results) return;
 
+  // Tool list is derived from the header's own nav-panel links (already
+  // localized per page) instead of being hardcoded, so this one file works
+  // correctly on every locale and stays in sync if tools are ever added.
+  function buildTools() {
+    var tools = [];
+    document.querySelectorAll(".nav-group").forEach(function (group) {
+      var catBtn = group.querySelector(".nav-cat");
+      var cat = catBtn ? catBtn.textContent.trim() : "";
+      group.querySelectorAll(".nav-panel a").forEach(function (a) {
+        var body = a.querySelector(".nav-link-body");
+        if (!body) return;
+        var span = body.querySelector("span");
+        var desc = span ? span.textContent.trim() : "";
+        var name = body.textContent.replace(desc, "").trim();
+        tools.push({ name: name, desc: desc, href: a.getAttribute("href"), cat: cat });
+      });
+    });
+    return tools;
+  }
+
+  var TOOLS = buildTools();
   var activeIndex = 0;
-  var currentList = TOOLS;
+
+  var emptyText = overlay.getAttribute("data-empty-text") || "No tools match that search.";
 
   function render(list) {
-    currentList = list;
     activeIndex = 0;
     if (!list.length) {
-      results.innerHTML = '<div class="cmdk-empty">No tools match that search.</div>';
+      results.innerHTML = '<div class="cmdk-empty">' + emptyText + "</div>";
       return;
     }
     results.innerHTML = list
@@ -51,6 +59,7 @@
   }
 
   function open() {
+    TOOLS = buildTools();
     overlay.hidden = false;
     document.body.classList.add("nav-open-lock");
     input.value = "";

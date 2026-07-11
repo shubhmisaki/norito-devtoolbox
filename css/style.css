@@ -54,6 +54,15 @@
   --text-secondary: var(--n-100);
   --text-muted: var(--n-80);
 
+  /* footer: deliberately dark in both themes (not theme-swapped), like a
+     lot of SaaS sites use a dark footer band regardless of page theme, so
+     it always reads as a distinct closing section rather than blending
+     into --bg-subtle. */
+  --footer-bg: #2a2029;
+  --footer-text: #cbb9c0;
+  --footer-text-strong: #f5eef0;
+  --footer-border: rgba(255, 255, 255, 0.1);
+
   /* scale */
   --radius-sm: 8px;
   --radius-md: 10px;
@@ -131,6 +140,13 @@
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 8px 20px -6px rgba(255, 102, 144, 0.28), 0 0 1px rgba(0, 0, 0, 0.4);
+
+  /* darker than the page itself so the footer still reads as a distinct
+     band even when the whole site is already dark */
+  --footer-bg: #100b0d;
+  --footer-text: #9c8890;
+  --footer-text-strong: #f5eef0;
+  --footer-border: rgba(255, 255, 255, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -860,11 +876,11 @@ img.preview {
 
 /* ---------- footer ---------- */
 footer.site {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--footer-border);
   padding: 44px 0 24px;
-  color: var(--text-muted);
+  color: var(--footer-text);
   font-size: 0.85rem;
-  background: var(--bg-subtle);
+  background: var(--footer-bg);
 }
 .footer-grid {
   display: grid;
@@ -875,7 +891,7 @@ footer.site {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.15rem;
-  color: var(--text);
+  color: var(--footer-text-strong);
   margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
@@ -883,30 +899,30 @@ footer.site {
   margin: 0;
   line-height: 1.55;
   max-width: 320px;
-  color: var(--text-muted);
+  color: var(--footer-text);
 }
 .footer-col h4 {
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text);
+  color: var(--footer-text-strong);
   margin: 0 0 14px;
 }
 .footer-col { display: flex; flex-direction: column; gap: 9px; }
-footer.site a { color: var(--text-muted); }
+footer.site a { color: var(--footer-text); }
 footer.site a:hover { color: var(--primary); }
 .footer-bottom {
   margin-top: 32px;
   padding-top: 20px;
-  border-top: 1px solid var(--border-strong);
+  border-top: 1px solid var(--footer-border);
   font-size: 0.78rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
 }
-.footer-bottom a { color: var(--text-muted); }
+.footer-bottom a { color: var(--footer-text); }
 .footer-bottom a:hover { color: var(--primary); }
 
 /* ---------- tool page visual anchor (icon badge beside title) ---------- */
