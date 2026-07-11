@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -85,6 +86,11 @@
         </div>
       </div>
     </nav>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
       <div class="lang-switch" id="langSwitch">
         <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -222,6 +228,37 @@
         </a>
       </div>
     </div>
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>هل بياناتي آمنة؟</summary>
+        <p>نعم. تعمل كل أداة بالكامل داخل متصفحك باستخدام جافاسكريبت، وتتم معالجة الملفات
+          والنصوص التي تتعامل معها على جهازك ولا تُرفع إلى أي مكان أبدًا. يمكنك التحقق من ذلك
+          بنفسك: افتح تبويب الشبكة (Network) في متصفحك أثناء استخدام أي أداة، ولن ترى ملفك
+          يغادر جهازك.</p>
+      </details>
+      <details class="faq-item">
+        <summary>لماذا norito مجاني؟</summary>
+        <p>الإعلانات (عبر Google AdSense) تغطي تكاليف الاستضافة. لا توجد خطة مدفوعة، ولا نية
+          لوضع أي أداة خلف جدار دفع.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تحتفظون بملفاتي أو تطّلعون عليها؟</summary>
+        <p>لا. لا يوجد أي مكوّن خادم خلف هذه الأدوات، لذا لا توجد وسيلة من جانبنا لحفظ أو تسجيل
+          أو حتى رؤية ما تقوم برفعه.</p>
+      </details>
+      <details class="faq-item">
+        <summary>ماذا يحدث عند إغلاق التبويب؟</summary>
+        <p>يختفي كل شيء. لا يُحفظ شيء سوى بعض تفضيلات الواجهة، مثل صيغة الإخراج التي استخدمتها
+          آخر مرة، والمخزّنة في التخزين المحلي لمتصفحك، والتي لا تغادر جهازك أيضًا.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تستخدمون ملفات تعريف الارتباط (كوكيز)؟</summary>
+        <p>لا يستخدم كود norito نفسه أي كوكيز. قد يضع Google AdSense كوكيز إعلانية، والتفاصيل
+          موجودة في <a href="privacy.html">سياسة الخصوصية</a>.</p>
+      </details>
+    </div>
   </div>
 </main>
 
@@ -249,11 +286,15 @@
         <a href="markdown-editor.html">Markdown</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 norito. جميع الأدوات تعمل محليًا داخل متصفحك.</div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. جميع الأدوات تعمل محليًا داخل متصفحك.</span>
+      <a href="privacy.html">سياسة الخصوصية</a>
+    </div>
   </div>
 </footer>
 
 <script src="../js/nav.js"></script>
+<script src="../js/theme-toggle.js"></script>
 <script src="../js/lang-switcher.js"></script>
 <script src="../js/bg-blobs.js"></script>
 <script src="../js/scroll-reveal.js"></script>

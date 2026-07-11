@@ -2,6 +2,7 @@
 <html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -85,6 +86,11 @@
         </div>
       </div>
     </nav>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
       <div class="lang-switch" id="langSwitch">
         <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -222,6 +228,38 @@
         </a>
       </div>
     </div>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Mis datos están seguros?</summary>
+        <p>Sí. Cada herramienta funciona por completo en tu navegador usando JavaScript, los
+          archivos y textos con los que trabajas se procesan en tu dispositivo y nunca se suben
+          a ningún sitio. Puedes comprobarlo tú mismo: abre la pestaña de red de tu navegador
+          mientras usas cualquier herramienta y no verás que tu archivo salga de tu equipo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Por qué es gratis norito?</summary>
+        <p>Los anuncios (a través de Google AdSense) cubren los costos de alojamiento. No hay
+          plan premium, ni intención de poner ninguna herramienta detrás de un muro de pago.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Guardan o ven mis archivos?</summary>
+        <p>No. No hay ningún componente de servidor detrás de las herramientas, así que no hay
+          nada de nuestro lado que pueda guardar, registrar o siquiera ver lo que subes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa cuando cierro la pestaña?</summary>
+        <p>Todo desaparece. No se guarda nada salvo algunas preferencias de interfaz, como tu
+          último formato de salida usado, almacenadas en el almacenamiento local de tu
+          navegador, que tampoco sale nunca de tu dispositivo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Usan cookies?</summary>
+        <p>El código propio de norito no las usa. Google AdSense puede establecer cookies
+          publicitarias, los detalles están en la <a href="privacy.html">Política de privacidad</a>.</p>
+      </details>
+    </div>
   </div>
 </main>
 
@@ -249,11 +287,15 @@
         <a href="markdown-editor.html">Markdown</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 norito. Todas las herramientas funcionan localmente en tu navegador.</div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. Todas las herramientas funcionan localmente en tu navegador.</span>
+      <a href="privacy.html">Política de privacidad</a>
+    </div>
   </div>
 </footer>
 
 <script src="../js/nav.js"></script>
+<script src="../js/theme-toggle.js"></script>
 <script src="../js/lang-switcher.js"></script>
 <script src="../js/bg-blobs.js"></script>
 <script src="../js/scroll-reveal.js"></script>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -96,6 +97,11 @@
         </div>
       </div>
     </nav>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
       <div class="lang-switch" id="langSwitch">
         <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -108,12 +114,17 @@
 
 <main>
   <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></div>
+    <div class="tool-hero-text">
     <p class="breadcrumb"><a href="index.html">norito</a> / SEO Slug Generator</p>
     <h1>SEO Slug Generator</h1>
     <p class="lede">
       Paste a title, get a clean URL slug back live as you type. Accents stripped, stopwords
       trimmed, separators your way. Switch to batch mode to slug a whole list of titles at once.
     </p>
+    </div>
+  </div>
 
     <div class="two-col">
       <div class="panel">
@@ -257,13 +268,17 @@ Café Culture: A Traveler's Guide to Europe</textarea>
         <a href="markdown-editor.html">Markdown</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 norito. All tools run locally in your browser.</div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. All tools run locally in your browser.</span>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
   </div>
 </footer>
 
 <script src="js/i18n-runtime.js"></script>
 <script src="js/app-slug.js"></script>
 <script src="js/nav.js"></script>
+<script src="js/theme-toggle.js"></script>
 <script src="js/lang-switcher.js"></script>
 <script src="js/bg-blobs.js"></script>
 </body>

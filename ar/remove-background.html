@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -97,6 +98,11 @@
         </div>
       </div>
     </nav>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
       <div class="lang-switch" id="langSwitch">
         <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -109,11 +115,16 @@
 
 <main>
   <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
+    <div class="tool-hero-text">
     <p class="breadcrumb"><a href="index.html">norito</a> / إزالة الخلفية</p>
     <h1>إزالة الخلفية</h1>
     <p class="lede">
       قصّ شخصًا من صورة، بالكامل داخل متصفحك. لا تغادر الصورة جهازك أبدًا. تعمل الأداة بنموذج تجزئة خفيف ومفتوح المصدر، لذا تعطي أفضل النتائج عندما يكون الشخص هو الموضوع الرئيسي بوضوح.
     </p>
+    </div>
+  </div>
     <div class="result-box" style="margin-bottom:28px;">
       <span class="r-body">
         <strong>تنبيه:</strong> تستخدم هذه الأداة نموذجًا صغيرًا (نحو 5.5 ميغابايت) مخصصًا للأشخاص، وليس للأجسام أو المنتجات العامة. الصور الشخصية والسيلفي تعطي أفضل النتائج. يُحمَّل النموذج مرة واحدة فقط في كل جلسة متصفح، ثم يبقى محفوظًا مؤقتًا.
@@ -207,7 +218,10 @@
         <a href="markdown-editor.html">Markdown</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 norito. جميع الأدوات تعمل محليًا داخل متصفحك.</div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. جميع الأدوات تعمل محليًا داخل متصفحك.</span>
+      <a href="privacy.html">سياسة الخصوصية</a>
+    </div>
   </div>
 </footer>
 
@@ -215,6 +229,7 @@
 <script src="../js/vendor/mediapipe/selfie_segmentation.js"></script>
 <script src="../js/app-removebg.js"></script>
 <script src="../js/nav.js"></script>
+<script src="../js/theme-toggle.js"></script>
 <script src="../js/lang-switcher.js"></script>
 <script src="../js/bg-blobs.js"></script>
 </body>

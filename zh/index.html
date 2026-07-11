@@ -2,6 +2,7 @@
 <html lang="zh-Hans" dir="ltr">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -85,6 +86,11 @@
         </div>
       </div>
     </nav>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
       <div class="lang-switch" id="langSwitch">
         <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -222,6 +228,30 @@
         </a>
       </div>
     </div>
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>我的数据安全吗？</summary>
+        <p>安全。每个工具都完全在你的浏览器中通过 JavaScript 运行，你处理的文件和文本都在你的设备上完成处理，绝不会上传到任何地方。你可以自己验证：在使用任意工具时打开浏览器的网络（Network）面板，你不会看到文件离开你的设备。</p>
+      </details>
+      <details class="faq-item">
+        <summary>norito 为什么是免费的？</summary>
+        <p>广告（通过 Google AdSense）覆盖了托管成本。没有付费版本，也没有计划将任何工具设为付费。</p>
+      </details>
+      <details class="faq-item">
+        <summary>你们会保存或查看我的文件吗？</summary>
+        <p>不会。这些工具背后没有任何服务器组件，所以我们这边没有任何途径可以保存、记录甚至查看你上传的内容。</p>
+      </details>
+      <details class="faq-item">
+        <summary>关闭标签页后会发生什么？</summary>
+        <p>一切都会消失。除了保存在浏览器本地存储中的少量界面偏好设置（例如你上次使用的输出格式）外，不会保留任何内容，而这些设置同样不会离开你的设备。</p>
+      </details>
+      <details class="faq-item">
+        <summary>你们使用 Cookie 吗？</summary>
+        <p>norito 自身的代码不使用 Cookie。Google AdSense 可能会设置广告相关的 Cookie，详情见<a href="privacy.html">隐私政策</a>。</p>
+      </details>
+    </div>
   </div>
 </main>
 
@@ -249,11 +279,15 @@
         <a href="markdown-editor.html">Markdown</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 norito。所有工具均在本地浏览器中运行。</div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito。所有工具均在本地浏览器中运行。</span>
+      <a href="privacy.html">隐私政策</a>
+    </div>
   </div>
 </footer>
 
 <script src="../js/nav.js"></script>
+<script src="../js/theme-toggle.js"></script>
 <script src="../js/lang-switcher.js"></script>
 <script src="../js/bg-blobs.js"></script>
 <script src="../js/scroll-reveal.js"></script>
