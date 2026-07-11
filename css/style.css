@@ -139,10 +139,17 @@
   html { scroll-behavior: smooth; }
 }
 
+/* background lives on html only, not body: when both set an explicit
+   background, body's paints as a normal in-flow box *after* negative
+   z-index descendants, which was burying the fixed z-index:-1 gradient
+   blobs underneath it. html-only lets its background act as the canvas,
+   painted before the blobs, so they show through as intended. */
+html {
+  background: var(--bg);
+}
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.5;
@@ -1003,13 +1010,14 @@ footer.site a:hover { color: var(--primary); }
 .bg-blobs .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(85px);
-  opacity: 0.4;
+  filter: blur(64px);
+  opacity: 0.55;
   will-change: transform;
   transition: transform 1.2s cubic-bezier(0.2, 0, 0, 1);
 }
-/* each blob layers two offset radial gradients instead of one flat circle,
-   Stripe-style mesh blending rather than a single-hue glow */
+/* each blob layers two offset radial gradients in full-strength brand hues
+   (not the pre-diluted -bg pastel tokens) so the mesh actually reads against
+   the page background instead of blurring away into it */
 .bg-blobs .blob-1 {
   top: -12%;
   left: -8%;
@@ -1018,8 +1026,8 @@ footer.site a:hover { color: var(--primary); }
   max-width: 620px;
   max-height: 620px;
   background:
-    radial-gradient(circle at 35% 30%, #ffd5da 0%, transparent 62%),
-    radial-gradient(circle at 65% 70%, #ffe9c2 0%, transparent 65%);
+    radial-gradient(circle at 35% 30%, #ff8fa8 0%, transparent 60%),
+    radial-gradient(circle at 65% 70%, #ffcf7a 0%, transparent 62%);
 }
 .bg-blobs .blob-2 {
   bottom: -18%;
@@ -1029,8 +1037,9 @@ footer.site a:hover { color: var(--primary); }
   max-width: 540px;
   max-height: 540px;
   background:
-    radial-gradient(circle at 40% 35%, #fea9bf 0%, transparent 62%),
-    radial-gradient(circle at 65% 65%, #d8c9fb 0%, transparent 65%);
+    radial-gradient(circle at 40% 35%, #ff9fb8 0%, transparent 60%),
+    radial-gradient(circle at 65% 65%, #b3a3f2 0%, transparent 62%);
+  opacity: 0.5;
 }
 .bg-blobs .blob-3 {
   top: 30%;
@@ -1040,9 +1049,9 @@ footer.site a:hover { color: var(--primary); }
   max-width: 320px;
   max-height: 320px;
   background:
-    radial-gradient(circle at 40% 40%, #ffe1cf 0%, transparent 60%),
-    radial-gradient(circle at 65% 60%, #c8f3e6 0%, transparent 65%);
-  opacity: 0.32;
+    radial-gradient(circle at 40% 40%, #ffb38a 0%, transparent 58%),
+    radial-gradient(circle at 65% 60%, #6be0c0 0%, transparent 60%);
+  opacity: 0.42;
 }
 @media (prefers-reduced-motion: reduce) {
   .bg-blobs .blob { transition: none; }
@@ -1051,22 +1060,24 @@ footer.site a:hover { color: var(--primary); }
   .bg-blobs .blob-3 { display: none; }
 }
 :root[data-theme="dark"] .bg-blobs .blob {
-  opacity: 0.22;
+  opacity: 0.32;
 }
 :root[data-theme="dark"] .bg-blobs .blob-1 {
   background:
-    radial-gradient(circle at 35% 30%, #5c2c3a 0%, transparent 62%),
-    radial-gradient(circle at 65% 70%, #4a3a1f 0%, transparent 65%);
+    radial-gradient(circle at 35% 30%, #ff6690 0%, transparent 60%),
+    radial-gradient(circle at 65% 70%, #ffc157 0%, transparent 62%);
 }
 :root[data-theme="dark"] .bg-blobs .blob-2 {
   background:
-    radial-gradient(circle at 40% 35%, #4a2230 0%, transparent 62%),
-    radial-gradient(circle at 65% 65%, #2e2650 0%, transparent 65%);
+    radial-gradient(circle at 40% 35%, #ff89a8 0%, transparent 60%),
+    radial-gradient(circle at 65% 65%, #a89cf0 0%, transparent 62%);
+  opacity: 0.28;
 }
 :root[data-theme="dark"] .bg-blobs .blob-3 {
   background:
-    radial-gradient(circle at 40% 40%, #4a2f22 0%, transparent 60%),
-    radial-gradient(circle at 65% 60%, #1c3830 0%, transparent 65%);
+    radial-gradient(circle at 40% 40%, #ffa373 0%, transparent 58%),
+    radial-gradient(circle at 65% 60%, #3fd9b3 0%, transparent 60%);
+  opacity: 0.24;
 }
 
 /* subtle film-grain overlay for a matte, non-flat finish (Stripe/Linear-style
