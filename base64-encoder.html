@@ -50,6 +50,30 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Base64 used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Base64 turns arbitrary bytes into a string using only letters, digits, +, and /, safe to embed in JSON, URLs, or email where raw binary would break. It's not encryption: anyone can decode it back instantly, so it doesn't hide or protect anything on its own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the URL-safe Base64 variant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard Base64's + and / characters have special meaning in URLs. The URL-safe variant swaps them for - and _ and drops the trailing = padding, so the result can go straight into a query string or file name."
+      }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>

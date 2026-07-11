@@ -50,6 +50,30 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's a Unix timestamp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Unix epoch is midnight UTC on January 1, 1970. A timestamp is just the number of seconds (or milliseconds) since then, which is why it sorts and compares as a plain number, unlike a formatted date string."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between seconds and milliseconds timestamps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unix, Linux, and most backend APIs use seconds. JavaScript's own Date.now() and most frontend code use milliseconds. Mixing the two up is one of the most common timestamp bugs, a \"seconds\" value pasted into a \"milliseconds\" field lands somewhere in 1970."
+      }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>

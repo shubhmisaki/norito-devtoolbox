@@ -50,6 +50,30 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which hash algorithm should I use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SHA-256 is the safe general-purpose default for checksums and integrity checks. MD5 and SHA-1 are both cryptographically broken (collisions are practical to construct), fine for checking a file didn't get corrupted in transit, not fine for anything security-sensitive like password storage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these hashes to store passwords?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. None of these algorithms should be used to store passwords, they're deliberately fast, which is exactly wrong for that job. Password storage needs a slow, purpose-built algorithm like bcrypt, scrypt, or Argon2 instead."
+      }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>

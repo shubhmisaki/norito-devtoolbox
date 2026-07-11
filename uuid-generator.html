@@ -50,6 +50,30 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's a UUID v4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A UUID v4 is 122 random bits (the other 6 are fixed to mark the version and variant), giving roughly 5.3 undecillion possible values. Collisions are so unlikely they're not a practical concern for database primary keys, request IDs, or file names."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are UUIDs commonly used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Database primary keys that don't leak row counts, idempotency keys for API requests, correlation IDs for tracing logs across services, and unique file or session names that won't collide even generated on different machines at the same time."
+      }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
