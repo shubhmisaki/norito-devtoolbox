@@ -402,6 +402,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/markdown-editor.html" />
   </url>
   <url>
+    <loc>https://norito.in/uuid-generator.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://norito.in/uuid-generator.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/uuid-generator.html" />
+  </url>
+  <url>
+    <loc>https://norito.in/base64-encoder.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://norito.in/base64-encoder.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/base64-encoder.html" />
+  </url>
+  <url>
+    <loc>https://norito.in/hash-generator.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://norito.in/hash-generator.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/hash-generator.html" />
+  </url>
+  <url>
+    <loc>https://norito.in/timestamp-converter.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://norito.in/timestamp-converter.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/timestamp-converter.html" />
+  </url>
+  <url>
     <loc>https://norito.in/remove-background.html</loc>
     <lastmod>2026-07-10</lastmod>
     <priority>0.8</priority>
