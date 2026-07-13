@@ -19,3 +19,11 @@
   Installed via `npm install pdf-lib` and copied from `dist/pdf-lib.min.js`, unmodified. UMD
   build, exposes a global `PDFLib` object. Used by the PDF tools suite (merge, split, rotate,
   etc.) to create/modify PDFs entirely client-side, nothing uploaded.
+
+- `pdfjs/`: pdf.js (pdfjs-dist) v6.1.200, Apache 2.0 license (see `pdfjs/pdfjs.LICENSE`).
+  https://github.com/mozilla/pdf.js
+  Installed via `npm install pdfjs-dist` and copied from `legacy/build/pdf.min.mjs` and
+  `legacy/build/pdf.worker.min.mjs`, unmodified. ES module build (no UMD build is published as
+  of v4+), so it's loaded via `<script type="module">` and imported directly rather than as a
+  plain global like the other vendored libs. Used to rasterize PDF pages to images (PDF to
+  JPG/PNG). The "legacy" build is used over the standard one for broader browser compatibility.
