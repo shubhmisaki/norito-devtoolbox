@@ -1277,6 +1277,38 @@ textarea.mono-area:focus { outline: none; border-color: var(--primary); box-shad
 }
 .tabs button.tab.active:hover { background: var(--surface); }
 
+/* ---------- signature pad (Sign PDF) ---------- */
+.sig-pad-wrap {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.sig-pad-wrap canvas {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: 180px;
+  touch-action: none;
+  cursor: crosshair;
+  background: var(--surface);
+}
+.sig-type-preview {
+  margin-top: 12px;
+  padding: 20px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-size: 2.2rem;
+  line-height: 1.2;
+  color: var(--text);
+  text-align: center;
+  word-break: break-word;
+}
+
 /* ---------- pill counter / progress ring ---------- */
 .count-pill {
   display: inline-flex;
