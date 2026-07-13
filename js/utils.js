@@ -103,11 +103,67 @@ function downloadBlob(blob, filename) {
   setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
+// ---- generic ZIP writer (STORE method, no compression) ----
+// Bundles multiple named byte arrays into one .zip. No compression is used
+// on purpose: the inputs here (split PDFs, etc.) are already dense, and
+// skipping DEFLATE keeps this dependency-free and easy to verify. Shares
+// the same box-format helpers as generateZip() in generators.js, just
+// generalized to any number of real entries instead of one padded one.
+function createZip(entries) {
+  const modTime = u16le(0x0000);
+  const modDate = u16le(0x0021); // arbitrary valid MS-DOS date
+  const localParts = [];
+  const centralParts = [];
+  let offset = 0;
+
+  entries.forEach(({ name, bytes }) => {
+    const nameBytes = textBytes(name);
+    const crc = crc32Final(bytes);
+    const size = bytes.length;
+
+    const localHeader = concatBytes([
+      u32le(0x04034b50),
+      u16le(20), u16le(0), u16le(0),
+      modTime, modDate,
+      u32le(crc), u32le(size), u32le(size),
+      u16le(nameBytes.length), u16le(0),
+      nameBytes,
+    ]);
+    const localEntry = concatBytes([localHeader, bytes]);
+    localParts.push(localEntry);
+
+    const centralHeader = concatBytes([
+      u32le(0x02014b50),
+      u16le(20), u16le(20), u16le(0), u16le(0),
+      modTime, modDate,
+      u32le(crc), u32le(size), u32le(size),
+      u16le(nameBytes.length), u16le(0), u16le(0),
+      u16le(0), u16le(0), u32le(0),
+      u32le(offset),
+      nameBytes,
+    ]);
+    centralParts.push(centralHeader);
+    offset += localEntry.length;
+  });
+
+  const localData = concatBytes(localParts);
+  const centralDir = concatBytes(centralParts);
+  const eocd = concatBytes([
+    u32le(0x06054b50),
+    u16le(0), u16le(0),
+    u16le(entries.length), u16le(entries.length),
+    u32le(centralDir.length),
+    u32le(localData.length),
+    u16le(0),
+  ]);
+  return concatBytes([localData, centralDir, eocd]);
+}
+
 // Export for both browser (globals) and Node (module.exports), so the same
 // file can be unit-tested headlessly.
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     crc32, crc32Final, concatBytes, u16le, u32le, u16be, u32be,
-    textBytes, randomBytes, parseSize, formatBytes,
+    textBytes, randomBytes, parseSize, formatBytes, createZip,
   };
 }
