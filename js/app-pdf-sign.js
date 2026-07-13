@@ -14,6 +14,7 @@
     pageSelect: document.getElementById("pageSelect"),
     positionSelect: document.getElementById("positionSelect"),
     sizeInput: document.getElementById("sizeInput"),
+    signAllPages: document.getElementById("signAllPages"),
     applyBtn: document.getElementById("applyBtn"),
     result: document.getElementById("result"),
   };
@@ -50,7 +51,7 @@
 
   // ---------- file load ----------
 
-  const CONTROLS = [els.pageSelect, els.positionSelect, els.sizeInput];
+  const CONTROLS = [els.pageSelect, els.positionSelect, els.sizeInput, els.signAllPages];
 
   function resetFileState() {
     currentFile = null;
@@ -91,6 +92,7 @@
       }
 
       CONTROLS.forEach((el) => { el.disabled = false; });
+      els.pageSelect.disabled = els.signAllPages.checked;
       els.sigText.disabled = sigMode !== "type";
       els.sigStyle.disabled = sigMode !== "type";
       els.applyBtn.disabled = false;
@@ -129,6 +131,10 @@
     if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
       loadFile(e.dataTransfer.files[0]);
     }
+  });
+
+  els.signAllPages.addEventListener("change", () => {
+    els.pageSelect.disabled = !currentBytes || els.signAllPages.checked;
   });
 
   // ---------- draw / type mode tabs ----------
@@ -203,9 +209,7 @@
 
   function updateTypePreview() {
     const text = els.sigText.value.trim() || "Your name";
-    const opt = els.sigStyle.options[els.sigStyle.selectedIndex];
     els.sigPreview.style.fontFamily = els.sigStyle.value;
-    els.sigPreview.style.fontStyle = opt && opt.dataset.italic ? "italic" : "normal";
     els.sigPreview.textContent = text;
   }
   els.sigText.addEventListener("input", updateTypePreview);
@@ -247,11 +251,32 @@
     return out;
   }
 
-  function renderTypedSignature(text, fontFamily, italic) {
+  // Canvas text drawing does NOT wait for webfonts to finish loading on its
+  // own, unlike regular DOM text, so without this a freshly-loaded page can
+  // silently fall back to a generic serif/sans font for the very first
+  // signature someone types. Explicitly loading the exact font spec (and
+  // falling back to document.fonts.ready if the browser's font-loading API
+  // doesn't fully support arbitrary specs) guarantees the real cursive
+  // font's glyphs are available before anything is measured or drawn.
+  async function ensureFontLoaded(fontSpec) {
+    if (!(document.fonts && document.fonts.load)) return;
+    try {
+      await document.fonts.load(fontSpec);
+      if (document.fonts.ready) await document.fonts.ready;
+    } catch (e) {
+      // Font Loading API can throw on some browsers for certain specs,
+      // fall back to just waiting for the general "fonts ready" signal.
+      if (document.fonts.ready) await document.fonts.ready;
+    }
+  }
+
+  async function renderTypedSignature(text, fontFamily) {
     const fontSize = 64;
+    const fontSpec = `${fontSize}px ${fontFamily}`;
+    await ensureFontLoaded(fontSpec);
+
     const measureCanvas = document.createElement("canvas");
     const measureCtx = measureCanvas.getContext("2d");
-    const fontSpec = `${italic ? "italic " : ""}${fontSize}px ${fontFamily}`;
     measureCtx.font = fontSpec;
     const textWidth = measureCtx.measureText(text).width;
 
@@ -291,13 +316,14 @@
     let outName = "";
 
     try {
+      const signAll = els.signAllPages.checked;
       const pageIndex = parseInt(els.pageSelect.value, 10) - 1;
       const position = els.positionSelect.value;
       const targetWidth = parseInt(els.sizeInput.value, 10);
       if (isNaN(targetWidth) || targetWidth < 40 || targetWidth > 400) {
         throw new Error("Width must be between 40 and 400 points.");
       }
-      if (isNaN(pageIndex) || pageIndex < 0 || pageIndex >= pageCount) {
+      if (!signAll && (isNaN(pageIndex) || pageIndex < 0 || pageIndex >= pageCount)) {
         throw new Error("Choose a page to sign.");
       }
 
@@ -308,8 +334,7 @@
       } else {
         const text = els.sigText.value.trim();
         if (!text) throw new Error("Type your name first.");
-        const opt = els.sigStyle.options[els.sigStyle.selectedIndex];
-        sourceCanvas = renderTypedSignature(text, els.sigStyle.value, !!(opt && opt.dataset.italic));
+        sourceCanvas = await renderTypedSignature(text, els.sigStyle.value);
       }
 
       const trimmed = trimCanvas(sourceCanvas);
@@ -324,18 +349,24 @@
       const imgWidth = targetWidth;
       const imgHeight = imgWidth * (trimmed.height / trimmed.width);
 
-      const page = doc.getPages()[pageIndex];
-      const { x, y } = positionFor(position, page.getWidth(), page.getHeight(), imgWidth, imgHeight);
-      page.drawImage(pngImage, { x, y, width: imgWidth, height: imgHeight });
+      const allPages = doc.getPages();
+      const targetPages = signAll ? allPages : [allPages[pageIndex]];
+      targetPages.forEach((page) => {
+        const { x, y } = positionFor(position, page.getWidth(), page.getHeight(), imgWidth, imgHeight);
+        page.drawImage(pngImage, { x, y, width: imgWidth, height: imgHeight });
+      });
 
       const outBytes = await doc.save();
       outBlob = new Blob([outBytes], { type: "application/pdf" });
       outName = `${baseName(currentFile.name)}-signed.pdf`;
       downloadBlob(outBlob, outName);
 
+      const whereText = signAll
+        ? `signed on all ${pageCount} page${pageCount === 1 ? "" : "s"}`
+        : `signed on page ${pageIndex + 1}`;
       setResult(
         `${ICON_OK}<div class="r-body"><strong>Created ${escapeHtml(outName)}</strong> ` +
-          `(signed on page ${pageIndex + 1}, ${formatBytes(outBlob.size)}). ` +
+          `(${whereText}, ${formatBytes(outBlob.size)}). ` +
           `Download started automatically.` +
           `<div><button type="button" id="dlAgainBtn" style="margin-top:12px;">Download again</button></div></div>`,
         "ok"

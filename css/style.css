@@ -1277,6 +1277,30 @@ textarea.mono-area:focus { outline: none; border-color: var(--primary); box-shad
 }
 .tabs button.tab.active:hover { background: var(--surface); }
 
+/* ---------- watermark preview (Add Watermark) ---------- */
+.wm-preview-page {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 595 / 842;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.wm-preview-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 700;
+  line-height: 1;
+  will-change: transform;
+}
+
 /* ---------- signature pad (Sign PDF) ---------- */
 .sig-pad-wrap {
   border: 2px dashed var(--border);

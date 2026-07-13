@@ -11,13 +11,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
 <title>Compress PDF File Size Online Free | norito</title>
-<meta name="description" content="Shrink a PDF's file size by re-encoding each page at a lower resolution. Best for scanned or image-heavy PDFs. Runs entirely in your browser." />
+<meta name="description" content="Shrink a PDF's file size without flattening your text to an image. Pages with real text stay selectable, only scanned pages and embedded photos are recompressed. Runs entirely in your browser." />
 <link rel="canonical" href="https://norito.in/pdf/compress-pdf.html" />
 <link rel="alternate" hreflang="en" href="https://norito.in/pdf/compress-pdf.html" />
 <link rel="alternate" hreflang="x-default" href="https://norito.in/pdf/compress-pdf.html" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Compress PDF File Size Online Free | norito" />
-<meta property="og:description" content="Shrink a PDF's file size by re-encoding each page at a lower resolution. Best for scanned or image-heavy PDFs. Runs entirely in your browser." />
+<meta property="og:description" content="Shrink a PDF's file size without flattening your text to an image. Pages with real text stay selectable, only scanned pages and embedded photos are recompressed. Runs entirely in your browser." />
 <meta property="og:url" content="https://norito.in/pdf/compress-pdf.html" />
 <meta property="og:site_name" content="norito" />
 <meta property="og:image" content="https://norito.in/assets/og-image.png" />
@@ -25,7 +25,7 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Compress PDF File Size Online Free | norito" />
-<meta name="twitter:description" content="Shrink a PDF's file size by re-encoding each page at a lower resolution. Best for scanned or image-heavy PDFs. Runs entirely in your browser." />
+<meta name="twitter:description" content="Shrink a PDF's file size without flattening your text to an image. Pages with real text stay selectable, only scanned pages and embedded photos are recompressed. Runs entirely in your browser." />
 <meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
 <link rel="stylesheet" href="../css/style.css" />
 
@@ -35,7 +35,7 @@
   "@type": "WebApplication",
   "name": "Compress PDF",
   "url": "https://norito.in/pdf/compress-pdf.html",
-  "description": "Shrink a PDF's file size by re-encoding each page at a lower resolution. Runs entirely in your browser.",
+  "description": "Shrink a PDF's file size without flattening text pages to images. Runs entirely in your browser.",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (runs in browser)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -55,17 +55,17 @@
     {
       "@type": "Question",
       "name": "How does this actually shrink the file?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Each page is re-rendered as a compressed JPEG image at the resolution and quality you pick, then rebuilt into a new PDF. This works especially well on scanned documents or PDFs full of large images." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pages that contain real text are left alone structurally, only the embedded photos on them get recompressed at the quality you pick. Pages that are actually just one big scanned image (no real text at all) are re-rendered as a compressed JPEG at the resolution you pick. Either way, the file is rebuilt around those smaller pieces." }
     },
     {
       "@type": "Question",
       "name": "Will my text still be selectable afterward?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Since every page becomes an image, text is no longer selectable or searchable in the compressed file. If you need to keep selectable text, this tool isn't the right fit." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, on any page that has real text, that text is never touched, so it stays selectable and searchable. Only pages that were already just a flat scanned image get flattened again, since there's no real text on them to lose." }
     },
     {
       "@type": "Question",
       "name": "What if the result isn't smaller?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Text-heavy PDFs are often already compact, rasterizing them can sometimes produce a larger file. You'll see the before and after size before you decide whether to keep it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If nothing in the PDF can be safely shrunk without flattening real text or visibly hurting quality, the original file is kept exactly as it is, byte for byte, rather than handing back something bigger or worse." }
     },
     {
       "@type": "Question",
@@ -144,15 +144,16 @@
     <p class="breadcrumb"><a href="../index.html">norito</a> / Compress PDF</p>
     <h1>Compress a PDF's File Size</h1>
     <p class="lede">
-      Shrink a large PDF by re-encoding each page at a lower resolution. Works best on scanned
-      or image-heavy PDFs. Nothing is uploaded, it all happens on your device.
+      Shrink a large PDF without flattening your text to an image. Pages with real text keep
+      that text selectable, only scanned pages and embedded photos get recompressed. Nothing
+      is uploaded, it all happens on your device.
     </p>
     </div>
   </div>
 
-    <div class="result-box error" style="margin-bottom:24px;">
-      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-      <div class="r-body"><strong>This flattens every page into an image.</strong> Text becomes part of the image and is no longer selectable or searchable afterward. Best for scanned documents or image-heavy PDFs, not for text documents you still need to search or copy from.</div>
+    <div class="result-box ok" style="margin-bottom:24px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Your text stays text.</strong> Any page with real, selectable text is left completely alone, only its embedded photos are recompressed. Only pages that are already just one big scanned image get flattened again, since there's nothing to lose there. If a PDF has nothing left to safely shrink, you'll get the original back unchanged rather than something bigger.</div>
     </div>
 
     <div class="panel">
@@ -183,6 +184,7 @@
           </select>
         </div>
       </div>
+      <p class="note" style="margin-top:-12px; margin-bottom:20px;">Resolution and quality only affect scanned pages and embedded photos, real text is never touched.</p>
 
       <button id="compressBtn" disabled>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
@@ -198,15 +200,15 @@
       </details>
       <details class="faq-item">
         <summary>How does this actually shrink the file?</summary>
-        <p>Each page is re-rendered as a compressed JPEG image at the resolution and quality you pick, then rebuilt into a new PDF. This works especially well on scanned documents or PDFs full of large images.</p>
+        <p>Pages that contain real text are left alone structurally, only the embedded photos on them get recompressed at the quality you pick. Pages that are actually just one big scanned image (no real text at all) are re-rendered as a compressed JPEG at the resolution you pick. Either way, the file is rebuilt around those smaller pieces.</p>
       </details>
       <details class="faq-item">
         <summary>Will my text still be selectable afterward?</summary>
-        <p>No. Since every page becomes an image, text is no longer selectable or searchable in the compressed file. If you need to keep selectable text, this tool isn't the right fit.</p>
+        <p>Yes, on any page that has real text, that text is never touched, so it stays selectable and searchable. Only pages that were already just a flat scanned image get flattened again, since there's no real text on them to lose.</p>
       </details>
       <details class="faq-item">
         <summary>What if the result isn't smaller?</summary>
-        <p>Text-heavy PDFs are often already compact, rasterizing them can sometimes produce a larger file. You'll see the before and after size before you decide whether to keep it.</p>
+        <p>If nothing in the PDF can be safely shrunk without flattening real text or visibly hurting quality, the original file is kept exactly as it is, byte for byte, rather than handing back something bigger or worse.</p>
       </details>
       <details class="faq-item">
         <summary>Can I compress a password-protected PDF?</summary>

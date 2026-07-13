@@ -10,7 +10,40 @@
     wmColor: document.getElementById("wmColor"),
     applyBtn: document.getElementById("applyBtn"),
     result: document.getElementById("result"),
+    wmPreviewText: document.getElementById("wmPreviewText"),
   };
+
+  // Reference page width (A4, in points) the preview box is scaled against,
+  // matching the .wm-preview-page CSS max-width of 280px.
+  const PREVIEW_PAGE_WIDTH_PT = 595;
+  const PREVIEW_BOX_WIDTH_PX = 280;
+
+  // Renders a live approximation of the watermark onto a mock page so
+  // people can experiment with size/opacity/angle/color before committing.
+  // The angle sign is flipped: pdf-lib's rotate() is counterclockwise in
+  // PDF space, which (confirmed by rendering a real rotated PDF with pdf.js
+  // and inspecting which edge lands higher on screen) still reads as
+  // counterclockwise to a human viewer once rendered, while CSS rotate()
+  // is clockwise for positive angles, so matching the visual direction
+  // requires negating the angle here.
+  function updateWmPreview() {
+    const text = els.wmText.value || "";
+    const size = parseInt(els.wmSize.value, 10) || 48;
+    const opacityPct = parseInt(els.wmOpacity.value, 10);
+    const angle = parseInt(els.wmAngle.value, 10) || 0;
+    const color = els.wmColor.value || "#808080";
+    const scale = PREVIEW_BOX_WIDTH_PX / PREVIEW_PAGE_WIDTH_PT;
+
+    els.wmPreviewText.textContent = text || "(empty)";
+    els.wmPreviewText.style.fontSize = `${Math.max(4, size * scale)}px`;
+    els.wmPreviewText.style.opacity = String((isNaN(opacityPct) ? 30 : opacityPct) / 100);
+    els.wmPreviewText.style.color = color;
+    els.wmPreviewText.style.transform = `rotate(${-angle}deg)`;
+  }
+  [els.wmText, els.wmSize, els.wmOpacity, els.wmAngle, els.wmColor].forEach((el) => {
+    el.addEventListener("input", updateWmPreview);
+  });
+  updateWmPreview();
 
   const ICON_OK =
     '<svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
