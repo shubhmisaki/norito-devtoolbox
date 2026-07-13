@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+<title>ट्री व्यू के साथ JSON फ़ॉर्मैटर और वैलिडेटर | norito</title>
+<meta name="description" content="टाइप करते ही JSON फ़ॉर्मैट, वैलिडेट और मिनिफ़ाई करें. फोल्ड होने वाला ट्री व्यू, एरर की लाइन लोकेशन, की सॉर्ट करें, रिज़ल्ट कॉपी या डाउनलोड करें. आपके ब्राउज़र में चलता है." />
+<link rel="canonical" href="https://norito.in/hi/json-formatter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-formatter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-formatter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-formatter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-formatter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ट्री व्यू के साथ JSON फ़ॉर्मैटर और वैलिडेटर | norito" />
+<meta property="og:description" content="टाइप करते ही JSON फ़ॉर्मैट, वैलिडेट और मिनिफ़ाई करें. फोल्ड होने वाला ट्री व्यू, एरर की लाइन लोकेशन, की सॉर्ट करें, रिज़ल्ट कॉपी या डाउनलोड करें. आपके ब्राउज़र में चलता है." />
+<meta property="og:url" content="https://norito.in/hi/json-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ट्री व्यू के साथ JSON फ़ॉर्मैटर और वैलिडेटर | norito" />
+<meta name="twitter:description" content="टाइप करते ही JSON फ़ॉर्मैट, वैलिडेट और मिनिफ़ाई करें. फोल्ड होने वाला ट्री व्यू, एरर की लाइन लोकेशन, की सॉर्ट करें, रिज़ल्ट कॉपी या डाउनलोड करें. आपके ब्राउज़र में चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Formateador JSON",
+  "url": "https://norito.in/hi/json-formatter.html",
+  "description": "टाइप करते ही JSON फ़ॉर्मैट, वैलिडेट और मिनिफ़ाई करें. फोल्ड होने वाला ट्री व्यू, एरर की लाइन लोकेशन, की सॉर्ट करें, रिज़ल्ट कॉपी या डाउनलोड करें. आपके ब्राउज़र में चलता है.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/hi/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>इमेज</button>
+        <div class="nav-panel">
+          <a href="compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">इमेज कंप्रेस करें<span>एक तय फ़ाइल साइज़ तक घटाएं</span></div></a>
+          <a href="placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">प्लेसहोल्डर जनरेटर<span>कस्टम साइज़ की प्लेसहोल्डर इमेज</span></div></a>
+          <a href="remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">बैकग्राउंड हटाएं<span>फ़ोटो में से व्यक्ति को अलग करें</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>डेवलपर</button>
+        <div class="nav-panel">
+          <a href="test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">टेस्ट फ़ाइल जनरेटर<span>बिल्कुल सही साइज़ की डमी फ़ाइलें</span></div></a>
+          <a href="json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">JSON फ़ॉर्मैटर<span>फ़ॉर्मैट, वैलिडेट और मिनिफ़ाई करें</span></div></a>
+          <a href="markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">मार्कडाउन एडिटर<span>लाइव प्रीव्यू, .md/.html में एक्सपोर्ट</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 4v16"/><path d="M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2"/><path d="M9 20h6"/></svg>टेक्स्ट</button>
+        <div class="nav-panel">
+          <a href="seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">SEO स्लग जनरेटर<span>टाइटल से साफ़-सुथरे URL स्लग</span></div></a>
+          <a href="limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">लिमिटेड टेक्स्ट जनरेटर<span>बिल्कुल सही लंबाई का फ़िलर टेक्स्ट</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg>यूटिलिटीज़</button>
+        <div class="nav-panel">
+          <a href="password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">पासवर्ड जनरेटर<span>रैंडम पासवर्ड और पासफ़्रेज़</span></div></a>
+          <a href="qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">QR कोड जनरेटर<span>कस्टम रंग, एरर करेक्शन</span></div></a>
+        </div>
+      </div>
+    </nav>
+      <button type="button" class="search-trigger" id="searchTrigger" aria-label="टूल खोजें">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>टूल खोजें</span>
+        <kbd>⌘K</kbd>
+      </button>
+
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Formateador JSON</p>
+    <h1>JSON फ़ॉर्मैटर और वैलिडेटर</h1>
+    <p class="lede">
+      JSON पेस्ट करें और उसे लाइव वैलिडेट और फ़ॉर्मैट होते देखें, फोल्ड होने वाले ट्री या टेक्स्ट के रूप में. सिर्फ़ "JSON अमान्य है" कहने के बजाय एरर बिल्कुल सही लाइन और कॉलम बताते हैं.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:14px;">
+          <label for="jsonInput">इनपुट</label>
+          <textarea id="jsonInput" class="mono-area" rows="14">{
+  "name": "norito",
+  "tagline": "small tools, one job each",
+  "tools": ["test files", "compress", "json formatter", "qr code"],
+  "version": 1,
+  "public": true,
+  "maintainer": null
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field-row" style="margin-bottom:0;">
+            <div class="field">
+              <label style="visibility:hidden;">View</label>
+              <div class="tabs" id="view-tabs">
+                <button type="button" class="tab active" data-value="tree">ट्री व्यू</button>
+                <button type="button" class="tab" data-value="text">टेक्स्ट</button>
+              </div>
+            </div>
+            <div class="field" style="min-width:110px;">
+              <label for="indentSize">इंडेंट</label>
+              <select id="indentSize">
+                <option value="2" selected>2 स्पेस</option>
+                <option value="4">4 स्पेस</option>
+                <option value="tab">टैब</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-row" style="margin-bottom:16px;">
+            <span class="option-label">की को अल्फ़ाबेटिकली सॉर्ट करें</span>
+            <label class="switch"><input type="checkbox" id="optSortKeys" /><span class="track"></span></label>
+          </div>
+
+          <div id="treeView" class="json-tree"></div>
+          <textarea id="textOutput" class="mono-area" rows="14" readonly style="display:none;"></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button id="formatBtn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg>
+  इनपुट फ़ॉर्मैट करें
+</button>
+            <button id="minifyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg>
+  इनपुट मिनिफ़ाई करें
+</button>
+            <button id="copyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+  आउटपुट कॉपी करें
+</button>
+            <button id="downloadBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  .json डाउनलोड करें
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>संबंधित टूल</h2>
+      <div class="related-grid">
+        <a class="related-card" href="test-file-generator.html">
+          <strong>टेस्ट फ़ाइल जनरेटर</strong>
+          <span>बिल्कुल सही साइज़ या एक्सटेंशन की डमी फ़ाइलें.</span>
+        </a>
+        <a class="related-card" href="markdown-editor.html">
+          <strong>Editor मार्कडाउन</strong>
+          <span>लाइव प्रीव्यू के साथ डबल-पैनल मार्कडाउन एडिटर.</span>
+        </a>
+        <a class="related-card" href="qr-code-generator.html">
+          <strong>QR कोड जनरेटर</strong>
+          <span>कस्टम रंग और सेंटर लोगो वाले QR कोड.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">छोटे-छोटे टूल जो एक-एक परेशान करने वाली समस्या हल करते हैं. सब कुछ आपके ब्राउज़र में चलता है, कुछ भी अपलोड नहीं होता.</p>
+      </div>
+      <div class="footer-col">
+        <h4>इमेज</h4>
+        <a href="test-file-generator.html">टेस्ट फ़ाइलें</a>
+        <a href="compress-image.html">कंप्रेस करें</a>
+        <a href="placeholder-generator.html">प्लेसहोल्डर</a>
+        <a href="remove-background.html">Quitar fondo</a>
+        <a href="qr-code-generator.html">QR कोड</a>
+      </div>
+      <div class="footer-col">
+        <h4>टेक्स्ट और डेवलपर</h4>
+        <a href="password-generator.html">पासवर्ड</a>
+        <a href="seo-slug-generator.html">स्लग</a>
+        <a href="limited-text-generator.html">टेक्स्ट लिमिट</a>
+        <a href="json-formatter.html">JSON</a>
+        <a href="markdown-editor.html">मार्कडाउन</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. सभी टूल आपके ब्राउज़र में लोकली चलते हैं.</span>
+      <a href="privacy.html">प्राइवेसी पॉलिसी</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/i18n/hi.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-json.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/theme-toggle.js"></script>
+<script src="../js/lang-switcher.js"></script>
+<script src="../js/bg-blobs.js"></script>
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="आपकी खोज से कोई टूल मेल नहीं खाता.">
+  <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="टूल खोजें">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentरंग" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="टूल खोजें..." autocomplete="off" />
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdkResults"></div>
+  </div>
+</div>
+
+<script src="../js/cmdk.js"></script>
+</body>
+</html>

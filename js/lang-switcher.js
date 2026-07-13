@@ -12,14 +12,16 @@
     es: "Español",
     zh: "中文",
     ar: "العربية",
+    hi: "हिन्दी",
   };
   var SHORT_LABELS = {
     en: "EN",
     es: "ES",
     zh: "中",
     ar: "AR",
+    hi: "HI",
   };
-  var LANG_ORDER = ["en", "es", "zh", "ar"];
+  var LANG_ORDER = ["en", "es", "zh", "ar", "hi"];
 
   var root = document.getElementById("langSwitch");
   if (!root) return;
