@@ -1326,6 +1326,63 @@ textarea.mono-area:focus { outline: none; border-color: var(--primary); box-shad
 .slug-row-text { min-width: 0; flex: 1; }
 .slug-row button { flex-shrink: 0; padding: 7px 14px; font-size: 0.82rem; }
 
+/* ---------- multi-file list (Merge PDF and future multi-file tools) ---------- */
+.file-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--n-0);
+}
+.file-row-index {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.file-row-icon { flex-shrink: 0; color: var(--text-muted); }
+.file-row-icon svg { display: block; width: 18px; height: 18px; }
+.file-row-info { min-width: 0; flex: 1; }
+.file-row-name {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.file-row-size { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.file-row-actions { flex-shrink: 0; display: flex; gap: 4px; }
+.file-row-actions button {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+  box-shadow: none;
+}
+.file-row-actions button svg { display: block; width: 15px; height: 15px; }
+.file-row-actions button:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--border-strong); }
+.file-row-actions button:disabled { opacity: 0.35; cursor: not-allowed; }
+.file-row-actions button:disabled:hover { background: transparent; color: var(--text-secondary); border-color: var(--border); }
+.file-row-actions button.file-row-remove:hover { background: var(--danger-bg); color: var(--danger); border-color: var(--danger-border); }
+.file-row.file-row-error { border-color: var(--danger-border); background: var(--danger-bg); }
+.file-row.file-row-error .file-row-name { color: var(--danger); }
+
 /* ---------- progress ring ---------- */
 .ring-wrap { position: relative; width: 120px; height: 120px; margin: 0 auto; }
 .ring-wrap svg { transform: rotate(-90deg); width: 100%; height: 100%; }

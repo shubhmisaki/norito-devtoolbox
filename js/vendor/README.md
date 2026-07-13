@@ -13,3 +13,9 @@
   Installed via `npm install @mediapipe/selfie_segmentation` and copied unmodified. Only loads
   ~5.5MB (one WASM variant + a ~250KB model) on first use of the Remove Background tool, cached
   by the browser after that.
+
+- `pdf-lib.min.js`: pdf-lib v1.17.1, MIT license (see `pdf-lib.LICENSE.md`).
+  https://github.com/Hopding/pdf-lib
+  Installed via `npm install pdf-lib` and copied from `dist/pdf-lib.min.js`, unmodified. UMD
+  build, exposes a global `PDFLib` object. Used by the PDF tools suite (merge, split, rotate,
+  etc.) to create/modify PDFs entirely client-side, nothing uploaded.
