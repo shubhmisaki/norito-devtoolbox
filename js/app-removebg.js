@@ -57,7 +57,10 @@
   }
 
   els.drop.addEventListener("click", () => els.fileInput.click());
-  els.fileInput.addEventListener("change", (e) => handleFile(e.target.files[0]));
+  els.fileInput.addEventListener("change", (e) => {
+    if (e.target.files.length > 1) startBatch(e.target.files);
+    else if (e.target.files[0]) handleFile(e.target.files[0]);
+  });
   ["dragenter", "dragover"].forEach((evt) =>
     els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.add("drag"); })
   );
@@ -65,8 +68,8 @@
     els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.remove("drag"); })
   );
   els.drop.addEventListener("drop", (e) => {
-    const file = e.dataTransfer.files[0];
-    if (file) handleFile(file);
+    if (e.dataTransfer.files.length > 1) startBatch(e.dataTransfer.files);
+    else if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });
 
   // Paste an image straight from the clipboard (screenshot tools, "Copy image", etc.)
@@ -285,4 +288,122 @@
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 2000);
   });
+
+  // ---- Batch mode ----
+  const batchEls = {
+    list: document.getElementById("batchList"),
+    actions: document.getElementById("batchActions"),
+    processBtn: document.getElementById("batchProcessBtn"),
+    zipBtn: document.getElementById("batchZipBtn"),
+  };
+  let batchFiles = [];
+
+  function escapeHtml(s) {
+    return String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function renderBatchList() {
+    if (!batchEls.list) return;
+    batchEls.list.innerHTML = batchFiles
+      .map((bf, i) => {
+        const statusClass = bf.status === "ok" ? "ok" : bf.status === "error" ? "error" : "pending";
+        const statusText = bf.status === "ok"
+          ? "Done"
+          : bf.status === "error"
+          ? (bf.error || "Failed")
+          : bf.status === "processing"
+          ? "Processing..."
+          : "Waiting...";
+        return `<div class="batch-file-row" data-i="${i}">
+          <span class="bf-name">${escapeHtml(bf.file.name)}</span>
+          <span class="bf-meta bf-status ${statusClass}">${statusText}</span>
+          <button type="button" class="bf-remove" data-i="${i}" aria-label="Remove">&times;</button>
+        </div>`;
+      })
+      .join("");
+    batchEls.list.querySelectorAll(".bf-remove").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const i = Number(btn.dataset.i);
+        batchFiles.splice(i, 1);
+        if (!batchFiles.length) {
+          batchEls.list.style.display = "none";
+          batchEls.actions.style.display = "none";
+        } else {
+          renderBatchList();
+        }
+      });
+    });
+  }
+
+  function startBatch(fileList) {
+    const files = Array.from(fileList).filter((f) => f.type.startsWith("image/"));
+    if (!files.length) {
+      setResult(I18N_C.please_choose_image || "Please choose an image file.", "error");
+      return;
+    }
+    batchFiles = files.map((file) => ({ file, status: "pending", blob: null, error: "" }));
+    els.originalInfo.style.display = "none";
+    els.result.style.display = "none";
+    els.preview.style.display = "none";
+    if (els.previewHint) els.previewHint.style.display = "none";
+    batchEls.list.style.display = "block";
+    batchEls.actions.style.display = "flex";
+    batchEls.zipBtn.disabled = true;
+    renderBatchList();
+  }
+
+  async function runBatch() {
+    batchEls.processBtn.disabled = true;
+    batchEls.processBtn.textContent = I18N.loading_model_label || "Loading model...";
+    try {
+      await getSegmenter();
+    } catch (err) {
+      console.error("[remove-bg] batch: model load failed:", err);
+      batchFiles.forEach((bf) => { bf.status = "error"; bf.error = err.message || "Model failed to load"; });
+      renderBatchList();
+      batchEls.processBtn.disabled = false;
+      batchEls.processBtn.textContent = "Remove backgrounds from all";
+      return;
+    }
+    batchEls.processBtn.textContent = I18N.processing_label || "Processing...";
+    for (const bf of batchFiles) {
+      bf.status = "processing";
+      renderBatchList();
+      try {
+        const img = await loadImageFile(bf.file);
+        const results = await runSegmentation(segmenter, img);
+        const canvas = composite(results.image, results.segmentationMask, els.bgMode.value, els.bgColor.value);
+        const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+        bf.blob = blob;
+        bf.status = "ok";
+      } catch (err) {
+        bf.status = "error";
+        bf.error = err.message || "Couldn't process";
+      }
+      renderBatchList();
+    }
+    batchEls.processBtn.disabled = false;
+    batchEls.processBtn.textContent = "Remove backgrounds from all";
+    const anyOk = batchFiles.some((bf) => bf.status === "ok");
+    batchEls.zipBtn.disabled = !anyOk;
+    if (anyOk) celebrateSuccess(batchEls.processBtn, batchEls.list, "Done");
+  }
+
+  if (batchEls.processBtn) batchEls.processBtn.addEventListener("click", runBatch);
+  if (batchEls.zipBtn) {
+    batchEls.zipBtn.addEventListener("click", async () => {
+      const entries = [];
+      for (const bf of batchFiles) {
+        if (bf.status !== "ok" || !bf.blob) continue;
+        const base = (bf.file.name || "image").replace(/\.[^.]+$/, "");
+        const bytes = new Uint8Array(await bf.blob.arrayBuffer());
+        entries.push({ name: `${base}-cutout.png`, bytes });
+      }
+      if (!entries.length) return;
+      const zipBytes = createZip(entries);
+      const blob = new Blob([zipBytes], { type: "application/zip" });
+      downloadBlob(blob, "cutouts.zip");
+      celebrateSuccess(batchEls.zipBtn, batchEls.list, "Downloaded");
+    });
+  }
 })();

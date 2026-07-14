@@ -88,7 +88,10 @@
   }
 
   els.drop.addEventListener("click", () => els.fileInput.click());
-  els.fileInput.addEventListener("change", (e) => handleFile(e.target.files[0]));
+  els.fileInput.addEventListener("change", (e) => {
+    if (e.target.files.length > 1) startBatch(e.target.files);
+    else if (e.target.files[0]) handleFile(e.target.files[0]);
+  });
   ["dragenter", "dragover"].forEach((evt) =>
     els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.add("drag"); })
   );
@@ -96,8 +99,8 @@
     els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.remove("drag"); })
   );
   els.drop.addEventListener("drop", (e) => {
-    const file = e.dataTransfer.files[0];
-    if (file) handleFile(file);
+    if (e.dataTransfer.files.length > 1) startBatch(e.dataTransfer.files);
+    else if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });
 
   // Paste an image straight from the clipboard (screenshot tools, "Copy image", etc.)
@@ -649,4 +652,109 @@
   }
 
   els.compressBtn.addEventListener("click", runCompress);
+
+  // ---- batch mode (2+ files at once) ----
+  // Reuses compressLossy/compressPng untouched (the single-file path above
+  // is left completely alone), just fans the same per-file compression out
+  // over a list and offers one zip download at the end instead of the
+  // detailed single-file messaging (nudges, dimension notes, etc.), which
+  // doesn't translate well to "here are 12 results at once."
+  const batchEls = {
+    list: document.getElementById("batchList"),
+    actions: document.getElementById("batchActions"),
+    compressBtn: document.getElementById("batchCompressBtn"),
+    zipBtn: document.getElementById("batchZipBtn"),
+  };
+  let batchFiles = []; // [{ file, status, blob, ext }]
+
+  function renderBatchList() {
+    batchEls.list.innerHTML = batchFiles
+      .map((bf, i) => {
+        const statusHtml =
+          bf.status === "ok"
+            ? `<span class="bf-status ok">${formatBytes(bf.blob.size)}</span>`
+            : bf.status === "error"
+            ? `<span class="bf-status error">Failed</span>`
+            : `<span class="bf-status pending">Waiting</span>`;
+        return `<div class="batch-file-row" data-idx="${i}">
+          <span class="bf-name">${bf.file.name}</span>
+          <span class="bf-meta">${formatBytes(bf.file.size)}</span>
+          ${statusHtml}
+          <button type="button" class="bf-remove" aria-label="Remove">&times;</button>
+        </div>`;
+      })
+      .join("");
+    batchEls.list.style.display = batchFiles.length ? "flex" : "none";
+    batchEls.list.querySelectorAll(".bf-remove").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = Number(btn.closest(".batch-file-row").dataset.idx);
+        batchFiles.splice(idx, 1);
+        renderBatchList();
+        batchEls.zipBtn.disabled = !batchFiles.some((bf) => bf.status === "ok");
+      });
+    });
+  }
+
+  function startBatch(files) {
+    batchFiles = Array.from(files)
+      .filter((f) => f.type.startsWith("image/"))
+      .map((file) => ({ file, status: "pending", blob: null }));
+    if (!batchFiles.length) return;
+    // Hide/reset the single-file UI so the two modes don't visually collide.
+    els.originalInfo.style.display = "none";
+    els.result.style.display = "none";
+    els.preview.style.display = "none";
+    if (els.previewHint) els.previewHint.style.display = "block";
+    batchEls.actions.style.display = "flex";
+    batchEls.zipBtn.disabled = true;
+    renderBatchList();
+  }
+
+  async function runBatch() {
+    const target = parseSize(els.size.value, els.unit.value);
+    if (target === null || target <= 0) return;
+    const outFormat = els.format.value;
+    const mime = { jpeg: "image/jpeg", webp: "image/webp", png: "image/png" }[outFormat];
+    const allowResize = !!(els.allowResize && els.allowResize.checked);
+    const ext = { jpeg: "jpg", webp: "webp", png: "png" }[outFormat];
+
+    batchEls.compressBtn.disabled = true;
+    for (const bf of batchFiles) {
+      try {
+        const img = await loadImageFile(bf.file);
+        const outcome = outFormat === "png" ? await compressPng(img, target, allowResize) : await compressLossy(img, target, mime, allowResize);
+        if (outcome && outcome.blob) {
+          bf.blob = outcome.blob;
+          bf.ext = ext;
+          bf.status = "ok";
+        } else {
+          bf.status = "error";
+        }
+      } catch (e) {
+        bf.status = "error";
+      }
+      renderBatchList();
+    }
+    batchEls.compressBtn.disabled = false;
+    batchEls.zipBtn.disabled = !batchFiles.some((bf) => bf.status === "ok");
+  }
+
+  batchEls.compressBtn.addEventListener("click", runBatch);
+  batchEls.zipBtn.addEventListener("click", async () => {
+    const ok = batchFiles.filter((bf) => bf.status === "ok");
+    if (!ok.length) return;
+    const seen = new Map();
+    const entries = [];
+    for (const bf of ok) {
+      const base = bf.file.name.replace(/\.[^.]+$/, "");
+      let name = `${base}.${bf.ext}`;
+      const count = seen.get(name) || 0;
+      seen.set(name, count + 1);
+      if (count > 0) name = `${base}_${count}.${bf.ext}`;
+      entries.push({ name, bytes: new Uint8Array(await bf.blob.arrayBuffer()) });
+    }
+    const zipBytes = createZip(entries);
+    downloadBlob(new Blob([zipBytes], { type: "application/zip" }), "compressed-images.zip");
+    celebrateSuccess(batchEls.zipBtn, batchEls.list);
+  });
 })();
