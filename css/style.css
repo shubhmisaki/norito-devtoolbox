@@ -73,6 +73,7 @@
 
   --shadow-sm: 0 1px 2px rgba(41, 32, 46, 0.07), 0 1px 1px rgba(41, 32, 46, 0.05);
   --shadow-md: 0 8px 20px -6px rgba(255, 77, 122, 0.18), 0 0 1px rgba(41, 32, 46, 0.1);
+  --shadow-lg: 0 18px 34px -14px rgba(255, 77, 122, 0.28), 0 2px 6px rgba(41, 32, 46, 0.08);
   --shadow-focus: 0 0 0 3px rgba(255, 77, 122, 0.25);
 
   --ease: cubic-bezier(0.2, 0, 0, 1);
@@ -140,6 +141,7 @@
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 8px 20px -6px rgba(255, 102, 144, 0.28), 0 0 1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 18px 34px -14px rgba(255, 102, 144, 0.35), 0 2px 6px rgba(0, 0, 0, 0.3);
 
   /* darker than the page itself so the footer still reads as a distinct
      band even when the whole site is already dark */
@@ -287,8 +289,8 @@ nav.site-nav {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  min-width: 250px;
-  max-width: min(320px, calc(100vw - 32px));
+  min-width: 300px;
+  max-width: min(400px, calc(100vw - 32px));
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -404,9 +406,10 @@ main { padding: 48px 0 64px; }
   gap: 7px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--coral-text);
-  background: var(--coral-bg);
-  padding: 6px 13px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   margin-bottom: 18px;
 }
@@ -414,7 +417,7 @@ main { padding: 48px 0 64px; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--coral);
+  background: var(--primary);
   flex-shrink: 0;
 }
 
@@ -442,7 +445,7 @@ p.lede {
   font-size: 1.08rem;
   line-height: 1.6;
   margin: 0 0 32px;
-  max-width: 620px;
+  max-width: 760px;
 }
 
 /* ---------- panel / form ---------- */
@@ -2031,52 +2034,79 @@ textarea.md-source {
    own icon color for the glow/border instead of always using pink. */
 .card, .card:hover { text-decoration: none; }
 .card:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
-.card[data-accent="pink"]:hover   { --glow: var(--primary); }
-.card[data-accent="rose"]:hover   { --glow: var(--rose); }
-.card[data-accent="coral"]:hover  { --glow: var(--coral); }
-.card[data-accent="amber"]:hover  { --glow: var(--amber); }
-.card[data-accent="purple"]:hover { --glow: var(--purple); }
-.card[data-accent="teal"]:hover   { --glow: var(--teal); }
-.card[data-accent="indigo"]:hover { --glow: var(--indigo); }
 .card:hover {
-  box-shadow: 0 18px 34px -16px color-mix(in srgb, var(--glow, var(--primary)) 55%, transparent), var(--shadow-sm);
+  box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--glow, var(--primary)) 45%, var(--border));
+  border-color: var(--border-strong);
 }
 
 /* ---------- header search trigger (opens the Cmd+K palette) ---------- */
 .search-trigger {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  width: 36px;
   height: 36px;
-  padding: 0 12px;
+  padding: 0;
+  flex-shrink: 0;
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text-muted);
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
-  font-weight: 500;
   cursor: pointer;
 }
 .search-trigger:hover { background: var(--bg-subtle); border-color: var(--border-strong); color: var(--text-secondary); }
-.search-trigger svg { width: 15px; height: 15px; flex-shrink: 0; }
-.search-trigger kbd {
-  font-family: inherit;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 1px 5px;
-}
-@media (max-width: 900px) {
-  .search-trigger span { display: none; }
-  .search-trigger { padding: 0 9px; }
-}
+.search-trigger svg { width: 16px; height: 16px; flex-shrink: 0; }
+.search-trigger span, .search-trigger kbd { display: none; }
 @media (max-width: 760px) {
   .search-trigger { order: 2; }
+}
+
+/* ---------- homepage inline search bar (near the "Browse all tools" CTA) ---------- */
+.hero-search {
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 380px;
+}
+.hero-search svg {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.hero-search input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px 0 41px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.92rem;
+}
+.hero-search input:hover { border-color: var(--border-strong); }
+.hero-search input:focus { border-color: var(--primary); box-shadow: var(--shadow-focus); outline: none; }
+.hero-search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  max-height: 360px;
+  overflow-y: auto;
+  z-index: 30;
+}
+.hero-search-results[hidden] { display: none; }
+@media (max-width: 760px) {
+  .hero-search { order: 3; flex-basis: 100%; max-width: none; }
 }
 
 /* ---------- Cmd+K command palette ---------- */

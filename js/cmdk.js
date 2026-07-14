@@ -94,6 +94,67 @@
     filter(input.value);
   });
 
+  // Homepage inline search bar (near the "Browse all tools" CTA). Reuses the
+  // same TOOLS index as the Cmd+K palette instead of duplicating tool data.
+  // Only wires up if the homepage markup for it is present on the page.
+  var heroInput = document.getElementById("heroSearchInput");
+  var heroResults = document.getElementById("heroSearchResults");
+  if (heroInput && heroResults) {
+    var heroEmptyText = "No tools match that search.";
+
+    function renderHero(list) {
+      if (!list.length) {
+        heroResults.innerHTML = '<div class="cmdk-empty">' + heroEmptyText + "</div>";
+        heroResults.hidden = false;
+        return;
+      }
+      heroResults.innerHTML = list
+        .slice(0, 8)
+        .map(function (tool) {
+          return (
+            '<a class="cmdk-item" href="' + tool.href + '">' +
+            '<div class="cmdk-item-body"><strong>' + tool.name + "</strong><span>" + tool.desc + "</span></div>" +
+            '<span class="cmdk-item-cat">' + tool.cat + "</span>" +
+            "</a>"
+          );
+        })
+        .join("");
+      heroResults.hidden = false;
+    }
+
+    heroInput.addEventListener("input", function () {
+      TOOLS = buildTools();
+      var q = heroInput.value.trim().toLowerCase();
+      if (!q) {
+        heroResults.hidden = true;
+        heroResults.innerHTML = "";
+        return;
+      }
+      renderHero(
+        TOOLS.filter(function (tool) {
+          return tool.name.toLowerCase().indexOf(q) !== -1 || tool.desc.toLowerCase().indexOf(q) !== -1;
+        })
+      );
+    });
+
+    heroInput.addEventListener("focus", function () {
+      if (heroInput.value.trim()) heroResults.hidden = false;
+    });
+
+    heroInput.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        heroResults.hidden = true;
+        heroInput.blur();
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!heroInput.contains(e.target) && !heroResults.contains(e.target)) {
+        heroResults.hidden = true;
+      }
+    });
+  }
+
   overlay.addEventListener("click", function (e) {
     if (e.target === overlay) close();
   });
