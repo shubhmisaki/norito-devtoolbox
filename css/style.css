@@ -817,6 +817,36 @@ button:disabled {
 .card-link svg { width: 14px; height: 14px; transition: transform 0.15s var(--ease); }
 .card:hover .card-link svg { transform: translateX(3px); }
 
+/* ---------- category tiles ---------- */
+.grid-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+.category-tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.18s var(--ease), transform 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.category-tile:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+.category-tile .icon-chip { width: 48px; height: 48px; }
+.category-tile .icon-chip svg { width: 24px; height: 24px; }
+.category-tile h3 { margin: 0; font-size: 1.05rem; color: var(--text); }
+.category-tile .category-count { margin: 0; font-size: 0.82rem; color: var(--text-muted); }
+
 /* ---------- related tools ---------- */
 .related-tools { margin-top: 48px; }
 .related-tools h2 {
