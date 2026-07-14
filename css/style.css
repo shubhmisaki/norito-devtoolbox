@@ -272,9 +272,10 @@ nav.site-nav {
   background: transparent;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.15s var(--ease), color 0.15s var(--ease);
 }
-.nav-cat:hover { color: var(--text); background: var(--bg-subtle); }
+.nav-cat:hover { color: var(--text); background: var(--bg-subtle); text-decoration: none; }
 .nav-cat::after {
   content: "";
   width: 6px;
@@ -312,6 +313,7 @@ nav.site-nav {
   z-index: 40;
 }
 .nav-group.open .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-group:focus-within .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
 @media (hover: hover) and (pointer: fine) {
   .nav-group:hover .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
   .nav-group:hover .nav-cat::after { transform: rotate(225deg); margin-top: 3px; }

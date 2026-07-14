@@ -1,20 +1,17 @@
-// Shared header-nav behavior: category dropdowns, click-outside/Escape to
-// close, auto-detecting which category + link is "active" from the current
-// URL, and a mobile hamburger menu, all from one identical nav markup block
-// shared by every page (the hamburger button is injected here rather than
-// added to all 44 HTML files individually).
+// Shared header-nav behavior: category labels are real links (click
+// navigates straight to that category's hub page), the dropdown of
+// individual tools opens on hover or keyboard focus (handled in CSS via
+// :hover / :focus-within, see .nav-panel rules), auto-detects which
+// category + link is "active" from the current URL, and runs a mobile
+// hamburger menu, all from one identical nav markup block shared by every
+// page (the hamburger button is injected here rather than added to every
+// HTML file individually).
 (function () {
   const nav = document.getElementById("siteNav");
   if (!nav) return;
 
   const groups = Array.from(nav.querySelectorAll(".nav-group"));
   const currentFile = (location.pathname.split("/").pop() || "index.html") || "index.html";
-
-  function closeAll(except) {
-    groups.forEach((g) => {
-      if (g !== except) g.classList.remove("open");
-    });
-  }
 
   groups.forEach((group) => {
     const btn = group.querySelector(".nav-cat");
@@ -27,18 +24,10 @@
       btn.classList.add("active");
       match.classList.add("active");
     }
-
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = group.classList.contains("open");
-      closeAll();
-      if (!isOpen) group.classList.add("open");
-    });
   });
 
-  document.addEventListener("click", () => closeAll());
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { closeAll(); closeMobileMenu(); }
+    if (e.key === "Escape") { closeMobileMenu(); }
   });
 
   // ---- mobile hamburger menu ----
