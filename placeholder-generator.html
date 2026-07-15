@@ -11,7 +11,9 @@
 <meta name="theme-color" content="#ff4d7a" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
 <title>Placeholder Image Generator: Any Size, Color, Text | norito</title>
 <meta name="description" content="Generate a placeholder image with a custom size, background color, and label text. Free, instant, downloadable, runs in your browser." />
 <link rel="canonical" href="https://norito.in/placeholder-generator.html" />
@@ -68,7 +70,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html"><img class="logo logo-word" src="assets/norito-wordmark.svg" alt="norito" /></a>
+    <a class="brand" href="index.html"><img class="logo logo-word" src="assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
         <nav class="site-nav" id="siteNav">
       <div class="nav-group">
         <a class="nav-cat" href="pdf/">PDF</a>
@@ -321,7 +323,7 @@
         <p class="footer-tagline">Small utilities that solve one annoying problem each. Everything runs in your browser, nothing is uploaded.</p>
       </div>
             <div class="footer-col">
-        <h4>PDF</h4>
+        <h3>PDF</h3>
         <a href="pdf/merge-pdf.html">Merge PDF</a>
         <a href="pdf/split-pdf.html">Split PDF</a>
         <a href="pdf/rotate-pdf.html">Rotate PDF</a>
@@ -335,7 +337,7 @@
         <a href="pdf/sign-pdf.html">Sign PDF</a>
       </div>
       <div class="footer-col">
-        <h4>Images</h4>
+        <h3>Images</h3>
         <a href="compress-image.html">Compress Image</a>
         <a href="resize-image.html">Resize Image</a>
         <a href="image-converter.html">Image Converter</a>
@@ -346,7 +348,7 @@
         <a href="remove-background.html">Remove BG</a>
       </div>
       <div class="footer-col">
-        <h4>Developer</h4>
+        <h3>Developer</h3>
         <a href="test-file-generator.html">Test Files</a>
         <a href="json-formatter.html">JSON Formatter</a>
         <a href="markdown-editor.html">Markdown Editor</a>
@@ -367,7 +369,7 @@
         <a href="text-diff.html">Text Diff</a>
       </div>
       <div class="footer-col">
-        <h4>Text</h4>
+        <h3>Text</h3>
         <a href="seo-slug-generator.html">Slug Generator</a>
         <a href="limited-text-generator.html">Text Limit</a>
         <a href="word-counter.html">Word Counter</a>
@@ -379,19 +381,19 @@
         <a href="find-and-replace.html">Find & Replace</a>
       </div>
       <div class="footer-col">
-        <h4>Utilities</h4>
+        <h3>Utilities</h3>
         <a href="password-generator.html">Password</a>
         <a href="qr-code-generator.html">QR Code</a>
       </div>
       <div class="footer-col">
-        <h4>SEO</h4>
+        <h3>SEO</h3>
         <a href="seo/meta-tag-generator.html">Meta Tags</a>
         <a href="seo/utm-builder.html">UTM Builder</a>
         <a href="seo/robots-txt-generator.html">Robots.txt</a>
         <a href="seo/sitemap-generator.html">Sitemap</a>
       </div>
       <div class="footer-col">
-        <h4>Design</h4>
+        <h3>Design</h3>
         <a href="design/css-gradient-generator.html">Gradient</a>
         <a href="design/box-shadow-generator.html">Box Shadow</a>
         <a href="design/border-radius-generator.html">Border Radius</a>

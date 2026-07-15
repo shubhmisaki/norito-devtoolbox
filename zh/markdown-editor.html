@@ -11,7 +11,9 @@
 <meta name="theme-color" content="#ff4d7a" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
 <title>带实时预览的 Markdown 编辑器 | norito</title>
 <meta name="description" content="边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。" />
 <link rel="canonical" href="https://norito.in/zh/markdown-editor.html" />
@@ -69,7 +71,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html"><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+    <a class="brand" href="index.html"><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
         <nav class="site-nav" id="siteNav">
       <div class="nav-group">
         <button type="button" class="nav-cat">图像</button>
@@ -230,7 +232,7 @@ console.log("连代码块也能正常工作");
         <p class="footer-tagline">小而专注的工具，每个只做一件事。全部在你的浏览器中运行，不会上传任何内容。</p>
       </div>
       <div class="footer-col">
-        <h4>图像</h4>
+        <h3>图像</h3>
         <a href="test-file-generator.html">测试文件</a>
         <a href="compress-image.html">压缩图片</a>
         <a href="placeholder-generator.html">占位图</a>
@@ -238,7 +240,7 @@ console.log("连代码块也能正常工作");
         <a href="qr-code-generator.html">二维码</a>
       </div>
       <div class="footer-col">
-        <h4>文本与开发</h4>
+        <h3>文本与开发</h3>
         <a href="password-generator.html">密码</a>
         <a href="seo-slug-generator.html">Slug</a>
         <a href="limited-text-generator.html">限字数文本</a>

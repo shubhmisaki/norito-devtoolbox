@@ -16,18 +16,24 @@
   // and can push out the page's Largest Contentful Paint for no real
   // benefit, since the element was never actually offscreen. Only elements
   // below the fold get the scroll-triggered fade-in.
+  //
+  // All the geometry reads (getBoundingClientRect) happen first, in their
+  // own pass, before any DOM writes (classList/style). Interleaving reads
+  // and writes per-element forces the browser to flush layout on every
+  // single iteration (a "forced reflow"); batching reads-then-writes lets
+  // it happen once.
   const viewportH = window.innerHeight || document.documentElement.clientHeight;
-  const toObserve = [];
-  let staggerIndex = 0;
-
+  const belowFold = [];
   targets.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < viewportH) return;
+    if (el.getBoundingClientRect().top >= viewportH) belowFold.push(el);
+  });
+
+  const toObserve = [];
+  belowFold.forEach((el, i) => {
     el.classList.add("reveal");
     // Small stagger within a grid row so a full row of cards doesn't all
     // fade in on the exact same frame.
-    el.style.transitionDelay = (staggerIndex % 3) * 70 + "ms";
-    staggerIndex++;
+    el.style.transitionDelay = (i % 3) * 70 + "ms";
     toObserve.push(el);
   });
 

@@ -11,7 +11,9 @@
 <meta name="theme-color" content="#ff4d7a" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
 <title>Política de privacidad | norito</title>
 <meta name="description" content="Cómo maneja norito los datos: las herramientas funcionan por completo en tu navegador, nada se sube. Qué recopilan Google AdSense, Google Fonts y el alojamiento en Netlify, y cómo contactarnos." />
 <link rel="canonical" href="https://norito.in/es/privacy.html" />
@@ -33,7 +35,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html"><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" /></a>
+    <a class="brand" href="index.html"><img class="logo logo-word" src="../assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
         <nav class="site-nav" id="siteNav">
       <div class="nav-group">
         <button type="button" class="nav-cat">Imágenes</button>
@@ -156,7 +158,7 @@
         <p class="footer-tagline">Herramientas pequeñas que resuelven un problema molesto cada una. Todo funciona en tu navegador, no se sube nada.</p>
       </div>
       <div class="footer-col">
-        <h4>Imágenes</h4>
+        <h3>Imágenes</h3>
         <a href="test-file-generator.html">Archivos de prueba</a>
         <a href="compress-image.html">Comprimir</a>
         <a href="placeholder-generator.html">Marcador</a>
@@ -164,7 +166,7 @@
         <a href="qr-code-generator.html">Código QR</a>
       </div>
       <div class="footer-col">
-        <h4>Texto y desarrollo</h4>
+        <h3>Texto y desarrollo</h3>
         <a href="password-generator.html">Contraseña</a>
         <a href="seo-slug-generator.html">Slug</a>
         <a href="limited-text-generator.html">Límite de texto</a>
