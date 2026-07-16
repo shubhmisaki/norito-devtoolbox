@@ -13,6 +13,8 @@
     zh: "中文",
     ar: "العربية",
     hi: "हिन्दी",
+    ru: "Русский",
+    ja: "日本語",
   };
   var SHORT_LABELS = {
     en: "EN",
@@ -20,8 +22,10 @@
     zh: "中",
     ar: "AR",
     hi: "HI",
+    ru: "RU",
+    ja: "JA",
   };
-  var LANG_ORDER = ["en", "es", "zh", "ar", "hi"];
+  var LANG_ORDER = ["en", "es", "zh", "ar", "hi", "ru", "ja"];
 
   var root = document.getElementById("langSwitch");
   if (!root) return;
