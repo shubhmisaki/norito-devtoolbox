@@ -37,16 +37,38 @@
   var last = segments[segments.length - 1] || "";
   var filename = /\.html$/i.test(last) ? last : "index.html";
 
+  // Only these pages actually exist in every language. Everything else
+  // (the PDF suite, most newer tools, category hub pages, blog, compare,
+  // how-it-works, and anything inside a subdirectory) only exists in
+  // English, so linking to "es/that-page.html" would 404. Keep this in
+  // sync with the page lists in /es/, /zh/, /ar/, /hi/.
+  var TRANSLATABLE_PAGES = [
+    "index.html", "compress-image.html", "json-formatter.html", "limited-text-generator.html",
+    "markdown-editor.html", "password-generator.html", "placeholder-generator.html", "privacy.html",
+    "qr-code-generator.html", "remove-background.html", "seo-slug-generator.html", "test-file-generator.html"
+  ];
+
+  // English root pages nested inside a category folder (pdf/, seo/, etc.)
+  // have more than one path segment; localized pages have at most two
+  // (the language folder plus the filename). Either way, more segments
+  // than that means we're on a page with no counterpart in other languages.
+  var inSubdirectory = currentLang === "en" ? segments.length > 1 : segments.length > 2;
+  var hasTranslation = !inSubdirectory && TRANSLATABLE_PAGES.indexOf(filename) !== -1;
+
   // Build a path relative to the current page for each target language.
   // Root pages (en) live at "/", localized pages live one level down at
   // "/es/", "/zh/", "/ar/" - so the relative link only ever needs at most
-  // one "../" to leave a language folder before entering another.
+  // one "../" to leave a language folder before entering another. When the
+  // current page has no translation, fall back to that language's homepage
+  // instead of constructing a link that 404s.
   function relativeHref(targetLang) {
     if (targetLang === currentLang) return filename;
     if (targetLang === "en") {
-      return currentLang === "en" ? filename : "../" + filename;
+      if (currentLang === "en") return filename;
+      return hasTranslation ? "../" + filename : "../index.html";
     }
-    return (currentLang === "en" ? "" : "../") + targetLang + "/" + filename;
+    var prefix = currentLang === "en" ? "" : "../";
+    return hasTranslation ? prefix + targetLang + "/" + filename : prefix + targetLang + "/index.html";
   }
 
   LANG_ORDER.forEach(function (code) {
