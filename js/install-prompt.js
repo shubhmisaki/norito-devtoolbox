@@ -35,8 +35,8 @@
       "<span>Add it to your device for one-tap access, even offline.</span>" +
       "</div>" +
       '<button type="button" class="install-banner-btn" id="installBannerInstall">Install</button>' +
-      '<button type="button" class="install-banner-close" id="installBannerClose" aria-label="Dismiss">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>' +
+      '<button type="button" class="install-banner-close" id="installBannerClose" aria-label="Dismiss" title="Dismiss">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>' +
       "</button>" +
       "</div>";
     return el;
