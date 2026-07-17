@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#ff4d7a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<title>在线免费将 PDF 转换为 JPG 或 PNG | norito</title>
+<meta name="description" content="将 PDF 页面转换为 JPG 或 PNG 图片。选择分辨率、指定页面后下载。完全在浏览器中运行，文件不会被上传。" />
+<link rel="canonical" href="https://norito.in/zh/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/pdf/pdf-to-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/pdf/pdf-to-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="在线免费将 PDF 转换为 JPG 或 PNG | norito" />
+<meta property="og:description" content="将 PDF 页面转换为 JPG 或 PNG 图片。选择分辨率、指定页面后下载。完全在浏览器中运行，文件不会被上传。" />
+<meta property="og:url" content="https://norito.in/zh/pdf/pdf-to-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在线免费将 PDF 转换为 JPG 或 PNG | norito" />
+<meta name="twitter:description" content="将 PDF 页面转换为 JPG 或 PNG 图片。选择分辨率、指定页面后下载。完全在浏览器中运行，文件不会被上传。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="../../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "将 PDF 转换为 JPG 或 PNG",
+  "url": "https://norito.in/zh/pdf/pdf-to-image.html",
+  "description": "将 PDF 页面转换为 JPG 或 PNG 图片。完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我的 PDF 文件会被上传吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。转换操作完全在你的浏览器内通过 JavaScript 完成。你的文件不会离开设备，也不会接触任何服务器。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "该选择哪种分辨率？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "96 DPI 适合屏幕和网页使用，150 DPI 是不错的通用默认值，300 DPI 最适合打印或放大查看细节。分辨率越高，文件越大。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "JPG 还是 PNG，该怎么选？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JPG 体积更小，适合照片或扫描页面。PNG 是无损格式，更适合文字清晰的页面、线条图，或需要透明背景的场合。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以只转换部分页面吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。输入你想要的页码或范围，比如 1-3、7。留空则转换所有页面。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如果转换多个页面，会得到什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "单个页面会直接下载为一张图片。两个或更多页面会打包在一个 .zip 文件中一起下载，每页一张图片。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我可以转换带密码保护的 PDF 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。"
+      }
+    }
+  ]
+}
+</script>
+<!-- AdSense temporarily disabled while investigating a Search Console "possible phishing" security flag. To restore, remove this comment wrapper. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script> -->
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo logo-word" src="../../assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">图像</button>
+        <div class="nav-panel">
+          <a href="../compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">压缩图片<span>压缩到指定文件大小</span></div></a>
+          <a href="../placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">占位图生成器<span>自定义尺寸的占位图片</span></div></a>
+          <a href="../remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">去除背景<span>从照片中抠出人像</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">开发工具</button>
+        <div class="nav-panel">
+          <a href="../test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">测试文件生成器<span>任意大小的精确测试文件</span></div></a>
+          <a href="../json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">JSON 格式化<span>格式化、校验、压缩</span></div></a>
+          <a href="../markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">Markdown 编辑器<span>实时预览，导出为 .md/.html</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">文本</button>
+        <div class="nav-panel">
+          <a href="../seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">SEO Slug 生成器<span>根据标题生成简洁网址</span></div></a>
+          <a href="../limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">限字数文本生成器<span>生成指定长度的占位文本</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">实用工具</button>
+        <div class="nav-panel">
+          <a href="../password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">密码生成器<span>随机密码与密码短语</span></div></a>
+          <a href="../qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">二维码生成器<span>自定义颜色与纠错级别</span></div></a>
+        </div>
+      </div>
+    
+            <div class="nav-group">
+        <a class="nav-cat" href="../../pdf/">PDF <span class="nav-en-tag">EN</span></a>
+        <div class="nav-panel">
+          <a href="../../pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">Merge PDF<span>Combine multiple PDFs into one</span></div></a>
+          <a href="../../pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">Split PDF<span>Pull out pages or split into files</span></div></a>
+          <a href="../../pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">Rotate PDF<span>Fix sideways or upside-down pages</span></div></a>
+          <a href="../../pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF to JPG/PNG<span>Turn pages into images</span></div></a>
+          <a href="../../pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">JPG/PNG to PDF<span>Combine images into one PDF</span></div></a>
+          <a href="../../pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">Delete &amp; Reorder Pages<span>Delete or rearrange pages</span></div></a>
+          <a href="../../pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">Add Page Numbers<span>Number every page</span></div></a>
+          <a href="../../pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">Add Watermark<span>Stamp text across every page</span></div></a>
+          <a href="../../pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">Extract Text<span>Pull text out of a PDF</span></div></a>
+          <a href="../../pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">Compress PDF<span>Shrink a large PDF's file size</span></div></a>
+          <a href="../../pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">Sign PDF<span>Draw or type a signature</span></div></a>
+        </div>
+      </div>
+            <div class="nav-group">
+        <a class="nav-cat" href="../../seo/">SEO <span class="nav-en-tag">EN</span></a>
+        <div class="nav-panel">
+          <a href="../../seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Meta Tag Generator<span>Title, description, OG, Twitter tags</span></div></a>
+          <a href="../../seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">UTM Builder<span>Build campaign tracking URLs</span></div></a>
+          <a href="../../seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">Robots.txt Generator<span>Allow/disallow rules, sitemap ref</span></div></a>
+          <a href="../../seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">Sitemap Generator<span>URLs in, sitemap.xml out</span></div></a>
+        </div>
+      </div>
+            <div class="nav-group">
+        <a class="nav-cat" href="../../design/">Design <span class="nav-en-tag">EN</span></a>
+        <div class="nav-panel">
+          <a href="../../design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">CSS Gradient Generator<span>Linear or radial, copy the CSS</span></div></a>
+          <a href="../../design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">Box Shadow Generator<span>Single or layered shadows</span></div></a>
+          <a href="../../design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">Border Radius Generator<span>Per-corner radius, copy the CSS</span></div></a>
+          <a href="../../design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">Favicon Generator<span>Every favicon size you need</span></div></a>
+          <a href="../../design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">Color Palette Extractor<span>Pull dominant colors from an image</span></div></a>
+          <a href="../../design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">Contrast Checker<span>WCAG contrast ratio, AA/AAA pass</span></div></a>
+          <a href="../../design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">Color Converter<span>HEX, RGB, HSL, CMYK, live</span></div></a>
+        </div>
+      </div>
+          </nav>
+      <button type="button" class="search-trigger" id="searchTrigger" aria-label="搜索工具" title="搜索工具"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / PDF 转 JPG/PNG</p>
+    <h1>将 PDF 转换为 JPG 或 PNG</h1>
+    <p class="lede">
+      将 PDF 页面转换为图片。选择格式和分辨率，指定页面，然后下载。不会上传任何内容，一切都在你的设备上完成。
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>点击选择 PDF 文件</strong>，或将它拖放到这里</p>
+        <p class="note" style="margin-top:2px;">文件留在你的设备上，不会被上传。</p>
+        <input type="file" id="fileInput" accept="application/pdf" />
+      </div>
+      <p class="note" id="fileInfo" style="display:none;"></p>
+
+      <div class="field-row" style="margin-top:20px;">
+        <div class="field">
+          <label for="formatSelect">格式</label>
+          <select id="formatSelect" disabled>
+            <option value="jpg" selected>JPG</option>
+            <option value="png">PNG</option>
+          </select>
+        </div>
+        <div class="field" id="qualityField">
+          <label for="qualitySelect">质量</label>
+          <select id="qualitySelect" disabled>
+            <option value="0.92" selected>高</option>
+            <option value="0.8">中</option>
+            <option value="0.6">低（文件更小）</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="dpiSelect">分辨率</label>
+          <select id="dpiSelect" disabled>
+            <option value="96">96 DPI（网页）</option>
+            <option value="150" selected>150 DPI（默认）</option>
+            <option value="300">300 DPI（打印）</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:4px; margin-bottom:20px;">
+        <label for="pagesInput">要转换的页面</label>
+        <input type="text" id="pagesInput" placeholder="例如 1-3、5 &ndash; 留空表示所有页面" disabled />
+      </div>
+
+      <button id="convertBtn" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        转换为图片
+      </button>
+      <div class="result-box" id="result" style="display:none;"></div>
+    </div>
+
+    <div class="panel" style="margin-top:32px;">
+      <h3 style="margin-top:0;">工作原理</h3>
+      <p class="note" style="margin-top:0;">
+        每个选中的页面都会在你的浏览器中渲染到画布上，按你选择的分辨率导出为图片。不会发送到任何地方，PDF 渲染库完全在客户端运行。单个页面会直接下载，多个页面会打包成 .zip。
+      </p>
+    </div>
+
+    <div class="faq-list" style="margin-top:32px;">
+      <details class="faq-item">
+        <summary>我的 PDF 文件会被上传吗？</summary>
+        <p>不会。转换操作完全在你的浏览器内通过 JavaScript 完成。你的文件不会离开设备，也不会接触任何服务器。</p>
+      </details>
+      <details class="faq-item">
+        <summary>该选择哪种分辨率？</summary>
+        <p>96 DPI 适合屏幕和网页使用，150 DPI 是不错的通用默认值，300 DPI 最适合打印或放大查看细节。分辨率越高，文件越大。</p>
+      </details>
+      <details class="faq-item">
+        <summary>JPG 还是 PNG，该怎么选？</summary>
+        <p>JPG 体积更小，适合照片或扫描页面。PNG 是无损格式，更适合文字清晰的页面、线条图，或需要透明背景的场合。</p>
+      </details>
+      <details class="faq-item">
+        <summary>可以只转换部分页面吗？</summary>
+        <p>可以。输入你想要的页码或范围，比如 1-3、7。留空则转换所有页面。</p>
+      </details>
+      <details class="faq-item">
+        <summary>如果转换多个页面，会得到什么？</summary>
+        <p>单个页面会直接下载为一张图片。两个或更多页面会打包在一个 .zip 文件中一起下载，每页一张图片。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我可以转换带密码保护的 PDF 吗？</summary>
+        <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">小而专注的工具，每个只做一件事。全部在你的浏览器中运行，不会上传任何内容。</p>
+      </div>
+      <div class="footer-col">
+        <h3>图像</h3>
+        <a href="../test-file-generator.html">测试文件</a>
+        <a href="../compress-image.html">压缩图片</a>
+        <a href="../placeholder-generator.html">占位图</a>
+        <a href="../remove-background.html">去除背景</a>
+        <a href="../qr-code-generator.html">二维码</a>
+      </div>
+      <div class="footer-col">
+        <h3>文本与开发</h3>
+        <a href="../password-generator.html">密码</a>
+        <a href="../seo-slug-generator.html">Slug</a>
+        <a href="../limited-text-generator.html">限字数文本</a>
+        <a href="../json-formatter.html">JSON</a>
+        <a href="../markdown-editor.html">Markdown</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito。所有工具均在本地浏览器中运行。</span>
+      <a href="../privacy.html">隐私政策</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../compare/">Compare</a>
+            <a href="../../how-it-works.html">How it Works</a>
+      <a href="https://ko-fi.com/shubhmisaki" target="_blank" rel="noopener">请我喝杯咖啡</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/i18n-runtime.js"></script>
+<script src="../../js/utils.js"></script>
+<script type="module" src="../../js/app-pdf-to-image.js"></script>
+<script src="../../js/nav.js"></script>
+<script src="../../js/theme-toggle.js"></script>
+<script src="../../js/lang-switcher.js"></script>
+<script src="../../js/bg-blobs.js"></script>
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="没有匹配的工具。">
+  <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="搜索工具">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="搜索工具..." autocomplete="off" />
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdkResults"></div>
+  </div>
+</div>
+
+<script src="../../js/cmdk.js"></script>
+<script src="/js/sw-register.js" defer></script>
+<script src="/js/install-prompt.js" defer></script>
+</body>
+</html>
