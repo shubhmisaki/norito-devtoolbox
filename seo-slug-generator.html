@@ -89,6 +89,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO Slug Generator",
+      "item": "https://norito.in/seo-slug-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -323,6 +343,38 @@ Café Culture: A Traveler's Guide to Europe</textarea>
           search results.
         </p>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The accent handling relies on a Unicode trick called NFKD normalization. A character
+        like <code>é</code> decomposes into a plain <code>e</code> plus a separate combining
+        accent mark; the tool then strips the combining marks, leaving the bare letter. The
+        K in NFKD (compatibility decomposition) also flattens typographic variants, so
+        <code>ﬁ</code> ligatures and full-width letters from CJK keyboards become their
+        plain ASCII forms too. After that, <code>&amp;</code> is spelled out as "and",
+        everything that isn't a letter or digit collapses into your separator, and runs of
+        separators are squeezed to one. Stopword removal checks each word against a list of
+        about 64 filler words, with a guard: if a title is made entirely of stopwords, it's
+        left alone rather than reduced to nothing. Length trimming cuts at your limit, then
+        backtracks to the previous word boundary as long as that doesn't sacrifice more than
+        40% of the slug.
+      </p>
+      <p>
+        Note the limits of transliteration: it maps Latin-based accents, but Cyrillic,
+        Arabic, or CJK titles have no ASCII decomposition and will mostly strip away. And
+        treat the slug you pick as permanent: it becomes the page's URL identity, and
+        changing it after publishing means 301 redirects and re-earning any links pointing
+        at the old address. It's the one piece of on-page SEO that's genuinely annoying to
+        revise, which is why generating it deliberately, before publishing, is worth the
+        thirty seconds.
+      </p>
+      <p>
+        Slugs are computed in-page on every keystroke. Open DevTools, watch the Network tab
+        while you type: no request fires, so pasting titles of unpublished or embargoed
+        articles leaks nothing.
+      </p>
     </div>
 
     <div class="related-tools">

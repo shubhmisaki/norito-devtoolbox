@@ -58,6 +58,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "YAML to JSON Converter",
+      "item": "https://norito.in/yaml-to-json-converter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -266,6 +286,14 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>YAML to JSON runs a small recursive-descent parser written for this page. It first strips comments (carefully, so a <code>#</code> inside a quoted string survives), records each line's indentation, then builds the structure the way YAML defines it: indentation opens nested maps, lines starting with <code>-</code> build sequences, and everything else is a scalar. Scalars are typed by the same rules real YAML parsers use: <code>true</code>/<code>false</code> become booleans, <code>~</code> and <code>null</code> become null, bare numbers become numbers, quoted strings stay strings, and inline <code>[a, b]</code> or <code>{k: v}</code> flow syntax is handled too. The result is serialized with <code>JSON.stringify</code> at your chosen indent. JSON to YAML is the reverse: <code>JSON.parse</code> validates the input, then an emitter walks the value and writes indented YAML, quoting any string that would otherwise be misread as a number, boolean, or null.</p>
+      <p>One deliberate choice worth knowing about: this parser only treats literal <code>true</code> and <code>false</code> as booleans. Older YAML 1.1 parsers also convert <code>yes</code>, <code>no</code>, <code>on</code>, and <code>off</code>, which is how Norway's country code <code>NO</code> famously becomes <code>false</code> in config files (the "Norway problem"). Here it stays the string it looks like.</p>
+      <p>It is a subset parser, kept small on purpose: anchors and aliases (<code>&amp;</code>/<code>*</code>), multi-document files, and block scalars (<code>|</code> and <code>&gt;</code>) aren't supported, so a complex Kubernetes manifest using those features won't round-trip. For everyday config conversion it covers what you actually paste.</p>
+      <p>Conversion happens entirely in your tab on every keystroke. No parser service is called: DevTools' Network panel stays silent while you type, so config files full of hostnames and secrets never leave your machine.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

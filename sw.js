@@ -8,7 +8,7 @@
 // after that, and updates roll out automatically because static assets use
 // stale-while-revalidate (serve the cached copy instantly, refresh it in
 // the background for next time).
-const CACHE_VERSION = "norito-v1";
+const CACHE_VERSION = "norito-v2";
 const APP_SHELL = ["/", "/index.html", "/offline.html", "/manifest.json", "/css/style.css", "/js/nav.js", "/js/theme-toggle.js", "/js/bg-blobs.js", "/js/cmdk.js", "/assets/norito-wordmark.svg", "/assets/icon-192.png"];
 
 self.addEventListener("install", (event) => {
@@ -56,7 +56,26 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Stale-while-revalidate for everything else (css/js/images/vendor libs):
+  // Network-first for CSS and JS: these must always match the HTML that
+  // references them, otherwise a deploy can render pages with a stale
+  // stylesheet or app logic on the first visit. Cache fallback keeps
+  // offline working.
+  if (url.pathname.endsWith(".css") || url.pathname.endsWith(".js")) {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res && res.status === 200) {
+            const copy = res.clone();
+            caches.open(CACHE_VERSION).then((cache) => cache.put(req, copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  // Stale-while-revalidate for everything else (images/fonts/vendor data):
   // serve from cache instantly if we have it, refresh in the background.
   event.respondWith(
     caches.match(req).then((cached) => {

@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sitemap Generator",
+      "item": "https://norito.in/seo/sitemap-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -255,6 +275,39 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your input is split on newlines, trimmed, and each line is validated by actually
+        constructing a <code>URL</code> object from it; only lines that parse and use
+        <code>http:</code> or <code>https:</code> make it in, and the tool tells you how many lines
+        it skipped rather than silently eating them. Every accepted URL is run through an XML
+        escaper covering all five special characters (<code>&amp;</code>, <code>&lt;</code>,
+        <code>&gt;</code>, <code>&quot;</code>, <code>'</code>), which matters more than it sounds:
+        a URL with <code>?page=2&amp;sort=asc</code> in a sitemap without escaping is invalid XML
+        and some parsers will reject the whole file. Each entry gets a <code>&lt;loc&gt;</code>,
+        optionally a <code>&lt;lastmod&gt;</code> stamped with today's date in
+        <code>YYYY-MM-DD</code> form, and optionally the changefreq and priority you picked, all
+        wrapped in a <code>&lt;urlset&gt;</code> with the sitemaps.org 0.9 namespace and an XML
+        declaration up top.
+      </p>
+      <p>
+        Here's the part most sitemap tools won't tell you: Google has publicly said it ignores
+        <code>&lt;changefreq&gt;</code> and <code>&lt;priority&gt;</code> entirely. They exist in
+        the spec, this tool supports them, but they don't do anything for Google. The one optional
+        field that does matter is <code>&lt;lastmod&gt;</code>, and only if it's truthful. That
+        cuts both ways: if you regenerate your sitemap weekly and every URL gets stamped with the
+        generation date, Google learns your lastmod is noise and starts ignoring it. Include it
+        when the dates mean something, skip it when they don't. Also keep the hard limits in mind:
+        50,000 URLs and 50 MB uncompressed per sitemap file before you need an index file.
+      </p>
+      <p>
+        Generation, validation, and the download all run in this page's JavaScript. The XML is
+        built as a string in memory and handed to you as a Blob; your URL list is never uploaded,
+        which you can verify by watching the Network tab while you generate.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

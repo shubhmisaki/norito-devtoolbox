@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resize Image",
+      "item": "https://norito.in/resize-image.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -277,6 +297,14 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The resize itself is one browser primitive: your image is decoded, a <code>&lt;canvas&gt;</code> is created at the target dimensions, and <code>drawImage()</code> scales the pixels onto it in a single pass. The browser applies its built-in smoothing filter (a bilinear-style resample) while it does this, which averages neighboring pixels instead of just picking the nearest one, so downscaled photos come out smooth rather than jagged. The canvas is then re-exported with <code>canvas.toBlob()</code> as JPEG or WebP at 0.92 quality, or as lossless PNG, depending on the format option.</p>
+      <p>A few practical truths about scaling that the tool's behavior reflects. Downscaling is where resizing shines: averaging many source pixels into each output pixel keeps photos crisp. Upscaling can't invent detail, the same filter just spreads existing pixels out, so anything past about 2x starts looking soft; if you need a big version, start from the largest original you have. And smooth filtering is wrong for exactly one case, pixel art, where you actually want hard nearest-neighbor edges; a photo tool like this one is tuned for photos.</p>
+      <p>Percentage mode computes target dimensions from the original size, exact mode takes your numbers, and the lock-ratio toggle keeps width and height tied to the original aspect so people in your photos don't get stretched. Dimensions are capped at 20,000 pixels per side because a canvas bigger than that can exhaust browser memory. Batch mode runs the same canvas pipeline over each file in turn and packs the results into a ZIP that is also assembled in JavaScript.</p>
+      <p>Because the whole pipeline is decode, draw, re-encode inside your tab, your photos never leave your machine. You can verify this: open DevTools, switch to the Network tab, and resize something. No upload request appears, and the tool keeps working offline.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

@@ -89,6 +89,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Test File Generator",
+      "item": "https://norito.in/test-file-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -304,6 +324,38 @@
           shows you the real generated size, not just what you asked for.
         </p>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each format is constructed byte by byte to its own spec, with the padding hidden in
+        places parsers are required to skip. The PDF is a real five-object document whose
+        cross-reference table lists the exact byte offset of every object, padded through an
+        oversized comment line; the ZIP is a genuine archive with a local header, central
+        directory, and end record around one zero-filled entry, including a real CRC-32
+        checksum computed over the payload, which matters because unzip tools verify that
+        checksum and reject fakes. Images get the same treatment: the GIF grows through
+        Comment Extension sub-blocks of up to 255 bytes each, the JPEG through COM segments
+        capped at 64 KB apiece, and the PNG through a custom ancillary chunk spliced in
+        before IEND, complete with its own CRC-32, with a lowercase first letter in its type
+        so decoders know it's safe to ignore.
+      </p>
+      <p>
+        That structural honesty is the point: these files pass magic-number checks, decode
+        in real viewers, and survive checksum validation, so they exercise upload pipelines
+        that actually inspect content. One caveat when testing image uploads specifically:
+        if the pipeline re-encodes images (most avatar and photo uploaders do), the padding
+        is discarded during re-encoding and your 5 MB JPG comes out tiny on the other side.
+        Test size limits at the point before re-encoding, or use ZIP or PDF, which pipelines
+        rarely rewrite.
+      </p>
+      <p>
+        No file is fetched from anywhere: the bytes are assembled in memory and handed to
+        your browser as a blob, which is why generation is instant even at hundreds of
+        megabytes. Open DevTools and watch the Network tab while you generate and download;
+        nothing moves in either direction.
+      </p>
     </div>
 
     <div class="related-tools">

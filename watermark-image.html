@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Watermark Image",
+      "item": "https://norito.in/watermark-image.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -275,6 +295,14 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The live preview is a positioned DOM element layered over your photo, but the final image is real pixel work on a <code>&lt;canvas&gt;</code>. When you hit apply, the original image is drawn at full resolution, then the canvas context is translated to one of nine anchor points (corners, edge midpoints, center, each inset by a 6% margin), rotated by your angle, and the text is drawn with <code>fillText()</code> using your color and opacity via <code>globalAlpha</code>. Text alignment and baseline are set per anchor so "bottom-right" in the preview lands in the same relative spot in the output.</p>
+      <p>The subtle part is scale. Your on-screen preview might be 500 pixels wide while the actual photo is 4,000, so a naive tool renders a watermark that looked right in preview but comes out microscopic. This one measures the ratio between the displayed preview width and the image's natural width and multiplies the font size by it, so 48px in the preview means the same proportional size in the full-resolution file. The result is re-encoded in the original format: JPEG at 0.95 quality, PNG losslessly (pick PNG if you want the crispest possible text edges).</p>
+      <p>Worth understanding about what a watermark is: this text is baked into the pixels, not stored as a layer or metadata, so nobody can strip it the way EXIF data gets stripped. That cuts both ways. A small, low-opacity mark in a corner is easy prey for crop tools and AI inpainting; a watermark that actually protects an image overlaps the subject, at an angle, at moderate opacity, which is exactly what the position, angle, and opacity controls are for.</p>
+      <p>Both preview and final render run in your tab. Check DevTools' Network panel while you work: the photo is never uploaded, so client proofs and unreleased shots stay on your machine.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

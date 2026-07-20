@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sort Lines",
+      "item": "https://norito.in/sort-lines.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -247,6 +267,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Your text is split on newlines and sorted with a comparator picked by the dropdown. Alphabetical order uses <code>localeCompare</code>, the browser's language-aware comparison, instead of raw character codes. That distinction is visible immediately: a naive code-point sort puts every capital letter before every lowercase one (so "Zebra" sorts before "apple"), and it mangles accented characters. Locale-aware comparison orders words the way a dictionary would.</p>
+      <p>Numeric sort parses each line with <code>parseFloat</code> and compares the numbers, which fixes the classic string-sort bug where "10" comes before "9" because "1" is a smaller character. Lines that don't start with a number are treated as 0 and grouped together. Length sort compares character counts, and shuffle uses the Fisher-Yates algorithm, which gives every ordering equal probability. That's worth a sentence: the popular <code>sort(() =&gt; Math.random() - 0.5)</code> trick produces biased shuffles because sort algorithms assume a consistent comparator, while Fisher-Yates walks the array once, swapping each item with a uniformly random earlier slot.</p>
+      <p>Descending order sorts ascending then reverses, dedupe runs after sorting with a <code>Set</code> so only exact repeats are dropped, and blank lines can be filtered before any of it. The whole pipeline is array operations on a string in your tab: no request fires when you paste or sort (verify in DevTools' Network panel), so sorting a list of names, emails, or keys never involves a server.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

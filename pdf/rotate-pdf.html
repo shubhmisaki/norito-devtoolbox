@@ -103,6 +103,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Rotate PDF",
+      "item": "https://norito.in/pdf/rotate-pdf.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -263,16 +283,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        Rotation happens entirely in your browser using a PDF library that runs client-side.
-        Each selected page's orientation is updated on top of its current rotation, so the
-        content itself is never re-rendered, just turned. Leave the pages field blank to rotate
-        the whole document.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my PDF files uploaded anywhere?</summary>
@@ -294,6 +304,38 @@
         <summary>Can I rotate a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Every page in a PDF has a <code>/Rotate</code> entry in its page dictionary, a single
+        number (0, 90, 180, or 270) that tells the viewer which way to turn the page when
+        displaying it. This tool uses pdf-lib, running in your browser, to read that value for
+        each selected page, add your chosen rotation on top, wrap the result back into the
+        0-359 range, and write it back. That's the entire operation. The page's actual content,
+        the text, fonts, images, and vector graphics, is not touched at all.
+      </p>
+      <p>
+        This matters more than it sounds. Some converters "rotate" a PDF by rendering each page
+        to an image, turning the image, and rebuilding the file. That approach destroys
+        selectable text, bloats the file, and locks the quality to whatever resolution they
+        rendered at. A metadata rotation is the opposite: perfectly lossless, reversible (rotate
+        another 270 degrees and you're back), and instant even on a 500-page file, because the
+        amount of work doesn't depend on what's on the pages. Your output file will be almost
+        exactly the same size as the input.
+      </p>
+      <p>
+        Because the rotation is applied on top of each page's current value, a scan that's
+        already sideways turns the extra amount you asked for instead of resetting. And clicking
+        rotate repeatedly always starts from the original file you loaded, not from the previous
+        download, so results stay predictable.
+      </p>
+      <p>
+        As with every tool on this site, the file stays in the tab. Open DevTools and watch the
+        Network panel while you rotate: nothing is transmitted, the PDF is modified in memory
+        and downloaded from a local blob.
+      </p>
     </div>
 
     <div class="related-tools">

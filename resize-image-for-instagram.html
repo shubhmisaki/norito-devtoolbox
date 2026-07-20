@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resize Image for Instagram",
+      "item": "https://norito.in/resize-image-for-instagram.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -276,6 +296,14 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>This is a canvas resize with Instagram's numbers pre-filled. Your photo is decoded in the browser, drawn onto a <code>&lt;canvas&gt;</code> set to 1080x1080 with <code>drawImage()</code>, which resamples the pixels with the browser's built-in smoothing filter, and re-exported with <code>canvas.toBlob()</code> (JPEG and WebP at 0.92 quality, PNG lossless). No app, no upload, and the defaults are already the right ones for a square feed post.</p>
+      <p>Why 1080 specifically: Instagram stores feed images at up to 1080 pixels wide and recompresses everything you upload. Send a 4,000-pixel photo and Instagram scales it down itself, with compression settings you don't control; send exactly 1080 and you've done the scaling with clean resampling, leaving Instagram less to mangle. The three sizes that matter are 1080x1080 for square, 1080x1350 for portrait (the tallest allowed, and the most screen space in the feed), and 1080x608 for landscape. Change the height field to hit the other two.</p>
+      <p>One thing to watch: if your original isn't square and you force exact 1080x1080 with the aspect-ratio lock off, the image gets stretched, not cropped, and faces will show it. The right order is crop to the shape you want first (the Crop Image tool does square in one click), then resize here with the lock on.</p>
+      <p>Everything happens in your tab. Open DevTools' Network panel while you resize: your photo is never uploaded to this site or anywhere else, which is not true of most "resize for Instagram" tools that quietly round-trip your image through their servers.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

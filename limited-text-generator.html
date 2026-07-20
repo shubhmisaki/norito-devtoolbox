@@ -89,6 +89,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Limited Text Generator",
+      "item": "https://norito.in/limited-text-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -269,6 +289,34 @@
           </button>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The generator keeps a bank of 36 handwritten sentences, shuffles it with a
+        Fisher-Yates pass, and appends whole sentences greedily as long as each one still
+        fits inside your remaining budget. Only the single sentence that would overflow gets
+        cut, character by character, so the passage lands exactly on target with at most one
+        mid-sentence break. When the bank runs dry on long targets, it reshuffles and cycles
+        through again in a new order, which is why two clicks at the same length produce
+        different passages. With "count spaces" off, the same walk runs against a parallel
+        count that skips whitespace, so trimming still stops on exactly the right visible
+        character.
+      </p>
+      <p>
+        The sentence bank is deliberately plain ASCII, and that matters more than it looks.
+        "Character count" is ambiguous the moment accents or emoji appear: a validator might
+        count UTF-16 code units, Unicode code points, or UTF-8 bytes, and those three
+        disagree on the same string. With pure ASCII they are all identical, so the 100
+        characters you generate here are 100 characters under every counting scheme a form,
+        API, or varchar column might use.
+      </p>
+      <p>
+        Generation is a plain string-building loop in this page's JavaScript. Open DevTools,
+        watch the Network tab, and click Generate: no request fires, and the tool works the
+        same with your connection switched off.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Character Counter",
+      "item": "https://norito.in/character-counter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -219,6 +239,32 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        On every keystroke the page recomputes three numbers. The character count is JavaScript's
+        <code>.length</code>, which counts UTF-16 code units. The no-spaces count strips all
+        whitespace (spaces, tabs, line breaks) with a regex first. The byte size runs your text
+        through the browser's <code>TextEncoder</code> API, which produces the actual UTF-8 bytes
+        the text would occupy in a file, a database column, or an HTTP request body. The platform
+        limits list is then just subtraction against each limit, flipping to "over" styling the
+        moment you cross one.
+      </p>
+      <p>
+        The gap between those numbers is where people get burned. An emoji like a smiley is one
+        visible symbol but two UTF-16 code units (so it counts as 2 characters here, and on many
+        platforms) and four bytes of UTF-8. For SMS specifically, the 160-character limit assumes
+        the message stays within the old GSM-7 alphabet: include a single emoji or curly "smart
+        quote" and the carrier silently switches the whole message to UCS-2 encoding, dropping
+        the per-segment limit to 70 characters. If a one-character edit suddenly split your text
+        into two SMS segments, that's why.
+      </p>
+      <p>
+        Counting happens entirely in this page's JavaScript. Open DevTools' Network tab while you
+        type: you'll see zero requests, because your text never leaves the browser.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

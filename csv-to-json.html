@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSV to JSON",
+      "item": "https://norito.in/csv-to-json.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -242,6 +262,35 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Files are read with the browser's <code>FileReader</code> API and parsed by a hand-written
+        single-pass parser that follows RFC 4180 rules: it walks the text character by character
+        while tracking whether it's inside a quoted field. That's the part naive
+        split-on-comma converters get wrong: inside quotes, commas and even line breaks belong to
+        the cell, and a doubled quote (<code>""</code>) is a literal quote character. Delimiter
+        auto-detection is pragmatic rather than clever: it counts commas, semicolons, and tabs in
+        the first line and picks the winner, which handles the semicolon-delimited CSVs that
+        European Excel exports produce.
+      </p>
+      <p>
+        Type coercion is where you should look twice at the output. Values that look like
+        integers or decimals become JSON numbers, and <code>true</code>/<code>false</code> become
+        booleans. That's usually what you want, but it means values with leading zeros, like ZIP
+        codes or phone extensions, come out as numbers: <code>01234</code> turns into
+        <code>1234</code>. If a column is an identifier rather than a quantity, verify it after
+        converting. Missing trailing cells in short rows become empty strings rather than
+        crashing the row.
+      </p>
+      <p>
+        Parsing, coercion, and even the .json download (built from an in-memory
+        <code>Blob</code>) all happen inside this page's JavaScript. Open DevTools' Network tab
+        while converting: no request carries your data, so customer lists and exports never leave
+        your machine.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSON Diff",
+      "item": "https://norito.in/json-diff.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -240,6 +260,33 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Both sides go through <code>JSON.parse</code> first, so if one isn't valid JSON you get
+        the parser's own error message pointing at the problem instead of a garbage diff. The
+        comparison then walks the two parsed structures recursively: for objects it takes the
+        union of both key sets and recurses into each key, for arrays it compares index by index,
+        and leaf values are considered equal only if they serialize identically. Every difference
+        is emitted as a path like <code>user.address[1].zip</code> tagged as added, removed, or
+        changed, then summarized into counts.
+      </p>
+      <p>
+        Because the diff runs on parsed values rather than text, formatting is invisible:
+        indentation, key order, and whitespace differences produce zero noise, which is the whole
+        point versus a line-based text diff. The trade-off to understand is array alignment. It's
+        positional, so inserting one element at the front of a long array reports every following
+        index as "changed" plus one addition at the end. When you see a wall of changed entries
+        that all look shifted by one, read it as "something was inserted or removed early in this
+        array", not as dozens of independent edits.
+      </p>
+      <p>
+        Parsing and comparison happen entirely in this page's JavaScript. Open DevTools' Network
+        tab and hit Compare: no request carries your JSON, so API responses and config files with
+        secrets in them stay on your machine.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

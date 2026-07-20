@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Border Radius Generator",
+      "item": "https://norito.in/design/border-radius-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -238,6 +258,34 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Four sliders, one per corner, each firing on input. With "link all corners" on, moving any
+        slider copies its value to the other three before the CSS is rebuilt. The values are
+        assembled into the shorthand in the order CSS actually uses, clockwise from top-left:
+        top-left, top-right, bottom-right, bottom-left. That same string is written straight onto
+        the preview box's <code>style.borderRadius</code>, so the preview isn't an approximation of
+        the output, it literally is the CSS you copy, rendered by your own browser.
+      </p>
+      <p>
+        Two behaviors worth knowing that the sliders can't show you directly. First, this tool uses
+        pixels, and pixels behave differently from percentages: <code>border-radius: 50%</code> on
+        a rectangle resolves against each axis separately and gives you an ellipse, while a big
+        pixel value like <code>9999px</code> gives you the pill shape people usually wanted. Second,
+        the spec clamps overlapping radii: when the radii on a side add up to more than that side's
+        length, the browser scales all of them down proportionally. That's why cranking every
+        slider to 100 on a small box eventually stops changing the shape, and it's also why you
+        never need to compute "half the height" exactly for a pill; overshoot and the browser
+        clamps it for you.
+      </p>
+      <p>
+        The whole tool is a few dozen lines of JavaScript running in this page. Slider values go
+        from the DOM to the preview element and back to the output box without any network
+        activity, which you can confirm in the DevTools Network tab.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

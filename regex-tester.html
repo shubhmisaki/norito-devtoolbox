@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Regex Tester",
+      "item": "https://norito.in/regex-tester.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -239,6 +259,14 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Your pattern is compiled with the browser's native <code>RegExp</code> engine, the exact same engine your JavaScript code will use in production. That's the point of testing here rather than in a PCRE-based tool: syntax that differs between flavors (lookbehind support, <code>\d</code> semantics under the <code>u</code> flag, named groups) behaves here exactly as it will in Node or the browser. The flags field is sanitized to the valid set (<code>d g i m s u y</code>), and the tester quietly adds <code>g</code> internally so it can walk every match, without changing what you typed.</p>
+      <p>Matching runs on every keystroke: the tester calls <code>exec()</code> in a loop, collecting match text, position, and capture groups. Two guards keep it honest: zero-length matches (from patterns like <code>a*</code>) get a manual index bump so the loop can't spin forever, and iteration caps at 5,000 matches. Highlighting is built by walking your test string once and wrapping each matched span, with all text HTML-escaped first so a match containing <code>&lt;script&gt;</code> renders as text, not markup.</p>
+      <p>Everything stays in your tab; the Network panel in DevTools shows zero requests while you type, so test strings with real data in them never leave your machine.</p>
+      <p>One gotcha worth knowing: nested quantifiers like <code>(a+)+$</code> can trigger catastrophic backtracking, where match time explodes exponentially on a long almost-matching input. If the page freezes on a pattern like that, it's not the tool, it's the regex, and it will hang your production code the same way. Rewrite the pattern so quantified groups can't match the same characters in multiple ways.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

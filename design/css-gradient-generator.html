@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSS Gradient Generator",
+      "item": "https://norito.in/design/css-gradient-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -228,6 +248,36 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Every stop is an object holding a color and a position from 0 to 100. On each change the
+        stops are sorted by position before serialization, so you can type positions in any order
+        and the output stays valid, then joined into either
+        <code>linear-gradient(&lt;angle&gt;deg, ...)</code> or
+        <code>radial-gradient(circle, ...)</code> depending on the type you picked. That exact
+        string is set as the preview's <code>background</code> and printed as the output, so the
+        preview is rendered by your browser from the same CSS you'll copy, not a lookalike. New
+        stops drop in at 50% in green so you can spot them, and the remove button only appears once
+        you have more than two stops, since a gradient needs at least two.
+      </p>
+      <p>
+        If a gradient between two saturated colors looks muddy in the middle, that's not this tool,
+        that's CSS: browsers interpolate gradients in the sRGB color space by default, and the
+        straight line between certain pairs (blue to yellow is the classic) passes through
+        desaturated gray. Two fixes: add a stop in the middle and set it to the vivid intermediate
+        color you actually want, which this tool makes easy, or use the newer color-space syntax
+        like <code>linear-gradient(in oklab, blue, yellow)</code>, which modern browsers now
+        support and which interpolates perceptually so the middle stays clean. Worth knowing before
+        you blame your color choices.
+      </p>
+      <p>
+        The gradient string is built and applied entirely in this page's JavaScript; picking colors
+        and dragging the angle slider triggers zero network requests, which the DevTools Network
+        tab will happily confirm.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Converter",
+      "item": "https://norito.in/case-converter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -236,6 +256,33 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each button is a plain JavaScript string transform that re-runs on every keystroke.
+        UPPERCASE and lowercase are one-liners, but the programmer cases (camelCase, snake_case,
+        kebab-case, PascalCase, CONSTANT_CASE) all share a word-splitting step first: a regex
+        inserts a boundary wherever a lowercase letter or digit is followed by an uppercase
+        letter, then the text is split on any run of non-alphanumeric characters. Once the input
+        is a clean word list, rejoining in the target style is trivial, which is why you can go
+        from kebab-case to PascalCase to snake_case in any order without garbage accumulating.
+      </p>
+      <p>
+        One quirk worth knowing: consecutive capitals are treated as a single word. The splitter
+        only breaks between a lowercase character and an uppercase one, so <code>APIKey</code>
+        becomes <code>apikey</code> in snake_case, not <code>api_key</code>. If your identifiers
+        contain acronyms, check those spots after converting. Title Case is smarter than a plain
+        capitalize-every-word: it keeps minor words like "a", "the", "of", and "in" lowercase
+        unless they start the text, and Sentence case only capitalizes after <code>.</code>,
+        <code>!</code>, or <code>?</code>.
+      </p>
+      <p>
+        All of this happens inside the page's JavaScript, with no library and no server. Open
+        DevTools' Network tab while you type: nothing is sent, because there's nothing to send
+        it to.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

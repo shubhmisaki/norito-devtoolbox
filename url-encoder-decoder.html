@@ -58,6 +58,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "URL Encoder / Decoder",
+      "item": "https://norito.in/url-encoder-decoder.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -267,6 +287,14 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Encoding calls the browser's own <code>encodeURIComponent</code> or <code>encodeURI</code>, the same functions JavaScript code uses, so the output is exactly what a browser or HTTP library would produce. Each unsafe byte becomes a percent sign plus two hex digits of its UTF-8 encoding: a space becomes <code>%20</code>, and multi-byte characters expand to several escapes (é is <code>%C3%A9</code>).</p>
+      <p>The two encode modes exist because "encode a URL" means two different things. Component mode escapes everything that isn't a letter, digit, or a handful of safe marks, including <code>/ ? &amp; = :</code>. That's what you want for a single value going into a query string, otherwise an ampersand inside the value splits your parameter in two. Full-URL mode leaves the structural characters alone so a complete URL keeps working, and only escapes characters that can't appear raw at all. Using component encoding on a whole URL breaks it; using full-URL encoding on a parameter value is an injection bug waiting to happen. Pick by what you're encoding, not by habit.</p>
+      <p>Decode mode runs <code>decodeURIComponent</code>, with one practical extra: plus signs are converted to spaces first, because HTML form encoding (the <code>application/x-www-form-urlencoded</code> format you see in query strings) historically writes spaces as <code>+</code>. Malformed input, like a stray <code>%</code> not followed by two hex digits, throws a <code>URIError</code> that the tool catches and reports instead of showing half-decoded text. If decoding once still leaves <code>%25xx</code> sequences, your string was encoded twice; run it through decode again.</p>
+      <p>Both directions are single built-in function calls in your tab. The Network panel in DevTools shows no traffic while you type, so tokens and URLs with secrets in them stay on your machine.</p>
     </div>
 
     <div class="related-tools">

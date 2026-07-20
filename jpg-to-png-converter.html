@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JPG to PNG Converter",
+      "item": "https://norito.in/jpg-to-png-converter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -250,6 +270,33 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The browser decodes your JPG into raw pixels, those pixels are drawn onto a canvas at the
+        image's full natural width and height, and <code>canvas.toBlob("image/png")</code> writes
+        the result as a PNG. There's no quality slider for this direction because PNG's DEFLATE
+        compression is lossless: every pixel the decoder produced is stored exactly. The file
+        itself never leaves your machine; it's referenced through a local object URL, not an
+        upload.
+      </p>
+      <p>
+        Two things to keep expectations straight. First, converting to PNG can't undo JPEG
+        compression: blockiness and ringing that already exist in the JPG are preserved
+        pixel-perfectly, so PNG is the right target when you're going to edit or re-save the
+        image repeatedly from here on, not a way to improve it. Second, photographic images are
+        full of sensor noise that DEFLATE can't compress well, which is why the PNG is routinely
+        several times larger than the JPG it came from. That's normal, not a bug.
+      </p>
+      <p>
+        The canvas round-trip also rewrites the file from scratch, so EXIF data (camera info,
+        GPS position) is dropped from the output. Orientation still looks right, because modern
+        browsers bake the EXIF rotation into the pixels during decoding. And since the whole
+        pipeline is browser APIs, you can open DevTools' Network tab while converting and watch
+        exactly zero requests go out with your photo.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

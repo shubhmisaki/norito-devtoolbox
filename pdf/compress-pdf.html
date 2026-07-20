@@ -80,6 +80,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Compress PDF",
+      "item": "https://norito.in/pdf/compress-pdf.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -275,6 +295,43 @@
         <summary>Can I compress a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Most online "PDF compressors" do one crude thing: render every page to a JPEG and stack
+        the JPEGs back into a PDF. That shrinks the file, but it also silently destroys your
+        selectable, searchable text. This tool deliberately doesn't work that way. Before
+        touching anything, it uses pdf.js (Firefox's PDF engine) to check each page for real
+        extractable text, and splits the document into two kinds of pages that get treated
+        completely differently.
+      </p>
+      <p>
+        Pages with real text are never rasterized. Their text, fonts, and vector graphics stay
+        byte-identical; the only thing touched is embedded photos. pdf-lib walks each page's
+        internal resource dictionary to find image objects, and any plain baseline JPEG gets
+        decoded, optionally downscaled, and re-encoded at your chosen quality. Images with
+        transparency masks or unusual color spaces are deliberately skipped rather than risked,
+        and a recompressed image is only swapped in if it actually came out smaller. Pages with
+        no text at all, which is what a scanned page is, are safe to flatten: they're re-rendered
+        at your chosen DPI and stored as one JPEG each, since there was never any text on them
+        to lose.
+      </p>
+      <p>
+        A final pass matters more than it sounds: pdf-lib never deletes replaced objects on its
+        own, so the tool runs a mark-and-sweep over the file's object graph and drops everything
+        no longer referenced, the old full-size images included. Without that step the
+        "compressed" file would quietly keep all its original data. And if the rebuilt file
+        isn't smaller than the original, you get your original back, byte for byte. This is why
+        results vary honestly: scans often shrink 70 to 90%, while a text-only PDF that's
+        already efficient may not shrink at all.
+      </p>
+      <p>
+        All of this runs in your browser's memory. Open DevTools, watch the Network tab while
+        compressing a contract or a bank statement: no request ever carries your file. The
+        download is generated locally from a blob.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -111,6 +111,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "PDF to JPG/PNG",
+      "item": "https://norito.in/pdf/pdf-to-image.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -288,16 +308,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        Each selected page is rendered onto a canvas in your browser at the resolution you
-        choose, then exported as an image. Nothing is sent anywhere, a PDF rendering library
-        runs entirely client-side. One page downloads directly, multiple pages are bundled
-        into a .zip.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my PDF files uploaded anywhere?</summary>
@@ -323,6 +333,39 @@
         <summary>Can I convert a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        This tool uses pdf.js, the same rendering engine Firefox uses to display PDFs, running
+        entirely in your browser. Each selected page gets a canvas: the tool asks pdf.js for the
+        page's viewport at your chosen scale, then pdf.js executes the page's drawing
+        instructions, laying down text glyph by glyph, painting vector shapes, and decoding
+        embedded images, onto that canvas. The canvas is then exported with
+        <code>canvas.toBlob()</code> as PNG or JPEG. One page downloads directly; several pages
+        are packed into a .zip that's also assembled locally in JavaScript.
+      </p>
+      <p>
+        The DPI setting is really a scale factor. PDF pages are measured in points, 72 to the
+        inch, so 144 DPI renders at exactly 2x, and 300 DPI at about 4.2x. A standard A4 page at
+        300 DPI comes out around 2480 by 3508 pixels, which is why high-DPI conversions of long
+        documents take noticeably longer and produce much bigger files. 96 DPI is plenty for
+        screens; keep 300 for print.
+      </p>
+      <p>
+        One detail most converters get wrong: JPEG has no transparency, so a PDF page with a
+        transparent background would render with a black background if you exported the canvas
+        naively. This tool fills the canvas white before rendering when JPEG is selected, so
+        pages come out looking like paper. PNG keeps transparency as-is. Also remember that
+        rasterizing is one-way: the output image has no selectable text, so if you need the text
+        itself, use the extract text tool instead.
+      </p>
+      <p>
+        You can confirm nothing is uploaded: open DevTools, go to the Network tab, and convert.
+        The rendering happens in a local worker thread and the images are generated from canvas
+        memory. No request ever contains your document.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -58,6 +58,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Find and Replace",
+      "item": "https://norito.in/find-and-replace.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -246,6 +266,33 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Every search, plain or regex, is compiled into a single JavaScript <code>RegExp</code>
+        under the hood. In plain-text mode your search term is escaped first (so <code>.</code>,
+        <code>(</code>, <code>$</code> and friends match literally), "whole word" wraps the
+        pattern in <code>\b</code> word boundaries, and the case toggle simply adds or removes
+        the <code>i</code> flag. The result re-renders on every keystroke, and the match count
+        comes from running the same pattern with the global flag before replacing. Invalid regex
+        input doesn't wipe your text, it just shows the engine's error and leaves the output
+        untouched.
+      </p>
+      <p>
+        Here's the feature most find-and-replace pages never mention: because replacement uses
+        JavaScript's native <code>String.replace</code>, backreferences work in regex mode. Use
+        <code>$1</code>, <code>$2</code> for capture groups and <code>$&amp;</code> for the whole
+        match. So finding <code>(\w+), (\w+)</code> and replacing with <code>$2 $1</code> flips
+        "Doe, Jane" into "Jane Doe" across an entire file, and <code>$$</code> gives you a
+        literal dollar sign when you need one.
+      </p>
+      <p>
+        The whole thing runs in this page's JavaScript on your machine. Open DevTools' Network
+        tab while you work: no request carries your text, which is exactly why it's safe to paste
+        logs, config files, or anything else you'd rather not upload to a random website.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

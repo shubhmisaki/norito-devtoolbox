@@ -79,6 +79,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remove Image Background Free",
+      "item": "https://norito.in/remove-image-background-free.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -287,6 +307,13 @@
         <summary>Is my photo uploaded to a server?</summary>
         <p>No. Processing happens entirely on your device after a small model downloads once per browser session. Your photo is never sent anywhere.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The heavy lifting is done by MediaPipe's Selfie Segmentation model, a neural network compiled to WebAssembly that runs inside your browser. The first time you click the button, the page downloads the model (about 5.5 MB, cached for the session), then runs inference on your photo locally. The model outputs a segmentation mask: a grayscale probability map where each pixel's brightness says how confident the model is that the pixel belongs to a person.</p>
+      <p>Raw masks make ugly cutouts, so the tool post-processes before using one as transparency. The mask is smoothed with a fast box blur to knock down the blocky noise the lightweight model produces at its low internal resolution, then the alpha curve is remapped: anything below a low confidence threshold becomes fully transparent, anything above a high threshold fully opaque, with only a few pixels of soft transition between. Without that remap, every uncertain pixel near the boundary stays half-see-through and the subject gets a washed-out halo. The cleaned mask is applied per-pixel through canvas <code>getImageData</code>, and the result exports as PNG (to keep transparency) or composited over a solid color you pick.</p>
+      <p>This is also why results differ from paid cloud services: those run models hundreds of times larger on GPUs, so they win on hair and busy backgrounds. The tradeoff here is the opposite one, and it's deliberate: your photo never leaves your machine. That's verifiable, not a promise: open DevTools' Network tab and process an image. You'll see the model files download, and no request carrying your photo, ever. The model is trained on people, so it works best when a person is the main subject; products and pets get mixed results.</p>
     </div>
 
     <div class="related-tools">

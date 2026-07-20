@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Favicon Generator",
+      "item": "https://norito.in/design/favicon-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -230,6 +250,40 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your image is first cover-fitted: the code takes the largest centered square that fits
+        inside it, then a single <code>drawImage()</code> call crops that square and scales it onto
+        a canvas of the target size in one step, so non-square uploads come out cropped instead of
+        stretched or letterboxed. That happens six times, once each for 16, 32, 48, 180, 192, and
+        512 pixels, and each canvas is exported as a PNG. The 180px one is named
+        <code>apple-touch-icon.png</code> because that's the filename iOS conventions expect; the
+        rest are <code>favicon-NxN.png</code>. The zip archive is assembled byte by byte in
+        JavaScript, no server-side zipping, and includes a text file with the exact
+        <code>&lt;link&gt;</code> tags to paste into your <code>&lt;head&gt;</code>. You may notice
+        there's no <code>.ico</code> file: every current browser accepts PNG favicons, and the ICO
+        container format's one remaining trick, bundling multiple sizes in a single file, matters
+        mostly for legacy agents that blindly request <code>/favicon.ico</code>.
+      </p>
+      <p>
+        Which sizes actually earn their keep in 2026: 32x32 covers browser tabs on modern displays
+        (16x16 is the legacy fallback, still worth shipping because it's tiny), 180x180 is what iOS
+        uses for home screen bookmarks, and 192x192 plus 512x512 are the two sizes the PWA manifest
+        spec requires for install prompts and splash screens. The 48x48 mainly serves Windows and
+        some search result treatments. Practical advice the file sizes won't tell you: an icon that
+        looks great at 512px usually turns to mush at 16px, so favor one bold shape and high
+        contrast over detail. If your logo has fine lines, test the 16px preview above before
+        shipping.
+      </p>
+      <p>
+        The image you drop in is decoded, cropped, resized, and zipped entirely in your browser's
+        memory; there is no upload endpoint in this page at all. Watch the DevTools Network tab
+        while you generate: the only transfer is the finished zip moving from memory to your
+        downloads folder.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

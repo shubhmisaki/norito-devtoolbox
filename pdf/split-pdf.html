@@ -111,6 +111,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Split PDF",
+      "item": "https://norito.in/pdf/split-pdf.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -270,16 +290,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        Splitting happens entirely in your browser using a PDF library that runs client-side.
-        Pages are copied directly from your source file, so there's no re-rendering or quality
-        loss. Leave the pages field blank to work with every page, or list specific pages and
-        ranges separated by commas.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my PDF files uploaded anywhere?</summary>
@@ -305,6 +315,38 @@
         <summary>Can I split a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your ranges string is parsed first: something like <code>1-3, 5, 8-10</code> becomes
+        groups of page indices, and the tool checks every number against the document's actual
+        page count before doing anything. Then pdf-lib, running entirely in your browser, loads
+        the PDF's object structure into memory, creates a new empty document for each output,
+        and calls <code>copyPages()</code> to pull the selected pages across. Copied pages bring
+        their fonts, images, and graphics with them exactly as stored, no rasterizing, no
+        recompression, so a split page is pixel-identical to the original.
+      </p>
+      <p>
+        The "split into separate files" toggle changes how groups are treated. Off, every page
+        you listed lands in one combined PDF, in the order you typed it (so <code>5, 1-3</code>
+        really does put page 5 first, which is a sneaky way to reorder while extracting). On,
+        each comma-separated group becomes its own file, and the results are bundled into a .zip
+        that's also built in your browser, using an uncompressed store-only writer since PDF
+        data doesn't compress meaningfully anyway.
+      </p>
+      <p>
+        One thing to expect: printed page numbers don't change. If you extract page 47 of a
+        report, the new file's only page still says "47" at the bottom, because that number is
+        just ink on the page, not metadata. Use the page numbers tool if you need fresh
+        numbering.
+      </p>
+      <p>
+        None of this touches a server. Open DevTools, watch the Network tab while you split:
+        the file is read with the browser's own FileReader, processed in memory, and the
+        download comes from a local blob. Your document never leaves the tab.
+      </p>
     </div>
 
     <div class="related-tools">

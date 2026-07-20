@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Color Converter",
+      "item": "https://norito.in/design/color-converter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -228,6 +248,36 @@
           <p class="note" style="margin-top:0;">HEX and RGB are the standard web formats, HSL is easier to reason about when you want to adjust lightness or saturation, and CMYK is what print workflows expect.</p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The hex value is split by a regex into three two-digit pairs and parsed base-16 into red,
+        green, and blue from 0 to 255. HSL comes from the standard derivation: lightness is the
+        average of the largest and smallest channel, saturation is the spread between them scaled
+        by how close lightness is to the extremes, and hue depends on which channel dominates, with
+        red, green, and blue anchored at 0, 120, and 240 degrees and the exact angle interpolated
+        from the other two channels. CMYK uses the plain conversion formula: black (K) is one minus
+        the strongest channel, then cyan, magenta, and yellow are whatever each channel is missing
+        after black is accounted for, with pure black special-cased to avoid dividing by zero. All
+        four outputs are rounded to whole numbers for readability, which is why converting back and
+        forth can drift by a point.
+      </p>
+      <p>
+        About that CMYK value: treat it as a starting point, not print truth. Screen colors are
+        defined in sRGB, and translating them to ink coverage properly requires an ICC color
+        profile describing the specific press, inks, and paper. The formula here assumes idealized
+        inks that don't exist, and plenty of vivid screen colors, saturated oranges, electric
+        blues, bright greens, sit outside what coated paper can reproduce at all. Any print shop
+        will re-convert your file through their own profile anyway, so use this tool's CMYK to
+        communicate intent, and expect the proof to look duller than your monitor.
+      </p>
+      <p>
+        All the math above runs in a few small functions inside this page; picking a color triggers
+        pure local arithmetic and four DOM updates. Nothing is fetched and nothing is sent, which
+        the DevTools Network tab will confirm while you click around the picker.
+      </p>
     </div>
 
     <div class="related-tools">

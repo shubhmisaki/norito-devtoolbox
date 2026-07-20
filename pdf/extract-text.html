@@ -75,6 +75,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Extract Text",
+      "item": "https://norito.in/pdf/extract-text.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -258,6 +278,39 @@
         <summary>Can I extract text from a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        A PDF doesn't store paragraphs, sentences, or even words. It stores positioned runs of
+        glyphs: "put these character shapes at these coordinates in this font." This tool uses
+        pdf.js, the PDF engine from Firefox, to walk each page's content stream and collect
+        every one of those text-showing operations via <code>getTextContent()</code>. The
+        fragments are then joined with spaces and the whitespace collapsed, page by page, into
+        the plain text you see. The optional page markers simply record where each page's
+        fragments started.
+      </p>
+      <p>
+        That storage model explains the two ways extraction can surprise you. First, reading
+        order: pdf.js returns fragments roughly in the order they appear in the file, which for
+        multi-column layouts, tables, or designed documents isn't always the order a human
+        reads them in. Second, and more fundamental: a scanned PDF contains no text at all. A
+        scanner produces a photograph of a page, so unless someone ran OCR on it, there are no
+        glyph runs to extract, and this tool will correctly report that it found nothing. It
+        doesn't guess or hallucinate characters from pixels; if you need text out of a scan,
+        you need OCR software, which is a genuinely different technology.
+      </p>
+      <p>
+        A quick self-test: if you can select and copy text in your PDF reader, extraction will
+        work here. If your cursor just draws a selection box over the page, it's a scan.
+      </p>
+      <p>
+        Extraction happens the moment you drop the file, entirely in a local worker thread. Open
+        DevTools and watch the Network tab: whether it's a contract or a medical report, no
+        request carries your document or its text anywhere. Copy and download both operate on
+        the text already sitting in your browser's memory.
+      </p>
     </div>
 
     <div class="related-tools">

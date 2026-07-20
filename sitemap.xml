@@ -1411,4 +1411,24 @@
     <lastmod>2026-07-20</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://norito.in/blog/pdf-compression-explained.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/blog/how-password-entropy-works.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/blog/client-side-vs-server-side-tools.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/blog/image-format-guide-2026.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>

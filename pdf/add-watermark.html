@@ -80,6 +80,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Add Watermark",
+      "item": "https://norito.in/pdf/add-watermark.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -258,15 +278,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        The watermark is drawn as real text directly onto each page, centered, rotated, and
-        made semi-transparent, entirely in your browser. It becomes part of the page itself,
-        so keep a copy of the original if you might need an unwatermarked version later.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my PDF files uploaded anywhere?</summary>
@@ -288,6 +299,39 @@
         <summary>Can I watermark a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your PDF is loaded by pdf-lib, which edits the file's object structure directly in
+        browser memory. For each page it measures the watermark string in Helvetica Bold at your
+        chosen size, finds the page's exact center from its own dimensions (so mixed portrait
+        and landscape pages each get a properly centered stamp), and appends one text-drawing
+        instruction to that page's content stream. The opacity is real PDF transparency, an
+        <code>ExtGState</code> alpha value, not a washed-out gray color, so the watermark blends
+        correctly over photos and dark backgrounds, not just white paper. Rotation follows PDF
+        convention: positive angles turn counterclockwise, which is why the classic diagonal
+        "DRAFT" is +30 or +45 degrees.
+      </p>
+      <p>
+        Because it's drawn as real vector text, the watermark stays razor sharp at any zoom
+        level and adds only a few hundred bytes per document, no page is rasterized and nothing
+        already in the file is recompressed. The live preview approximates the same math in CSS
+        so what you see before clicking is what pdf-lib draws.
+      </p>
+      <p>
+        Be honest with yourself about what a watermark is, though: it's a deterrent, not a lock.
+        The text is stamped on top of the page content as an ordinary drawing operation, and
+        anyone with a full PDF editor can select and delete that object. That's true of
+        virtually every watermark tool, including the paid ones. It reliably marks a document as
+        a draft or as confidential; it does not make copying impossible.
+      </p>
+      <p>
+        Since watermarked files are often exactly the sensitive kind, verify the privacy claim:
+        open the DevTools Network tab and apply a watermark. Nothing is transmitted. The file is
+        modified in memory and downloaded from a local blob without leaving the tab.
+      </p>
     </div>
 
     <div class="related-tools">

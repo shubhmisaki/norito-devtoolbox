@@ -103,6 +103,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Delete &amp; Reorder Pages",
+      "item": "https://norito.in/pdf/organize-pdf.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -252,15 +272,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        Thumbnails are rendered from your PDF entirely in your browser. Click the X on a page
-        to mark it for removal, click again to undo. Use the up and down arrows to change a
-        page's position. Nothing is finalized until you click Save PDF.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my PDF files uploaded anywhere?</summary>
@@ -282,6 +293,37 @@
         <summary>Can I organize a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Two different PDF engines cooperate here, both running in your browser. The thumbnails
+        come from pdf.js, Firefox's PDF renderer: each page is drawn onto a small canvas about
+        160 pixels wide and kept as a compact JPEG preview, which is why even a long document
+        loads a full visual grid without much memory. Those thumbnails are only for your eyes.
+        The X and arrow buttons just edit a list in memory that maps display positions back to
+        original page indices; nothing happens to the actual file until you hit Save.
+      </p>
+      <p>
+        Saving is handled by pdf-lib, which manipulates the PDF's object structure directly. It
+        builds a brand new document and calls <code>copyPages()</code> with your final order,
+        copying only the pages you kept, complete with their fonts, images, and graphics, with
+        no re-rendering and no quality loss. A useful consequence: deleted pages are genuinely
+        gone. Because the output is rebuilt from scratch rather than the original being edited
+        in place, a removed page's content isn't lurking hidden inside the file, which is worth
+        knowing if you're stripping a sensitive page before sharing. (One caveat: bookmarks and
+        form definitions live outside the page tree and don't carry over.)
+      </p>
+      <p>
+        Reordering works the same way, <code>copyPages()</code> simply receives the indices in
+        your new sequence, so moving page 12 to the front is as lossless as not touching it.
+      </p>
+      <p>
+        Everything above happens in local memory. Open the DevTools Network tab while you load,
+        rearrange, and save: no request ever carries your document. Even the thumbnails are
+        rendered locally, so not a single pixel of your PDF leaves the tab.
+      </p>
     </div>
 
     <div class="related-tools">

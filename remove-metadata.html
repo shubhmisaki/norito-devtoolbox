@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remove Metadata",
+      "item": "https://norito.in/remove-metadata.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -234,6 +254,14 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>When you drop in a JPEG, the tool reads the file's raw bytes with a <code>DataView</code> and walks the JPEG marker structure looking for the APP1 segment, which is where EXIF lives. Inside it parses the TIFF directory tree: IFD0 (camera make and model, software, modification date), the Exif sub-directory (original capture time, exposure, aperture, ISO), and the GPS sub-directory. It handles both byte orders (Intel and Motorola style files) and both inline and offset-stored values, then shows you a plain list of what it found before you commit to anything.</p>
+      <p>That list is the point: most people have never seen what rides along in a phone photo. A typical JPEG carries the exact device model, the second the shutter fired, the editing software used, and, if location was on, GPS coordinates precise enough to identify a house. Posting an original photo posts all of that with it.</p>
+      <p>The cleaning step is beautifully blunt. The image is drawn onto a fresh <code>&lt;canvas&gt;</code> and re-exported with <code>canvas.toBlob()</code>, which by design writes pixel data only: EXIF, XMP, ICC profiles, thumbnails, all of it simply has nowhere to go in the new file. Nothing is selectively deleted, so nothing can be missed. The one tradeoff is that JPEGs get re-encoded (at 0.95 quality, visually indistinguishable for photos), and a custom color profile would be dropped. PNG and WebP files rarely carry EXIF but can hold text chunks and profiles; the same redraw strips those too.</p>
+      <p>Both the byte-level inspection and the canvas re-encode run in your tab. Watch DevTools' Network panel while you load and clean a photo: the image is never uploaded anywhere, which is exactly what you want from a tool whose whole job is protecting your metadata.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

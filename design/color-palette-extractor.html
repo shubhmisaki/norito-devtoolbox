@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Color Palette Extractor",
+      "item": "https://norito.in/design/color-palette-extractor.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -228,6 +248,38 @@
           <p class="note" style="margin-top:0;">Colors are sampled directly from your image using the canvas API and grouped by similarity. Nothing is uploaded, everything happens in your browser.</p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your image is drawn onto an offscreen canvas scaled down to at most 200px on its longest
+        side, because a thumbnail has nearly the same color distribution as the original and reads
+        thousands of times faster. The raw RGBA pixels come back from <code>getImageData()</code>,
+        and anything more than half transparent is skipped so a logo on a transparent background
+        doesn't report "mostly nothing". Each remaining pixel is dropped into a coarse grid of 6
+        levels per channel, 216 buckets total, while the bucket keeps a running sum of the real
+        channel values. The buckets are ranked by pixel count, the top N win, and each swatch is
+        the average of the actual pixels that landed in its bucket rather than the bucket's center,
+        which keeps the results from looking posterized. So this is a frequency histogram with
+        uniform quantization, not k-means or median cut, and that's deliberate: it's instant, and
+        it gives the same answer every run, where k-means starts from random seeds and can return a
+        slightly different palette each time.
+      </p>
+      <p>
+        The honest tradeoff of frequency ranking: it measures area, not importance. A portrait
+        against a beige wall will hand you five beiges before it mentions the subject's blue
+        jacket, because the wall simply has more pixels. If you're after accent colors rather than
+        dominant ones, raise the color count and look toward the end of the list, or crop the image
+        to the region you care about before dropping it in. The percentage under each swatch is
+        that bucket's share of all sampled pixels, so it doubles as a quick check on how dominant a
+        color really is.
+      </p>
+      <p>
+        The image itself never leaves your machine: it's loaded through a local object URL, drawn
+        to a canvas in memory, and read back as bytes, all inside this page's JavaScript. There's
+        no upload step to intercept, and the DevTools Network tab stays empty while you extract.
+      </p>
     </div>
 
     <div class="related-tools">

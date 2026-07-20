@@ -89,6 +89,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remove Background",
+      "item": "https://norito.in/remove-background.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -282,6 +302,36 @@
   Download PNG
 </button>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The heavy lifting is done by MediaPipe Selfie Segmentation, a neural network
+        compiled to WebAssembly and served from this site's own files. It doesn't return a
+        cutout; it returns a probability mask, a per-pixel confidence score of "person or
+        background". Using that mask directly as transparency looks bad: every
+        mid-confidence pixel near the edge turns semi-see-through, leaving a ghostly halo
+        around the subject. So the tool post-processes it. First a fast two-pass box blur
+        smooths the blocky noise the low-resolution model produces, then the alpha curve is
+        remapped: confidence below a low threshold snaps to fully transparent, above a high
+        threshold to fully opaque, with only a narrow soft ramp between. That remap is what
+        turns a fuzzy probability cloud into a clean silhouette, and it's the biggest
+        quality lever short of a bigger model.
+      </p>
+      <p>
+        A speed tip: the model analyzes every image at the same small internal resolution
+        regardless of input size, so feeding it a 24-megapixel photo buys no extra mask
+        detail, just slower pixel processing. Resizing a huge photo down to 2 or 3
+        megapixels first gives an essentially identical cutout, faster. In batch mode the
+        model loads once and is reused, so the first photo carries all the startup cost.
+      </p>
+      <p>
+        The network story is verifiable in DevTools: on your first run, the Network tab
+        shows the model files loading from this site, about 5.5 MB. After that, process as
+        many photos as you like and watch: no request ever carries your image. The photo is
+        read into memory, segmented, and composited entirely in this tab.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -83,6 +83,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sign PDF",
+      "item": "https://norito.in/pdf/sign-pdf.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -320,6 +340,23 @@
         <summary>Can I sign a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>When you draw a signature, the tool captures your strokes on an HTML canvas, trims away the
+      empty space around them, and exports the result as a transparent PNG. Typed signatures work the
+      same way: the cursive font renders to a canvas first. Either way, that PNG is then embedded into
+      the PDF's object structure with the pdf-lib library and drawn onto the page at the exact position
+      and size you chose, scaled from preview coordinates to the page's real dimensions.</p>
+      <p>Everything happens inside your browser tab. The PDF is read with the FileReader API, modified
+      in memory, and handed back to you as a download. Open your browser's DevTools Network tab while
+      signing: no request ever carries your document or your signature anywhere.</p>
+      <p>One distinction worth knowing: this adds a visual signature, an image placed on the page,
+      which is what most everyday paperwork needs. It is not a cryptographic digital signature of the
+      kind that certificate authorities issue, so a PDF reader won't show a green "digitally signed and
+      verified" banner. For contracts, NDAs, and forms where the other side expects a pen-on-paper
+      style signature, a visual signature is exactly what's being asked for.</p>
     </div>
 
     <div class="related-tools">

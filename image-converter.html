@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Image Converter",
+      "item": "https://norito.in/image-converter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -251,6 +271,34 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your image is loaded through a local object URL (<code>URL.createObjectURL</code>), decoded
+        by the browser's own image decoder, drawn onto an offscreen canvas at its full natural
+        resolution, and re-encoded with <code>canvas.toBlob</code> in the format and quality you
+        picked. One detail handled for you: JPEG has no alpha channel, so before drawing, the
+        canvas is filled white when JPEG is the target. Without that step, transparent areas of a
+        PNG would come out black. The quality slider only applies to JPEG and WebP; PNG encoding
+        is lossless and ignores it.
+      </p>
+      <p>
+        A side effect of the canvas round-trip that's worth knowing either way: the output
+        contains only pixels. EXIF metadata, camera model, timestamps, and embedded GPS
+        coordinates from phone photos, doesn't survive re-encoding. That makes this converter a
+        quiet privacy win before sharing a photo publicly, and a thing to be aware of if you
+        actually needed the metadata (keep the original in that case). Browsers apply the EXIF
+        orientation flag while decoding, so sideways-shot phone photos still come out correctly
+        rotated.
+      </p>
+      <p>
+        Conversion, batch mode, and even the .zip bundling (assembled byte-by-byte in
+        JavaScript) all run in your browser. Open DevTools' Network tab and convert something:
+        no request carries the image, which is also why there's no file size cap beyond your
+        machine's memory.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

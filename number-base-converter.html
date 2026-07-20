@@ -58,6 +58,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Number Base Converter",
+      "item": "https://norito.in/number-base-converter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -321,6 +341,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Every value you type is parsed into a JavaScript <code>BigInt</code>, an arbitrary-precision integer type built into the browser. Parsing walks your input digit by digit, multiplying the running total by the base and adding each digit's value; converting back out repeatedly divides by the target base and collects remainders. Digits above 9 use letters, so base 36 runs through 0-9 then a-z. Negative numbers work too: a leading minus sign is peeled off before parsing and stuck back on at the end.</p>
+      <p>The BigInt part is the detail worth knowing. Converters built on plain JavaScript numbers silently corrupt anything above 9,007,199,254,740,991 (2^53 - 1), because that's where floating point stops representing every integer exactly. Paste a 16-digit hex value like <code>ffffffffffffffff</code> into one of those and you get a rounded, wrong answer with no warning. Here the math is exact at any length: a 100-digit decimal converts to binary correctly, it just takes more digits.</p>
+      <p>Each field validates against its own base as you type, so entering a 9 in the octal box or a g in hex shows an error instead of a garbage result, and the other three fields update live from whichever one you edited. All of it happens in your tab: check the Network panel in DevTools and you'll see the page makes no requests while you type, so the numbers you convert never leave your machine.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

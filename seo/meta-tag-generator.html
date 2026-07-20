@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Meta Tag Generator",
+      "item": "https://norito.in/seo/meta-tag-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -238,6 +258,40 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        On every keystroke the page rebuilds the entire tag block from your six fields. Each value
+        is trimmed and run through an escaper that converts <code>&amp;</code>, <code>&quot;</code>,
+        <code>&lt;</code>, and <code>&gt;</code> into HTML entities, so a title like
+        <code>Tom &amp; Jerry's "Best" Page</code> comes out as a valid attribute instead of broken
+        markup. Tags are only emitted for fields you actually filled in, and a few decisions are
+        made for you: leave the image URL empty and <code>twitter:card</code> drops from
+        <code>summary_large_image</code> to plain <code>summary</code>, since the large-image card
+        is pointless without an image, and a Twitter handle typed without the <code>@</code> gets it
+        prepended. The counters check the title against 60 characters and the description against
+        160 and turn red past the limit. Treat those as guides, not rules: Google truncates
+        snippets by pixel width (roughly 600px for titles), not by character count, so a title full
+        of wide letters like W and M gets cut sooner than one full of i's and l's.
+      </p>
+      <p>
+        One thing worth knowing that most tag generators skip: the meta description is not a
+        ranking factor. Google has said so for years. What it does affect is click-through rate,
+        because it is often the pitch shown under your link in results, and pages that get clicked
+        more tend to earn their position. Even then, Google rewrites descriptions well over half
+        the time when yours doesn't match the searcher's query. Write it for humans, keep it under
+        160 characters, and don't obsess. For the social image, 1200x630 is the safe choice: it
+        matches Facebook's recommended Open Graph size and the roughly 1.91:1 crop that Twitter/X,
+        LinkedIn, and most chat apps apply to large preview cards.
+      </p>
+      <p>
+        Everything happens in this page's own JavaScript: the tag string is assembled locally and
+        only touches the network if you count the clipboard, which it doesn't use either until you
+        press copy. Open DevTools, watch the Network tab, and type into every field. Your titles,
+        URLs, and handles never leave the browser.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

@@ -84,6 +84,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Markdown Editor",
+      "item": "https://norito.in/markdown-editor.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -290,6 +310,35 @@ console.log("even code blocks work");
 </button>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The preview is rendered by marked, an open-source Markdown parser served as part of
+        this site (no CDN), configured for GitHub Flavored Markdown with line breaks
+        enabled. It re-parses the entire document on every keystroke; that sounds wasteful,
+        but marked compiles to a fast single pass, and even book-length documents render in
+        a few milliseconds. The editor also keeps its own undo history of up to 100
+        snapshots, because toolbar buttons set the textarea's value programmatically, which
+        silently bypasses the browser's native undo stack. Consecutive typing is coalesced
+        into one step after a short pause, so Ctrl+Z steps back by edits, not by keystrokes.
+        Scroll sync between the panes is proportional: each pane's scroll position is mapped
+        to a 0 to 1 ratio and mirrored to the other side.
+      </p>
+      <p>
+        One portability note: with breaks enabled, a single newline becomes a real line
+        break, matching how GitHub renders comments. Strict CommonMark renderers, including
+        many static site generators, will instead join those lines into one paragraph. If
+        your Markdown is headed somewhere strict, end a line with two spaces or leave a
+        blank line to keep the break. The .html export is exactly the preview pane's markup
+        wrapped in a minimal document, so what you see is literally what ships.
+      </p>
+      <p>
+        Everything, parser included, loads with the page and runs locally. Open DevTools,
+        watch the Network tab while you type: no request carries your text, and the editor
+        keeps working offline.
+      </p>
     </div>
 
     <div class="related-tools">

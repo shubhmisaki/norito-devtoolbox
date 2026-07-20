@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Robots.txt Generator",
+      "item": "https://norito.in/seo/robots-txt-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -229,6 +249,36 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The generator collects your rule rows and groups them by user-agent, so three rules you
+        wrote for <code>Googlebot</code> in three separate rows get merged under a single
+        <code>User-agent: Googlebot</code> line, with each group separated by a blank line the way
+        parsers expect. Rules with an empty path are skipped, and every value has newlines stripped
+        out before it is written, so pasting something weird into a field can't inject an extra
+        directive onto its own line. Delete all the rules and the output falls back to
+        <code>User-agent: *</code> with an empty <code>Disallow:</code>, which is the valid way to
+        say "block nothing". The Sitemap line goes at the end, and the download button just wraps
+        the text in a Blob and clicks a temporary link, no server involved.
+      </p>
+      <p>
+        Two things about robots.txt that trip people up. First, <code>Crawl-delay</code> is in this
+        tool because Bing and Yandex honor it, but Googlebot ignores it completely and has since
+        Google formally dropped unsupported directives in 2019; for Google you manage crawl rate
+        through Search Console or your server. Second, and more important: Disallow does not remove
+        a page from search results. It only stops crawling. A blocked URL can still get indexed
+        from links pointing at it, showing up with no snippet. If you want a page out of the index,
+        do the opposite: let it be crawled and put a <code>noindex</code> meta tag on it. Block it
+        in robots.txt and Google can never see that noindex.
+      </p>
+      <p>
+        The file is assembled entirely in this page's JavaScript as you type. Your paths, bot
+        names, and sitemap URL are never sent anywhere; you can confirm it in the DevTools Network
+        tab, which stays silent while you edit and download.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

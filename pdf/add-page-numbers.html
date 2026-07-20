@@ -103,6 +103,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Add Page Numbers",
+      "item": "https://norito.in/pdf/add-page-numbers.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -283,15 +303,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        Page numbers are drawn directly onto each page using a standard font, entirely in your
-        browser. The "of N" and "/ N" formats use the document's total page count, the number
-        sequence itself starts from whatever you set as the starting number.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my PDF files uploaded anywhere?</summary>
@@ -313,6 +324,39 @@
         <summary>Can I add page numbers to a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The tool loads your PDF with pdf-lib, a library that edits the file's object structure
+        directly in browser memory, and appends one small text-drawing instruction to each
+        page's content stream. The font is Helvetica, one of the 14 standard fonts every PDF
+        viewer is required to ship, so no font file needs to be embedded and the output grows by
+        only a few hundred bytes total. Nothing else on the page is re-rendered, recompressed,
+        or moved; your numbers are real, selectable text layered on top of what was already
+        there.
+      </p>
+      <p>
+        Placement is measured, not guessed. For each page the tool asks the font for the exact
+        width of the rendered string (so "Page 9 of 120" right-aligns as precisely as "9"), then
+        computes coordinates from your chosen position with a fixed 24-point margin, about a
+        third of an inch, from the page edge. Because the width is recalculated per page, the
+        alignment stays clean even when the count rolls from 9 to 10 to 100, and even in
+        documents that mix portrait and landscape page sizes.
+      </p>
+      <p>
+        One honest limitation: the number is drawn on top of the existing page. If a document
+        already has content in that exact corner, old page numbers, a footer, the two will
+        overlap, so pick a position that's empty in your file. The starting-number option exists
+        for the classic case where a chapter PDF continues from page 47 of a larger work, and it
+        can go negative-free from any integer you like.
+      </p>
+      <p>
+        You can verify the privacy claim in about ten seconds: open DevTools, watch the Network
+        tab, and add your numbers. The file is read, modified, and downloaded entirely inside
+        this tab; no request ever contains your document.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JWT Decoder",
+      "item": "https://norito.in/jwt-decoder.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -224,6 +244,36 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        A JWT is three Base64URL segments joined by dots: header, payload, signature. The tool
+        splits on the dots, then decodes the first two segments by mapping the URL-safe alphabet
+        back to standard Base64 (<code>-</code> to <code>+</code>, <code>_</code> to
+        <code>/</code>), restoring the padding JWTs omit, running <code>atob()</code>, and
+        decoding the bytes as UTF-8 with <code>TextDecoder</code>. Each segment is then
+        <code>JSON.parse</code>d and pretty-printed. Standard claims (<code>iss</code>,
+        <code>sub</code>, <code>aud</code>, <code>exp</code>, <code>nbf</code>, <code>iat</code>,
+        <code>jti</code>) get human labels, unix timestamps become readable dates, and
+        <code>exp</code> is compared against your clock to tell you if the token is expired. The
+        third segment, the signature, is never parsed at all.
+      </p>
+      <p>
+        That's the distinction this tool is strict about: decoding is not verifying. The payload
+        of any JWT is readable by anyone, it's encoded, not encrypted. Proving the token is
+        genuine means recomputing the signature, which requires the signing secret (for HMAC) or
+        the issuer's key (for RSA/ECDSA). This tool deliberately doesn't offer a "paste your
+        secret" box: getting into the habit of pasting production signing secrets into web pages
+        is a risk no convenience justifies, and verification belongs on your server anyway. Never
+        trust a decoded claim you haven't verified server-side.
+      </p>
+      <p>
+        Everything runs in this page's JavaScript using <code>atob</code> and the text decoding
+        APIs. Paste a real token with DevTools' Network tab open and watch: no request is made,
+        the token never leaves the browser tab.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

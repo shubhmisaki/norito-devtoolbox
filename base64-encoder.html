@@ -79,6 +79,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Base64 Encode / Decode",
+      "item": "https://norito.in/base64-encoder.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -285,6 +305,34 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        When you encode, your text is first converted to raw UTF-8 bytes with the browser's
+        <code>TextEncoder</code> API, and those bytes are fed to the built-in <code>btoa()</code>
+        function. That first step matters: <code>btoa()</code> on its own only handles Latin-1
+        characters and throws on anything else, so tools that skip it silently break on emoji,
+        accents, or any non-Latin script. Decoding runs the same pipeline in reverse:
+        <code>atob()</code> turns the Base64 back into bytes, and <code>TextDecoder</code>
+        reassembles them into text. The decoder is also deliberately forgiving: it trims
+        whitespace, accepts both the standard and URL-safe alphabets, and re-adds any stripped
+        <code>=</code> padding, so a segment copied straight out of a JWT or query string decodes
+        without hand-fixing.
+      </p>
+      <p>
+        Expect the output to be about 33% bigger than the input. Base64 uses 64 symbols, and 64
+        symbols can only carry 6 bits each, so every 3 bytes of input become 4 characters of
+        output. That's why inlining a 1 MB image as a Base64 data URI costs you roughly 1.37 MB
+        of HTML, and why Base64 is a transport format, not a compression format.
+      </p>
+      <p>
+        Both directions run in this page's own JavaScript on every keystroke, using nothing but
+        <code>btoa</code>, <code>atob</code>, and the text encoding APIs your browser already
+        ships. You can verify that: open DevTools, switch to the Network tab, and type away. No
+        request ever carries your text anywhere.
+      </p>
     </div>
 
     <div class="related-tools">

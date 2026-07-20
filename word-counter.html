@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Word Counter",
+      "item": "https://norito.in/word-counter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -225,6 +245,14 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>On every keystroke the counter re-derives all six stats from the raw text. Words are runs of non-whitespace, counted by splitting on the <code>\s+</code> regex; sentences are runs of text ending in <code>.</code>, <code>!</code>, or <code>?</code> followed by a space or the end of the text; paragraphs are chunks separated by blank lines. Reading time assumes 225 words per minute (a typical silent-reading pace) and speaking time assumes 130, roughly conference-talk speed, both rounded to the nearest second.</p>
+      <p>These are honest approximations, and it's worth knowing where they bend. Sentence counting can't tell an abbreviation from a full stop, so "Mr. Smith arrived." counts as two sentences. Word counts also legitimately differ between tools: this one counts "state-of-the-art" as one word (no whitespace inside it), while some word processors count hyphenated compounds differently, which is why your essay can be 998 words here and 1,002 words somewhere else. Neither is wrong; they just disagree on what a word boundary is.</p>
+      <p>The character count is the raw length of the text, which includes spaces and line breaks. One subtlety: JavaScript strings count UTF-16 units, so most emoji count as 2 characters and some (family or flag emoji) count as more. That matches how Twitter-style platform limits are usually enforced, so it's the useful number to see.</p>
+      <p>Counting is a handful of regex operations in your tab. Nothing you type is transmitted anywhere: the Network panel in DevTools stays empty while you write, and the counter keeps working with the connection off.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

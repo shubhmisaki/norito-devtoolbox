@@ -58,6 +58,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cron Expression Parser",
+      "item": "https://norito.in/cron-expression-parser.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -260,6 +280,35 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The parser splits your expression into its 5 fields and expands each one into an explicit
+        set of allowed values: <code>*/15</code> in the minute field becomes the set {0, 15, 30,
+        45}, <code>1-5</code> in day-of-week becomes {1, 2, 3, 4, 5}, and lists like
+        <code>1,3,5</code> are unioned together. Every value is range-checked as it's expanded,
+        which is why a typo like <code>61 * * * *</code> fails immediately with a message naming
+        the exact field and the range it expected, instead of silently producing a schedule that
+        never fires.
+      </p>
+      <p>
+        The "next 5 runs" list is computed by brute force, and that's a feature: starting from the
+        next whole minute, the code steps forward one minute at a time (up to a year, about
+        527,000 checks, which takes a few milliseconds) and tests each candidate minute against
+        the expanded sets. A useful side effect of simulating instead of calculating: expressions
+        that are syntactically valid but can never fire, like <code>0 0 30 2 *</code> (February
+        30th), aren't an error, they just come back with "no matching run found in the next
+        year". If you see that message, your expression parses fine but describes a date that
+        doesn't exist or is more than a year away.
+      </p>
+      <p>
+        All date math uses the browser's <code>Date</code> object in your local time zone, and it
+        all runs in this page's JavaScript. Check DevTools' Network tab: no request is made when
+        you type an expression, so nothing about your infrastructure's schedules leaves your
+        machine.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

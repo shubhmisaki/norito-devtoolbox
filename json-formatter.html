@@ -89,6 +89,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSON Formatter",
+      "item": "https://norito.in/json-formatter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -290,6 +310,35 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Validation runs through <code>JSON.parse</code>, the same native parser your browser
+        and Node.js use at runtime, so whatever passes here is exactly what will parse in
+        production, not an approximation from a lookalike grammar. When parsing fails, the
+        engine reports either a line and column directly or just a raw character position;
+        in the second case the tool slices the input up to that offset and counts newlines
+        to translate it into the line and column you see in the error box. The tree view is
+        built by walking the parsed value recursively into collapsible nodes, and any single
+        object or array with more than 300 entries is truncated in the view only, never in
+        the copied or downloaded output, so a multi-megabyte API dump stays scrollable.
+      </p>
+      <p>
+        One side effect of round-tripping through the engine is worth knowing: numbers are
+        re-serialized from JavaScript's 64-bit floats. Cosmetic forms normalize
+        (<code>1e2</code> becomes <code>100</code>, <code>0.50</code> becomes
+        <code>0.5</code>), and integers beyond 2<sup>53</sup>, such as 19-digit database or
+        Twitter-style IDs, can silently lose their last digits. If your JSON carries IDs
+        that large, keep them as strings before formatting.
+      </p>
+      <p>
+        Parsing, formatting, and minifying all happen in this page's own JavaScript on every
+        keystroke. You can confirm that yourself: open DevTools, watch the Network tab, and
+        paste a real API response. No request carries your JSON anywhere, which is why
+        pasting payloads with tokens or customer data is safe here.
+      </p>
     </div>
 
     <div class="related-tools">

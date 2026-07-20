@@ -103,6 +103,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Merge PDF",
+      "item": "https://norito.in/pdf/merge-pdf.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -250,16 +270,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        Merging happens entirely in your browser using a PDF library that runs client-side.
-        Each page is copied directly from your source files into a new combined PDF, so there's
-        no re-rendering or quality loss. Reorder files with the up and down buttons before
-        merging, since pages are combined in the order the files are listed.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my PDF files uploaded anywhere?</summary>
@@ -281,6 +291,39 @@
         <summary>Can I merge a password-protected PDF?</summary>
         <p>Not currently. Password-protected or encrypted PDFs can't be read by the tool and will show an error, remove the password first with a PDF reader.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The merge runs on pdf-lib, a PDF library that operates directly on the file's internal
+        object structure in your browser's memory. When you click merge, the tool creates a fresh
+        empty PDF, then walks through your files in the order listed and calls
+        <code>copyPages()</code> on each one. That copies every page object along with everything
+        the page references: its fonts, images, vector graphics, and annotations. Nothing is
+        rendered to pixels at any point, so a merged page is byte-for-byte the same drawing
+        instructions as the original. That's why merging never blurs text or recompresses images,
+        and why a 200-page merge finishes in seconds.
+      </p>
+      <p>
+        One honest caveat worth knowing: <code>copyPages()</code> copies the page tree, but a
+        PDF's bookmarks (the outline sidebar in your reader) and interactive form definitions
+        live in a separate part of the file called the document catalog, which isn't copied. So
+        if your source PDFs have bookmark outlines, the merged file won't show them, and filled
+        form fields can behave oddly. The visible page content always comes through intact.
+        Most online mergers do exactly the same thing, they just don't tell you.
+      </p>
+      <p>
+        A side effect of per-file copying: if two source PDFs embed the same font, the merged
+        file carries two copies of it, so the output can be slightly larger than the sum of its
+        parts. If size matters afterwards, run the result through the compress tool.
+      </p>
+      <p>
+        Your files never leave the tab. You can verify this yourself: open DevTools, switch to
+        the Network tab, add your PDFs, and merge. No request carries your documents anywhere,
+        because pdf-lib does all its work in local memory and the download is generated from a
+        blob on your own machine.
+      </p>
     </div>
 
     <div class="related-tools">

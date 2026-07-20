@@ -103,6 +103,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JPG/PNG to PDF",
+      "item": "https://norito.in/pdf/jpg-png-to-pdf.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -259,16 +279,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">How it works</h3>
-      <p class="note" style="margin-top:0;">
-        Each image becomes one page, added in the order shown above. Conversion happens
-        entirely in your browser using a PDF library that runs client-side. JPG and PNG are
-        embedded directly wherever possible, anything else is decoded and re-encoded first so
-        it can be embedded.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>Are my images uploaded anywhere?</summary>
@@ -290,6 +300,39 @@
         <summary>Does converting reduce image quality?</summary>
         <p>JPG and PNG images are embedded as-is in most cases. Some images need to be re-encoded to be embeddable (a few JPEG variants, or non-JPG/PNG formats), those are converted losslessly to PNG first.</p>
       </details>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        PDF has native support for exactly two image formats this tool cares about: JPEG (stored
+        with the <code>DCTDecode</code> filter) and PNG-style raw pixel data. So for a standard
+        JPG, pdf-lib takes your file's bytes and embeds them into the PDF completely unchanged,
+        no decoding, no re-encoding, zero quality loss, and the PDF ends up roughly the size of
+        the JPEGs that went in. PNGs are unpacked into the raw pixel form PDF expects, which is
+        also lossless. Each image then becomes one page with a <code>drawImage</code> instruction
+        placing it.
+      </p>
+      <p>
+        Formats PDF can't hold directly, WebP, GIF, BMP, and a few awkward JPEG variants like
+        progressive JPEGs that pdf-lib can't parse, take a fallback path: the browser decodes
+        the image with <code>createImageBitmap()</code>, draws it to a canvas, and re-exports it
+        as PNG before embedding. That conversion is pixel-for-pixel lossless, though the
+        resulting file can be larger than the original (a re-encoded photo stored as PNG is
+        bulkier than its JPEG source).
+      </p>
+      <p>
+        Page sizing works in PDF points, 72 per inch. "Fit to image" treats your image as 96 DPI
+        screen pixels and sizes the page to match it exactly, best for screenshots and scans. A4
+        and Letter modes keep a standard page, shrink the image proportionally to fit inside a
+        half-inch margin, and center it, which prints more predictably.
+      </p>
+      <p>
+        Your photos never leave your machine. Watch the Network tab in DevTools while
+        converting: the images are read locally, assembled into a PDF in memory by pdf-lib, and
+        downloaded from a blob. Nothing is transmitted, which matters when the images are ID
+        scans or personal documents.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -79,6 +79,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Timestamp Converter",
+      "item": "https://norito.in/timestamp-converter.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -305,6 +325,14 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Everything routes through the browser's <code>Date</code> object, which internally stores one number: milliseconds since the Unix epoch, midnight UTC on January 1, 1970. Convert a timestamp and the tool multiplies by 1,000 if you said seconds, builds a <code>Date</code>, then renders it four ways: your local time via <code>toLocaleString</code> (the browser's Intl formatter, using your own timezone and language), UTC, ISO 8601, and a relative "in 3 days / 2 hours ago" label computed by bucketing the difference from now into years, months, days, hours, minutes, or seconds.</p>
+      <p>Going the other way, the date picker's value is parsed as local time and converted back to both seconds and milliseconds. The datetime-local field is fed by shifting the timestamp by your timezone offset first, which is the fiddly part most converters get subtly wrong: <code>toISOString()</code> always speaks UTC, so without that shift the picker would show a time hours off from the wall-clock time you expect.</p>
+      <p>The classic mistake this tool guards against by making the unit explicit: seconds vs milliseconds. Current Unix times are 10 digits in seconds and 13 in milliseconds. Parse a millisecond value as seconds and you land 50,000+ years in the future; do the reverse and you get January 1970. If a conversion looks absurd, flip the unit dropdown, that's almost always the whole bug. Out-of-range values (JavaScript dates cap at 100 million days either side of the epoch, roughly the year 275760) produce a clear error instead of garbage.</p>
+      <p>All parsing and formatting is local browser API work. Open DevTools' Network tab while you convert: no request fires, and timestamps from your logs never leave your machine.</p>
     </div>
 
     <div class="related-tools">

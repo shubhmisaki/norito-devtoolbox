@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Crop Image",
+      "item": "https://norito.in/crop-image.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -250,6 +270,32 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your file is loaded through <code>URL.createObjectURL</code>, a local in-memory reference,
+        never an upload, and displayed scaled down to fit the editor. The crop box you drag is
+        tracked in on-screen pixels, but the moment you hit crop, those coordinates are multiplied
+        by the ratio between the image's natural size and its displayed size. So if your 4000px
+        photo is shown at 800px wide, a 200px-wide box on screen selects a 1000px-wide region of
+        the real image. The selected rectangle is then copied with the canvas API's
+        <code>drawImage</code> source-rectangle form, which lifts exactly those pixels from the
+        full-resolution original.
+      </p>
+      <p>
+        The output format follows the input: PNG in, PNG out (lossless, pixel-identical to the
+        source region), anything else is re-encoded as JPEG at 92% quality via
+        <code>canvas.toBlob</code>. That distinction is worth knowing: cropping a JPEG means one
+        extra generation of JPEG compression, usually invisible at 92% but real. If you need a
+        pixel-exact crop, feed the tool a PNG.
+      </p>
+      <p>
+        Everything above happens in your browser's own image decoder and canvas. Open DevTools'
+        Network tab before dropping in a photo: no request ever carries the image, which also
+        means there's no server-side size limit and no queue.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

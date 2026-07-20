@@ -89,6 +89,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "QR Code Generator",
+      "item": "https://norito.in/qr-code-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -299,6 +319,35 @@
           redundancy to stay scannable with the center covered.
         </p>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your text is encoded into a QR symbol by an open-source generator bundled with the
+        page. It automatically picks the smallest QR version that fits your content, from
+        21&#215;21 modules up to 177&#215;177, then appends Reed-Solomon error correction
+        codewords, the same math CDs and satellites use to survive scratches and noise.
+        Those percentage levels are literally how much of the symbol can be destroyed and
+        still decode. That's also the whole trick behind the center logo: the tool paints
+        your logo straight over the middle modules, deliberately destroying them, and sizes
+        the box (22% of the width plus padding) so the damage stays inside level H's 30%
+        recovery budget. The result is a grid of true/false modules drawn as squares on a
+        canvas for PNG, or written out as one <code>&lt;rect&gt;</code> per dark module for
+        the SVG, which is why the SVG stays razor sharp at any print size.
+      </p>
+      <p>
+        Two scannability rules worth knowing before you restyle it: scanners expect dark
+        modules on a light background, so keep the foreground clearly darker than the
+        background and don't invert the colors. And when you place the exported code into a
+        design, leave a quiet zone of empty space around it, roughly four modules wide, so
+        the scanner can find the symbol's edges against whatever surrounds it.
+      </p>
+      <p>
+        Encoding runs locally on every keystroke. Open DevTools, watch the Network tab while
+        you type a URL: nothing is sent, which is also why these codes can't expire and
+        nobody can count your scans.
+      </p>
     </div>
 
     <div class="related-tools">

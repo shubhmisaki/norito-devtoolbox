@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "UTM Builder",
+      "item": "https://norito.in/seo/utm-builder.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -241,6 +261,37 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The base URL is parsed with the browser's own <code>URL</code> API, which is why you get an
+        error until you include <code>https://</code>: the parser needs a scheme, and it's the same
+        parser your browser uses for real navigation, so if it accepts the URL here, the URL works.
+        Each of the five <code>utm_</code> values is then applied through
+        <code>searchParams.set()</code>, which percent-encodes special characters automatically
+        (a campaign named <code>spring sale</code> becomes <code>spring+sale</code> in the query
+        string, an ampersand becomes <code>%26</code> instead of splitting your parameter in two).
+        Using <code>set()</code> rather than string concatenation also means query parameters
+        already on the URL are preserved, clearing a field removes its parameter instead of leaving
+        an empty <code>utm_term=</code> behind, and a <code>#fragment</code> stays where it belongs,
+        after the query string.
+      </p>
+      <p>
+        The mistake that quietly ruins campaign reports: UTM values are case-sensitive in
+        analytics. GA4 will happily show <code>email</code>, <code>Email</code>, and
+        <code>EMAIL</code> as three separate sources, splitting one campaign's numbers three ways.
+        Pick all-lowercase and never deviate. It also pays to keep <code>utm_medium</code> inside
+        the vocabulary GA4's default channel grouping recognizes, like <code>email</code>,
+        <code>cpc</code>, <code>social</code>, or <code>referral</code>; invent something creative
+        and your traffic lands in the Unassigned bucket where nobody looks.
+      </p>
+      <p>
+        The URL is assembled locally on every keystroke and is never requested, pinged, or logged
+        by this page. Open the DevTools Network tab and type away: nothing fires. The finished link
+        only travels anywhere when you paste it into your campaign.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

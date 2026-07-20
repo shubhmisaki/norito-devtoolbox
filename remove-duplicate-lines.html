@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remove Duplicate Lines",
+      "item": "https://norito.in/remove-duplicate-lines.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -231,6 +251,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The tool splits your text on newlines, then walks the lines once with a JavaScript <code>Set</code> keeping track of what it has already seen. The first occurrence of each line is kept in its original position; later repeats are dropped. Because it's a single pass with constant-time lookups, even tens of thousands of lines dedupe instantly, and unlike the classic <code>sort | uniq</code> shell trick, your line order is preserved: nothing gets alphabetized as a side effect.</p>
+      <p>The options change what counts as "the same line". With case sensitivity off, each line is lowercased before the comparison (the kept line still shows its original casing). "Trim whitespace" strips leading and trailing spaces and tabs first, which matters more than you'd think: two lines can look pixel-identical on screen but differ by a trailing space or a tab, and a byte-exact comparison treats them as different. If your duplicates aren't being caught, invisible whitespace is almost always why, and trimming fixes it. Blank-line removal runs before deduping, so a lone empty line doesn't survive as "the first blank".</p>
+      <p>Processing is a few lines of JavaScript running on the text already in your tab. Nothing is uploaded: open DevTools, switch to the Network tab, and paste or edit all you want. No request ever fires, and the tool works offline once the page has loaded, which matters if you're cleaning lists that contain emails, URLs, or anything else you'd rather not send to a random server.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

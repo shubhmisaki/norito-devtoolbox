@@ -89,6 +89,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Placeholder Image Generator",
+      "item": "https://norito.in/placeholder-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -322,6 +342,35 @@
       <div class="panel" style="display:flex; align-items:center; justify-content:center; min-height:280px;">
         <canvas class="preview" id="canvas"></canvas>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The preview is not a mockup of your image, it is the image: a canvas element sized
+        to your exact pixel dimensions, filled and lettered with the 2D drawing API, then
+        encoded straight to PNG, JPG, or WebP with <code>canvas.toBlob</code>. The label's
+        font size scales with the shorter side (about an eighth of it, with a 12px floor) so
+        the text stays proportionate whether you generate a 64px thumbnail or a 4000px
+        banner. In photo mode the upload is cover-fitted, scaled to fill and center-cropped
+        exactly like CSS <code>object-fit: cover</code>, and the label gets a translucent
+        dark backdrop so it stays readable over a busy image. Redrawing is synchronous on
+        every keystroke; only the heavier blob encoding is debounced briefly behind it,
+        which is why the size readout lags the preview by a beat.
+      </p>
+      <p>
+        One thing to plan around: flat-color placeholders compress absurdly well. A
+        4000&#215;4000 solid PNG is often under 40 KB, because DEFLATE flattens identical
+        rows to almost nothing. Great for quick mockups, misleading if you're testing load
+        performance, since a real photo that size would be a hundred times heavier. For
+        honest weight, use the photo background mode, or pair this with the test file
+        generator to pad assets to a realistic byte size.
+      </p>
+      <p>
+        Drawing, encoding, and download all happen inside this tab, including any photo you
+        drop in, which is read through an object URL and never leaves memory. Open DevTools
+        and watch the Network tab while you generate: no request carries your image out.
+      </p>
     </div>
 
     <div class="related-tools">

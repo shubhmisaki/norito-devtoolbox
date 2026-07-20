@@ -79,6 +79,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "UUID Generator",
+      "item": "https://norito.in/uuid-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -269,6 +289,14 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Each ID comes from <code>crypto.randomUUID()</code>, the browser's built-in generator. Under the hood it pulls 128 bits from the operating system's cryptographically secure random source (the same one that generates TLS keys), then stamps 6 of those bits with fixed values: the version nibble becomes 4 and the variant bits become 10. That's why every UUID here has a 4 at the start of the third group and an 8, 9, a, or b starting the fourth. The remaining 122 bits are pure randomness, which is what makes collisions a non-issue in practice.</p>
+      <p>How much of a non-issue? There are 2^122 possible v4 UUIDs, about 5.3 undecillion. The birthday-problem math says you'd need to generate roughly 103 trillion UUIDs before the odds of even one collision reach one in a million. Every ID your systems will ever mint is a rounding error against that, which is why v4 UUIDs are safe to generate on any machine with no coordination.</p>
+      <p>Generation is a single browser API call, so nothing is requested from a server and nothing is sent to one: open DevTools' Network tab, click Generate, and watch nothing happen. The uppercase and no-hyphens toggles only reformat the IDs already generated; the underlying values don't change.</p>
+      <p>One practical note: v4 UUIDs are deliberately unordered, so as database primary keys they scatter inserts across an index. If you need IDs that sort by creation time, look at UUID v7, which puts a timestamp in the high bits. For everything else (request IDs, filenames, correlation tokens), random v4 is exactly right.</p>
     </div>
 
     <div class="related-tools">

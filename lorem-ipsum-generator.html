@@ -58,6 +58,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lorem Ipsum Generator",
+      "item": "https://norito.in/lorem-ipsum-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -236,6 +256,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The generator keeps a pool of about 110 classic Latin placeholder words and assembles them with <code>Math.random()</code>: each sentence gets a random length between 6 and 14 words, sentences longer than 6 words get a comma dropped somewhere in the middle, and each paragraph is built from 4 to 7 sentences. That comma trick matters more than it sounds: text with zero punctuation variation looks obviously fake in a layout, while a little rhythm makes the block read like real prose at a glance. If you keep the "Start with Lorem ipsum dolor sit amet" option on, the first sentence is pinned to the traditional opener so the output is instantly recognizable as placeholder text.</p>
+      <p>Everything is plain string concatenation in JavaScript, running in your tab. Nothing is fetched and nothing is sent: open DevTools, watch the Network panel, and click Regenerate as many times as you like. No requests fire, and the tool keeps working with Wi-Fi turned off.</p>
+      <p>One thing most generators don't tell you: because word lengths are random, two runs of "3 paragraphs" can differ by dozens of characters. That's fine for eyeballing a layout, but useless for testing a strict character limit (a database column, a meta description, a tweet). For that, generate by exact word count here, or use a fixed-length placeholder tool instead. And if you're pasting into HTML templates, the "Wrap paragraphs in &lt;p&gt; tags" option saves you from hand-wrapping every block.</p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>

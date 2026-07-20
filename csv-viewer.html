@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSV Viewer",
+      "item": "https://norito.in/csv-viewer.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -213,6 +233,32 @@
         <button type="button" class="secondary" id="addColBtn">Add column</button>
         <button type="button" id="downloadBtn">Download .csv</button>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your file is read as text with the browser's <code>FileReader</code> API, the delimiter is
+        auto-detected by counting commas, semicolons, and tabs in the first line, and a
+        quote-aware parser (RFC 4180 style: quoted fields can contain commas and line breaks,
+        <code>""</code> means a literal quote) turns it into an in-memory grid. The table you see
+        is real HTML: every cell is an <code>&lt;input&gt;</code> element wired to write changes
+        straight back into that grid, which is why editing feels instant and why undo works
+        per-cell like any form field.
+      </p>
+      <p>
+        Export is where this tool is more careful than most. The serializer only quotes fields
+        that actually need it (ones containing a comma, quote, or line break), doubles any
+        embedded quotes, and joins rows with CRLF (<code>\r\n</code>) line endings, exactly what
+        RFC 4180 specifies and what Excel expects. One consequence: a file can round-trip with
+        identical data but slightly different bytes, because inconsistent quoting in the original
+        gets normalized. That's cosmetic, not data loss.
+      </p>
+      <p>
+        Nothing here touches a server. Open DevTools' Network tab, load a CSV, edit a few cells,
+        download the result: you'll see zero requests involving your data. The download itself is
+        a <code>Blob</code> assembled in memory and saved by your browser.
+      </p>
     </div>
 
     <div class="related-tools">

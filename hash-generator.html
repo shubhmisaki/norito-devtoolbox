@@ -79,6 +79,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hash Generator",
+      "item": "https://norito.in/hash-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -253,6 +273,32 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        SHA-1, SHA-256, and SHA-512 are computed by your browser's built-in
+        <code>crypto.subtle.digest</code> API: your text is converted to UTF-8 bytes with
+        <code>TextEncoder</code>, digested natively, and the resulting buffer is formatted as
+        lowercase hex. MD5 is the odd one out: Web Crypto deliberately refuses to implement it
+        (it's cryptographically broken), so this tool ships a small JavaScript implementation of
+        RFC 1321 just for MD5. All four recompute on every keystroke, with a guard that throws
+        away stale results if you type faster than the digests finish.
+      </p>
+      <p>
+        A practical gotcha when cross-checking against a terminal: this tool hashes exactly the
+        bytes you typed, with no trailing newline. <code>echo "hello" | sha256sum</code> will
+        never match it, because <code>echo</code> appends a newline and you're actually hashing
+        "hello\n". Use <code>printf '%s' "hello" | sha256sum</code> instead and the digests line
+        up exactly. The same trap explains most "why doesn't my hash match" moments between
+        languages and tools.
+      </p>
+      <p>
+        Because <code>crypto.subtle</code> lives inside the browser, nothing needs to be sent
+        anywhere to compute a digest. You can confirm it: open DevTools' Network tab and type a
+        password or API key into the input. No request appears, your text stays in the tab.
+      </p>
     </div>
 
     <div class="related-tools">

@@ -70,6 +70,26 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Box Shadow Generator",
+      "item": "https://norito.in/design/box-shadow-generator.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true">
@@ -216,6 +236,36 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each layer is a small object holding x, y, blur, spread, color, opacity, and the inset
+        flag. Because HTML color inputs can't express transparency, the hex value from the picker
+        is parsed into its red, green, and blue bytes and recombined with the opacity slider into
+        an <code>rgba()</code> color, which is how one shadow can be soft and translucent instead
+        of a hard black block. All layers are then joined with commas into a single
+        <code>box-shadow</code> declaration, and the exact same string is applied to the preview
+        element, so what you see is what you copy. Order matters in a way that surprises people:
+        the first shadow in the list paints on top, with later ones stacking underneath.
+      </p>
+      <p>
+        The reason this tool bothers with multiple layers: one shadow almost always looks fake.
+        Real shadows have a dense core and a wide soft falloff, and a single
+        <code>0 4px 12px rgba(0,0,0,0.25)</code> can't do both, it just looks like a gray sticker.
+        The trick used by every polished design system is stacking two or three shadows at low
+        opacity, something like a tight <code>0 1px 2px</code> at 10% plus a wide
+        <code>0 8px 24px</code> at 8%. Each layer is barely visible alone; together they read as
+        depth. One caution: <code>box-shadow</code> is cheap to render once but expensive to
+        animate, since every frame forces a repaint. If you need a shadow to fade on hover, put it
+        on a pseudo-element and animate that element's <code>opacity</code> instead.
+      </p>
+      <p>
+        Everything runs in this page's JavaScript: parsing the hex, building the rgba, restyling
+        the preview. No color you pick and no CSS you generate is sent anywhere, and the DevTools
+        Network tab will confirm the page stays quiet while you work.
+      </p>
+    </div>
 
     <div class="related-tools">
       <h2>Related tools</h2>
