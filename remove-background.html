@@ -60,6 +60,34 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does it only work well on people?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It runs a small (about 5.5 MB) open-source segmentation model that was trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The model runs inside your browser, so your photo never leaves your device. The only thing downloaded is the model file itself, once per browser session, and it's cached after that." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do the edges look soft or rough?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The model works at a fairly low internal resolution, so fine detail like stray hairs can come out soft. You'll get the cleanest edges from sharp photos with good contrast between the person and the background." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I replace the background instead of making it transparent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, pick a solid color under \"Result background\" before processing. The download is always a PNG, so if you keep it transparent you can layer the cutout over anything in another editor." }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -272,6 +300,26 @@
           <span>Custom QR codes with colors and a center logo.</span>
         </a>
       </div>
+    </div>
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why does it only work well on people?</summary>
+        <p>It runs a small (about 5.5 MB) open-source segmentation model that was trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my photo uploaded anywhere?</summary>
+        <p>No. The model runs inside your browser, so your photo never leaves your device. The only thing downloaded is the model file itself, once per browser session, and it's cached after that.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why do the edges look soft or rough?</summary>
+        <p>The model works at a fairly low internal resolution, so fine detail like stray hairs can come out soft. You'll get the cleanest edges from sharp photos with good contrast between the person and the background.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I replace the background instead of making it transparent?</summary>
+        <p>Yes, pick a solid color under "Result background" before processing. The download is always a PNG, so if you keep it transparent you can layer the cutout over anything in another editor.</p>
+      </details>
     </div>
   </div>
 </main>

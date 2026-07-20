@@ -60,6 +60,34 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I remove stopwords from my slugs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Google doesn't need stopwords removed to rank a page, which is why the option is off by default. Shorter slugs are just easier to read and share, so it's a style call: best-way-learn-javascript and the-best-way-to-learn-javascript both work." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to accents and special characters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Accented letters are converted to their plain equivalents, so \"Café\" becomes \"cafe\", and punctuation is stripped entirely. Spaces collapse into your chosen separator, leaving a clean URL-safe slug." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the max length 60 characters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's a safe default that keeps most slugs on one line in search results. When a slug needs trimming, the tool cuts at a word boundary where possible instead of chopping mid-word. Set it to 0 for no limit." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hyphens or underscores?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hyphens. Google treats hyphens as word separators but tends to read underscores as joining words together, so seo-tips is understood as two words while seo_tips may not be. The underscore option is there for things like file names and code identifiers." }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -313,6 +341,26 @@ Café Culture: A Traveler's Guide to Europe</textarea>
           <span>Format, validate, and minify JSON with a tree view.</span>
         </a>
       </div>
+    </div>
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Should I remove stopwords from my slugs?</summary>
+        <p>Google doesn't need stopwords removed to rank a page, which is why the option is off by default. Shorter slugs are just easier to read and share, so it's a style call: best-way-learn-javascript and the-best-way-to-learn-javascript both work.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens to accents and special characters?</summary>
+        <p>Accented letters are converted to their plain equivalents, so "Café" becomes "cafe", and punctuation is stripped entirely. Spaces collapse into your chosen separator, leaving a clean URL-safe slug.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is the max length 60 characters?</summary>
+        <p>It's a safe default that keeps most slugs on one line in search results. When a slug needs trimming, the tool cuts at a word boundary where possible instead of chopping mid-word. Set it to 0 for no limit.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Hyphens or underscores?</summary>
+        <p>Hyphens. Google treats hyphens as word separators but tends to read underscores as joining words together, so seo-tips is understood as two words while seo_tips may not be. The underscore option is there for things like file names and code identifiers.</p>
+      </details>
     </div>
   </div>
 </main>

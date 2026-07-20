@@ -90,6 +90,20 @@
 
   if (trigger) trigger.addEventListener("click", open);
 
+  // Additional openers (e.g. the homepage hero search bar) marked with a
+  // shared class, so any page can add its own palette trigger.
+  document.querySelectorAll(".js-cmdk-trigger").forEach(function (el) {
+    el.addEventListener("click", open);
+  });
+
+  // Show the right shortcut for the visitor's platform (kbd hints are
+  // authored as Cmd-K; swap to Ctrl K for non-Mac).
+  if (!/Mac|iPhone|iPad/.test(navigator.platform || "")) {
+    document.querySelectorAll(".hero-search-trigger kbd").forEach(function (k) {
+      k.textContent = "Ctrl K";
+    });
+  }
+
   input.addEventListener("input", function () {
     filter(input.value);
   });

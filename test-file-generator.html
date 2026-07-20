@@ -60,6 +60,34 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are the files real or just renamed junk?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Real. The PDF opens in any viewer, the ZIP unzips cleanly, the GIF renders, and the JPG and PNG are genuine tiny images padded to size with standard comment and chunk mechanisms that viewers know to skip. That matters when whatever you're testing actually inspects the file." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the file be exactly the size I ask for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, down to the byte, for anything above a few hundred bytes. Formats like PDF, GIF, JPG, PNG, and ZIP have a small unavoidable structural minimum, and the tool always shows you the real generated size, so there are no surprises." }
+    },
+    {
+      "@type": "Question",
+      "name": "How large a file can I generate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Up to 2 GB. Files are built in your browser's memory, so at multi-gigabyte sizes the real limit is your device's RAM. The tool caps at 2 GB because anything larger risks crashing the tab." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the content options for TXT and BIN files?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Three choices: readable filler text, random bytes, or all zeroes, each at your exact byte count. Random bytes are useful when testing anything that compresses data, since zeroed files compress to almost nothing and can make transfer tests look faster than they are." }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -294,6 +322,26 @@
           <span>Split-pane markdown editor with live preview.</span>
         </a>
       </div>
+    </div>
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Are the files real or just renamed junk?</summary>
+        <p>Real. The PDF opens in any viewer, the ZIP unzips cleanly, the GIF renders, and the JPG and PNG are genuine tiny images padded to size with standard comment and chunk mechanisms that viewers know to skip. That matters when whatever you're testing actually inspects the file.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will the file be exactly the size I ask for?</summary>
+        <p>Yes, down to the byte, for anything above a few hundred bytes. Formats like PDF, GIF, JPG, PNG, and ZIP have a small unavoidable structural minimum, and the tool always shows you the real generated size, so there are no surprises.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How large a file can I generate?</summary>
+        <p>Up to 2 GB. Files are built in your browser's memory, so at multi-gigabyte sizes the real limit is your device's RAM. The tool caps at 2 GB because anything larger risks crashing the tab.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are the content options for TXT and BIN files?</summary>
+        <p>Three choices: readable filler text, random bytes, or all zeroes, each at your exact byte count. Random bytes are useful when testing anything that compresses data, since zeroed files compress to almost nothing and can make transfer tests look faster than they are.</p>
+      </details>
     </div>
   </div>
 </main>

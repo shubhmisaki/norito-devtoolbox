@@ -60,6 +60,34 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens when my JSON is invalid?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You get an error that points to the exact line and column of the problem, not just a generic \"invalid JSON\" message. Fix that spot and the output updates live as you type." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my JSON sent to a server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Parsing, validation, and formatting all happen in your browser with JavaScript's built-in JSON parser. It's safe to paste API responses or config files that contain private data." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between tree view and text view?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tree view shows your JSON as a collapsible tree, so you can fold away objects and arrays you don't care about. Text view gives you the formatted text with your chosen indentation (2 spaces, 4 spaces, or tabs), ready to copy or download as a .json file." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does formatting or minifying change my data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No values are touched. Formatting and minifying only change whitespace, and the optional \"Sort keys alphabetically\" toggle reorders object keys, which almost every parser treats as equivalent. Arrays keep their order either way." }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -280,6 +308,26 @@
           <span>Custom QR codes with colors and a center logo.</span>
         </a>
       </div>
+    </div>
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What happens when my JSON is invalid?</summary>
+        <p>You get an error that points to the exact line and column of the problem, not just a generic "invalid JSON" message. Fix that spot and the output updates live as you type.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my JSON sent to a server?</summary>
+        <p>No. Parsing, validation, and formatting all happen in your browser with JavaScript's built-in JSON parser. It's safe to paste API responses or config files that contain private data.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the difference between tree view and text view?</summary>
+        <p>Tree view shows your JSON as a collapsible tree, so you can fold away objects and arrays you don't care about. Text view gives you the formatted text with your chosen indentation (2 spaces, 4 spaces, or tabs), ready to copy or download as a .json file.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does formatting or minifying change my data?</summary>
+        <p>No values are touched. Formatting and minifying only change whitespace, and the optional "Sort keys alphabetically" toggle reorders object keys, which almost every parser treats as equivalent. Arrays keep their order either way.</p>
+      </details>
     </div>
   </div>
 </main>

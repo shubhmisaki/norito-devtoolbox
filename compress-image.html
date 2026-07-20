@@ -60,6 +60,34 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why can't it always hit my exact target size?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For JPEG and WebP the tool binary-searches the quality setting at your image's original dimensions. If even the lowest quality is still bigger than your target, you get the smallest file possible without changing the width and height. Turn on \"Allow resizing\" to let it shrink dimensions too, which reaches much smaller targets." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which image formats are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can drop in JPG, PNG, or WebP files and export as JPEG, WebP, or PNG. JPEG and WebP give the best size control because their quality setting is adjustable. PNG is lossless, so its size varies and small targets usually need resizing turned on." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Compression happens entirely in your browser using the canvas API, so your images never leave your device. That also means there's no server-side file size cap or upload queue." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compress several images at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select or drag in multiple files, set one target size, and hit \"Compress all\". You can download the results one by one or grab everything as a single .zip." }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -281,6 +309,26 @@
           <span>Byte-exact dummy files for any size or extension.</span>
         </a>
       </div>
+    </div>
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why can't it always hit my exact target size?</summary>
+        <p>For JPEG and WebP the tool binary-searches the quality setting at your image's original dimensions. If even the lowest quality is still bigger than your target, you get the smallest file possible without changing the width and height. Turn on "Allow resizing" to let it shrink dimensions too, which reaches much smaller targets.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which image formats are supported?</summary>
+        <p>You can drop in JPG, PNG, or WebP files and export as JPEG, WebP, or PNG. JPEG and WebP give the best size control because their quality setting is adjustable. PNG is lossless, so its size varies and small targets usually need resizing turned on.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my image uploaded anywhere?</summary>
+        <p>No. Compression happens entirely in your browser using the canvas API, so your images never leave your device. That also means there's no server-side file size cap or upload queue.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I compress several images at once?</summary>
+        <p>Yes. Select or drag in multiple files, set one target size, and hit "Compress all". You can download the results one by one or grab everything as a single .zip.</p>
+      </details>
     </div>
   </div>
 </main>

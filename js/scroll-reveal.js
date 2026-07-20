@@ -1,6 +1,6 @@
 (function () {
   const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const targets = document.querySelectorAll(".card, main h2");
+  const targets = document.querySelectorAll(".card, .tool-card-v2, .cat-card, .why-item, main h2");
   if (!targets.length) return;
 
   if (reduceMotion || typeof IntersectionObserver !== "function") {

@@ -60,6 +60,29 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my writing saved if I close the tab?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The editor keeps your text only in the open page, so download your work as .md or .html before closing or refreshing. Nothing you type is uploaded anywhere either." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Markdown features are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "GitHub Flavored Markdown: headings, bold, italic, strikethrough, links, quotes, lists, tables, inline code, and fenced code blocks. Single line breaks also become real line breaks in the preview, which is handy for prose." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the HTML export contain?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The rendered HTML of your document wrapped in a minimal, unstyled HTML file. It's meant for pasting into a CMS or applying your own stylesheet, not as a finished styled page." }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -285,6 +308,22 @@ console.log("even code blocks work");
           <span>Byte-exact dummy files for any size or extension.</span>
         </a>
       </div>
+    </div>
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is my writing saved if I close the tab?</summary>
+        <p>No. The editor keeps your text only in the open page, so download your work as .md or .html before closing or refreshing. Nothing you type is uploaded anywhere either.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which Markdown features are supported?</summary>
+        <p>GitHub Flavored Markdown: headings, bold, italic, strikethrough, links, quotes, lists, tables, inline code, and fenced code blocks. Single line breaks also become real line breaks in the preview, which is handy for prose.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What does the HTML export contain?</summary>
+        <p>The rendered HTML of your document wrapped in a minimal, unstyled HTML file. It's meant for pasting into a CMS or applying your own stylesheet, not as a finished styled page.</p>
+      </details>
     </div>
   </div>
 </main>

@@ -60,6 +60,34 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which error correction level should I pick?",
+      "acceptedAnswer": { "@type": "Answer", "text": "M (15%) is a good default for URLs. The levels add redundancy so the code still scans when partly damaged or covered: L is 7%, M is 15%, Q is 25%, and H is 30%. Higher levels make the code denser, so only go up when you need it, like when adding a center logo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the SVG export include my logo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the SVG export is the plain code only. If you've added a center logo, download the PNG instead, which exports exactly what you see in the preview, logo included." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the QR codes expire or get tracked?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Your content is encoded directly into the image with no shortener or redirect service in between, so the code works forever and nobody can track scans. The code is also generated entirely in your browser; the text never leaves your device." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much text fits in one QR code?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A single QR code tops out at just under 3 KB of data, and the ceiling drops as error correction increases. If you paste too much, the tool tells you instead of producing a broken code. For long content, link to a page rather than embedding the text itself." }
+    }
+  ]
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -289,6 +317,26 @@
           <span>Format, validate, and minify JSON with a tree view.</span>
         </a>
       </div>
+    </div>
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Which error correction level should I pick?</summary>
+        <p>M (15%) is a good default for URLs. The levels add redundancy so the code still scans when partly damaged or covered: L is 7%, M is 15%, Q is 25%, and H is 30%. Higher levels make the code denser, so only go up when you need it, like when adding a center logo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does the SVG export include my logo?</summary>
+        <p>No, the SVG export is the plain code only. If you've added a center logo, download the PNG instead, which exports exactly what you see in the preview, logo included.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do the QR codes expire or get tracked?</summary>
+        <p>No. Your content is encoded directly into the image with no shortener or redirect service in between, so the code works forever and nobody can track scans. The code is also generated entirely in your browser; the text never leaves your device.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much text fits in one QR code?</summary>
+        <p>A single QR code tops out at just under 3 KB of data, and the ceiling drops as error correction increases. If you paste too much, the tool tells you instead of producing a broken code. For long content, link to a page rather than embedding the text itself.</p>
+      </details>
     </div>
   </div>
 </main>
