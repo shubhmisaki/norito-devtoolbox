@@ -29,7 +29,7 @@
     el.setAttribute("aria-label", "Install norito");
     el.innerHTML =
       '<div class="install-banner-inner">' +
-      '<div class="install-banner-icon"><img src="/assets/norito-mark.svg" alt="" width="28" height="28" /></div>' +
+      '<div class="install-banner-icon"><img src="/assets/norito-mark.svg" alt="" width="40" height="40" /></div>' +
       '<div class="install-banner-text">' +
       "<strong>Install norito</strong>" +
       "<span>Add it to your device for one-tap access, even offline.</span>" +

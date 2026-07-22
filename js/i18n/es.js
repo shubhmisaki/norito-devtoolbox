@@ -69,8 +69,8 @@ window.NORITO_I18N = {
     "err_processing_timeout": "El procesamiento tardó demasiado. Prueba con una imagen más pequeña (menos de 4 megapíxeles funciona mejor).",
     "loading_model_label": "Cargando modelo…",
     "processing_label": "Procesando…",
-    "loading_model_status": "Cargando el modelo de segmentación: unos 5,5 MB, solo ocurre una vez por sesión de navegador.",
-    "result_success": "<strong>Fondo eliminado correctamente.</strong> Funciona mejor en fotos donde una persona es el sujeto principal. la calidad depende del modelo ligero usado, no de tu imagen.",
+    "loading_model_status": "Cargando el modelo de recorte de retrato y su runtime: unos 18 MB en total, solo ocurre una vez por sesión de navegador.",
+    "result_success": "<strong>Fondo eliminado correctamente.</strong> Funciona mejor en fotos donde una persona es el sujeto principal.",
     "err_generic_prefix": "No se pudo quitar el fondo.",
     "err_unexpected": "Ocurrió algo inesperado.",
     "btn_remove_default": "Quitar fondo"

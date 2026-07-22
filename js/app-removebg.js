@@ -16,8 +16,29 @@
   };
 
   let currentImg = null;
-  let segmenter = null;
+  let ortSession = null;
   let lastResultBlob = null;
+
+  // This file always lives at ".../js/app-removebg.js", whether the page
+  // loading it is at the site root (src="js/app-removebg.js") or nested
+  // under a locale folder (src="../js/app-removebg.js"). Resolving the
+  // model/runtime paths against THIS SCRIPT's own URL, instead of against
+  // the page's URL, means they land in the right place either way. A plain
+  // page-relative string like "js/vendor/onnxruntime/" breaks on nested
+  // pages: from /es/remove-background.html it resolves to the nonexistent
+  // /es/js/vendor/onnxruntime/ instead of the real /js/vendor/onnxruntime/.
+  const SCRIPT_DIR = (function () {
+    var src = document.currentScript && document.currentScript.src;
+    if (!src) {
+      var scripts = document.getElementsByTagName("script");
+      for (var i = 0; i < scripts.length; i++) {
+        if (/app-removebg\.js(\?|$)/.test(scripts[i].src)) { src = scripts[i].src; break; }
+      }
+    }
+    return src ? src.replace(/[^/]*$/, "") : "js/"; // strip filename, keep trailing slash
+  })();
+  const MODEL_URL = SCRIPT_DIR + "vendor/modnet/model_quantized.onnx";
+  const WASM_DIR = SCRIPT_DIR + "vendor/onnxruntime/";
 
   function setResult(html, state) {
     const cls = state || "neutral";
@@ -101,50 +122,118 @@
     return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
   }
 
-  async function getSegmenter() {
-    if (segmenter) return segmenter;
-    if (typeof SelfieSegmentation === "undefined") {
+  // ---- ONNX Runtime session (MODNet portrait matting) ----
+  async function getSession() {
+    if (ortSession) return ortSession;
+    if (typeof ort === "undefined") {
       throw new Error(
         I18N.err_lib_not_loaded || "The background-removal library didn't load. Check your connection and reload the page."
       );
     }
-    console.log("[remove-bg] creating SelfieSegmentation instance…");
-    const seg = new SelfieSegmentation({
-      locateFile: (file) => `js/vendor/mediapipe/${file}`,
-    });
-    seg.setOptions({ modelSelection: 0, selfieMode: false });
+    console.log("[remove-bg] creating ONNX Runtime session…");
+    // Must be an absolute URL, not a bare relative string: onnxruntime-web
+    // internally does a dynamic import() for its .mjs companion file, and
+    // dynamic import specifiers have to resolve like a real URL. A plain
+    // "js/vendor/onnxruntime/" string works fine for fetch() but fails
+    // import() resolution with "Failed to resolve module specifier".
+    ort.env.wasm.wasmPaths = new URL(WASM_DIR, document.baseURI).href;
+    // The bundled wasm binary supports multithreading, but running single-
+    // threaded avoids needing cross-origin-isolation (COOP/COEP) headers,
+    // which this static site doesn't set. Slightly slower, works everywhere.
+    ort.env.wasm.numThreads = 1;
+    ort.env.wasm.simd = true;
     try {
-      await withTimeout(
-        seg.initialize(),
-        20000,
+      ortSession = await withTimeout(
+        ort.InferenceSession.create(MODEL_URL, { executionProviders: ["wasm"] }),
+        30000,
         I18N.err_model_timeout || "The segmentation model took too long to load. Check your connection and try again."
       );
     } catch (err) {
-      console.error("[remove-bg] initialize() failed:", err);
+      console.error("[remove-bg] session create failed:", err);
       throw err;
     }
     console.log("[remove-bg] model ready.");
-    segmenter = seg;
-    return segmenter;
+    return ortSession;
   }
 
-  function runSegmentation(seg, imgEl) {
-    const inference = new Promise((resolve, reject) => {
-      seg.onResults((results) => resolve(results));
-      seg.send({ image: imgEl }).catch(reject);
-    });
-    return withTimeout(
-      inference,
-      20000,
+  // MODNet's own reference preprocessing: resize so the longer side lands
+  // near 512px (upscaling small images up to that size too), then round
+  // both dimensions down to a multiple of 32, since the network's encoder
+  // downsamples by 32x internally and needs dimensions it divides evenly.
+  function computeTargetSize(w, h) {
+    const REF = 512;
+    let rw, rh;
+    if (Math.max(w, h) < REF || Math.min(w, h) > REF) {
+      if (w >= h) { rh = REF; rw = Math.round((w / h) * REF); }
+      else { rw = REF; rh = Math.round((h / w) * REF); }
+    } else {
+      rw = w; rh = h;
+    }
+    rw -= rw % 32;
+    rh -= rh % 32;
+    return { rw: Math.max(32, rw), rh: Math.max(32, rh) };
+  }
+
+  // Draws the image at the target inference size and returns a normalized
+  // NCHW Float32 tensor: pixel/255 rescaled, then (x - 0.5) / 0.5 so values
+  // land in [-1, 1], matching the mean=0.5/std=0.5 preprocessing MODNet was
+  // exported with.
+  function imageToTensor(imgEl, rw, rh) {
+    const c = document.createElement("canvas");
+    c.width = rw; c.height = rh;
+    const ctx = c.getContext("2d");
+    ctx.drawImage(imgEl, 0, 0, rw, rh);
+    const { data } = ctx.getImageData(0, 0, rw, rh);
+    const size = rw * rh;
+    const float = new Float32Array(size * 3);
+    for (let i = 0, p = 0; i < data.length; i += 4, p++) {
+      const r = data[i] / 255, g = data[i + 1] / 255, b = data[i + 2] / 255;
+      float[p] = (r - 0.5) / 0.5;
+      float[size + p] = (g - 0.5) / 0.5;
+      float[2 * size + p] = (b - 0.5) / 0.5;
+    }
+    return new ort.Tensor("float32", float, [1, 3, rh, rw]);
+  }
+
+  // Runs the model and returns a small grayscale canvas holding the raw
+  // alpha matte at inference resolution. composite() below scales this up
+  // to the original image size the same way it already scales the old
+  // MediaPipe mask, so the rest of the pipeline barely changes.
+  async function runSegmentation(session, imgEl) {
+    const { rw, rh } = computeTargetSize(imgEl.width, imgEl.height);
+    const input = imageToTensor(imgEl, rw, rh);
+    const inputName = session.inputNames.includes("input") ? "input" : session.inputNames[0];
+    const outputName = session.outputNames.includes("output") ? "output" : session.outputNames[0];
+
+    const results = await withTimeout(
+      session.run({ [inputName]: input }),
+      30000,
       I18N.err_processing_timeout || "Processing took too long. Try a smaller image (under 4 megapixels works best)."
     );
+    const out = results[outputName];
+    const [, , oh, ow] = out.dims.length === 4 ? out.dims : [1, 1, rh, rw];
+
+    const maskCanvas = document.createElement("canvas");
+    maskCanvas.width = ow; maskCanvas.height = oh;
+    const mctx = maskCanvas.getContext("2d");
+    const maskImg = mctx.createImageData(ow, oh);
+    const data = out.data; // Float32Array, values ~0..1
+    for (let p = 0; p < ow * oh; p++) {
+      const v = Math.round(Math.max(0, Math.min(1, data[p])) * 255);
+      maskImg.data[p * 4] = v;
+      maskImg.data[p * 4 + 1] = v;
+      maskImg.data[p * 4 + 2] = v;
+      maskImg.data[p * 4 + 3] = 255;
+    }
+    mctx.putImageData(maskImg, 0, 0);
+    return maskCanvas;
   }
 
   // Smooths a single-channel mask with a separable box blur (two 1D passes,
   // sliding-window sums so cost stays linear in pixel count regardless of
-  // radius). Used to knock down the blocky/noisy edges the lightweight
-  // segmentation model produces at its low internal resolution, before that
-  // mask gets used as alpha.
+  // radius). MODNet's matte is already fairly clean, so this only needs a
+  // light touch to smooth upscaling artifacts, not to fix blocky model
+  // output the way the old segmentation-mask approach required.
   function boxBlurMask(data, w, h, radius) {
     if (radius <= 0) return Uint8ClampedArray.from(data);
     const tmp = new Float32Array(w * h);
@@ -182,18 +271,22 @@
     return out;
   }
 
-  // The raw segmentation mask is a soft probability map: used directly as
-  // alpha (the old behavior) it produces a washed-out, semi-transparent
-  // halo around the subject instead of a clean edge, because every
-  // mid-confidence pixel near the boundary becomes partially see-through.
-  // Blurring first removes blocky noise, then remapping the alpha curve so
-  // anything below ALPHA_LOW is fully transparent and anything above
-  // ALPHA_HIGH is fully opaque (with just a few pixels of soft transition
-  // between) turns that gradient into a crisp silhouette. This is the
-  // single biggest lever for cutout quality without swapping the
-  // underlying model.
-  const ALPHA_LOW = 60;
-  const ALPHA_HIGH = 200;
+  // MODNet already outputs a real alpha matte (not a coarse probability
+  // mask), so this remap is a light cleanup pass rather than the heavy
+  // lift it was for the old model: it snaps near-zero background haze to
+  // fully transparent and near-one subject pixels to fully opaque, with a
+  // smoothstep ramp (instead of a hard linear one) across the narrow band
+  // in between so hair and soft edges stay soft instead of getting a
+  // stair-stepped edge.
+  const ALPHA_LOW = 15;
+  const ALPHA_HIGH = 210;
+
+  function remapAlpha(raw) {
+    if (raw <= ALPHA_LOW) return 0;
+    if (raw >= ALPHA_HIGH) return 255;
+    const t = (raw - ALPHA_LOW) / (ALPHA_HIGH - ALPHA_LOW);
+    return Math.round(t * t * (3 - 2 * t) * 255); // smoothstep
+  }
 
   function composite(image, mask, mode, color) {
     const w = image.width, h = image.height;
@@ -213,15 +306,10 @@
     for (let i = 0, p = 0; i < maskPixels.length; i += 4, p++) {
       maskGray[p] = maskPixels[i]; // mask is grayscale: R === G === B
     }
-    const blurred = boxBlurMask(maskGray, w, h, 2);
+    const blurred = boxBlurMask(maskGray, w, h, 1);
 
     for (let i = 0, p = 0; i < imgData.data.length; i += 4, p++) {
-      const raw = blurred[p];
-      let alpha;
-      if (raw <= ALPHA_LOW) alpha = 0;
-      else if (raw >= ALPHA_HIGH) alpha = 255;
-      else alpha = Math.round(((raw - ALPHA_LOW) / (ALPHA_HIGH - ALPHA_LOW)) * 255);
-      imgData.data[i + 3] = alpha;
+      imgData.data[i + 3] = remapAlpha(blurred[p]);
     }
     octx.putImageData(imgData, 0, 0);
 
@@ -242,15 +330,15 @@
     els.processBtn.disabled = true;
     els.processBtn.textContent = I18N.loading_model_label || "Loading model…";
     setResult(
-      I18N.loading_model_status || "Loading the segmentation model: about 5.5 MB, only happens once per browser session.",
+      I18N.loading_model_status || "Loading the portrait-matting model and its runtime: about 18 MB combined, only happens once per browser session.",
       "neutral"
     );
 
     try {
-      const seg = await getSegmenter();
+      const session = await getSession();
       els.processBtn.textContent = I18N.processing_label || "Processing…";
-      const results = await runSegmentation(seg, currentImg);
-      const canvas = composite(results.image, results.segmentationMask, els.bgMode.value, els.bgColor.value);
+      const mask = await runSegmentation(session, currentImg);
+      const canvas = composite(currentImg, mask, els.bgMode.value, els.bgColor.value);
 
       canvas.toBlob((blob) => {
         lastResultBlob = blob;
@@ -260,7 +348,7 @@
         if (els.previewHint) els.previewHint.style.display = "none";
         els.downloadBtn.disabled = false;
         setResult(
-          I18N.result_success || "<strong>Background removed successfully.</strong> Works best on photos where a person is the main subject. quality depends on the lightweight model used, not on your image.",
+          I18N.result_success || "<strong>Background removed successfully.</strong> Works best on photos where a person is the main subject.",
           "ok"
         );
         els.preview.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -355,8 +443,9 @@
   async function runBatch() {
     batchEls.processBtn.disabled = true;
     batchEls.processBtn.textContent = I18N.loading_model_label || "Loading model...";
+    let session;
     try {
-      await getSegmenter();
+      session = await getSession();
     } catch (err) {
       console.error("[remove-bg] batch: model load failed:", err);
       batchFiles.forEach((bf) => { bf.status = "error"; bf.error = err.message || "Model failed to load"; });
@@ -371,8 +460,8 @@
       renderBatchList();
       try {
         const img = await loadImageFile(bf.file);
-        const results = await runSegmentation(segmenter, img);
-        const canvas = composite(results.image, results.segmentationMask, els.bgMode.value, els.bgColor.value);
+        const mask = await runSegmentation(session, img);
+        const canvas = composite(img, mask, els.bgMode.value, els.bgColor.value);
         const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
         bf.blob = blob;
         bf.status = "ok";

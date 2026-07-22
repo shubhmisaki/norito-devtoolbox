@@ -68,17 +68,17 @@
     {
       "@type": "Question",
       "name": "Why does it only work well on people?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It runs a small (about 5.5 MB) open-source segmentation model that was trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best." }
+      "acceptedAnswer": { "@type": "Answer", "text": "It runs MODNet, an open-source portrait-matting model trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best." }
     },
     {
       "@type": "Question",
       "name": "Is my photo uploaded anywhere?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. The model runs inside your browser, so your photo never leaves your device. The only thing downloaded is the model file itself, once per browser session, and it's cached after that." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The model runs inside your browser using ONNX Runtime Web, so your photo never leaves your device. The only thing downloaded is the model and runtime itself, about 18 MB combined, once per browser session, and it's cached after that." }
     },
     {
       "@type": "Question",
       "name": "Why do the edges look soft or rough?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The model works at a fairly low internal resolution, so fine detail like stray hairs can come out soft. You'll get the cleanest edges from sharp photos with good contrast between the person and the background." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The model works at a capped internal resolution (around 512px on the longer side), so very fine detail like flyaway hairs can still come out soft on large photos. You'll get the cleanest edges from sharp photos with good contrast between the person and the background." }
     },
     {
       "@type": "Question",
@@ -249,9 +249,10 @@
   </div>
     <div class="result-box" style="margin-bottom:28px;">
       <span class="r-body">
-        <strong>Heads up:</strong> this uses a small (~5.5 MB) model tuned for people, not general
-        objects or products. Portraits and selfies work best. The model downloads once per
-        browser session, then stays cached.
+        <strong>Heads up:</strong> this uses MODNet, a portrait-matting model tuned for people,
+        not general objects or products. Portraits and selfies work best. The model and the
+        WebAssembly runtime it needs are about 18 MB combined and download once per browser
+        session, then stay cached.
       </span>
     </div>
 
@@ -307,30 +308,29 @@
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>
-        The heavy lifting is done by MediaPipe Selfie Segmentation, a neural network
-        compiled to WebAssembly and served from this site's own files. It doesn't return a
-        cutout; it returns a probability mask, a per-pixel confidence score of "person or
-        background". Using that mask directly as transparency looks bad: every
-        mid-confidence pixel near the edge turns semi-see-through, leaving a ghostly halo
-        around the subject. So the tool post-processes it. First a fast two-pass box blur
-        smooths the blocky noise the low-resolution model produces, then the alpha curve is
-        remapped: confidence below a low threshold snaps to fully transparent, above a high
-        threshold to fully opaque, with only a narrow soft ramp between. That remap is what
-        turns a fuzzy probability cloud into a clean silhouette, and it's the biggest
-        quality lever short of a bigger model.
+        The heavy lifting is done by MODNet, an open-source portrait-matting network, run
+        through ONNX Runtime Web (Microsoft's WebAssembly build of the ONNX inference
+        engine) and served entirely from this site's own files. Unlike a plain segmentation
+        model, MODNet is trained to predict a real alpha matte, a per-pixel opacity value,
+        rather than a blunt "person or background" guess, so hair and soft edges come out
+        closer to true transparency instead of a hard cutout line. The image is first
+        resized so its longer side lands near 512px, since that's the resolution the model
+        was trained at; feeding it a bigger photo doesn't sharpen the result, just slows
+        processing down.
       </p>
       <p>
-        A speed tip: the model analyzes every image at the same small internal resolution
-        regardless of input size, so feeding it a 24-megapixel photo buys no extra mask
-        detail, just slower pixel processing. Resizing a huge photo down to 2 or 3
-        megapixels first gives an essentially identical cutout, faster. In batch mode the
-        model loads once and is reused, so the first photo carries all the startup cost.
+        Even a real alpha matte has some noise at its edges, so the tool still does a light
+        cleanup pass: a small box blur smooths resizing artifacts, then the alpha curve gets
+        a gentle smoothstep remap so background haze near zero snaps fully transparent and
+        confident subject pixels snap fully opaque, while the soft transition in between
+        (hair, blur, motion) is preserved rather than flattened.
       </p>
       <p>
         The network story is verifiable in DevTools: on your first run, the Network tab
-        shows the model files loading from this site, about 5.5 MB. After that, process as
-        many photos as you like and watch: no request ever carries your image. The photo is
-        read into memory, segmented, and composited entirely in this tab.
+        shows the model and runtime files loading from this site, about 18 MB combined.
+        After that, process as many photos as you like and watch: no request ever carries
+        your image. The photo is read into memory, matted, and composited entirely in this
+        tab.
       </p>
     </div>
 
@@ -356,15 +356,15 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>Why does it only work well on people?</summary>
-        <p>It runs a small (about 5.5 MB) open-source segmentation model that was trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best.</p>
+        <p>It runs MODNet, an open-source portrait-matting model that was trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best.</p>
       </details>
       <details class="faq-item">
         <summary>Is my photo uploaded anywhere?</summary>
-        <p>No. The model runs inside your browser, so your photo never leaves your device. The only thing downloaded is the model file itself, once per browser session, and it's cached after that.</p>
+        <p>No. The model runs inside your browser using ONNX Runtime Web, so your photo never leaves your device. The only thing downloaded is the model and runtime itself, about 18 MB combined, once per browser session, and it's cached after that.</p>
       </details>
       <details class="faq-item">
         <summary>Why do the edges look soft or rough?</summary>
-        <p>The model works at a fairly low internal resolution, so fine detail like stray hairs can come out soft. You'll get the cleanest edges from sharp photos with good contrast between the person and the background.</p>
+        <p>The model works at a capped internal resolution (around 512px on the longer side), so very fine detail like flyaway hairs can still come out soft on large photos. You'll get the cleanest edges from sharp photos with good contrast between the person and the background.</p>
       </details>
       <details class="faq-item">
         <summary>Can I replace the background instead of making it transparent?</summary>
@@ -475,7 +475,7 @@
 
 <script src="js/i18n-runtime.js"></script>
 <script src="js/utils.js"></script>
-<script src="js/vendor/mediapipe/selfie_segmentation.js"></script>
+<script src="js/vendor/onnxruntime/ort.wasm.min.js"></script>
 <script src="js/app-removebg.js"></script>
 <script src="js/prefill.js"></script>
 <script src="js/nav.js"></script>

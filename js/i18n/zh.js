@@ -69,8 +69,8 @@ window.NORITO_I18N = {
     "err_processing_timeout": "处理时间过长。请尝试更小的图片（400 万像素以内效果最佳）。",
     "loading_model_label": "正在加载模型…",
     "processing_label": "处理中…",
-    "loading_model_status": "正在加载分割模型：约 5.5 MB,每个浏览器会话仅需加载一次。",
-    "result_success": "<strong>背景去除成功。</strong>在人物是照片主体的情况下效果最佳,效果取决于所用的轻量模型,而非你的图片本身。",
+    "loading_model_status": "正在加载人像抠图模型及其运行环境：约 18 MB,每个浏览器会话仅需加载一次。",
+    "result_success": "<strong>背景去除成功。</strong>在人物是照片主体的情况下效果最佳。",
     "err_generic_prefix": "无法去除背景。",
     "err_unexpected": "发生了意外错误。",
     "btn_remove_default": "去除背景"

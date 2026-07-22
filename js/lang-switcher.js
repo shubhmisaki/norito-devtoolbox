@@ -1,5 +1,6 @@
-// Shared language-switcher behavior, identical on all 44 pages (11 tools x
-// 4 languages). Builds the dropdown links itself from the current page's
+// Shared language-switcher behavior, identical on every translated page
+// across all 6 locales (es/zh/ar/hi/ru/ja). Builds the dropdown links itself
+// from the current page's
 // own URL, entirely relative to the file structure (never the absolute
 // domain used in the <hreflang> SEO tags), so it works identically whether
 // the site is opened as local files, served from localhost, or deployed to

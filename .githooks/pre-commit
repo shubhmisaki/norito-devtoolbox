@@ -1,0 +1,32 @@
+#!/bin/sh
+# Regenerates sitemap.xml from the actual file tree before every commit, so
+# it can never drift out of sync with real pages again (see
+# scripts/generate_sitemap.py for why this exists).
+#
+# Enabled once per clone via:
+#   git config core.hooksPath .githooks
+#
+# Non-blocking: if the sitemap changes, it's staged automatically and the
+# commit proceeds with the update included.
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+cd "$REPO_ROOT" || exit 1
+
+PYTHON=$(command -v python3 || command -v python)
+if [ -z "$PYTHON" ]; then
+  echo "pre-commit: no python found, skipping sitemap regeneration" >&2
+  exit 0
+fi
+
+"$PYTHON" scripts/generate_sitemap.py
+STATUS=$?
+
+if [ "$STATUS" -eq 2 ]; then
+  echo "pre-commit: sitemap.xml was out of date, regenerated and staged."
+  git add sitemap.xml
+elif [ "$STATUS" -ne 0 ]; then
+  echo "pre-commit: sitemap generator failed (exit $STATUS) — commit aborted." >&2
+  exit 1
+fi
+
+exit 0

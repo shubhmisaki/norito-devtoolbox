@@ -69,8 +69,8 @@ window.NORITO_I18N = {
     "err_processing_timeout": "処理に時間がかかりすぎました。より小さい画像(400万画素未満が最適)を試してください。",
     "loading_model_label": "モデルを読み込み中…",
     "processing_label": "処理中…",
-    "loading_model_status": "セグメンテーションモデルを読み込み中:約5.5MB、ブラウザセッションごとに一度だけ発生します。",
-    "result_success": "<strong>背景を正常に削除しました。</strong> 人物が主要な被写体の写真で最もよく機能します。品質は軽量モデルに依存し、画像自体には依存しません。",
+    "loading_model_status": "ポートレートマッティングモデルとそのランタイムを読み込み中:合計約18MB、ブラウザセッションごとに一度だけ発生します。",
+    "result_success": "<strong>背景を正常に削除しました。</strong> 人物が主要な被写体の写真で最もよく機能します。",
     "err_generic_prefix": "背景を削除できませんでした。",
     "err_unexpected": "予期しないエラーが発生しました。",
     "btn_remove_default": "背景を削除"

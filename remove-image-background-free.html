@@ -238,9 +238,10 @@
   </div>
     <div class="result-box" style="margin-bottom:28px;">
       <span class="r-body">
-        <strong>Heads up:</strong> this uses a small (~5.5 MB) model tuned for people, not general
-        objects or products. Portraits and selfies work best. The model downloads once per
-        browser session, then stays cached.
+        <strong>Heads up:</strong> this uses MODNet, a portrait-matting model tuned for people, not
+        general objects or products. Portraits and selfies work best. The model and the
+        WebAssembly runtime it needs are about 18 MB combined and download once per browser
+        session, then stay cached.
       </span>
     </div>
 
@@ -311,9 +312,9 @@
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>The heavy lifting is done by MediaPipe's Selfie Segmentation model, a neural network compiled to WebAssembly that runs inside your browser. The first time you click the button, the page downloads the model (about 5.5 MB, cached for the session), then runs inference on your photo locally. The model outputs a segmentation mask: a grayscale probability map where each pixel's brightness says how confident the model is that the pixel belongs to a person.</p>
-      <p>Raw masks make ugly cutouts, so the tool post-processes before using one as transparency. The mask is smoothed with a fast box blur to knock down the blocky noise the lightweight model produces at its low internal resolution, then the alpha curve is remapped: anything below a low confidence threshold becomes fully transparent, anything above a high threshold fully opaque, with only a few pixels of soft transition between. Without that remap, every uncertain pixel near the boundary stays half-see-through and the subject gets a washed-out halo. The cleaned mask is applied per-pixel through canvas <code>getImageData</code>, and the result exports as PNG (to keep transparency) or composited over a solid color you pick.</p>
-      <p>This is also why results differ from paid cloud services: those run models hundreds of times larger on GPUs, so they win on hair and busy backgrounds. The tradeoff here is the opposite one, and it's deliberate: your photo never leaves your machine. That's verifiable, not a promise: open DevTools' Network tab and process an image. You'll see the model files download, and no request carrying your photo, ever. The model is trained on people, so it works best when a person is the main subject; products and pets get mixed results.</p>
+      <p>The heavy lifting is done by MODNet, an open-source portrait-matting network, run through ONNX Runtime Web (a WebAssembly build of the ONNX inference engine) inside your browser. The first time you click the button, the page downloads the model and runtime (about 18 MB combined, cached for the session), then runs inference on your photo locally. Unlike a plain segmentation model, MODNet predicts a real alpha matte, a per-pixel opacity value, rather than a blunt "person or background" guess, so hair and soft edges come out closer to true transparency.</p>
+      <p>Even a real alpha matte has some noise at its edges, so the tool still does a light cleanup pass: a small box blur smooths resizing artifacts, then the alpha curve gets a gentle smoothstep remap so background haze near zero snaps fully transparent and confident subject pixels snap fully opaque, while the soft transition in between (hair, blur, motion) is preserved rather than flattened. The cleaned result is applied per-pixel through canvas <code>getImageData</code>, and exports as PNG (to keep transparency) or composited over a solid color you pick.</p>
+      <p>This is also why results differ from paid cloud services: those run models hundreds of times larger on GPUs, so they win on hair and busy backgrounds. The tradeoff here is the opposite one, and it's deliberate: your photo never leaves your machine. That's verifiable, not a promise: open DevTools' Network tab and process an image. You'll see the model and runtime files download, and no request carrying your photo, ever. The model is trained on people, so it works best when a person is the main subject; products and pets get mixed results.</p>
     </div>
 
     <div class="related-tools">
@@ -437,7 +438,7 @@
 
 <script src="js/i18n-runtime.js"></script>
 <script src="js/utils.js"></script>
-<script src="js/vendor/mediapipe/selfie_segmentation.js"></script>
+<script src="js/vendor/onnxruntime/ort.wasm.min.js"></script>
 <script src="js/app-removebg.js"></script>
 <script src="js/prefill.js"></script>
 <script src="js/nav.js"></script>
