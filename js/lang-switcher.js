@@ -64,9 +64,19 @@
   // "es/that-page.html" would 404. Keep this in sync with the page lists
   // under /es/, /zh/, /ar/, /hi/, /ru/, /ja/.
   var TRANSLATABLE_PAGES = [
-    "index.html", "compress-image.html", "json-formatter.html", "limited-text-generator.html",
-    "markdown-editor.html", "password-generator.html", "placeholder-generator.html", "privacy.html",
-    "qr-code-generator.html", "remove-background.html", "seo-slug-generator.html", "test-file-generator.html"
+    "index.html", "about.html", "changelog.html", "contact.html", "how-it-works.html", "privacy.html",
+    "compress-image.html", "json-formatter.html", "limited-text-generator.html", "markdown-editor.html",
+    "password-generator.html", "placeholder-generator.html", "qr-code-generator.html", "remove-background.html",
+    "seo-slug-generator.html", "test-file-generator.html",
+    "compare/index.html", "compare/norito-vs-ilovepdf.html", "compare/norito-vs-smallpdf.html", "compare/norito-vs-tinypng.html",
+    "design/index.html", "design/border-radius-generator.html", "design/box-shadow-generator.html",
+    "design/color-converter.html", "design/color-palette-extractor.html", "design/contrast-checker.html",
+    "design/css-gradient-generator.html", "design/favicon-generator.html",
+    "developer/index.html", "images/index.html", "text/index.html", "utilities/index.html",
+    "pdf/index.html", "pdf/add-page-numbers.html", "pdf/add-watermark.html", "pdf/compress-pdf.html",
+    "pdf/compress-pdf-for-email.html", "pdf/extract-text.html", "pdf/jpg-png-to-pdf.html", "pdf/merge-pdf.html",
+    "pdf/organize-pdf.html", "pdf/pdf-to-image.html", "pdf/rotate-pdf.html", "pdf/sign-pdf.html", "pdf/split-pdf.html",
+    "seo/index.html", "seo/meta-tag-generator.html", "seo/robots-txt-generator.html", "seo/sitemap-generator.html", "seo/utm-builder.html"
   ];
   var hasTranslation = TRANSLATABLE_PAGES.indexOf(pagePath) !== -1;
 
