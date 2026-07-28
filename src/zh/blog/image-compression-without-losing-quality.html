@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>如何在不损失画质的情况下压缩图片 | norito</title>
+<meta name="description" content="为什么有时更小的文件反而看起来更差，以及真正决定压缩后细节留存程度的三个设置（质量、分辨率、格式）。" />
+<link rel="canonical" href="https://norito.in/zh/blog/image-compression-without-losing-quality.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="如何在不损失画质的情况下压缩图片 | norito" />
+<meta property="og:description" content="为什么有时更小的文件反而看起来更差，以及真正决定压缩后细节留存程度的三个设置（质量、分辨率、格式）。" />
+<meta property="og:url" content="https://norito.in/zh/blog/image-compression-without-losing-quality.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="如何在不损失画质的情况下压缩图片 | norito" />
+<meta name="twitter:description" content="为什么有时更小的文件反而看起来更差，以及真正决定压缩后细节留存程度的三个设置（质量、分辨率、格式）。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "如何在不损失画质的情况下压缩图片",
+  "description": "为什么有时更小的文件反而看起来更差，以及真正决定压缩后细节留存程度的三个设置（质量、分辨率、格式）。",
+  "url": "https://norito.in/zh/blog/image-compression-without-losing-quality.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/zh/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/zh/blog/image-compression-without-losing-quality.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">博客</a> / 如何在不损失画质的情况下压缩图片</p>
+    <h1>如何在不损失画质的情况下压缩图片</h1>
+    <p class="byline">作者： Shubham Singh &middot; <time datetime="2026-07-15">2026年7月15日</time></p>
+    <p class="note" style="margin-bottom:4px;">发布于 2026-07-15</p>
+    <p class="lede">缩小一个文件，本质上总是意味着舍弃一些数据。诀窍在于舍弃你不会注意到的数据，而这归结为三个设置：质量、分辨率和格式。</p>
+
+    <h2>为什么「画质」和「文件大小」是一种权衡</h2>
+    <p>每张照片都是一个像素网格，每个像素都需要数据来描述它的颜色。未经压缩的原始图像会非常庞大，因此图像格式使用压缩技术来舍弃或近似其中的一部分数据。JPEG 是最常见的照片格式，采用的是<strong>有损</strong>压缩：它有意舍弃人眼不太可能察觉的细节，以换取更小的文件体积。压缩得越激进，被舍弃的细节就越多，最终会表现为模糊或块状伪影，尤其是在锐利边缘和文字周围。</p>
+
+    <h2>真正重要的三个调节因素</h2>
+    <p>压缩图像中大部分可见的画质损失，归根结底取决于三个设置，理解它们比盲目地把质量滑块往下拖到文件足够小要有用得多。</p>
+    <p><strong>质量百分比。</strong> 这直接控制着 JPEG 或 WebP 在每个像素块上舍弃多少细节。在大约 80% 以上，对大多数照片来说，画质损失几乎肉眼不可见。在 60% 到 80% 之间，如果仔细看会发现轻微的模糊。低于 50% 时，块状感和色带现象开始变得明显，尤其是在天空、肤色，以及其他平滑渐变的区域。</p>
+    <p><strong>分辨率。</strong> 一张比实际用途所需尺寸更大的照片（比如一张 4000 像素宽的照片，在网页上却只以 800 像素宽显示），会把文件体积浪费在没有人会看到的细节上。在压缩之前先缩小到实际显示尺寸，几乎总是比对一张尺寸过大的图片进行更强力的压缩效果更好。这也是为什么一个好的压缩工具通常会同时提供调整尺寸和压缩这两个功能。</p>
+    <p><strong>格式。</strong> PNG 是无损格式，擅长处理纯色、截图，以及带有锐利边缘的图形，但对照片来说是个糟糕的选择，因为在达到相同视觉效果的前提下，它产生的文件会比 JPEG 或 WebP 大得多。在同等视觉质量下，WebP 通常比 JPEG 小 25% 到 35%，因此在你不需要与非常旧的软件保持最大兼容性的情况下，它是照片压缩的最佳默认选择。</p>
+
+    <h2>一种实用的方法</h2>
+    <p>如果你有一个具体的文件大小目标，比如求职申请上传要求的 200 KB 限制，或者邮件附件的 2 MB 限制，最可靠的方法是直接朝着这个精确目标进行压缩，而不是去猜测一个质量百分比。一个允许你直接输入目标大小、并自动找到合适质量（必要时还会调整尺寸）的工具，能完全省去反复试错的过程。</p>
+    <p>如果你没有一个硬性的大小限制，一个不错的默认做法是：把分辨率保持在图片实际会被展示的尺寸，如果目标平台支持就使用 WebP，并从 80% 的质量开始，只有在文件仍然太大时才继续降低。</p>
+
+    <h2>那 PNG 截图和 Logo 呢？</h2>
+    <p>对于任何以纯色、透明度或清晰文字为主的内容，比如截图、Logo 或图标，PNG 的无损压缩仍然是正确的选择，只是它在处理照片类内容时，压缩效率远不如 JPEG 或 WebP 高效。如果一张 PNG 截图文件过大，最有效的解决办法通常是裁剪掉图片中不必要的部分，或者减少调色板中的颜色数量，而不是硬把它塞进一种有损格式——那样会让文字和界面元素的锐利边缘出现明显的画质劣化。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>亲自试试：</strong> <a href="../compress-image.html">压缩图片</a>，它会自动锁定一个精确的目标文件大小，而不用你去猜测质量百分比。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

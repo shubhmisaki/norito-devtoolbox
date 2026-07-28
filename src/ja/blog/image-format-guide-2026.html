@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>AVIF、WebP、JPEG、PNG：2026年、どの場面でどの形式を使うべきか | norito</title>
+<meta name="description" content="2026年のAVIF、WebP、JPEG、PNGの実践ガイド：圧縮数値、互換性の実情、透明度、アニメーション、そしてJPEGが今なお勝る場面。" />
+<link rel="canonical" href="https://norito.in/ja/blog/image-format-guide-2026.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AVIF、WebP、JPEG、PNG：2026年、どの場面でどの形式を使うべきか | norito" />
+<meta property="og:description" content="2026年のAVIF、WebP、JPEG、PNGの実践ガイド：圧縮数値、互換性の実情、透明度、アニメーション、そしてJPEGが今なお勝る場面。" />
+<meta property="og:url" content="https://norito.in/ja/blog/image-format-guide-2026.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AVIF、WebP、JPEG、PNG：2026年、どの場面でどの形式を使うべきか | norito" />
+<meta name="twitter:description" content="2026年のAVIF、WebP、JPEG、PNGの実践ガイド：圧縮数値、互換性の実情、透明度、アニメーション、そしてJPEGが今なお勝る場面。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AVIF、WebP、JPEG、PNG：2026年、どの場面でどの形式を使うべきか",
+  "description": "2026年のAVIF、WebP、JPEG、PNGの実践ガイド：圧縮数値、互換性の実情、透明度、アニメーション、そしてJPEGが今なお勝る場面。",
+  "url": "https://norito.in/ja/blog/image-format-guide-2026.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ja/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ja/blog/image-format-guide-2026.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ブログ</a> / AVIF、WebP、JPEG、PNG：2026年、どの場面でどの形式を使うべきか</p>
+    <h1>AVIF、WebP、JPEG、PNG：2026年、どの場面でどの形式を使うべきか</h1>
+    <p class="byline">著者： Shubham Singh &middot; <time datetime="2026-07-20">2026年7月20日</time></p>
+    <p class="note" style="margin-bottom:4px;">公開日 2026-07-20</p>
+    <p class="lede">2026年には、4つの形式でウェブ上のほぼすべての画像がカバーされており、良いニュースは、どんな作業であっても、実際に検討すべき形式は2つ程度で済むことがほとんどだという点です。ここでは実際の数値に基づく実践的な判断ガイドと、30年前から使われているJPEGが今なお正解となるケースを紹介します。</p>
+
+    <h2>候補たちを一行ずつ</h2>
+    <p>JPEG（1992年）：非可逆、写真向けに作られ、あらゆる場所で受け入れられている。PNG（1996年）：可逆、透明度対応、シャープな輪郭、あらゆる場所で受け入れられている。WebP（2010年）：可逆・非可逆の両モード、透明度、アニメーションに対応し、圧縮性能はJPEGよりおおよそ一世代分優れている。AVIF（2019年、AV1動画コーデックをベースに構築）：現時点での圧縮チャンピオンで、透明度、アニメーション、HDRに対応しているが、そのぶんエンコードが遅く、ブラウザ以外でのサポートにはばらつきがある。</p>
+
+    <h2>HEICとJPEG XLはどうなのか</h2>
+    <p>遭遇はするものの、基本的に公開用としては使うべきでない2つの形式があります。HEICはiPhoneがデフォルトで撮影する形式です。圧縮効率は優れていますが、実質的にAppleエコシステム専用の形式であり、ブラウザやWindowsでのサポートは不安定なため、共有前にJPEGへ変換すべきです。JPEG XLは技術的には非常に優れており、机上の性能だけを見れば最も万能と言えるかもしれませんが、その普及の経緯は混乱しています。Chromeは2022年に実験的サポートを削除した一方、Safariは後になって対応を追加し、この対立状態のせいで「安全に使える形式」のリストには入れないままになっています。この状況が落ち着くまでは、両方とも配信用ではなく撮影用またはアーカイブ用の形式として扱うのが賢明です。</p>
+
+    <h2>具体的な数値で見る圧縮効率</h2>
+    <p>同等の視覚的品質で典型的な写真を比較すると、WebPはJPEGよりおよそ25〜30パーセント小さくなり、AVIFはJPEGよりおよそ40〜50パーセント小さくなります。特にAVIFの優位性は、圧縮率を強めに設定した場合に最も顕著です。具体的には、品質80で保存された1.2MBのJPEGは、WebPに変換するとおよそ850KB、同程度の品質のAVIFでは600〜700KB程度になる傾向があります。可逆圧縮の作業では、最適化されたPNGが基準となり、可逆WebPは通常それより20〜25パーセント優れています。</p>
+    <p>AVIFのこうした数値には2つの注意点が伴います。まずエンコードが遅く、1画像あたりミリ秒ではなく秒単位の時間がかかるため、ビルドパイプラインや一括変換において無視できない要素です。さらに、非常に低い品質設定にすると、AVIFはJPEGとは異なる形で劣化します。ブロック状のアーティファクトが出る代わりに、肌の質感や葉のディテールといった細かいテクスチャを平滑化してしまうのです。一見するときれいに見えますが、じっくり見るとプラスチックのような質感に見えることがあります。</p>
+    <p>比較する際の落とし穴が1つあります。品質スライダーは形式をまたいで比較できません。JPEGの品質80、WebPの品質80、AVIFの品質80は、それぞれ内部的にまったく異なる尺度を表しているため、「同じ品質設定」での比較には意味がありません。自分が許容できると感じる視覚的品質のもとで、出力サイズを基準に比較すべきです。実際には、目標サイズまで圧縮してから結果を並べて確認する、という形になります。</p>
+
+    <h2>ブラウザ対応は解決済み。それ以外は未解決</h2>
+    <p>2026年現在、ブラウザに関する問題はシンプルです。あらゆる主要なモダンブラウザが4つの形式すべてをレンダリングできます。WebPは2020年以降どこでも安全に使え、AVIFは2022年にSafari 16がリリースされて以降、同様に安全です。実際の互換性の問題は、今やブラウザの外側にあります。WebPやAVIFをレンダリングしないメールクライアント、旧式の内蔵フォトビューア、.jpgと.pngしか受け付けないアップロードフォーム、印刷会社、そして見慣れない形式を再エンコードしたり拒否したりするCMSやSNSのパイプラインなどです。これが、このガイドで最も実用的なルールにつながります。自分が管理するウェブページ上では最新の形式を自由に使い、他人のシステムに渡すファイルについては、JPEGとPNGが依然として共通言語であり続けるということです。</p>
+
+    <h2>透明度とアニメーション</h2>
+    <p>JPEGには透明度がまったくありません。これは議論の余地がありません。PNG、WebP、AVIFはいずれもアルファチャンネルに対応しています。興味深いのは、背景を切り抜いた商品写真のような、透明度を持つ写真系の画像です。これをPNGとして保存すると非常に巨大になります。PNGは写真のディテールをうまく圧縮できないためです。これをアルファ付きのWebPに変換すると、サイズを80〜90パーセントも削減できるのが常です。アニメーションについては、アニメーションWebPとAVIFは、256色と1987年当時の圧縮技術に縛られたGIFよりもはるかに小さくなります。ただし数秒を超える長さになると、音声なしのループ動画ファイルがどの画像形式よりも優れています。</p>
+
+    <h2>JPEGとPNGが今も正解であるケース</h2>
+    <p>互換性がバイト数よりも優先される場面では、JPEGは依然として正しい選択肢です。メールの添付ファイル、フォームやポータルサイトに送る予定のファイル、印刷に回すもの、そしてどのみちアップロードを再エンコードするプラットフォーム（ほとんどのソーシャルネットワーク）などです。こうした場では、せっかく丁寧に調整したAVIFも、到着時に相手側のJPEGへ変換されてしまいます。JPEGはほぼ瞬時にエンコードでき、プログレッシブレンダリングにも対応しているため、低速な回線でも早い段階で使える画像が表示されます。</p>
+    <p>PNGは、スクリーンショット、UIモックアップ、図表、ロゴなど、はっきりした輪郭とベタ塗りの色が支配的な場面で今も正解です。非可逆コーデックは鋭い輪郭の周りに目に見えるリンギングを生じさせるためです。よくある逆方向の間違いは、写真をPNGとして保存してしまうことです。これは目に見える恩恵がないまま、ファイルサイズを5〜10倍に膨らませてしまいます。この落とし穴と、3つの古い形式それぞれの基礎については、<a href="jpg-vs-png-vs-webp.html">「JPG対PNG対WebP」</a>で取り上げています。</p>
+
+    <h2>5行でわかる判断基準</h2>
+    <p>自分が管理するサイト上の写真：picture要素を通じてWebPまたはJPEGのフォールバックを備えたAVIF。メール、アップロードフォーム、印刷に向かう写真：JPEG。スクリーンショット、図表、ロゴ：PNG、または配信先を自分で管理できる場合は可逆WebP。透明度が必要な写真：WebPまたはAVIF。短いアニメーション：アニメーションWebPまたはAVIF、あるいはそれ以上に望ましいのは小さなループ動画。</p>
+    <p>そして形式を選ぶよりも前に、解像度を確認してください。幅800ピクセルのカラムに表示される幅4000ピクセルの写真は、どんなコーデックを使っても取り戻せないほど多くのバイトを無駄にします。まずは<a href="../resize-image.html">表示サイズに合わせてリサイズ</a>し、それから形式を選んでください。</p>
+    <p>変換作業そのものについては、noritoの<a href="../image-converter.html">画像コンバーター</a>がブラウザ内で直接JPG、PNG、WebPを相互に変換し、<a href="../compress-image.html">画像圧縮ツール</a>はそのいずれも目標のファイルサイズまで圧縮します。画質が目に見えて劣化する前にどこまで圧縮できるか迷っている場合は、<a href="image-compression-without-losing-quality.html">このガイド</a>で重要な設定を解説しています。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>自分で試してみる：</strong> <a href="../image-converter.html">画像コンバーター</a> ブラウザ内でローカルにJPG、PNG、WebPを相互変換します。アップロードは一切ありません。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

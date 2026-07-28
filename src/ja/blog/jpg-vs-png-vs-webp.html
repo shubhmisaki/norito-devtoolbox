@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JPG対PNG対WebP：どの形式を使うべきか？ | norito</title>
+<meta name="description" content="JPG、PNG、WebPを平易な言葉で比較し、それぞれがいつ正しい選択となるか、そして今日なぜWebPが写真においてたいてい勝るのかを解説。" />
+<link rel="canonical" href="https://norito.in/ja/blog/jpg-vs-png-vs-webp.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="JPG対PNG対WebP：どの形式を使うべきか？ | norito" />
+<meta property="og:description" content="JPG、PNG、WebPを平易な言葉で比較し、それぞれがいつ正しい選択となるか、そして今日なぜWebPが写真においてたいてい勝るのかを解説。" />
+<meta property="og:url" content="https://norito.in/ja/blog/jpg-vs-png-vs-webp.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JPG対PNG対WebP：どの形式を使うべきか？ | norito" />
+<meta name="twitter:description" content="JPG、PNG、WebPを平易な言葉で比較し、それぞれがいつ正しい選択となるか、そして今日なぜWebPが写真においてたいてい勝るのかを解説。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "JPG対PNG対WebP：どの画像形式を使うべきか？",
+  "description": "JPG、PNG、WebPを平易な言葉で比較し、それぞれがいつ正しい選択となるか、そして今日なぜWebPが写真においてたいてい勝るのかを解説。",
+  "url": "https://norito.in/ja/blog/jpg-vs-png-vs-webp.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ja/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ja/blog/jpg-vs-png-vs-webp.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ブログ</a> / JPG対PNG対WebP：どの画像形式を使うべきか？</p>
+    <h1>JPG対PNG対WebP：どの画像形式を使うべきか？</h1>
+    <p class="byline">著者： Shubham Singh &middot; <time datetime="2026-07-15">2026年7月15日</time></p>
+    <p class="note" style="margin-bottom:4px;">公開日 2026-07-15</p>
+    <p class="lede">3つの形式、3つの異なるトレードオフ。ここでは実際にそれらを分けているものと、自分の画像にどれが合うかを素早く判断する方法を紹介します。</p>
+
+    <h2>端的な答え</h2>
+    <p>スクリーンショット、ロゴ、透明な背景が必要なものには<strong>PNG</strong>を使いましょう。完璧な画質よりも小さいファイルサイズが重要で、最大限の互換性が必要な写真には<strong>JPEG</strong>を使いましょう。画質とファイルサイズの最良のバランスを求めていて、非常に古いソフトウェアへの対応が不要な写真には<strong>WebP</strong>を使いましょう。</p>
+
+    <h2>PNG：可逆で、本物の透明度サポートを持つ唯一の形式</h2>
+    <p>PNGは画像データを一切捨てません。保存したピクセルは、取り出すときもまったく同じピクセルのままです。これにより、スクリーンショット、UIモックアップ、ロゴ、図表など、はっきりした輪郭やベタ塗りの色を持つものにとって正しい選択となります。非可逆圧縮は硬い輪郭やテキストの周りに目に見えるぼやけを生じさせがちだからです。PNGは完全なアルファ透明チャンネルもサポートしているため、画像の一部を透過させる必要がある場合に頼るべき形式です。トレードオフとしては、写真系のコンテンツに対しては、PNGファイルは同等のJPEGやWebPよりも通常3〜10倍大きくなります。写真には可逆圧縮ではあまり縮められない、微妙なグラデーションやノイズが満載だからです。</p>
+
+    <h2>JPEG：万能の写真形式</h2>
+    <p>JPEGは1992年から存在しており、それ以降に作られたほぼすべてのソフトウェア、ブラウザ、デバイスでサポートされています。写真系コンテンツ向けに調整された非可逆圧縮を使用し、通常の閲覧サイズでは気づきにくい形でディテールを捨てます。透明度のサポートはまったくなく、くっきりしたテキストや図形の輪郭の周りに目に見えるブロック状のアーティファクトが現れがちで、これがスクリーンショットに向かない理由です。幅広い互換性が重要な通常の写真（メールの添付ファイル、古いシステム、JPEGしか受け付けない印刷ラボなど）については、今なお完全に妥当なデフォルトです。</p>
+
+    <h2>WebP：今日ではたいてい最良の写真形式</h2>
+    <p>Googleによって開発され、現在ではすべての主要ブラウザでサポートされているWebPは、同じ視覚的品質でJPEGより通常25〜35%小さいファイルを生成し、必要であれば透明度と可逆圧縮の両方にも対応しています。ウェブサイト、SNS投稿、または一般的な保存を目的とする標準的な写真であれば、WebPは通常、画質とサイズの間で得られる最良のトレードオフです。避けるべき主な理由は互換性です。一部の古いソフトウェア、特定の印刷ワークフロー、あるいは特定のアップロードフォームは、依然としてJPEGかPNGしか受け付けない場合があります。</p>
+
+    <h2>シンプルな判断ガイド</h2>
+    <p>透明度が必要か、あるいはくっきりした輪郭とテキストを持つスクリーンショット、ロゴ、図形か？PNGを使いましょう。写真であり、送信先が明示的にJPEGを要求しているか（古いシステム、印刷ラボ、うるさいアップロードフォームなど）？JPEGを使いましょう。写真であり、形式を自由に選べるか？WebPを使いましょう。ほぼどんな現代的な用途でも、実質的な欠点なしに、同じ画質で目に見えて小さいファイルが得られます。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>自分で試してみる：</strong> <a href="../image-converter.html">画像コンバーター</a>で、ブラウザ内で直接JPG、PNG、WebPを相互変換できます。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

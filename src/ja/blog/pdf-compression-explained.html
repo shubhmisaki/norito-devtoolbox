@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>PDF圧縮がスキャン画像には効いて、レポートには効かない理由 | norito</title>
+<meta name="description" content="スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。" />
+<link rel="canonical" href="https://norito.in/ja/blog/pdf-compression-explained.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="PDF圧縮がスキャン画像には効いて、レポートには効かない理由 | norito" />
+<meta property="og:description" content="スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。" />
+<meta property="og:url" content="https://norito.in/ja/blog/pdf-compression-explained.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PDF圧縮がスキャン画像には効いて、レポートには効かない理由 | norito" />
+<meta name="twitter:description" content="スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由",
+  "description": "スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。",
+  "url": "https://norito.in/ja/blog/pdf-compression-explained.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ja/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ja/blog/pdf-compression-explained.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ブログ</a> / PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由</p>
+    <h1>PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由</h1>
+    <p class="byline">著者： Shubham Singh &middot; <time datetime="2026-07-20">2026年7月20日</time></p>
+    <p class="note" style="margin-bottom:4px;">公開日 2026-07-20</p>
+    <p class="lede">同じ圧縮ツールに2種類の異なるPDFを通すと、まったく異なる結果になることがあります。40MBのスキャンされた契約書は3MBまで下がる一方、8MBの年次報告書は頑固に数パーセントしか小さくなりません。どちらの結果も、ツールが壊れていることを意味するわけではありません。違いは、この2つのファイルが実際に何でできているかにあります。</p>
+
+    <h2>PDFはコンテナであり、単一の種類のファイルではない</h2>
+    <p>PDFの1ページには、根本的に異なる2種類のコンテンツを含めることができます。1つ目はベクターコンテンツです。テキストは描画命令として保存されます（「この座標に、埋め込まれたこのフォントから文字Aを、サイズ11で配置する」）。さらに、数学的に記述された線、図形、塗りつぶしも含まれます。2つ目はラスターコンテンツです。実際の画像が、ファイル内にJPEGやPNGのようなデータストリームとして埋め込まれます。PDF圧縮に関するほとんどすべての疑問は、この2つの比率に行き着きます。</p>
+    <p>純粋なテキストだけのページは驚くほど小さくなります。密度の高い契約書ページの描画命令は、圧縮後で通常2〜10KB程度の重さで、埋め込まれたフォントは文書全体で共有され、通常合計で数十KB程度です。一方、スキャンされたページは、ファイル形式の観点からはテキストを一切含んでいません。それは紙切れの1枚の大きな写真にすぎません。</p>
+
+    <h2>テキスト中心のPDFがほとんど縮まない理由</h2>
+    <p>PDF内のテキストとベクターコンテンツは、すでにZIPファイルと同じアルゴリズムであるFlateで圧縮されています。すでに圧縮されたデータをさらに圧縮しても、ほとんど何も得られません。これはソフトウェアの制限ではなく、数学的な性質です。そのため、圧縮ツールが1.5MB（1ページあたり約7KB）の200ページのテキストのみの文書を処理しても、削り取れる「贅肉」はほとんどありません。現実的な効果は整理整頓から生まれます。使われていないオブジェクトの削除、重複するリソースの重複排除、そして丸ごと埋め込まれたフォントのサブセット化です。きれいなテキスト文書であれば5〜15パーセント程度、時にはそれ以下を見込んでください。</p>
+    <p>純粋なテキストのPDFで70パーセントの削減をうたうツールには疑いの目を向けるべきです。よくある手口はラスタライズです。各ページを1枚の圧縮画像に変換してしまうのです。ファイルは確かに小さくなりますが、大きくズームするとテキストがぼやけ、選択やテキスト検索もできなくなり、スクリーンリーダーも機能しなくなります。これは圧縮ではなく変換であり、レポートに対してこれが望ましい結果になることはほとんどありません。</p>
+
+    <h2>スキャン画像が劇的に縮む理由</h2>
+    <p>A4ページの標準的な300DPIスキャンは約2480×3508ピクセル、1ページあたり約870万ピクセルになります。スキャナーソフトウェアは控えめな設定になりがちで、高いJPEG品質、あるいはロスレスで保存するため、1ページあたり2〜8MBになります。これによって圧縮ツールには2つの大きなレバーが与えられます。</p>
+    <p>1つ目はダウンサンプリングです。300DPIから150DPIに落とすとピクセル数は4分の1になりますが、画面上で読む分には差はほとんど気になりません。2つ目はより強いJPEG設定での再エンコードです。品質90から品質60にすると、写真として撮影された文書に対しては見た目の変化は控えめなまま、サイズを再び半分にできます。この2つのレバーを組み合わせれば、80〜95パーセントの削減は日常的なことになります。これは写真の圧縮とまったく同じ物理現象で、<a href="image-compression-without-losing-quality.html">画像圧縮ガイド</a>でより詳しく取り上げています。</p>
+
+    <h2>中間的なファイル</h2>
+    <p>実際の文書のほとんどは両極端の間にあります。グラフや写真を含むレポート、スライドデッキのエクスポート、パンフレットなどです。ここに分かりにくいポイントがあります。ほとんどテキストのように見える文書でも、通常は画像がバイト数の大部分を占めているのです。10枚の写真が埋め込まれた12MBのレポートは、11MBが写真で、それ以外は合計でわずか1MBということもあり得ます。つまり圧縮は写真の部分にしか効果を発揮できません。知っておく価値のある典型的な肥大化パターンもあります。一部の文書生成ツールは同じロゴ画像を1回参照する代わりに、すべてのページに個別に埋め込んでしまいます。また、40文字程度のサブセットで十分な場面でフォントファミリー全体を埋め込んでしまうツールもあります。優れた圧縮ツールはこの両方をひっそりと修正します。</p>
+    <p>プレゼンテーションのエクスポートは特筆に値します。PDFにエクスポートされたスライドは、多くの場合すべてのページにフル解像度の背景画像を持ち、さらにどんなプロジェクターが表示できるよりもはるかに高い解像度で配置された写真を含んでいます。これが、40枚のスライドデッキが100MBのPDFになってしまう理由であり、またデッキが圧縮していて最も達成感のあるファイルの1つである理由でもあります。テキストレポートにはほとんど影響しない同じダウンサンプリングが、会議中の誰にも気づかれることなくデッキを90パーセント削減できるのです。</p>
+
+    <h2>始める前に結果を予測する</h2>
+    <p>ファイルサイズをページ数で割ってください。1ページあたり50KB未満であれば、ほとんどがテキストであり、一桁パーセント台の効果を見込むべきです。1ページあたり100〜300KBの間は通常、混在コンテンツを意味し、30〜60パーセントが現実的です。1ページあたり800KBを超える場合はほぼ常にスキャン画像か写真の多い文書を意味し、80〜95パーセントも視野に入ります。</p>
+    <p>PDFが本物のテキスト文書なのかスキャン画像なのか分からない場合は？ビューアでテキストを選択してみてください。あるいは<a href="../pdf/extract-text.html">テキスト抽出ツール</a>にかけてみてください。何も出てこなければ、すべてのページが画像です。</p>
+
+    <h2>正直な限界</h2>
+    <p>非可逆圧縮は累積します。品質60で圧縮されたスキャン画像が、後で別の誰かによってさらに圧縮されると、急速に劣化します。そのため元のファイルは保管しておいてください。ダウンサンプリングされたスキャン画像は、OCRや再印刷にとっても質の劣る入力になります。もし文書が後でそのどちらかを必要とする可能性があるなら、フル解像度版をアーカイブし、圧縮版を共有してください。また、特定の2〜3枚の写真のせいでPDFが巨大になっている場合は、まず<a href="../compress-image.html">画像圧縮ツール</a>でそれらの画像を縮小し、修正済みのバージョンから文書を再構築する方がすっきりすることがあります。</p>
+    <p>こうした限界の範囲内であれば、圧縮はスキャンされた文書に対して行える中でも特に費用対効果の高いことの1つです。わずか数秒で終わり、あなたの3MBの添付ファイルを受け取った相手は、それが以前40MBだったとは決して気づかないでしょう。</p>
+    <p>何か機密性の高いものを圧縮する前に、最後の注意点をひとつ。使っているツールが実際どう動作しているかを確認してください。人気のあるPDF圧縮ツールの多くは、文書を処理するためにサーバーへアップロードします。スキャンされた契約書や身分証明書は、たとえ一時的であっても、他人のインフラ上に置きたくないと思うようなファイルの典型です。<a href="client-side-vs-server-side-tools.html">自分で確認する方法についての別のガイド</a>を書きました。noritoの圧縮ツールは完全にブラウザ内で動作するため、確認すべきことは何もありません。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>自分で試してみる：</strong> <a href="../pdf/compress-pdf.html">PDFを圧縮</a> スキャン画像や写真の多いPDFをブラウザ内で直接縮小します。アップロードは一切ありません。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

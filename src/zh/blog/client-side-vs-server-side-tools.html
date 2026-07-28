@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>使用在线工具时，你的文件到底去了哪里 | norito</title>
+<meta name="description" content="有些在线工具会把你的文件上传到服务器，另一些则完全在浏览器中处理它们。如何用开发者工具在两分钟内看出区别。" />
+<link rel="canonical" href="https://norito.in/zh/blog/client-side-vs-server-side-tools.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="使用在线工具时，你的文件到底去了哪里 | norito" />
+<meta property="og:description" content="有些在线工具会把你的文件上传到服务器，另一些则完全在浏览器中处理它们。如何用开发者工具在两分钟内看出区别。" />
+<meta property="og:url" content="https://norito.in/zh/blog/client-side-vs-server-side-tools.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="使用在线工具时，你的文件到底去了哪里 | norito" />
+<meta name="twitter:description" content="有些在线工具会把你的文件上传到服务器，另一些则完全在浏览器中处理它们。如何用开发者工具在两分钟内看出区别。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "使用在线工具时，你的文件到底去了哪里",
+  "description": "有些在线工具会把你的文件上传到服务器，另一些则完全在浏览器中处理它们。如何用开发者工具在两分钟内看出区别。",
+  "url": "https://norito.in/zh/blog/client-side-vs-server-side-tools.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/zh/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/zh/blog/client-side-vs-server-side-tools.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">博客</a> / 使用在线工具时，你的文件到底去了哪里</p>
+    <h1>使用在线工具时，你的文件到底去了哪里</h1>
+    <p class="byline">作者： Shubham Singh &middot; <time datetime="2026-07-20">2026年7月20日</time></p>
+    <p class="note" style="margin-bottom:4px;">发布于 2026-07-20</p>
+    <p class="lede">每一个「免费在线工具」页面看起来都差不多：一个友好的拖放区、一个按钮、一次下载。但中间到底发生了什么，把这整个品类分成了两种。有些工具会把你的文件上传到服务器并在那里处理。另一些则把所有工作都放在你的浏览器标签页内完成，文件永远不会离开你的电脑。无论哪种方式，页面看起来都一模一样，所以这里介绍如何区分它们，以及每种方式在什么情况下是真正合理的。</p>
+
+    <h2>两种架构</h2>
+    <p>基于上传的工具会把你的文件通过网络发送到公司的服务器，在那里进行处理，再把结果传回来。而客户端工具则相反，下载的是代码：JavaScript，以及越来越多的、真实库（PDF 引擎、图像编解码器，甚至 ffmpeg）编译成的 WebAssembly 版本，它们在标签页内运行。当你点击「下载」时，浏览器只是在保存一个它已经在内存中构建好的文件。这两种模式都不是新东西；过去十年真正改变的是，WebAssembly 让客户端方案具备了处理繁重任务的能力。</p>
+
+    <h2>「已上传」到底意味着什么</h2>
+    <p>一旦文件被上传，它就存在于你无法控制的基础设施上。该服务可能承诺一小时后删除，而大多数信誉良好的服务确实会遵守，但这个承诺从外部是无法验证的：你无法审查它们的存储、备份、日志，或者其服务器所在的司法管辖区。每一个被上传的文件也都成为了潜在的数据泄露面的一部分，因为一旦该服务被攻破，当时存储在其中的任何内容都会被波及。这并不意味着上传类服务本身是恶意的。它意味着使用这类服务是一种信任行为，而真正值得思考的问题是：这份文件是否值得你付出这份信任。一张表情包，当然没问题。但一份已签署的合同、一份医疗记录，或者一张护照扫描件，就是完全不同的考量了。</p>
+
+    <h2>锁形图标说的是传输过程，不是最终去向</h2>
+    <p>一个常见的误解是关于 HTTPS 锁形图标的。TLS 加密的是你的浏览器与服务器之间的连接，所以在传输过程中，中间没有人能读取这个文件。但它对文件到达之后发生了什么，什么都没说：通过 HTTPS 上传依然是上传，服务器会解密并处理你的文件，效果和你直接把文件交给对方完全一样。真正决定这一侧发生什么的，是留存政策，而不是锁形图标——而且不管怎样，任何正规的上传类网站都会有这个锁形图标。「连接安全」和「你的文件留在你的设备上」是两个毫不相关的说法。</p>
+
+    <h2>花两分钟自己验证一下</h2>
+    <p>你不需要仅凭任何网站的一面之词就相信它，包括这个网站也一样。打开浏览器的开发者工具（F12），切换到 Network（网络）标签，清空记录，然后用这个工具处理一个文件。留意是否出现一个 POST 或 PUT 请求，其负载大小大致与你的文件相符。如果你的 20 MB PDF 触发了一个 20 MB 的请求，那它就是被上传了，不管营销文案怎么说。一个真正的客户端工具不会出现这样的请求；你通常只会看到一些以字节为单位的极小分析统计请求。</p>
+    <p>第二个测试更简单：先打开工具页面，断开网络连接（飞行模式即可），然后再处理你的文件。客户端工具依然能正常工作，因为它所需要的一切都已经随页面一起加载完成了。基于上传的工具则会立即失败。norito 上的每一个工具都能通过这两项测试，<a href="../how-it-works.html">「工作原理」页面</a>也详细记录了这套架构；如果你好奇，现在就可以对着<a href="../pdf/merge-pdf.html">合并 PDF</a>试试这个 Network 标签检查方法。</p>
+    <p>有两点可以让这个检查更可靠。第一，从头到尾完整走一遍你实际使用的流程，因为某个工具可能本地处理，但在你点击分享或云端保存按钮时才会上传。第二，在首次访问时，客户端工具合理地下载几兆字节的 JavaScript 或 WebAssembly 是正常的——这是它的处理引擎正在到达你的设备。这类流量是流向你的，而不是从你流出的，方向在请求列表里一目了然。</p>
+
+    <h2>即使不上传，仍可能泄露的内容</h2>
+    <p>客户端处理并不是一个隐私力场，值得明确说明它的局限在哪里。即使文件内容留在本地，分析脚本仍然可能传输元数据：文件名、大小、你使用了哪些功能。输出文件本身也可能携带从输入继承来的敏感元数据；照片就是典型案例，其中包括 GPS 坐标在内的 EXIF 数据，在大多数编辑操作后依然会保留下来，这正是为什么会有专门的<a href="../remove-metadata.html">元数据删除工具</a>存在。你安装的浏览器扩展可以读取任何页面上的任何内容，无论这个页面是怎么构建的。而「客户端」这个说法，并不能说明网站的代码是否诚实：一个恶意页面完全可以本地处理文件，同时悄悄地把数据外泄出去。在这里，客户端处理是隐私保护的必要条件，但并非充分条件。可验证性加上信誉，才是真正的标准。</p>
+
+    <h2>服务器真正必要的场景</h2>
+    <p>有不少任务确实无法合理地在标签页里完成，这一点也应该公平地说清楚。对杂乱扫描件的高精度 OCR 识别，仍然更依赖服务器端引擎；Tesseract 虽然能编译为 WebAssembly 并且可以运行，但最强的模型在浏览器中体积庞大且速度缓慢。现代的背景移除和图像放大依赖的 ML 模型体积能达到数百兆字节。长视频转码所需的处理量，超出了标签页在可接受时间内能完成的范围，而浏览器标签页实际的内存上限——通常在 2 到 4 GB 之间——也彻底排除了处理超大文件的可能。任何协作类的任务，从定义上就需要服务器参与。所以「上传等于不好」这个说法太简单了；真正该问的问题是：这项任务是否真的需要服务器。对于日常场景，比如<a href="how-to-merge-pdfs-for-free.html">合并 PDF</a>、转换和调整图片大小、生成密码和二维码，答案是不需要。</p>
+
+    <h2>一个合理的默认原则</h2>
+    <p>对于任何你会犹豫要不要发给陌生人的文件，优先选择一个你亲自验证过、确实在本地处理的工具。当某项任务确实需要服务器时，选择一个有明文留存政策的服务商，并在上传文件前先清除其中的元数据。同时，把这两分钟的开发者工具检查养成一个习惯：这是少数几个用户可以直接自行验证的隐私声明之一，而那些对自身架构诚实的网站，经得起这样的检验。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>亲自验证一下：</strong> 打开 <a href="../pdf/merge-pdf.html">合并 PDF</a> 并打开 Network 标签，或者阅读 <a href="../how-it-works.html">norito 的工作原理</a>. 你的文件永远不会离开你的浏览器。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

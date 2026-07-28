@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>A Dónde Van Realmente Tus Archivos con una Herramienta Online | norito</title>
+<meta name="description" content="Algunas herramientas online suben tus archivos a un servidor; otras los procesan por completo en tu navegador. Cómo notar la diferencia en dos minutos con DevTools." />
+<link rel="canonical" href="https://norito.in/es/blog/client-side-vs-server-side-tools.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Dónde Van Realmente Tus Archivos con una Herramienta Online | norito" />
+<meta property="og:description" content="Algunas herramientas online suben tus archivos a un servidor; otras los procesan por completo en tu navegador. Cómo notar la diferencia en dos minutos con DevTools." />
+<meta property="og:url" content="https://norito.in/es/blog/client-side-vs-server-side-tools.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A Dónde Van Realmente Tus Archivos con una Herramienta Online | norito" />
+<meta name="twitter:description" content="Algunas herramientas online suben tus archivos a un servidor; otras los procesan por completo en tu navegador. Cómo notar la diferencia en dos minutos con DevTools." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A Dónde Van Realmente Tus Archivos cuando Usas una Herramienta Online",
+  "description": "Algunas herramientas online suben tus archivos a un servidor; otras los procesan por completo en tu navegador. Cómo notar la diferencia en dos minutos con DevTools.",
+  "url": "https://norito.in/es/blog/client-side-vs-server-side-tools.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/es/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/es/blog/client-side-vs-server-side-tools.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / A Dónde Van Realmente Tus Archivos cuando Usas una Herramienta Online</p>
+    <h1>A Dónde Van Realmente Tus Archivos cuando Usas una Herramienta Online</h1>
+    <p class="byline">Por Shubham Singh &middot; <time datetime="2026-07-20">20 de julio de 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Publicado el 2026-07-20</p>
+    <p class="lede">Toda página de "herramienta online gratis" se ve igual: una zona amigable para soltar archivos, un botón, una descarga. Lo que pasa en el medio divide toda la categoría en dos. Algunas herramientas suben tu archivo a un servidor y lo procesan allí. Otras hacen todo el trabajo dentro de tu pestaña de navegador, y el archivo nunca sale de tu máquina. La página se ve idéntica de cualquier forma, así que aquí está cómo diferenciarlas, y cuándo cada enfoque es realmente legítimo.</p>
+
+    <h2>Las dos arquitecturas</h2>
+    <p>Una herramienta basada en subida envía tu archivo por la red a los servidores de la empresa, ejecuta el procesamiento allí, y devuelve un resultado. Una herramienta del lado del cliente descarga código en su lugar: JavaScript y, cada vez más, compilaciones WebAssembly de bibliotecas reales (motores de PDF, códecs de imagen, incluso ffmpeg) que se ejecutan dentro de la pestaña. Cuando pulsas "descargar", el navegador solo está guardando un archivo que ya construyó en memoria. Ambos modelos son antiguos; lo que cambió en la última década es que WebAssembly hizo que el del lado del cliente fuera capaz de trabajo serio.</p>
+
+    <h2>Qué significa realmente "subido"</h2>
+    <p>Una vez que un archivo se sube, existe en infraestructura que no controlas. El servicio puede prometer eliminarlo después de una hora, y la mayoría de los servicios de buena reputación lo cumplen, pero la promesa es imposible de verificar desde afuera: no puedes auditar su almacenamiento, sus copias de seguridad, sus registros, o la jurisdicción donde están sus servidores. Todo archivo subido también forma parte de una superficie de brecha, porque un compromiso del servicio es un compromiso de lo que sea que esté en él en ese momento. Nada de esto hace que los servicios de subida sean maliciosos. Significa que usar uno es un acto de confianza, y la pregunta sensata es si el archivo lo justifica. Un meme, claro. Un contrato firmado, un historial médico, o el escaneo de un pasaporte es un cálculo diferente.</p>
+
+    <h2>El candado se trata del tránsito, no del destino</h2>
+    <p>Una mala interpretación común es el candado de HTTPS. TLS cifra la conexión entre tu navegador y el servidor, así que nadie en el medio puede leer el archivo mientras viaja. No dice nada sobre lo que pasa al llegar: una subida sobre HTTPS sigue siendo una subida, y el servidor descifra y procesa tu archivo exactamente como si se lo hubieras entregado directamente. Las políticas de retención, no los candados, gobiernan ese lado, y el candado aparece en todo sitio serio basado en subidas de todas formas. "Conexión segura" y "tu archivo se queda en tu máquina" son afirmaciones no relacionadas.</p>
+
+    <h2>Verifícalo tú mismo en dos minutos</h2>
+    <p>No tienes que creerle a ningún sitio bajo palabra, incluido este. Abre las DevTools de tu navegador (F12), cambia a la pestaña Red, límpiala, y luego pasa un archivo por la herramienta. Fíjate en una solicitud POST o PUT cuyo tamaño de carga se corresponda aproximadamente con tu archivo. Si tu PDF de 20 MB dispara una solicitud de 20 MB, se subió, diga lo que diga el texto de marketing. Una herramienta genuinamente del lado del cliente no muestra tal solicitud; típicamente verás solo pequeños pings de analítica medidos en bytes.</p>
+    <p>La segunda prueba es aún más simple: carga la página de la herramienta, desconéctate de internet (el modo avión funciona), y luego procesa tu archivo. Las herramientas del lado del cliente siguen funcionando, porque todo lo que necesitan llegó con la página. Las herramientas basadas en subida fallan de inmediato. Toda herramienta en norito pasa ambas pruebas, y la <a href="../how-it-works.html">página de cómo funciona</a> documenta la arquitectura; prueba la verificación de la pestaña Red contra <a href="../pdf/merge-pdf.html">Unir PDF</a> ahora mismo si tienes curiosidad.</p>
+    <p>Dos refinamientos hacen la verificación más fiable. Primero, ejecuta tu flujo de trabajo real de principio a fin, ya que una herramienta podría procesar localmente pero subir cuando pulsas un botón de compartir o guardar en la nube. Segundo, en la primera visita una herramienta del lado del cliente puede legítimamente descargar unos pocos megabytes de JavaScript o WebAssembly, su motor de procesamiento llegando a tu máquina. Ese tráfico fluye hacia ti, no desde ti, y la dirección es claramente visible en la lista de solicitudes.</p>
+
+    <h2>Qué puede seguir filtrándose sin una subida</h2>
+    <p>El procesamiento del lado del cliente no es un campo de fuerza de privacidad, y vale la pena ser precisos sobre las brechas. Los scripts de analítica pueden transmitir metadatos incluso cuando el contenido del archivo se queda local: nombres de archivo, tamaños, qué funciones usaste. El archivo de salida puede llevar metadatos sensibles heredados de la entrada; las fotos son el caso clásico, donde los datos EXIF incluyendo coordenadas GPS sobreviven a la mayoría de las operaciones de edición, por lo que existe un <a href="../remove-metadata.html">eliminador de metadatos</a> dedicado. Las extensiones de navegador que has instalado pueden leer cualquier cosa en cualquier página, sin importar cómo se construyó la página. Y "del lado del cliente" no dice nada sobre si el código del sitio es honesto: una página maliciosa podría procesar localmente y aun así exfiltrar datos silenciosamente. El lado del cliente es necesario para la privacidad aquí, no suficiente. La verificabilidad más la reputación es el estándar real.</p>
+
+    <h2>Cuándo un servidor es realmente necesario</h2>
+    <p>Muchas tareas no pueden ejecutarse razonablemente en una pestaña, y vale la pena ser justos al respecto. El OCR de alta precisión en escaneos desordenados sigue favoreciendo a los motores del lado del servidor; Tesseract se compila a WebAssembly y funciona, pero los modelos más fuertes son grandes y lentos en un navegador. La eliminación moderna de fondos y el escalado de imágenes se apoyan en modelos de ML que llegan a cientos de megabytes. Las transcodificaciones de video largas exceden lo que una pestaña puede hacer en un tiempo aceptable, y el techo práctico de memoria de una pestaña de navegador, comúnmente 2 a 4 GB, descarta archivos muy grandes por completo. Cualquier cosa colaborativa implica un servidor por definición. Así que "subida es igual a malo" es demasiado simple; la pregunta correcta es si la tarea requiere un servidor. Para los casos cotidianos, <a href="how-to-merge-pdfs-for-free.html">unir PDFs</a>, convertir y redimensionar imágenes, generar contraseñas y códigos QR, no lo requiere.</p>
+
+    <h2>Un valor predeterminado razonable</h2>
+    <p>Para cualquier cosa que dudarías en enviar por correo a un desconocido, prefiere una herramienta que hayas verificado personalmente que procesa localmente. Cuando un trabajo realmente necesita un servidor, elige un proveedor con una política de retención escrita y elimina los metadatos de los archivos antes de subirlos. Y haz de la verificación de dos minutos con DevTools un hábito: es la rara afirmación de privacidad que cualquier usuario puede probar directamente, y los sitios que son honestos sobre su arquitectura la sobrevivirán.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Compruébalo tú mismo:</strong> abre <a href="../pdf/merge-pdf.html">Unir PDF</a> con la pestaña Red abierta, o lee <a href="../how-it-works.html">cómo funciona norito</a>. Tus archivos nunca salen de tu navegador.</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>什么是 UUID？通俗易懂的解释 | norito</title>
+<meta name="description" content="UUID 到底是什么，为什么在没有中央权威机构的情况下它几乎不可能重复，以及你什么时候真的需要生成一个。" />
+<link rel="canonical" href="https://norito.in/zh/blog/what-is-a-uuid.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="什么是 UUID？通俗易懂的解释 | norito" />
+<meta property="og:description" content="UUID 到底是什么，为什么在没有中央权威机构的情况下它几乎不可能重复，以及你什么时候真的需要生成一个。" />
+<meta property="og:url" content="https://norito.in/zh/blog/what-is-a-uuid.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="什么是 UUID？通俗易懂的解释 | norito" />
+<meta name="twitter:description" content="UUID 到底是什么，为什么在没有中央权威机构的情况下它几乎不可能重复，以及你什么时候真的需要生成一个。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "什么是 UUID？通俗易懂的解释",
+  "description": "UUID 到底是什么，为什么在没有中央权威机构的情况下它几乎不可能重复，以及你什么时候真的需要生成一个。",
+  "url": "https://norito.in/zh/blog/what-is-a-uuid.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/zh/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/zh/blog/what-is-a-uuid.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">博客</a> / 什么是 UUID？通俗易懂的解释</p>
+    <h1>什么是 UUID？通俗易懂的解释</h1>
+    <p class="byline">作者： Shubham Singh &middot; <time datetime="2026-07-15">2026年7月15日</time></p>
+    <p class="note" style="margin-bottom:4px;">发布于 2026-07-15</p>
+    <p class="lede">UUID 在软件、数据库主键、API 令牌、文件名中随处可见，但相关解释往往比概念本身更让人困惑。这里是简短版本。</p>
+
+    <h2>通俗易懂的定义</h2>
+    <p>UUID（通用唯一标识符）是一个 128 位的数字，通常写成 32 个十六进制字符，分为五组，例如 <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code>. 它唯一的目的就是充当一个标识符：无论在何处、由谁生成，它与任何其他曾经生成过的 UUID 发生冲突的可能性都低到近乎天文数字级别，而且不需要一个中央机构来分发唯一编号。</p>
+
+    <h2>为什么不直接用递增数字？</h2>
+    <p>数据库的自增 ID（1、2、3……）在单个数据库内部运行得很好，但一旦你需要跨多个系统保持唯一性，它就会失效。如果两个独立的数据库各自独立生成了「订单 #4521」，而你之后需要合并这些数据，就会出现冲突。UUID 通过独立生成来解决这个问题——不需要任何协调，实际上却仍然保持唯一。这正是为什么 UUID 在分布式系统中无处不在：数据库主键、API 请求 ID、会话令牌、文件名、分析事件的追踪 ID，等等。</p>
+
+    <h2>唯一性究竟是如何保证的？</h2>
+    <p>它并不是在绝对数学意义上被保证的，而是在实际意义上被保证为「几乎绝不会发生」。最常见的版本 UUID v4 几乎完全由随机比特生成：它的 128 位中有 122 位是随机的，其余 6 位固定用来标识它是 v4 版本。有了这么高的随机性，你需要生成大约 2.71 百亿亿（2.71×10¹⁸）个 UUID，才有 50% 的概率出现一次冲突。即便每秒生成十亿个 UUID，也需要大约 85 年才能达到十亿分之一的冲突概率。对几乎任何实际用途而言，这已经等同于不可能。</p>
+
+    <h2>UUID 的版本，简要介绍</h2>
+    <p>UUID 有多个版本，采用不同的生成方法。版本 1 基于时间戳加上生成设备的网络硬件地址（如今很少使用，因为它可能泄露生成的时间和地点信息）。版本 4 几乎完全随机，是现代软件中迄今最常见的版本，因为它不需要任何特殊输入，也不携带关于其来源的元数据。版本 5 通过哈希函数，从一个命名空间和一个名称确定性地生成，因此相同的输入总会产生相同的 UUID，当你需要一个从已有数据派生出的稳定标识符，而不是全新的随机标识符时，这很有用。</p>
+
+    <h2>你什么时候真的需要生成一个</h2>
+    <p>常见场景：在不等待数据库分配 ID 的情况下为新的数据库记录分配一个唯一 ID，生成一个唯一文件名以避免覆盖现有文件，创建一次性的 API 密钥或会话令牌，或者给一批测试数据打上标签，确保这些 ID 不会与真实的生产数据发生冲突。任何你需要「一个唯一标识符，此刻立即可用，无需协调」的场合，UUID 通常都是最简单的答案。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>亲自试试：</strong> <a href="../uuid-generator.html">UUID 生成器</a>，直接在你的浏览器中批量生成随机 UUID v4 标识符。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>为什么 PDF 压缩对扫描件有效，对报告却几乎无效 | norito</title>
+<meta name="description" content="为什么扫描版 PDF 能缩小 90%，而文本报告几乎不变：PDF 中究竟是什么在占用空间，以及如何预测你的压缩结果。" />
+<link rel="canonical" href="https://norito.in/zh/blog/pdf-compression-explained.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="为什么 PDF 压缩对扫描件有效，对报告却几乎无效 | norito" />
+<meta property="og:description" content="为什么扫描版 PDF 能缩小 90%，而文本报告几乎不变：PDF 中究竟是什么在占用空间，以及如何预测你的压缩结果。" />
+<meta property="og:url" content="https://norito.in/zh/blog/pdf-compression-explained.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="为什么 PDF 压缩对扫描件有效，对报告却几乎无效 | norito" />
+<meta name="twitter:description" content="为什么扫描版 PDF 能缩小 90%，而文本报告几乎不变：PDF 中究竟是什么在占用空间，以及如何预测你的压缩结果。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "为什么 PDF 压缩对扫描件效果显著，对报告文档却几乎没用",
+  "description": "为什么扫描版 PDF 能缩小 90%，而文本报告几乎不变：PDF 中究竟是什么在占用空间，以及如何预测你的压缩结果。",
+  "url": "https://norito.in/zh/blog/pdf-compression-explained.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/zh/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/zh/blog/pdf-compression-explained.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">博客</a> / 为什么 PDF 压缩对扫描件效果显著，对报告文档却几乎没用</p>
+    <h1>为什么 PDF 压缩对扫描件效果显著，对报告文档却几乎没用</h1>
+    <p class="byline">作者： Shubham Singh &middot; <time datetime="2026-07-20">2026年7月20日</time></p>
+    <p class="note" style="margin-bottom:4px;">发布于 2026-07-20</p>
+    <p class="lede">把两份不同的 PDF 用同一个压缩工具处理，得到的结果可能天差地别：一份 40 MB 的扫描合同能降到 3 MB，而一份 8 MB 的年度报告却顽固地几乎不缩水。这两种结果都不代表工具坏了，差别在于这两个文件到底是由什么构成的。</p>
+
+    <h2>PDF 是一个容器，而不是单一类型的文件</h2>
+    <p>一页 PDF 可以包含两种根本不同的内容。第一种是矢量内容：以绘图指令的形式存储的文字（「在这些坐标处、以 11 号字号，放置来自这个嵌入字体的字母 A」），加上以数学方式描述的线条、形状和填充。第二种是位图内容：真正的图像，以 JPEG 或类似 PNG 的数据流形式嵌入文件中。几乎所有关于 PDF 压缩的问题，最终都归结为这两者的比例。</p>
+    <p>纯文本页面小得惊人。一页排版密集的合同，其绘图指令压缩后通常只有 2 到 10 KB，而嵌入的字体在整份文档中是共享的，总共通常只有几十 KB。相比之下，一张扫描页在文件格式层面根本不包含任何文字，它只是一张纸的一大张照片。</p>
+
+    <h2>为什么文字为主的 PDF 几乎压不小</h2>
+    <p>PDF 内部的文字和矢量内容已经使用 Flate（与 ZIP 文件相同的算法）压缩过了。对已经压缩过的数据再压缩几乎没有效果——这是数学上的特性，不是软件的局限。所以当压缩工具处理一份 200 页、重 1.5 MB（每页约 7 KB）的纯文本文档时，根本没有多少「肥肉」可削。真正可行的收益来自于内务整理：删除未使用的对象、去重重复的资源，以及对完整嵌入的字体做子集化。在一份干净的纯文本文档上，可以期望获得 5% 到 15% 的压缩率，有时更少。</p>
+    <p>如果有工具声称能把纯文本 PDF 压缩掉 70%，你应该对此保持怀疑。常见的手法是「栅格化」：把每一页都转换成一张压缩后的图片。文件确实变小了，但放大后文字会变得模糊，无法再被选中或搜索，屏幕阅读器也会失效。这本质上是一次格式转换，而不是压缩，对于报告文档来说，这几乎从来都不是你想要的结果。</p>
+
+    <h2>为什么扫描件能大幅缩小</h2>
+    <p>一张标准 300 DPI 的 A4 页面扫描件大约是 2480 × 3508 像素，每页大约 870 万像素。扫描软件往往偏保守，会以较高的 JPEG 质量甚至无损方式保存，这会产生每页 2 到 8 MB 的文件。这就给了压缩工具两个强大的调节手段。</p>
+    <p>第一个是降采样。从 300 DPI 降到 150 DPI 会使像素数量变为四分之一，而对于屏幕阅读来说，这种差异几乎察觉不到。第二个是以更强的 JPEG 设置重新编码：从质量 90 降到质量 60，可以在照片式文档上只带来轻微的可见变化的同时，让体积再减半。同时使用这两个手段，实现 80% 到 95% 的压缩率是很平常的事。这和压缩照片的物理原理完全相同，我们在<a href="image-compression-without-losing-quality.html">图片压缩指南</a>中有更详细的介绍。</p>
+
+    <h2>介于两者之间的文件</h2>
+    <p>大多数现实中的文档都处于两个极端之间：带图表和照片的报告、幻灯片导出文件、宣传册。这里有个不那么明显的地方：即使一份文档看起来主要是文字，图片通常仍然占据了字节数的大头。一份 12 MB、包含十张嵌入照片的报告，可能是 11 MB 的照片加上 1 MB 的其他内容，所以压缩其实只能作用于照片这一部分。还有一些值得了解的经典「臃肿」模式：有些文档生成工具会在每一页都单独嵌入同一张 logo 图片，而不是只引用一次；还有一些会嵌入整套完整的字体家族，而实际上只需要 40 个字符的子集就够了。一个好的压缩工具会不动声色地把这两个问题都解决掉。</p>
+    <p>幻灯片导出的情况值得特别一提。导出为 PDF 的幻灯片经常在每一页都带有一张全分辨率的背景图，再加上分辨率远高于任何投影仪能显示上限的照片。这就是为什么一份 40 页的幻灯片会变成一个 100 MB 的 PDF，也是为什么幻灯片是压缩起来最令人满意的一类文件：同样的降采样操作，几乎不会影响文本报告，却能让幻灯片体积缩小 90%，而没人会在会议上察觉到。</p>
+
+    <h2>在开始之前预测你的压缩结果</h2>
+    <p>用文件大小除以页数。如果每页小于 50 KB，那基本上就是纯文本，压缩收益预计只有个位数百分比。每页 100 到 300 KB 之间通常意味着混合内容，30% 到 60% 是比较现实的预期。每页超过 800 KB 几乎总是意味着这是扫描件或图片密集型文档，80% 到 95% 的压缩率是有可能的。</p>
+    <p>不确定一份 PDF 是真正的文本文档还是扫描件？可以试着在阅读器里选中文字。或者用<a href="../pdf/extract-text.html">文本提取工具</a>试试：如果什么都提取不出来，那说明每一页都是图片。</p>
+
+    <h2>诚实地看待压缩的极限</h2>
+    <p>有损压缩是累积性的。一份以质量 60 压缩过的扫描件，如果之后又被别人再压缩一次，画质会迅速劣化，所以一定要保留原始文件。降采样后的扫描件对 OCR 识别和重新打印来说也是较差的输入源；如果一份文档以后可能需要这两者中的任何一种，建议归档保存全分辨率版本，只分享压缩后的版本。而如果一份 PDF 之所以庞大，是因为其中两三张具体的照片，有时更干净的做法是先用<a href="../compress-image.html">图片压缩工具</a>把这些图片缩小，再用处理好的版本重新生成文档。</p>
+    <p>在这些限制之内，压缩是你能对一份扫描文档做的性价比最高的事情之一。它只需要几秒钟，而收到你那份 3 MB 附件的人永远不会知道它原本有 40 MB。</p>
+    <p>在压缩任何机密内容之前，最后提醒一句：先确认一下你正在用的工具实际是如何运作的。很多热门的 PDF 压缩工具会把你的文档上传到它们的服务器进行处理，而一份扫描版合同或身份证件，恰恰是你可能不希望——哪怕只是短暂地——放在别人服务器基础设施上的那种文件。我们专门写了一篇<a href="client-side-vs-server-side-tools.html">如何自行核实这一点的指南</a>。norito 的压缩工具完全在你的浏览器中运行，所以根本没什么需要核实的。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>亲自试试：</strong> <a href="../pdf/compress-pdf.html">压缩 PDF</a> 直接在浏览器中缩小扫描版和图片密集型 PDF。不上传任何内容。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

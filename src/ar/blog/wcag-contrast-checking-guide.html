@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>فحص التباين وفق WCAG: دليل عملي | norito</title>
+<meta name="description" content="ما الذي تقيسه نسب التباين في WCAG فعليًا، وحدود AA وAAA الحقيقية، وأكثر أخطاء التباين شيوعًا في التصاميم الواقعية." />
+<link rel="canonical" href="https://norito.in/ar/blog/wcag-contrast-checking-guide.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="فحص التباين وفق WCAG: دليل عملي | norito" />
+<meta property="og:description" content="ما الذي تقيسه نسب التباين في WCAG فعليًا، وحدود AA وAAA الحقيقية، وأكثر أخطاء التباين شيوعًا في التصاميم الواقعية." />
+<meta property="og:url" content="https://norito.in/ar/blog/wcag-contrast-checking-guide.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="فحص التباين وفق WCAG: دليل عملي | norito" />
+<meta name="twitter:description" content="ما الذي تقيسه نسب التباين في WCAG فعليًا، وحدود AA وAAA الحقيقية، وأكثر أخطاء التباين شيوعًا في التصاميم الواقعية." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "فحص التباين وفق WCAG: دليل عملي",
+  "description": "ما الذي تقيسه نسب التباين في WCAG فعليًا، وحدود AA وAAA الحقيقية، وأكثر أخطاء التباين شيوعًا في التصاميم الواقعية.",
+  "url": "https://norito.in/ar/blog/wcag-contrast-checking-guide.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ar/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ar/blog/wcag-contrast-checking-guide.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">المدونة</a> / فحص التباين وفق WCAG: دليل عملي</p>
+    <h1>فحص التباين وفق WCAG: دليل عملي</h1>
+    <p class="byline">بقلم Shubham Singh &middot; <time datetime="2026-07-15">15 يوليو 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">نُشر في 2026-07-15</p>
+    <p class="lede">نسبة التباين ليست مجرد خانة امتثال، إنها الفرق بين نص يمكن للناس قراءته ونص لا يستطيعون. إليك كيف تُحسب وماذا تعني الحدود فعليًا.</p>
+
+    <h2>لماذا يهم التباين</h2>
+    <p>النص الذي لا يتباين بما يكفي مع خلفيته يصعب قراءته على الجميع، ويمكن أن يكون غير قابل للقراءة بالمرة لذوي ضعف البصر أو عمى الألوان. إرشادات إتاحة محتوى الويب (WCAG) تضع نسب تباين دنيا خصيصًا كي يظل النص واضحًا لأوسع نطاق ممكن من القدرات البصرية، والوفاء بها هو تحسين حقيقي لقابلية الاستخدام، وفي كثير من الولايات القضائية، متطلب قانوني للمواقع الموجهة للجمهور.</p>
+
+    <h2>كيف تُحسب نسبة التباين فعليًا</h2>
+    <p>نسبة التباين هي مقارنة بين السطوع النسبي (السطوع المُدرَك) للون النص ولون الخلفية، تُعبَّر كنسبة من 1:1 (متطابق، بلا تباين على الإطلاق) إلى 21:1 (أسود خالص على أبيض خالص، أقصى تباين ممكن). إنها ليست مقارنة سطوع بسيطة، السطوع يُحسب باستخدام صيغة توزن الأحمر والأخضر والأزرق بشكل مختلف، لأن العين البشرية تُدرك الأخضر أكثر سطوعًا من الأحمر أو الأزرق عند نفس الشدة، وتطبق تصحيح جاما لمراعاة كيفية عرض الشاشات للألوان فعليًا. لست بحاجة لحساب هذا يدويًا، لكن معرفة أن الأمر يتعلق بالسطوع المُدرَك (وليس فقط قيم RGB الخام) تساعد في تفسير بعض النتائج غير البديهية حقًا، مثل سبب فشل بعض الألوان متوسطة الدرجة التي تبدو متمايزة بشكل معقول رغم ذلك.</p>
+
+    <h2>الحدود الفعلية</h2>
+    <p>يحدد WCAG 2.1 مستويين للمطابقة. <strong>AA</strong>، وهو المعيار الذي تستهدفه معظم المؤسسات، يتطلب نسبة تباين لا تقل عن <strong>4.5:1</strong> للنص العادي و<strong>3:1</strong> للنص الكبير (يُعرَّف بأنه 18 نقطة عادي أو 14 نقطة عريض وأكبر). <strong>AAA</strong>، وهو مستوى أكثر صرامة، يتطلب <strong>7:1</strong> للنص العادي و<strong>4.5:1</strong> للنص الكبير. معظم متطلبات الإتاحة القانونية (مثل ADA في الولايات المتحدة، كما تُفسَّر عبر WCAG، أو معيار EN 301 549 في الاتحاد الأوروبي) تشير إلى AA كخط أساس، بينما يُعامَل AAA عمومًا كهدف طموح أكثر منه متطلبًا صارمًا.</p>
+
+    <h2>أخطاء التباين الشائعة</h2>
+    <p>النص الرمادي الفاتح على خلفية بيضاء هو الفشل الأكثر شيوعًا على الإطلاق، غالبًا ما يبدو «نظيفًا» و«عصريًا» في نموذج التصميم لكنه يفشل في AA بشدة ويصعب قراءته فعليًا على كثير من المستخدمين. النص التوضيحي داخل حقول النماذج غالبًا ما يكون منخفض التباين للغاية، وبما أنه يختفي بمجرد أن تبدأ الكتابة، غالبًا لا يلاحظ المصممون أنها مشكلة. النص المُركَّب فوق صور أو تدرجات لوني محفوف بالمخاطر لأن نسبة التباين قد تنجح في منطقة من الصورة وتفشل في أخرى، إضافة طبقة لون صلبة أو ظل نص خلف النص حل شائع لذلك. ألوان العلامة التجارية، خاصة لوحات العلامة التجارية الباستيلية أو متوسطة التشبع، غالبًا ما تفشل في متطلبات التباين عند استخدامها كلون للنص وتحتاج إلى نسخة أغمق أو أفتح مخصصة للنص تحديدًا.</p>
+
+    <h2>كيف تفحص ألوانك الخاصة</h2>
+    <p>اختر لون المقدمة (النص) ولون الخلفية، ثم افحص النسبة الناتجة مقابل حدَّي AA وAAA لحجم النص الذي تستخدمه. إذا فشل مزيج ما، فإن الإصلاح الأكثر موثوقية عادةً هو تغميق لون النص (للخلفيات الفاتحة) أو تفتيحه (للخلفيات الداكنة) حتى يتجاوز الحد، بدلاً من تغيير الخلفية، لأن لون الخلفية غالبًا ما يكون أكثر ارتباطًا بهوية العلامة التجارية من لون النص.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>جرّبه بنفسك:</strong> <a href="../design/contrast-checker.html">فاحص التباين</a>، لفحص أي لونين مقابل حدَّي AA وAAA في WCAG فوريًا.</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Por Qué la Compresión de PDF Funciona en Escaneos, No en Informes | norito</title>
+<meta name="description" content="Por qué los PDF escaneados se reducen un 90% mientras los informes de texto apenas cambian: qué ocupa realmente el espacio en un PDF, y cómo predecir tus resultados de compresión." />
+<link rel="canonical" href="https://norito.in/es/blog/pdf-compression-explained.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Por Qué la Compresión de PDF Funciona en Escaneos, No en Informes | norito" />
+<meta property="og:description" content="Por qué los PDF escaneados se reducen un 90% mientras los informes de texto apenas cambian: qué ocupa realmente el espacio en un PDF, y cómo predecir tus resultados de compresión." />
+<meta property="og:url" content="https://norito.in/es/blog/pdf-compression-explained.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Por Qué la Compresión de PDF Funciona en Escaneos, No en Informes | norito" />
+<meta name="twitter:description" content="Por qué los PDF escaneados se reducen un 90% mientras los informes de texto apenas cambian: qué ocupa realmente el espacio en un PDF, y cómo predecir tus resultados de compresión." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Por Qué la Compresión de PDF Funciona Genial en Escaneos y Casi Nada en Informes",
+  "description": "Por qué los PDF escaneados se reducen un 90% mientras los informes de texto apenas cambian: qué ocupa realmente el espacio en un PDF, y cómo predecir tus resultados de compresión.",
+  "url": "https://norito.in/es/blog/pdf-compression-explained.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/es/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/es/blog/pdf-compression-explained.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / Por Qué la Compresión de PDF Funciona Genial en Escaneos y Casi Nada en Informes</p>
+    <h1>Por Qué la Compresión de PDF Funciona Genial en Escaneos y Casi Nada en Informes</h1>
+    <p class="byline">Por Shubham Singh &middot; <time datetime="2026-07-20">20 de julio de 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Publicado el 2026-07-20</p>
+    <p class="lede">Pasa dos PDFs diferentes por el mismo compresor y puedes obtener resultados radicalmente distintos: un contrato escaneado de 40 MB baja a 3 MB, mientras que un informe anual de 8 MB se niega tercamente a perder más de unos pocos puntos porcentuales. Ninguno de los dos resultados significa que la herramienta esté rota. La diferencia está en de qué están hechos realmente esos dos archivos.</p>
+
+    <h2>Un PDF es un contenedor, no un solo tipo de archivo</h2>
+    <p>Una página de PDF puede contener dos tipos de contenido fundamentalmente distintos. El primero es contenido vectorial: texto almacenado como instrucciones de dibujo ("coloca el glifo de la A de esta fuente incrustada en estas coordenadas, tamaño 11"), más líneas, formas, y rellenos descritos matemáticamente. El segundo es contenido ráster: imágenes reales, incrustadas como flujos de datos tipo JPEG o PNG dentro del archivo. Casi toda pregunta sobre la compresión de PDF se reduce a la proporción entre esos dos.</p>
+    <p>Una página de puro texto es sorprendentemente pequeña. Las instrucciones de dibujo de una página de contrato densa suelen pesar entre 2 y 10 KB una vez comprimidas, y las fuentes incrustadas se comparten en todo el documento, normalmente unas pocas decenas de KB en total. Una página escaneada, en cambio, no contiene texto en absoluto en lo que respecta al formato del archivo. Es una gran fotografía de un trozo de papel.</p>
+
+    <h2>Por qué los PDF con mucho texto apenas se reducen</h2>
+    <p>El texto y el contenido vectorial dentro de un PDF ya están comprimidos con Flate, el mismo algoritmo que usan los archivos ZIP. Comprimir datos ya comprimidos no rinde casi nada; esa es una propiedad matemática, no una limitación del software. Así que cuando un compresor procesa un documento de solo texto de 200 páginas que pesa 1.5 MB, unos 7 KB por página, sencillamente no hay mucha grasa que recortar. Las ganancias realistas vienen de tareas de limpieza: eliminar objetos sin usar, deduplicar recursos repetidos, y crear subconjuntos de fuentes que se incrustaron completas. Espera entre un 5 y un 15 por ciento en un documento de texto limpio, a veces menos.</p>
+    <p>Desconfía de cualquier herramienta que prometa una reducción del 70 por ciento en un PDF de puro texto. El truco habitual es rasterizar: convertir cada página en una imagen comprimida. El archivo sí se hace más pequeño, pero el texto se vuelve borroso con mucho zoom, ya no se puede seleccionar ni buscar, y los lectores de pantalla dejan de funcionar. Eso es una conversión, no una compresión, y casi nunca es lo que quieres para un informe.</p>
+
+    <h2>Por qué los escaneos se reducen drásticamente</h2>
+    <p>Un escaneo estándar a 300 DPI de una página A4 tiene unos 2480 por 3508 píxeles, aproximadamente 8.7 millones de píxeles por página. El software de escaneo tiende a ser conservador, guardando a alta calidad JPEG o incluso sin pérdida, lo que produce entre 2 y 8 MB por página. Eso le da al compresor dos palancas grandes.</p>
+    <p>La primera es el submuestreo. Bajar de 300 DPI a 150 DPI reduce el número de píxeles a la cuarta parte, y para la lectura en pantalla la diferencia apenas se nota. La segunda es recodificar con un ajuste JPEG más agresivo: pasar de calidad 90 a calidad 60 puede volver a reducir el tamaño a la mitad con solo un cambio visual modesto en un documento fotografiado. Combina ambas palancas y una reducción del 80 al 95 por ciento es algo rutinario. Es exactamente la misma física que comprimir una foto, que cubrimos con más profundidad en <a href="image-compression-without-losing-quality.html">nuestra guía de compresión de imágenes</a>.</p>
+
+    <h2>Los archivos intermedios</h2>
+    <p>La mayoría de los documentos del mundo real están entre los extremos: informes con gráficos y fotos, exportaciones de presentaciones, folletos. Aquí está la parte no obvia: incluso en un documento que parece mayormente texto, las imágenes suelen dominar el recuento de bytes. Un informe de 12 MB con diez fotos incrustadas podría tener 11 MB de fotos y 1 MB de todo lo demás, así que la compresión solo puede actuar sobre la parte de las fotos. También hay patrones clásicos de hinchazón que vale la pena conocer: algunos generadores de documentos incrustan la misma imagen de logo por separado en cada página en lugar de referenciarla una sola vez, y algunos incrustan familias de fuentes completas donde bastaría un subconjunto de 40 glifos. Un buen compresor arregla ambas cosas discretamente.</p>
+    <p>Las exportaciones de presentaciones merecen una mención especial. Las diapositivas exportadas a PDF suelen llevar una imagen de fondo a resolución completa en cada página, más fotos colocadas a una resolución mucho más alta de la que cualquier proyector llegará a mostrar. Así es como una presentación de 40 diapositivas se convierte en un PDF de 100 MB, y también por qué las presentaciones están entre los archivos más satisfactorios de comprimir: el mismo submuestreo que apenas toca un informe de texto puede reducir una presentación en un 90 por ciento sin que nadie en la reunión lo note.</p>
+
+    <h2>Predecir tu resultado antes de empezar</h2>
+    <p>Divide el tamaño del archivo entre el número de páginas. Por debajo de 50 KB por página, estás ante mayormente texto y deberías esperar ganancias de un solo dígito porcentual. Entre 100 y 300 KB por página normalmente significa contenido mixto, donde un 30 a 60 por ciento es realista. Por encima de 800 KB por página casi siempre significa un escaneo o un documento cargado de fotos, y un 80 a 95 por ciento está sobre la mesa.</p>
+    <p>¿No estás seguro de si un PDF es un documento de texto real o un escaneo? Prueba a seleccionar texto en tu visor. O pásalo por la <a href="../pdf/extract-text.html">herramienta de extraer texto</a>: si no sale nada, cada página es una imagen.</p>
+
+    <h2>Los límites honestos</h2>
+    <p>La compresión con pérdida es acumulativa. Un escaneo comprimido a calidad 60, y luego comprimido otra vez por otra persona más adelante, se degrada rápidamente, así que conserva tu original. Un escaneo submuestreado también es una entrada peor para el OCR y para reimprimir; si un documento podría necesitar alguna de las dos cosas más adelante, archiva la versión de resolución completa y comparte la comprimida. Y si un PDF es enorme por culpa de dos o tres fotos concretas, a veces es más limpio reducir esas imágenes primero con un <a href="../compress-image.html">compresor de imágenes</a> y reconstruir el documento con las versiones corregidas.</p>
+    <p>Dentro de esos límites, la compresión es una de las cosas de mayor impacto que puedes hacerle a un documento escaneado. Toma segundos, y quien reciba tu adjunto de 3 MB nunca sabrá que antes pesaba 40.</p>
+    <p>Una última advertencia antes de comprimir cualquier cosa confidencial: comprueba cómo funciona realmente la herramienta que estás usando. Muchos compresores de PDF populares suben tu documento a sus servidores para procesarlo, y un contrato escaneado o un documento de identidad son exactamente el tipo de archivo que quizá no quieras que esté en la infraestructura de otra persona, ni siquiera brevemente. Escribimos una <a href="client-side-vs-server-side-tools.html">guía aparte sobre cómo comprobarlo tú mismo</a>. El compresor de norito funciona por completo en tu navegador, así que no hay nada que comprobar.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Pruébalo tú mismo:</strong> <a href="../pdf/compress-pdf.html">Comprimir PDF</a> reduce PDFs escaneados y cargados de imágenes directamente en tu navegador. No se sube nada.</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

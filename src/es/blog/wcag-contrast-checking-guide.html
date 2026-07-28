@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Verificación de Contraste WCAG: Una Guía Práctica | norito</title>
+<meta name="description" content="Qué miden realmente las relaciones de contraste WCAG, los umbrales reales de AA y AAA, y los errores de contraste más comunes en diseños reales." />
+<link rel="canonical" href="https://norito.in/es/blog/wcag-contrast-checking-guide.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Verificación de Contraste WCAG: Una Guía Práctica | norito" />
+<meta property="og:description" content="Qué miden realmente las relaciones de contraste WCAG, los umbrales reales de AA y AAA, y los errores de contraste más comunes en diseños reales." />
+<meta property="og:url" content="https://norito.in/es/blog/wcag-contrast-checking-guide.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Verificación de Contraste WCAG: Una Guía Práctica | norito" />
+<meta name="twitter:description" content="Qué miden realmente las relaciones de contraste WCAG, los umbrales reales de AA y AAA, y los errores de contraste más comunes en diseños reales." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Verificación de Contraste WCAG: Una Guía Práctica",
+  "description": "Qué miden realmente las relaciones de contraste WCAG, los umbrales reales de AA y AAA, y los errores de contraste más comunes en diseños reales.",
+  "url": "https://norito.in/es/blog/wcag-contrast-checking-guide.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/es/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/es/blog/wcag-contrast-checking-guide.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / Verificación de Contraste WCAG: Una Guía Práctica</p>
+    <h1>Verificación de Contraste WCAG: Una Guía Práctica</h1>
+    <p class="byline">Por Shubham Singh &middot; <time datetime="2026-07-15">15 de julio de 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Publicado el 2026-07-15</p>
+    <p class="lede">La relación de contraste no es solo una casilla de cumplimiento, es la diferencia entre un texto que la gente puede leer y uno que no. Aquí está cómo se calcula y qué significan realmente los umbrales.</p>
+
+    <h2>Por qué importa el contraste</h2>
+    <p>Un texto que no contrasta lo suficiente con su fondo es difícil de leer para todos, y puede ser completamente ilegible para personas con baja visión o daltonismo. Las Pautas de Accesibilidad al Contenido Web (WCAG) establecen relaciones de contraste mínimas específicamente para que el texto siga siendo legible para el rango más amplio posible de capacidades visuales, y cumplirlas es a la vez una mejora genuina de usabilidad y, en muchas jurisdicciones, un requisito legal para los sitios web de cara al público.</p>
+
+    <h2>Cómo se calcula realmente la relación de contraste</h2>
+    <p>La relación de contraste es una comparación entre la luminancia relativa (brillo percibido) del color del texto y el color de fondo, expresada como una relación desde 1:1 (idéntico, sin contraste alguno) hasta 21:1 (negro puro sobre blanco puro, el máximo contraste posible). No es una simple comparación de brillo, la luminancia se calcula usando una fórmula que pondera el rojo, verde y azul de manera diferente, ya que el ojo humano percibe el verde como más brillante que el rojo o el azul a la misma intensidad, y aplica una corrección gamma para tener en cuenta cómo los monitores realmente muestran el color. No necesitas calcular esto a mano, pero saber que se trata de brillo percibido (no solo valores RGB en bruto) ayuda a explicar algunos resultados genuinamente contraintuitivos, como por qué ciertos colores de tono medio que se ven razonablemente distintos pueden aun así fallar.</p>
+
+    <h2>Los umbrales reales</h2>
+    <p>WCAG 2.1 define dos niveles de conformidad. <strong>AA</strong>, el estándar al que apunta la mayoría de las organizaciones, requiere una relación de contraste de al menos <strong>4.5:1</strong> para texto normal y <strong>3:1</strong> para texto grande (definido como 18pt regular o 14pt negrita y mayor). <strong>AAA</strong>, un nivel más estricto, requiere <strong>7:1</strong> para texto normal y <strong>4.5:1</strong> para texto grande. La mayoría de los requisitos legales de accesibilidad (como la ADA en EE.UU., interpretada a través de WCAG, o el estándar EN 301 549 en la UE) hacen referencia a AA como línea base, AAA generalmente se trata como una meta aspiracional más que un requisito estricto.</p>
+
+    <h2>Errores comunes de contraste</h2>
+    <p>El texto gris claro sobre un fondo blanco es el fallo más común con diferencia, a menudo se ve “limpio” y “moderno” en una maqueta de diseño pero falla AA gravemente y es genuinamente difícil de leer para muchos usuarios. El texto de marcador de posición dentro de campos de formulario suele tener demasiado poco contraste, y como desaparece en cuanto empiezas a escribir, los diseñadores a menudo no notan que es un problema. El texto superpuesto sobre fotos o degradados es arriesgado porque la relación de contraste puede aprobar en una zona de la imagen y fallar en otra, añadir una superposición de color sólido o una sombra de texto detrás del texto es una solución común. Los colores de marca, especialmente las paletas de marca en pastel o de saturación media, frecuentemente fallan los requisitos de contraste cuando se usan como color de texto y necesitan una variante más oscura o más clara reservada específicamente para el texto.</p>
+
+    <h2>Cómo verificar tus propios colores</h2>
+    <p>Elige tu color de primer plano (texto) y tu color de fondo, luego verifica la relación resultante contra los umbrales AA y AAA para el tamaño de texto que estás usando. Si una combinación falla, la solución más fiable suele ser oscurecer el color del texto (para fondos claros) o aclararlo (para fondos oscuros) hasta que supere el umbral, en lugar de cambiar el fondo, ya que el color de fondo suele estar más ligado a la identidad de marca que el color del texto.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Pruébalo tú mismo:</strong> <a href="../design/contrast-checker.html">Verificador de Contraste</a>, para verificar cualquier par de colores contra los umbrales AA y AAA de WCAG al instante.</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>WCAGコントラストチェック：実践ガイド | norito</title>
+<meta name="description" content="WCAGのコントラスト比が実際に何を測定しているのか、実際のAAおよびAAAの基準値、そして実際のデザインで最もよくあるコントラストの間違い。" />
+<link rel="canonical" href="https://norito.in/ja/blog/wcag-contrast-checking-guide.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="WCAGコントラストチェック：実践ガイド | norito" />
+<meta property="og:description" content="WCAGのコントラスト比が実際に何を測定しているのか、実際のAAおよびAAAの基準値、そして実際のデザインで最もよくあるコントラストの間違い。" />
+<meta property="og:url" content="https://norito.in/ja/blog/wcag-contrast-checking-guide.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WCAGコントラストチェック：実践ガイド | norito" />
+<meta name="twitter:description" content="WCAGのコントラスト比が実際に何を測定しているのか、実際のAAおよびAAAの基準値、そして実際のデザインで最もよくあるコントラストの間違い。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WCAGコントラストチェック：実践ガイド",
+  "description": "WCAGのコントラスト比が実際に何を測定しているのか、実際のAAおよびAAAの基準値、そして実際のデザインで最もよくあるコントラストの間違い。",
+  "url": "https://norito.in/ja/blog/wcag-contrast-checking-guide.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ja/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ja/blog/wcag-contrast-checking-guide.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ブログ</a> / WCAGコントラストチェック：実践ガイド</p>
+    <h1>WCAGコントラストチェック：実践ガイド</h1>
+    <p class="byline">著者： Shubham Singh &middot; <time datetime="2026-07-15">2026年7月15日</time></p>
+    <p class="note" style="margin-bottom:4px;">公開日 2026-07-15</p>
+    <p class="lede">コントラスト比は単なる準拠チェック項目ではなく、読める文字と読めない文字を分ける違いです。ここでは、それがどのように計算されるか、そして基準値が実際に何を意味するのかを説明します。</p>
+
+    <h2>なぜコントラストが重要なのか</h2>
+    <p>背景との対比が十分でない文字は、誰にとっても読みにくく、弱視や色覚異常のある人にとってはまったく読めない場合もあります。ウェブコンテンツアクセシビリティガイドライン（WCAG）は、できるだけ幅広い視覚能力の範囲で文字が判読可能であり続けるよう、最低限のコントラスト比を明確に定めています。これを満たすことは、真のユーザビリティ向上であると同時に、多くの法域において一般向けウェブサイトへの法的要件でもあります。</p>
+
+    <h2>コントラスト比が実際にどう計算されるか</h2>
+    <p>コントラスト比は、文字色と背景色の相対輝度（知覚される明るさ）を比較したもので、1:1（同一、まったくコントラストなし）から21:1（純粋な黒と純粋な白、可能な最大コントラスト）までの比率で表されます。これは単純な明るさの比較ではなく、輝度は赤・緑・青にそれぞれ異なる重みを付ける式を使って計算されます。これは人間の目が同じ強度でも緑を赤や青より明るく感じるためであり、モニターが実際に色をどう表示するかを考慮したガンマ補正も適用されます。これを手計算する必要はありませんが、これが知覚される明るさに関するものであり（単なる生のRGB値ではなく）ということを知っておくと、見た目では十分に区別できそうな中間色が実は基準を満たさない場合があるといった、確かに直感に反する結果を理解する助けになります。</p>
+
+    <h2>実際の基準値</h2>
+    <p>WCAG 2.1は2つの適合レベルを定義しています。ほとんどの組織が目指す標準である<strong>AA</strong>は、通常の文字で少なくとも<strong>4.5:1</strong>、大きな文字（18pt標準または14pt太字以上と定義）で<strong>3:1</strong>のコントラスト比を要求します。より厳格なレベルである<strong>AAA</strong>は、通常の文字で<strong>7:1</strong>、大きな文字で<strong>4.5:1</strong>を要求します。ほとんどの法的アクセシビリティ要件（WCAGを通じて解釈される米国のADAやEUのEN 301 549規格など）はAAを基準として参照しており、AAAは一般的に厳格な要件というより努力目標として扱われます。</p>
+
+    <h2>よくあるコントラストの間違い</h2>
+    <p>白背景に薄いグレーの文字は、断トツで最もよくある失敗例です。デザインのモックアップでは「クリーン」で「モダン」に見えることが多いのですが、AAに大きく違反しており、多くのユーザーにとって実際に読みにくいものです。フォームフィールド内のプレースホルダーテキストはしばしばコントラストが低すぎますが、入力を始めると消えてしまうため、デザイナーはそれが問題だと気づかないことがよくあります。写真やグラデーションの上に重ねられた文字はリスクが高く、画像の一部ではコントラスト比が基準を満たしても、別の部分では満たさないことがあります。文字の背後に単色のオーバーレイやテキストシャドウを追加するのがよくある対処法です。ブランドカラー、特にパステルカラーや中彩度のブランドパレットは、文字色として使われるとコントラスト要件を満たさないことが多く、文字専用に確保された、より濃いまたは薄いバリエーションが必要になります。</p>
+
+    <h2>自分の色をチェックする方法</h2>
+    <p>前景色（文字）と背景色を選び、使用している文字サイズに対してAAとAAAの両方の基準値と結果の比率を照合してください。ある組み合わせが基準を満たさない場合、最も信頼できる修正方法は通常、背景を変更するのではなく、文字色を暗くする（明るい背景の場合）か明るくする（暗い背景の場合）ことで基準をクリアさせることです。背景色は文字色よりもブランドアイデンティティと結びついていることが多いためです。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>自分で試してみる：</strong> <a href="../design/contrast-checker.html">コントラストチェッカー</a>で、任意の2色をWCAGのAAおよびAAA基準値と即座に照合できます。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

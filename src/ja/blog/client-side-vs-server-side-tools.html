@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>オンラインツールで、あなたのファイルは実際どこへ行くのか | norito</title>
+<meta name="description" content="一部のオンラインツールはファイルをサーバーにアップロードし、他はブラウザ内で完全に処理します。DevToolsを使って2分でその違いを見分ける方法。" />
+<link rel="canonical" href="https://norito.in/ja/blog/client-side-vs-server-side-tools.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="オンラインツールで、あなたのファイルは実際どこへ行くのか | norito" />
+<meta property="og:description" content="一部のオンラインツールはファイルをサーバーにアップロードし、他はブラウザ内で完全に処理します。DevToolsを使って2分でその違いを見分ける方法。" />
+<meta property="og:url" content="https://norito.in/ja/blog/client-side-vs-server-side-tools.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="オンラインツールで、あなたのファイルは実際どこへ行くのか | norito" />
+<meta name="twitter:description" content="一部のオンラインツールはファイルをサーバーにアップロードし、他はブラウザ内で完全に処理します。DevToolsを使って2分でその違いを見分ける方法。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "オンラインツールを使うとき、あなたのファイルは実際どこへ行くのか",
+  "description": "一部のオンラインツールはファイルをサーバーにアップロードし、他はブラウザ内で完全に処理します。DevToolsを使って2分でその違いを見分ける方法。",
+  "url": "https://norito.in/ja/blog/client-side-vs-server-side-tools.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ja/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ja/blog/client-side-vs-server-side-tools.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ブログ</a> / オンラインツールを使うとき、あなたのファイルは実際どこへ行くのか</p>
+    <h1>オンラインツールを使うとき、あなたのファイルは実際どこへ行くのか</h1>
+    <p class="byline">著者： Shubham Singh &middot; <time datetime="2026-07-20">2026年7月20日</time></p>
+    <p class="note" style="margin-bottom:4px;">公開日 2026-07-20</p>
+    <p class="lede">どの「無料オンラインツール」のページも見た目は同じです。親しみやすいドロップゾーン、ボタン、ダウンロード。しかしその間で実際に何が起きているかによって、このカテゴリ全体は二つに分かれます。あるツールはファイルをサーバーにアップロードしてそこで処理します。別のツールはすべての処理をブラウザタブ内で行い、ファイルは端末から一切出ていきません。ページの見た目はどちらも同じなので、ここではその見分け方と、それぞれの方式が実際に正当と言えるのはどんな場合かを説明します。</p>
+
+    <h2>2つのアーキテクチャ</h2>
+    <p>アップロード型のツールは、あなたのファイルをネットワーク経由で企業のサーバーへ送り、そこで処理を行い、結果を送り返します。一方クライアントサイドのツールはコードをダウンロードします。JavaScriptと、そして年々増えているのが、本物のライブラリ（PDFエンジン、画像コーデック、さらにはffmpegまで）をWebAssemblyでビルドしたもので、それがタブ内で動作します。「ダウンロード」を押したとき、ブラウザはすでにメモリ上に構築済みのファイルを保存しているだけです。どちらのモデルも古くからありますが、この10年で変わったのは、WebAssemblyによってクライアントサイド側が本格的な処理をこなせるようになったことです。</p>
+
+    <h2>「アップロードされた」が実際に意味すること</h2>
+    <p>いったんファイルがアップロードされると、それはあなたが制御できないインフラ上に存在することになります。そのサービスは1時間後に削除すると約束するかもしれませんし、評判の良いサービスの多くは実際にそれを守りますが、その約束は外部から検証することができません。ストレージ、バックアップ、ログ、あるいはサーバーが置かれている法域を監査することはできないのです。アップロードされたすべてのファイルは、侵害の対象にもなります。そのサービス自体が侵害されれば、その時点でそこにあるものはすべて侵害されるからです。だからといってアップロード型サービスが悪意あるものだというわけではありません。それを使うという行為自体が一種の信頼の行使であり、賢明な問いは、そのファイルがその信頼に値するかどうかです。ミーム画像なら、もちろん問題ありません。しかし、署名済みの契約書、医療記録、パスポートのスキャンとなると、話は別です。</p>
+
+    <h2>鍵マークが表すのは通信経路であって、行き先ではない</h2>
+    <p>よくある誤解はHTTPSの鍵マークです。TLSはブラウザとサーバーの間の接続を暗号化するため、転送中に途中の誰かがファイルを読み取ることはできません。しかし、到着後に何が起きるかについては何も語っていません。HTTPS経由のアップロードも、やはりアップロードです。サーバーはあなたのファイルを復号して処理します。あたかも直接手渡したかのように。その先を左右するのは鍵マークではなく保持ポリシーであり、そもそも鍵マークはまともなアップロード型サイトならどこにでも表示されます。「安全な接続」と「ファイルが端末に留まる」は、まったく無関係な主張です。</p>
+
+    <h2>2分で自分で確認する</h2>
+    <p>どのサイトの言葉も鵜呑みにする必要はありません。このサイトも例外ではありません。ブラウザのDevTools（F12）を開き、Networkタブに切り替え、内容をクリアしてから、そのツールでファイルを処理してみてください。ペイロードサイズがおおよそあなたのファイルと一致するPOSTやPUTリクエストがないか確認します。20MBのPDFが20MBのリクエストを発生させたなら、マーケティング文句が何と言おうと、それはアップロードされたということです。本物のクライアントサイドツールはそのようなリクエストを一切見せません。通常見えるのは、バイト単位で測られる程度の小さなアナリティクスの通信だけです。</p>
+    <p>2つ目のテストはさらに簡単です。ツールのページを読み込み、インターネットを切断し（機内モードでも構いません）、それからファイルを処理してみてください。クライアントサイドのツールは動き続けます。必要なものはすべてページと一緒にすでに届いているからです。アップロード型のツールは即座に失敗します。noritoのすべてのツールはこの両方のテストに合格しており、<a href="../how-it-works.html">仕組みのページ</a>にそのアーキテクチャが記載されています。気になる方は、今すぐ<a href="../pdf/merge-pdf.html">PDFを結合</a>に対してこのNetworkタブのチェックを試してみてください。</p>
+    <p>このチェックをより確実にする2つの工夫があります。まず、実際に使う一連の流れを最初から最後まで実行してみてください。あるツールがローカルで処理していても、共有ボタンやクラウド保存ボタンを押した瞬間にアップロードすることがあるためです。次に、初回アクセス時にクライアントサイドのツールが数メガバイト程度のJavaScriptやWebAssemblyを正当にダウンロードすることがあります。処理エンジンがあなたの端末に届いているのです。その通信はあなたに向かって流れているのであって、あなたから流れ出ているのではなく、その方向はリクエスト一覧を見れば一目瞭然です。</p>
+
+    <h2>アップロードなしでも漏れる可能性があるもの</h2>
+    <p>クライアントサイド処理はプライバシーのフォースフィールドではなく、その隙間について正確に理解しておく価値があります。ファイルの中身がローカルに留まっていても、アナリティクススクリプトがメタデータを送信することはあります。ファイル名、サイズ、使用した機能などです。出力ファイルには、入力から引き継がれた機密性の高いメタデータが含まれることもあります。典型例は写真で、GPS座標を含むEXIFデータはほとんどの編集操作を経ても残るため、専用の<a href="../remove-metadata.html">メタデータ削除ツール</a>が存在するのです。あなたがインストールしたブラウザ拡張機能は、そのページがどう作られていようと、どのページ上のどんな内容でも読み取ることができます。そして「クライアントサイド」という言葉は、そのサイトのコードが正直であるかどうかについては何も語りません。悪意あるページがローカルで処理しつつ、こっそりデータを外部に送信することも可能です。ここでのクライアントサイド処理は、プライバシーにとって必要条件ではあっても十分条件ではありません。検証可能性と評判の組み合わせこそが、本当の基準です。</p>
+
+    <h2>サーバーが本当に必要な場合</h2>
+    <p>タブ内で合理的に実行できないタスクも数多くあり、その点は公平に述べておくべきです。乱雑なスキャン画像に対する高精度OCRは、依然としてサーバーサイドのエンジンに分があります。TesseractはWebAssemblyにコンパイルされ動作はしますが、最も強力なモデルはブラウザ内では大きすぎて遅くなります。最新の背景除去や画像のアップスケーリングは、数百メガバイトに及ぶMLモデルに依存しています。長時間の動画トランスコードは、タブが許容できる時間内でこなせる範囲を超えますし、ブラウザタブの実用的なメモリ上限（一般的に2〜4GB）は、非常に大きなファイルをそもそも扱えなくします。共同作業を伴うものは、定義上サーバーを必要とします。つまり「アップロード＝悪」というのは単純化しすぎです。正しい問いは、そのタスクが本当にサーバーを必要とするかどうかです。日常的なケース——<a href="how-to-merge-pdfs-for-free.html">PDFの結合</a>、画像の変換やリサイズ、パスワードやQRコードの生成——では、必要ありません。</p>
+
+    <h2>妥当なデフォルトの姿勢</h2>
+    <p>見知らぬ人にメールで送ることをためらうようなものについては、自分で実際にローカル処理であると確認済みのツールを選びましょう。あるタスクが本当にサーバーを必要とする場合は、明文化された保持ポリシーを持つプロバイダーを選び、アップロード前にファイルからメタデータを削除してください。そして2分間のDevToolsチェックを習慣にしてください。これは、ユーザー自身が直接検証できる数少ないプライバシー上の主張の一つであり、自分たちのアーキテクチャについて正直なサイトであれば、このチェックにも耐えられるはずです。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>自分の目で確かめる：</strong> Networkタブを開いた状態で <a href="../pdf/merge-pdf.html">PDFを結合</a> を試すか、 <a href="../how-it-works.html">noritoの仕組み</a>. を読んでください。あなたのファイルはブラウザから一切出ていきません。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>UUID क्या है? आसान भाषा में समझाया गया | norito</title>
+<meta name="description" content="UUID असल में क्या है, केंद्रीय अथॉरिटी के बिना यह लगभग निश्चित रूप से यूनीक क्यों होता है, और आपको वाक़ई एक जनरेट करने की ज़रूरत कब पड़ती है।" />
+<link rel="canonical" href="https://norito.in/hi/blog/what-is-a-uuid.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="UUID क्या है? आसान भाषा में समझाया गया | norito" />
+<meta property="og:description" content="UUID असल में क्या है, केंद्रीय अथॉरिटी के बिना यह लगभग निश्चित रूप से यूनीक क्यों होता है, और आपको वाक़ई एक जनरेट करने की ज़रूरत कब पड़ती है।" />
+<meta property="og:url" content="https://norito.in/hi/blog/what-is-a-uuid.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="UUID क्या है? आसान भाषा में समझाया गया | norito" />
+<meta name="twitter:description" content="UUID असल में क्या है, केंद्रीय अथॉरिटी के बिना यह लगभग निश्चित रूप से यूनीक क्यों होता है, और आपको वाक़ई एक जनरेट करने की ज़रूरत कब पड़ती है।" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "UUID क्या है? आसान भाषा में समझाया गया",
+  "description": "UUID असल में क्या है, केंद्रीय अथॉरिटी के बिना यह लगभग निश्चित रूप से यूनीक क्यों होता है, और आपको वाक़ई एक जनरेट करने की ज़रूरत कब पड़ती है।",
+  "url": "https://norito.in/hi/blog/what-is-a-uuid.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/hi/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/hi/blog/what-is-a-uuid.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ब्लॉग</a> / UUID क्या है? आसान भाषा में समझाया गया</p>
+    <h1>UUID क्या है? आसान भाषा में समझाया गया</h1>
+    <p class="byline">लेखक Shubham Singh &middot; <time datetime="2026-07-15">15 जुलाई, 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">प्रकाशित 2026-07-15</p>
+    <p class="lede">UUID सॉफ़्टवेयर, डेटाबेस कीज़, API टोकन, फ़ाइल नामों में लगातार दिखते हैं, लेकिन एक्सप्लेनेशन अक्सर कॉन्सेप्ट से भी ज़्यादा कन्फ़्यूज़ करने वाले होते हैं। यहां छोटा वर्शन है।</p>
+
+    <h2>आसान भाषा में परिभाषा</h2>
+    <p>एक UUID (यूनिवर्सली यूनीक आइडेंटिफ़ायर) एक 128-बिट नंबर है, जो आमतौर पर पांच ग्रुप में बंटे 32 हेक्साडेसिमल कैरेक्टर्स के रूप में लिखा जाता है, जैसे <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code>. इसका पूरा मक़सद एक ऐसा आइडेंटिफ़ायर होना है जिसके किसी भी और UUID से टकराने की संभावना खगोलीय रूप से बहुत कम है, चाहे वह कहीं भी, किसी के भी द्वारा जनरेट किया गया हो, बिना किसी सेंट्रल अथॉरिटी के जो यूनीक नंबर बांटे।</p>
+
+    <h2>सिर्फ़ एक इनक्रीमेंटिंग नंबर क्यों नहीं इस्तेमाल करें?</h2>
+    <p>डेटाबेस की ऑटो-इनक्रीमेंटिंग ID (1, 2, 3...) एक सिंगल डेटाबेस के अंदर बहुत अच्छे से काम करती है, लेकिन जिस पल आपको कई सिस्टम में यूनीकनेस चाहिए होती है, यह टूट जाती है। अगर दो अलग-अलग डेटाबेस स्वतंत्र रूप से "ऑर्डर #4521" जनरेट करते हैं, और बाद में आपको उस डेटा को मर्ज करना पड़े, तो आपके पास एक टक्कर है। UUID इसे बिना किसी कोऑर्डिनेशन के स्वतंत्र रूप से जनरेट होकर हल करते हैं, फिर भी प्रैक्टिस में यूनीक रहते हुए। यही वजह है कि UUID डिस्ट्रिब्यूटेड सिस्टम में हर जगह हैं: डेटाबेस प्राइमरी कीज़, API रिक्वेस्ट IDs, सेशन टोकन, फ़ाइल नाम, एनालिटिक्स इवेंट्स के लिए ट्रैकिंग IDs, वग़ैरह।</p>
+
+    <h2>यूनीकनेस असल में कैसे गारंटीड है?</h2>
+    <p>यह किसी एब्सोल्यूट मैथमेटिकल सेंस में गारंटीड नहीं है, यह एक प्रैक्टिकल, "कभी नहीं होगा" वाले सेंस में गारंटीड है। सबसे कॉमन वर्शन, UUID v4, लगभग पूरी तरह रैंडम बिट्स से जनरेट होता है: इसके 128 बिट्स में से 122 रैंडम हैं, बाक़ी 6 बिट्स इसे v4 UUID के रूप में पहचानने के लिए फ़िक्स्ड हैं। इतनी रैंडमनेस के साथ, एक सिंगल टक्कर की 50% संभावना से पहले आपको जितने UUID जनरेट करने होंगे वह लगभग 2.71 क्विंटिलियन हैं। एक बिलियन UUID प्रति सेकंड जनरेट करने पर भी, एक-अरब-में-एक टक्कर की संभावना तक पहुंचने में लगभग 85 साल लगेंगे। लगभग हर प्रैक्टिकल मक़सद के लिए, यह असंभव जितना अच्छा है।</p>
+
+    <h2>UUID वर्शन, संक्षेप में</h2>
+    <p>UUID अलग-अलग जनरेशन तरीक़ों के साथ कई वर्शन में आते हैं। वर्शन 1 एक टाइमस्टैम्प प्लस जनरेट करने वाले कंप्यूटर के नेटवर्क हार्डवेयर एड्रेस पर आधारित है (आजकल शायद ही इस्तेमाल होता है, क्योंकि यह इस बारे में जानकारी लीक कर सकता है कि यह कब और कहां जनरेट हुआ था)। वर्शन 4, लगभग पूरी तरह रैंडम, आधुनिक सॉफ़्टवेयर में अब तक सबसे कॉमन है क्योंकि इसे किसी ख़ास इनपुट की ज़रूरत नहीं होती और यह अपने मूल के बारे में कोई मेटाडेटा नहीं ले जाता। वर्शन 5 एक हैश फ़ंक्शन का इस्तेमाल करते हुए एक नेमस्पेस और एक नाम से डिटर्मिनिस्टिक रूप से जनरेट होता है, इसलिए वही इनपुट हमेशा वही UUID देता है, तब उपयोगी जब आपको एक फ़्रेश रैंडम के बजाय मौजूदा डेटा से डेराइव्ड एक स्टेबल आइडेंटिफ़ायर चाहिए।</p>
+
+    <h2>आपको असल में एक जनरेट करने की ज़रूरत कब पड़ती है</h2>
+    <p>कॉमन केस: डेटाबेस के एक बांटने का इंतज़ार किए बिना एक नए डेटाबेस रिकॉर्ड को यूनीक ID असाइन करना, किसी मौजूदा फ़ाइल को ओवरराइट होने से बचाने के लिए एक यूनीक फ़ाइलनाम जनरेट करना, एक वन-ऑफ़ API की या सेशन टोकन बनाना, या टेस्ट डेटा के एक बैच को ऐसी ID से टैग करना जो असली प्रोडक्शन डेटा से टकराने की गारंटी न रखे। जहां भी आपको "अभी, बिना किसी कोऑर्डिनेशन के, एक यूनीक आइडेंटिफ़ायर" चाहिए, एक UUID आमतौर पर सबसे आसान जवाब है।</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>खुद आज़माएं:</strong> <a href="../uuid-generator.html">UUID जनरेटर</a>, बल्क में रैंडम UUID v4 आइडेंटिफ़ायर जनरेट करने के लिए, सीधे आपके ब्राउज़र में।</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>ما هو UUID؟ شرح بلغة بسيطة | norito</title>
+<meta name="description" content="ما هو UUID فعليًا، ولماذا يكاد يكون مضمونًا أن يكون فريدًا دون سلطة مركزية، ومتى تحتاج فعليًا لتوليد واحد." />
+<link rel="canonical" href="https://norito.in/ar/blog/what-is-a-uuid.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ما هو UUID؟ شرح بلغة بسيطة | norito" />
+<meta property="og:description" content="ما هو UUID فعليًا، ولماذا يكاد يكون مضمونًا أن يكون فريدًا دون سلطة مركزية، ومتى تحتاج فعليًا لتوليد واحد." />
+<meta property="og:url" content="https://norito.in/ar/blog/what-is-a-uuid.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ما هو UUID؟ شرح بلغة بسيطة | norito" />
+<meta name="twitter:description" content="ما هو UUID فعليًا، ولماذا يكاد يكون مضمونًا أن يكون فريدًا دون سلطة مركزية، ومتى تحتاج فعليًا لتوليد واحد." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ما هو UUID؟ شرح بلغة بسيطة",
+  "description": "ما هو UUID فعليًا، ولماذا يكاد يكون مضمونًا أن يكون فريدًا دون سلطة مركزية، ومتى تحتاج فعليًا لتوليد واحد.",
+  "url": "https://norito.in/ar/blog/what-is-a-uuid.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ar/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ar/blog/what-is-a-uuid.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">المدونة</a> / ما هو UUID؟ شرح بلغة بسيطة</p>
+    <h1>ما هو UUID؟ شرح بلغة بسيطة</h1>
+    <p class="byline">بقلم Shubham Singh &middot; <time datetime="2026-07-15">15 يوليو 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">نُشر في 2026-07-15</p>
+    <p class="lede">تظهر معرّفات UUID باستمرار في البرمجيات، مفاتيح قواعد البيانات، رموز API، أسماء الملفات، لكن الشروحات غالبًا ما تكون أكثر إرباكًا من المفهوم نفسه. إليك النسخة المختصرة.</p>
+
+    <h2>التعريف بلغة بسيطة</h2>
+    <p>UUID (معرّف فريد عالميًا) هو رقم من 128 بت، يُكتب عادةً كـ 32 حرفًا سداسي عشري مقسّمة إلى خمس مجموعات، مثل <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code>. الغرض الكامل منه هو أن يعمل كمعرّف يكاد يكون من المستحيل فلكيًا أن يتصادم مع أي UUID آخر جرى توليده في أي وقت، في أي مكان، من قِبل أي شخص، دون الحاجة لسلطة مركزية توزّع أرقامًا فريدة.</p>
+
+    <h2>لماذا لا نستخدم رقمًا تصاعديًا فقط؟</h2>
+    <p>معرّف قاعدة البيانات المتزايد تلقائيًا (1، 2، 3...) يعمل بشكل رائع داخل قاعدة بيانات واحدة، لكنه ينهار في اللحظة التي تحتاج فيها إلى تفرّد عبر أنظمة متعددة. إذا ولّدت قاعدتا بيانات منفصلتان «الطلب رقم 4521» بشكل مستقل، ثم احتجت لاحقًا لدمج تلك البيانات، فستحصل على تصادم. تحل UUID هذه المشكلة بتوليدها بشكل مستقل، دون الحاجة لأي تنسيق، بينما تظل فريدة عمليًا. هذا سبب وجود UUID في كل مكان في الأنظمة الموزعة: المفاتيح الأساسية لقواعد البيانات، معرّفات طلبات API، رموز الجلسات، أسماء الملفات، معرّفات التتبع لأحداث التحليلات، وما إلى ذلك.</p>
+
+    <h2>كيف يُضمن التفرّد فعليًا؟</h2>
+    <p>إنه غير مضمون بمعنى رياضي مطلق، بل مضمون بمعنى عملي، بمعنى «لن يحدث أبدًا». النسخة الأكثر شيوعًا، UUID v4، تُولَّد بالكامل تقريبًا من بتات عشوائية: 122 من 128 بت عشوائية، مع تثبيت الـ 6 بتات المتبقية لتحديده كـ UUID من الإصدار 4. مع هذا القدر من العشوائية، عدد معرّفات UUID التي تحتاج لتوليدها قبل أن تصل لاحتمال 50% لتصادم واحد يبلغ نحو 2.71 كوينتيليون. حتى مع توليد مليار UUID في الثانية، سيستغرق الأمر نحو 85 عامًا للوصول إلى احتمال تصادم واحد في المليار. لأي غرض عملي تقريبًا، هذا يعادل المستحيل.</p>
+
+    <h2>إصدارات UUID، باختصار</h2>
+    <p>تأتي معرّفات UUID بعدة إصدارات بطرق توليد مختلفة. الإصدار 1 يعتمد على طابع زمني بالإضافة إلى عنوان عتاد الشبكة للحاسوب المولِّد (نادرًا ما يُستخدم اليوم، لأنه قد يسرّب معلومات حول متى وأين تم توليده). الإصدار 4، العشوائي بالكامل تقريبًا، هو الأكثر شيوعًا بفارق كبير في البرمجيات الحديثة لأنه لا يتطلب أي مدخل خاص ولا يحمل أي بيانات وصفية عن أصله. الإصدار 5 يُولَّد بشكل حتمي من مساحة أسماء واسم باستخدام دالة تجزئة، بحيث ينتج المدخل نفسه دائمًا نفس UUID، وهو مفيد عندما تحتاج معرّفًا ثابتًا مشتقًا من بيانات موجودة بدلاً من معرّف عشوائي جديد.</p>
+
+    <h2>متى تحتاج فعليًا لتوليد واحد</h2>
+    <p>حالات شائعة: تخصيص معرّف فريد لسجل قاعدة بيانات جديد دون انتظار قاعدة البيانات لتوزيع واحد، توليد اسم ملف فريد لتجنب الكتابة فوق ملف موجود، إنشاء مفتاح API أو رمز جلسة لمرة واحدة، أو وسم دفعة من بيانات الاختبار بمعرّف مضمون ألا يتعارض مع بيانات الإنتاج الحقيقية. في أي مكان تحتاج فيه «معرّفًا فريدًا، الآن فورًا، دون أي تنسيق»، يكون UUID عادةً الإجابة الأبسط.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>جرّبه بنفسك:</strong> <a href="../uuid-generator.html">مولّد UUID</a>، لتوليد معرّفات UUID v4 عشوائية بشكل جماعي، مباشرةً في متصفحك.</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

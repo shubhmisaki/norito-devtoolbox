@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>画質を落とさずに画像を圧縮する方法 | norito</title>
+<meta name="description" content="なぜ小さいファイルの方が見た目が悪くなることがあるのか、そして圧縮後にどれだけディテールが残るかを実際に左右する3つの設定（品質、解像度、形式）。" />
+<link rel="canonical" href="https://norito.in/ja/blog/image-compression-without-losing-quality.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="画質を落とさずに画像を圧縮する方法 | norito" />
+<meta property="og:description" content="なぜ小さいファイルの方が見た目が悪くなることがあるのか、そして圧縮後にどれだけディテールが残るかを実際に左右する3つの設定（品質、解像度、形式）。" />
+<meta property="og:url" content="https://norito.in/ja/blog/image-compression-without-losing-quality.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="画質を落とさずに画像を圧縮する方法 | norito" />
+<meta name="twitter:description" content="なぜ小さいファイルの方が見た目が悪くなることがあるのか、そして圧縮後にどれだけディテールが残るかを実際に左右する3つの設定（品質、解像度、形式）。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "画質を落とさずに画像を圧縮する方法",
+  "description": "なぜ小さいファイルの方が見た目が悪くなることがあるのか、そして圧縮後にどれだけディテールが残るかを実際に左右する3つの設定（品質、解像度、形式）。",
+  "url": "https://norito.in/ja/blog/image-compression-without-losing-quality.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ja/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ja/blog/image-compression-without-losing-quality.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ブログ</a> / 画質を落とさずに画像を圧縮する方法</p>
+    <h1>画質を落とさずに画像を圧縮する方法</h1>
+    <p class="byline">著者： Shubham Singh &middot; <time datetime="2026-07-15">2026年7月15日</time></p>
+    <p class="note" style="margin-bottom:4px;">公開日 2026-07-15</p>
+    <p class="lede">ファイルを小さくすることは、必ず何らかのデータを捨てることを意味します。コツは、気づかれないデータを捨てることであり、それは3つの設定に集約されます。品質、解像度、そして形式です。</p>
+
+    <h2>なぜ「画質」と「ファイルサイズ」はトレードオフなのか</h2>
+    <p>どの写真もピクセルの格子であり、各ピクセルにはその色を表すためのデータが必要です。未加工で圧縮されていない画像は非常に巨大になるため、画像形式はそのデータの一部を捨てたり近似したりする圧縮を利用します。最も一般的な写真形式であるJPEGは<strong>非可逆</strong>圧縮を使用します。人間の目にはまず気づかれないであろうディテールを意図的に捨てる代わりに、はるかに小さなファイルを得るのです。圧縮を強くかければかけるほど、より多くのディテールが失われ、やがてそれはぼやけやブロック状のアーティファクトとして現れます。特に鋭い輪郭やテキストの周辺で顕著です。</p>
+
+    <h2>本当に重要な3つの調整項目</h2>
+    <p>圧縮された画像で目に見える画質の低下は、そのほとんどが3つの設定に集約されます。これらを理解することは、ファイルが十分小さくなるまで闇雲に品質スライダーを下げ続けるよりもずっと有用です。</p>
+    <p><strong>品質のパーセンテージ。</strong> これはJPEGやWebPがピクセルブロックごとにどれだけディテールを捨てるかを直接コントロールします。おおよそ80%を超えると、ほとんどの写真で画質の低下は肉眼ではほぼ見えません。60〜80%の間では、じっくり見るとわずかな柔らかさの変化が見られます。50%を下回ると、特に空、肌のトーン、その他の滑らかなグラデーション部分で、ブロック感や色の帯（バンディング）が目立ち始めます。</p>
+    <p><strong>解像度。</strong> 最終的な用途に対して必要以上に大きい写真（たとえば幅4000ピクセルの写真をウェブページ上で幅800ピクセルとして表示する場合）は、誰の目にも触れることのないディテールにファイルサイズを浪費していることになります。圧縮する前に実際の表示サイズへ縮小しておくことは、ほとんどの場合、サイズの大きすぎる画像をより強く圧縮するよりも優れた結果を生みます。だからこそ、優れた圧縮ツールは圧縮に加えてリサイズも提供するのです。</p>
+    <p><strong>形式。</strong> PNGは可逆形式で、ベタ塗りの色、スクリーンショット、輪郭のはっきりしたグラフィックに優れていますが、写真には不向きです。同じ見た目の結果を得るのに、JPEGやWebPよりもはるかに大きなファイルになってしまうためです。同等の視覚的品質であれば、WebPは通常JPEGより25〜35%優れており、非常に古いソフトウェアとの最大限の互換性が不要な場合、写真におけるデフォルトの選択肢として最も適しています。</p>
+
+    <h2>実践的なアプローチ</h2>
+    <p>求人応募のアップロードで200KB制限がある、あるいはメール添付で2MB制限があるといった、具体的なファイルサイズの目標がある場合、最も確実な方法は品質のパーセンテージを推測するのではなく、その正確な目標に向けて圧縮することです。目標サイズを入力するだけで自動的に適切な品質を見つけ（必要であればリサイズも行う）ツールを使えば、試行錯誤を完全になくすことができます。</p>
+    <p>厳密なサイズ制限がない場合、良いデフォルトの方針は次のとおりです。解像度は画像が実際に表示されるサイズに保ち、送信先がWebPに対応しているならWebPを使い、品質80%から始めて、ファイルがまだ大きすぎる場合にのみそこから下げていきます。</p>
+
+    <h2>PNGのスクリーンショットやロゴはどうすればいいのか</h2>
+    <p>スクリーンショット、ロゴ、アイコンなど、ベタ塗りの色や透明度、くっきりしたテキストを含むものについては、PNGの可逆圧縮が今も正しい選択です。ただ、写真のようなコンテンツに対しては、JPEGやWebPほど効率的には圧縮できません。PNGのスクリーンショットが大きすぎる場合、最も効果的な対処法は、多くの場合、画像の不要な部分をトリミングするか、カラーパレットを減らすことです。テキストやUI要素のくっきりした輪郭を目に見えて劣化させてしまう非可逆形式に無理やり押し込もうとするよりも、そちらの方が有効です。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>自分で試してみる：</strong> <a href="../compress-image.html">画像を圧縮</a>。品質のパーセンテージを推測させるのではなく、正確なファイルサイズを自動的に狙います。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

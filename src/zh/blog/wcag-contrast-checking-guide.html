@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>WCAG 对比度检查：实用指南 | norito</title>
+<meta name="description" content="WCAG 对比度比率实际测量的是什么，真正的 AA 和 AAA 阈值，以及真实设计中最常见的对比度错误。" />
+<link rel="canonical" href="https://norito.in/zh/blog/wcag-contrast-checking-guide.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="WCAG 对比度检查：实用指南 | norito" />
+<meta property="og:description" content="WCAG 对比度比率实际测量的是什么，真正的 AA 和 AAA 阈值，以及真实设计中最常见的对比度错误。" />
+<meta property="og:url" content="https://norito.in/zh/blog/wcag-contrast-checking-guide.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WCAG 对比度检查：实用指南 | norito" />
+<meta name="twitter:description" content="WCAG 对比度比率实际测量的是什么，真正的 AA 和 AAA 阈值，以及真实设计中最常见的对比度错误。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WCAG 对比度检查：实用指南",
+  "description": "WCAG 对比度比率实际测量的是什么，真正的 AA 和 AAA 阈值，以及真实设计中最常见的对比度错误。",
+  "url": "https://norito.in/zh/blog/wcag-contrast-checking-guide.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/zh/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/zh/blog/wcag-contrast-checking-guide.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">博客</a> / WCAG 对比度检查：实用指南</p>
+    <h1>WCAG 对比度检查：实用指南</h1>
+    <p class="byline">作者： Shubham Singh &middot; <time datetime="2026-07-15">2026年7月15日</time></p>
+    <p class="note" style="margin-bottom:4px;">发布于 2026-07-15</p>
+    <p class="lede">对比度比率不只是一个合规勾选项，它是文字能被读懂与不能被读懂之间的分界线。以下是它的计算方式，以及各个阈值真正的含义。</p>
+
+    <h2>为什么对比度很重要</h2>
+    <p>与背景对比度不足的文字对所有人来说都难以阅读，对低视力或色盲人士来说甚至可能完全无法辨认。《Web 内容无障碍指南》（WCAG）专门设定了最低对比度比率，以确保文字对尽可能广泛的视觉能力人群都保持可读，达标既是一项真正的可用性改进，在许多司法管辖区也是面向公众的网站的法定要求。</p>
+
+    <h2>对比度比率究竟是如何计算的</h2>
+    <p>对比度比率是文字颜色与背景颜色的相对亮度（感知亮度）之间的比较，用一个从 1:1（完全相同，没有任何对比度）到 21:1（纯黑对纯白，可能的最大对比度）的比值来表示。这并不是一个简单的亮度比较，亮度是用一个对红、绿、蓝赋予不同权重的公式计算的，因为在相同强度下，人眼会感觉绿色比红色或蓝色更亮，而且该公式还应用了伽马校正，以考虑显示器实际显示颜色的方式。你不需要手动计算这个，但了解它衡量的是感知亮度（而不仅仅是原始 RGB 值）有助于解释一些确实违反直觉的结果，比如为什么某些看起来相当有区分度的中间色调仍然会不达标。</p>
+
+    <h2>真正的阈值</h2>
+    <p>WCAG 2.1 定义了两个符合性级别。<strong>AA</strong> 是大多数机构瞄准的标准，要求普通文本的对比度至少为 <strong>4.5:1</strong>，大号文本（定义为 18pt 常规字体或 14pt 及以上粗体）至少为 <strong>3:1</strong>。<strong>AAA</strong> 是更严格的级别，要求普通文本达到 <strong>7:1</strong>，大号文本达到 <strong>4.5:1</strong>。大多数法律无障碍要求（比如美国的 ADA，通过 WCAG 解释，或欧盟的 EN 301 549 标准）都以 AA 作为基准，AAA 通常被视为一个进阶目标，而非严格要求。</p>
+
+    <h2>常见的对比度错误</h2>
+    <p>白色背景上的浅灰色文字是迄今为止最常见的错误，它在设计原型中往往显得"干净""现代"，但严重不符合 AA 标准，对许多用户来说确实难以阅读。表单字段内的占位符文字对比度经常过低，而且由于一旦开始输入它就会消失，设计师往往没有注意到这是个问题。叠加在照片或渐变背景上的文字风险较高，因为对比度比率可能在图像的一个区域达标，而在另一个区域不达标，添加一个纯色叠层或文字阴影是常见的解决办法。品牌色，尤其是柔和色或中饱和度的品牌调色板，作为文字颜色使用时经常无法满足对比度要求，需要专门为文字保留一个更深或更浅的变体。</p>
+
+    <h2>如何检查你自己的颜色</h2>
+    <p>选定你的前景（文字）颜色和背景颜色，然后针对你正在使用的文字尺寸，将得到的比率与 AA 和 AAA 阈值进行核对。如果某个组合不达标，最可靠的修复方式通常是加深文字颜色（对于浅色背景）或调亮文字颜色（对于深色背景），直到超过阈值，而不是改变背景颜色，因为背景颜色往往比文字颜色更多地与品牌形象绑定。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>亲自试试：</strong> <a href="../design/contrast-checker.html">对比度检查器</a>，即时检查任意两种颜色是否符合 WCAG AA 和 AAA 阈值。</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

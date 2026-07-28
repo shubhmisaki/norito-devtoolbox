@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xrd6nlberg");
+    </script>
+
+<meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#ff4d7a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<title>PDF圧縮がスキャン画像には効いて、レポートには効かない理由 | norito</title>
+<meta name="description" content="スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。" />
+<link rel="canonical" href="https://norito.in/ja/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/pdf-compression-explained.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="PDF圧縮がスキャン画像には効いて、レポートには効かない理由 | norito" />
+<meta property="og:description" content="スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。" />
+<meta property="og:url" content="https://norito.in/ja/blog/pdf-compression-explained.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PDF圧縮がスキャン画像には効いて、レポートには効かない理由 | norito" />
+<meta name="twitter:description" content="スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由",
+  "description": "スキャンされたPDFはなぜ90%も縮むのに、テキストレポートはほとんど変わらないのか。PDFで実際にスペースを占めているものと、圧縮結果を予測する方法。",
+  "url": "https://norito.in/ja/blog/pdf-compression-explained.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ja/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ja/blog/pdf-compression-explained.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/ja/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">画像</button>
+        <div class="nav-panel">
+          <a href="/ja/compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">画像を圧縮<span>目標のファイルサイズまで削減</span></div></a>
+          <a href="/ja/placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">プレースホルダージェネレーター<span>カスタムプレースホルダー画像</span></div></a>
+          <a href="/ja/remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">背景を削除<span>写真から人物を切り抜き</span></div></a>
+          <a href="/resize-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">Resize Image<span>Change width and height, exact or by percentage</span></div></a>
+          <a href="/image-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">Image Converter<span>Convert between JPG, PNG, and WebP</span></div></a>
+          <a href="/crop-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">Crop Image<span>Drag a box to crop, free-form or locked ratio</span></div></a>
+          <a href="/remove-metadata.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div class="nav-link-body">Remove Metadata<span>Strip EXIF, GPS, and camera info</span></div></a>
+          <a href="/watermark-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Watermark Image<span>Add a text watermark with live preview</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">開発</button>
+        <div class="nav-panel">
+          <a href="/ja/test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">テストファイルジェネレーター<span>正確なサイズのダミーファイル</span></div></a>
+          <a href="/ja/json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">JSONフォーマッタ<span>整形・検証・圧縮</span></div></a>
+          <a href="/ja/markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">Markdownエディタ<span>リアルタイムプレビュー、.md/.htmlで書き出し</span></div></a>
+          <a href="/uuid-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg><div class="nav-link-body">UUID Generator<span>Bulk random UUID v4 identifiers</span></div></a>
+          <a href="/base64-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg><div class="nav-link-body">Base64 Encode / Decode<span>Text to and from Base64, UTF-8 safe</span></div></a>
+          <a href="/hash-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">Hash Generator<span>MD5, SHA-1, SHA-256, SHA-512</span></div></a>
+          <a href="/timestamp-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="nav-link-body">Timestamp Converter<span>Unix time to date, both ways</span></div></a>
+          <a href="/json-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">JSON Diff<span>Compare two JSON documents</span></div></a>
+          <a href="/jwt-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">JWT Decoder<span>Decode a JWT's header and payload</span></div></a>
+          <a href="/regex-tester.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">Regex Tester<span>Test a regex with live match highlighting</span></div></a>
+          <a href="/csv-to-json.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">CSV to JSON<span>Convert a CSV file into JSON</span></div></a>
+          <a href="/csv-viewer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg><div class="nav-link-body">CSV Viewer<span>View and edit a CSV as a table</span></div></a>
+          <a href="/url-encoder-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">URL Encoder / Decoder<span>Percent-encode or decode a URL</span></div></a>
+          <a href="/html-entity-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><div class="nav-link-body">HTML Entity Encoder<span>Escape or unescape HTML entities</span></div></a>
+          <a href="/yaml-to-json-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg><div class="nav-link-body">YAML to JSON Converter<span>Convert YAML and JSON, both ways</span></div></a>
+          <a href="/cron-expression-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg><div class="nav-link-body">Cron Expression Parser<span>Explain a cron schedule, preview next runs</span></div></a>
+          <a href="/number-base-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">Number Base Converter<span>Binary, octal, decimal, hex, and more</span></div></a>
+          <a href="/text-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">Text Diff<span>Compare two texts line by line</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">テキスト</button>
+        <div class="nav-panel">
+          <a href="/ja/seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">SEOスラッグジェネレーター<span>タイトルからクリーンなURLを生成</span></div></a>
+          <a href="/ja/limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">文字数指定テキストジェネレーター<span>正確な長さのダミーテキスト</span></div></a>
+          <a href="/word-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Word Counter<span>Live word, sentence, and paragraph counts</span></div></a>
+          <a href="/character-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg><div class="nav-link-body">Character Counter<span>Character count, with platform limits</span></div></a>
+          <a href="/remove-duplicate-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg><div class="nav-link-body">Remove Duplicate Lines<span>Deduplicate a list of lines</span></div></a>
+          <a href="/sort-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg><div class="nav-link-body">Sort Lines<span>Sort alphabetically, numerically, or shuffle</span></div></a>
+          <a href="/case-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M21 16h-6l6-8h-6"/></svg><div class="nav-link-body">Case Converter<span>UPPERCASE, camelCase, snake_case, and more</span></div></a>
+          <a href="/lorem-ipsum-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Lorem Ipsum Generator<span>Placeholder text, by word, sentence, or paragraph</span></div></a>
+          <a href="/find-and-replace.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">Find and Replace<span>Find and replace text, regex supported</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">ユーティリティ</button>
+        <div class="nav-panel">
+          <a href="/ja/password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">パスワードジェネレーター<span>ランダムなパスワードとフレーズ</span></div></a>
+          <a href="/ja/qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">QRコードジェネレーター<span>カスタムカラー、誤り訂正レベル</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/pdf/">PDF</a>
+        <div class="nav-panel">
+          <a href="/ja/pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">PDF結合<span>複数のPDFを1つに結合</span></div></a>
+          <a href="/ja/pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">PDF分割<span>ページを抜き出すか複数ファイルに分割</span></div></a>
+          <a href="/ja/pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">PDF回転<span>横向きや逆さまのページを修正</span></div></a>
+          <a href="/ja/pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF→画像<span>ページを画像に変換</span></div></a>
+          <a href="/ja/pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">画像→PDF<span>画像を1つのPDFに結合</span></div></a>
+          <a href="/ja/pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">ページ削除・並び替え<span>ページを削除または並び替え</span></div></a>
+          <a href="/ja/pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">ページ番号<span>すべてのページに番号を追加</span></div></a>
+          <a href="/ja/pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">透かし追加<span>全ページにテキストを刻印</span></div></a>
+          <a href="/ja/pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">テキスト抽出<span>PDFからテキストを抽出</span></div></a>
+          <a href="/ja/pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">PDF圧縮<span>PDFのファイルサイズを縮小</span></div></a>
+          <a href="/ja/pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">PDF署名<span>署名を描くか入力</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/seo/">SEO</a>
+        <div class="nav-panel">
+          <a href="/ja/seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">メタタグジェネレーター<span>タイトル、説明、OG、Twitterタグ</span></div></a>
+          <a href="/ja/seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">UTMビルダー<span>キャンペーン計測URLを作成</span></div></a>
+          <a href="/ja/seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">robots.txtジェネレーター<span>allow/disallowルール、sitemap参照</span></div></a>
+          <a href="/ja/seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">サイトマップジェネレーター<span>URLを入力、sitemap.xmlを出力</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/design/">Design</a>
+        <div class="nav-panel">
+          <a href="/ja/design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">CSSグラデーション<span>線形・放射状、CSSをコピー</span></div></a>
+          <a href="/ja/design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">ボックスシャドウ<span>単一または重ねた影</span></div></a>
+          <a href="/ja/design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">border-radius<span>角ごとの半径、CSSをコピー</span></div></a>
+          <a href="/ja/design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">ファビコンジェネレーター<span>必要なすべてのサイズ</span></div></a>
+          <a href="/ja/design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">カラーパレット抽出<span>画像から主要な色を抽出</span></div></a>
+          <a href="/ja/design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">コントラストチェッカー<span>WCAGコントラスト比、AA/AAA判定</span></div></a>
+          <a href="/ja/design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">カラーコンバーター<span>HEX、RGB、HSL、CMYK、リアルタイム</span></div></a>
+        </div>
+      </div>
+
+
+          
+      <a class="nav-cat" href="/blog/" style="align-self:center;">ブログ</a>
+
+
+</nav>
+      <button type="button" class="search-trigger" id="searchTrigger" aria-label="ツールを検索" title="ツールを検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+
+      <button type="button" class="theme-toggle-btn" aria-label="ダークモード切り替え">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा / Язык / 言語">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">JA</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">ブログ</a> / PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由</p>
+    <h1>PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由</h1>
+    <p class="byline">著者： Shubham Singh &middot; <time datetime="2026-07-20">2026年7月20日</time></p>
+    <p class="note" style="margin-bottom:4px;">公開日 2026-07-20</p>
+    <p class="lede">同じ圧縮ツールに2種類の異なるPDFを通すと、まったく異なる結果になることがあります。40MBのスキャンされた契約書は3MBまで下がる一方、8MBの年次報告書は頑固に数パーセントしか小さくなりません。どちらの結果も、ツールが壊れていることを意味するわけではありません。違いは、この2つのファイルが実際に何でできているかにあります。</p>
+
+    <h2>PDFはコンテナであり、単一の種類のファイルではない</h2>
+    <p>PDFの1ページには、根本的に異なる2種類のコンテンツを含めることができます。1つ目はベクターコンテンツです。テキストは描画命令として保存されます（「この座標に、埋め込まれたこのフォントから文字Aを、サイズ11で配置する」）。さらに、数学的に記述された線、図形、塗りつぶしも含まれます。2つ目はラスターコンテンツです。実際の画像が、ファイル内にJPEGやPNGのようなデータストリームとして埋め込まれます。PDF圧縮に関するほとんどすべての疑問は、この2つの比率に行き着きます。</p>
+    <p>純粋なテキストだけのページは驚くほど小さくなります。密度の高い契約書ページの描画命令は、圧縮後で通常2〜10KB程度の重さで、埋め込まれたフォントは文書全体で共有され、通常合計で数十KB程度です。一方、スキャンされたページは、ファイル形式の観点からはテキストを一切含んでいません。それは紙切れの1枚の大きな写真にすぎません。</p>
+
+    <h2>テキスト中心のPDFがほとんど縮まない理由</h2>
+    <p>PDF内のテキストとベクターコンテンツは、すでにZIPファイルと同じアルゴリズムであるFlateで圧縮されています。すでに圧縮されたデータをさらに圧縮しても、ほとんど何も得られません。これはソフトウェアの制限ではなく、数学的な性質です。そのため、圧縮ツールが1.5MB（1ページあたり約7KB）の200ページのテキストのみの文書を処理しても、削り取れる「贅肉」はほとんどありません。現実的な効果は整理整頓から生まれます。使われていないオブジェクトの削除、重複するリソースの重複排除、そして丸ごと埋め込まれたフォントのサブセット化です。きれいなテキスト文書であれば5〜15パーセント程度、時にはそれ以下を見込んでください。</p>
+    <p>純粋なテキストのPDFで70パーセントの削減をうたうツールには疑いの目を向けるべきです。よくある手口はラスタライズです。各ページを1枚の圧縮画像に変換してしまうのです。ファイルは確かに小さくなりますが、大きくズームするとテキストがぼやけ、選択やテキスト検索もできなくなり、スクリーンリーダーも機能しなくなります。これは圧縮ではなく変換であり、レポートに対してこれが望ましい結果になることはほとんどありません。</p>
+
+    <h2>スキャン画像が劇的に縮む理由</h2>
+    <p>A4ページの標準的な300DPIスキャンは約2480×3508ピクセル、1ページあたり約870万ピクセルになります。スキャナーソフトウェアは控えめな設定になりがちで、高いJPEG品質、あるいはロスレスで保存するため、1ページあたり2〜8MBになります。これによって圧縮ツールには2つの大きなレバーが与えられます。</p>
+    <p>1つ目はダウンサンプリングです。300DPIから150DPIに落とすとピクセル数は4分の1になりますが、画面上で読む分には差はほとんど気になりません。2つ目はより強いJPEG設定での再エンコードです。品質90から品質60にすると、写真として撮影された文書に対しては見た目の変化は控えめなまま、サイズを再び半分にできます。この2つのレバーを組み合わせれば、80〜95パーセントの削減は日常的なことになります。これは写真の圧縮とまったく同じ物理現象で、<a href="image-compression-without-losing-quality.html">画像圧縮ガイド</a>でより詳しく取り上げています。</p>
+
+    <h2>中間的なファイル</h2>
+    <p>実際の文書のほとんどは両極端の間にあります。グラフや写真を含むレポート、スライドデッキのエクスポート、パンフレットなどです。ここに分かりにくいポイントがあります。ほとんどテキストのように見える文書でも、通常は画像がバイト数の大部分を占めているのです。10枚の写真が埋め込まれた12MBのレポートは、11MBが写真で、それ以外は合計でわずか1MBということもあり得ます。つまり圧縮は写真の部分にしか効果を発揮できません。知っておく価値のある典型的な肥大化パターンもあります。一部の文書生成ツールは同じロゴ画像を1回参照する代わりに、すべてのページに個別に埋め込んでしまいます。また、40文字程度のサブセットで十分な場面でフォントファミリー全体を埋め込んでしまうツールもあります。優れた圧縮ツールはこの両方をひっそりと修正します。</p>
+    <p>プレゼンテーションのエクスポートは特筆に値します。PDFにエクスポートされたスライドは、多くの場合すべてのページにフル解像度の背景画像を持ち、さらにどんなプロジェクターが表示できるよりもはるかに高い解像度で配置された写真を含んでいます。これが、40枚のスライドデッキが100MBのPDFになってしまう理由であり、またデッキが圧縮していて最も達成感のあるファイルの1つである理由でもあります。テキストレポートにはほとんど影響しない同じダウンサンプリングが、会議中の誰にも気づかれることなくデッキを90パーセント削減できるのです。</p>
+
+    <h2>始める前に結果を予測する</h2>
+    <p>ファイルサイズをページ数で割ってください。1ページあたり50KB未満であれば、ほとんどがテキストであり、一桁パーセント台の効果を見込むべきです。1ページあたり100〜300KBの間は通常、混在コンテンツを意味し、30〜60パーセントが現実的です。1ページあたり800KBを超える場合はほぼ常にスキャン画像か写真の多い文書を意味し、80〜95パーセントも視野に入ります。</p>
+    <p>PDFが本物のテキスト文書なのかスキャン画像なのか分からない場合は？ビューアでテキストを選択してみてください。あるいは<a href="../pdf/extract-text.html">テキスト抽出ツール</a>にかけてみてください。何も出てこなければ、すべてのページが画像です。</p>
+
+    <h2>正直な限界</h2>
+    <p>非可逆圧縮は累積します。品質60で圧縮されたスキャン画像が、後で別の誰かによってさらに圧縮されると、急速に劣化します。そのため元のファイルは保管しておいてください。ダウンサンプリングされたスキャン画像は、OCRや再印刷にとっても質の劣る入力になります。もし文書が後でそのどちらかを必要とする可能性があるなら、フル解像度版をアーカイブし、圧縮版を共有してください。また、特定の2〜3枚の写真のせいでPDFが巨大になっている場合は、まず<a href="../compress-image.html">画像圧縮ツール</a>でそれらの画像を縮小し、修正済みのバージョンから文書を再構築する方がすっきりすることがあります。</p>
+    <p>こうした限界の範囲内であれば、圧縮はスキャンされた文書に対して行える中でも特に費用対効果の高いことの1つです。わずか数秒で終わり、あなたの3MBの添付ファイルを受け取った相手は、それが以前40MBだったとは決して気づかないでしょう。</p>
+    <p>何か機密性の高いものを圧縮する前に、最後の注意点をひとつ。使っているツールが実際どう動作しているかを確認してください。人気のあるPDF圧縮ツールの多くは、文書を処理するためにサーバーへアップロードします。スキャンされた契約書や身分証明書は、たとえ一時的であっても、他人のインフラ上に置きたくないと思うようなファイルの典型です。<a href="client-side-vs-server-side-tools.html">自分で確認する方法についての別のガイド</a>を書きました。noritoの圧縮ツールは完全にブラウザ内で動作するため、確認すべきことは何もありません。</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>自分で試してみる：</strong> <a href="../pdf/compress-pdf.html">PDFを圧縮</a> スキャン画像や写真の多いPDFをブラウザ内で直接縮小します。アップロードは一切ありません。</div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">それぞれが1つの面倒な問題を解決する小さなツール群。すべてブラウザ内で動作し、何もアップロードされません。</p>
+      </div>
+      <div class="footer-col footer-product">
+        <h3>プロダクト</h3>
+        <a href="/tools.html">すべてのツール</a>
+        <a href="/ja/changelog.html">変更履歴</a>
+        <a href="/ja/how-it-works.html">仕組み</a>
+        <a href="/blog/">ブログ</a>
+        <a href="/ja/compare/">比較</a>
+        <a href="/ja/about.html">norito について</a>
+        <a href="/ja/contact.html">お問い合わせ</a>
+        <a href="/ja/privacy.html">プライバシーポリシー</a>
+        <a href="/ja/terms.html">利用規約</a>
+      </div>
+      <div class="footer-col">
+        <h3>PDF</h3>
+        <a href="/ja/pdf/merge-pdf.html">PDF結合</a>
+        <a href="/ja/pdf/split-pdf.html">PDF分割</a>
+        <a href="/ja/pdf/rotate-pdf.html">PDF回転</a>
+        <a href="/ja/pdf/pdf-to-image.html">PDF→画像</a>
+        <a href="/ja/pdf/jpg-png-to-pdf.html">画像→PDF</a>
+        <a href="/ja/pdf/organize-pdf.html">ページ削除・並び替え</a>
+        <a href="/ja/pdf/add-page-numbers.html">ページ番号</a>
+        <a href="/ja/pdf/add-watermark.html">透かし追加</a>
+        <a href="/ja/pdf/extract-text.html">テキスト抽出</a>
+        <a href="/ja/pdf/compress-pdf.html">PDF圧縮</a>
+        <a href="/ja/pdf/sign-pdf.html">PDF署名</a>
+      </div>
+      <div class="footer-col">
+        <h3>画像</h3>
+        <a href="/ja/compress-image.html">画像を圧縮</a>
+        <a href="/resize-image.html">Resize Image</a>
+        <a href="/image-converter.html">Image Converter</a>
+        <a href="/crop-image.html">Crop Image</a>
+        <a href="/remove-metadata.html">Remove Metadata</a>
+        <a href="/watermark-image.html">Watermark Image</a>
+        <a href="/ja/placeholder-generator.html">プレースホルダージェネレーター</a>
+        <a href="/ja/remove-background.html">背景を削除</a>
+      </div>
+      <div class="footer-col">
+        <h3>開発</h3>
+        <a href="/ja/test-file-generator.html">テストファイルジェネレーター</a>
+        <a href="/ja/json-formatter.html">JSONフォーマッタ</a>
+        <a href="/ja/markdown-editor.html">Markdownエディタ</a>
+        <a href="/uuid-generator.html">UUID Generator</a>
+        <a href="/base64-encoder.html">Base64</a>
+        <a href="/hash-generator.html">Hash Generator</a>
+        <a href="/timestamp-converter.html">Timestamp</a>
+        <a href="/json-diff.html">JSON Diff</a>
+        <a href="/jwt-decoder.html">JWT Decoder</a>
+        <a href="/regex-tester.html">Regex Tester</a>
+        <a href="/csv-to-json.html">CSV to JSON</a>
+        <a href="/csv-viewer.html">CSV Viewer</a>
+        <a href="/url-encoder-decoder.html">URL Encoder</a>
+        <a href="/html-entity-encoder.html">HTML Entities</a>
+        <a href="/yaml-to-json-converter.html">YAML to JSON</a>
+        <a href="/cron-expression-parser.html">Cron Parser</a>
+        <a href="/number-base-converter.html">Base Converter</a>
+        <a href="/text-diff.html">Text Diff</a>
+      </div>
+      <div class="footer-col">
+        <h3>テキスト</h3>
+        <a href="/ja/seo-slug-generator.html">SEOスラッグジェネレーター</a>
+        <a href="/ja/limited-text-generator.html">文字数指定テキストジェネレーター</a>
+        <a href="/word-counter.html">Word Counter</a>
+        <a href="/character-counter.html">Character Counter</a>
+        <a href="/remove-duplicate-lines.html">Dedupe Lines</a>
+        <a href="/sort-lines.html">Sort Lines</a>
+        <a href="/case-converter.html">Case Converter</a>
+        <a href="/lorem-ipsum-generator.html">Lorem Ipsum</a>
+        <a href="/find-and-replace.html">Find & Replace</a>
+      </div>
+      <div class="footer-col">
+        <h3>ユーティリティ</h3>
+        <a href="/ja/password-generator.html">パスワードジェネレーター</a>
+        <a href="/ja/qr-code-generator.html">QRコードジェネレーター</a>
+      </div>
+      <div class="footer-col">
+        <h3>SEO</h3>
+        <a href="/ja/seo/meta-tag-generator.html">メタタグジェネレーター</a>
+        <a href="/ja/seo/utm-builder.html">UTMビルダー</a>
+        <a href="/ja/seo/robots-txt-generator.html">robots.txtジェネレーター</a>
+        <a href="/ja/seo/sitemap-generator.html">サイトマップジェネレーター</a>
+      </div>
+      <div class="footer-col">
+        <h3>Design</h3>
+        <a href="/ja/design/css-gradient-generator.html">CSSグラデーション</a>
+        <a href="/ja/design/box-shadow-generator.html">ボックスシャドウ</a>
+        <a href="/ja/design/border-radius-generator.html">border-radius</a>
+        <a href="/ja/design/favicon-generator.html">ファビコンジェネレーター</a>
+        <a href="/ja/design/color-palette-extractor.html">カラーパレット抽出</a>
+        <a href="/ja/design/contrast-checker.html">コントラストチェッカー</a>
+        <a href="/ja/design/color-converter.html">カラーコンバーター</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. すべてのツールはブラウザ内でローカルに動作します。</span>
+      <a href="/ja/changelog.html">変更履歴</a>
+      <a href="/blog/">ブログ</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="/ja/how-it-works.html">仕組み</a>
+      <a href="/ja/privacy.html">プライバシーポリシー</a>
+      <a href="/ja/terms.html">利用規約</a>
+      <a href="https://ko-fi.com/shubhmisaki" target="_blank" rel="noopener">コーヒーをおごる</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/nav.js"></script>
+<script src="/js/theme-toggle.js"></script>
+<script src="/js/lang-switcher.js"></script>
+<script src="/js/bg-blobs.js"></script>
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="検索条件に一致するツールがありません。">
+  <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="ツールを検索">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="ツールを検索..." autocomplete="off" />
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdkResults"></div>
+  </div>
+</div>
+
+<script src="/js/cmdk.js"></script>
+<script src="/js/sw-register.js" defer></script>
+<script src="/js/install-prompt.js" defer></script>
+</body>
+</html>

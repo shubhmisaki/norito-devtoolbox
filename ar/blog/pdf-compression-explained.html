@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xrd6nlberg");
+    </script>
+
+<meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#ff4d7a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<title>لماذا يعمل ضغط PDF على المستندات الممسوحة، لا على التقارير | norito</title>
+<meta name="description" content="لماذا تنكمش ملفات PDF الممسوحة ضوئيًا بنسبة 90% بينما لا تتغير تقارير النصوص كثيرًا: ما الذي يشغل المساحة فعليًا في ملف PDF، وكيف تتوقع نتائج ضغطك." />
+<link rel="canonical" href="https://norito.in/ar/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/pdf-compression-explained.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="لماذا يعمل ضغط PDF على المستندات الممسوحة، لا على التقارير | norito" />
+<meta property="og:description" content="لماذا تنكمش ملفات PDF الممسوحة ضوئيًا بنسبة 90% بينما لا تتغير تقارير النصوص كثيرًا: ما الذي يشغل المساحة فعليًا في ملف PDF، وكيف تتوقع نتائج ضغطك." />
+<meta property="og:url" content="https://norito.in/ar/blog/pdf-compression-explained.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="لماذا يعمل ضغط PDF على المستندات الممسوحة، لا على التقارير | norito" />
+<meta name="twitter:description" content="لماذا تنكمش ملفات PDF الممسوحة ضوئيًا بنسبة 90% بينما لا تتغير تقارير النصوص كثيرًا: ما الذي يشغل المساحة فعليًا في ملف PDF، وكيف تتوقع نتائج ضغطك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "لماذا يعمل ضغط PDF بشكل رائع على المستندات الممسوحة ضوئيًا ولا يكاد يعمل على التقارير",
+  "description": "لماذا تنكمش ملفات PDF الممسوحة ضوئيًا بنسبة 90% بينما لا تتغير تقارير النصوص كثيرًا: ما الذي يشغل المساحة فعليًا في ملف PDF، وكيف تتوقع نتائج ضغطك.",
+  "url": "https://norito.in/ar/blog/pdf-compression-explained.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/ar/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/ar/blog/pdf-compression-explained.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/ar/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <button type="button" class="nav-cat">الصور</button>
+        <div class="nav-panel">
+          <a href="/ar/compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">ضغط الصور<span>تقليل حجم الملف إلى حجم محدد</span></div></a>
+          <a href="/ar/placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">مولّد صور بديلة<span>صور بديلة بأي مقاس تريده</span></div></a>
+          <a href="/ar/remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">إزالة الخلفية<span>قص الشخص من الصورة</span></div></a>
+          <a href="/resize-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">Resize Image<span>Change width and height, exact or by percentage</span></div></a>
+          <a href="/image-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">Image Converter<span>Convert between JPG, PNG, and WebP</span></div></a>
+          <a href="/crop-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">Crop Image<span>Drag a box to crop, free-form or locked ratio</span></div></a>
+          <a href="/remove-metadata.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div class="nav-link-body">Remove Metadata<span>Strip EXIF, GPS, and camera info</span></div></a>
+          <a href="/watermark-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Watermark Image<span>Add a text watermark with live preview</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">أدوات المطورين</button>
+        <div class="nav-panel">
+          <a href="/ar/test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">مولّد ملفات اختبار<span>ملفات وهمية بحجم دقيق</span></div></a>
+          <a href="/ar/json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">منسّق JSON<span>تنسيق وتحقق وضغط</span></div></a>
+          <a href="/ar/markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">محرر Markdown<span>معاينة فورية، تصدير كـ ‎.md/.html</span></div></a>
+          <a href="/uuid-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg><div class="nav-link-body">UUID Generator<span>Bulk random UUID v4 identifiers</span></div></a>
+          <a href="/base64-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg><div class="nav-link-body">Base64 Encode / Decode<span>Text to and from Base64, UTF-8 safe</span></div></a>
+          <a href="/hash-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">Hash Generator<span>MD5, SHA-1, SHA-256, SHA-512</span></div></a>
+          <a href="/timestamp-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="nav-link-body">Timestamp Converter<span>Unix time to date, both ways</span></div></a>
+          <a href="/json-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">JSON Diff<span>Compare two JSON documents</span></div></a>
+          <a href="/jwt-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">JWT Decoder<span>Decode a JWT's header and payload</span></div></a>
+          <a href="/regex-tester.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">Regex Tester<span>Test a regex with live match highlighting</span></div></a>
+          <a href="/csv-to-json.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">CSV to JSON<span>Convert a CSV file into JSON</span></div></a>
+          <a href="/csv-viewer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg><div class="nav-link-body">CSV Viewer<span>View and edit a CSV as a table</span></div></a>
+          <a href="/url-encoder-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">URL Encoder / Decoder<span>Percent-encode or decode a URL</span></div></a>
+          <a href="/html-entity-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><div class="nav-link-body">HTML Entity Encoder<span>Escape or unescape HTML entities</span></div></a>
+          <a href="/yaml-to-json-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg><div class="nav-link-body">YAML to JSON Converter<span>Convert YAML and JSON, both ways</span></div></a>
+          <a href="/cron-expression-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg><div class="nav-link-body">Cron Expression Parser<span>Explain a cron schedule, preview next runs</span></div></a>
+          <a href="/number-base-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">Number Base Converter<span>Binary, octal, decimal, hex, and more</span></div></a>
+          <a href="/text-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">Text Diff<span>Compare two texts line by line</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">النصوص</button>
+        <div class="nav-panel">
+          <a href="/ar/seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">مولّد روابط SEO<span>روابط نظيفة من العناوين</span></div></a>
+          <a href="/ar/limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">مولّد نص بعدد أحرف محدد<span>نص بديل بطول دقيق</span></div></a>
+          <a href="/word-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Word Counter<span>Live word, sentence, and paragraph counts</span></div></a>
+          <a href="/character-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg><div class="nav-link-body">Character Counter<span>Character count, with platform limits</span></div></a>
+          <a href="/remove-duplicate-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg><div class="nav-link-body">Remove Duplicate Lines<span>Deduplicate a list of lines</span></div></a>
+          <a href="/sort-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg><div class="nav-link-body">Sort Lines<span>Sort alphabetically, numerically, or shuffle</span></div></a>
+          <a href="/case-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M21 16h-6l6-8h-6"/></svg><div class="nav-link-body">Case Converter<span>UPPERCASE, camelCase, snake_case, and more</span></div></a>
+          <a href="/lorem-ipsum-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Lorem Ipsum Generator<span>Placeholder text, by word, sentence, or paragraph</span></div></a>
+          <a href="/find-and-replace.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">Find and Replace<span>Find and replace text, regex supported</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-cat">أدوات عامة</button>
+        <div class="nav-panel">
+          <a href="/ar/password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">مولّد كلمات المرور<span>كلمات مرور وعبارات مرور عشوائية</span></div></a>
+          <a href="/ar/qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">مولّد رمز QR<span>ألوان مخصصة وتصحيح أخطاء</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/pdf/">PDF</a>
+        <div class="nav-panel">
+          <a href="/ar/pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">دمج PDF<span>ادمج عدة ملفات PDF في ملف واحد</span></div></a>
+          <a href="/ar/pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">تقسيم PDF<span>استخرج صفحات أو قسّم إلى ملفات</span></div></a>
+          <a href="/ar/pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">تدوير PDF<span>صحّح الصفحات المائلة أو المقلوبة</span></div></a>
+          <a href="/ar/pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF إلى صورة<span>حوّل الصفحات إلى صور</span></div></a>
+          <a href="/ar/pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">صورة إلى PDF<span>ادمج الصور في ملف PDF واحد</span></div></a>
+          <a href="/ar/pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">حذف وإعادة ترتيب<span>احذف أو أعد ترتيب الصفحات</span></div></a>
+          <a href="/ar/pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">أرقام الصفحات<span>رقّم كل صفحة</span></div></a>
+          <a href="/ar/pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">علامة مائية<span>اطبع نصًا على كل صفحة</span></div></a>
+          <a href="/ar/pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">استخراج النص<span>استخرج النص من ملف PDF</span></div></a>
+          <a href="/ar/pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">ضغط PDF<span>قلّل حجم ملف PDF</span></div></a>
+          <a href="/ar/pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">توقيع PDF<span>ارسم أو اكتب توقيعًا</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/seo/">SEO</a>
+        <div class="nav-panel">
+          <a href="/ar/seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">مولّد الوسوم الوصفية<span>العنوان، الوصف، وسوم OG وTwitter</span></div></a>
+          <a href="/ar/seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">مولّد روابط UTM<span>أنشئ روابط لتتبع الحملات</span></div></a>
+          <a href="/ar/seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">مولّد Robots.txt<span>قواعد allow/disallow، مرجع sitemap</span></div></a>
+          <a href="/ar/seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">مولّد Sitemap<span>أدخل الروابط، احصل على sitemap.xml</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/design/">Design</a>
+        <div class="nav-panel">
+          <a href="/ar/design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">تدرج CSS<span>خطي أو شعاعي، انسخ CSS</span></div></a>
+          <a href="/ar/design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">ظل الصندوق<span>ظلال مفردة أو متعددة الطبقات</span></div></a>
+          <a href="/ar/design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">نصف قطر الحدود<span>نصف قطر لكل زاوية، انسخ CSS</span></div></a>
+          <a href="/ar/design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">مولّد أيقونة الموقع<span>كل حجم أيقونة تحتاجه</span></div></a>
+          <a href="/ar/design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">مستخرج لوحة الألوان<span>استخرج الألوان السائدة من صورة</span></div></a>
+          <a href="/ar/design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">فاحص التباين<span>نسبة تباين WCAG، اجتياز AA/AAA</span></div></a>
+          <a href="/ar/design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">محوّل الألوان<span>HEX وRGB وHSL وCMYK مباشرة</span></div></a>
+        </div>
+      </div>
+
+
+          
+      <a class="nav-cat" href="/blog/" style="align-self:center;">Blog</a>
+
+
+</nav>
+      <button type="button" class="search-trigger" id="searchTrigger" aria-label="البحث عن الأدوات" title="البحث عن الأدوات"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा / Язык / 言語">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">AR</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">المدونة</a> / لماذا يعمل ضغط PDF بشكل رائع على المستندات الممسوحة ضوئيًا ولا يكاد يعمل على التقارير</p>
+    <h1>لماذا يعمل ضغط PDF بشكل رائع على المستندات الممسوحة ضوئيًا ولا يكاد يعمل على التقارير</h1>
+    <p class="byline">بقلم Shubham Singh &middot; <time datetime="2026-07-20">20 يوليو 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">نُشر في 2026-07-20</p>
+    <p class="lede">مرّر ملفي PDF مختلفين عبر نفس أداة الضغط وقد تحصل على نتائج متباينة جدًا: عقد ممسوح ضوئيًا بحجم 40 ميغابايت ينخفض إلى 3 ميغابايت، بينما تقرير سنوي بحجم 8 ميغابايت يرفض بعناد أن يفقد أكثر من نسبة ضئيلة. لا تعني أي من النتيجتين أن الأداة معطلة. الفرق يكمن في طبيعة تكوين هذين الملفين فعليًا.</p>
+
+    <h2>ملف PDF هو حاوية، وليس نوعًا واحدًا من الملفات</h2>
+    <p>يمكن أن تحتوي صفحة PDF على نوعين مختلفين جوهريًا من المحتوى. الأول هو المحتوى المتجهي (vector): نص مخزَّن كتعليمات رسم ("ضع الحرف A من هذا الخط المضمّن عند هذه الإحداثيات، بحجم 11")، بالإضافة إلى خطوط وأشكال وتعبئات موصوفة رياضيًا. الثاني هو المحتوى النقطي (raster): صور فعلية، مضمّنة كتدفقات بيانات على طراز JPEG أو PNG داخل الملف. تكاد كل الأسئلة المتعلقة بضغط PDF تعود إلى النسبة بين هذين النوعين.</p>
+    <p>صفحة النص الخالص صغيرة بشكل مذهل. تزن تعليمات الرسم لصفحة عقد كثيفة عادةً ما بين 2 و10 كيلوبايت بعد الضغط، والخطوط المضمّنة مشتركة عبر المستند بأكمله، عادةً بضع عشرات من الكيلوبايتات إجمالاً. أما الصفحة الممسوحة ضوئيًا، على النقيض، فلا تحتوي على أي نص على الإطلاق فيما يتعلق بصيغة الملف. إنها صورة فوتوغرافية كبيرة لقطعة ورق.</p>
+
+    <h2>لماذا لا تكاد ملفات PDF الغنية بالنص تنكمش</h2>
+    <p>النص والمحتوى المتجهي داخل ملف PDF مضغوطان بالفعل باستخدام Flate، نفس الخوارزمية التي تستخدمها ملفات ZIP. ضغط بيانات مضغوطة بالفعل لا يعطي شيئًا يُذكر؛ وهذه خاصية رياضية، وليست قيدًا برمجيًا. لذا عندما تعالج أداة ضغط مستندًا نصيًا بحتًا من 200 صفحة يزن 1.5 ميغابايت، أي نحو 7 كيلوبايت للصفحة، فببساطة لا يوجد الكثير من «الدهون» لتقليمها. تأتي المكاسب الواقعية من أعمال التدبير: إزالة العناصر غير المستخدمة، وإزالة تكرار الموارد المكررة، وإنشاء مجموعات فرعية من الخطوط التي أُدرجت كاملة. توقّع نسبة 5 إلى 15 بالمئة على مستند نصي نظيف، وأحيانًا أقل.</p>
+    <p>كن متشككًا في أي أداة تدّعي تخفيضًا بنسبة 70 بالمئة على ملف PDF نصي بحت. الحيلة المعتادة هي التحويل إلى صور (rasterizing): تحويل كل صفحة إلى صورة مضغوطة. يصبح الملف أصغر فعلًا، لكن النص يصبح ضبابيًا عند التكبير العالي، ولم يعد بالإمكان تحديده أو البحث فيه، وتتوقف قارئات الشاشة عن العمل. هذا تحويل، لا ضغط، وهو نادرًا ما يكون ما تريده لتقرير.</p>
+
+    <h2>لماذا تنكمش المستندات الممسوحة ضوئيًا بشكل كبير</h2>
+    <p>مسح ضوئي قياسي بدقة 300 نقطة في البوصة لصفحة A4 يبلغ حوالي 2480 × 3508 بكسل، أي نحو 8.7 مليون بكسل لكل صفحة. تميل برامج المسح الضوئي إلى الحذر، فتحفظ الملف بجودة JPEG عالية أو حتى بلا فقدان، مما ينتج 2 إلى 8 ميغابايت لكل صفحة. هذا يمنح أداة الضغط رافعتين كبيرتين.</p>
+    <p>الأولى هي تقليل العينات (downsampling). الانتقال من 300 نقطة إلى 150 نقطة في البوصة يقلل عدد البكسلات إلى الربع، وبالنسبة للقراءة على الشاشة، الفرق لا يكاد يُلاحظ. الثانية هي إعادة الترميز بإعداد JPEG أقوى: الانتقال من جودة 90 إلى جودة 60 يمكن أن يخفض الحجم إلى النصف مرة أخرى مع تغيير مرئي متواضع فقط على مستند مصوَّر. اجمع بين الرافعتين ويصبح تخفيض بنسبة 80 إلى 95 بالمئة أمرًا روتينيًا. هذه بالضبط نفس فيزياء ضغط صورة فوتوغرافية، والتي تناولناها بتعمق أكبر في <a href="image-compression-without-losing-quality.html">دليلنا لضغط الصور</a>.</p>
+
+    <h2>الملفات الوسطى</h2>
+    <p>تقع معظم المستندات الواقعية بين الحالتين المتطرفتين: تقارير بها رسوم بيانية وصور، وملفات عروض تقديمية مُصدَّرة، وكتيبات. وهنا الجزء غير البديهي: حتى في مستند يبدو في معظمه نصًا، عادةً ما تهيمن الصور على عدد البايتات. تقرير بحجم 12 ميغابايت يحتوي على عشر صور مضمّنة قد يكون 11 ميغابايت منها صورًا وميغابايت واحد فقط لكل شيء آخر، لذا لا يمكن للضغط أن يعمل إلا على حصة الصور. توجد أيضًا أنماط تضخّم كلاسيكية يستحق معرفتها: بعض مولّدات المستندات تُضمّن نفس صورة الشعار بشكل منفصل في كل صفحة بدلًا من الإشارة إليها مرة واحدة، وبعضها يُضمّن عائلات خطوط كاملة حيث تكفي مجموعة فرعية من 40 حرفًا. تُصلح أداة ضغط جيدة كلا الأمرين بهدوء.</p>
+    <p>تستحق عروض الشرائح المُصدَّرة إشارة خاصة. غالبًا ما تحمل الشرائح المُصدَّرة إلى PDF صورة خلفية بدقة كاملة في كل صفحة على حدة، بالإضافة إلى صور موضوعة بدقة أعلى بكثير مما سيُظهره أي جهاز عرض على الإطلاق. هكذا يتحول عرض من 40 شريحة إلى ملف PDF بحجم 100 ميغابايت، وهذا أيضًا سبب كون العروض التقديمية من بين أكثر الملفات إرضاءً عند ضغطها: نفس عملية تقليل العينات التي لا تكاد تمس تقريرًا نصيًا يمكنها تقليص عرض تقديمي بنسبة 90 بالمئة دون أن يلاحظ أحد في الاجتماع.</p>
+
+    <h2>توقّع نتيجتك قبل أن تبدأ</h2>
+    <p>اقسم حجم الملف على عدد الصفحات. إذا كان أقل من 50 كيلوبايت للصفحة، فأنت أمام نص في معظمه ويجب أن تتوقع مكاسب بنسبة مئوية أحادية الرقم. بين 100 و300 كيلوبايت للصفحة يعني عادةً محتوى مختلط، حيث تكون نسبة 30 إلى 60 بالمئة واقعية. أكثر من 800 كيلوبايت للصفحة يعني دائمًا تقريبًا مستندًا ممسوحًا ضوئيًا أو غنيًا بالصور، وتكون نسبة 80 إلى 95 بالمئة واردة.</p>
+    <p>لست متأكدًا مما إذا كان ملف PDF مستندًا نصيًا حقيقيًا أم ممسوحًا ضوئيًا؟ جرّب تحديد النص في عارضك. أو مرّره عبر <a href="../pdf/extract-text.html">أداة استخراج النص</a>: إذا لم يخرج شيء، فكل صفحة هي صورة.</p>
+
+    <h2>الحدود الصادقة</h2>
+    <p>الضغط المفقِد للبيانات تراكمي. مستند ممسوح ضوئيًا مضغوط بجودة 60، ثم يُضغط مرة أخرى من قِبل شخص آخر لاحقًا، يتدهور بسرعة، لذا احتفظ بالنسخة الأصلية. المستند الممسوح ضوئيًا المُقلَّل العينات هو أيضًا مُدخَل أسوأ للتعرف الضوئي على الحروف (OCR) وإعادة الطباعة؛ إذا كان مستند ما قد يحتاج إلى أي منهما لاحقًا، أرشِف النسخة كاملة الدقة وشارك النسخة المضغوطة. وإذا كان ملف PDF ضخمًا بسبب صورتين أو ثلاث صور محددة، يكون أحيانًا أنظف أن تُصغّر تلك الصور أولًا باستخدام <a href="../compress-image.html">أداة ضغط الصور</a> وتُعيد بناء المستند من النسخ المُصلَحة.</p>
+    <p>ضمن هذه الحدود، يُعد الضغط من أكثر الأشياء تأثيرًا التي يمكنك فعلها بمستند ممسوح ضوئيًا. يستغرق ثوانٍ، ولن يعرف مستلم مرفقك بحجم 3 ميغابايت أبدًا أنه كان بحجم 40.</p>
+    <p>تحذير أخير قبل ضغط أي شيء سري: تحقّق من كيفية عمل الأداة التي تستخدمها فعليًا. تقوم العديد من أدوات ضغط PDF الشائعة برفع مستندك إلى خوادمها لمعالجته، وعقد ممسوح ضوئيًا أو بطاقة هوية هما بالضبط نوع الملفات التي قد لا ترغب في وجودها على بنية تحتية تابعة لشخص آخر، ولو للحظة. كتبنا <a href="client-side-vs-server-side-tools.html">دليلًا منفصلاً حول كيفية التحقق بنفسك</a>. تعمل أداة ضغط norito بالكامل في متصفحك، فلا يوجد شيء للتحقق منه.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>جرّبها بنفسك:</strong> <a href="../pdf/compress-pdf.html">ضغط PDF</a> يُصغّر ملفات PDF الممسوحة ضوئيًا والغنية بالصور مباشرةً في متصفحك. لا شيء يُرفَع.</div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">أدوات صغيرة تحل مشكلة مزعجة واحدة، كل أداة على حدة. كل شيء يعمل داخل متصفحك، ولا يُرفع أي شيء.</p>
+      </div>
+      <div class="footer-col footer-product">
+        <h3>المنتج</h3>
+        <a href="/tools.html">كل الأدوات</a>
+        <a href="/ar/changelog.html">سجل التحديثات</a>
+        <a href="/ar/how-it-works.html">كيف يعمل</a>
+        <a href="/blog/">Blog</a>
+        <a href="/ar/compare/">Compare</a>
+        <a href="/ar/about.html">عن norito</a>
+        <a href="/ar/contact.html">تواصل معنا</a>
+        <a href="/ar/privacy.html">سياسة الخصوصية</a>
+        <a href="/ar/terms.html">شروط الخدمة</a>
+      </div>
+      <div class="footer-col">
+        <h3>PDF</h3>
+        <a href="/ar/pdf/merge-pdf.html">دمج PDF</a>
+        <a href="/ar/pdf/split-pdf.html">تقسيم PDF</a>
+        <a href="/ar/pdf/rotate-pdf.html">تدوير PDF</a>
+        <a href="/ar/pdf/pdf-to-image.html">PDF إلى صورة</a>
+        <a href="/ar/pdf/jpg-png-to-pdf.html">صورة إلى PDF</a>
+        <a href="/ar/pdf/organize-pdf.html">حذف وإعادة ترتيب</a>
+        <a href="/ar/pdf/add-page-numbers.html">أرقام الصفحات</a>
+        <a href="/ar/pdf/add-watermark.html">علامة مائية</a>
+        <a href="/ar/pdf/extract-text.html">استخراج النص</a>
+        <a href="/ar/pdf/compress-pdf.html">ضغط PDF</a>
+        <a href="/ar/pdf/sign-pdf.html">توقيع PDF</a>
+      </div>
+      <div class="footer-col">
+        <h3>الصور</h3>
+        <a href="/ar/compress-image.html">ضغط الصور</a>
+        <a href="/resize-image.html">Resize Image</a>
+        <a href="/image-converter.html">Image Converter</a>
+        <a href="/crop-image.html">Crop Image</a>
+        <a href="/remove-metadata.html">Remove Metadata</a>
+        <a href="/watermark-image.html">Watermark Image</a>
+        <a href="/ar/placeholder-generator.html">مولّد صور بديلة</a>
+        <a href="/ar/remove-background.html">إزالة الخلفية</a>
+      </div>
+      <div class="footer-col">
+        <h3>أدوات المطورين</h3>
+        <a href="/ar/test-file-generator.html">مولّد ملفات اختبار</a>
+        <a href="/ar/json-formatter.html">منسّق JSON</a>
+        <a href="/ar/markdown-editor.html">محرر Markdown</a>
+        <a href="/uuid-generator.html">UUID Generator</a>
+        <a href="/base64-encoder.html">Base64</a>
+        <a href="/hash-generator.html">Hash Generator</a>
+        <a href="/timestamp-converter.html">Timestamp</a>
+        <a href="/json-diff.html">JSON Diff</a>
+        <a href="/jwt-decoder.html">JWT Decoder</a>
+        <a href="/regex-tester.html">Regex Tester</a>
+        <a href="/csv-to-json.html">CSV to JSON</a>
+        <a href="/csv-viewer.html">CSV Viewer</a>
+        <a href="/url-encoder-decoder.html">URL Encoder</a>
+        <a href="/html-entity-encoder.html">HTML Entities</a>
+        <a href="/yaml-to-json-converter.html">YAML to JSON</a>
+        <a href="/cron-expression-parser.html">Cron Parser</a>
+        <a href="/number-base-converter.html">Base Converter</a>
+        <a href="/text-diff.html">Text Diff</a>
+      </div>
+      <div class="footer-col">
+        <h3>النصوص</h3>
+        <a href="/ar/seo-slug-generator.html">مولّد روابط SEO</a>
+        <a href="/ar/limited-text-generator.html">مولّد نص بعدد أحرف محدد</a>
+        <a href="/word-counter.html">Word Counter</a>
+        <a href="/character-counter.html">Character Counter</a>
+        <a href="/remove-duplicate-lines.html">Dedupe Lines</a>
+        <a href="/sort-lines.html">Sort Lines</a>
+        <a href="/case-converter.html">Case Converter</a>
+        <a href="/lorem-ipsum-generator.html">Lorem Ipsum</a>
+        <a href="/find-and-replace.html">Find & Replace</a>
+      </div>
+      <div class="footer-col">
+        <h3>أدوات عامة</h3>
+        <a href="/ar/password-generator.html">مولّد كلمات المرور</a>
+        <a href="/ar/qr-code-generator.html">مولّد رمز QR</a>
+      </div>
+      <div class="footer-col">
+        <h3>SEO</h3>
+        <a href="/ar/seo/meta-tag-generator.html">مولّد الوسوم الوصفية</a>
+        <a href="/ar/seo/utm-builder.html">مولّد روابط UTM</a>
+        <a href="/ar/seo/robots-txt-generator.html">مولّد Robots.txt</a>
+        <a href="/ar/seo/sitemap-generator.html">مولّد Sitemap</a>
+      </div>
+      <div class="footer-col">
+        <h3>Design</h3>
+        <a href="/ar/design/css-gradient-generator.html">تدرج CSS</a>
+        <a href="/ar/design/box-shadow-generator.html">ظل الصندوق</a>
+        <a href="/ar/design/border-radius-generator.html">نصف قطر الحدود</a>
+        <a href="/ar/design/favicon-generator.html">مولّد أيقونة الموقع</a>
+        <a href="/ar/design/color-palette-extractor.html">مستخرج لوحة الألوان</a>
+        <a href="/ar/design/contrast-checker.html">فاحص التباين</a>
+        <a href="/ar/design/color-converter.html">محوّل الألوان</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. جميع الأدوات تعمل محليًا داخل متصفحك.</span>
+      <a href="/ar/changelog.html">سجل التحديثات</a>
+      <a href="/blog/">Blog</a>
+      <a href="/ar/compare/">Compare</a>
+      <a href="/ar/how-it-works.html">كيف يعمل</a>
+      <a href="/ar/privacy.html">سياسة الخصوصية</a>
+      <a href="/ar/terms.html">شروط الخدمة</a>
+      <a href="https://ko-fi.com/shubhmisaki" target="_blank" rel="noopener">اشترِ لي قهوة</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/nav.js"></script>
+<script src="/js/theme-toggle.js"></script>
+<script src="/js/lang-switcher.js"></script>
+<script src="/js/bg-blobs.js"></script>
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="لا توجد أدوات مطابقة لهذا البحث.">
+  <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="البحث عن الأدوات">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="البحث عن الأدوات..." autocomplete="off" />
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdkResults"></div>
+  </div>
+</div>
+
+<script src="/js/cmdk.js"></script>
+<script src="/js/sw-register.js" defer></script>
+<script src="/js/install-prompt.js" defer></script>
+</body>
+</html>

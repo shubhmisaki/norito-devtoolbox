@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>¿Qué Es un UUID? Una Explicación en Lenguaje Sencillo | norito</title>
+<meta name="description" content="Qué es realmente un UUID, por qué es prácticamente imposible que colisione sin una autoridad central, y cuándo realmente necesitarías generar uno." />
+<link rel="canonical" href="https://norito.in/es/blog/what-is-a-uuid.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="¿Qué Es un UUID? Una Explicación en Lenguaje Sencillo | norito" />
+<meta property="og:description" content="Qué es realmente un UUID, por qué es prácticamente imposible que colisione sin una autoridad central, y cuándo realmente necesitarías generar uno." />
+<meta property="og:url" content="https://norito.in/es/blog/what-is-a-uuid.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="¿Qué Es un UUID? Una Explicación en Lenguaje Sencillo | norito" />
+<meta name="twitter:description" content="Qué es realmente un UUID, por qué es prácticamente imposible que colisione sin una autoridad central, y cuándo realmente necesitarías generar uno." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Qué Es un UUID? Una Explicación en Lenguaje Sencillo",
+  "description": "Qué es realmente un UUID, por qué es prácticamente imposible que colisione sin una autoridad central, y cuándo realmente necesitarías generar uno.",
+  "url": "https://norito.in/es/blog/what-is-a-uuid.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/es/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/es/blog/what-is-a-uuid.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / ¿Qué Es un UUID? Una Explicación en Lenguaje Sencillo</p>
+    <h1>¿Qué Es un UUID? Una Explicación en Lenguaje Sencillo</h1>
+    <p class="byline">Por Shubham Singh &middot; <time datetime="2026-07-15">15 de julio de 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Publicado el 2026-07-15</p>
+    <p class="lede">Los UUID aparecen constantemente en software, claves de bases de datos, tokens de API, nombres de archivo, pero las explicaciones suelen ser más confusas que el concepto mismo. Aquí está la versión corta.</p>
+
+    <h2>La definición en lenguaje sencillo</h2>
+    <p>Un UUID (Identificador Único Universal) es un número de 128 bits, normalmente escrito como 32 caracteres hexadecimales divididos en cinco grupos, como <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code>. Su único propósito es servir como un identificador que tiene una probabilidad astronómicamente baja de colisionar con cualquier otro UUID jamás generado, en cualquier lugar, por cualquiera, sin necesitar una autoridad central que reparta números únicos.</p>
+
+    <h2>¿Por qué no usar simplemente un número incremental?</h2>
+    <p>El ID autoincremental de una base de datos (1, 2, 3…) funciona muy bien dentro de una sola base de datos, pero se viene abajo en el momento en que necesitas unicidad entre múltiples sistemas. Si dos bases de datos separadas generan de forma independiente el «pedido n.º 4521», y más tarde necesitas fusionar esos datos, tienes una colisión. Los UUID resuelven esto generándose de forma independiente, sin necesidad de coordinación, y aun así siendo únicos en la práctica. Por eso los UUID están por todas partes en los sistemas distribuidos: claves primarias de bases de datos, IDs de solicitudes de API, tokens de sesión, nombres de archivo, IDs de seguimiento para eventos de analítica, y así sucesivamente.</p>
+
+    <h2>¿Cómo se garantiza realmente la unicidad?</h2>
+    <p>No se garantiza en un sentido matemático absoluto, se garantiza en un sentido práctico de «nunca va a pasar». La versión más común, UUID v4, se genera casi enteramente a partir de bits aleatorios: 122 de sus 128 bits son aleatorios, y los 6 bits restantes están fijados para identificarlo como un UUID v4. Con tanta aleatoriedad, la cantidad de UUID que tendrías que generar antes de tener un 50% de probabilidad de una sola colisión es de aproximadamente 2.71 trillones (2,71 × 10¹⁸). Incluso generando mil millones de UUID por segundo, tomaría aproximadamente 85 años alcanzar siquiera una probabilidad de uno en mil millones de colisión. Para prácticamente cualquier propósito práctico, eso es tan bueno como imposible.</p>
+
+    <h2>Versiones de UUID, brevemente</h2>
+    <p>Los UUID vienen en varias versiones con distintos métodos de generación. La versión 1 se basa en una marca de tiempo más la dirección de hardware de red del ordenador que lo genera (rara vez usada hoy, ya que puede filtrar información sobre cuándo y dónde se generó). La versión 4, casi enteramente aleatoria, es con diferencia la más común en el software moderno porque no requiere ninguna entrada especial y no lleva metadatos sobre su origen. La versión 5 se genera de forma determinista a partir de un espacio de nombres y un nombre usando una función hash, de modo que la misma entrada siempre produce el mismo UUID, útil cuando necesitas un identificador estable derivado de datos existentes en lugar de uno aleatorio nuevo.</p>
+
+    <h2>Cuándo realmente necesitarías generar uno</h2>
+    <p>Casos comunes: asignar un ID único a un nuevo registro de base de datos sin esperar a que la base de datos entregue uno, generar un nombre de archivo único para evitar sobrescribir un archivo existente, crear una clave de API o un token de sesión de un solo uso, o etiquetar un lote de datos de prueba con un ID que esté garantizado que no choque con datos reales de producción. En cualquier lugar donde necesites «un identificador único, ahora mismo, sin coordinación», un UUID suele ser la respuesta más simple.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Pruébalo tú mismo:</strong> <a href="../uuid-generator.html">Generador de UUID</a>, para generar identificadores UUID v4 aleatorios en lote, directamente en tu navegador.</div>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->
