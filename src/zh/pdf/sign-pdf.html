@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=La+Belle+Aurore&family=Reenie+Beanie&family=Homemade+Apple&family=Kristi&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=La+Belle+Aurore&family=Reenie+Beanie&family=Homemade+Apple&family=Kristi&display=optional" rel="stylesheet" /></noscript>
 <title>在线免费为 PDF 签名 | norito</title>
-<meta name="description" content="手写或输入姓名，为 PDF 添加签名。放在任意页面的任意位置后下载。完全在浏览器中运行，不会上传任何内容。" />
+<meta name="description" content="在 PDF 文档上添加你的手写涂鸦签名，或直接输入姓名生成印刷体签名。可自由拖动放置到任意页面的任意具体位置后再下载保存，签名和文件全程都不会上传。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/sign-pdf.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -221,6 +221,19 @@
         <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>当你手绘签名时，工具会在一个 HTML 画布上捕捉你的笔迹，裁掉周围的空白区域，并将结果导出为透明 PNG。输入文字生成的签名也是同样的流程：手写风格字体会先渲染到画布上。无论哪种方式，这张 PNG 随后都会通过 pdf-lib 库嵌入 PDF 的对象结构中，并按你选择的确切位置和大小绘制到页面上。</p>
+      <p>这一切都发生在你的浏览器标签页内部。PDF 通过 FileReader API 读取，在内存中修改，再作为下载文件返回给你。签名时打开浏览器开发者工具的网络面板：不会有任何请求携带你的文档或签名。</p>
+      <p>值得了解的一点区别：这里添加的是一个视觉签名，也就是叠加在页面上的一张图片，这正是大多数日常文件所需要的。它不是认证机构颁发的那种密码学数字签名，因此 PDF 阅读器不会显示“已数字签名并验证”的提示。</p>
+    </div>
+
+<!--RELATED-TOOLS
+add-watermark.html|添加水印|为每一页盖上文字水印。
+merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。
+organize-pdf.html|删除和重新排列页面|删除或重新排列页面。
+-->
   </div>
 </main>
 

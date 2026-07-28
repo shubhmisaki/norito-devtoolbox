@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>调色板提取器：从图片中提取颜色 | norito</title>
-<meta name="description" content="上传一张图片，提取其中的主要颜色生成调色板，HEX 和 RGB 数值可直接复制。完全在浏览器中运行。" />
+<meta name="description" content="上传一张图片，自动分析并提取其中的主要代表色，生成一套可直接使用的调色板，每个色块的 HEX 和 RGB 数值都可一键复制。图片全程只在浏览器本地处理。" />
 <link rel="canonical" href="https://norito.in/zh/design/color-palette-extractor.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -129,6 +129,13 @@
           <p class="note" style="margin-top:0;">颜色通过 canvas API 直接从你的图片中采样，并按相似程度分组。不会上传任何内容，一切都在你的浏览器中完成。</p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>你的图片会被绘制到一个离屏画布上，并缩小到最长边不超过 200px，因为缩略图与原图的颜色分布几乎一致，读取速度却快上千倍。原始 RGBA 像素数据通过 <code>getImageData()</code> 获取，透明度超过一半的像素会被跳过。每个剩余像素会落入一个每通道 6 级、共 216 个分组的粗粒度网格中，分组保留落入其中的真实像素值之和。按像素数量对分组排序，取前 N 名，每个色块取的是分组内真实像素的平均值，而不是分组的中心值，这样结果不会显得色阶生硬。</p>
+      <p>这种按频率排序方法的诚实局限：它衡量的是面积，而非重要性。一张米色墙壁前的人像照片，可能会在提到主体蓝色夹克之前先给出五种米色，因为墙壁的像素数量本来就更多。如果你想要的是强调色而不是主色调，可以调高颜色数量并查看列表末尾，或者在上传前先裁剪到你关心的区域。</p>
+      <p>图片本身不会离开你的设备：它通过本地对象 URL 加载，在内存中的画布上绘制，再作为字节读取，整个过程都在本页面的 JavaScript 中完成。没有可拦截的上传步骤，提取颜色时开发者工具的网络面板会始终保持空白。</p>
     </div>
 
 <!--RELATED-TOOLS

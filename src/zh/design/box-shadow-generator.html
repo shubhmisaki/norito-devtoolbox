@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>阴影生成器：CSS box-shadow 构建工具 | norito</title>
-<meta name="description" content="在浏览器中可视化构建单层或多层 CSS box-shadow 阴影效果，实时预览，满意后一键复制代码。" />
+<meta name="description" content="在浏览器中可视化构建单层或多层叠加的 CSS box-shadow 阴影效果，拖动滑块实时预览偏移、模糊、扩散和颜色变化，满意后一键复制完整代码。" />
 <link rel="canonical" href="https://norito.in/zh/design/box-shadow-generator.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -117,6 +117,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>每一层阴影都是一个包含 x、y、模糊、扩展、颜色、不透明度和内阴影标记的小对象。由于 HTML 颜色选择器无法表达透明度，取色器得到的十六进制值会被拆分为红、绿、蓝字节，再与不透明度滑块的值组合成 <code>rgba()</code> 颜色。所有图层用逗号拼接成一个 <code>box-shadow</code> 声明，同一字符串会应用到预览元素上，所见即所得。顺序很重要：列表中第一个阴影绘制在最上层，之后的依次叠在下方。</p>
+      <p>单独一层阴影几乎总显得不真实。真实的阴影有密实的核心和柔和的宽阔衰减，单靠一条 <code>0 4px 12px rgba(0,0,0,0.25)</code> 做不到这一点。任何精致设计系统的诀窍都是叠加两三层低不透明度的阴影：比如一条紧贴的 <code>0 1px 2px</code>（10%）加上一条宽阔的 <code>0 8px 24px</code>（8%）。单独看每一层都几乎看不出来，叠加在一起就能读出真实的层次感。</p>
+      <p>以上全部在本页面的 JavaScript 中完成：你选择的颜色和生成的 CSS 不会发送到任何地方，开发者工具的网络面板会确认这一点。</p>
+    </div>
 
 <!--RELATED-TOOLS
 css-gradient-generator.html|CSS 渐变生成器|可视化构建线性或径向渐变。

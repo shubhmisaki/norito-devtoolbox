@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>PDFに無料でページ番号を追加 | norito</title>
-<meta name="description" content="PDFの全ページに番号を振ります。位置、形式、開始番号、フォントサイズを選択。すべてブラウザ内で完結し、ファイルはアップロードされません。" />
+<meta name="description" content="PDFの全ページにページ番号を一括で振ることができます。表示位置、番号の書式、開始番号、フォントサイズを自由に選択可能。処理はすべてブラウザ内で完結し、ファイルはアップロードされません。" />
 <link rel="canonical" href="https://norito.in/ja/pdf/add-page-numbers.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -186,14 +186,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">使い方</h3>
-      <p class="note" style="margin-top:0;">
-        ページ番号は標準フォントを使い、ブラウザ内で各ページに直接描画されます。「1ページ目 / 全Nページ」や
-        「1 / N」の形式は文書の総ページ数を使用し、番号自体は設定した開始番号から始まります。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>PDFファイルはどこかにアップロードされますか?</summary>
@@ -216,6 +208,19 @@
         <p>現在は非対応です。パスワード保護や暗号化されたPDFはツールで読み込めず、エラーが表示されます。先にPDFリーダーでパスワードを解除してください。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>このツールはpdf-libでPDFを読み込みます。これはブラウザのメモリ内で直接ファイル構造を編集するライブラリで、各ページのコンテンツストリームに小さなテキスト描画命令を追加します。使用されるフォントはHelveticaで、これはすべてのPDFビューアが含めなければならない14の標準フォントの1つです。そのためフォントファイルを埋め込む必要がなく、出力は合計でわずか数百バイトしか増えません。</p>
+      <p>位置は推測ではなく計測されます。各ページについて、ツールは描画するテキストの正確な幅をフォントに問い合わせます。そのため「120ページ中9ページ」も「9」と同じ精度で整列します。座標は選んだ位置から一定のマージンで計算されます。幅は各ページごとに再計算されるため、カウントが9から10、そして100へと変わっても整列はきれいなままです。</p>
+      <p>プライバシーの主張を確認するのに10秒ほどかかります。開発者ツールを開き、ネットワークタブを見て、番号を追加してください。ファイルはこのタブ内で完全に読み込まれ、編集され、ダウンロードされます。どのリクエストもドキュメントを運ぶことはありません。</p>
+    </div>
+
+<!--RELATED-TOOLS
+add-watermark.html|PDFに透かしを追加|各ページにテキストを重ねます。
+merge-pdf.html|PDFファイルを結合|複数のPDFファイルを1つに結合します。
+sign-pdf.html|PDFに署名|署名を描いたり入力したりします。
+-->
   </div>
 </main>
 

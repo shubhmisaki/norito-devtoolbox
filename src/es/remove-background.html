@@ -83,6 +83,7 @@
     <p class="lede">
       Recorta a una persona de una foto, por completo en tu navegador. La imagen nunca sale de tu dispositivo. Basado en un modelo de segmentación ligero y de código abierto, así que funciona mejor cuando una persona es claramente el sujeto principal.
     </p>
+    <p class="note">¿Necesitas la versión sin registro, sin marca de agua y sin límites? Prueba <a href="remove-image-background-free.html">Quitar Fondo de Imagen, Gratis</a>.</p>
     </div>
   </div>
     <div class="result-box" style="margin-bottom:28px;">
@@ -139,6 +140,13 @@
       </div>
     </div>
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>El trabajo pesado lo hace MODNet, una red de recorte de retratos de código abierto, ejecutada mediante ONNX Runtime Web y servida por completo desde los archivos de este sitio. A diferencia de un modelo de segmentación simple, MODNet se entrena para predecir una máscara alfa real, un valor de opacidad por píxel, así que el pelo y los bordes suaves salen mucho más cerca de la transparencia real que un recorte con borde duro.</p>
+      <p>Incluso una máscara alfa real tiene algo de ruido en los bordes, así que la herramienta hace una pasada de limpieza: un pequeño desenfoque suaviza los artefactos del redimensionado, y la curva alfa recibe un reajuste suave para que el fondo se vuelva totalmente transparente y el sujeto totalmente opaco.</p>
+      <p>La historia de la red se puede verificar en las herramientas de desarrollador: en tu primera ejecución, la pestaña Red muestra el modelo cargándose desde este sitio, unos 18 MB en total. Después, procesa tantas fotos como quieras: ninguna solicitud lleva tu imagen.</p>
+    </div>
+
 <!--RELATED-TOOLS
 compress-image.html|Comprimir imagen|Consigue un tamaño de archivo exacto sin adivinar la calidad.
 placeholder-generator.html|Generador de marcadores|Imágenes de marcador instantáneas, de cualquier tamaño y color.
@@ -154,6 +162,7 @@ qr-code-generator.html|Generador de códigos QR|Códigos QR personalizados con c
 <script src="../js/i18n-runtime.js"></script>
 <script src="../js/vendor/onnxruntime/ort.wasm.min.js"></script>
 <script src="../js/app-removebg.js"></script>
+<script src="../js/prefill.js"></script>
 <!--INCLUDE:FOOT-SCRIPTS-MID-->
 <!--INCLUDE:CMDK-OVERLAY-->
 

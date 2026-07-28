@@ -119,6 +119,13 @@
     </div>
 
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Cada capa es un pequeño objeto con desplazamiento x/y, difuminado, extensión, color, opacidad y la marca «interior». Como los selectores de color HTML no permiten transparencia, el valor hexadecimal se descompone en sus bytes rojo, verde y azul y se recombina con el control de opacidad en un color <code>rgba()</code>. Todas las capas se unen con comas en una sola declaración <code>box-shadow</code>, y esa misma cadena se aplica a la vista previa, así que lo que ves es lo que copias. El orden importa: la primera sombra de la lista se dibuja encima, las siguientes quedan debajo.</p>
+      <p>Una sola sombra casi siempre se ve artificial. Las sombras reales tienen un núcleo denso y una caída suave y amplia, algo que <code>0 4px 12px rgba(0,0,0,0.25)</code> no puede lograr por sí solo. El truco de cualquier sistema de diseño cuidado es apilar dos o tres sombras a baja opacidad: una ajustada como <code>0 1px 2px</code> al 10% más una amplia <code>0 8px 24px</code> al 8%. Por separado casi no se notan; juntas dan profundidad real.</p>
+      <p>Todo ocurre en el JavaScript de esta página: ningún color que elijas ni ningún CSS que generes se envía a ningún sitio, algo que la pestaña Red de las herramientas de desarrollador confirma mientras trabajas.</p>
+    </div>
+
 <!--RELATED-TOOLS
 css-gradient-generator.html|Generador de degradados CSS|Crea un degradado lineal o radial de forma visual.
 border-radius-generator.html|Generador de border-radius|Crea un border-radius por esquina de forma visual.

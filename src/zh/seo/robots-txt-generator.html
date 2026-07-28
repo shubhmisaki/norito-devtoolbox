@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>Robots.txt 生成器 | norito</title>
-<meta name="description" content="在浏览器中生成带有 allow/disallow 规则和站点地图引用的 robots.txt 文件，完成后即可下载。" />
+<meta name="description" content="在浏览器中快速生成包含 allow 允许和 disallow 禁止抓取规则、以及 sitemap 站点地图引用地址的标准 robots.txt 文件，配置完成后即可直接下载使用。" />
 <link rel="canonical" href="https://norito.in/zh/seo/robots-txt-generator.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -130,6 +130,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>生成器会按 user-agent 对你的规则分组，所以你在三行中分别为 <code>Googlebot</code> 写的三条规则会被合并到同一个 <code>User-agent: Googlebot</code> 标题下，各组之间用一个空行分隔，符合解析器的预期。路径为空的规则会被跳过，每个值在写入前都会去除换行符，因此在字段中粘贴异常内容也无法注入独立的额外指令。删除所有规则后，输出会回退到 <code>User-agent: *</code> 加一个空的 <code>Disallow:</code>，这是表示“不禁止任何内容”的有效写法。</p>
+      <p>关于 robots.txt 有两点容易让人困惑。第一，<code>Crawl-delay</code> 被保留在这个工具中是因为 Bing 和 Yandex 会遵守它，但自从 Google 在 2019 年正式弃用不受支持的指令以来，Googlebot 完全忽略它；对 Google 而言，你需要通过 Search Console 管理抓取速率。第二，也更重要：Disallow 并不会把页面从搜索结果中移除，它只会阻止抓取。被屏蔽的网址仍可能因为其他网站的链接而被收录，只是不带摘要展示。如果你想让页面彻底不出现在索引中，应该反其道而行：允许抓取，并在该页面上添加 <code>noindex</code> 元标签。</p>
+      <p>文件完全在本页面的 JavaScript 中随你输入实时组装。你的路径、机器人名称和站点地图网址都不会被发送到任何地方，你可以在开发者工具的网络面板中确认这一点。</p>
+    </div>
 
 <!--RELATED-TOOLS
 sitemap-generator.html|站点地图生成器|生成可以在 robots.txt 中引用的 sitemap.xml。

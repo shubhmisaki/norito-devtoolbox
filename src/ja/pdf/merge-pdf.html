@@ -153,16 +153,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">使い方</h3>
-      <p class="note" style="margin-top:0;">
-        結合はブラウザ内で動作するクライアントサイドのPDFライブラリを使い、すべてブラウザ内で完結します。
-        各ページは元のファイルから新しく結合されたPDFへそのままコピーされるため、再レンダリングや
-        画質の劣化はありません。結合前に上下ボタンでファイルを並び替えてください。ページはファイルが
-        リストに並んでいる順番で結合されます。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>PDFファイルはどこかにアップロードされますか?</summary>
@@ -186,6 +176,19 @@
       </details>
     </div>
     <p class="note" style="margin:24px 0;">ブログから： <a href="../blog/how-to-merge-pdfs-for-free.html">無料でPDFを結合する方法（ソフト不要、サインアップ不要）</a></p>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>結合はpdf-libで動作します。これはブラウザのメモリ内でファイルの内部構造に直接作用するPDFライブラリです。結合をクリックすると、ツールは空のPDFを作成し、表示された順序でファイルを処理しながら各ファイルに対して<code>copyPages()</code>を呼び出します。これにより各ページが、そのフォント、画像、ベクターアートワーク、注釈も含めてコピーされます。</p>
+      <p>正直な注意点として、<code>copyPages()</code>はページツリーをコピーしますが、PDFのしおりはコピーされないファイルの別の部分に存在します。ページの表示コンテンツは常に問題なく到着します。</p>
+      <p>ファイルがタブから出ることはありません。自分で確認できます。開発者ツールを開き、ネットワークタブを見て、PDFを追加して結合してください。どのリクエストもドキュメントをどこかに運ぶことはありません。</p>
+    </div>
+
+<!--RELATED-TOOLS
+split-pdf.html|PDFファイルを分割|PDFからページを抽出したり複数ファイルに分割したりします。
+organize-pdf.html|PDFページを削除・並び替え|ページを削除したり並び替えたりします。
+compress-pdf.html|PDFを圧縮|大きなPDFファイルのサイズを小さくします。
+-->
   </div>
 </main>
 

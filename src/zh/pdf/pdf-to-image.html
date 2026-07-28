@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>在线免费将 PDF 转换为 JPG 或 PNG | norito</title>
-<meta name="description" content="将 PDF 页面转换为 JPG 或 PNG 图片。选择分辨率、指定页面后下载。完全在浏览器中运行，文件不会被上传。" />
+<meta name="description" content="将 PDF 文档的指定页面批量转换为 JPG 或 PNG 格式的图片文件。可自由选择输出分辨率高低、指定要转换的具体页码范围后再下载，全程无需上传文件到服务器。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/pdf-to-image.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -188,13 +188,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">工作原理</h3>
-      <p class="note" style="margin-top:0;">
-        每个选中的页面都会在你的浏览器中渲染到画布上，按你选择的分辨率导出为图片。不会发送到任何地方，PDF 渲染库完全在客户端运行。单个页面会直接下载，多个页面会打包成 .zip。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>我的 PDF 文件会被上传吗？</summary>
@@ -221,6 +214,19 @@
         <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>这个工具使用 pdf.js，也就是 Firefox 用来显示 PDF 的同一渲染引擎，完全在你的浏览器中运行。每个选中的页面都会分配一个画布：工具向 pdf.js 请求该页在你所选缩放比例下的视口，pdf.js 随后逐个字形、逐条矢量图形地执行该页的绘制指令，并解码嵌入的图片，全部绘制到画布上。画布随后通过 <code>canvas.toBlob()</code> 导出为 PNG 或 JPEG。</p>
+      <p>DPI 设置本质上是一个缩放系数。PDF 页面以点为单位度量，每英寸 72 点，因此 300 DPI 渲染约相当于 4.2 倍，一张标准 A4 页面在 300 DPI 下大约是 2480×3508 像素，这也是为什么长文档的高 DPI 转换会明显更耗时、生成的文件也大得多。</p>
+      <p>大多数转换工具会忽略的一个细节：JPEG 不支持透明度，如果直接导出画布，带透明背景的 PDF 页面会变成黑色背景。这个工具在选择 JPEG 时会先把画布填充为白色再渲染，让页面看起来像纸张。PNG 则会原样保留透明度。你可以确认没有任何内容被上传：打开开发者工具，进入网络面板并进行转换。</p>
+    </div>
+
+<!--RELATED-TOOLS
+jpg-png-to-pdf.html|JPG/PNG 转 PDF|将图片合并为一个 PDF。
+extract-text.html|提取文字|从 PDF 中提取文字内容。
+compress-pdf.html|压缩 PDF|缩小大型 PDF 的文件大小。
+-->
   </div>
 </main>
 

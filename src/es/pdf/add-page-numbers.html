@@ -187,15 +187,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">Cómo funciona</h3>
-      <p class="note" style="margin-top:0;">
-        Los números de página se dibujan directamente sobre cada página con una fuente estándar,
-        todo dentro de tu navegador. Los formatos "de N" y "/ N" usan el número total de páginas del
-        documento; la numeración en sí empieza desde el número inicial que hayas indicado.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>¿Se suben mis archivos PDF a algún sitio?</summary>
@@ -218,6 +209,19 @@
         <p>Todavía no. La herramienta no puede leer PDF protegidos con contraseña o cifrados y mostrará un error, quita la contraseña primero con un lector de PDF.</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La herramienta carga tu PDF con pdf-lib, una librería que edita la estructura del archivo directamente en la memoria del navegador, y añade una pequeña instrucción de texto al flujo de contenido de cada página. La fuente es Helvetica, una de las 14 fuentes estándar que todo visor de PDF debe incluir, así que no hace falta incrustar ningún archivo de fuente y el resultado crece solo unos pocos cientos de bytes en total.</p>
+      <p>La colocación se mide, no se adivina. Para cada página, la herramienta pide a la fuente el ancho exacto del texto renderizado, así que «Página 9 de 120» se alinea con la misma precisión que «9», y calcula las coordenadas desde tu posición elegida con un margen fijo. Como el ancho se recalcula por página, la alineación se mantiene limpia incluso cuando la numeración pasa de 9 a 10 a 100.</p>
+      <p>Puedes verificar la privacidad en unos diez segundos: abre las herramientas de desarrollador, mira la pestaña Red y añade tus números. El archivo se lee, modifica y descarga por completo dentro de esta pestaña; ninguna solicitud contiene jamás tu documento.</p>
+    </div>
+
+<!--RELATED-TOOLS
+add-watermark.html|Añadir marca de agua|Estampa texto en todas las páginas.
+merge-pdf.html|Unir PDF|Combina varios PDF en uno solo.
+sign-pdf.html|Firmar PDF|Dibuja o escribe una firma.
+-->
   </div>
 </main>
 <!--INCLUDE:FOOTER:standard-->

@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>UTM 链接生成器：营销活动跟踪网址生成工具 | norito</title>
-<meta name="description" content="通过一个简单表单，在浏览器中生成带完整 UTM 跟踪参数（来源、媒介、活动、关键词、内容）的营销链接。" />
+<meta name="description" content="通过一个简单直观的表单，在浏览器中快速生成带完整 UTM 跟踪参数（来源渠道、媒介类型、活动名称、关键词和具体内容标识）的营销推广跟踪链接。" />
 <link rel="canonical" href="https://norito.in/zh/seo/utm-builder.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -142,6 +142,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>基础网址通过浏览器自带的 <code>URL</code> API 解析，这也是为什么在你输入 <code>https://</code> 之前会报错：解析器需要一个协议，而这正是你的浏览器用于真实导航的同一个解析器，所以如果这里能接受这个网址，这个网址就能正常使用。五个 <code>utm_</code> 值分别通过 <code>searchParams.set()</code> 应用，它会自动对特殊字符进行百分号编码。使用 <code>set()</code> 而不是字符串拼接，还意味着网址上已有的查询参数会被保留，清空某个字段会移除对应参数而不是留下一个空的 <code>utm_term=</code>。</p>
+      <p>一个会悄悄毁掉活动报表的错误：UTM 值在分析工具中区分大小写。GA4 会把 <code>email</code>、<code>Email</code> 和 <code>EMAIL</code> 当作三个不同的来源，把一个活动的数字拆成三份。请始终使用全小写，绝不偏离。同时也要让 <code>utm_medium</code> 保持在 GA4 默认渠道分组能识别的词汇范围内，比如 <code>email</code>、<code>cpc</code>、<code>social</code> 或 <code>referral</code>；如果自创一个词，你的流量就会落入没人查看的“未分配”分类。</p>
+      <p>网址会随每次按键在本地实时组装，本页面从不请求、发送或记录它。打开开发者工具的网络面板并随意输入：不会触发任何请求。生成好的链接只有在你把它粘贴到实际投放渠道时才会真正被访问。</p>
+    </div>
 
 <!--RELATED-TOOLS
 meta-tag-generator.html|Meta 标签生成器|生成标题、描述和社交标签。

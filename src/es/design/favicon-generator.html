@@ -134,6 +134,13 @@
     </div>
 
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Tu imagen se recorta primero al mayor cuadrado centrado que cabe dentro de ella, y una sola llamada a <code>drawImage()</code> recorta ese cuadrado y lo escala a un canvas del tamaño buscado en un solo paso, así que las imágenes no cuadradas salen recortadas en vez de estiradas. Esto ocurre seis veces, una por cada tamaño: 16, 32, 48, 180, 192 y 512 píxeles, y cada canvas se exporta como PNG. El archivo .zip se ensambla byte a byte en JavaScript e incluye un archivo de texto con las etiquetas <code>&lt;link&gt;</code> exactas para pegar en tu <code>&lt;head&gt;</code>.</p>
+      <p>No hay archivo <code>.ico</code>: todos los navegadores actuales aceptan favicons en PNG. De los tamaños generados, 32×32 cubre las pestañas del navegador en pantallas modernas, 180×180 es lo que usa iOS para los accesos directos de la pantalla de inicio, y 192×192 más 512×512 son los dos tamaños que exige la especificación PWA. Un icono que se ve genial a 512px suele volverse ilegible a 16px, así que prioriza una forma sencilla y buen contraste sobre el detalle fino.</p>
+      <p>La imagen que subes se decodifica, recorta, redimensiona y comprime en la memoria de tu navegador; no existe ningún endpoint de subida en esta página. Vigila la pestaña Red mientras generas: la única transferencia es el .zip terminado, moviéndose de la memoria a tu carpeta de descargas.</p>
+    </div>
+
 <!--RELATED-TOOLS
 css-gradient-generator.html|Generador de degradados CSS|Crea un degradado lineal o radial de forma visual.
 ../../image-converter.html|Conversor de imágenes|Convierte tu logo a otro formato primero.

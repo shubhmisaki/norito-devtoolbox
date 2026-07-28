@@ -130,6 +130,13 @@
       </div>
     </div>
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>El generador mantiene un banco de 36 frases escritas a mano, lo mezcla con un algoritmo Fisher-Yates y va añadiendo frases completas mientras cada una siga cabiendo en el presupuesto restante. Solo la frase que desbordaría el límite se recorta, carácter a carácter, para que el texto termine exactamente en tu objetivo. Cuando el banco se agota en objetivos largos, se vuelve a mezclar y se recorre de nuevo en otro orden.</p>
+      <p>El banco de frases es deliberadamente ASCII puro, y eso importa más de lo que parece: «número de caracteres» es ambiguo en cuanto aparecen acentos o emojis, ya que un validador puede contar unidades UTF-16, puntos de código Unicode o bytes UTF-8, y las tres formas no siempre coinciden. Con ASCII puro, coinciden siempre.</p>
+      <p>La generación es un simple bucle de construcción de texto en el JavaScript de esta página. Abre las herramientas de desarrollador, mira la pestaña Red y pulsa Generar: no se dispara ninguna solicitud, y la herramienta funciona igual con la conexión desactivada.</p>
+    </div>
+
 <!--RELATED-TOOLS
 seo-slug-generator.html|Generador de slugs SEO|Slugs de URL limpios a partir de cualquier título, en vivo.
 markdown-editor.html|Editor Markdown|Editor Markdown de doble panel con vista previa en vivo.

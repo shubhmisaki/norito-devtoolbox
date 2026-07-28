@@ -167,16 +167,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">Cómo funciona</h3>
-      <p class="note" style="margin-top:0;">
-        La rotación ocurre por completo en tu navegador con una librería de PDF que funciona
-        en el lado del cliente. La orientación de cada página seleccionada se actualiza sobre su
-        rotación actual, así que el contenido nunca se vuelve a renderizar, solo se gira. Deja el
-        campo de páginas en blanco para rotar todo el documento.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>¿Se suben mis archivos PDF a algún sitio?</summary>
@@ -199,6 +189,19 @@
         <p>Todavía no. La herramienta no puede leer PDF protegidos con contraseña o cifrados y mostrará un error, quita la contraseña primero con un lector de PDF.</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Cada página de un PDF tiene una entrada <code>/Rotate</code> en su diccionario de página, un único número (0, 90, 180 o 270) que indica al visor hacia dónde girar la página. Esta herramienta usa pdf-lib para leer ese valor en cada página elegida, sumarle la rotación que elegiste, ajustar el resultado al rango 0-359 y escribirlo de vuelta. El contenido real de la página no se toca en absoluto.</p>
+      <p>Esto importa más de lo que parece. Algunos conversores «rotan» un PDF renderizando cada página como imagen, girándola y reconstruyendo el archivo, lo que destruye el texto seleccionable. Una rotación de metadatos es lo opuesto: perfectamente sin pérdida, reversible y prácticamente instantánea incluso en un archivo de 500 páginas.</p>
+      <p>Como en cada herramienta de este sitio, el archivo se queda en la pestaña. Abre las herramientas de desarrollador y mira el panel Red mientras rotas: nada se transmite, el PDF se modifica en memoria y se descarga desde un blob local.</p>
+    </div>
+
+<!--RELATED-TOOLS
+organize-pdf.html|Eliminar y reordenar páginas|Elimina o reordena páginas.
+merge-pdf.html|Unir PDF|Combina varios PDF en uno solo.
+split-pdf.html|Dividir PDF|Extrae páginas o divide un PDF en archivos.
+-->
   </div>
 </main>
 <!--INCLUDE:FOOTER:standard-->

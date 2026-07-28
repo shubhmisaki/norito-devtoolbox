@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>在线免费拆分 PDF 文件 | norito</title>
-<meta name="description" content="从 PDF 中提取指定页面，或将其拆分为多个文件。输入页码范围，如 1-3、5、8-10。完全在浏览器中运行，文件不会被上传。" />
+<meta name="description" content="从一份 PDF 文档中精确提取指定的页面，或者将整份文档拆分成多个独立文件。支持输入具体页码范围，例如 1-3、5、8-10 这样的组合，处理全程在浏览器本地完成。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/split-pdf.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -170,13 +170,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">工作原理</h3>
-      <p class="note" style="margin-top:0;">
-        拆分操作完全在你的浏览器中进行，使用的是运行在客户端的 PDF 处理库。页面会直接从源文件复制，因此不会有重新渲染或画质损失。留空页码框会处理所有页面，也可以用英文逗号分隔列出具体页面和范围。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>我的 PDF 文件会被上传吗？</summary>
@@ -203,6 +196,19 @@
         <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>你输入的页码范围会先被解析，工具会在处理之前将每个数字与文档实际页数进行核对。随后完全在浏览器中运行的 pdf-lib 会把 PDF 的对象结构加载到内存中，并调用 <code>copyPages()</code> 提取所选页面，页面的字体、图片和图形会与存储时完全一致地一并复制。</p>
+      <p>“拆分为独立文件”开关会改变分组的处理方式。关闭时，你列出的所有页面会按你输入的顺序合并进一个文件。开启时，每个逗号分隔的组都会成为独立文件，打包进一个 .zip。</p>
+      <p>这一切都不会经过服务器。打开开发者工具，在拆分时观察网络面板：文件通过浏览器自带的 FileReader 读取，在内存中处理，下载来自本地生成的 blob。</p>
+    </div>
+
+<!--RELATED-TOOLS
+merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。
+organize-pdf.html|删除和重新排列页面|删除或重新排列页面。
+extract-text.html|提取文字|从 PDF 中提取文字内容。
+-->
   </div>
 </main>
 

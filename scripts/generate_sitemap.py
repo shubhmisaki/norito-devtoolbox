@@ -30,6 +30,18 @@ EXCLUDE = {"404.html", "offline.html"}
 TODAY = datetime.date.today().isoformat()
 
 
+NOINDEX_RE = re.compile(r'<meta\s+name="robots"[^>]*\bnoindex\b', re.I)
+
+
+def is_noindex(p):
+    try:
+        with open(p, encoding="utf-8", errors="replace") as f:
+            head = f.read(4096)  # robots meta always lives in <head>, near the top
+    except OSError:
+        return False
+    return bool(NOINDEX_RE.search(head))
+
+
 def collect_pages():
     pages = []
     for root, _dirs, fnames in os.walk("."):
@@ -43,7 +55,11 @@ def collect_pages():
                 if p.startswith("./"):
                     p = p[2:]
                 pages.append(p)
-    return sorted(p for p in pages if p not in EXCLUDE)
+    # Pages tagged <meta name="robots" content="noindex..."> (e.g. privacy/terms)
+    # must never appear in the sitemap -- listing a noindexed URL sends Google
+    # a contradictory signal and wastes crawl budget. Excluded here, not just
+    # hand-picked, so this can't silently drift out of sync again.
+    return sorted(p for p in pages if p not in EXCLUDE and not is_noindex(p))
 
 
 def to_sitemap_path(p):

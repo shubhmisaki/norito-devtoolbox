@@ -158,6 +158,13 @@
     </div>
 
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Tu entrada se divide por saltos de línea, se recorta, y cada línea se valida construyendo un objeto <code>URL</code> real a partir de ella; solo las líneas válidas pasan, y la herramienta te dice cuántas descartó. Cada URL aceptada pasa por un escapador XML que cubre los caracteres especiales, algo que importa: una URL sin escapar puede volver inválido el archivo entero.</p>
+      <p>Lo que la mayoría de herramientas de sitemap no dicen: Google ha declarado que ignora por completo <code>changefreq</code> y <code>priority</code>. El único campo opcional que sí importa es <code>lastmod</code>, y solo si es veraz. Ten también presentes los límites: 50.000 URLs por archivo antes de necesitar un índice.</p>
+      <p>La generación y descarga corren en el JavaScript de esta página. El XML se construye en memoria y se te entrega como un archivo; tu lista de URLs nunca se sube a ningún sitio.</p>
+    </div>
+
 <!--RELATED-TOOLS
 robots-txt-generator.html|Generador de robots.txt|Referencia tu nuevo sitemap desde robots.txt.
 meta-tag-generator.html|Generador de meta tags|Genera el título, la descripción y las etiquetas sociales.

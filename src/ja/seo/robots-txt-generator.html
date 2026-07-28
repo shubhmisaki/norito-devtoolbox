@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>robots.txtジェネレーター | norito</title>
-<meta name="description" content="allow/disallowルールとサイトマップ参照を含むrobots.txtファイルをブラウザ内で作成。完成したらダウンロードできます。" />
+<meta name="description" content="allow（許可）とdisallow（禁止）のルール、およびsitemap（サイトマップ）への参照を含むrobots.txtファイルをブラウザ内で作成できます。完成したらそのままダウンロード可能です。" />
 <link rel="canonical" href="https://norito.in/ja/seo/robots-txt-generator.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -129,6 +129,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>ジェネレーターはルールをユーザーエージェントごとにグループ化します。そのため<code>Googlebot</code>用に3つの別々の行に書かれたルールは、1つの<code>User-agent: Googlebot</code>行の下にまとめられ、パーサーが期待するように各グループは空行で区切られます。パスが空のルールは無視されます。すべてのルールを削除すると、出力は<code>User-agent: *</code>と空の<code>Disallow:</code>に戻ります。これは「何もブロックしない」を表す正しい方法です。</p>
+      <p>robots.txtについて人々を混乱させがちな2つのことがあります。1つ目、<code>Crawl-delay</code>はBingとYandexが尊重するためこのツールに含まれていますが、Googlebotは完全に無視します。Googleは2019年にサポートされていないディレクティブの扱いを公式に終了しました。2つ目、そしてより重要なこと。Disallowはページを検索結果から削除するのではなく、クロールを止めるだけです。ブロックされたURLは、外部からのリンクによって説明文なしでインデックスされ続けることがあります。ページを完全にインデックスから外したい場合は逆をやります。クロールを許可した上で、そのページに<code>noindex</code>タグを設定してください。</p>
+      <p>ファイル全体は、入力中にこのページのJavaScript内で組み立てられます。パスやボット名はどこにも送信されません。開発者ツールのネットワークタブで確認できます。</p>
+    </div>
 
 <!--RELATED-TOOLS
 ../seo/sitemap-generator.html|サイトマップジェネレーター|robots.txtから参照するsitemap.xmlを作成します。

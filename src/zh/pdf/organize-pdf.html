@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>在线免费删除和重新排列 PDF 页面 | norito</title>
-<meta name="description" content="以缩略图形式查看 PDF 每一页，删除不需要的页面，并重新排列剩余页面顺序。完全在浏览器中运行，文件不会被上传。" />
+<meta name="description" content="以缩略图形式直观查看 PDF 文档的每一页内容，勾选删除不需要保留的页面，并通过拖动重新排列剩余页面的先后顺序，全部操作完成后处理过程都在浏览器本地进行。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/organize-pdf.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -152,13 +152,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">工作原理</h3>
-      <p class="note" style="margin-top:0;">
-        缩略图完全在你的浏览器中根据 PDF 渲染生成。点击某页的 X 将其标记为删除，再次点击可撤销。使用上下箭头改变页面位置。点击“保存 PDF”之前，一切改动都不会最终生效。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>我的 PDF 文件会被上传吗？</summary>
@@ -181,6 +174,19 @@
         <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>这里由两个不同的 PDF 引擎协作完成，二者都在你的浏览器中运行。缩略图由 pdf.js（Firefox 的 PDF 渲染引擎）生成：每一页都会被绘制到一个小画布上，保存为紧凑的 JPEG 预览图。这些缩略图只是给你看的，删除按钮和箭头按钮只是在内存中编辑一份列表，在你点击保存之前，实际文件不会有任何改变。</p>
+      <p>保存操作由 pdf-lib 处理，它直接操作 PDF 的对象结构，构建一份全新文档，并按你的最终顺序调用 <code>copyPages()</code>，只复制你保留的页面。一个有用的结果是：被删除的页面是真正消失的，因为输出是从头重建的，而不是在原文件基础上编辑。</p>
+      <p>以上过程都在本地内存中完成。在加载、重排和保存时观察开发者工具的网络面板：没有任何请求会携带你的文档，就连缩略图也是在本地生成的。</p>
+    </div>
+
+<!--RELATED-TOOLS
+split-pdf.html|拆分 PDF|提取页面或拆分为多个文件。
+merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。
+compress-pdf.html|压缩 PDF|缩小大型 PDF 的文件大小。
+-->
   </div>
 </main>
 

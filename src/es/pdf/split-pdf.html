@@ -174,17 +174,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">Cómo funciona</h3>
-      <p class="note" style="margin-top:0;">
-        La división ocurre por completo en tu navegador con una librería de PDF que funciona
-        en el lado del cliente. Las páginas se copian directamente desde tu archivo de origen, así que
-        no hay recompresión ni pérdida de calidad ni se vuelven a renderizar. Deja el campo de páginas
-        en blanco para trabajar con todas las páginas, o indica páginas y rangos concretos separados
-        por comas.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>¿Se suben mis archivos PDF a algún sitio?</summary>
@@ -211,6 +200,19 @@
         <p>Todavía no. La herramienta no puede leer PDF protegidos con contraseña o cifrados y mostrará un error, quita la contraseña primero con un lector de PDF.</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Tu rango de páginas se analiza primero, y la herramienta comprueba cada número contra el total real de páginas del documento antes de hacer nada. Después pdf-lib, corriendo por completo en tu navegador, carga la estructura del PDF en memoria y llama a <code>copyPages()</code> para extraer las páginas elegidas, con sus fuentes, imágenes y gráficos exactamente como están almacenados.</p>
+      <p>El interruptor «Dividir en archivos separados» cambia cómo se tratan los grupos. Desactivado, todas las páginas indicadas terminan en un único PDF combinado, en el orden que escribiste. Activado, cada grupo separado por comas se convierte en su propio archivo, empaquetados en un .zip.</p>
+      <p>Nada de esto toca un servidor. Abre las herramientas de desarrollador y mira la pestaña Red mientras divides: el archivo se lee con el propio FileReader del navegador, se procesa en memoria y la descarga viene de un blob local.</p>
+    </div>
+
+<!--RELATED-TOOLS
+merge-pdf.html|Unir PDF|Combina varios PDF en uno solo.
+organize-pdf.html|Eliminar y reordenar páginas|Elimina o reordena páginas.
+extract-text.html|Extraer texto|Extrae el texto de un PDF.
+-->
   </div>
 </main>
 <!--INCLUDE:FOOTER:standard-->

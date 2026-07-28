@@ -141,6 +141,13 @@
     </div>
 
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Cuatro deslizadores, uno por esquina, cada uno actualiza el resultado al instante. Con «Enlazar todas las esquinas» activado, mover cualquier deslizador copia su valor a las otras tres antes de reconstruir el CSS. Los valores se ensamblan en el orden que usa CSS realmente, en sentido horario desde arriba-izquierda. Esa misma cadena se escribe directamente en el <code>style.borderRadius</code> de la vista previa, así que no es una aproximación del resultado, es literalmente el CSS que copias.</p>
+      <p>Esta herramienta usa píxeles, y los píxeles se comportan distinto a los porcentajes: <code>border-radius: 50%</code> en un rectángulo se resuelve por eje y da una elipse, mientras que un valor grande en píxeles como <code>9999px</code> da la forma de píldora que la mayoría busca. Además, la especificación recorta los radios que se solapan: cuando los radios de un lado suman más que la longitud de ese lado, el navegador los reduce proporcionalmente.</p>
+      <p>Toda la herramienta son unas pocas docenas de líneas de JavaScript que corren en esta página. Los valores van del DOM a la vista previa y de vuelta al recuadro de salida sin ninguna actividad de red, algo que puedes confirmar en la pestaña Red de las herramientas de desarrollador.</p>
+    </div>
+
 <!--RELATED-TOOLS
 css-gradient-generator.html|Generador de degradados CSS|Crea un degradado lineal o radial de forma visual.
 box-shadow-generator.html|Generador de sombras (box-shadow)|Crea un box-shadow de CSS de forma visual.

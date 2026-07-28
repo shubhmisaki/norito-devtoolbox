@@ -245,6 +245,19 @@
         <p>Todavía no. La herramienta no puede leer PDF protegidos con contraseña o cifrados y mostrará un error, quita la contraseña primero con un lector de PDF.</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Cuando dibujas una firma, la herramienta captura tus trazos en un canvas HTML, recorta el espacio vacío alrededor y exporta el resultado como un PNG transparente. Las firmas escritas funcionan igual: la fuente cursiva se renderiza primero en un canvas. En ambos casos, ese PNG se incrusta en la estructura del PDF con la librería pdf-lib y se dibuja sobre la página en la posición y tamaño exactos que elegiste.</p>
+      <p>Todo ocurre dentro de tu pestaña del navegador. El PDF se lee con la API FileReader, se modifica en memoria y se te entrega como descarga. Abre la pestaña Red mientras firmas: ninguna solicitud lleva tu documento ni tu firma a ningún sitio.</p>
+      <p>Una distinción importante: esto añade una firma visual, una imagen colocada sobre la página, que es lo que necesita la mayoría del papeleo cotidiano. No es una firma digital criptográfica del tipo que emiten las autoridades certificadoras, así que un visor de PDF no mostrará un aviso de «firmado y verificado digitalmente».</p>
+    </div>
+
+<!--RELATED-TOOLS
+add-watermark.html|Añadir marca de agua|Estampa texto en todas las páginas.
+merge-pdf.html|Unir PDF|Combina varios PDF en uno solo.
+organize-pdf.html|Eliminar y reordenar páginas|Elimina o reordena páginas.
+-->
   </div>
 </main>
 <!--INCLUDE:FOOTER:standard-->

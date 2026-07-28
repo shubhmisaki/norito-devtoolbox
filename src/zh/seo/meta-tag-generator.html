@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>Meta 标签生成器：标题、描述、OG 标签 | norito</title>
-<meta name="description" content="填写一个简单表单，直接在浏览器中生成标题、meta 描述、Open Graph 和 Twitter 卡片标签。不会上传任何内容。" />
+<meta name="description" content="只需填写一个简单直观的表单，即可直接在浏览器中生成完整的网页标题、meta 描述、Open Graph 社交分享标签和 Twitter 卡片标签代码，填写内容不会被上传。" />
 <link rel="canonical" href="https://norito.in/zh/seo/meta-tag-generator.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -139,6 +139,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>每次按键，页面都会根据你填写的六个字段重新构建整个标签块。每个值都会先去除首尾空格，再经过转义处理，把特殊字符转换为 HTML 实体。只有你实际填写的字段才会生成对应标签，一些决策已经替你做好：图片网址留空时，<code>twitter:card</code> 会从 <code>summary_large_image</code> 降级为 <code>summary</code>，因为大图卡片没有图片就没有意义。字数统计对标题按 60 字符、对描述按 160 字符检查，请把它们当作参考而非硬性规则：Google 是按像素宽度而不是字符数来截断摘要的。</p>
+      <p>大多数标签生成器都不会告诉你的一点：meta description 并不是排名因素，Google 多年来一直这么说。它真正影响的是点击率，因为它通常就是搜索结果中你的链接下方展示的文案。即便如此，当你的描述与搜索意图不匹配时，Google 有一半以上的概率会重写它。用人类能理解的语言来写，控制在 160 字符以内，不必过度纠结。对于社交分享图，1200×630 是安全选择，与 Facebook 推荐的 Open Graph 尺寸一致。</p>
+      <p>一切都在本页面自己的 JavaScript 中完成：标签字符串在本地组装，除非你点击复制用到剪贴板，否则完全不会涉及网络。打开开发者工具，查看网络面板，在每个字段中输入内容：你的标题、网址和账号信息永远不会离开浏览器。</p>
+    </div>
 
 <!--RELATED-TOOLS
 utm-builder.html|UTM 链接生成器|为链接添加营销跟踪参数。

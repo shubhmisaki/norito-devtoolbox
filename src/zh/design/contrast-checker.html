@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>颜色对比度检查器：WCAG AA/AAA | norito</title>
-<meta name="description" content="检查两种颜色之间的对比度，对照 WCAG AA 和 AAA 标准（含正常文字和大号文字），并提供实时预览。" />
+<meta name="description" content="检查任意两种颜色之间的对比度数值，同时对照 WCAG 无障碍标准的 AA 和 AAA 两个等级（分别针对正常文字和大号文字），并提供实时颜色预览效果。" />
 <link rel="canonical" href="https://norito.in/zh/design/contrast-checker.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -137,6 +137,13 @@
           <p class="note" style="margin-top:0;">根据 WCAG 2.1，要达到 AA 标准，正常文字需要 4.5:1 的对比度，大号文字（18pt 以上，或加粗 14pt 以上）需要 3:1。AAA 标准更严格：正常文字需要 7:1，大号文字需要 4.5:1。</p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>对比度使用 WCAG 的真实相对亮度公式计算，而不是近似值。每个通道先除以 255，再通过反 sRGB 伽马曲线线性化：小于等于 0.03928 的值除以 12.92，其余的通过 <code>((c + 0.055) / 1.055)^2.4</code> 计算。线性化后的通道按 0.2126（红）、0.7152（绿）、0.0722（蓝）加权，反映了人眼对每种颜色亮度感知的贡献程度。对比度为 <code>(较亮 + 0.05) / (较暗 + 0.05)</code>，取值范围从纯色相同时的 1:1 到纯黑对纯白时的 21:1。</p>
+      <p>“大号文本”有一个很少被准确引用的精确定义：18pt（约 24px）常规字重，或 14pt（约 18.7px）粗体。这就是为什么 3.2:1 的配色对标题可能完全合规，对正文却是不合格的。公式是对称的：交换前景色和背景色永远不会改变比值，所以交换按钮只是为了预览。一个诚实的局限：这个比值只衡量亮度差异，红色配绿色在纸面上可能超过 4.5:1，但对色觉缺陷人群来说仍然很难分辨。</p>
+      <p>两种颜色的每次变化都会在页面的 JavaScript 中即时完成计算。没有任何颜色值会被发送到任何地方，你可以在拖动取色器时通过开发者工具的网络面板验证。</p>
     </div>
 
 <!--RELATED-TOOLS

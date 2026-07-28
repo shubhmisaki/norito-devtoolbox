@@ -144,6 +144,13 @@
     </div>
 
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La URL base se analiza con la API <code>URL</code> propia del navegador. Cada uno de los cinco valores <code>utm_</code> se aplica con <code>searchParams.set()</code>, que codifica automáticamente los caracteres especiales y conserva los parámetros que ya tenía la URL.</p>
+      <p>El error que arruina silenciosamente los informes de campaña: los valores UTM distinguen mayúsculas en analítica. GA4 mostrará <code>email</code>, <code>Email</code> y <code>EMAIL</code> como tres fuentes distintas. Elige siempre minúsculas y mantén <code>utm_medium</code> dentro del vocabulario que reconoce GA4.</p>
+      <p>La URL se ensambla localmente con cada pulsación y nunca se solicita ni registra desde esta página. El enlace terminado solo viaja a algún sitio cuando lo pegas en tu campaña.</p>
+    </div>
+
 <!--RELATED-TOOLS
 meta-tag-generator.html|Generador de meta tags|Genera el título, la descripción y las etiquetas sociales.
 ../qr-code-generator.html|Generador de códigos QR|Convierte un enlace con UTM en un código QR.

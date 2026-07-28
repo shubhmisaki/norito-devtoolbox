@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>颜色转换器：HEX、RGB、HSL、CMYK | norito</title>
-<meta name="description" content="实时在 HEX、RGB、HSL、CMYK 等格式之间转换颜色数值，每种格式都支持一键复制，方便设计与开发使用。" />
+<meta name="description" content="实时在 HEX、RGB、HSL、CMYK 等主流颜色表示格式之间互相转换数值，每种格式都支持一键复制，方便设计师和前端开发者在不同工具间切换使用。" />
 <link rel="canonical" href="https://norito.in/zh/design/color-converter.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -129,6 +129,13 @@
           <p class="note" style="margin-top:0;">HEX 和 RGB 是网页中最常用的标准格式，HSL 在需要调整明度或饱和度时更直观，而 CMYK 则是印刷流程所需要的格式。</p>
         </div>
       </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>十六进制值通过正则表达式拆分为三组两位数，并按十六进制解析为 0 到 255 的红、绿、蓝值。HSL 遵循标准推导：明度是最大和最小通道的平均值，饱和度取决于两者之差，色相则取决于哪个通道占主导，红、绿、蓝分别锚定在 0、120、240 度。CMYK 使用简单的转换公式：黑色（K）等于 1 减去最强通道值，青、品红、黄则是各通道在扣除黑色后所缺的部分。四个输出结果都四舍五入为整数，因此来回转换可能会产生 1 的偏差。</p>
+      <p>请把 CMYK 的结果当作起点，而不是印刷的真实结果。屏幕颜色以 sRGB 定义，要正确转换为油墨覆盖率，需要描述具体印刷机、油墨和纸张的 ICC 色彩配置文件。这里使用的公式假设的是理想化油墨，许多鲜艳的屏幕颜色，比如饱和橙色、电光蓝、亮绿色，其实超出了铜版纸能呈现的范围。任何印刷厂都会用自己的配置文件重新转换你的文件。</p>
+      <p>以上数学运算都在本页面的几个小函数中完成；选择颜色只会触发纯本地运算和四次 DOM 更新。没有任何请求，也没有任何发送，你可以在点击取色器时通过开发者工具的网络面板确认这一点。</p>
     </div>
 
 <!--RELATED-TOOLS

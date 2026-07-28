@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>在线免费为 PDF 添加页码 | norito</title>
-<meta name="description" content="为 PDF 的每一页添加页码，可自由选择位置、格式、起始数字和字号大小。完全在浏览器中运行，文件不会被上传到服务器。" />
+<meta name="description" content="为 PDF 文档的每一页批量添加页码，可自由选择显示位置、编号格式、起始起点数字以及字号大小。整个处理过程完全在浏览器中进行，文件不会被上传到任何服务器。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/add-page-numbers.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -183,13 +183,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">工作原理</h3>
-      <p class="note" style="margin-top:0;">
-        页码会使用标准字体直接绘制在每一页上，完全在你的浏览器中完成。“共 N 页”和“/ N”格式使用文档的总页数，编号本身则从你设置的起始数字开始。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>我的 PDF 文件会被上传吗？</summary>
@@ -212,6 +205,19 @@
         <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>工具使用 pdf-lib 加载你的 PDF，这是一个直接在浏览器内存中编辑文件结构的库，并在每一页的内容流中追加一条小小的文字绘制指令。字体使用 Helvetica，这是每个 PDF 阅读器都必须内置的 14 种标准字体之一，因此无需嵌入任何字体文件，输出文件只会增加几百字节。</p>
+      <p>位置是精确计算出来的，而不是估计的。工具会为每一页向字体查询渲染文字的确切宽度，因此“第 9 页，共 120 页”和“9”能获得同样精确的对齐，再根据你选择的位置和固定边距计算坐标。由于宽度是逐页重新计算的，即使页码从 9 变到 10、再变到 100，对齐效果依然整齐。</p>
+      <p>你可以在大约十秒内验证隐私声明：打开开发者工具，查看网络面板，添加你的页码。文件的读取、修改和下载都完全在这个标签页内完成，没有任何请求会包含你的文档。</p>
+    </div>
+
+<!--RELATED-TOOLS
+add-watermark.html|添加水印|为每一页盖上文字水印。
+merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。
+sign-pdf.html|PDF 签名|手绘或输入签名。
+-->
   </div>
 </main>
 

@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>在线免费为 PDF 添加水印 | norito</title>
-<meta name="description" content="在每一页上盖上斜向文字水印，比如“机密”或“草稿”。选择文字、大小、颜色、透明度和角度。完全在浏览器中运行。" />
+<meta name="description" content="在 PDF 每一页上叠加斜向文字水印，比如常见的“机密”或“草稿”字样。可自定义水印文字、大小、颜色、透明度和倾斜角度，处理过程完全在浏览器中本地完成。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/add-watermark.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -158,13 +158,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">工作原理</h3>
-      <p class="note" style="margin-top:0;">
-        水印会作为真实文字直接绘制在每一页上，居中、旋转并设为半透明，完全在你的浏览器中完成。它会成为页面本身的一部分，所以如果以后可能需要没有水印的版本，请保留一份原始文件。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>我的 PDF 文件会被上传吗？</summary>
@@ -187,6 +180,19 @@
         <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>你的 PDF 由 pdf-lib 加载，它直接在浏览器内存中编辑文件的对象结构。对每一页，工具都会以你选择的字号测量水印文字的宽度，从页面自身尺寸中找出精确的中心点，并在该页的内容流中追加一条文字绘制指令。不透明度是真实的 PDF 透明度效果，而不是一种发灰的颜色，所以水印能正确叠加在照片和深色背景之上。</p>
+      <p>因为水印是以真正的矢量文字绘制的，所以在任何缩放级别下都保持清晰锐利，每份文档只增加几百字节，不会有任何页面被栅格化，文件中原有的内容也不会被重新压缩。</p>
+      <p>请诚实地看待水印的作用：它是一种威慑，而不是一把锁。文字是作为普通绘图操作叠加在页面内容之上的，任何拥有完整 PDF 编辑器的人都可以选中并删除它。这一点对几乎所有水印工具都成立，包括付费版本。</p>
+    </div>
+
+<!--RELATED-TOOLS
+add-page-numbers.html|添加页码|为每一页添加页码。
+sign-pdf.html|PDF 签名|手绘或输入签名。
+../watermark-image.html|图片水印|为图片添加实时预览的文字水印。
+-->
   </div>
 </main>
 

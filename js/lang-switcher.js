@@ -62,21 +62,34 @@
   // root, e.g. "index.html" or "pdf/merge-pdf.html") actually exist in
   // every language. Anything else only exists in English, so linking to
   // "es/that-page.html" would 404. Keep this in sync with the page lists
-  // under /es/, /zh/, /ar/, /hi/, /ru/, /ja/.
+  // under /es/, /zh/, /ar/, /hi/, /ru/, /ja/. Generated from the actual file
+  // tree (every EN page that has all 6 locale counterparts on disk) rather
+  // than hand-maintained, since hand-maintaining this list is exactly what
+  // let it silently drift out of sync with 40+ real translated pages before.
   var TRANSLATABLE_PAGES = [
-    "index.html", "about.html", "changelog.html", "contact.html", "how-it-works.html", "privacy.html",
-    "compress-image.html", "json-formatter.html", "limited-text-generator.html", "markdown-editor.html",
-    "password-generator.html", "placeholder-generator.html", "qr-code-generator.html", "remove-background.html",
-    "seo-slug-generator.html", "test-file-generator.html",
-    "compare/index.html", "compare/norito-vs-ilovepdf.html", "compare/norito-vs-smallpdf.html", "compare/norito-vs-tinypng.html",
-    "design/index.html", "design/border-radius-generator.html", "design/box-shadow-generator.html",
-    "design/color-converter.html", "design/color-palette-extractor.html", "design/contrast-checker.html",
-    "design/css-gradient-generator.html", "design/favicon-generator.html",
-    "developer/index.html", "images/index.html", "text/index.html", "utilities/index.html",
-    "pdf/index.html", "pdf/add-page-numbers.html", "pdf/add-watermark.html", "pdf/compress-pdf.html",
-    "pdf/compress-pdf-for-email.html", "pdf/extract-text.html", "pdf/jpg-png-to-pdf.html", "pdf/merge-pdf.html",
-    "pdf/organize-pdf.html", "pdf/pdf-to-image.html", "pdf/rotate-pdf.html", "pdf/sign-pdf.html", "pdf/split-pdf.html",
-    "seo/index.html", "seo/meta-tag-generator.html", "seo/robots-txt-generator.html", "seo/sitemap-generator.html", "seo/utm-builder.html"
+    "about.html", "base64-encoder.html", "blog/client-side-vs-server-side-tools.html", "blog/how-password-entropy-works.html",
+    "blog/how-to-merge-pdfs-for-free.html", "blog/image-compression-without-losing-quality.html", "blog/image-format-guide-2026.html", "blog/index.html",
+    "blog/jpg-vs-png-vs-webp.html", "blog/pdf-compression-explained.html", "blog/wcag-contrast-checking-guide.html", "blog/what-is-a-uuid.html",
+    "case-converter.html", "changelog.html", "character-counter.html", "compare/index.html",
+    "compare/norito-vs-ilovepdf.html", "compare/norito-vs-smallpdf.html", "compare/norito-vs-tinypng.html", "compress-image.html",
+    "contact.html", "cron-expression-parser.html", "crop-image.html", "csv-to-json.html",
+    "csv-viewer.html", "design/border-radius-generator.html", "design/box-shadow-generator.html", "design/color-converter.html",
+    "design/color-palette-extractor.html", "design/contrast-checker.html", "design/css-gradient-generator.html", "design/favicon-generator.html",
+    "design/index.html", "developer/index.html", "find-and-replace.html", "hash-generator.html",
+    "how-it-works.html", "html-entity-encoder.html", "image-converter.html", "images/index.html",
+    "index.html", "jpg-to-png-converter.html", "json-diff.html", "json-formatter.html",
+    "jwt-decoder.html", "limited-text-generator.html", "lorem-ipsum-generator.html", "markdown-editor.html",
+    "number-base-converter.html", "password-generator.html", "pdf/add-page-numbers.html", "pdf/add-watermark.html",
+    "pdf/compress-pdf-for-email.html", "pdf/compress-pdf.html", "pdf/extract-text.html", "pdf/index.html",
+    "pdf/jpg-png-to-pdf.html", "pdf/merge-pdf.html", "pdf/organize-pdf.html", "pdf/pdf-to-image.html",
+    "pdf/rotate-pdf.html", "pdf/sign-pdf.html", "pdf/split-pdf.html", "placeholder-generator.html",
+    "privacy.html", "qr-code-generator.html", "regex-tester.html", "remove-background.html",
+    "remove-duplicate-lines.html", "remove-image-background-free.html", "remove-metadata.html", "resize-image-for-instagram.html",
+    "resize-image.html", "seo-slug-generator.html", "seo/index.html", "seo/meta-tag-generator.html",
+    "seo/robots-txt-generator.html", "seo/sitemap-generator.html", "seo/utm-builder.html", "sort-lines.html",
+    "terms.html", "test-file-generator.html", "text-diff.html", "text/index.html",
+    "timestamp-converter.html", "url-encoder-decoder.html", "utilities/index.html", "uuid-generator.html",
+    "watermark-image.html", "word-counter.html", "yaml-to-json-converter.html"
   ];
   var hasTranslation = TRANSLATABLE_PAGES.indexOf(pagePath) !== -1;
 

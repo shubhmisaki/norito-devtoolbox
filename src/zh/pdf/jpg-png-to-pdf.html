@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>在线免费将 JPG 或 PNG 转换为 PDF | norito</title>
-<meta name="description" content="将一张或多张图片合并成一个 PDF。调整顺序、选择页面尺寸后下载。完全在浏览器中运行，文件不会被上传。" />
+<meta name="description" content="将一张或多张 JPG、PNG 图片按顺序合并转换成一个完整的 PDF 文件。可自由调整图片排列顺序、选择输出页面尺寸后再下载，图片全程不会被上传到服务器。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/jpg-png-to-pdf.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -159,13 +159,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">工作原理</h3>
-      <p class="note" style="margin-top:0;">
-        每张图片会成为一页，按上方显示的顺序添加。转换操作完全在你的浏览器中进行，使用的是运行在客户端的 PDF 处理库。JPG 和 PNG 会尽可能直接嵌入，其他格式会先解码再重新编码，以便嵌入。
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>我的图片会被上传吗？</summary>
@@ -188,6 +181,19 @@
         <p>多数情况下，JPG 和 PNG 图片会原样嵌入。有些图片需要重新编码才能嵌入（部分 JPEG 变体，或非 JPG/PNG 格式），这些会先无损转换为 PNG。</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>PDF 原生支持这个工具关心的两种图片格式：JPEG 和类似 PNG 的原始像素数据。对于普通 JPG，pdf-lib 会直接把你文件的字节原封不动地嵌入 PDF，不解码、不重新编码，零质量损失，生成的 PDF 体积大致等于输入的 JPEG 总和。PNG 会被拆解为 PDF 所需的原始像素格式，同样无损。每张图片随后成为一页，通过一条 <code>drawImage</code> 指令放置。</p>
+      <p>PDF 无法直接存储的格式，比如 WebP、GIF 以及一些 pdf-lib 无法解析的特殊 JPEG 变体，会走另一条路径：浏览器用 <code>createImageBitmap()</code> 解码图片，绘制到画布上，再重新导出为 PNG 后嵌入。这种转换在像素层面是无损的，不过重新编码后的文件可能比原图更大。</p>
+      <p>你的照片不会离开你的设备。转换时观察开发者工具的网络面板：图片在本地读取，由 pdf-lib 在内存中组装成 PDF，再从 blob 下载。没有任何内容被传输，当图片是证件照或个人文件时，这一点尤为重要。</p>
+    </div>
+
+<!--RELATED-TOOLS
+pdf-to-image.html|PDF 转 JPG/PNG|将页面转换为图片。
+merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。
+../compress-image.html|压缩图片|将图片压缩到目标文件大小。
+-->
   </div>
 </main>
 

@@ -214,6 +214,19 @@
         <p>Todavía no. La herramienta no puede leer PDF protegidos con contraseña o cifrados y mostrará un error, quita la contraseña primero con un lector de PDF.</p>
       </details>
     </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La herramienta clasifica primero cada página de tu PDF: las páginas con texto real, extraíble, se dejan intactas estructuralmente, así que sus fuentes y gráficos vectoriales se mantienen nítidos y el texto sigue siendo seleccionable. Las páginas sin texto significativo, típicamente escaneos, se vuelven a renderizar a una resolución más baja y se recodifican como JPEG. Por eso los documentos escaneados se reducen drásticamente mientras que un informe lleno de texto apenas cambia.</p>
+      <p>Todo corre sobre las librerías pdf.js y pdf-lib dentro de tu pestaña. Tu documento nunca se sube; puedes vigilar la pestaña Red mientras comprimes y comprobar que nada sale de tu equipo, algo que importa cuando el adjunto es un contrato o un documento de identidad.</p>
+      <p>Un detalle útil al enviar por correo: los límites de adjuntos son más ajustados de lo que parecen. El límite de 25 MB de Gmail se aplica al mensaje codificado, y el correo codifica los adjuntos en base64, lo que los infla en torno a un tercio. Un límite de «25 MB» en la práctica equivale a un archivo de unos 18 MB, así que si tu PDF está justo por debajo del límite, comprímelo de todos modos.</p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-pdf.html|Comprimir PDF|Reduce el tamaño de un PDF grande.
+split-pdf.html|Dividir PDF|Extrae páginas o divide un PDF en archivos.
+merge-pdf.html|Unir PDF|Combina varios PDF en uno solo.
+-->
   </div>
 </main>
 <!--INCLUDE:FOOTER:standard-->

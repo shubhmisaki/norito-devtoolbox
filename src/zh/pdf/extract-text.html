@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>在线免费从 PDF 中提取文字 | norito</title>
-<meta name="description" content="从 PDF 中提取全部文字，预览、复制，或下载为 .txt 文件。完全在浏览器中运行，文件不会被上传。" />
+<meta name="description" content="从 PDF 文件中批量提取全部纯文本内容，提取结果可以直接在页面预览、一键复制到剪贴板，或者下载保存为独立的 .txt 文本文件，全程在浏览器中本地完成。" />
 <link rel="canonical" href="https://norito.in/zh/pdf/extract-text.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -160,6 +160,19 @@
       </details>
     </div>
     <p class="note" style="margin:24px 0;">来自博客： <a href="../blog/pdf-compression-explained.html">为什么 PDF 压缩对扫描件效果显著，对报告文档却几乎没用</a></p>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>PDF 文件并不存储段落、句子甚至单词，它存储的是带位置的字形序列：“在这些坐标、用这种字体放置这些字符形状”。这个工具使用 Firefox 的 PDF 引擎 pdf.js，通过 <code>getTextContent()</code> 遍历每一页的内容流，收集所有文字显示操作，再把这些片段用空格拼接、折叠多余空白，逐页生成你看到的纯文本。</p>
+      <p>这种存储方式解释了提取结果可能出乎意料的两个原因。第一是阅读顺序：pdf.js 大致按片段在文件中出现的顺序返回，对多栏排版或表格来说，这未必是人类阅读的顺序。第二，也更根本：扫描版 PDF 完全不含文字，扫描仪产出的只是一张页面的照片，除非经过 OCR 处理，否则没有字形可供提取，工具会如实报告没有找到内容，不会去猜测或臆造文字。</p>
+      <p>提取会在你放入文件的瞬间于本地工作线程中完成。打开开发者工具，查看网络面板：无论是合同还是医疗报告，都不会有任何请求携带你的文档或其中的文字。</p>
+    </div>
+
+<!--RELATED-TOOLS
+pdf-to-image.html|PDF 转 JPG/PNG|将页面转换为图片。
+split-pdf.html|拆分 PDF|提取页面或拆分为多个文件。
+../word-counter.html|字数统计|实时统计字数、句数和段落数。
+-->
   </div>
 </main>
 

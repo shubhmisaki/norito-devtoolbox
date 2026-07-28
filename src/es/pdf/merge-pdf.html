@@ -154,17 +154,6 @@
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
-    <div class="panel" style="margin-top:32px;">
-      <h3 style="margin-top:0;">Cómo funciona</h3>
-      <p class="note" style="margin-top:0;">
-        Unir los PDF ocurre por completo en tu navegador con una librería de PDF que funciona
-        en el lado del cliente. Cada página se copia directamente desde tus archivos de origen a un
-        nuevo PDF combinado, así que no hay recompresión ni pérdida de calidad ni se vuelve a
-        renderizar nada. Reordena los archivos con los botones de subir y bajar antes de unirlos,
-        ya que las páginas se combinan en el orden en que aparecen los archivos en la lista.
-      </p>
-    </div>
-
     <div class="faq-list" style="margin-top:32px;">
       <details class="faq-item">
         <summary>¿Se suben mis archivos PDF a algún sitio?</summary>
@@ -188,6 +177,19 @@
       </details>
     </div>
     <p class="note" style="margin:24px 0;">Del blog: <a href="../blog/how-to-merge-pdfs-for-free.html">Cómo Combinar PDFs Gratis (Sin Software, Sin Registro)</a></p>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La unión corre sobre pdf-lib, una librería PDF que opera directamente sobre la estructura interna del archivo en la memoria de tu navegador. Al pulsar unir, la herramienta crea un PDF vacío y recorre tus archivos en el orden mostrado, llamando a <code>copyPages()</code> en cada uno. Eso copia cada página junto con todo lo que referencia: fuentes, imágenes, gráficos vectoriales y anotaciones.</p>
+      <p>Un matiz honesto: <code>copyPages()</code> copia el árbol de páginas, pero los marcadores de un PDF viven en otra parte del archivo que no se copia. El contenido visible de las páginas siempre llega intacto.</p>
+      <p>Tus archivos nunca salen de la pestaña. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador, la pestaña Red, añade tus PDF y únelos. Ninguna solicitud lleva tus documentos a ningún sitio.</p>
+    </div>
+
+<!--RELATED-TOOLS
+split-pdf.html|Dividir PDF|Extrae páginas o divide un PDF en archivos.
+organize-pdf.html|Eliminar y reordenar páginas|Elimina o reordena páginas.
+compress-pdf.html|Comprimir PDF|Reduce el tamaño de un PDF grande.
+-->
   </div>
 </main>
 <!--INCLUDE:FOOTER:standard-->

@@ -140,6 +140,13 @@
       </div>
     </div>
 
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>El ratio se calcula con la fórmula real de luminancia relativa de WCAG, no una aproximación. Cada canal se divide entre 255 y se lineariza para deshacer la curva gamma sRGB, y los canales lineales se ponderan 0.2126 rojo, 0.7152 verde y 0.0722 azul, reflejando cuánto contribuye cada uno al brillo percibido. El ratio de contraste es <code>(más claro + 0.05) / (más oscuro + 0.05)</code>, entre 1:1 para colores idénticos y 21:1 para negro puro sobre blanco puro.</p>
+      <p>«Texto grande» tiene una definición precisa que casi nadie cita: 18pt (unos 24px) normal, o 14pt (unos 18.7px) en negrita. La fórmula es simétrica: intercambiar el primer plano y el fondo nunca cambia el ratio, así que el botón de intercambio es solo para previsualizar. Una limitación honesta: el ratio solo mide diferencia de luminancia. Un rojo sobre verde puede superar 4.5:1 en el papel y seguir siendo difícil de leer para alguien con deficiencia de visión de color.</p>
+      <p>Ambos colores pasan por esas fórmulas aquí mismo, en el JavaScript de la página, con cada cambio. No se transmite ningún valor de color a ningún sitio, algo que puedes verificar en la pestaña Red mientras mueves los selectores.</p>
+    </div>
+
 <!--RELATED-TOOLS
 color-converter.html|Conversor de color|Convierte cualquier color a HEX, RGB, HSL o CMYK.
 color-palette-extractor.html|Extractor de paleta de colores|Extrae los colores dominantes de una imagen.

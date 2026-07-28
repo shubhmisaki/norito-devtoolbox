@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>ボックスシャドウジェネレーター:CSS box-shadow作成 | norito</title>
-<meta name="description" content="単一または複数レイヤーのCSS box-shadowをブラウザ内でビジュアルに作成。見た目が決まったらCSSをコピーできます。" />
+<meta name="description" content="単一レイヤーまたは複数レイヤーを重ねたCSS box-shadowの影効果をブラウザ内でビジュアルに作成できます。オフセットやぼかし具合をリアルタイムでプレビューしながらCSSコードをコピーできます。" />
 <link rel="canonical" href="https://norito.in/ja/design/box-shadow-generator.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -127,6 +127,13 @@
       </div>
     </div>
 
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>各シャドウレイヤーは、水平・垂直オフセット、ぼかし、広がり、色、不透明度、「内側」フラグを持つ小さなオブジェクトです。HTMLのカラーピッカーは透明度をサポートしないため、16進数の値は赤・緑・青の成分に分解され、不透明度スライダーと組み合わされて<code>rgba()</code>の色になります。すべてのレイヤーはカンマで区切られて1つの<code>box-shadow</code>宣言にまとめられ、同じ文字列がプレビュー要素に適用されるため、見えているものがそのままコピーされます。順序は重要です。リストの最初のシャドウが他の上に描画されます。</p>
+      <p>シャドウが1つだけだと、ほぼ常に不自然に見えます。本物のシャドウはタイトで濃いコアと、柔らかく広いフェードを持っており、<code>0 4px 12px rgba(0,0,0,0.25)</code>のような単一の値では両方を実現できません。よく練られたどのデザインシステムでも使われる手法は、低い不透明度の2〜3個のシャドウを重ねることです。10%のタイトな<code>0 1px 2px</code>と、8%の広い<code>0 8px 24px</code>のように。それぞれ単体ではほとんど気づかれませんが、組み合わせると本物の奥行き感が生まれます。</p>
+      <p>すべてこのページのJavaScript内で動作します。選んだ色や生成されたCSSはどこにも送信されません。作業中に開発者ツールのネットワークタブで確認できます。</p>
+    </div>
 
 <!--RELATED-TOOLS
 css-gradient-generator.html|CSSグラデーションジェネレーター|線形または放射状のグラデーションをビジュアルに作成します。

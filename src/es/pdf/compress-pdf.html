@@ -204,6 +204,19 @@
       </details>
     </div>
     <p class="note" style="margin:24px 0;">Del blog: <a href="../blog/pdf-compression-explained.html">Por Qué la Compresión de PDF Funciona Genial en Escaneos y Casi Nada en Informes</a></p>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La mayoría de «compresores de PDF» online hacen algo tosco: convierten cada página en JPEG y apilan las imágenes de vuelta en un PDF, lo que reduce el tamaño pero destruye en silencio tu texto seleccionable. Esta herramienta funciona distinto: usa pdf.js para comprobar cada página en busca de texto real extraíble antes de tocar nada, y separa el documento en dos tipos de páginas tratadas por completo diferente.</p>
+      <p>Las páginas con texto real nunca se convierten a píxeles; solo se tocan las fotos incrustadas, que se recomprimen a la calidad elegida. Las páginas sin texto, que es lo que es una página escaneada, se pueden aplanar sin riesgo: se vuelven a renderizar a la resolución elegida y se guardan como un único JPEG. Si el archivo reconstruido no queda más pequeño que el original, recibes tu original intacto, byte a byte.</p>
+      <p>Todo esto corre en la memoria de tu navegador. Abre las herramientas de desarrollador y mira la pestaña Red mientras comprimes un contrato o un extracto bancario: ninguna solicitud lleva tu archivo. La descarga se genera localmente desde un blob.</p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-pdf-for-email.html|Comprimir PDF para email|Reduce un PDF por debajo del límite de adjuntos de Gmail.
+merge-pdf.html|Unir PDF|Combina varios PDF en uno solo.
+../compress-image.html|Comprimir imagen|Reduce una imagen a un tamaño objetivo.
+-->
   </div>
 </main>
 <!--INCLUDE:FOOTER:standard-->

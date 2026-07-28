@@ -3,7 +3,7 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>去除照片背景：免费，浏览器内完成 | norito</title>
-<meta name="description" content="直接在浏览器中自动去除人物照片的背景，无需上传到服务器，可导出透明 PNG 或替换为自定义纯色背景。" />
+<meta name="description" content="直接在浏览器中自动分析并去除人物照片的背景区域，图片全程无需上传到远程服务器处理，处理完成后可导出为透明底 PNG 图片，或替换成你自定义指定的纯色背景。" />
 <link rel="canonical" href="https://norito.in/zh/remove-background.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
@@ -83,6 +83,7 @@
     <p class="lede">
       完全在浏览器中从照片中抠出人像。图片不会离开你的设备。基于轻量级的开源分割模型,因此在人物是照片主体时效果最佳。
     </p>
+    <p class="note">需要无需注册、无水印、无使用次数限制的版本？试试<a href="remove-image-background-free.html">免费去除图片背景</a>。</p>
     </div>
   </div>
     <div class="result-box" style="margin-bottom:28px;">
@@ -139,6 +140,13 @@
       </div>
     </div>
 
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>核心工作由 MODNet 完成，这是一个开源人像抠图网络，通过 ONNX Runtime Web（微软基于 WebAssembly 构建的 ONNX 推理引擎）运行，完全由本网站自己的文件提供服务。与普通的分割模型不同，MODNet 训练用于预测真实的 alpha 蒙版，也就是逐像素的不透明度值，而不是粗暴地判断“人物或背景”，所以头发和柔和的边缘会比硬边裁剪更接近真正的透明效果。图片首先会被缩放到最长边接近 512px，这正是模型训练时使用的分辨率。</p>
+      <p>即使是真实的 alpha 蒙版，边缘也会有一些噪点，因此工具还会做一次清理：小范围的方框模糊平滑掉缩放产生的伪影，随后 alpha 曲线会经过一次平滑重映射，让接近零的背景雾化区域完全变透明，让确信的主体像素完全不透明，同时保留头发、模糊、运动这类中间的柔和过渡。</p>
+      <p>这个网络的加载过程可以在开发者工具中验证：首次运行时，网络面板会显示模型和运行时文件从本网站加载，总计约 18 MB。之后无论处理多少张照片，都不会有任何请求携带你的图片，照片会完全在这个标签页内被读入内存、抠图并合成。</p>
+    </div>
+
 <!--RELATED-TOOLS
 compress-image.html|压缩图片|直接压缩到指定文件大小，无需反复调整质量。
 placeholder-generator.html|占位图生成器|即时生成任意尺寸和颜色的占位图片。
@@ -154,6 +162,7 @@ qr-code-generator.html|二维码生成器|自定义颜色并添加中心 Logo �
 <script src="../js/i18n-runtime.js"></script>
 <script src="../js/vendor/onnxruntime/ort.wasm.min.js"></script>
 <script src="../js/app-removebg.js"></script>
+<script src="../js/prefill.js"></script>
 <!--INCLUDE:FOOT-SCRIPTS-MID-->
 <!--INCLUDE:CMDK-OVERLAY-->
 
