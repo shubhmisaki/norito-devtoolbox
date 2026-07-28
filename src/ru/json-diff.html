@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JSON Diff: сравните два JSON-файла онлайн | norito</title>
+<meta name="description" content="Сравните два JSON-документа и увидьте точно, что было добавлено, удалено и изменено, прямо в браузере. Ничего не загружается." />
+<link rel="canonical" href="https://norito.in/ru/json-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSON Diff: сравните два JSON-файла онлайн | norito" />
+<meta property="og:description" content="Сравните два JSON-документа и увидьте точно, что было добавлено, удалено и изменено, прямо в браузере. Ничего не загружается." />
+<meta property="og:url" content="https://norito.in/ru/json-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JSON Diff: сравните два JSON-файла онлайн | norito" />
+<meta name="twitter:description" content="Сравните два JSON-документа и увидьте точно, что было добавлено, удалено и изменено, прямо в браузере. Ничего не загружается." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Diff",
+  "url": "https://norito.in/ru/json-diff.html",
+  "description": "Сравните два JSON-документа и увидьте точно, что было добавлено, удалено и изменено, прямо в браузере. Ничего не загружается.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSON Diff",
+      "item": "https://norito.in/ru/json-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSON Diff</p>
+    <h1>JSON Diff</h1>
+    <p class="lede">
+      Вставьте два JSON-документа и точно увидьте, какие ключи были добавлены, удалены или изменены между ними.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="leftInput">Левый JSON</label>
+            <textarea id="leftInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 1,
+  "tools": ["compress", "resize"]
+}</textarea>
+          </div>
+          <div class="field" style="flex:1;">
+            <label for="rightInput">Правый JSON</label>
+            <textarea id="rightInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 2,
+  "tools": ["compress", "resize", "crop"]
+}</textarea>
+          </div>
+        </div>
+        <button id="diffBtn" style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+          Сравнить
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div id="diffOutput" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Как это работает</h3>
+          <p class="note" style="margin-top:0;">
+            Обе стороны разбираются как JSON, затем сравниваются ключ за ключом и индекс за индексом. Ключи только справа — это добавления, ключи только слева — удаления, а ключи, присутствующие с обеих сторон с разными значениями, — изменения. Порядок ключей объекта не важен, важны только значения.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>Обе стороны сначала проходят через <code>JSON.parse</code>, поэтому если одна из них не является допустимым JSON, вы получаете собственное сообщение об ошибке парсера, указывающее на проблему, а не бессмысленный diff. Затем сравнение рекурсивно обходит две разобранные структуры: для объектов берётся объединение обоих наборов ключей и рекурсия по каждому ключу, для массивов сравнение идёт индекс за индексом, а листовые значения считаются равными только при полностью идентичной сериализации. Каждое различие выводится в виде пути вроде <code>user.address[1].zip</code>, помеченного как добавленное, удалённое или изменённое, а затем суммируется в счётчики.</p>
+      <p>Поскольку сравнение выполняется по разобранным значениям, а не по тексту, форматирование становится невидимым: отступы, порядок ключей и различия в пробелах не создают никакого шума, что и есть весь смысл по сравнению с построчным текстовым diff. Компромисс, который стоит понимать, — это позиционное выравнивание массивов. Вставка одного элемента в начало длинного массива приводит к тому, что каждый последующий индекс сообщается как «изменённый», плюс одно добавление в конце. Когда вы видите стену изменённых записей, которые все выглядят сдвинутыми на единицу, читайте это как «что-то было вставлено или удалено в начале этого массива», а не как десятки независимых правок.</p>
+      <p>Разбор и сравнение полностью выполняются в JavaScript этой страницы. Откройте вкладку Network в DevTools и нажмите «Сравнить»: ни один запрос не передаёт ваш JSON, поэтому ответы API и конфигурационные файлы с секретами остаются на вашем компьютере.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-formatter.html|Форматирование JSON|Форматирует, проверяет и минифицирует один JSON-документ.
+base64-encoder.html|Кодировщик / декодировщик Base64|Преобразование текста в Base64 и обратно.
+regex-tester.html|Тестер регулярных выражений|Проверьте регулярное выражение на образце текста в реальном времени.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

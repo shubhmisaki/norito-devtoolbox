@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Markdown Editor with Live Preview | norito</title>
+<meta name="description" content="Write markdown with a live-rendered preview side by side. Formatting toolbar, synced scrolling, export as Markdown or HTML. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/markdown-editor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/markdown-editor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/markdown-editor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/markdown-editor.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/markdown-editor.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/markdown-editor.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/markdown-editor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/markdown-editor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Markdown Editor with Live Preview | norito" />
+<meta property="og:description" content="Write markdown with a live-rendered preview side by side. Formatting toolbar, synced scrolling, export as Markdown or HTML. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/markdown-editor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Markdown Editor with Live Preview | norito" />
+<meta name="twitter:description" content="Write markdown with a live-rendered preview side by side. Formatting toolbar, synced scrolling, export as Markdown or HTML. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Markdown Editor with Live Preview",
+  "url": "https://norito.in/markdown-editor.html",
+  "description": "Write markdown with a live-rendered preview side by side. Formatting toolbar, synced scrolling, export as Markdown or HTML. Runs entirely in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my writing saved if I close the tab?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The editor keeps your text only in the open page, so download your work as .md or .html before closing or refreshing. Nothing you type is uploaded anywhere either." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Markdown features are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "GitHub Flavored Markdown: headings, bold, italic, strikethrough, links, quotes, lists, tables, inline code, and fenced code blocks. Single line breaks also become real line breaks in the preview, which is handy for prose." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the HTML export contain?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The rendered HTML of your document wrapped in a minimal, unstyled HTML file. It's meant for pasting into a CMS or applying your own stylesheet, not as a finished styled page." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Markdown Editor",
+      "item": "https://norito.in/markdown-editor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Markdown Editor</p>
+    <h1>Markdown Editor</h1>
+    <p class="lede">
+      Write on the left, see it rendered on the right. Synced scrolling, a formatting toolbar,
+      and export as Markdown or HTML when you're done.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+        <div class="md-toolbar" id="mdToolbar" style="border:none; padding:0; margin:0;">
+          <button type="button" class="md-toolbar-icon" id="undoBtn" data-action="undo" title="Undo" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+          <button type="button" class="md-toolbar-icon" id="redoBtn" data-action="redo" title="Redo" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg></button>
+          <span class="md-toolbar-divider" aria-hidden="true"></span>
+          <button type="button" data-action="h1" title="Heading 1">H1</button>
+          <button type="button" data-action="h2" title="Heading 2">H2</button>
+          <button type="button" data-action="bold" title="Bold"><strong>B</strong></button>
+          <button type="button" data-action="italic" title="Italic"><em>I</em></button>
+          <button type="button" data-action="strike" title="Strikethrough"><s>S</s></button>
+          <button type="button" data-action="code" title="Inline code">code</button>
+          <button type="button" data-action="codeblock" title="Code block">{ }</button>
+          <button type="button" data-action="link" title="Link">link</button>
+          <button type="button" data-action="quote" title="Quote">"</button>
+          <button type="button" data-action="ul" title="Bullet list">•</button>
+          <button type="button" data-action="ol" title="Numbered list">1.</button>
+          <button type="button" data-action="table" title="Table">▦</button>
+        </div>
+        <div class="tabs" id="view-tabs">
+          <button type="button" class="tab active" data-value="split">Split</button>
+          <button type="button" class="tab" data-value="editor">Editor</button>
+          <button type="button" class="tab" data-value="preview">Preview</button>
+        </div>
+      </div>
+
+      <div class="two-col" style="gap:16px;">
+        <div class="md-pane" id="editorPane">
+          <textarea id="mdEditor" class="md-source" spellcheck="false"># Welcome to the norito markdown editor
+
+Write on the left, watch it render on the right, **live**, no save button needed.
+
+## Features
+
+- Split-pane preview that scrolls in sync
+- A small formatting toolbar above
+- Export as `.md` or `.html` when you're done
+
+> Everything happens in your browser. Nothing you type here is uploaded anywhere.
+
+```
+console.log("even code blocks work");
+```
+
+| Feature | Status |
+| --- | --- |
+| Live preview | done |
+| Export | done |
+</textarea>
+        </div>
+        <div class="md-pane" id="previewPane">
+          <div id="mdPreview" class="md-preview"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+        <span class="note" id="mdCharCount" style="margin:0;">0 characters</span>
+        <div style="display:flex; gap:10px;">
+          <button id="downloadMdBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Download .md
+</button>
+          <button id="downloadHtmlBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Download .html
+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The preview is rendered by marked, an open-source Markdown parser served as part of
+        this site (no CDN), configured for GitHub Flavored Markdown with line breaks
+        enabled. It re-parses the entire document on every keystroke; that sounds wasteful,
+        but marked compiles to a fast single pass, and even book-length documents render in
+        a few milliseconds. The editor also keeps its own undo history of up to 100
+        snapshots, because toolbar buttons set the textarea's value programmatically, which
+        silently bypasses the browser's native undo stack. Consecutive typing is coalesced
+        into one step after a short pause, so Ctrl+Z steps back by edits, not by keystrokes.
+        Scroll sync between the panes is proportional: each pane's scroll position is mapped
+        to a 0 to 1 ratio and mirrored to the other side.
+      </p>
+      <p>
+        One portability note: with breaks enabled, a single newline becomes a real line
+        break, matching how GitHub renders comments. Strict CommonMark renderers, including
+        many static site generators, will instead join those lines into one paragraph. If
+        your Markdown is headed somewhere strict, end a line with two spaces or leave a
+        blank line to keep the break. The .html export is exactly the preview pane's markup
+        wrapped in a minimal document, so what you see is literally what ships.
+      </p>
+      <p>
+        Everything, parser included, loads with the page and runs locally. Open DevTools,
+        watch the Network tab while you type: no request carries your text, and the editor
+        keeps working offline.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|JSON Formatter|Format, validate, and minify JSON with a tree view.
+limited-text-generator.html|Limited Text Generator|Placeholder text at an exact character count.
+test-file-generator.html|Test File Generator|Byte-exact dummy files for any size or extension.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is my writing saved if I close the tab?</summary>
+        <p>No. The editor keeps your text only in the open page, so download your work as .md or .html before closing or refreshing. Nothing you type is uploaded anywhere either.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which Markdown features are supported?</summary>
+        <p>GitHub Flavored Markdown: headings, bold, italic, strikethrough, links, quotes, lists, tables, inline code, and fenced code blocks. Single line breaks also become real line breaks in the preview, which is handy for prose.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What does the HTML export contain?</summary>
+        <p>The rendered HTML of your document wrapped in a minimal, unstyled HTML file. It's meant for pasting into a CMS or applying your own stylesheet, not as a finished styled page.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="js/i18n-runtime.js"></script>
+<script src="js/vendor/marked.umd.js"></script>
+<script src="js/app-markdown.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

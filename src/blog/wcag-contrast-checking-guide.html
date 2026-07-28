@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>WCAG Contrast Checking: A Practical Guide | norito</title>
+<meta name="description" content="What WCAG contrast ratios actually measure, the real AA and AAA thresholds, and the most common contrast mistakes in real designs." />
+<link rel="canonical" href="https://norito.in/blog/wcag-contrast-checking-guide.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/wcag-contrast-checking-guide.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/wcag-contrast-checking-guide.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="WCAG Contrast Checking: A Practical Guide | norito" />
+<meta property="og:description" content="What WCAG contrast ratios actually measure, the real AA and AAA thresholds, and the most common contrast mistakes in real designs." />
+<meta property="og:url" content="https://norito.in/blog/wcag-contrast-checking-guide.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WCAG Contrast Checking: A Practical Guide | norito" />
+<meta name="twitter:description" content="What WCAG contrast ratios actually measure, the real AA and AAA thresholds, and the most common contrast mistakes in real designs." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WCAG Contrast Checking: A Practical Guide",
+  "description": "What WCAG contrast ratios actually measure, the real AA and AAA thresholds, and the most common contrast mistakes in real designs.",
+  "url": "https://norito.in/blog/wcag-contrast-checking-guide.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/blog/wcag-contrast-checking-guide.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / WCAG Contrast Checking: A Practical Guide</p>
+    <h1>WCAG Contrast Checking: A Practical Guide</h1>
+    <p class="byline">By Shubham Singh &middot; <time datetime="2026-07-15">July 15, 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Published 2026-07-15</p>
+    <p class="lede">Contrast ratio isn't just a compliance checkbox, it's the difference between text people can read and text they can't. Here's how it's calculated and what the thresholds actually mean.</p>
+
+    <h2>Why contrast matters</h2>
+    <p>Text that doesn't contrast enough with its background is hard to read for everyone, and can
+      be completely unreadable for people with low vision or color blindness. The Web Content
+      Accessibility Guidelines (WCAG) set minimum contrast ratios specifically so that text remains
+      legible for the widest possible range of visual abilities, and meeting them is both a
+      genuine usability improvement and, in many jurisdictions, a legal requirement for public-
+      facing websites.</p>
+
+    <h2>How contrast ratio is actually calculated</h2>
+    <p>Contrast ratio is a comparison between the relative luminance (perceived brightness) of the
+      text color and the background color, expressed as a ratio from 1:1 (identical, no contrast at
+      all) to 21:1 (pure black on pure white, maximum possible contrast). It isn't a simple
+      brightness comparison, luminance is calculated using a formula that weights red, green, and
+      blue differently, since the human eye perceives green as brighter than red or blue at the
+      same intensity, and it applies a gamma correction to account for how monitors actually
+      display color. You don't need to calculate this by hand, but knowing that it's about
+      perceived brightness (not just raw RGB values) helps explain some genuinely counterintuitive
+      results, like why certain mid-tone colors that look reasonably distinct can still fail.</p>
+
+    <h2>The actual thresholds</h2>
+    <p>WCAG 2.1 defines two conformance levels. <strong>AA</strong>, the standard most
+      organizations target, requires a contrast ratio of at least <strong>4.5:1</strong> for normal
+      text and <strong>3:1</strong> for large text (defined as 18pt regular or 14pt bold and
+      larger). <strong>AAA</strong>, a stricter level, requires <strong>7:1</strong> for normal text
+      and <strong>4.5:1</strong> for large text. Most legal accessibility requirements (like the
+      ADA in the US, as interpreted through WCAG, or the EN 301 549 standard in the EU) reference AA
+      as the baseline, AAA is generally treated as a stretch goal rather than a strict requirement.</p>
+
+    <h2>Common contrast mistakes</h2>
+    <p>Light gray text on a white background is the single most common failure, it often looks
+      "clean" and "modern" in a design mockup but fails AA badly and is genuinely hard to read for
+      many users. Placeholder text inside form fields is frequently too low-contrast, and since it
+      disappears once you start typing, designers often don't notice it's a problem. Text
+      overlaid on photos or gradients is risky because the contrast ratio can pass in one area of
+      the image and fail in another, adding a solid-color overlay or text shadow behind the text
+      is a common fix. Brand colors, especially pastel or mid-saturation brand palettes, frequently
+      fail contrast requirements when used as text color and need a darker or lighter variant
+      reserved specifically for text.</p>
+
+    <h2>How to check your own colors</h2>
+    <p>Pick your foreground (text) color and background color, then check the resulting ratio
+      against both the AA and AAA thresholds for the text size you're using. If a combination
+      fails, the most reliable fix is usually to darken the text color (for light backgrounds) or
+      lighten it (for dark backgrounds) until it clears the threshold, rather than changing the
+      background, since the background color is often more tied to brand identity than the text
+      color is.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Try it yourself:</strong> <a href="../design/contrast-checker.html">Contrast Checker</a>, to check any two colors against the WCAG AA and AAA thresholds instantly.</div>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

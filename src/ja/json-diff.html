@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JSON Diff：2つのJSONファイルをオンラインで比較 | norito</title>
+<meta name="description" content="2つのJSONドキュメントを比較し、追加・削除・変更された内容を正確に確認。すべてブラウザ内で完結します。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/json-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSON Diff：2つのJSONファイルをオンラインで比較 | norito" />
+<meta property="og:description" content="2つのJSONドキュメントを比較し、追加・削除・変更された内容を正確に確認。すべてブラウザ内で完結します。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/json-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JSON Diff：2つのJSONファイルをオンラインで比較 | norito" />
+<meta name="twitter:description" content="2つのJSONドキュメントを比較し、追加・削除・変更された内容を正確に確認。すべてブラウザ内で完結します。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Diff",
+  "url": "https://norito.in/ja/json-diff.html",
+  "description": "2つのJSONドキュメントを比較し、追加・削除・変更された内容を正確に確認。すべてブラウザ内で完結します。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSON Diff",
+      "item": "https://norito.in/ja/json-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSON Diff</p>
+    <h1>JSON Diff</h1>
+    <p class="lede">
+      2つのJSONドキュメントを貼り付けると、その間でどのキーが追加、削除、変更されたかを正確に確認できます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="leftInput">左側のJSON</label>
+            <textarea id="leftInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 1,
+  "tools": ["compress", "resize"]
+}</textarea>
+          </div>
+          <div class="field" style="flex:1;">
+            <label for="rightInput">右側のJSON</label>
+            <textarea id="rightInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 2,
+  "tools": ["compress", "resize", "crop"]
+}</textarea>
+          </div>
+        </div>
+        <button id="diffBtn" style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+          比較する
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div id="diffOutput" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">仕組み</h3>
+          <p class="note" style="margin-top:0;">
+            両方の入力はJSONとして解析され、その後キーごと、インデックスごとに比較されます。右側にのみ存在するキーは追加、左側にのみ存在するキーは削除、両側に存在するが値が異なるキーは変更として扱われます。オブジェクトのキーの順序は関係なく、値だけが問題になります。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>両方の入力はまず<code>JSON.parse</code>を通ります。そのため、どちらかが有効なJSONでない場合、意味のないdiffの代わりに、パーサー自身が問題を指し示すエラーメッセージが表示されます。比較処理は、解析された2つの構造を再帰的にたどります。オブジェクトの場合は両方のキー集合の和集合を取り各キーに再帰し、配列の場合はインデックスごとに比較し、末端の値は完全に同一にシリアライズされる場合にのみ等しいとみなされます。すべての差異は<code>user.address[1].zip</code>のようなパスとして出力され、追加・削除・変更のいずれかにタグ付けされ、最後に件数として集計されます。</p>
+      <p>diffはテキストではなく解析された値に対して実行されるため、フォーマットの違いは見えません。インデント、キーの順序、空白の違いはノイズを一切生みません。これこそが行ベースのテキストdiffに対する最大の利点です。理解しておくべきトレードオフは配列の位置合わせです。これは位置ベースであるため、長い配列の先頭に1つの要素を挿入すると、それ以降のすべてのインデックスが「変更」として報告され、末尾に1つの追加が加わります。すべてが1つずつずれているように見える大量の変更エントリを目にしたら、それを数十件の独立した編集としてではなく、「この配列の早い段階で何かが挿入または削除された」と読み取ってください。</p>
+      <p>解析と比較は、すべてこのページのJavaScript内で行われます。DevToolsのNetworkタブを開いて「比較する」をクリックしてみてください。あなたのJSONを運ぶリクエストは一切発生しないため、秘密情報を含むAPIレスポンスや設定ファイルはあなたのマシン内にとどまります。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-formatter.html|JSONフォーマッタ|単一のJSONドキュメントを整形・検証・圧縮。
+base64-encoder.html|Base64 エンコード / デコード|テキストを Base64 との間で変換。
+regex-tester.html|正規表現テストツール|サンプルテキストに対して正規表現をリアルタイムでテスト。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

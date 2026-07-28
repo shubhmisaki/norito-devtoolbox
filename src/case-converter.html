@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Case Converter: UPPERCASE, camelCase, snake_case | norito</title>
+<meta name="description" content="Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case, right in your browser." />
+<link rel="canonical" href="https://norito.in/case-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/case-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/case-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Case Converter: UPPERCASE, camelCase, snake_case | norito" />
+<meta property="og:description" content="Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case, right in your browser." />
+<meta property="og:url" content="https://norito.in/case-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Case Converter: UPPERCASE, camelCase, snake_case | norito" />
+<meta name="twitter:description" content="Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case, right in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Case Converter",
+  "url": "https://norito.in/case-converter.html",
+  "description": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case, right in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I convert from camelCase back to spaced words?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not directly to plain spaced text, but converting camelCase input to snake_case or kebab-case will correctly split it into separate words first. For Title Case or Sentence case on programmatic input, the word-splitting logic handles camelCase boundaries too." }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as a \"word\" for camelCase/snake_case/etc.?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any run of letters or numbers, split at spaces, punctuation, hyphens, underscores, and camelCase capital-letter boundaries. \"user-id_2\" and \"userId2\" both split into the same three words." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, conversion happens entirely in your browser as you type. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Converter",
+      "item": "https://norito.in/case-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M21 16h-6l6-8h-6"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Case Converter</p>
+    <h1>Case Converter</h1>
+    <p class="lede">
+      Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, and more, with one click.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Your text</label>
+          <textarea id="textInput" class="mono-output" rows="8" placeholder="Type or paste text here...">the quick brown fox jumps over the lazy dog</textarea>
+        </div>
+        <div class="case-btn-grid">
+          <button type="button" class="case-btn active" data-case="upper">UPPERCASE</button>
+          <button type="button" class="case-btn" data-case="lower">lowercase</button>
+          <button type="button" class="case-btn" data-case="title">Title Case</button>
+          <button type="button" class="case-btn" data-case="sentence">Sentence case</button>
+          <button type="button" class="case-btn" data-case="camel">camelCase</button>
+          <button type="button" class="case-btn" data-case="pascal">PascalCase</button>
+          <button type="button" class="case-btn" data-case="snake">snake_case</button>
+          <button type="button" class="case-btn" data-case="kebab">kebab-case</button>
+          <button type="button" class="case-btn" data-case="constant">CONSTANT_CASE</button>
+          <button type="button" class="case-btn" data-case="alternating">aLtErNaTiNg</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">Result</label>
+            <textarea id="textOutput" class="mono-output" rows="8" readonly></textarea>
+          </div>
+          <button id="copyBtn">Copy result</button>
+        </div>
+        <p class="note">
+          camelCase, PascalCase, snake_case, kebab-case, and CONSTANT_CASE all split your text into
+          words first (handling spaces, punctuation, and existing camelCase boundaries), then
+          rejoin them in the target style, so converting between any of them works cleanly either
+          direction.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each button is a plain JavaScript string transform that re-runs on every keystroke.
+        UPPERCASE and lowercase are one-liners, but the programmer cases (camelCase, snake_case,
+        kebab-case, PascalCase, CONSTANT_CASE) all share a word-splitting step first: a regex
+        inserts a boundary wherever a lowercase letter or digit is followed by an uppercase
+        letter, then the text is split on any run of non-alphanumeric characters. Once the input
+        is a clean word list, rejoining in the target style is trivial, which is why you can go
+        from kebab-case to PascalCase to snake_case in any order without garbage accumulating.
+      </p>
+      <p>
+        One quirk worth knowing: consecutive capitals are treated as a single word. The splitter
+        only breaks between a lowercase character and an uppercase one, so <code>APIKey</code>
+        becomes <code>apikey</code> in snake_case, not <code>api_key</code>. If your identifiers
+        contain acronyms, check those spots after converting. Title Case is smarter than a plain
+        capitalize-every-word: it keeps minor words like "a", "the", "of", and "in" lowercase
+        unless they start the text, and Sentence case only capitalizes after <code>.</code>,
+        <code>!</code>, or <code>?</code>.
+      </p>
+      <p>
+        All of this happens inside the page's JavaScript, with no library and no server. Open
+        DevTools' Network tab while you type: nothing is sent, because there's nothing to send
+        it to.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+word-counter.html|Word Counter|Count words, characters, and reading time.
+seo-slug-generator.html|SEO Slug Generator|Clean URL slugs from titles.
+remove-duplicate-lines.html|Remove Duplicate Lines|Deduplicate a list of lines.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Can I convert from camelCase back to spaced words?</summary>
+        <p>Not directly to plain spaced text, but converting camelCase input to snake_case or kebab-case will correctly split it into separate words first. For Title Case or Sentence case on programmatic input, the word-splitting logic handles camelCase boundaries too.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What counts as a "word" for camelCase/snake_case/etc.?</summary>
+        <p>Any run of letters or numbers, split at spaces, punctuation, hyphens, underscores, and camelCase capital-letter boundaries. "user-id_2" and "userId2" both split into the same three words.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my text sent anywhere?</summary>
+        <p>No, conversion happens entirely in your browser as you type. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-case-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

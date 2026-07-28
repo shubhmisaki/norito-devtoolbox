@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Why PDF Compression Works on Scans, Not Reports | norito</title>
+<meta name="description" content="Why scanned PDFs shrink by 90% while text reports barely budge: what actually takes up space in a PDF, and how to predict your compression results." />
+<link rel="canonical" href="https://norito.in/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/pdf-compression-explained.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/pdf-compression-explained.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Why PDF Compression Works on Scans, Not Reports | norito" />
+<meta property="og:description" content="Why scanned PDFs shrink by 90% while text reports barely budge: what actually takes up space in a PDF, and how to predict your compression results." />
+<meta property="og:url" content="https://norito.in/blog/pdf-compression-explained.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Why PDF Compression Works on Scans, Not Reports | norito" />
+<meta name="twitter:description" content="Why scanned PDFs shrink by 90% while text reports barely budge: what actually takes up space in a PDF, and how to predict your compression results." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why PDF Compression Works Great on Scans and Barely on Reports",
+  "description": "Why scanned PDFs shrink by 90% while text reports barely budge: what actually takes up space in a PDF, and how to predict your compression results.",
+  "url": "https://norito.in/blog/pdf-compression-explained.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/blog/pdf-compression-explained.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / Why PDF Compression Works Great on Scans and Barely on Reports</p>
+    <h1>Why PDF Compression Works Great on Scans and Barely on Reports</h1>
+    <p class="byline">By Shubham Singh &middot; <time datetime="2026-07-20">July 20, 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Published 2026-07-20</p>
+    <p class="lede">Run two different PDFs through the same compressor and you can get wildly different results: a 40 MB scanned contract drops to 3 MB, while an 8 MB annual report stubbornly refuses to lose more than a few percent. Neither result means the tool is broken. The difference is what those two files are actually made of.</p>
+
+    <h2>A PDF is a container, not one kind of file</h2>
+    <p>A PDF page can hold two fundamentally different kinds of content. The first is vector content: text stored as drawing instructions ("place the glyph for A from this embedded font at these coordinates, size 11"), plus lines, shapes, and fills described mathematically. The second is raster content: actual images, embedded as JPEG or PNG-style data streams inside the file. Almost every question about PDF compression comes down to the ratio between those two.</p>
+    <p>A page of pure text is astonishingly small. The drawing instructions for a dense contract page typically weigh 2 to 10 KB once compressed, and the embedded fonts are shared across the whole document, usually a few tens of KB in total. A scanned page, by contrast, contains no text at all as far as the file format is concerned. It is one large photograph of a piece of paper.</p>
+
+    <h2>Why text-heavy PDFs barely shrink</h2>
+    <p>Text and vector content inside a PDF is already compressed with Flate, the same algorithm ZIP files use. Compressing already-compressed data yields almost nothing; that is a mathematical property, not a software limitation. So when a compressor processes a 200-page text-only document that weighs 1.5 MB, about 7 KB per page, there simply is not much fat to trim. Realistic gains come from housekeeping: removing unused objects, deduplicating repeated resources, and subsetting fonts that were embedded in full. Expect 5 to 15 percent on a clean text document, sometimes less.</p>
+    <p>Be suspicious of any tool that claims 70 percent reduction on a pure text PDF. The usual trick is rasterizing: converting each page into one compressed image. The file does get smaller, but the text turns fuzzy at high zoom, can no longer be selected or searched, and screen readers stop working. That is a conversion, not a compression, and it is almost never what you want for a report.</p>
+
+    <h2>Why scans shrink dramatically</h2>
+    <p>A standard 300 DPI scan of an A4 page is about 2480 by 3508 pixels, roughly 8.7 million pixels per page. Scanner software tends to be conservative, saving at high JPEG quality or even losslessly, which produces 2 to 8 MB per page. That hands a compressor two big levers.</p>
+    <p>The first is downsampling. Dropping from 300 DPI to 150 DPI quarters the pixel count, and for on-screen reading the difference is barely noticeable. The second is re-encoding at a stronger JPEG setting: going from quality 90 to quality 60 can halve the size again with only a modest visible change on a photographed document. Stack both levers and an 80 to 95 percent reduction is routine. It is exactly the same physics as compressing a photo, which we covered in more depth in <a href="image-compression-without-losing-quality.html">our image compression guide</a>.</p>
+
+    <h2>The in-between files</h2>
+    <p>Most real-world documents sit between the extremes: reports with charts and photos, slide-deck exports, brochures. Here is the non-obvious part: even in a document that looks mostly like text, the images usually dominate the byte count. A 12 MB report with ten embedded photos might be 11 MB of photos and 1 MB of everything else, so compression can only ever act on the photo share. There are also classic bloat patterns worth knowing about: some document generators embed the same logo image separately on every page instead of referencing it once, and some embed entire font families where a 40-glyph subset would do. A good compressor fixes both quietly.</p>
+    <p>Presentation exports deserve a special mention. Slides exported to PDF often carry a full-resolution background image on every single page, plus photos placed at far higher resolution than any projector will ever show. This is how a 40-slide deck becomes a 100 MB PDF, and it is also why decks are among the most satisfying files to compress: the same downsampling that barely touches a text report can take a deck down by 90 percent without anyone in the meeting noticing.</p>
+
+    <h2>Predicting your result before you start</h2>
+    <p>Divide the file size by the page count. Under 50 KB per page, you are looking at mostly text and should expect single-digit percentage gains. Between 100 and 300 KB per page usually means mixed content, where 30 to 60 percent is realistic. Above 800 KB per page almost always means a scan or a photo-heavy document, and 80 to 95 percent is on the table.</p>
+    <p>Not sure whether a PDF is a real text document or a scan? Try selecting text in your viewer. Or run it through the <a href="../pdf/extract-text.html">extract text tool</a>: if nothing comes out, every page is an image.</p>
+
+    <h2>The honest limits</h2>
+    <p>Lossy compression is cumulative. A scan compressed at quality 60, then compressed again by someone else down the line, degrades quickly, so keep your original. A downsampled scan is also a worse input for OCR and for reprinting; if a document might need either later, archive the full-resolution version and share the compressed one. And if a PDF is huge because of two or three specific photos, it is sometimes cleaner to shrink those images first with an <a href="../compress-image.html">image compressor</a> and rebuild the document from the fixed versions.</p>
+    <p>Within those limits, compression is one of the highest-leverage things you can do to a scanned document. It takes seconds, and the receiver of your 3 MB attachment will never know it used to be 40.</p>
+    <p>One last caveat before you compress anything confidential: check how the tool you are using actually works. Many popular PDF compressors upload your document to their servers to process it, and a scanned contract or ID is exactly the kind of file you might not want sitting on someone else's infrastructure, even briefly. We wrote a <a href="client-side-vs-server-side-tools.html">separate guide on how to check for yourself</a>. norito's compressor runs entirely in your browser, so there is nothing to check.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Try it yourself:</strong> <a href="../pdf/compress-pdf.html">Compress PDF</a> shrinks scanned and image-heavy PDFs right in your browser. Nothing is uploaded.</div>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

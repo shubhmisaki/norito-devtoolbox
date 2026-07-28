@@ -19,3 +19,12 @@
 
 /js/*
   Cache-Control: public, max-age=604800
+
+/src/*
+  X-Robots-Tag: noindex, nofollow
+
+/partials/*
+  X-Robots-Tag: noindex, nofollow
+
+/scripts/*
+  X-Robots-Tag: noindex, nofollow

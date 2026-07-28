@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Border Radius Generator: Per-Corner CSS | norito</title>
+<meta name="description" content="Build a per-corner CSS border-radius visually, right in your browser. Copy the CSS when it looks right." />
+<link rel="canonical" href="https://norito.in/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/border-radius-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Border Radius Generator: Per-Corner CSS | norito" />
+<meta property="og:description" content="Build a per-corner CSS border-radius visually, right in your browser. Copy the CSS when it looks right." />
+<meta property="og:url" content="https://norito.in/design/border-radius-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Border Radius Generator: Per-Corner CSS | norito" />
+<meta name="twitter:description" content="Build a per-corner CSS border-radius visually, right in your browser. Copy the CSS when it looks right." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Border Radius Generator",
+  "url": "https://norito.in/design/border-radius-generator.html",
+  "description": "Build a per-corner CSS border-radius visually, right in your browser. Copy the CSS when it looks right.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference from just setting one border-radius value?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A single value rounds all four corners equally. This tool lets you set each corner independently, useful for effects like a card with only its top corners rounded, or an asymmetric \"blob\" shape." }
+    },
+    {
+      "@type": "Question",
+      "name": "What units does this use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pixels. If you need percentage-based radii (for perfect circles/ellipses regardless of element size), you'd adjust the generated CSS manually, swap px for % on each value." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the preview and CSS are generated entirely in your browser. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Border Radius Generator",
+      "item": "https://norito.in/design/border-radius-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Border Radius Generator</p>
+    <h1>Border Radius Generator</h1>
+    <p class="lede">
+      Set each corner's border radius independently and see the shape update live, then copy the CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="option-row">
+          <span class="option-label">Link all corners</span>
+          <label class="switch"><input type="checkbox" id="linkAll" checked /><span class="track"></span></label>
+        </div>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="radTL">Top left (<span id="radTLVal">12px</span>)</label>
+            <input type="range" id="radTL" min="0" max="100" value="12" />
+          </div>
+          <div class="field">
+            <label for="radTR">Top right (<span id="radTRVal">12px</span>)</label>
+            <input type="range" id="radTR" min="0" max="100" value="12" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="radBL">Bottom left (<span id="radBLVal">12px</span>)</label>
+            <input type="range" id="radBL" min="0" max="100" value="12" />
+          </div>
+          <div class="field">
+            <label for="radBR">Bottom right (<span id="radBRVal">12px</span>)</label>
+            <input type="range" id="radBR" min="0" max="100" value="12" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:50px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:160px; height:120px; margin:0 auto; background:var(--primary);"></div>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copy CSS</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Four sliders, one per corner, each firing on input. With "link all corners" on, moving any
+        slider copies its value to the other three before the CSS is rebuilt. The values are
+        assembled into the shorthand in the order CSS actually uses, clockwise from top-left:
+        top-left, top-right, bottom-right, bottom-left. That same string is written straight onto
+        the preview box's <code>style.borderRadius</code>, so the preview isn't an approximation of
+        the output, it literally is the CSS you copy, rendered by your own browser.
+      </p>
+      <p>
+        Two behaviors worth knowing that the sliders can't show you directly. First, this tool uses
+        pixels, and pixels behave differently from percentages: <code>border-radius: 50%</code> on
+        a rectangle resolves against each axis separately and gives you an ellipse, while a big
+        pixel value like <code>9999px</code> gives you the pill shape people usually wanted. Second,
+        the spec clamps overlapping radii: when the radii on a side add up to more than that side's
+        length, the browser scales all of them down proportionally. That's why cranking every
+        slider to 100 on a small box eventually stops changing the shape, and it's also why you
+        never need to compute "half the height" exactly for a pill; overshoot and the browser
+        clamps it for you.
+      </p>
+      <p>
+        The whole tool is a few dozen lines of JavaScript running in this page. Slider values go
+        from the DOM to the preview element and back to the output box without any network
+        activity, which you can confirm in the DevTools Network tab.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-gradient-generator.html|CSS Gradient Generator|Build a linear or radial gradient visually.
+box-shadow-generator.html|Box Shadow Generator|Build a CSS box-shadow visually.
+favicon-generator.html|Favicon Generator|Generate a favicon from an image.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What's the difference from just setting one border-radius value?</summary>
+        <p>A single value rounds all four corners equally. This tool lets you set each corner independently, useful for effects like a card with only its top corners rounded, or an asymmetric "blob" shape.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What units does this use?</summary>
+        <p>Pixels. If you need percentage-based radii (for perfect circles/ellipses regardless of element size), you'd adjust the generated CSS manually, swap px for % on each value.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this sent anywhere?</summary>
+        <p>No, the preview and CSS are generated entirely in your browser. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-border-radius-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

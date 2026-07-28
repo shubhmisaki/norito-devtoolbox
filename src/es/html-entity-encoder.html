@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Codificador / Decodificador de Entidades HTML | norito</title>
+<meta name="description" content="Escapa o desescapa entidades HTML (&lt; &gt; &amp; y más), en vivo en tu navegador. Maneja entidades con nombre y numéricas. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/html-entity-encoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/html-entity-encoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/html-entity-encoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/html-entity-encoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/html-entity-encoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/html-entity-encoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Codificador / Decodificador de Entidades HTML | norito" />
+<meta property="og:description" content="Escapa o desescapa entidades HTML (&lt; &gt; &amp; y más), en vivo en tu navegador. Maneja entidades con nombre y numéricas. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/html-entity-encoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Codificador / Decodificador de Entidades HTML | norito" />
+<meta name="twitter:description" content="Escapa o desescapa entidades HTML (&lt; &gt; &amp; y más), en vivo en tu navegador. Maneja entidades con nombre y numéricas. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Codificador / Decodificador de Entidades HTML",
+  "url": "https://norito.in/es/html-entity-encoder.html",
+  "description": "Escapa o desescapa entidades HTML (&lt; &gt; &amp; y más), en vivo en tu navegador. Maneja entidades con nombre y numéricas. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Codificador / Decodificador de Entidades HTML",
+      "item": "https://norito.in/es/html-entity-encoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Codificador de Entidades HTML</p>
+    <h1>Codificador / Decodificador de Entidades HTML</h1>
+    <p class="lede">
+      Escapa caracteres especiales a entidades HTML, o decodifica entidades de vuelta a texto plano, en vivo mientras escribes.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">Codificar</button>
+          <button type="button" class="tab" data-value="decode">Decodificar</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="option-row" style="margin-bottom:16px;">
+          <div>
+            <div class="option-label">Codificar todos los caracteres no ASCII</div>
+            <div class="option-hint">También escapa letras acentuadas y emoji, no solo &lt; &gt; &amp; " '.</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="optAllNonAscii" /><span class="track"></span></label>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Entrada</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Escribe o pega HTML o texto..."></textarea>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">Salida</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Intercambiar
+          </button>
+          <button id="copyBtn">Copiar salida</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-teal" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3>Por qué existen las entidades HTML</h3>
+              <p>Algunos caracteres están reservados por el propio HTML.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Caracteres como <code>&lt;</code>, <code>&gt;</code>, y <code>&amp;</code> tienen un significado especial en el marcado HTML; escribirlos literalmente dentro del contenido de una página puede romperla o, peor aún, permitir que la entrada del usuario se interprete como marcado ejecutable. Codificarlos como entidades como <code>&amp;lt;</code> muestra el carácter de forma segura como texto plano.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Entidades con nombre vs. numéricas</h3>
+          <p class="note" style="margin-top:0;">
+            <code>&amp;amp;</code> y <code>&amp;#38;</code> se decodifican ambas al mismo ampersand; las entidades con nombre existen para caracteres comunes, las entidades numéricas (decimales o hex) pueden representar cualquier carácter Unicode. Esta herramienta decodifica ambas formas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La codificación es una sustitución sencilla: una expresión regular reemplaza los cinco caracteres reservados de HTML (<code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>"</code>, <code>'</code>) por sus entidades. La opción "codificar todos los no ASCII" va más allá y convierte cada carácter por encima del rango ASCII en una referencia numérica usando <code>codePointAt</code>, útil cuando la salida debe sobrevivir a un flujo solo-ASCII como un sistema de plantillas de correo antiguo o un archivo de configuración que corrompe UTF-8.</p>
+      <p>La decodificación usa un truco que vale la pena conocer: la cadena se asigna al <code>innerHTML</code> de un <code>&lt;textarea&gt;</code> desconectado, y luego se lee de vuelta desde su <code>.value</code>. Eso delega el trabajo al propio parser HTML del navegador, que ya conoce las más de 2000 entidades con nombre además de toda forma numérica decimal y hex, así que la herramienta no incluye una tabla de consulta que pueda quedar obsoleta. También por eso es seguro decodificar entrada no confiable aquí: el contenido de un textarea siempre se trata como texto plano, así que un <code>&amp;lt;script&amp;gt;</code> decodificado se convierte en el texto de una etiqueta script, y nada llega a ejecutarse.</p>
+      <p>Ambas direcciones se ejecutan en cada pulsación dentro del JavaScript de esta página. Abre la pestaña Red de las DevTools mientras escribes: no hay peticiones, tu marcado nunca sale del navegador.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|Codificador / Decodificador de URL|Codifica o decodifica en porcentaje una URL.
+base64-encoder.html|Codificar / Decodificar Base64|Convierte texto a y desde Base64, seguro para UTF-8.
+json-formatter.html|Formateador JSON|Formatea, valida y minifica JSON.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-html-entity.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

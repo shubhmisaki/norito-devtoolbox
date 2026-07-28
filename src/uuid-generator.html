@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>UUID Generator: Bulk UUID v4 Generator | norito</title>
+<meta name="description" content="Generate random UUID v4 identifiers in bulk, right in your browser. Uppercase and no-hyphens options, copy one or all. Nothing is sent anywhere." />
+<link rel="canonical" href="https://norito.in/uuid-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/uuid-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/uuid-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="UUID Generator: Bulk UUID v4 Generator | norito" />
+<meta property="og:description" content="Generate random UUID v4 identifiers in bulk, right in your browser. Uppercase and no-hyphens options, copy one or all. Nothing is sent anywhere." />
+<meta property="og:url" content="https://norito.in/uuid-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="UUID Generator: Bulk UUID v4 Generator | norito" />
+<meta name="twitter:description" content="Generate random UUID v4 identifiers in bulk, right in your browser. Uppercase and no-hyphens options, copy one or all. Nothing is sent anywhere." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UUID Generator",
+  "url": "https://norito.in/uuid-generator.html",
+  "description": "Generate random UUID v4 identifiers in bulk, right in your browser. Uppercase and no-hyphens options, copy one or all. Nothing is sent anywhere.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's a UUID v4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A UUID v4 is 122 random bits (the other 6 are fixed to mark the version and variant), giving roughly 5.3 undecillion possible values. Collisions are so unlikely they're not a practical concern for database primary keys, request IDs, or file names."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are UUIDs commonly used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Database primary keys that don't leak row counts, idempotency keys for API requests, correlation IDs for tracing logs across services, and unique file or session names that won't collide even generated on different machines at the same time."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "UUID Generator",
+      "item": "https://norito.in/uuid-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / UUID Generator</p>
+    <h1>UUID Generator</h1>
+    <p class="lede">
+      Generate random UUID v4 identifiers using your browser's cryptographic random number
+      generator. Make one or a hundred at once, nothing is sent anywhere.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="count">Count</label>
+            <input type="number" id="count" min="1" max="100" value="5" style="width:100px;" />
+          </div>
+          <button id="genBtn" style="align-self:flex-end;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            Generate
+          </button>
+          <button id="copyAllBtn" class="secondary" style="align-self:flex-end;">Copy all</button>
+        </div>
+
+        <div class="option-row">
+          <span class="option-label">Uppercase</span>
+          <label class="switch"><input type="checkbox" id="optUppercase" /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Remove hyphens</span>
+          <label class="switch"><input type="checkbox" id="optNoHyphens" /><span class="track"></span></label>
+        </div>
+
+        <div id="uuidList" style="margin-top:20px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-indigo" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg>
+            </div>
+            <div>
+              <h3>What's a UUID v4?</h3>
+              <p>128 bits of randomness, formatted as a standard identifier.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            A UUID v4 is 122 random bits (the other 6 are fixed to mark the version and variant),
+            giving roughly 5.3 undecillion possible values. Collisions are so unlikely they're not
+            a practical concern for database primary keys, request IDs, or file names.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Common uses</h3>
+          <p class="note" style="margin-top:0;">
+            Database primary keys that don't leak row counts, idempotency keys for API requests,
+            correlation IDs for tracing logs across services, and unique file or session names
+            that won't collide even generated on different machines at the same time.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Each ID comes from <code>crypto.randomUUID()</code>, the browser's built-in generator. Under the hood it pulls 128 bits from the operating system's cryptographically secure random source (the same one that generates TLS keys), then stamps 6 of those bits with fixed values: the version nibble becomes 4 and the variant bits become 10. That's why every UUID here has a 4 at the start of the third group and an 8, 9, a, or b starting the fourth. The remaining 122 bits are pure randomness, which is what makes collisions a non-issue in practice.</p>
+      <p>How much of a non-issue? There are 2^122 possible v4 UUIDs, about 5.3 undecillion. The birthday-problem math says you'd need to generate roughly 103 trillion UUIDs before the odds of even one collision reach one in a million. Every ID your systems will ever mint is a rounding error against that, which is why v4 UUIDs are safe to generate on any machine with no coordination.</p>
+      <p>Generation is a single browser API call, so nothing is requested from a server and nothing is sent to one: open DevTools' Network tab, click Generate, and watch nothing happen. The uppercase and no-hyphens toggles only reformat the IDs already generated; the underlying values don't change.</p>
+      <p>One practical note: v4 UUIDs are deliberately unordered, so as database primary keys they scatter inserts across an index. If you need IDs that sort by creation time, look at UUID v7, which puts a timestamp in the high bits. For everything else (request IDs, filenames, correlation tokens), random v4 is exactly right.</p>
+    </div>
+
+<!--RELATED-TOOLS
+hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, and SHA-512 of any text.
+base64-encoder.html|Base64 Encode / Decode|Convert text to and from Base64, UTF-8 safe.
+json-formatter.html|JSON Formatter|Format, validate, and minify JSON with a tree view.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-uuid.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

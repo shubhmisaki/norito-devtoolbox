@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Formateador y validador JSON con vista de árbol | norito</title>
+<meta name="description" content="Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, copia o descarga el resultado." />
+<link rel="canonical" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-formatter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-formatter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-formatter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-formatter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-formatter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-formatter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Formateador y validador JSON con vista de árbol | norito" />
+<meta property="og:description" content="Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, copia o descarga el resultado." />
+<meta property="og:url" content="https://norito.in/es/json-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Formateador y validador JSON con vista de árbol | norito" />
+<meta name="twitter:description" content="Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, copia o descarga el resultado." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Formateador JSON",
+  "url": "https://norito.in/es/json-formatter.html",
+  "description": "Formatea, valida y minifica JSON mientras escribes. Vista de árbol plegable, ubicación de errores en línea, copia o descarga el resultado.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Formateador JSON",
+      "item": "https://norito.in/es/json-formatter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Formateador JSON</p>
+    <h1>Formateador y validador JSON</h1>
+    <p class="lede">
+      Pega JSON y velo validado y formateado en vivo, como árbol plegable o como texto. Los errores señalan la línea y columna exactas en lugar de solo decir "JSON inválido".
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:14px;">
+          <label for="jsonInput">Entrada</label>
+          <textarea id="jsonInput" class="mono-area" rows="14">{
+  "name": "norito",
+  "tagline": "small tools, one job each",
+  "tools": ["test files", "compress", "json formatter", "qr code"],
+  "version": 1,
+  "public": true,
+  "maintainer": null
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field-row" style="margin-bottom:0;">
+            <div class="field">
+              <label style="visibility:hidden;">View</label>
+              <div class="tabs" id="view-tabs">
+                <button type="button" class="tab active" data-value="tree">Vista de árbol</button>
+                <button type="button" class="tab" data-value="text">Texto</button>
+              </div>
+            </div>
+            <div class="field" style="min-width:110px;">
+              <label for="indentSize">Sangría</label>
+              <select id="indentSize">
+                <option value="2" selected>2 espacios</option>
+                <option value="4">4 espacios</option>
+                <option value="tab">Tabulador</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-row" style="margin-bottom:16px;">
+            <span class="option-label">Ordenar claves alfabéticamente</span>
+            <label class="switch"><input type="checkbox" id="optSortKeys" /><span class="track"></span></label>
+          </div>
+
+          <div id="treeView" class="json-tree"></div>
+          <textarea id="textOutput" class="mono-area" rows="14" readonly style="display:none;"></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button id="formatBtn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg>
+  Formatear entrada
+</button>
+            <button id="minifyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg>
+  Minificar entrada
+</button>
+            <button id="copyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+  Copiar salida
+</button>
+            <button id="downloadBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Descargar .json
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        La validación se realiza con <code>JSON.parse</code>, el mismo analizador nativo que usan tu
+        navegador y Node.js en producción, así que lo que pasa aquí es exactamente lo que se interpretará
+        en producción, no una aproximación de una gramática parecida. Cuando falla el análisis, el motor
+        devuelve una línea y columna directamente, o solo una posición de carácter; en ese segundo caso,
+        la herramienta recorta la entrada hasta ese punto y cuenta los saltos de línea para traducirlo a
+        la línea y columna que ves en el cuadro de error.
+      </p>
+      <p>
+        La vista de árbol se construye recorriendo el valor analizado de forma recursiva en nodos
+        plegables, y cualquier objeto o array con más de 300 elementos se trunca solo en la vista, nunca
+        en el resultado copiado o descargado, así que un volcado de API de varios megabytes sigue siendo
+        desplazable. Un efecto secundario de pasar por el motor: los números se vuelven a serializar como
+        floats de 64 bits de JavaScript. Las formas cosméticas se normalizan (1e2 se convierte en 100,
+        0.50 en 0.5), y los enteros que superan 2^53, como IDs de bases de datos o de estilo Twitter de 19
+        dígitos, pueden perder silenciosamente sus últimos dígitos. Si tu JSON lleva IDs tan grandes,
+        consérvalos como cadenas de texto antes de formatear.
+      </p>
+      <p>
+        Analizar, formatear y minificar ocurre en el JavaScript de esta página con cada pulsación. Puedes
+        comprobarlo tú mismo: abre las herramientas de desarrollador, la pestaña Red, y pega una respuesta
+        real de una API; ninguna petición sale de tu navegador.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+test-file-generator.html|Generador de archivos de prueba|Archivos de relleno del tamaño o extensión exactos.
+markdown-editor.html|Editor Markdown|Editor Markdown de doble panel con vista previa en vivo.
+qr-code-generator.html|Generador de códigos QR|Códigos QR personalizados con colores y logo central.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

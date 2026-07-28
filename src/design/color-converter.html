@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Color Converter: HEX, RGB, HSL, CMYK | norito</title>
+<meta name="description" content="Convert a color between HEX, RGB, HSL, and CMYK live, with one-click copy for each format." />
+<link rel="canonical" href="https://norito.in/design/color-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/color-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/color-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Color Converter: HEX, RGB, HSL, CMYK | norito" />
+<meta property="og:description" content="Convert a color between HEX, RGB, HSL, and CMYK live, with one-click copy for each format." />
+<meta property="og:url" content="https://norito.in/design/color-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Color Converter: HEX, RGB, HSL, CMYK | norito" />
+<meta name="twitter:description" content="Convert a color between HEX, RGB, HSL, and CMYK live, with one-click copy for each format." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Color Converter",
+  "url": "https://norito.in/design/color-converter.html",
+  "description": "Convert a color between HEX, RGB, HSL, and CMYK live, with one-click copy for each format.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is CMYK only approximate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "CMYK is a print color space and its exact appearance depends on the specific ink and paper. The values here are a standard RGB-to-CMYK conversion, a solid starting point but not a substitute for your printer's color profile." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's HSL useful for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hue, saturation, lightness. It's often easier to build a color palette by keeping hue fixed and varying lightness/saturation than by guessing RGB or hex values directly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this store the colors I pick?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Everything happens locally in your browser and nothing is saved or sent anywhere." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Color Converter",
+      "item": "https://norito.in/design/color-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Color Converter</p>
+    <h1>Color Converter</h1>
+    <p class="lede">
+      Pick a color once, get it back in HEX, RGB, HSL, and CMYK at the same time. Copy whichever format you need.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <input type="color" id="colorPicker" value="#ff4d7a" style="width:100%; height:56px; cursor:pointer; padding:4px;" />
+        <div class="color-swatch-lg" id="swatchLg"></div>
+        <div class="color-field-grid">
+          <div class="field">
+            <label>HEX</label>
+            <div class="color-copy-row"><input type="text" id="hexOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hexOut">Copy</button></div>
+          </div>
+          <div class="field">
+            <label>RGB</label>
+            <div class="color-copy-row"><input type="text" id="rgbOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="rgbOut">Copy</button></div>
+          </div>
+          <div class="field">
+            <label>HSL</label>
+            <div class="color-copy-row"><input type="text" id="hslOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hslOut">Copy</button></div>
+          </div>
+          <div class="field">
+            <label>CMYK</label>
+            <div class="color-copy-row"><input type="text" id="cmykOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="cmykOut">Copy</button></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Why so many formats?</h3>
+          <p class="note" style="margin-top:0;">HEX and RGB are the standard web formats, HSL is easier to reason about when you want to adjust lightness or saturation, and CMYK is what print workflows expect.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The hex value is split by a regex into three two-digit pairs and parsed base-16 into red,
+        green, and blue from 0 to 255. HSL comes from the standard derivation: lightness is the
+        average of the largest and smallest channel, saturation is the spread between them scaled
+        by how close lightness is to the extremes, and hue depends on which channel dominates, with
+        red, green, and blue anchored at 0, 120, and 240 degrees and the exact angle interpolated
+        from the other two channels. CMYK uses the plain conversion formula: black (K) is one minus
+        the strongest channel, then cyan, magenta, and yellow are whatever each channel is missing
+        after black is accounted for, with pure black special-cased to avoid dividing by zero. All
+        four outputs are rounded to whole numbers for readability, which is why converting back and
+        forth can drift by a point.
+      </p>
+      <p>
+        About that CMYK value: treat it as a starting point, not print truth. Screen colors are
+        defined in sRGB, and translating them to ink coverage properly requires an ICC color
+        profile describing the specific press, inks, and paper. The formula here assumes idealized
+        inks that don't exist, and plenty of vivid screen colors, saturated oranges, electric
+        blues, bright greens, sit outside what coated paper can reproduce at all. Any print shop
+        will re-convert your file through their own profile anyway, so use this tool's CMYK to
+        communicate intent, and expect the proof to look duller than your monitor.
+      </p>
+      <p>
+        All the math above runs in a few small functions inside this page; picking a color triggers
+        pure local arithmetic and four DOM updates. Nothing is fetched and nothing is sent, which
+        the DevTools Network tab will confirm while you click around the picker.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+contrast-checker.html|Contrast Checker|Check if two colors meet WCAG contrast rules.
+css-gradient-generator.html|CSS Gradient Generator|Build a gradient from colors you like.
+color-palette-extractor.html|Color Palette Extractor|Pull dominant colors out of an image.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why is CMYK only approximate?</summary>
+        <p>CMYK is a print color space and its exact appearance depends on the specific ink and paper. The values here are a standard RGB-to-CMYK conversion, a solid starting point but not a substitute for your printer's color profile.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's HSL useful for?</summary>
+        <p>Hue, saturation, lightness. It's often easier to build a color palette by keeping hue fixed and varying lightness/saturation than by guessing RGB or hex values directly.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this store the colors I pick?</summary>
+        <p>No. Everything happens locally in your browser and nothing is saved or sent anywhere.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-color-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

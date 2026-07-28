@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>HTML 实体编码 / 解码工具在线使用 | norito</title>
+<meta name="description" content="在浏览器中实时转义或反转义 HTML 实体（&lt; &gt; &amp; 等）。支持命名实体和数字实体。不上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/html-entity-encoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/html-entity-encoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/html-entity-encoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/html-entity-encoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/html-entity-encoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/html-entity-encoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HTML 实体编码 / 解码工具在线使用 | norito" />
+<meta property="og:description" content="在浏览器中实时转义或反转义 HTML 实体（&lt; &gt; &amp; 等）。支持命名实体和数字实体。不上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/html-entity-encoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HTML 实体编码 / 解码工具在线使用 | norito" />
+<meta name="twitter:description" content="在浏览器中实时转义或反转义 HTML 实体（&lt; &gt; &amp; 等）。支持命名实体和数字实体。不上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HTML 实体编码 / 解码工具",
+  "url": "https://norito.in/zh/html-entity-encoder.html",
+  "description": "在浏览器中实时转义或反转义 HTML 实体（&lt; &gt; &amp; 等）。支持命名实体和数字实体。不上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HTML 实体编码 / 解码工具",
+      "item": "https://norito.in/zh/html-entity-encoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / HTML 实体编码工具</p>
+    <h1>HTML 实体编码 / 解码工具</h1>
+    <p class="lede">
+      将特殊字符转义为 HTML 实体，或将实体解码回纯文本，输入时实时更新。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">编码</button>
+          <button type="button" class="tab" data-value="decode">解码</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="option-row" style="margin-bottom:16px;">
+          <div>
+            <div class="option-label">编码所有非 ASCII 字符</div>
+            <div class="option-hint">同时转义带重音的字母和表情符号，而不仅仅是 &lt; &gt; &amp; " '。</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="optAllNonAscii" /><span class="track"></span></label>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">输入</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="输入或粘贴 HTML 或文本..."></textarea>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">输出</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            交换
+          </button>
+          <button id="copyBtn">复制输出</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-teal" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3>为什么会有 HTML 实体</h3>
+              <p>有些字符被 HTML 本身保留。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            像 <code>&lt;</code>、<code>&gt;</code> 和 <code>&amp;</code> 这样的字符在 HTML 标记中具有特殊含义，直接在页面内容中输入它们可能会破坏页面，更糟糕的是，可能让用户输入被解释为可执行的标记。将它们编码为像 <code>&amp;lt;</code> 这样的实体，可以安全地将该字符显示为纯文本。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">命名实体 vs 数字实体</h3>
+          <p class="note" style="margin-top:0;">
+            <code>&amp;amp;</code> 和 <code>&amp;#38;</code> 都会解码为同一个 & 符号；命名实体是为常见字符设置的，数字实体（十进制或十六进制）则可以表示任意 Unicode 字符。此工具可以解码这两种形式。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>编码是一种简单的替换操作：正则表达式将五个 HTML 保留字符（<code>&amp;</code>、<code>&lt;</code>、<code>&gt;</code>、<code>"</code>、<code>'</code>）替换为对应的实体。「编码所有非 ASCII 字符」选项则更进一步，使用 <code>codePointAt</code> 将 ASCII 范围以外的每个字符都转换为数字引用，这在输出需要通过仅支持 ASCII 的旧邮件模板系统或会破坏 UTF-8 的配置文件时非常有用。</p>
+      <p>解码使用了一个值得了解的小技巧：将字符串赋值给一个未挂载的 <code>&lt;textarea&gt;</code> 的 <code>innerHTML</code>，然后再从其 <code>.value</code> 读回结果。这把工作交给了浏览器自身的 HTML 解析器，它已经掌握了 2000 多个命名实体以及所有十进制和十六进制数字形式，因此该工具不需要内置一张可能过时的查找表。这也是为什么在这里解码不受信任的输入是安全的：textarea 的内容始终被当作纯文本处理，因此解码后的 <code>&amp;lt;script&amp;gt;</code> 只会变成一个 script 标签的文本内容，不会被执行。</p>
+      <p>两个方向都在这个页面的 JavaScript 中随每次按键实时运行。输入时打开开发者工具的 Network 标签页：不会有任何请求，你的标记内容永远不会离开浏览器。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|URL 编码 / 解码工具|对 URL 进行百分号编码或解码。
+base64-encoder.html|Base64 编码 / 解码|文本与 Base64 互转，UTF-8 安全。
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-html-entity.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

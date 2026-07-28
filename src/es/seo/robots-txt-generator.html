@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de robots.txt | norito</title>
+<meta name="description" content="Crea un archivo robots.txt con reglas allow/disallow y una referencia al sitemap, directamente en tu navegador. Descárgalo cuando esté listo." />
+<link rel="canonical" href="https://norito.in/es/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/seo/robots-txt-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de robots.txt | norito" />
+<meta property="og:description" content="Crea un archivo robots.txt con reglas allow/disallow y una referencia al sitemap, directamente en tu navegador. Descárgalo cuando esté listo." />
+<meta property="og:url" content="https://norito.in/es/seo/robots-txt-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de robots.txt | norito" />
+<meta name="twitter:description" content="Crea un archivo robots.txt con reglas allow/disallow y una referencia al sitemap, directamente en tu navegador. Descárgalo cuando esté listo." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de robots.txt",
+  "url": "https://norito.in/es/seo/robots-txt-generator.html",
+  "description": "Crea un archivo robots.txt con reglas allow/disallow y una referencia al sitemap, directamente en tu navegador. Descárgalo cuando esté listo.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El robots.txt bloquea realmente las páginas en Google?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Bloquea el rastreo, no necesariamente la indexación. Una URL no permitida (disallow) puede seguir apareciendo en los resultados de búsqueda (sin descripción) si otros sitios enlazan a ella. Para mantener una página completamente fuera de los resultados de búsqueda, usa en su lugar una meta etiqueta noindex, que requiere que la página sea rastreable." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde tiene que ir el robots.txt?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En la raíz de tu dominio, exactamente en https://ejemplo.com/robots.txt, en ningún otro sitio. Los rastreadores no lo buscarán en una subcarpeta." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué significa un Disallow vacío?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Disallow: sin nada después significa \"no bloquear nada\", equivalente a permitir todo para ese user-agent. Ese es el valor por defecto con el que empieza esta herramienta para Allow: /." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Generador de robots.txt",
+      "item": "https://norito.in/es/seo/robots-txt-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de robots.txt</p>
+    <h1>Generador de robots.txt</h1>
+    <p class="lede">
+      Crea un archivo robots.txt con reglas de allow y disallow por rastreador, un retraso de rastreo opcional y una referencia al sitemap.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Reglas</h3>
+        <div id="rulesWrap"></div>
+        <button type="button" id="addRuleBtn" class="secondary" style="margin-top:4px;">+ Añadir regla</button>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="sitemapUrl">URL del sitemap <span class="note">(opcional)</span></label>
+          <input type="text" id="sitemapUrl" placeholder="https://ejemplo.com/sitemap.xml" />
+        </div>
+        <div class="field">
+          <label for="crawlDelay">Crawl-delay en segundos <span class="note">(opcional, se aplica por grupo de user-agent)</span></label>
+          <input type="number" id="crawlDelay" min="0" placeholder="p. ej. 10" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">robots.txt</h3>
+          <pre class="code-output" id="output"></pre>
+          <button id="downloadBtn" style="margin-top:12px;">Descargar robots.txt</button>
+        </div>
+        <p class="note">
+          Usa <code>*</code> como user-agent para aplicar una regla a todos los rastreadores, o indica
+          un bot concreto como <code>Googlebot</code>. Disallow bloquea el rastreo de una ruta, Allow
+          lo permite explícitamente (útil para hacer una excepción dentro de una carpeta bloqueada).
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        El generador agrupa tus reglas por user-agent: si escribes tres reglas para Googlebot en filas
+        distintas, se combinan bajo una única línea <code>User-agent: Googlebot</code>, con cada grupo
+        separado por una línea en blanco tal como esperan los rastreadores. Las reglas con una ruta vacía
+        se omiten, y cada valor se limpia de saltos de línea antes de escribirse, para que pegar algo
+        inesperado en un campo no pueda inyectar una directiva adicional. La línea Sitemap va al final, y
+        el botón de descarga simplemente envuelve el texto en un Blob y simula un clic, sin ningún
+        servidor de por medio.
+      </p>
+      <p>
+        Dos cosas suelen confundir. Primero, Crawl-delay está aquí porque Bing y Yandex lo respetan, pero
+        Googlebot lo ignora por completo desde que Google eliminó las directivas no compatibles en 2019;
+        para Google, el ritmo de rastreo se gestiona desde Search Console. Segundo, y más importante:
+        Disallow no elimina una página de los resultados de búsqueda, solo impide su rastreo. Una URL
+        bloqueada puede seguir apareciendo indexada si otros sitios enlazan a ella, mostrada sin
+        descripción. Si quieres que una página desaparezca del índice, haz lo contrario: deja que se
+        rastree y añade una etiqueta noindex; bloquearla en robots.txt le impide a Google ver esa etiqueta.
+      </p>
+      <p>
+        Todo el archivo se genera en el JavaScript de esta página mientras escribes; nada se envía a
+        ningún servidor, algo que puedes comprobar en la pestaña Red de las herramientas de desarrollador.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+sitemap-generator.html|Generador de sitemap|Crea un sitemap.xml para referenciar desde robots.txt.
+meta-tag-generator.html|Generador de meta tags|Genera el título, la descripción y las etiquetas sociales.
+utm-builder.html|Generador de UTM|Añade parámetros de seguimiento de campaña a una URL.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿El robots.txt bloquea realmente las páginas en Google?</summary>
+        <p>Bloquea el rastreo, no necesariamente la indexación. Una URL no permitida (disallow) puede seguir apareciendo en los resultados de búsqueda (sin descripción) si otros sitios enlazan a ella. Para mantener una página completamente fuera de los resultados de búsqueda, usa en su lugar una meta etiqueta noindex, que requiere que la página sea rastreable.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Dónde tiene que ir el robots.txt?</summary>
+        <p>En la raíz de tu dominio, exactamente en https://ejemplo.com/robots.txt, en ningún otro sitio. Los rastreadores no lo buscarán en una subcarpeta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué significa un Disallow vacío?</summary>
+        <p>Disallow: sin nada después significa "no bloquear nada", equivalente a permitir todo para ese user-agent. Ese es el valor por defecto con el que empieza esta herramienta para Allow: /.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-robots-txt-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

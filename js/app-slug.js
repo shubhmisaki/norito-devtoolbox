@@ -100,7 +100,7 @@
 
   async function copyText(text) {
     try {
-      await navigator.clipboard.writeText(text);
+      await copyToClipboard(text);
     } catch (e) {
       const ta = document.createElement("textarea");
       ta.value = text;

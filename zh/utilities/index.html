@@ -46,7 +46,7 @@
 <meta name="twitter:title" content="免费实用工具：密码、二维码 | norito" />
 <meta name="twitter:description" content="生成安全的随机密码，或制作可自定义颜色与样式的二维码，直接在你的浏览器中完成。无需上传，无需账号，没有水印。" />
 <meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
-<link rel="stylesheet" href="../../css/style.css" />
+<link rel="stylesheet" href="/css/style.css" />
 
 <script type="application/ld+json">
 {
@@ -77,78 +77,105 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="../index.html"><img class="logo logo-word" src="../../assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
+    <a class="brand" href="/zh/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
         <nav class="site-nav" id="siteNav">
       <div class="nav-group">
         <button type="button" class="nav-cat">图像</button>
         <div class="nav-panel">
-          <a href="../compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">压缩图片<span>压缩到指定文件大小</span></div></a>
-          <a href="../placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">占位图生成器<span>自定义尺寸的占位图片</span></div></a>
-          <a href="../remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">去除背景<span>从照片中抠出人像</span></div></a>
+          <a href="/zh/compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">压缩图片<span>压缩到指定文件大小</span></div></a>
+          <a href="/zh/placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">占位图生成器<span>自定义尺寸的占位图片</span></div></a>
+          <a href="/zh/remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">去除背景<span>从照片中抠出人像</span></div></a>
+          <a href="/resize-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">Resize Image<span>Change width and height, exact or by percentage</span></div></a>
+          <a href="/image-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">Image Converter<span>Convert between JPG, PNG, and WebP</span></div></a>
+          <a href="/crop-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">Crop Image<span>Drag a box to crop, free-form or locked ratio</span></div></a>
+          <a href="/remove-metadata.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div class="nav-link-body">Remove Metadata<span>Strip EXIF, GPS, and camera info</span></div></a>
+          <a href="/watermark-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Watermark Image<span>Add a text watermark with live preview</span></div></a>
         </div>
       </div>
       <div class="nav-group">
         <button type="button" class="nav-cat">开发工具</button>
         <div class="nav-panel">
-          <a href="../test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">测试文件生成器<span>任意大小的精确测试文件</span></div></a>
-          <a href="../json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">JSON 格式化<span>格式化、校验、压缩</span></div></a>
-          <a href="../markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">Markdown 编辑器<span>实时预览，导出为 .md/.html</span></div></a>
+          <a href="/zh/test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">测试文件生成器<span>任意大小的精确测试文件</span></div></a>
+          <a href="/zh/json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">JSON 格式化<span>格式化、校验、压缩</span></div></a>
+          <a href="/zh/markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">Markdown 编辑器<span>实时预览，导出为 .md/.html</span></div></a>
+          <a href="/uuid-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg><div class="nav-link-body">UUID Generator<span>Bulk random UUID v4 identifiers</span></div></a>
+          <a href="/base64-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg><div class="nav-link-body">Base64 Encode / Decode<span>Text to and from Base64, UTF-8 safe</span></div></a>
+          <a href="/hash-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">Hash Generator<span>MD5, SHA-1, SHA-256, SHA-512</span></div></a>
+          <a href="/timestamp-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="nav-link-body">Timestamp Converter<span>Unix time to date, both ways</span></div></a>
+          <a href="/json-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">JSON Diff<span>Compare two JSON documents</span></div></a>
+          <a href="/jwt-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">JWT Decoder<span>Decode a JWT's header and payload</span></div></a>
+          <a href="/regex-tester.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">Regex Tester<span>Test a regex with live match highlighting</span></div></a>
+          <a href="/csv-to-json.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">CSV to JSON<span>Convert a CSV file into JSON</span></div></a>
+          <a href="/csv-viewer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg><div class="nav-link-body">CSV Viewer<span>View and edit a CSV as a table</span></div></a>
+          <a href="/url-encoder-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">URL Encoder / Decoder<span>Percent-encode or decode a URL</span></div></a>
+          <a href="/html-entity-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><div class="nav-link-body">HTML Entity Encoder<span>Escape or unescape HTML entities</span></div></a>
+          <a href="/yaml-to-json-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg><div class="nav-link-body">YAML to JSON Converter<span>Convert YAML and JSON, both ways</span></div></a>
+          <a href="/cron-expression-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg><div class="nav-link-body">Cron Expression Parser<span>Explain a cron schedule, preview next runs</span></div></a>
+          <a href="/number-base-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">Number Base Converter<span>Binary, octal, decimal, hex, and more</span></div></a>
+          <a href="/text-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">Text Diff<span>Compare two texts line by line</span></div></a>
         </div>
       </div>
       <div class="nav-group">
         <button type="button" class="nav-cat">文本</button>
         <div class="nav-panel">
-          <a href="../seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">SEO Slug 生成器<span>根据标题生成简洁网址</span></div></a>
-          <a href="../limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">限字数文本生成器<span>生成指定长度的占位文本</span></div></a>
+          <a href="/zh/seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">SEO Slug 生成器<span>根据标题生成简洁网址</span></div></a>
+          <a href="/zh/limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">限字数文本生成器<span>生成指定长度的占位文本</span></div></a>
+          <a href="/word-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Word Counter<span>Live word, sentence, and paragraph counts</span></div></a>
+          <a href="/character-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg><div class="nav-link-body">Character Counter<span>Character count, with platform limits</span></div></a>
+          <a href="/remove-duplicate-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg><div class="nav-link-body">Remove Duplicate Lines<span>Deduplicate a list of lines</span></div></a>
+          <a href="/sort-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg><div class="nav-link-body">Sort Lines<span>Sort alphabetically, numerically, or shuffle</span></div></a>
+          <a href="/case-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M21 16h-6l6-8h-6"/></svg><div class="nav-link-body">Case Converter<span>UPPERCASE, camelCase, snake_case, and more</span></div></a>
+          <a href="/lorem-ipsum-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Lorem Ipsum Generator<span>Placeholder text, by word, sentence, or paragraph</span></div></a>
+          <a href="/find-and-replace.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">Find and Replace<span>Find and replace text, regex supported</span></div></a>
         </div>
       </div>
       <div class="nav-group">
         <button type="button" class="nav-cat">实用工具</button>
         <div class="nav-panel">
-          <a href="../password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">密码生成器<span>随机密码与密码短语</span></div></a>
-          <a href="../qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">二维码生成器<span>自定义颜色与纠错级别</span></div></a>
+          <a href="/zh/password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">密码生成器<span>随机密码与密码短语</span></div></a>
+          <a href="/zh/qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">二维码生成器<span>自定义颜色与纠错级别</span></div></a>
         </div>
       </div>
-    
-            <div class="nav-group">
-        <a class="nav-cat" href="../pdf/">PDF</a>
+      <div class="nav-group">
+        <a class="nav-cat" href="/zh/pdf/">PDF</a>
         <div class="nav-panel">
-          <a href="../pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">合并 PDF<span>将多个 PDF 合并为一个</span></div></a>
-          <a href="../pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">拆分 PDF<span>提取页面或拆分为多个文件</span></div></a>
-          <a href="../pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">旋转 PDF<span>修正横向或颠倒的页面</span></div></a>
-          <a href="../pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF 转图片<span>将页面转换为图片</span></div></a>
-          <a href="../pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">图片转 PDF<span>将图片合并为一个 PDF</span></div></a>
-          <a href="../pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">删除与重排<span>删除或重新排列页面</span></div></a>
-          <a href="../pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">添加页码<span>为每页添加编号</span></div></a>
-          <a href="../pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">添加水印<span>在每页盖上文字水印</span></div></a>
-          <a href="../pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">提取文字<span>从 PDF 中提取文字</span></div></a>
-          <a href="../pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">压缩 PDF<span>缩小 PDF 文件体积</span></div></a>
-          <a href="../pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">PDF 签名<span>手绘或输入签名</span></div></a>
+          <a href="/zh/pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">合并 PDF<span>将多个 PDF 合并为一个</span></div></a>
+          <a href="/zh/pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">拆分 PDF<span>提取页面或拆分为多个文件</span></div></a>
+          <a href="/zh/pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">旋转 PDF<span>修正横向或颠倒的页面</span></div></a>
+          <a href="/zh/pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF 转图片<span>将页面转换为图片</span></div></a>
+          <a href="/zh/pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">图片转 PDF<span>将图片合并为一个 PDF</span></div></a>
+          <a href="/zh/pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">删除与重排<span>删除或重新排列页面</span></div></a>
+          <a href="/zh/pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">添加页码<span>为每页添加编号</span></div></a>
+          <a href="/zh/pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">添加水印<span>在每页盖上文字水印</span></div></a>
+          <a href="/zh/pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">提取文字<span>从 PDF 中提取文字</span></div></a>
+          <a href="/zh/pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">压缩 PDF<span>缩小 PDF 文件体积</span></div></a>
+          <a href="/zh/pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">PDF 签名<span>手绘或输入签名</span></div></a>
         </div>
       </div>
-            <div class="nav-group">
-        <a class="nav-cat" href="../seo/">SEO</a>
+      <div class="nav-group">
+        <a class="nav-cat" href="/zh/seo/">SEO</a>
         <div class="nav-panel">
-          <a href="../seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Meta 标签生成器<span>标题、描述、OG、Twitter 标签</span></div></a>
-          <a href="../seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">UTM 链接生成器<span>生成营销活动追踪链接</span></div></a>
-          <a href="../seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">Robots.txt 生成器<span>允许/禁止规则，附 sitemap 引用</span></div></a>
-          <a href="../seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">站点地图生成器<span>输入 URL，输出 sitemap.xml</span></div></a>
+          <a href="/zh/seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Meta 标签生成器<span>标题、描述、OG、Twitter 标签</span></div></a>
+          <a href="/zh/seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">UTM 链接生成器<span>生成营销活动追踪链接</span></div></a>
+          <a href="/zh/seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">Robots.txt 生成器<span>允许/禁止规则，附 sitemap 引用</span></div></a>
+          <a href="/zh/seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">站点地图生成器<span>输入 URL，输出 sitemap.xml</span></div></a>
         </div>
       </div>
-            <div class="nav-group">
-        <a class="nav-cat" href="../design/">Design</a>
+      <div class="nav-group">
+        <a class="nav-cat" href="/zh/design/">Design</a>
         <div class="nav-panel">
-          <a href="../design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">CSS 渐变生成器<span>线性或径向渐变，复制 CSS</span></div></a>
-          <a href="../design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">阴影生成器<span>单层或叠加阴影</span></div></a>
-          <a href="../design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">圆角生成器<span>逐角设置圆角，复制 CSS</span></div></a>
-          <a href="../design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">Favicon 生成器<span>生成所需的所有尺寸</span></div></a>
-          <a href="../design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">调色板提取器<span>从图片中提取主要颜色</span></div></a>
-          <a href="../design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">对比度检查器<span>WCAG 对比度，AA/AAA 达标检测</span></div></a>
-          <a href="../design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">颜色转换器<span>HEX、RGB、HSL、CMYK 实时转换</span></div></a>
+          <a href="/zh/design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">CSS 渐变生成器<span>线性或径向渐变，复制 CSS</span></div></a>
+          <a href="/zh/design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">阴影生成器<span>单层或叠加阴影</span></div></a>
+          <a href="/zh/design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">圆角生成器<span>逐角设置圆角，复制 CSS</span></div></a>
+          <a href="/zh/design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">Favicon 生成器<span>生成所需的所有尺寸</span></div></a>
+          <a href="/zh/design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">调色板提取器<span>从图片中提取主要颜色</span></div></a>
+          <a href="/zh/design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">对比度检查器<span>WCAG 对比度，AA/AAA 达标检测</span></div></a>
+          <a href="/zh/design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">颜色转换器<span>HEX、RGB、HSL、CMYK 实时转换</span></div></a>
         </div>
       </div>
-          </nav>
 
+          
+</nav>
       <button type="button" class="search-trigger" id="searchTrigger" aria-label="搜索工具" title="搜索工具"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
 
       <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
@@ -157,14 +184,13 @@
       </button>
 
       <div class="lang-switch" id="langSwitch">
-        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा / Язык / 言語">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
+          <span class="lang-switch-current" id="langSwitchCurrent">ZH</span>
         </button>
         <div class="lang-switch-panel" id="langSwitchPanel"></div>
       </div>
   </div>
-
 </header>
 
 <main>
@@ -210,39 +236,116 @@
         <div class="footer-brand-name">norito</div>
         <p class="footer-tagline">小而专注的工具，每个只做一件事。全部在你的浏览器中运行，不会上传任何内容。</p>
       </div>
-      <div class="footer-col">
-        <h3>图像</h3>
-        <a href="../test-file-generator.html">测试文件</a>
-        <a href="../compress-image.html">压缩图片</a>
-        <a href="../placeholder-generator.html">占位图</a>
-        <a href="../remove-background.html">去除背景</a>
-        <a href="../qr-code-generator.html">二维码</a>
+      <div class="footer-col footer-product">
+        <h3>产品</h3>
+        <a href="/tools.html">所有工具</a>
+        <a href="/zh/changelog.html">更新日志</a>
+        <a href="/zh/how-it-works.html">工作原理</a>
+        <a href="/blog/">Blog</a>
+        <a href="/zh/compare/">Compare</a>
+        <a href="/zh/about.html">关于我们</a>
+        <a href="/zh/contact.html">联系我们</a>
+        <a href="/zh/privacy.html">隐私政策</a>
       </div>
       <div class="footer-col">
-        <h3>文本与开发</h3>
-        <a href="../password-generator.html">密码</a>
-        <a href="../seo-slug-generator.html">Slug</a>
-        <a href="../limited-text-generator.html">限字数文本</a>
-        <a href="../json-formatter.html">JSON</a>
-        <a href="../markdown-editor.html">Markdown</a>
+        <h3>PDF</h3>
+        <a href="/zh/pdf/merge-pdf.html">合并 PDF</a>
+        <a href="/zh/pdf/split-pdf.html">拆分 PDF</a>
+        <a href="/zh/pdf/rotate-pdf.html">旋转 PDF</a>
+        <a href="/zh/pdf/pdf-to-image.html">PDF 转图片</a>
+        <a href="/zh/pdf/jpg-png-to-pdf.html">图片转 PDF</a>
+        <a href="/zh/pdf/organize-pdf.html">删除与重排</a>
+        <a href="/zh/pdf/add-page-numbers.html">添加页码</a>
+        <a href="/zh/pdf/add-watermark.html">添加水印</a>
+        <a href="/zh/pdf/extract-text.html">提取文字</a>
+        <a href="/zh/pdf/compress-pdf.html">压缩 PDF</a>
+        <a href="/zh/pdf/sign-pdf.html">PDF 签名</a>
+      </div>
+      <div class="footer-col">
+        <h3>图像</h3>
+        <a href="/zh/compress-image.html">压缩图片</a>
+        <a href="/resize-image.html">Resize Image</a>
+        <a href="/image-converter.html">Image Converter</a>
+        <a href="/crop-image.html">Crop Image</a>
+        <a href="/remove-metadata.html">Remove Metadata</a>
+        <a href="/watermark-image.html">Watermark Image</a>
+        <a href="/zh/placeholder-generator.html">占位图生成器</a>
+        <a href="/zh/remove-background.html">去除背景</a>
+      </div>
+      <div class="footer-col">
+        <h3>开发工具</h3>
+        <a href="/zh/test-file-generator.html">测试文件生成器</a>
+        <a href="/zh/json-formatter.html">JSON 格式化</a>
+        <a href="/zh/markdown-editor.html">Markdown 编辑器</a>
+        <a href="/uuid-generator.html">UUID Generator</a>
+        <a href="/base64-encoder.html">Base64</a>
+        <a href="/hash-generator.html">Hash Generator</a>
+        <a href="/timestamp-converter.html">Timestamp</a>
+        <a href="/json-diff.html">JSON Diff</a>
+        <a href="/jwt-decoder.html">JWT Decoder</a>
+        <a href="/regex-tester.html">Regex Tester</a>
+        <a href="/csv-to-json.html">CSV to JSON</a>
+        <a href="/csv-viewer.html">CSV Viewer</a>
+        <a href="/url-encoder-decoder.html">URL Encoder</a>
+        <a href="/html-entity-encoder.html">HTML Entities</a>
+        <a href="/yaml-to-json-converter.html">YAML to JSON</a>
+        <a href="/cron-expression-parser.html">Cron Parser</a>
+        <a href="/number-base-converter.html">Base Converter</a>
+        <a href="/text-diff.html">Text Diff</a>
+      </div>
+      <div class="footer-col">
+        <h3>文本</h3>
+        <a href="/zh/seo-slug-generator.html">SEO Slug 生成器</a>
+        <a href="/zh/limited-text-generator.html">限字数文本生成器</a>
+        <a href="/word-counter.html">Word Counter</a>
+        <a href="/character-counter.html">Character Counter</a>
+        <a href="/remove-duplicate-lines.html">Dedupe Lines</a>
+        <a href="/sort-lines.html">Sort Lines</a>
+        <a href="/case-converter.html">Case Converter</a>
+        <a href="/lorem-ipsum-generator.html">Lorem Ipsum</a>
+        <a href="/find-and-replace.html">Find & Replace</a>
+      </div>
+      <div class="footer-col">
+        <h3>实用工具</h3>
+        <a href="/zh/password-generator.html">密码生成器</a>
+        <a href="/zh/qr-code-generator.html">二维码生成器</a>
+      </div>
+      <div class="footer-col">
+        <h3>SEO</h3>
+        <a href="/zh/seo/meta-tag-generator.html">Meta 标签生成器</a>
+        <a href="/zh/seo/utm-builder.html">UTM 链接生成器</a>
+        <a href="/zh/seo/robots-txt-generator.html">Robots.txt 生成器</a>
+        <a href="/zh/seo/sitemap-generator.html">站点地图生成器</a>
+      </div>
+      <div class="footer-col">
+        <h3>Design</h3>
+        <a href="/zh/design/css-gradient-generator.html">CSS 渐变生成器</a>
+        <a href="/zh/design/box-shadow-generator.html">阴影生成器</a>
+        <a href="/zh/design/border-radius-generator.html">圆角生成器</a>
+        <a href="/zh/design/favicon-generator.html">Favicon 生成器</a>
+        <a href="/zh/design/color-palette-extractor.html">调色板提取器</a>
+        <a href="/zh/design/contrast-checker.html">对比度检查器</a>
+        <a href="/zh/design/color-converter.html">颜色转换器</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 norito。所有工具均在本地浏览器中运行。</span>
-      <a href="../privacy.html">隐私政策</a>
-            <a href="../../blog/">Blog</a>
-            <a href="../../compare/">Compare</a>
-            <a href="../../how-it-works.html">How it Works</a>
+      <a href="/zh/changelog.html">更新日志</a>
+      <a href="/blog/">Blog</a>
+      <a href="/zh/compare/">Compare</a>
+      <a href="/zh/how-it-works.html">工作原理</a>
+      <a href="/zh/privacy.html">隐私政策</a>
       <a href="https://ko-fi.com/shubhmisaki" target="_blank" rel="noopener">请我喝杯咖啡</a>
     </div>
   </div>
 </footer>
 
+
 <script src="../../js/i18n-runtime.js"></script>
-<script src="../../js/nav.js"></script>
-<script src="../../js/theme-toggle.js"></script>
-<script src="../../js/lang-switcher.js"></script>
-<script src="../../js/bg-blobs.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/theme-toggle.js"></script>
+<script src="/js/lang-switcher.js"></script>
+<script src="/js/bg-blobs.js"></script>
 <div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="没有匹配的工具。">
   <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="搜索工具">
     <div class="cmdk-input-row">
@@ -254,7 +357,7 @@
   </div>
 </div>
 
-<script src="../../js/cmdk.js"></script>
+<script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
 </body>

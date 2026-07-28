@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Añadir Marca de Agua a una Imagen Online | norito</title>
+<meta name="description" content="Añade una marca de agua de texto a una foto con vista previa en vivo, en tu navegador. Controla tamaño, opacidad, ángulo, color, y posición. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/watermark-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/watermark-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/watermark-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/watermark-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/watermark-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/watermark-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/watermark-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/watermark-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/watermark-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Añadir Marca de Agua a una Imagen Online | norito" />
+<meta property="og:description" content="Añade una marca de agua de texto a una foto con vista previa en vivo, en tu navegador. Controla tamaño, opacidad, ángulo, color, y posición. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/watermark-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Añadir Marca de Agua a una Imagen Online | norito" />
+<meta name="twitter:description" content="Añade una marca de agua de texto a una foto con vista previa en vivo, en tu navegador. Controla tamaño, opacidad, ángulo, color, y posición. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Marca de Agua en Imagen",
+  "url": "https://norito.in/es/watermark-image.html",
+  "description": "Añade una marca de agua de texto a una foto con vista previa en vivo, en tu navegador. Controla tamaño, opacidad, ángulo, color, y posición. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Marca de Agua en Imagen",
+      "item": "https://norito.in/es/watermark-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Marca de Agua en Imagen</p>
+    <h1>Marca de Agua en Imagen</h1>
+    <p class="lede">
+      Añade una marca de agua de texto a una foto, con vista previa en vivo sobre la imagen real para que veas exactamente cómo se verán el tamaño, la opacidad, el ángulo, y la posición.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          <p><strong>Haz clic para elegir una imagen</strong>, o arrástrala aquí</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Se queda en tu dispositivo, no se sube nada.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="Vista previa de marca de agua" />
+            <span class="wm-live-preview" id="wmPreviewText">MUESTRA</span>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="wmText">Texto de la marca de agua</label>
+          <input type="text" id="wmText" value="© Tu Nombre" maxlength="80" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="wmSize">Tamaño de fuente (px)</label>
+            <input type="number" id="wmSize" min="8" max="200" value="32" />
+          </div>
+          <div class="field">
+            <label for="wmOpacity">Opacidad (%)</label>
+            <input type="number" id="wmOpacity" min="1" max="100" value="40" />
+          </div>
+          <div class="field">
+            <label for="wmAngle">Ángulo (°)</label>
+            <input type="number" id="wmAngle" min="-180" max="180" value="0" />
+          </div>
+          <div class="field">
+            <label for="wmColor">Color</label>
+            <input type="color" id="wmColor" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="wmPosition">Posición</label>
+          <select id="wmPosition">
+            <option value="top-left">Arriba izquierda</option>
+            <option value="top-center">Arriba centro</option>
+            <option value="top-right">Arriba derecha</option>
+            <option value="center-left">Centro izquierda</option>
+            <option value="center" selected>Centro</option>
+            <option value="center-right">Centro derecha</option>
+            <option value="bottom-left">Abajo izquierda</option>
+            <option value="bottom-center">Abajo centro</option>
+            <option value="bottom-right">Abajo derecha</option>
+          </select>
+        </div>
+
+        <button id="applyBtn" disabled style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          Aplicar marca de agua y descargar
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Resultado con marca de agua" />
+          <p class="note" id="previewHint" style="margin-top:0;">Tu imagen con marca de agua aparecerá aquí una vez generada.</p>
+        </div>
+        <p class="note">
+          La vista previa de arriba muestra tu marca de agua en vivo sobre la imagen real mientras ajustas tamaño, opacidad, ángulo, color, y posición. La descarga final coincide con lo que ves, escalada a la resolución completa de tu imagen.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La vista previa en vivo es un elemento DOM posicionado en capas sobre tu foto, pero la imagen final es trabajo de píxeles real sobre un <code>&lt;canvas&gt;</code>. Cuando pulsas aplicar, la imagen original se dibuja a resolución completa, luego el contexto del canvas se traslada a uno de nueve puntos de anclaje (esquinas, puntos medios de bordes, centro, cada uno con un margen del 6%), se rota según tu ángulo, y el texto se dibuja con <code>fillText()</code> usando tu color y opacidad vía <code>globalAlpha</code>. La alineación de texto y la línea base se ajustan según el ancla para que "abajo derecha" en la vista previa aterrice en el mismo punto relativo en la salida.</p>
+      <p>La parte sutil es la escala. Tu vista previa en pantalla puede tener 500 píxeles de ancho mientras que la foto real tiene 4000, así que una herramienta ingenua renderiza una marca de agua que se veía bien en la vista previa pero sale microscópica. Esta mide la proporción entre el ancho de vista previa mostrado y el ancho natural de la imagen y multiplica el tamaño de fuente por ello, así que 48px en la vista previa significa el mismo tamaño proporcional en el archivo de resolución completa. El resultado se vuelve a codificar en el formato original: JPEG a calidad 0.95, PNG sin pérdida (elige PNG si quieres los bordes de texto más nítidos posibles).</p>
+      <p>Vale la pena entender qué es una marca de agua: este texto se hornea en los píxeles, no se almacena como una capa o metadato, así que nadie puede eliminarlo de la forma en que se eliminan los datos EXIF. Eso corta en ambos sentidos. Una marca pequeña y de baja opacidad en una esquina es presa fácil para herramientas de recorte e inpainting con IA; una marca de agua que realmente protege una imagen se superpone al sujeto, en ángulo, con opacidad moderada, que es exactamente para lo que sirven los controles de posición, ángulo, y opacidad.</p>
+      <p>Tanto la vista previa como el renderizado final se ejecutan en tu pestaña. Revisa el panel Red de las DevTools mientras trabajas: la foto nunca se sube, así que las pruebas de cliente y las tomas no publicadas se quedan en tu máquina.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+remove-metadata.html|Eliminar metadatos|Elimina EXIF y datos GPS antes de compartir una foto.
+compress-image.html|Comprimir imagen|Reduce el tamaño del archivo después de poner la marca de agua.
+pdf/add-watermark.html|Añadir marca de agua (PDF)|Marca cada página de un documento PDF en su lugar.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-watermark-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

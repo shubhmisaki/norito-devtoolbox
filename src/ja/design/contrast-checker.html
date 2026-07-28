@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>カラーコントラストチェッカー:WCAG AA/AAA | norito</title>
+<meta name="description" content="2色間のコントラスト比を、通常テキストと大きいテキストのWCAG AA/AAA基準と照らし合わせてチェック。リアルタイムプレビュー付き。" />
+<link rel="canonical" href="https://norito.in/ja/design/contrast-checker.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/contrast-checker.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/contrast-checker.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/contrast-checker.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/contrast-checker.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/contrast-checker.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/contrast-checker.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/design/contrast-checker.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/contrast-checker.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="カラーコントラストチェッカー:WCAG AA/AAA | norito" />
+<meta property="og:description" content="2色間のコントラスト比を、通常テキストと大きいテキストのWCAG AA/AAA基準と照らし合わせてチェック。リアルタイムプレビュー付き。" />
+<meta property="og:url" content="https://norito.in/ja/design/contrast-checker.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="カラーコントラストチェッカー:WCAG AA/AAA | norito" />
+<meta name="twitter:description" content="2色間のコントラスト比を、通常テキストと大きいテキストのWCAG AA/AAA基準と照らし合わせてチェック。リアルタイムプレビュー付き。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "コントラストチェッカー",
+  "url": "https://norito.in/ja/design/contrast-checker.html",
+  "description": "2色間のコントラスト比を、通常テキストと大きいテキストのWCAG AA/AAA基準と照らし合わせてチェック。リアルタイムプレビュー付き。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "AAとAAAの違いは何ですか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AAはほとんどのサイトが目標とする基準値で、通常テキストは4.5:1、大きいテキスト(18pt以上、または太字14pt以上)は3:1です。AAAはより厳しく、弱視のユーザー向けのコンテンツを想定しており、通常テキスト7:1、大きいテキスト4.5:1です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "画像もチェックできますか、それとも単色だけですか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "単色同士(背景に対するテキスト色)のみです。写真やグラデーションの上のテキストの場合は、その上に乗り得る最も暗い部分と最も明るい部分の両方に対してコントラストを確認してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ブラウザや監査ツールと同じ計算式ですか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。標準のWCAG 2.1相対輝度・コントラスト比の計算式で、Lighthouseやaxeでも使われているのと同じものです。"
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "コントラストチェッカー",
+      "item": "https://norito.in/ja/design/contrast-checker.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / コントラストチェッカー</p>
+    <h1>コントラストチェッカー</h1>
+    <p class="lede">
+      テキストの色と背景の色を選ぶと、正確なWCAGコントラスト比と、AA/AAAに合格するかどうかが表示されます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="fgHex">テキストの色</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="fgColor" value="#1a1418" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="fgHex" value="#1a1418" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="bgHex">背景の色</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="bgColor" value="#ffffff" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="bgHex" value="#ffffff" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+        </div>
+        <button type="button" class="secondary" id="swapBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3 3 21"/></svg>
+          色を入れ替え
+        </button>
+
+        <div class="contrast-ratio-display" id="ratioDisplay">--</div>
+        <div class="contrast-badges" id="badges"></div>
+
+        <div class="contrast-preview" id="previewBox">
+          <p class="cp-large">大きいテキストのプレビュー(18pt以上)</p>
+          <p class="cp-normal">通常テキストのプレビュー、本文でよく使われるサイズです。</p>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">バッジの意味</h3>
+          <p class="note" style="margin-top:0;">WCAG 2.1では、AA基準を満たすために通常テキストで4.5:1、大きいテキスト(18pt以上、または太字14pt以上)で3:1のコントラスト比が必要です。AAAはより厳しく、通常テキストで7:1、大きいテキストで4.5:1です。</p>
+        </div>
+      </div>
+    </div>
+
+
+<!--RELATED-TOOLS
+color-converter.html|カラーコンバーター|任意の色をHEX、RGB、HSL、CMYKに変換します。
+color-palette-extractor.html|カラーパレット抽出ツール|画像から主要な色を抽出します。
+css-gradient-generator.html|CSSグラデーションジェネレーター|グラデーションをビジュアルに作成し、CSSをコピーします。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>AAとAAAの違いは何ですか?</summary>
+        <p>AAはほとんどのサイトが目標とする基準値で、通常テキストは4.5:1、大きいテキスト(18pt以上、または太字14pt以上)は3:1です。AAAはより厳しく、弱視のユーザー向けのコンテンツを想定しており、通常テキスト7:1、大きいテキスト4.5:1です。</p>
+      </details>
+      <details class="faq-item">
+        <summary>画像もチェックできますか、それとも単色だけですか?</summary>
+        <p>単色同士(背景に対するテキスト色)のみです。写真やグラデーションの上のテキストの場合は、その上に乗り得る最も暗い部分と最も明るい部分の両方に対してコントラストを確認してください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>ブラウザや監査ツールと同じ計算式ですか?</summary>
+        <p>はい。標準のWCAG 2.1相対輝度・コントラスト比の計算式で、Lighthouseやaxeでも使われているのと同じものです。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-contrast-checker.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

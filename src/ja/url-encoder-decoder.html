@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>URLエンコード/デコードツール：パーセントエンコーディング | norito</title>
+<meta name="description" content="URLまたはURLコンポーネントをブラウザ内でリアルタイムにエンコード・デコード（パーセントエンコーディング）。コンポーネントモードと完全URIモード対応。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/url-encoder-decoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="URLエンコード/デコードツール：パーセントエンコーディング | norito" />
+<meta property="og:description" content="URLまたはURLコンポーネントをブラウザ内でリアルタイムにエンコード・デコード（パーセントエンコーディング）。コンポーネントモードと完全URIモード対応。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/url-encoder-decoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="URLエンコード/デコードツール：パーセントエンコーディング | norito" />
+<meta name="twitter:description" content="URLまたはURLコンポーネントをブラウザ内でリアルタイムにエンコード・デコード（パーセントエンコーディング）。コンポーネントモードと完全URIモード対応。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "URLエンコード/デコードツール",
+  "url": "https://norito.in/ja/url-encoder-decoder.html",
+  "description": "URLまたはURLコンポーネントをブラウザ内でリアルタイムにエンコード・デコード（パーセントエンコーディング）。コンポーネントモードと完全URIモード対応。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "URLエンコード/デコードツール",
+      "item": "https://norito.in/ja/url-encoder-decoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / URLエンコード/デコードツール</p>
+    <h1>URLエンコード/デコードツール</h1>
+    <p class="lede">
+      URLまたは単一のURLコンポーネントをパーセントエンコードまたはデコードします。入力するとリアルタイムに反映され、入力内容はどこにも送信されません。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">エンコード</button>
+          <button type="button" class="tab" data-value="decode">デコード</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="encodeType">エンコーディングの種類</label>
+          <select id="encodeType">
+            <option value="component" selected>コンポーネント（encodeURIComponent）、推奨</option>
+            <option value="full">完全URI（encodeURI）</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">入力</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="テキストまたはURLを入力または貼り付け..."></textarea>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">出力</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            入れ替え
+          </button>
+          <button id="copyBtn">出力をコピー</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <h3>コンポーネント vs 完全URI</h3>
+              <p>エンコードする文字が異なります。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            <strong>コンポーネント</strong>エンコードは、URLの1つのセグメント内で安全でないすべての文字をエスケープします。<code>&amp;</code>、<code>=</code>、<code>?</code>を含みます。クエリパラメータの値に使用してください。<strong>完全URI</strong>エンコードは、完全なURL内で構造的な意味を持つため、これらの文字をそのまま残します。一部分ではなくアドレス全体をエンコードする場合に使用してください。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">そもそもなぜURLをエンコードするのか</h3>
+          <p class="note" style="margin-top:0;">
+            URLに使用できるASCII文字は限られています。スペース、アクセント付き文字、絵文字、<code>&amp;</code>や<code>#</code>のような予約記号は、リンクの一部として渡される際にリンクを壊さずに済むよう、パーセントエンコード（スペースなら<code>%20</code>など）する必要があります。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>エンコードはブラウザ自体の<code>encodeURIComponent</code>または<code>encodeURI</code>関数を呼び出します。これはJavaScriptコードが使用するのと同じ関数なので、出力はブラウザやHTTPライブラリが生成するものと完全に一致します。安全でない各バイトは、そのUTF-8エンコーディングのパーセント記号と16進数2桁に変換されます。スペースは<code>%20</code>になり、マルチバイト文字は複数のエスケープシーケンスに展開されます（éは<code>%C3%A9</code>）。</p>
+      <p>2つのエンコードモードが存在するのは、「URLをエンコードする」ということが2つの異なる意味を持つためです。コンポーネントモードは、文字、数字、少数の安全な記号を除くすべてをエスケープします。<code>/ ? &amp; = :</code>を含みます。これはクエリ文字列に入る単一の値に必要なもので、そうしないと値の中のアンパサンドがパラメータを2つに分割してしまいます。完全URLモードは構造的な文字をそのまま残し、完全なURLが機能し続けるようにし、生の形で全く出現できない文字だけをエスケープします。URL全体にコンポーネントエンコードを使うと壊れます。パラメータ値に完全URLエンコードを使うとインジェクションのバグにつながります。習慣ではなく、何をエンコードしているかで選んでください。</p>
+      <p>デコードモードは<code>decodeURIComponent</code>を実行しますが、1つ実用的な処理が追加されています。プラス記号が先にスペースに変換されます。これは、HTMLフォームエンコーディング（クエリ文字列でよく見る<code>application/x-www-form-urlencoded</code>形式）が歴史的にスペースを<code>+</code>として書いてきたためです。不正な入力、例えば16進数2桁が続かない孤立した<code>%</code>があると<code>URIError</code>が発生しますが、ツールはこれを捕捉して報告し、中途半端にデコードされたテキストを表示することはありません。一度デコードしてもまだ<code>%25xx</code>のようなシーケンスが残っている場合、その文字列は二重にエンコードされています。もう一度デコードにかけてください。</p>
+      <p>どちらの方向も、タブ内での組み込み関数の単純な呼び出しです。入力中、DevToolsのNetworkパネルには一切通信が表示されないため、機密情報を含むトークンやURLはあなたのマシン内にとどまります。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+base64-encoder.html|Base64 エンコード / デコード|テキストを Base64 との間で変換、UTF-8 セーフ。
+html-entity-encoder.html|HTMLエンティティエンコーダー|HTMLエンティティのエスケープ・アンエスケープ。
+json-formatter.html|JSONフォーマッタ|JSONを整形・検証・圧縮。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-url-encoder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

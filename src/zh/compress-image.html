@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>将图片压缩到指定大小（100KB、200KB、1MB…）| norito</title>
+<meta name="description" content="将图片压缩到指定的文件大小,比如 100KB、200KB、500KB 或 1MB,无需再手动调整质量滑块。完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/compress-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/compress-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/compress-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/compress-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/compress-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/compress-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/compress-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/compress-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/compress-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="将图片压缩到指定大小（100KB、200KB、1MB…）| norito" />
+<meta property="og:description" content="将图片压缩到指定的文件大小,比如 100KB、200KB、500KB 或 1MB,无需再手动调整质量滑块。完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/compress-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="将图片压缩到指定大小（100KB、200KB、1MB…）| norito" />
+<meta name="twitter:description" content="将图片压缩到指定的文件大小,比如 100KB、200KB、500KB 或 1MB,无需再手动调整质量滑块。完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "压缩图片",
+  "url": "https://norito.in/zh/compress-image.html",
+  "description": "将图片压缩到指定的文件大小,比如 100KB、200KB、500KB 或 1MB,无需再手动调整质量滑块。完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "压缩到指定大小",
+      "item": "https://norito.in/zh/compress-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 压缩到指定大小</p>
+    <h1>将图片压缩到指定大小</h1>
+    <p class="lede">
+      不用再靠猜测调整质量滑块。告诉它你需要的大小,比如 100 KB,它会自动找到符合要求的最高质量,并默认保留图片原始的宽度和高度。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>点击选择图片</strong>，拖放到此处，或使用 Ctrl+V 粘贴</p>
+          <p class="note" style="margin-top:2px;">支持 JPG、PNG、WebP。文件保留在你的设备上,不会上传。</p>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchCompressBtn">全部压缩</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>全部下载为 .zip</button>
+        </div>
+
+        <div class="field-row" style="margin-top:20px;">
+          <div class="field">
+            <label for="targetSize">目标大小</label>
+            <div class="size-unit-group">
+              <select id="targetUnit">
+                <option value="B">Bytes</option>
+                <option value="KB" selected>KB</option>
+                <option value="MB">MB</option>
+              </select>
+              <input type="number" id="targetSize" value="100" min="0" step="any" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="format">输出格式</label>
+            <select id="format">
+              <option value="jpeg" selected>JPEG（最适合控制大小）</option>
+              <option value="webp">WebP</option>
+              <option value="png">PNG（无损，大小会有所不同）</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-row" style="margin-bottom:20px;">
+          <div>
+            <div class="option-label">允许调整尺寸</div>
+            <div class="option-hint">默认关闭,保留原始宽高。开启后可同时缩小尺寸,适用于仅靠降低质量无法达到的更小目标。</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="allowResize" /><span class="track"></span></label>
+        </div>
+
+        <button id="compressBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 14h6m0 0v6m0-6-7 7M20 10h-6m0 0V4m0 6 7-7"/></svg>
+          压缩到目标大小
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="压缩后预览" />
+          <p class="note" id="previewHint" style="margin-top:0;">生成后,压缩后的图片将显示在这里。</p>
+        </div>
+        <p class="note">
+          对于 JPEG/WebP 格式,工具会在图片原始尺寸下用二分法搜索合适的质量。如果“允许调整尺寸”关闭,且仅靠质量无法达到目标,你将得到在不改变尺寸的前提下能生成的最小文件。PNG 是无损格式,要达到较小的目标大小需要开启调整尺寸功能。JPEG 或 WebP 能在保持原始尺寸的同时更接近较小的目标大小。
+        </p>
+      </div>
+    </div>
+
+<!--RELATED-TOOLS
+placeholder-generator.html|占位图生成器|即时生成任意尺寸和颜色的占位图片。
+remove-background.html|去除背景|在浏览器中直接从照片中抠出人像。
+test-file-generator.html|测试文件生成器|生成任意大小或扩展名的精确测试文件。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-compress.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

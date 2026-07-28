@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Placeholder Image Generator: Any Size, Color, Text | norito</title>
+<meta name="description" content="Generate a placeholder image with a custom size, background color, and label text. Free, instant, downloadable, runs in your browser." />
+<link rel="canonical" href="https://norito.in/placeholder-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/placeholder-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/placeholder-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/placeholder-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/placeholder-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/placeholder-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/placeholder-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/placeholder-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/placeholder-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Placeholder Image Generator: Any Size, Color, Text | norito" />
+<meta property="og:description" content="Generate a placeholder image with a custom size, background color, and label text. Free, instant, downloadable, runs in your browser." />
+<meta property="og:url" content="https://norito.in/placeholder-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Placeholder Image Generator: Any Size, Color, Text | norito" />
+<meta name="twitter:description" content="Generate a placeholder image with a custom size, background color, and label text. Free, instant, downloadable, runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Placeholder Image Generator",
+  "url": "https://norito.in/placeholder-generator.html",
+  "description": "Generate a placeholder image with a custom size, background color, and label text. Free, instant, downloadable, runs in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the largest image I can generate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Up to 4000 x 4000 pixels, with any width and height combination in between. The preview shows exactly what you'll download." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which formats can I download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PNG, JPG, or WebP. PNG keeps flat colors and text pixel-crisp, which is usually what you want for placeholders. JPG and WebP produce smaller files if you're generating large images." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my own photo as the background?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pick the \"Use an image\" style and upload one, and it becomes the background at your chosen dimensions with the label drawn on top. Like everything else here, the photo is processed in your browser and never uploaded." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the label default to?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If you leave the label field empty, the image is stamped with its own dimensions, like 600x400. That's handy for spotting wrong-sized images in a layout. Type anything you like to replace it." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Placeholder Image Generator",
+      "item": "https://norito.in/placeholder-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Placeholder Image Generator</p>
+    <h1>Placeholder Image Generator</h1>
+    <p class="lede">
+      Pick dimensions, colors, and a label. Get an instant placeholder image for mockups,
+      hero banners, or dev testing. No account, no watermark.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:18px;">
+          <label>Style</label>
+          <div class="style-picker" id="stylePicker">
+            <button type="button" class="style-tile active" data-mode="preset" data-bg="#ff4d7a" data-fg="#ffffff">
+              <span class="tile-swatch" style="background:#ff4d7a;"></span>
+              <span class="tile-label">Brand pink</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#e2e2e2" data-fg="#4b5563">
+              <span class="tile-swatch" style="background:#e2e2e2;"></span>
+              <span class="tile-label">Neutral gray</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#1f2937" data-fg="#ffffff">
+              <span class="tile-swatch" style="background:#1f2937;"></span>
+              <span class="tile-label">Slate</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#60a5fa" data-fg="#ffffff">
+              <span class="tile-swatch" style="background:#60a5fa;"></span>
+              <span class="tile-label">Sky blue</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#f5f0e8" data-fg="#44403c">
+              <span class="tile-swatch" style="background:#f5f0e8;"></span>
+              <span class="tile-label">Soft beige</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#6ee7b7" data-fg="#064e3b">
+              <span class="tile-swatch" style="background:#6ee7b7;"></span>
+              <span class="tile-label">Mint</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="custom">
+              <span class="tile-swatch custom-swatch" aria-hidden="true"></span>
+              <span class="tile-label">Custom colors</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="image">
+              <span class="tile-swatch image-swatch" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></span>
+              <span class="tile-label">Use an image</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="field-row" id="customColorsRow" style="display:none;">
+          <div class="field">
+            <label for="bg">Background</label>
+            <input type="color" id="bg" value="#ff4d7a" />
+          </div>
+          <div class="field">
+            <label for="fg">Text color</label>
+            <input type="color" id="fg" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="field" id="imageUploadRow" style="display:none; margin-bottom:18px;">
+          <label for="bgImageInput">Background image</label>
+          <div class="dropzone" id="imageDrop">
+            <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+            <div><strong>Click to upload</strong> or drag an image here</div>
+            <input type="file" id="bgImageInput" accept="image/*" />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="width">Width</label>
+            <input type="number" id="width" value="600" min="1" max="4000" />
+          </div>
+          <div class="field">
+            <label for="height">Height</label>
+            <input type="number" id="height" value="400" min="1" max="4000" />
+          </div>
+          <div class="field">
+            <label for="pformat">Format</label>
+            <select id="pformat">
+              <option value="png" selected>PNG</option>
+              <option value="jpg">JPG</option>
+              <option value="webp">WebP</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1; min-width:220px;">
+            <label for="text">Label text (optional)</label>
+            <input type="text" id="text" placeholder="Defaults to WxH" />
+          </div>
+        </div>
+
+        <button id="pDownloadBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download image
+        </button>
+        <p class="note" id="pInfo" style="display:none;"></p>
+      </div>
+
+      <div class="panel" style="display:flex; align-items:center; justify-content:center; min-height:280px;">
+        <canvas class="preview" id="canvas"></canvas>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The preview is not a mockup of your image, it is the image: a canvas element sized
+        to your exact pixel dimensions, filled and lettered with the 2D drawing API, then
+        encoded straight to PNG, JPG, or WebP with <code>canvas.toBlob</code>. The label's
+        font size scales with the shorter side (about an eighth of it, with a 12px floor) so
+        the text stays proportionate whether you generate a 64px thumbnail or a 4000px
+        banner. In photo mode the upload is cover-fitted, scaled to fill and center-cropped
+        exactly like CSS <code>object-fit: cover</code>, and the label gets a translucent
+        dark backdrop so it stays readable over a busy image. Redrawing is synchronous on
+        every keystroke; only the heavier blob encoding is debounced briefly behind it,
+        which is why the size readout lags the preview by a beat.
+      </p>
+      <p>
+        One thing to plan around: flat-color placeholders compress absurdly well. A
+        4000&#215;4000 solid PNG is often under 40 KB, because DEFLATE flattens identical
+        rows to almost nothing. Great for quick mockups, misleading if you're testing load
+        performance, since a real photo that size would be a hundred times heavier. For
+        honest weight, use the photo background mode, or pair this with the test file
+        generator to pad assets to a realistic byte size.
+      </p>
+      <p>
+        Drawing, encoding, and download all happen inside this tab, including any photo you
+        drop in, which is read through an object URL and never leaves memory. Open DevTools
+        and watch the Network tab while you generate: no request carries your image out.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|Compress Image|Hit an exact file size instead of guessing quality.
+remove-background.html|Remove Background|Cut a person out of a photo, right in your browser.
+qr-code-generator.html|QR Code Generator|Custom QR codes with colors and a center logo.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What's the largest image I can generate?</summary>
+        <p>Up to 4000 x 4000 pixels, with any width and height combination in between. The preview shows exactly what you'll download.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which formats can I download?</summary>
+        <p>PNG, JPG, or WebP. PNG keeps flat colors and text pixel-crisp, which is usually what you want for placeholders. JPG and WebP produce smaller files if you're generating large images.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use my own photo as the background?</summary>
+        <p>Yes. Pick the "Use an image" style and upload one, and it becomes the background at your chosen dimensions with the label drawn on top. Like everything else here, the photo is processed in your browser and never uploaded.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What does the label default to?</summary>
+        <p>If you leave the label field empty, the image is stamped with its own dimensions, like 600x400. That's handy for spotting wrong-sized images in a layout. Type anything you like to replace it.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-placeholder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

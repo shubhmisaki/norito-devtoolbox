@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Resize Image: Change Width & Height Online | norito</title>
+<meta name="description" content="Resize an image to exact dimensions or a percentage, right in your browser. Lock aspect ratio to avoid distortion. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/resize-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/resize-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/resize-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Resize Image: Change Width & Height Online | norito" />
+<meta property="og:description" content="Resize an image to exact dimensions or a percentage, right in your browser. Lock aspect ratio to avoid distortion. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/resize-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Resize Image: Change Width & Height Online | norito" />
+<meta name="twitter:description" content="Resize an image to exact dimensions or a percentage, right in your browser. Lock aspect ratio to avoid distortion. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Resize Image",
+  "url": "https://norito.in/resize-image.html",
+  "description": "Resize an image to exact dimensions or a percentage, right in your browser. Lock aspect ratio to avoid distortion. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will resizing distort my image?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only if you type in a width and height that don't match your original aspect ratio with \"Lock aspect ratio\" turned off. Leave it on and the other dimension updates automatically to keep proportions correct." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does resizing reduce file size too?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes, since fewer pixels means less data. If you need a specific file size rather than specific dimensions, use the Compress Image tool instead, which targets a byte size directly." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the maximum size I can resize to?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Up to 20,000 pixels on each side, limited by what browsers can reliably handle in a canvas element, not by any restriction on our end." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resize Image",
+      "item": "https://norito.in/resize-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Resize Image</p>
+    <h1>Resize Image</h1>
+    <p class="lede">
+      Change an image's width and height, by exact pixels or by percentage. Lock the aspect ratio to avoid stretching, or turn it off for full control.
+    </p>
+    <p class="note">Resizing for Instagram? Try the <a href="resize-image-for-instagram.html">1080x1080 preset</a>.</p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose images</strong>, or drag and drop them here</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Select more than one to resize in bulk. Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchResizeBtn">Resize all</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>Download all as .zip</button>
+        </div>
+
+        <div class="field-row" style="margin-top:20px;">
+          <div class="field">
+            <label for="mode">Resize by</label>
+            <select id="mode">
+              <option value="exact" selected>Exact dimensions</option>
+              <option value="percent">Percentage</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="format">Output format</label>
+            <select id="format">
+              <option value="keep" selected>Keep original</option>
+              <option value="jpeg">JPEG</option>
+              <option value="png">PNG</option>
+              <option value="webp">WebP</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row" id="exactFields">
+          <div class="field">
+            <label for="width">Width (px)</label>
+            <input type="number" id="width" min="1" max="20000" />
+          </div>
+          <div class="field">
+            <label for="height">Height (px)</label>
+            <input type="number" id="height" min="1" max="20000" />
+          </div>
+        </div>
+        <div class="field" id="percentFields" style="display:none;">
+          <label for="percent">Percentage of original</label>
+          <input type="number" id="percent" min="1" max="500" value="50" />
+        </div>
+
+        <div class="option-row" style="margin-bottom:20px;">
+          <div>
+            <div class="option-label">Lock aspect ratio</div>
+            <div class="option-hint">Changing width automatically updates height to match, and vice versa.</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="lockRatio" checked /><span class="track"></span></label>
+        </div>
+
+        <button id="resizeBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          Resize image
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Resized preview" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your resized image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          Exact dimensions stretches or shrinks to the width and height you enter (lock the aspect
+          ratio to avoid distortion). Percentage scales proportionally from the original size.
+          Nothing is uploaded, the resize happens on your device using the canvas API.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The resize itself is one browser primitive: your image is decoded, a <code>&lt;canvas&gt;</code> is created at the target dimensions, and <code>drawImage()</code> scales the pixels onto it in a single pass. The browser applies its built-in smoothing filter (a bilinear-style resample) while it does this, which averages neighboring pixels instead of just picking the nearest one, so downscaled photos come out smooth rather than jagged. The canvas is then re-exported with <code>canvas.toBlob()</code> as JPEG or WebP at 0.92 quality, or as lossless PNG, depending on the format option.</p>
+      <p>A few practical truths about scaling that the tool's behavior reflects. Downscaling is where resizing shines: averaging many source pixels into each output pixel keeps photos crisp. Upscaling can't invent detail, the same filter just spreads existing pixels out, so anything past about 2x starts looking soft; if you need a big version, start from the largest original you have. And smooth filtering is wrong for exactly one case, pixel art, where you actually want hard nearest-neighbor edges; a photo tool like this one is tuned for photos.</p>
+      <p>Percentage mode computes target dimensions from the original size, exact mode takes your numbers, and the lock-ratio toggle keeps width and height tied to the original aspect so people in your photos don't get stretched. Dimensions are capped at 20,000 pixels per side because a canvas bigger than that can exhaust browser memory. Batch mode runs the same canvas pipeline over each file in turn and packs the results into a ZIP that is also assembled in JavaScript.</p>
+      <p>Because the whole pipeline is decode, draw, re-encode inside your tab, your photos never leave your machine. You can verify this: open DevTools, switch to the Network tab, and resize something. No upload request appears, and the tool keeps working offline.</p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|Compress Image to Size|Hit an exact file size target instead of specific dimensions.
+crop-image.html|Crop Image|Cut out a specific region instead of scaling the whole image.
+image-converter.html|Image Converter|Convert between JPG, PNG, and WebP.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Will resizing distort my image?</summary>
+        <p>Only if you type in a width and height that don't match your original aspect ratio with "Lock aspect ratio" turned off. Leave it on and the other dimension updates automatically to keep proportions correct.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does resizing reduce file size too?</summary>
+        <p>Usually, yes, since fewer pixels means less data. If you need a specific file size rather than specific dimensions, use the Compress Image tool instead, which targets a byte size directly.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the maximum size I can resize to?</summary>
+        <p>Up to 20,000 pixels on each side, limited by what browsers can reliably handle in a canvas element, not by any restriction on our end.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-resize-image.js"></script>
+<script src="js/prefill.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

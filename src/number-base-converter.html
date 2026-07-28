@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Number Base Converter: Binary, Octal, Decimal, Hex | norito</title>
+<meta name="description" content="Convert numbers between binary, octal, decimal, and hexadecimal live, plus any custom base from 2 to 36. Handles negative and arbitrarily large numbers." />
+<link rel="canonical" href="https://norito.in/number-base-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/number-base-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/number-base-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Number Base Converter: Binary, Octal, Decimal, Hex | norito" />
+<meta property="og:description" content="Convert numbers between binary, octal, decimal, and hexadecimal live, plus any custom base from 2 to 36. Handles negative and arbitrarily large numbers." />
+<meta property="og:url" content="https://norito.in/number-base-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Number Base Converter: Binary, Octal, Decimal, Hex | norito" />
+<meta name="twitter:description" content="Convert numbers between binary, octal, decimal, and hexadecimal live, plus any custom base from 2 to 36. Handles negative and arbitrarily large numbers." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Number Base Converter",
+  "url": "https://norito.in/number-base-converter.html",
+  "description": "Convert numbers between binary, octal, decimal, and hexadecimal live, plus any custom base from 2 to 36. Handles negative and arbitrarily large numbers.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What bases are supported?", "acceptedAnswer": { "@type": "Answer", "text": "The four main fields cover binary, octal, decimal, and hexadecimal. The custom converter below handles any base from 2 to 36, using digits 0-9 and letters a-z." } },
+    { "@type": "Question", "name": "Does it handle very large numbers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Conversions use JavaScript's BigInt internally, so there's no precision loss even for numbers far beyond what a normal 64-bit number can hold accurately." } },
+    { "@type": "Question", "name": "Can I convert negative numbers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, prefix the value with a minus sign in any field." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Number Base Converter",
+      "item": "https://norito.in/number-base-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Number Base Converter</p>
+    <h1>Number Base Converter</h1>
+    <p class="lede">
+      Convert a number between binary, octal, decimal, and hexadecimal live, or between any two bases from 2 to 36.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="baseDecimal">Decimal (base 10)</label>
+          <input type="text" id="baseDecimal" class="mono-area" placeholder="255" />
+        </div>
+        <div class="field">
+          <label for="baseHex">Hexadecimal (base 16)</label>
+          <input type="text" id="baseHex" class="mono-area" placeholder="ff" />
+        </div>
+        <div class="field">
+          <label for="baseBinary">Binary (base 2)</label>
+          <input type="text" id="baseBinary" class="mono-area" placeholder="11111111" />
+        </div>
+        <div class="field">
+          <label for="baseOctal">Octal (base 8)</label>
+          <input type="text" id="baseOctal" class="mono-area" placeholder="377" />
+        </div>
+      </div>
+      <p class="note" style="margin-top:0;">Type in any field, the other three update live. Supports negative numbers and arbitrarily large integers.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0;">Custom base conversion</h3>
+      <p class="note" style="margin-top:0; margin-bottom:16px;">Convert between any two bases from 2 to 36.</p>
+      <div class="field" style="margin-bottom:16px;">
+        <label for="customValue">Value</label>
+        <input type="text" id="customValue" class="mono-area" placeholder="1a2b3c" value="1a2b3c" />
+      </div>
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="customFrom">From base</label>
+          <select id="customFrom">
+            <option value="2">Base 2</option>
+            <option value="3">Base 3</option>
+            <option value="4">Base 4</option>
+            <option value="5">Base 5</option>
+            <option value="6">Base 6</option>
+            <option value="7">Base 7</option>
+            <option value="8">Base 8</option>
+            <option value="9">Base 9</option>
+            <option value="10" selected>Base 10</option>
+            <option value="11">Base 11</option>
+            <option value="12">Base 12</option>
+            <option value="13">Base 13</option>
+            <option value="14">Base 14</option>
+            <option value="15">Base 15</option>
+            <option value="16">Base 16</option>
+            <option value="17">Base 17</option>
+            <option value="18">Base 18</option>
+            <option value="19">Base 19</option>
+            <option value="20">Base 20</option>
+            <option value="21">Base 21</option>
+            <option value="22">Base 22</option>
+            <option value="23">Base 23</option>
+            <option value="24">Base 24</option>
+            <option value="25">Base 25</option>
+            <option value="26">Base 26</option>
+            <option value="27">Base 27</option>
+            <option value="28">Base 28</option>
+            <option value="29">Base 29</option>
+            <option value="30">Base 30</option>
+            <option value="31">Base 31</option>
+            <option value="32">Base 32</option>
+            <option value="33">Base 33</option>
+            <option value="34">Base 34</option>
+            <option value="35">Base 35</option>
+            <option value="36">Base 36</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customTo">To base</label>
+          <select id="customTo">
+            <option value="2">Base 2</option>
+            <option value="3">Base 3</option>
+            <option value="4">Base 4</option>
+            <option value="5">Base 5</option>
+            <option value="6">Base 6</option>
+            <option value="7">Base 7</option>
+            <option value="8">Base 8</option>
+            <option value="9">Base 9</option>
+            <option value="10">Base 10</option>
+            <option value="11">Base 11</option>
+            <option value="12">Base 12</option>
+            <option value="13">Base 13</option>
+            <option value="14">Base 14</option>
+            <option value="15">Base 15</option>
+            <option value="16" selected>Base 16</option>
+            <option value="17">Base 17</option>
+            <option value="18">Base 18</option>
+            <option value="19">Base 19</option>
+            <option value="20">Base 20</option>
+            <option value="21">Base 21</option>
+            <option value="22">Base 22</option>
+            <option value="23">Base 23</option>
+            <option value="24">Base 24</option>
+            <option value="25">Base 25</option>
+            <option value="26">Base 26</option>
+            <option value="27">Base 27</option>
+            <option value="28">Base 28</option>
+            <option value="29">Base 29</option>
+            <option value="30">Base 30</option>
+            <option value="31">Base 31</option>
+            <option value="32">Base 32</option>
+            <option value="33">Base 33</option>
+            <option value="34">Base 34</option>
+            <option value="35">Base 35</option>
+            <option value="36">Base 36</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box error" id="customError" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+      <div class="field">
+        <label for="customOutput">Result</label>
+        <input type="text" id="customOutput" class="mono-area" readonly />
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Every value you type is parsed into a JavaScript <code>BigInt</code>, an arbitrary-precision integer type built into the browser. Parsing walks your input digit by digit, multiplying the running total by the base and adding each digit's value; converting back out repeatedly divides by the target base and collects remainders. Digits above 9 use letters, so base 36 runs through 0-9 then a-z. Negative numbers work too: a leading minus sign is peeled off before parsing and stuck back on at the end.</p>
+      <p>The BigInt part is the detail worth knowing. Converters built on plain JavaScript numbers silently corrupt anything above 9,007,199,254,740,991 (2^53 - 1), because that's where floating point stops representing every integer exactly. Paste a 16-digit hex value like <code>ffffffffffffffff</code> into one of those and you get a rounded, wrong answer with no warning. Here the math is exact at any length: a 100-digit decimal converts to binary correctly, it just takes more digits.</p>
+      <p>Each field validates against its own base as you type, so entering a 9 in the octal box or a g in hex shows an error instead of a garbage result, and the other three fields update live from whichever one you edited. All of it happens in your tab: check the Network panel in DevTools and you'll see the page makes no requests while you type, so the numbers you convert never leave your machine.</p>
+    </div>
+
+<!--RELATED-TOOLS
+hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, SHA-512.
+url-encoder-decoder.html|URL Encoder / Decoder|Percent-encode or decode a URL.
+timestamp-converter.html|Timestamp Converter|Unix time to date, both ways.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What bases are supported?</summary>
+        <p>The four main fields cover binary, octal, decimal, and hexadecimal. The custom converter below handles any base from 2 to 36, using digits 0-9 and letters a-z.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it handle very large numbers?</summary>
+        <p>Yes. Conversions use JavaScript's BigInt internally, so there's no precision loss even for numbers far beyond what a normal 64-bit number can hold accurately.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I convert negative numbers?</summary>
+        <p>Yes, prefix the value with a minus sign in any field.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-base-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Сжатие PDF для email (менее 25 МБ) бесплатно | norito</title>
+<meta name="description" content="Уменьшите PDF, чтобы он уложился в лимит вложений email, например 25 МБ в Gmail. Текст остаётся выделяемым, пересжимаются только фото и сканы." />
+<link rel="canonical" href="https://norito.in/ru/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/pdf/compress-pdf-for-email.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Сжатие PDF для email (менее 25 МБ) бесплатно | norito" />
+<meta property="og:description" content="Уменьшите PDF, чтобы он уложился в лимит вложений для email, например 25 МБ в Gmail, прямо в вашем браузере." />
+<meta property="og:url" content="https://norito.in/ru/pdf/compress-pdf-for-email.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Сжатие PDF для email (менее 25 МБ) бесплатно | norito" />
+<meta name="twitter:description" content="Уменьшите PDF, чтобы он уложился в лимит вложений для email, например 25 МБ в Gmail, прямо в вашем браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Сжатие PDF для email",
+  "url": "https://norito.in/ru/pdf/compress-pdf-for-email.html",
+  "description": "Уменьшите PDF, чтобы он уложился в лимит вложений для email, например 25 МБ в Gmail. Работает полностью в вашем браузере.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какой лимит вложений в Gmail?",
+      "acceptedAnswer": { "@type": "Answer", "text": "25 МБ на одно письмо в Gmail, включая все вложения вместе. В Outlook.com и большинстве других сервисов лимит тоже около 20-25 МБ. Если ваш PDF больше, сначала сожмите его или поделитесь ссылкой." }
+    },
+    {
+      "@type": "Question",
+      "name": "Загружаются ли мои PDF-файлы куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Сжатие происходит полностью в вашем браузере с помощью JavaScript. Ваши файлы никогда не покидают устройство и не попадают на сервер." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как именно уменьшается размер файла?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Страницы с настоящим текстом структурно не изменяются, пересжимаются только встроенные в них фотографии с выбранным вами качеством. Страницы, которые на самом деле являются одним большим сканированным изображением (без настоящего текста), перерисовываются как сжатый JPEG с выбранным вами разрешением. В любом случае файл собирается заново из этих уменьшенных частей." }
+    },
+    {
+      "@type": "Question",
+      "name": "Останется ли текст выделяемым после сжатия?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, на любой странице с настоящим текстом этот текст никогда не изменяется, поэтому он остаётся выделяемым и доступным для поиска. Заново сплющиваются только страницы, которые уже были плоским сканированным изображением, ведь на них нет настоящего текста, который можно потерять." }
+    },
+    {
+      "@type": "Question",
+      "name": "Что если результат не стал меньше?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Если в PDF нет ничего, что можно безопасно уменьшить без сплющивания настоящего текста или заметной потери качества, исходный файл сохраняется без изменений, побайтово, вместо того чтобы вернуть что-то большее или худшее." }
+    },
+    {
+      "@type": "Question",
+      "name": "Могу ли я сжать PDF, защищённый паролем?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Пока нет. Инструмент не может прочитать PDF, защищённый паролем или зашифрованный, и покажет ошибку. Сначала снимите пароль с помощью программы для чтения PDF." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Сжатие PDF для email",
+      "item": "https://norito.in/ru/pdf/compress-pdf-for-email.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Сжатие PDF для email</p>
+    <h1>Сжатие PDF для отправки по email</h1>
+    <p class="lede">
+      Уменьшите PDF, чтобы он уложился в лимит вложений для email, например 25 МБ в Gmail. Разрешение
+      и качество уже настроены на облегчённый пресет, настоящий текст остаётся выделяемым на всём протяжении.
+      Ничего не загружается, всё происходит на вашем устройстве.
+    </p>
+    </div>
+  </div>
+
+    <div class="result-box ok" style="margin-bottom:24px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Ваш текст остаётся текстом.</strong> Любая страница с настоящим, выделяемым текстом остаётся полностью нетронутой, пересжимаются только встроенные в неё фотографии. Заново сплющиваются только страницы, которые уже являются одним большим сканированным изображением, ведь там нечего терять. Если в PDF больше нечего безопасно уменьшить, вы получите оригинал без изменений, а не что-то большее.</div>
+    </div>
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>Нажмите, чтобы выбрать PDF-файл</strong>, или перетащите его сюда</p>
+        <p class="note" style="margin-top:2px;">Остаётся на вашем устройстве, ничего не загружается.</p>
+        <input type="file" id="fileInput" accept="application/pdf" />
+      </div>
+      <p class="note" id="fileInfo" style="display:none;"></p>
+
+      <div class="field-row" style="margin-top:20px; margin-bottom:20px;">
+        <div class="field">
+          <label for="dpiSelect">Разрешение</label>
+          <select id="dpiSelect" disabled>
+            <option value="72">72 DPI (наименьшее)</option>
+            <option value="100" selected>100 DPI (пресет для email)</option>
+            <option value="150">150 DPI (сбалансированное)</option>
+            <option value="200">200 DPI (более высокое качество)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qualitySelect">Качество</label>
+          <select id="qualitySelect" disabled>
+            <option value="0.9">Высокое</option>
+            <option value="0.75">Среднее</option>
+            <option value="0.5" selected>Низкое (меньше файл, пресет для email)</option>
+          </select>
+        </div>
+      </div>
+      <p class="note" style="margin-top:-12px; margin-bottom:20px;">Разрешение и качество влияют только на сканированные страницы и встроенные фотографии, настоящий текст никогда не изменяется.</p>
+
+      <button id="compressBtn" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        Сжать PDF
+      </button>
+      <div class="result-box" id="result" style="display:none;"></div>
+    </div>
+
+    <div class="faq-list" style="margin-top:32px;">
+      <details class="faq-item">
+        <summary>Какой лимит вложений в Gmail?</summary>
+        <p>25 МБ на одно письмо в Gmail, включая все вложения вместе. В Outlook.com и большинстве других сервисов лимит тоже около 20-25 МБ. Если ваш PDF больше, сначала сожмите его или поделитесь ссылкой.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Загружаются ли мои PDF-файлы куда-либо?</summary>
+        <p>Нет. Сжатие происходит полностью в вашем браузере с помощью JavaScript. Ваши файлы никогда не покидают устройство и не попадают на сервер.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как именно уменьшается размер файла?</summary>
+        <p>Страницы с настоящим текстом структурно не изменяются, пересжимаются только встроенные в них фотографии с выбранным вами качеством. Страницы, которые на самом деле являются одним большим сканированным изображением (без настоящего текста), перерисовываются как сжатый JPEG с выбранным вами разрешением. В любом случае файл собирается заново из этих уменьшенных частей.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Останется ли текст выделяемым после сжатия?</summary>
+        <p>Да, на любой странице с настоящим текстом этот текст никогда не изменяется, поэтому он остаётся выделяемым и доступным для поиска. Заново сплющиваются только страницы, которые уже были плоским сканированным изображением, ведь на них нет настоящего текста, который можно потерять.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Что если результат не стал меньше?</summary>
+        <p>Если в PDF нет ничего, что можно безопасно уменьшить без сплющивания настоящего текста или заметной потери качества, исходный файл сохраняется без изменений, побайтово, вместо того чтобы вернуть что-то большее или худшее.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Могу ли я сжать PDF, защищённый паролем?</summary>
+        <p>Пока нет. Инструмент не может прочитать PDF, защищённый паролем или зашифрованный, и покажет ошибку. Сначала снимите пароль с помощью программы для чтения PDF.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/vendor/pdf-lib.min.js"></script>
+<script type="module" src="../../js/app-pdf-compress.js"></script>
+<script src="../../js/prefill.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

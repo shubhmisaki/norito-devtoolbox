@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Buscar y Reemplazar Texto Online (con Regex) | norito</title>
+<meta name="description" content="Busca y reemplaza texto con regex opcional, sensibilidad a mayúsculas, y coincidencia de palabra completa, en vivo en tu navegador. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/find-and-replace.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/find-and-replace.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/find-and-replace.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/find-and-replace.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/find-and-replace.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/find-and-replace.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/find-and-replace.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/find-and-replace.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/find-and-replace.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Buscar y Reemplazar Texto Online (con Regex) | norito" />
+<meta property="og:description" content="Busca y reemplaza texto con regex opcional, sensibilidad a mayúsculas, y coincidencia de palabra completa, en vivo en tu navegador. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/find-and-replace.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Buscar y Reemplazar Texto Online (con Regex) | norito" />
+<meta name="twitter:description" content="Busca y reemplaza texto con regex opcional, sensibilidad a mayúsculas, y coincidencia de palabra completa, en vivo en tu navegador. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Buscar y Reemplazar",
+  "url": "https://norito.in/es/find-and-replace.html",
+  "description": "Busca y reemplaza texto con regex opcional, sensibilidad a mayúsculas, y coincidencia de palabra completa, en vivo en tu navegador. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Buscar y Reemplazar",
+      "item": "https://norito.in/es/find-and-replace.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Buscar y Reemplazar</p>
+    <h1>Buscar y Reemplazar</h1>
+    <p class="lede">
+      Busca y reemplaza texto en un documento, con regex opcional, sensibilidad a mayúsculas, y coincidencia de palabra completa, en vivo mientras escribes.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="field" style="margin-bottom:16px;">
+        <label for="input">Texto</label>
+        <textarea id="input" class="mono-area" rows="10" placeholder="Pega o escribe tu texto..."></textarea>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="findText">Buscar</label>
+          <input type="text" id="findText" class="mono-area" placeholder="texto o patrón a buscar" />
+        </div>
+        <div class="field">
+          <label for="replaceText">Reemplazar con</label>
+          <input type="text" id="replaceText" class="mono-area" placeholder="texto de reemplazo" />
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="useRegex" />
+          <span>Usar regex</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="caseSensitive" />
+          <span>Sensible a mayúsculas</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="wholeWord" />
+          <span>Solo palabra completa</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="replaceAll" checked />
+          <span>Reemplazar todas las coincidencias</span>
+        </label>
+      </div>
+
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="field" style="margin-bottom:8px;">
+        <label for="output">Resultado <span id="matchCount" class="note" style="display:inline; margin-left:8px;"></span></label>
+        <textarea id="output" class="mono-area" rows="10" readonly></textarea>
+      </div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn">Copiar resultado</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Cada búsqueda, ya sea de texto plano o regex, se compila internamente en un único <code>RegExp</code> de JavaScript. En modo texto plano tu término de búsqueda se escapa primero (para que <code>.</code>, <code>(</code>, <code>$</code> y similares coincidan literalmente), "palabra completa" envuelve el patrón en límites de palabra <code>\b</code>, y el interruptor de mayúsculas simplemente añade o quita la bandera <code>i</code>. El resultado se vuelve a renderizar en cada pulsación, y el conteo de coincidencias viene de ejecutar el mismo patrón con la bandera global antes de reemplazar. Una entrada regex inválida no borra tu texto, solo muestra el error del motor y deja la salida intacta.</p>
+      <p>Aquí está la función que casi ninguna página de buscar y reemplazar menciona: como el reemplazo usa el <code>String.replace</code> nativo de JavaScript, las referencias inversas funcionan en modo regex. Usa <code>$1</code>, <code>$2</code> para grupos de captura y <code>$&amp;</code> para toda la coincidencia. Así, buscar <code>(\w+), (\w+)</code> y reemplazar con <code>$2 $1</code> convierte "Doe, Jane" en "Jane Doe" en todo un archivo, y <code>$$</code> te da un signo de dólar literal cuando lo necesitas.</p>
+      <p>Todo esto se ejecuta en el JavaScript de esta página, en tu máquina. Abre la pestaña Red de las DevTools mientras trabajas: ninguna petición transporta tu texto, por eso es seguro pegar logs, archivos de configuración, o cualquier otra cosa que prefieras no subir a un sitio web al azar.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+regex-tester.html|Probador de Regex|Prueba una expresión regular con resaltado de coincidencias en vivo.
+remove-duplicate-lines.html|Eliminar líneas duplicadas|Elimina duplicados antes o después de ordenar.
+case-converter.html|Conversor de mayúsculas/minúsculas|MAYÚSCULAS, camelCase, snake_case, y más.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-find-replace.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>在线为图片添加水印 | norito</title>
+<meta name="description" content="在浏览器中为照片添加带实时预览的文字水印。可控制大小、不透明度、角度、颜色和位置。不上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/watermark-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/watermark-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/watermark-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/watermark-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/watermark-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/watermark-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/watermark-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/watermark-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/watermark-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="在线为图片添加水印 | norito" />
+<meta property="og:description" content="在浏览器中为照片添加带实时预览的文字水印。可控制大小、不透明度、角度、颜色和位置。不上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/watermark-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在线为图片添加水印 | norito" />
+<meta name="twitter:description" content="在浏览器中为照片添加带实时预览的文字水印。可控制大小、不透明度、角度、颜色和位置。不上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "图片水印",
+  "url": "https://norito.in/zh/watermark-image.html",
+  "description": "在浏览器中为照片添加带实时预览的文字水印。可控制大小、不透明度、角度、颜色和位置。不上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "图片水印",
+      "item": "https://norito.in/zh/watermark-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 图片水印</p>
+    <h1>图片水印</h1>
+    <p class="lede">
+      为照片添加文字水印，实时预览直接显示在原图上，让你精确查看大小、不透明度、角度和位置的实际效果。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          <p><strong>点击选择一张图片</strong>，或将其拖放到此处</p>
+          <p class="note" style="margin-top:2px;">支持 JPG、PNG、WebP。文件保留在你的设备上，不会上传任何内容。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="水印预览" />
+            <span class="wm-live-preview" id="wmPreviewText">示例</span>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="wmText">水印文字</label>
+          <input type="text" id="wmText" value="© 你的名字" maxlength="80" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="wmSize">字体大小（px）</label>
+            <input type="number" id="wmSize" min="8" max="200" value="32" />
+          </div>
+          <div class="field">
+            <label for="wmOpacity">不透明度（%）</label>
+            <input type="number" id="wmOpacity" min="1" max="100" value="40" />
+          </div>
+          <div class="field">
+            <label for="wmAngle">角度（°）</label>
+            <input type="number" id="wmAngle" min="-180" max="180" value="0" />
+          </div>
+          <div class="field">
+            <label for="wmColor">颜色</label>
+            <input type="color" id="wmColor" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="wmPosition">位置</label>
+          <select id="wmPosition">
+            <option value="top-left">左上</option>
+            <option value="top-center">上居中</option>
+            <option value="top-right">右上</option>
+            <option value="center-left">左中</option>
+            <option value="center" selected>居中</option>
+            <option value="center-right">右中</option>
+            <option value="bottom-left">左下</option>
+            <option value="bottom-center">下居中</option>
+            <option value="bottom-right">右下</option>
+          </select>
+        </div>
+
+        <button id="applyBtn" disabled style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          应用水印并下载
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="加水印后的结果" />
+          <p class="note" id="previewHint" style="margin-top:0;">生成后，加了水印的图片会显示在这里。</p>
+        </div>
+        <p class="note">
+          上方预览会在你调整大小、不透明度、角度、颜色和位置时，实时显示水印在原图上的效果。最终下载结果与你看到的一致，并会按图片的完整分辨率进行缩放。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>实时预览是叠加在你照片上方的一个定位 DOM 元素，但最终图片是在 <code>&lt;canvas&gt;</code> 上进行的真正像素处理。当你点击应用时，原始图片会以完整分辨率绘制，然后 canvas 上下文会移动到九个锚点之一（四角、边缘中点、中心，每个都有 6% 的内边距），按你设置的角度旋转，再通过 <code>fillText()</code> 绘制文字，并使用 <code>globalAlpha</code> 应用你设置的颜色和不透明度。文字对齐和基线会根据锚点设置，因此预览中的「右下」在输出中也会落在相对相同的位置。</p>
+      <p>微妙之处在于缩放比例。你屏幕上的预览可能只有 500 像素宽，而实际照片有 4000 像素宽，因此一个简单粗暴的工具渲染出的水印在预览中看起来正常，实际却小得几乎看不见。这个工具会计算显示预览宽度与图片原始宽度之间的比例，并按此比例放大字体大小，因此预览中的 48px 在完整分辨率文件中对应相同的比例大小。结果会以原始格式重新编码：JPEG 质量为 0.95，PNG 无损（如果你想要最清晰的文字边缘，请选择 PNG）。</p>
+      <p>值得了解水印的本质：这段文字被直接烘焙进像素中，而不是作为图层或元数据存储的，所以没有人能像清除 EXIF 数据那样把它剥离掉。这也是一把双刃剑。放在角落、透明度很低的小水印，很容易被裁剪工具或 AI 图像修复轻松去除；真正能保护图片的水印会与主体重叠、带有一定角度、透明度适中——这正是位置、角度和不透明度控制项存在的意义。</p>
+      <p>预览和最终渲染都在你的标签页中完成。工作时打开开发者工具的 Network 面板看看：照片从未被上传，因此客户样片和未发布的照片都只留在你的电脑上。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+remove-metadata.html|删除元数据|在分享照片前清除 EXIF 和 GPS 数据。
+compress-image.html|压缩图片|加水印后缩小文件大小。
+pdf/add-watermark.html|添加水印（PDF）|改为为 PDF 文档的每一页添加水印。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-watermark-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

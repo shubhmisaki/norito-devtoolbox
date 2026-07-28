@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSSグラデーションジェネレーター:線形・放射状 | norito</title>
+<meta name="description" content="複数のカラーストップに対応した線形または放射状のCSSグラデーションを、ブラウザ内でビジュアルに作成。見た目が決まったらCSSをコピーできます。" />
+<link rel="canonical" href="https://norito.in/ja/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/css-gradient-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSSグラデーションジェネレーター:線形・放射状 | norito" />
+<meta property="og:description" content="複数のカラーストップに対応した線形または放射状のCSSグラデーションを、ブラウザ内でビジュアルに作成。見た目が決まったらCSSをコピーできます。" />
+<meta property="og:url" content="https://norito.in/ja/design/css-gradient-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSSグラデーションジェネレーター:線形・放射状 | norito" />
+<meta name="twitter:description" content="複数のカラーストップに対応した線形または放射状のCSSグラデーションを、ブラウザ内でビジュアルに作成。見た目が決まったらCSSをコピーできます。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSSグラデーションジェネレーター",
+  "url": "https://norito.in/ja/design/css-gradient-generator.html",
+  "description": "複数のカラーストップに対応した線形または放射状のCSSグラデーションを、ブラウザ内でビジュアルに作成。見た目が決まったらCSSをコピーできます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "3色以上追加できますか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、「カラーストップを追加」を好きなだけクリックできます。各ストップには個別の色と位置(%)があるため、単純な2色だけでなく多色グラデーションも作成できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "線形と放射状の違いは何ですか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "線形グラデーションは、設定した角度に沿って直線的に変化します。放射状グラデーションは中心点から円形に外側へ変化し、角度の指定は適用されません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "この内容はどこかに送信されますか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ、グラデーションはすべてブラウザのCSSエンジン内で作成・プレビューされます。何もアップロードされません。"
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSSグラデーションジェネレーター",
+      "item": "https://norito.in/ja/design/css-gradient-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSSグラデーションジェネレーター</p>
+    <h1>CSSグラデーションジェネレーター</h1>
+    <p class="lede">
+      任意の数のカラーストップで線形または放射状のグラデーションをビジュアルに作成し、CSSをコピーできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="gradType">種類</label>
+            <select id="gradType">
+              <option value="linear" selected>線形</option>
+              <option value="radial">放射状</option>
+            </select>
+          </div>
+          <div class="field" id="angleRow">
+            <label for="gradAngle">角度(°)</label>
+            <input type="number" id="gradAngle" min="0" max="360" value="135" />
+          </div>
+        </div>
+        <h3>カラーストップ</h3>
+        <div id="stopsWrap"></div>
+        <button type="button" id="addStopBtn" class="secondary" style="margin-top:4px;">+ カラーストップを追加</button>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSSをコピー</button>
+        </div>
+      </div>
+    </div>
+
+
+<!--RELATED-TOOLS
+box-shadow-generator.html|ボックスシャドウジェネレーター|CSSのbox-shadowをビジュアルに作成します。
+border-radius-generator.html|border-radiusジェネレーター|コーナーごとのborder-radiusをビジュアルに作成します。
+favicon-generator.html|ファビコンジェネレーター|画像からファビコンを生成します。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>3色以上追加できますか?</summary>
+        <p>はい、「カラーストップを追加」を好きなだけクリックできます。各ストップには個別の色と位置(%)があるため、単純な2色だけでなく多色グラデーションも作成できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>線形と放射状の違いは何ですか?</summary>
+        <p>線形グラデーションは、設定した角度に沿って直線的に変化します。放射状グラデーションは中心点から円形に外側へ変化し、角度の指定は適用されません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>この内容はどこかに送信されますか?</summary>
+        <p>いいえ、グラデーションはすべてブラウザのCSSエンジン内で作成・プレビューされます。何もアップロードされません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-gradient-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

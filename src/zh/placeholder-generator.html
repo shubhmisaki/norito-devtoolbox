@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>占位图生成器：任意尺寸、颜色与文字 | norito</title>
+<meta name="description" content="生成自定义尺寸、背景色和文字标签的占位图片，用于原型设计或排版预览。免费、即时生成、可下载，完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/placeholder-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/placeholder-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/placeholder-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/placeholder-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/placeholder-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/placeholder-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/placeholder-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/placeholder-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/placeholder-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="占位图生成器：任意尺寸、颜色与文字 | norito" />
+<meta property="og:description" content="生成自定义尺寸、背景色和文字标签的占位图片，用于原型设计或排版预览。免费、即时生成、可下载，完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/placeholder-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="占位图生成器：任意尺寸、颜色与文字 | norito" />
+<meta name="twitter:description" content="生成自定义尺寸、背景色和文字标签的占位图片，用于原型设计或排版预览。免费、即时生成、可下载，完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "占位图生成器",
+  "url": "https://norito.in/zh/placeholder-generator.html",
+  "description": "生成自定义尺寸、背景色和文字标签的占位图片，用于原型设计或排版预览。免费、即时生成、可下载，完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "占位图生成器",
+      "item": "https://norito.in/zh/placeholder-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 占位图生成器</p>
+    <h1>占位图生成器</h1>
+    <p class="lede">
+      选择尺寸、颜色和文字标签,即可获得用于原型设计、横幅广告或开发测试的占位图片。无需账号,不带水印。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:18px;">
+          <label>样式</label>
+          <div class="style-picker" id="stylePicker">
+            <button type="button" class="style-tile active" data-mode="preset" data-bg="#ff4d7a" data-fg="#ffffff">
+              <span class="tile-swatch" style="background:#ff4d7a;"></span>
+              <span class="tile-label">品牌粉</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#e2e2e2" data-fg="#4b5563">
+              <span class="tile-swatch" style="background:#e2e2e2;"></span>
+              <span class="tile-label">中性灰</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#1f2937" data-fg="#ffffff">
+              <span class="tile-swatch" style="background:#1f2937;"></span>
+              <span class="tile-label">石板灰</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#60a5fa" data-fg="#ffffff">
+              <span class="tile-swatch" style="background:#60a5fa;"></span>
+              <span class="tile-label">天空蓝</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#f5f0e8" data-fg="#44403c">
+              <span class="tile-swatch" style="background:#f5f0e8;"></span>
+              <span class="tile-label">柔和米色</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="preset" data-bg="#6ee7b7" data-fg="#064e3b">
+              <span class="tile-swatch" style="background:#6ee7b7;"></span>
+              <span class="tile-label">薄荷绿</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="custom">
+              <span class="tile-swatch custom-swatch" aria-hidden="true"></span>
+              <span class="tile-label">自定义颜色</span>
+            </button>
+            <button type="button" class="style-tile" data-mode="image">
+              <span class="tile-swatch image-swatch" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></span>
+              <span class="tile-label">使用图片</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="field-row" id="customColorsRow" style="display:none;">
+          <div class="field">
+            <label for="bg">背景色</label>
+            <input type="color" id="bg" value="#ff4d7a" />
+          </div>
+          <div class="field">
+            <label for="fg">文字颜色</label>
+            <input type="color" id="fg" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="field" id="imageUploadRow" style="display:none; margin-bottom:18px;">
+          <label for="bgImageInput">背景图片</label>
+          <div class="dropzone" id="imageDrop">
+            <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+            <div><strong>点击上传</strong>或将图片拖到此处</div>
+            <input type="file" id="bgImageInput" accept="image/*" />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="width">宽度</label>
+            <input type="number" id="width" value="600" min="1" max="4000" />
+          </div>
+          <div class="field">
+            <label for="height">高度</label>
+            <input type="number" id="height" value="400" min="1" max="4000" />
+          </div>
+          <div class="field">
+            <label for="pformat">格式</label>
+            <select id="pformat">
+              <option value="png" selected>PNG</option>
+              <option value="jpg">JPG</option>
+              <option value="webp">WebP</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1; min-width:220px;">
+            <label for="text">标签文字（可选）</label>
+            <input type="text" id="text" placeholder="默认显示为“宽 x 高”" />
+          </div>
+        </div>
+
+        <button id="pDownloadBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          下载图片
+        </button>
+        <p class="note" id="pInfo" style="display:none;"></p>
+      </div>
+
+      <div class="panel" style="display:flex; align-items:center; justify-content:center; min-height:280px;">
+        <canvas class="preview" id="canvas"></canvas>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        预览并不是你图片的效果模拟，它本身就是最终图片：一个按照你精确像素尺寸创建的 canvas 元素，用 2D
+        绘图 API 填充和添加文字，然后通过 canvas.toBlob 直接编码为 PNG、JPG 或
+        WebP。标签的字号会根据较短边缩放（大约是其八分之一，最小 12px），这样无论你生成的是 64px
+        的缩略图还是 4000px 的横幅图，文字比例都保持协调。在照片模式下，上传的图片会按照类似 CSS 的
+        object-fit: cover 方式进行等比缩放并居中裁剪，标签还会加上一层半透明深色背景，确保在内容繁杂的图片上依然清晰可读。
+      </p>
+      <p>
+        每次按键都会同步重绘；只有较重的 blob
+        编码会稍作防抖延迟，这就是为什么显示的文件大小会比预览慢半拍。有一点值得规划：纯色占位图的压缩效率高得惊人。一张
+        4000×4000 的纯色 PNG 通常不到 40 KB，因为 DEFLATE
+        算法会把完全相同的像素行压缩到几乎为零。这对快速做原型很棒，但如果你在测试加载性能，就会造成误导，因为同样尺寸的真实照片体积会重上百倍。想要真实的文件大小，可以使用照片背景模式，或者搭配测试文件生成器把资源填充到更真实的字节大小。
+      </p>
+      <p>
+        绘制、编码和下载全部发生在这个标签页内，包括你拖入的任何照片，它会通过对象 URL
+        读取，且从不离开内存。打开开发者工具，观察生成时的"网络"面板：不会有任何请求携带你的图片。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|压缩图片|直接压缩到指定文件大小，无需反复调整质量。
+remove-background.html|去除背景|在浏览器中直接从照片中抠出人像。
+qr-code-generator.html|二维码生成器|自定义颜色并添加中心 Logo 的二维码。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-placeholder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

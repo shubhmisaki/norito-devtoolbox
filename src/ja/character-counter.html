@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>文字数カウンター：プラットフォームの上限をチェック | norito</title>
+<meta name="description" content="スペースあり・なしの文字数とバイトサイズをカウントし、ツイート、SMS、meta descriptionの上限とリアルタイムで比較。アップロードは一切行われません。" />
+<link rel="canonical" href="https://norito.in/ja/character-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/character-counter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/character-counter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/character-counter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/character-counter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/character-counter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/character-counter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/character-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/character-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="文字数カウンター：プラットフォームの上限をチェック | norito" />
+<meta property="og:description" content="スペースあり・なしの文字数とバイトサイズをカウントし、ツイート、SMS、meta descriptionの上限とリアルタイムで比較。アップロードは一切行われません。" />
+<meta property="og:url" content="https://norito.in/ja/character-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="文字数カウンター：プラットフォームの上限をチェック | norito" />
+<meta name="twitter:description" content="スペースあり・なしの文字数とバイトサイズをカウントし、ツイート、SMS、meta descriptionの上限とリアルタイムで比較。アップロードは一切行われません。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "文字数カウンター",
+  "url": "https://norito.in/ja/character-counter.html",
+  "description": "スペースあり・なしの文字数とバイトサイズをカウントし、ツイート、SMS、meta descriptionの上限とリアルタイムで比較。アップロードは一切行われません。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "文字数カウンター",
+      "item": "https://norito.in/ja/character-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 文字数カウンター</p>
+    <h1>文字数カウンター</h1>
+    <p class="lede">
+      スペースあり・なしのリアルタイム文字数、バイトサイズ、そしてツイートやmeta descriptionなど一般的なプラットフォームの上限にどれだけ近いかを表示します。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">テキスト</label>
+          <textarea id="textInput" class="mono-output" rows="10" placeholder="ここにテキストを貼り付けるか入力..."></textarea>
+        </div>
+        <div class="meta-list">
+          <div class="meta-row"><span class="meta-label">文字数（スペースあり）</span><span class="meta-value" id="statWithSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">文字数（スペースなし）</span><span class="meta-value" id="statNoSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">バイトサイズ（UTF-8）</span><span class="meta-value" id="statBytes">0</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">よくある上限</h3>
+          <div class="meta-list" id="limitList"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        キー入力のたびに、ページは3つの数値を再計算します。文字数は JavaScript の <code>.length</code> で、UTF-16 コードユニット数をカウントします。スペースなしのカウントは、まず正規表現ですべての空白（スペース、タブ、改行）を取り除きます。バイトサイズはブラウザの <code>TextEncoder</code> API にテキストを通し、そのテキストがファイルやデータベースの列、HTTPリクエストボディで実際に占める UTF-8 バイト数を算出します。プラットフォームの上限リストは、各上限との単純な引き算で、上限を超えた瞬間に「超過」スタイルに切り替わります。
+      </p>
+      <p>
+        これらの数値の差こそが落とし穴です。スマイリーのような絵文字は見た目には1つの記号ですが、UTF-16 では2コードユニット（そのためここでも多くのプラットフォームでも2文字としてカウントされます）、UTF-8では4バイトになります。特にSMSでは、160文字という上限は、メッセージが従来のGSM-7文字セット内に収まることを前提としています。絵文字1つやカーブした「スマート引用符」を1つ含めるだけで、キャリアはメッセージ全体を黙ってUCS-2エンコーディングに切り替え、セグメントあたりの上限が70文字まで下がります。1文字編集しただけで突然SMSが2セグメントに分かれてしまうのは、これが理由です。
+      </p>
+      <p>
+        カウントはすべてこのページのJavaScript内で行われます。入力中に開発者ツールのネットワークタブを開いてみてください。リクエストは一切発生しません。テキストがブラウザの外に出ることはないからです。
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+/word-counter.html|単語数カウンター|単語数、文数、段落数と読了時間の目安。
+limited-text-generator.html|文字数制限テキストジェネレーター|指定した長さぴったりのダミーテキストを生成。
+seo-slug-generator.html|SEOスラグジェネレーター|タイトルからきれいなURLスラグを生成。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-character-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

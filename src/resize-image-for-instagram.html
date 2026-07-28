@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Resize Image for Instagram (1080x1080) Free | norito</title>
+<meta name="description" content="Resize a photo to Instagram's 1080x1080 square post size, right in your browser. Also works for portrait and landscape posts. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/resize-image-for-instagram.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/resize-image-for-instagram.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/resize-image-for-instagram.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Resize Image for Instagram (1080x1080) Free | norito" />
+<meta property="og:description" content="Resize a photo to Instagram's 1080x1080 square post size, right in your browser. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/resize-image-for-instagram.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Resize Image for Instagram (1080x1080) Free | norito" />
+<meta name="twitter:description" content="Resize a photo to Instagram's 1080x1080 square post size, right in your browser. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Resize Image for Instagram",
+  "url": "https://norito.in/resize-image-for-instagram.html",
+  "description": "Resize a photo to Instagram's 1080x1080 square post size, right in your browser. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size should an Instagram post be?",
+      "acceptedAnswer": { "@type": "Answer", "text": "1080x1080 pixels for a square feed post, 1080x1350 for portrait, and 1080x608 for landscape. This tool defaults to the square 1080x1080 size, the safest option for the main feed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will resizing distort my photo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only if your original isn't already square and you force it to exactly 1080x1080 with aspect ratio unlocked. Turn on \"Lock aspect ratio\" and crop to square first with the Crop Image tool if your photo isn't square to begin with." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this upload my photo anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The resize happens entirely in your browser using the canvas API. Nothing about your photo is sent anywhere." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resize Image for Instagram",
+      "item": "https://norito.in/resize-image-for-instagram.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Resize Image for Instagram</p>
+    <h1>Resize Image for Instagram</h1>
+    <p class="lede">
+      Resize a photo to Instagram's 1080x1080 square post size in one click, right in your browser. Defaults are already set, just drop in a photo. Works for portrait and landscape posts too.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose images</strong>, or drag and drop them here</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Select more than one to resize in bulk. Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchResizeBtn">Resize all</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>Download all as .zip</button>
+        </div>
+
+        <div class="field-row" style="margin-top:20px;">
+          <div class="field">
+            <label for="mode">Resize by</label>
+            <select id="mode">
+              <option value="exact" selected>Exact dimensions</option>
+              <option value="percent">Percentage</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="format">Output format</label>
+            <select id="format">
+              <option value="keep" selected>Keep original</option>
+              <option value="jpeg">JPEG</option>
+              <option value="png">PNG</option>
+              <option value="webp">WebP</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row" id="exactFields">
+          <div class="field">
+            <label for="width">Width (px)</label>
+            <input type="number" id="width" min="1" max="20000" value="1080" />
+          </div>
+          <div class="field">
+            <label for="height">Height (px)</label>
+            <input type="number" id="height" min="1" max="20000" value="1080" />
+          </div>
+        </div>
+        <div class="field" id="percentFields" style="display:none;">
+          <label for="percent">Percentage of original</label>
+          <input type="number" id="percent" min="1" max="500" value="50" />
+        </div>
+
+        <div class="option-row" style="margin-bottom:20px;">
+          <div>
+            <div class="option-label">Lock aspect ratio</div>
+            <div class="option-hint">Changing width automatically updates height to match, and vice versa.</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="lockRatio" checked /><span class="track"></span></label>
+        </div>
+
+        <button id="resizeBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          Resize image
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Resized preview" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your resized image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          Exact dimensions stretches or shrinks to the width and height you enter (lock the aspect
+          ratio to avoid distortion). Percentage scales proportionally from the original size.
+          Nothing is uploaded, the resize happens on your device using the canvas API.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>This is a canvas resize with Instagram's numbers pre-filled. Your photo is decoded in the browser, drawn onto a <code>&lt;canvas&gt;</code> set to 1080x1080 with <code>drawImage()</code>, which resamples the pixels with the browser's built-in smoothing filter, and re-exported with <code>canvas.toBlob()</code> (JPEG and WebP at 0.92 quality, PNG lossless). No app, no upload, and the defaults are already the right ones for a square feed post.</p>
+      <p>Why 1080 specifically: Instagram stores feed images at up to 1080 pixels wide and recompresses everything you upload. Send a 4,000-pixel photo and Instagram scales it down itself, with compression settings you don't control; send exactly 1080 and you've done the scaling with clean resampling, leaving Instagram less to mangle. The three sizes that matter are 1080x1080 for square, 1080x1350 for portrait (the tallest allowed, and the most screen space in the feed), and 1080x608 for landscape. Change the height field to hit the other two.</p>
+      <p>One thing to watch: if your original isn't square and you force exact 1080x1080 with the aspect-ratio lock off, the image gets stretched, not cropped, and faces will show it. The right order is crop to the shape you want first (the Crop Image tool does square in one click), then resize here with the lock on.</p>
+      <p>Everything happens in your tab. Open DevTools' Network panel while you resize: your photo is never uploaded to this site or anywhere else, which is not true of most "resize for Instagram" tools that quietly round-trip your image through their servers.</p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|Compress Image to Size|Hit an exact file size target instead of specific dimensions.
+crop-image.html|Crop Image|Cut out a specific region instead of scaling the whole image.
+image-converter.html|Image Converter|Convert between JPG, PNG, and WebP.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What size should an Instagram post be?</summary>
+        <p>1080x1080 pixels for a square feed post, 1080x1350 for portrait, and 1080x608 for landscape. This tool defaults to the square 1080x1080 size, the safest option for the main feed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will resizing distort my photo?</summary>
+        <p>Only if your original isn't already square and you force it to exactly 1080x1080 with aspect ratio unlocked. Turn on "Lock aspect ratio" and crop to square first with the Crop Image tool if your photo isn't square to begin with.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this upload my photo anywhere?</summary>
+        <p>No. The resize happens entirely in your browser using the canvas API. Nothing about your photo is sent anywhere.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-resize-image.js"></script>
+<script src="js/prefill.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

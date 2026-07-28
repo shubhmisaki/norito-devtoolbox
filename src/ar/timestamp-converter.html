@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>محول الطابع الزمني: توقيت Unix وتحويل التاريخ | norito</title>
+<meta name="description" content="حوّل بين طوابع Unix الزمنية والتواريخ القابلة للقراءة، في كلا الاتجاهين، مباشرة. إخراج بالتوقيت المحلي وUTC وISO 8601." />
+<link rel="canonical" href="https://norito.in/ar/timestamp-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/timestamp-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/timestamp-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/timestamp-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/timestamp-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/timestamp-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/timestamp-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/timestamp-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/timestamp-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="محول الطابع الزمني: توقيت Unix وتحويل التاريخ | norito" />
+<meta property="og:description" content="حوّل بين طوابع Unix الزمنية والتواريخ القابلة للقراءة، في كلا الاتجاهين، مباشرة. إخراج بالتوقيت المحلي وUTC وISO 8601." />
+<meta property="og:url" content="https://norito.in/ar/timestamp-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="محول الطابع الزمني: توقيت Unix وتحويل التاريخ | norito" />
+<meta name="twitter:description" content="حوّل بين طوابع Unix الزمنية والتواريخ القابلة للقراءة، في كلا الاتجاهين، مباشرة. إخراج بالتوقيت المحلي وUTC وISO 8601." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "محول الطابع الزمني",
+  "url": "https://norito.in/ar/timestamp-converter.html",
+  "description": "حوّل بين طوابع Unix الزمنية والتواريخ القابلة للقراءة، في كلا الاتجاهين، مباشرة. إخراج بالتوقيت المحلي وUTC وISO 8601.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ar/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "محول الطابع الزمني",
+      "item": "https://norito.in/ar/timestamp-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / محول الطابع الزمني</p>
+    <h1>محول الطابع الزمني</h1>
+    <p class="lede">
+      حوّل طوابع Unix الزمنية إلى تواريخ قابلة للقراءة والعكس، ويبقى الاتجاهان متزامنين أثناء تعديل أيّ منهما.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">طابع Unix الزمني</h3>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="tsInput">الطابع الزمني</label>
+            <input type="text" id="tsInput" class="mono-output" style="height:42px; font-size:0.95rem;" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="tsUnit">الوحدة</label>
+            <select id="tsUnit">
+              <option value="s">ثوانٍ</option>
+              <option value="ms" selected>ميلي ثانية</option>
+            </select>
+          </div>
+          <button id="nowBtn" class="secondary" style="align-self:flex-end;">الآن</button>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-bottom:14px;">
+          <label>التوقيت المحلي</label>
+          <input type="text" id="localOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>UTC</label>
+          <input type="text" id="utcOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>ISO 8601</label>
+          <input type="text" id="isoOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field">
+          <label>نسبي</label>
+          <input type="text" id="relativeOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+
+        <h3>التاريخ والوقت</h3>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="dateInput">اختر تاريخًا ووقتًا (منطقتك الزمنية المحلية)</label>
+          <input type="datetime-local" id="dateInput" step="1" />
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>ثوانٍ Unix</label>
+            <input type="text" id="secOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copySecBtn" class="secondary" style="align-self:flex-end;">نسخ</button>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>ميلي ثانية Unix</label>
+            <input type="text" id="msOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copyMsBtn" class="secondary" style="align-self:flex-end;">نسخ</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>ما هو الطابع الزمني Unix؟</h3>
+              <p>ثوانٍ (أو ميلي ثانية) منذ 1 يناير 1970.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            حِقبة Unix هي منتصف ليل UTC يوم 1 يناير 1970. الطابع الزمني هو ببساطة عدد الثواني (أو الميلي ثانية) المنقضية منذ ذلك الحين، ولهذا يُرتَّب ويُقارَن كرقم عادي، بخلاف سلسلة تاريخ منسّقة.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">الفرق بين الثواني والميلي ثانية</h3>
+          <p class="note" style="margin-top:0;">
+            يستخدم Unix وLinux ومعظم واجهات برمجة التطبيقات الخلفية الثواني. تستخدم <code>Date.now()</code> الخاصة بجافاسكريبت ومعظم كود الواجهة الأمامية الميلي ثانية. الخلط بينهما واحد من أكثر أخطاء الطابع الزمني شيوعًا، فقيمة «ثوانٍ» تُلصَق في حقل «ميلي ثانية» تهبط في مكان ما في عام 1970.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>يمرّ كل شيء عبر كائن <code>Date</code> الخاص بالمتصفح، الذي يخزّن داخليًا رقمًا واحدًا: الميلي ثانية منذ حِقبة Unix، منتصف ليل UTC يوم 1 يناير 1970. عند تحويل طابع زمني، تضرب الأداة في 1000 إذا اخترت الثواني، وتبني كائن <code>Date</code>، ثم تعرضه بأربع طرق: توقيتك المحلي عبر <code>toLocaleString</code> (منسّق Intl الخاص بالمتصفح، باستخدام منطقتك الزمنية ولغتك)، وUTC، وISO 8601، وتسمية نسبية مثل «بعد 3 أيام / منذ ساعتين» تُحسَب بتصنيف الفرق عن الآن إلى سنوات أو أشهر أو أيام أو ساعات أو دقائق أو ثوانٍ.</p>
+      <p>في الاتجاه الآخر، تُفسَّر قيمة منتقي التاريخ كتوقيت محلي وتُحوَّل مرة أخرى إلى كل من الثواني والميلي ثانية. يُغذَّى حقل datetime-local بإزاحة الطابع الزمني أولًا بفارق منطقتك الزمنية، وهو الجزء الدقيق الذي تخطئ فيه معظم أدوات التحويل بشكل خفي: <code>toISOString()</code> يتحدث دائمًا بتوقيت UTC، فبدون تلك الإزاحة سيعرض المنتقي وقتًا يفصله ساعات عن الوقت الفعلي الذي تتوقعه.</p>
+      <p>الخطأ الكلاسيكي الذي تحمي منه هذه الأداة بجعل الوحدة صريحة: ثوانٍ مقابل ميلي ثانية. أوقات Unix الحالية مكوّنة من 10 أرقام بالثواني و13 رقمًا بالميلي ثانية. حلّل قيمة بالميلي ثانية كثوانٍ وستهبط بعد أكثر من 50,000 سنة في المستقبل؛ افعل العكس وستحصل على يناير 1970. إذا بدا التحويل غير منطقي، بدّل القائمة المنسدلة للوحدة، فهذا يحل المشكلة في الغالب دائمًا. القيم خارج النطاق (تواريخ جافاسكريبت محدودة بـ 100 مليون يوم على جانبي الحِقبة، أي حوالي عام 275760) تُنتِج خطأً واضحًا بدلاً من نتيجة عشوائية.</p>
+      <p>كل التحليل والتنسيق هو عمل واجهة برمجة تطبيقات محلية في المتصفح. افتح لسان Network في أدوات المطوّر أثناء التحويل: لن يُطلَق أي طلب، والطوابع الزمنية من سجلاتك لن تغادر جهازك أبدًا.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+uuid-generator.html|مولّد UUID|معرّفات UUID v4 عشوائية بالجملة.
+hash-generator.html|مولّد التجزئة|MD5 وSHA-1 وSHA-256 وSHA-512 لأي نص.
+json-formatter.html|منسّق JSON|تنسيق وتحقق وضغط JSON مع عرض شجري.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-timestamp.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Page Not Found | norito</title>
+<meta name="description" content="This page doesn't exist on norito. You'll be redirected to the homepage automatically, or you can browse or search all tools now." />
+<meta name="robots" content="noindex, follow" />
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap notfound-wrap">
+    <p class="notfound-code" aria-hidden="true">404</p>
+    <h1>This page doesn&rsquo;t exist</h1>
+    <p class="lede">
+      The link you followed might be broken, or the page may have moved. We&rsquo;re taking you to the
+      homepage in <span id="notfoundCountdown">5</span> seconds, or search for the tool you were
+      looking for below.
+    </p>
+
+    <div class="hero-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="heroSearchInput" placeholder="Search tools..." autocomplete="off" />
+      <div class="hero-search-results" id="heroSearchResults" hidden></div>
+    </div>
+
+    <div class="notfound-actions">
+      <a href="/index.html" class="btn btn-hero">Go to homepage now</a>
+      <button type="button" class="secondary" id="notfoundCancel">Stay on this page</button>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  var seconds = 5;
+  var countdownEl = document.getElementById("notfoundCountdown");
+  var cancelBtn = document.getElementById("notfoundCancel");
+  var timerId = null;
+  var intervalId = null;
+
+  function tick() {
+    seconds -= 1;
+    if (countdownEl) countdownEl.textContent = Math.max(seconds, 0);
+    if (seconds <= 0) clearInterval(intervalId);
+  }
+
+  function cancel() {
+    clearTimeout(timerId);
+    clearInterval(intervalId);
+    var noticeParent = countdownEl && countdownEl.closest(".lede");
+    if (noticeParent) {
+      noticeParent.textContent = "Redirect canceled. Look around, or use search above.";
+    }
+    if (cancelBtn) cancelBtn.hidden = true;
+  }
+
+  timerId = setTimeout(function () {
+    window.location.href = "/index.html";
+  }, seconds * 1000);
+  intervalId = setInterval(tick, 1000);
+
+  if (cancelBtn) cancelBtn.addEventListener("click", cancel);
+})();
+</script>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<script src="/js/scroll-reveal.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

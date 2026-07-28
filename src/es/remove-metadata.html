@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Eliminar Metadatos de Imagen: Borra EXIF y GPS | norito</title>
+<meta name="description" content="Elimina EXIF, ubicación GPS, y otros metadatos ocultos de una foto, en tu navegador. Ve lo que se encuentra antes de eliminarlo. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/remove-metadata.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-metadata.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/remove-metadata.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/remove-metadata.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/remove-metadata.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/remove-metadata.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/remove-metadata.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/remove-metadata.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-metadata.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Eliminar Metadatos de Imagen: Borra EXIF y GPS | norito" />
+<meta property="og:description" content="Elimina EXIF, ubicación GPS, y otros metadatos ocultos de una foto, en tu navegador. Ve lo que se encuentra antes de eliminarlo. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/remove-metadata.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Eliminar Metadatos de Imagen: Borra EXIF y GPS | norito" />
+<meta name="twitter:description" content="Elimina EXIF, ubicación GPS, y otros metadatos ocultos de una foto, en tu navegador. Ve lo que se encuentra antes de eliminarlo. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Eliminar Metadatos",
+  "url": "https://norito.in/es/remove-metadata.html",
+  "description": "Elimina EXIF, ubicación GPS, y otros metadatos ocultos de una foto, en tu navegador. Ve lo que se encuentra antes de eliminarlo. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Eliminar Metadatos",
+      "item": "https://norito.in/es/remove-metadata.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Eliminar Metadatos</p>
+    <h1>Eliminar Metadatos</h1>
+    <p class="lede">
+      Elimina EXIF, ubicación GPS, información de cámara, y marcas de tiempo de una foto. Ve exactamente qué está incrustado antes de eliminarlo.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><strong>Haz clic para elegir una imagen</strong>, o arrástrala aquí</p>
+          <p class="note" style="margin-top:2px;">JPG funciona mejor para leer metadatos existentes. PNG/WebP también son compatibles. Se queda en tu dispositivo.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="meta-panel" id="metaPanel" style="display:none;">
+          <p class="meta-summary"></p>
+          <div class="meta-list" id="metaList"></div>
+        </div>
+
+        <button id="cleanBtn" disabled style="margin-top:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          Eliminar metadatos y descargar
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Imagen limpiada" />
+          <p class="note" id="previewHint" style="margin-top:0;">Tu imagen limpiada aparecerá aquí una vez generada.</p>
+        </div>
+        <p class="note">
+          Las fotos de teléfonos y cámaras suelen incrustar datos EXIF: las coordenadas GPS exactas de dónde se tomó, el modelo de cámara o teléfono, y una marca de tiempo. Esto lee primero lo que realmente hay en tu archivo, y luego elimina todo volviendo a codificar la imagen desde cero.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Cuando sueltas un JPEG, la herramienta lee los bytes crudos del archivo con un <code>DataView</code> y recorre la estructura de marcadores JPEG buscando el segmento APP1, que es donde vive el EXIF. Dentro, analiza el árbol de directorios TIFF: IFD0 (marca y modelo de cámara, software, fecha de modificación), el subdirectorio Exif (hora de captura original, exposición, apertura, ISO), y el subdirectorio GPS. Maneja ambos órdenes de bytes (archivos estilo Intel y Motorola) y valores tanto en línea como almacenados por desplazamiento, y luego te muestra una lista sencilla de lo que encontró antes de que confirmes nada.</p>
+      <p>Esa lista es el punto: la mayoría de la gente nunca ha visto lo que viaja junto con una foto de teléfono. Un JPEG típico lleva el modelo exacto del dispositivo, el segundo en que se disparó el obturador, el software de edición usado, y, si la ubicación estaba activada, coordenadas GPS lo suficientemente precisas como para identificar una casa. Publicar una foto original publica todo eso junto con ella.</p>
+      <p>El paso de limpieza es hermosamente contundente. La imagen se dibuja en un <code>&lt;canvas&gt;</code> fresco y se vuelve a exportar con <code>canvas.toBlob()</code>, que por diseño solo escribe datos de píxeles: EXIF, XMP, perfiles ICC, miniaturas, todo eso simplemente no tiene a dónde ir en el archivo nuevo. Nada se elimina selectivamente, así que nada puede pasarse por alto. La única contrapartida es que los JPEG se vuelven a codificar (a calidad 0.95, visualmente indistinguible para fotos), y se descartaría un perfil de color personalizado. Los archivos PNG y WebP rara vez llevan EXIF pero pueden contener fragmentos de texto y perfiles; el mismo redibujado también los elimina.</p>
+      <p>Tanto la inspección a nivel de byte como la recodificación con canvas se ejecutan en tu pestaña. Observa el panel Red de las DevTools mientras cargas y limpias una foto: la imagen nunca se sube a ningún lado, que es exactamente lo que quieres de una herramienta cuyo único trabajo es proteger tus metadatos.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+compress-image.html|Comprimir imagen|Reduce el tamaño del archivo después de limpiar.
+image-converter.html|Conversor de imágenes|Convierte a un formato diferente.
+watermark-image.html|Marca de agua en imagen|Añade una marca de agua de texto para proteger tus fotos.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-remove-metadata.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

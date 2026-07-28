@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Extractor de paleta de colores desde una imagen | norito</title>
+<meta name="description" content="Sube una imagen y extrae sus colores dominantes en una paleta, con valores HEX y RGB listos para copiar. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/color-palette-extractor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Extractor de paleta de colores desde una imagen | norito" />
+<meta property="og:description" content="Sube una imagen y extrae sus colores dominantes en una paleta, con valores HEX y RGB listos para copiar. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/design/color-palette-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Extractor de paleta de colores desde una imagen | norito" />
+<meta name="twitter:description" content="Sube una imagen y extrae sus colores dominantes en una paleta, con valores HEX y RGB listos para copiar. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Extractor de paleta de colores",
+  "url": "https://norito.in/es/design/color-palette-extractor.html",
+  "description": "Sube una imagen y extrae sus colores dominantes en una paleta, con valores HEX y RGB listos para copiar. Funciona por completo en tu navegador.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Se sube mi imagen a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Cada píxel se lee localmente usando la API de canvas. Nada se envía a un servidor." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se eligen los colores?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los píxeles se agrupan en grupos por similitud, y los grupos más comunes se convierten en tu paleta, calculados como el promedio de los píxeles reales que cayeron en cada uno." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué los colores no coinciden exactamente con lo que esperaba?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los detalles muy pequeños o finos pueden diluirse en el promedio si no cubren una parte suficiente de la imagen. Prueba a aumentar el número de colores para captar más detalle." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Extractor de paleta de colores",
+      "item": "https://norito.in/es/design/color-palette-extractor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Extractor de paleta de colores</p>
+    <h1>Extractor de paleta de colores</h1>
+    <p class="lede">
+      Sube una imagen y extrae los colores que realmente la definen. Haz clic en cualquier muestra para copiar su código hex.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+          <p><strong>Haz clic para elegir una imagen</strong>, o arrástrala hasta aquí</p>
+          <p class="note" style="margin-top:2px;">También funciona con pegar (Ctrl+V). Se queda en tu dispositivo, no se sube nada.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div id="previewWrap" style="display:none; margin-top:16px;">
+          <img id="previewImg" style="max-width:100%; max-height:220px; border-radius:var(--radius-md); display:block;" alt="Vista previa de la imagen subida" />
+        </div>
+        <div class="field" style="margin-top:16px; max-width:200px;">
+          <label for="colorCount">Número de colores</label>
+          <select id="colorCount">
+            <option value="5">5</option>
+            <option value="8" selected>8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+          </select>
+        </div>
+        <div class="palette-grid" id="paletteGrid" style="display:none;"></div>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Cómo funciona</h3>
+          <p class="note" style="margin-top:0;">Los colores se muestrean directamente de tu imagen usando la API de canvas y se agrupan por similitud. No se sube nada, todo ocurre en tu navegador.</p>
+        </div>
+      </div>
+    </div>
+
+<!--RELATED-TOOLS
+color-converter.html|Conversor de color|Convierte cualquier color a HEX, RGB, HSL o CMYK.
+contrast-checker.html|Verificador de contraste|Comprueba si dos colores cumplen las reglas de contraste WCAG.
+css-gradient-generator.html|Generador de degradados CSS|Crea un degradado a partir de colores que te gusten.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Se sube mi imagen a algún sitio?</summary>
+        <p>No. Cada píxel se lee localmente usando la API de canvas. Nada se envía a un servidor.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo se eligen los colores?</summary>
+        <p>Los píxeles se agrupan en grupos por similitud, y los grupos más comunes se convierten en tu paleta, calculados como el promedio de los píxeles reales que cayeron en cada uno.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Por qué los colores no coinciden exactamente con lo que esperaba?</summary>
+        <p>Los detalles muy pequeños o finos pueden diluirse en el promedio si no cubren una parte suficiente de la imagen. Prueba a aumentar el número de colores para captar más detalle.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-color-palette-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

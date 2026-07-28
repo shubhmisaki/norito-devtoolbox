@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Cron式パーサー：説明と次回実行のプレビュー | norito</title>
+<meta name="description" content="cron式を貼り付けると、わかりやすい説明と次の5回の実行時刻のプレビューが得られます。すべてブラウザ内で完結します。" />
+<link rel="canonical" href="https://norito.in/ja/cron-expression-parser.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/cron-expression-parser.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/cron-expression-parser.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/cron-expression-parser.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/cron-expression-parser.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/cron-expression-parser.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/cron-expression-parser.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/cron-expression-parser.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/cron-expression-parser.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cron式パーサー：説明と次回実行のプレビュー | norito" />
+<meta property="og:description" content="cron式を貼り付けると、わかりやすい説明と次の5回の実行時刻のプレビューが得られます。すべてブラウザ内で完結します。" />
+<meta property="og:url" content="https://norito.in/ja/cron-expression-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cron式パーサー：説明と次回実行のプレビュー | norito" />
+<meta name="twitter:description" content="cron式を貼り付けると、わかりやすい説明と次の5回の実行時刻のプレビューが得られます。すべてブラウザ内で完結します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cron式パーサー",
+  "url": "https://norito.in/ja/cron-expression-parser.html",
+  "description": "cron式を貼り付けると、わかりやすい説明と次の5回の実行時刻のプレビューが得られます。すべてブラウザ内で完結します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cron式パーサー",
+      "item": "https://norito.in/ja/cron-expression-parser.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Cron式パーサー</p>
+    <h1>Cron式パーサー</h1>
+    <p class="lede">
+      cron式を貼り付けると、わかりやすい説明と、次の5回の実行時刻のプレビューが表示されます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:16px;">
+          <label for="presetSelect">よく使うパターン</label>
+          <select id="presetSelect">
+            <option value="">プリセットを選択...</option>
+            <option value="* * * * *">毎分</option>
+            <option value="*/5 * * * *">5分ごと</option>
+            <option value="0 * * * *">毎時、正時に</option>
+            <option value="0 0 * * *">毎日深夜0時</option>
+            <option value="0 9 * * 1-5">平日の午前9時</option>
+            <option value="0 0 1 * *">毎月1日</option>
+            <option value="30 14 * * 0">毎週日曜日の午後2時30分</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Cron式</label>
+          <input type="text" id="input" class="mono-area" style="font-family:'JetBrains Mono',monospace;" value="*/15 9-17 * * 1-5" placeholder="* * * * *" />
+          <p class="note" style="margin-top:6px; margin-bottom:0;">標準的な5フィールド形式：分 時 日 月 曜日。</p>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div id="resultWrap" style="display:none;">
+          <div class="result-box" style="margin-bottom:16px;">
+            <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div class="r-body" id="description"></div>
+          </div>
+          <h3 style="margin-top:0;">次の5回の実行</h3>
+          <ol id="nextRunsList" class="mono-area" style="list-style:decimal; padding-left:22px; line-height:2;"></ol>
+          <p class="note">現在のブラウザのローカルタイムゾーンに基づきます。</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-purple" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg>
+            </div>
+            <div>
+              <h3>5つのフィールド</h3>
+              <p>分、時、日、月、曜日。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            <code>*</code>は「すべての値」を意味します。<code>*/5</code>は「5単位ごと」を意味します。<code>1-5</code>は範囲です。<code>1,3,5</code>はリストです。曜日は0（日曜）から6（土曜）です。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">簡単な例</h3>
+          <p class="note" style="margin-top:0;">
+            <code>*/15 9-17 * * 1-5</code>は「月曜日から金曜日、午前9時から午後5時の間、15分ごと」を意味します。他のよくあるスケジュールについてはプリセットのドロップダウンを試してください。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>パーサーはあなたの式を5つのフィールドに分割し、それぞれを許可される値の明示的な集合に展開します。分フィールドの<code>*/15</code>は{0, 15, 30, 45}という集合になり、曜日フィールドの<code>1-5</code>は{1, 2, 3, 4, 5}になり、<code>1,3,5</code>のようなリストは結合されます。展開時にすべての値が範囲チェックされるため、<code>61 * * * *</code>のような誤入力は、決して実行されないスケジュールを黙って生成する代わりに、正確なフィールド名と期待される範囲を示すメッセージとともに即座に失敗します。</p>
+      <p>「次の5回の実行」リストは総当たりで計算されており、それが利点でもあります。次の正分から始めて、コードは1分ずつ前進し（最大1年分、約52万7000回のチェックで、数ミリ秒しかかかりません）、各候補の分を展開された集合と照合します。計算ではなくシミュレーションすることの有用な副作用として、構文的には正しいが決して実行されない式（例えば2月30日を指す<code>0 0 30 2 *</code>）はエラーにならず、「今後1年間に一致する実行が見つかりませんでした」という結果が返されるだけです。このメッセージが表示された場合、式自体は問題なく解析されていますが、存在しない日付か、1年以上先の日付を指しています。</p>
+      <p>すべての日付計算はあなたのローカルタイムゾーンでブラウザの<code>Date</code>オブジェクトを使用し、すべてこのページのJavaScript内で実行されます。DevToolsのNetworkタブを確認してみてください。式を入力してもリクエストは発生せず、あなたのインフラのスケジュールに関する情報はマシンの外に出ることはありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+timestamp-converter.html|タイムスタンプ変換ツール|Unix時間と日付を双方向に変換。
+regex-tester.html|正規表現テストツール|正規表現をリアルタイムのハイライト付きでテスト。
+json-formatter.html|JSONフォーマッタ|JSONを整形・検証・圧縮。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-cron-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

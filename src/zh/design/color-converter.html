@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>颜色转换器：HEX、RGB、HSL、CMYK | norito</title>
+<meta name="description" content="实时在 HEX、RGB、HSL、CMYK 等格式之间转换颜色数值，每种格式都支持一键复制，方便设计与开发使用。" />
+<link rel="canonical" href="https://norito.in/zh/design/color-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/color-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/color-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/color-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/color-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/color-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/color-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/color-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="颜色转换器：HEX、RGB、HSL、CMYK | norito" />
+<meta property="og:description" content="实时在 HEX、RGB、HSL、CMYK 等格式之间转换颜色数值，每种格式都支持一键复制，方便设计与开发使用。" />
+<meta property="og:url" content="https://norito.in/zh/design/color-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="颜色转换器：HEX、RGB、HSL、CMYK | norito" />
+<meta name="twitter:description" content="实时在 HEX、RGB、HSL、CMYK 等格式之间转换颜色数值，每种格式都支持一键复制，方便设计与开发使用。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "颜色转换器",
+  "url": "https://norito.in/zh/design/color-converter.html",
+  "description": "实时在 HEX、RGB、HSL、CMYK 等格式之间转换颜色数值，每种格式都支持一键复制，方便设计与开发使用。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "为什么 CMYK 只是近似值？",
+      "acceptedAnswer": { "@type": "Answer", "text": "CMYK 是一种印刷色彩空间，实际呈现效果取决于具体使用的油墨和纸张。这里显示的数值是标准的 RGB 转 CMYK 换算结果，可以作为不错的参考起点，但不能替代你的打印机的色彩配置文件。" }
+    },
+    {
+      "@type": "Question",
+      "name": "HSL 有什么用？",
+      "acceptedAnswer": { "@type": "Answer", "text": "HSL 代表色相、饱和度、明度。固定色相、调整明度和饱和度来搭配色板，通常比直接猜测 RGB 或十六进制数值要容易得多。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这个工具会保存我选择的颜色吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。所有操作都在你的浏览器本地完成，不会保存或发送任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "颜色转换器",
+      "item": "https://norito.in/zh/design/color-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / 颜色转换器</p>
+    <h1>颜色转换器</h1>
+    <p class="lede">
+      只需选择一次颜色，就能同时获得 HEX、RGB、HSL 和 CMYK 四种格式，需要哪种就复制哪种。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <input type="color" id="colorPicker" value="#ff4d7a" style="width:100%; height:56px; cursor:pointer; padding:4px;" />
+        <div class="color-swatch-lg" id="swatchLg"></div>
+        <div class="color-field-grid">
+          <div class="field">
+            <label>HEX</label>
+            <div class="color-copy-row"><input type="text" id="hexOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hexOut">复制</button></div>
+          </div>
+          <div class="field">
+            <label>RGB</label>
+            <div class="color-copy-row"><input type="text" id="rgbOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="rgbOut">复制</button></div>
+          </div>
+          <div class="field">
+            <label>HSL</label>
+            <div class="color-copy-row"><input type="text" id="hslOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hslOut">复制</button></div>
+          </div>
+          <div class="field">
+            <label>CMYK</label>
+            <div class="color-copy-row"><input type="text" id="cmykOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="cmykOut">复制</button></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">为什么有这么多格式？</h3>
+          <p class="note" style="margin-top:0;">HEX 和 RGB 是网页中最常用的标准格式，HSL 在需要调整明度或饱和度时更直观，而 CMYK 则是印刷流程所需要的格式。</p>
+        </div>
+      </div>
+    </div>
+
+<!--RELATED-TOOLS
+contrast-checker.html|对比度检查器|检查两种颜色是否符合 WCAG 对比度标准。
+css-gradient-generator.html|CSS 渐变生成器|用你喜欢的颜色构建渐变。
+color-palette-extractor.html|调色板提取器|从图片中提取主要颜色。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>为什么 CMYK 只是近似值？</summary>
+        <p>CMYK 是一种印刷色彩空间，实际呈现效果取决于具体使用的油墨和纸张。这里显示的数值是标准的 RGB 转 CMYK 换算结果，可以作为不错的参考起点，但不能替代你的打印机的色彩配置文件。</p>
+      </details>
+      <details class="faq-item">
+        <summary>HSL 有什么用？</summary>
+        <p>HSL 代表色相、饱和度、明度。固定色相、调整明度和饱和度来搭配色板，通常比直接猜测 RGB 或十六进制数值要容易得多。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这个工具会保存我选择的颜色吗？</summary>
+        <p>不会。所有操作都在你的浏览器本地完成，不会保存或发送任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-color-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

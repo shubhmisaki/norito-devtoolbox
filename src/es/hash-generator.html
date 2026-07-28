@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de hashes: MD5, SHA-1, SHA-256, SHA-512 | norito</title>
+<meta name="description" content="Genera hashes MD5, SHA-1, SHA-256 y SHA-512 de cualquier texto, en vivo mientras escribes, completamente en tu navegador. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/hash-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/hash-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/hash-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/hash-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/hash-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/hash-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/hash-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/hash-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/hash-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de hashes: MD5, SHA-1, SHA-256, SHA-512 | norito" />
+<meta property="og:description" content="Genera hashes MD5, SHA-1, SHA-256 y SHA-512 de cualquier texto, en vivo mientras escribes, completamente en tu navegador. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/hash-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de hashes: MD5, SHA-1, SHA-256, SHA-512 | norito" />
+<meta name="twitter:description" content="Genera hashes MD5, SHA-1, SHA-256 y SHA-512 de cualquier texto, en vivo mientras escribes, completamente en tu navegador. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de hashes",
+  "url": "https://norito.in/es/hash-generator.html",
+  "description": "Genera hashes MD5, SHA-1, SHA-256 y SHA-512 de cualquier texto, en vivo mientras escribes, completamente en tu navegador. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Generador de hashes",
+      "item": "https://norito.in/es/hash-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Generador de hashes</p>
+    <h1>Generador de hashes</h1>
+    <p class="lede">
+      MD5, SHA-1, SHA-256 y SHA-512 de cualquier texto, calculados en vivo en tu navegador con la API Web Crypto. Nada de lo que escribes se envía a ningún sitio.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:20px;">
+          <label for="input">Texto</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Escribe o pega texto para calcular su hash..."></textarea>
+        </div>
+        <div id="hashList"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-coral" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
+            </div>
+            <div>
+              <h3>¿Cuál debería usar?</h3>
+              <p>Depende de para qué estés calculando el hash.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            SHA-256 es la opción segura por defecto para sumas de verificación e integridad. MD5 y SHA-1 están criptográficamente rotos (es posible construir colisiones); sirven para comprobar que un archivo no se corrompió en la transferencia, pero no para nada sensible como el almacenamiento de contraseñas.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">No sirve para contraseñas</h3>
+          <p class="note" style="margin-top:0;">
+            Ninguno de estos algoritmos debe usarse para almacenar contraseñas: son deliberadamente rápidos, justo lo contrario de lo que hace falta para esa tarea. El almacenamiento de contraseñas necesita un algoritmo lento y diseñado para ello, como bcrypt, scrypt o Argon2.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        SHA-1, SHA-256 y SHA-512 se calculan con la API nativa <code>crypto.subtle.digest</code> de tu navegador: tu texto se convierte a bytes UTF-8 con <code>TextEncoder</code>, se procesa de forma nativa y el resultado se formatea como hexadecimal en minúsculas. MD5 es la excepción: Web Crypto se niega deliberadamente a implementarlo (está criptográficamente roto), así que esta herramienta incluye una pequeña implementación en JavaScript de RFC 1321 solo para MD5. Los cuatro se recalculan en cada pulsación, con una protección que descarta resultados obsoletos si escribes más rápido de lo que tardan los cálculos.
+      </p>
+      <p>
+        Un problema práctico al comparar con una terminal: esta herramienta calcula el hash exactamente de los bytes que escribiste, sin salto de línea final. <code>echo "hello" | sha256sum</code> nunca coincidirá, porque <code>echo</code> añade un salto de línea y en realidad estás calculando el hash de "hello\n". Usa <code>printf '%s' "hello" | sha256sum</code> en su lugar y los hashes coincidirán exactamente. Esta misma trampa explica la mayoría de los casos de "por qué mi hash no coincide" entre lenguajes y herramientas.
+      </p>
+      <p>
+        Como <code>crypto.subtle</code> vive dentro del navegador, no hace falta enviar nada a ningún sitio para calcular un hash. Puedes comprobarlo: abre la pestaña Red de las herramientas de desarrollador y escribe una contraseña o clave de API en el campo. No aparece ninguna petición, tu texto se queda en la pestaña.
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+base64-encoder.html|Codificar / Decodificar Base64|Convierte texto a y desde Base64, seguro para UTF-8.
+/uuid-generator.html|Generador de UUID|Identificadores UUID v4 aleatorios en lote.
+password-generator.html|Generador de contraseñas|Contraseñas aleatorias seguras o frases fáciles de recordar.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-hash.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

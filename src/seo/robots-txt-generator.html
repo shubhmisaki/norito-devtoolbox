@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Robots.txt Generator | norito</title>
+<meta name="description" content="Build a robots.txt file with allow/disallow rules and a sitemap reference, right in your browser. Download when ready." />
+<link rel="canonical" href="https://norito.in/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/seo/robots-txt-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Robots.txt Generator | norito" />
+<meta property="og:description" content="Build a robots.txt file with allow/disallow rules and a sitemap reference, right in your browser. Download when ready." />
+<meta property="og:url" content="https://norito.in/seo/robots-txt-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Robots.txt Generator | norito" />
+<meta name="twitter:description" content="Build a robots.txt file with allow/disallow rules and a sitemap reference, right in your browser. Download when ready." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Robots.txt Generator",
+  "url": "https://norito.in/seo/robots-txt-generator.html",
+  "description": "Build a robots.txt file with allow/disallow rules and a sitemap reference, right in your browser. Download when ready.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does robots.txt actually block pages from Google?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It blocks crawling, not necessarily indexing. A disallowed URL can still appear in search results (without a description) if other sites link to it. To fully keep a page out of search results, use a noindex meta tag instead, which requires the page to be crawlable." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does robots.txt need to go?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At the root of your domain, exactly at https://example.com/robots.txt, nowhere else. Crawlers won't look for it in a subfolder." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an empty Disallow mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Disallow: with nothing after it means \"disallow nothing\", equivalent to allowing everything for that user-agent. That's the default this tool starts with for Allow: /." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Robots.txt Generator",
+      "item": "https://norito.in/seo/robots-txt-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Robots.txt Generator</p>
+    <h1>Robots.txt Generator</h1>
+    <p class="lede">
+      Build a robots.txt file with per-crawler allow and disallow rules, an optional crawl delay, and a sitemap reference.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Rules</h3>
+        <div id="rulesWrap"></div>
+        <button type="button" id="addRuleBtn" class="secondary" style="margin-top:4px;">+ Add rule</button>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="sitemapUrl">Sitemap URL <span class="note">(optional)</span></label>
+          <input type="text" id="sitemapUrl" placeholder="https://example.com/sitemap.xml" />
+        </div>
+        <div class="field">
+          <label for="crawlDelay">Crawl-delay in seconds <span class="note">(optional, applied per user-agent group)</span></label>
+          <input type="number" id="crawlDelay" min="0" placeholder="e.g. 10" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">robots.txt</h3>
+          <pre class="code-output" id="output"></pre>
+          <button id="downloadBtn" style="margin-top:12px;">Download robots.txt</button>
+        </div>
+        <p class="note">
+          Use <code>*</code> as the user-agent to apply a rule to every crawler, or name a specific
+          bot like <code>Googlebot</code>. Disallow blocks a path from being crawled, Allow
+          explicitly permits one (useful for carving out an exception inside a disallowed folder).
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The generator collects your rule rows and groups them by user-agent, so three rules you
+        wrote for <code>Googlebot</code> in three separate rows get merged under a single
+        <code>User-agent: Googlebot</code> line, with each group separated by a blank line the way
+        parsers expect. Rules with an empty path are skipped, and every value has newlines stripped
+        out before it is written, so pasting something weird into a field can't inject an extra
+        directive onto its own line. Delete all the rules and the output falls back to
+        <code>User-agent: *</code> with an empty <code>Disallow:</code>, which is the valid way to
+        say "block nothing". The Sitemap line goes at the end, and the download button just wraps
+        the text in a Blob and clicks a temporary link, no server involved.
+      </p>
+      <p>
+        Two things about robots.txt that trip people up. First, <code>Crawl-delay</code> is in this
+        tool because Bing and Yandex honor it, but Googlebot ignores it completely and has since
+        Google formally dropped unsupported directives in 2019; for Google you manage crawl rate
+        through Search Console or your server. Second, and more important: Disallow does not remove
+        a page from search results. It only stops crawling. A blocked URL can still get indexed
+        from links pointing at it, showing up with no snippet. If you want a page out of the index,
+        do the opposite: let it be crawled and put a <code>noindex</code> meta tag on it. Block it
+        in robots.txt and Google can never see that noindex.
+      </p>
+      <p>
+        The file is assembled entirely in this page's JavaScript as you type. Your paths, bot
+        names, and sitemap URL are never sent anywhere; you can confirm it in the DevTools Network
+        tab, which stays silent while you edit and download.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+sitemap-generator.html|Sitemap Generator|Build a sitemap.xml to reference from robots.txt.
+meta-tag-generator.html|Meta Tag Generator|Generate title, description, and social tags.
+utm-builder.html|UTM Builder|Add campaign tracking parameters to a URL.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does robots.txt actually block pages from Google?</summary>
+        <p>It blocks crawling, not necessarily indexing. A disallowed URL can still appear in search results (without a description) if other sites link to it. To fully keep a page out of search results, use a noindex meta tag instead, which requires the page to be crawlable.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where does robots.txt need to go?</summary>
+        <p>At the root of your domain, exactly at https://example.com/robots.txt, nowhere else. Crawlers won't look for it in a subfolder.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What does an empty Disallow mean?</summary>
+        <p>Disallow: with nothing after it means "disallow nothing", equivalent to allowing everything for that user-agent. That's the default this tool starts with for Allow: /.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-robots-txt-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

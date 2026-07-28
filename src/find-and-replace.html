@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Find and Replace Text Online (Regex Supported) | norito</title>
+<meta name="description" content="Find and replace text with optional regex, case sensitivity, and whole-word matching, live in your browser. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/find-and-replace.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/find-and-replace.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/find-and-replace.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Find and Replace Text Online (Regex Supported) | norito" />
+<meta property="og:description" content="Find and replace text with optional regex, case sensitivity, and whole-word matching, live in your browser. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/find-and-replace.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Find and Replace Text Online (Regex Supported) | norito" />
+<meta name="twitter:description" content="Find and replace text with optional regex, case sensitivity, and whole-word matching, live in your browser. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Find and Replace",
+  "url": "https://norito.in/find-and-replace.html",
+  "description": "Find and replace text with optional regex, case sensitivity, and whole-word matching, live in your browser. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Can I use regular expressions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, check \"Use regex\" and the Find field is treated as a regular expression pattern instead of literal text. Capture groups and special characters like \\d, \\s, and \\b all work." } },
+    { "@type": "Question", "name": "What's the difference between \"Replace all\" and leaving it unchecked?", "acceptedAnswer": { "@type": "Answer", "text": "With it checked, every match in the text is replaced. Unchecked, only the first match is replaced, useful when you only want to fix one occurrence." } },
+    { "@type": "Question", "name": "Is my text uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs in your browser using JavaScript's built-in string and regex methods. Nothing you type is sent anywhere." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Find and Replace",
+      "item": "https://norito.in/find-and-replace.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Find and Replace</p>
+    <h1>Find and Replace</h1>
+    <p class="lede">
+      Find and replace text in a document, with optional regex, case sensitivity, and whole-word matching, live as you type.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="field" style="margin-bottom:16px;">
+        <label for="input">Text</label>
+        <textarea id="input" class="mono-area" rows="10" placeholder="Paste or type your text..."></textarea>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="findText">Find</label>
+          <input type="text" id="findText" class="mono-area" placeholder="text or pattern to find" />
+        </div>
+        <div class="field">
+          <label for="replaceText">Replace with</label>
+          <input type="text" id="replaceText" class="mono-area" placeholder="replacement text" />
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="useRegex" />
+          <span>Use regex</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="caseSensitive" />
+          <span>Case sensitive</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="wholeWord" />
+          <span>Whole word only</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="replaceAll" checked />
+          <span>Replace all occurrences</span>
+        </label>
+      </div>
+
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="field" style="margin-bottom:8px;">
+        <label for="output">Result <span id="matchCount" class="note" style="display:inline; margin-left:8px;"></span></label>
+        <textarea id="output" class="mono-area" rows="10" readonly></textarea>
+      </div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn">Copy result</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Every search, plain or regex, is compiled into a single JavaScript <code>RegExp</code>
+        under the hood. In plain-text mode your search term is escaped first (so <code>.</code>,
+        <code>(</code>, <code>$</code> and friends match literally), "whole word" wraps the
+        pattern in <code>\b</code> word boundaries, and the case toggle simply adds or removes
+        the <code>i</code> flag. The result re-renders on every keystroke, and the match count
+        comes from running the same pattern with the global flag before replacing. Invalid regex
+        input doesn't wipe your text, it just shows the engine's error and leaves the output
+        untouched.
+      </p>
+      <p>
+        Here's the feature most find-and-replace pages never mention: because replacement uses
+        JavaScript's native <code>String.replace</code>, backreferences work in regex mode. Use
+        <code>$1</code>, <code>$2</code> for capture groups and <code>$&amp;</code> for the whole
+        match. So finding <code>(\w+), (\w+)</code> and replacing with <code>$2 $1</code> flips
+        "Doe, Jane" into "Jane Doe" across an entire file, and <code>$$</code> gives you a
+        literal dollar sign when you need one.
+      </p>
+      <p>
+        The whole thing runs in this page's JavaScript on your machine. Open DevTools' Network
+        tab while you work: no request carries your text, which is exactly why it's safe to paste
+        logs, config files, or anything else you'd rather not upload to a random website.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+regex-tester.html|Regex Tester|Test a regex with live match highlighting.
+remove-duplicate-lines.html|Remove Duplicate Lines|Deduplicate a list of lines.
+case-converter.html|Case Converter|UPPERCASE, camelCase, snake_case, and more.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Can I use regular expressions?</summary>
+        <p>Yes, check "Use regex" and the Find field is treated as a regular expression pattern instead of literal text. Capture groups and special characters like \d, \s, and \b all work.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the difference between "Replace all" and leaving it unchecked?</summary>
+        <p>With it checked, every match in the text is replaced. Unchecked, only the first match is replaced, useful when you only want to fix one occurrence.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my text uploaded anywhere?</summary>
+        <p>No. Everything runs in your browser using JavaScript's built-in string and regex methods. Nothing you type is sent anywhere.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-find-replace.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

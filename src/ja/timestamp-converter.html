@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>タイムスタンプ変換ツール：Unix時間と日付の変換 | norito</title>
+<meta name="description" content="Unixタイムスタンプと読みやすい日付をリアルタイムで双方向に変換。ローカル時間、UTC、ISO 8601形式に対応。" />
+<link rel="canonical" href="https://norito.in/ja/timestamp-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/timestamp-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/timestamp-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/timestamp-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/timestamp-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/timestamp-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/timestamp-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/timestamp-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/timestamp-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="タイムスタンプ変換ツール：Unix時間と日付の変換 | norito" />
+<meta property="og:description" content="Unixタイムスタンプと読みやすい日付をリアルタイムで双方向に変換。ローカル時間、UTC、ISO 8601形式に対応。" />
+<meta property="og:url" content="https://norito.in/ja/timestamp-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="タイムスタンプ変換ツール：Unix時間と日付の変換 | norito" />
+<meta name="twitter:description" content="Unixタイムスタンプと読みやすい日付をリアルタイムで双方向に変換。ローカル時間、UTC、ISO 8601形式に対応。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "タイムスタンプ変換ツール",
+  "url": "https://norito.in/ja/timestamp-converter.html",
+  "description": "Unixタイムスタンプと読みやすい日付をリアルタイムで双方向に変換。ローカル時間、UTC、ISO 8601形式に対応。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "タイムスタンプ変換ツール",
+      "item": "https://norito.in/ja/timestamp-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / タイムスタンプ変換ツール</p>
+    <h1>タイムスタンプ変換ツール</h1>
+    <p class="lede">
+      Unixタイムスタンプを読みやすい日付に変換、またはその逆も可能。どちらを編集しても双方向がリアルタイムで同期します。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Unixタイムスタンプ</h3>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="tsInput">タイムスタンプ</label>
+            <input type="text" id="tsInput" class="mono-output" style="height:42px; font-size:0.95rem;" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="tsUnit">単位</label>
+            <select id="tsUnit">
+              <option value="s">秒</option>
+              <option value="ms" selected>ミリ秒</option>
+            </select>
+          </div>
+          <button id="nowBtn" class="secondary" style="align-self:flex-end;">現在</button>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-bottom:14px;">
+          <label>ローカル時間</label>
+          <input type="text" id="localOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>UTC</label>
+          <input type="text" id="utcOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>ISO 8601</label>
+          <input type="text" id="isoOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field">
+          <label>相対表示</label>
+          <input type="text" id="relativeOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+
+        <h3>日付と時刻</h3>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="dateInput">日付と時刻を選択（あなたのローカルタイムゾーン）</label>
+          <input type="datetime-local" id="dateInput" step="1" />
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Unix秒</label>
+            <input type="text" id="secOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copySecBtn" class="secondary" style="align-self:flex-end;">コピー</button>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Unixミリ秒</label>
+            <input type="text" id="msOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copyMsBtn" class="secondary" style="align-self:flex-end;">コピー</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>Unixタイムスタンプとは？</h3>
+              <p>1970年1月1日からの秒数（またはミリ秒数）。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Unixエポックは1970年1月1日UTC午前0時です。タイムスタンプはそれ以降経過した秒数（またはミリ秒数）にすぎず、そのためフォーマット済みの日付文字列とは異なり、単純な数値としてソートや比較ができます。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">秒とミリ秒のタイムスタンプの違い</h3>
+          <p class="note" style="margin-top:0;">
+            Unix、Linux、ほとんどのバックエンドAPIは秒を使用します。JavaScript自身の<code>Date.now()</code>やほとんどのフロントエンドコードはミリ秒を使用します。この2つを混同することは最もよくあるタイムスタンプのバグの一つで、「秒」の値を「ミリ秒」フィールドに貼り付けると1970年付近の日付になってしまいます。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>すべての処理はブラウザの<code>Date</code>オブジェクトを経由し、内部的には1つの数値のみを保持します。Unixエポック（1970年1月1日UTC午前0時）からのミリ秒数です。タイムスタンプを変換する際、秒を指定した場合はツールが1,000を掛けて<code>Date</code>を構築し、4つの形式で表示します。<code>toLocaleString</code>（ブラウザのIntlフォーマッターで、あなた自身のタイムゾーンと言語を使用）によるローカル時間、UTC、ISO 8601、そして現在との差を年・月・日・時間・分・秒に振り分けて計算する「3日後 / 2時間前」のような相対表示ラベルです。</p>
+      <p>逆方向では、日付ピッカーの値がローカル時間として解析され、秒とミリ秒の両方に再変換されます。datetime-localフィールドは、まずタイムゾーンのオフセット分だけタイムスタンプをずらしてから値が設定されます。この部分は、多くの変換ツールが微妙に間違えやすい箇所です。<code>toISOString()</code>は常にUTCで表現するため、このずらし処理がないと、ピッカーには期待する壁時計時間から数時間ずれた時刻が表示されてしまいます。</p>
+      <p>このツールが単位を明示することで防いでいる典型的なミスが、秒とミリ秒の混同です。現在のUnix時間は秒表記で10桁、ミリ秒表記で13桁です。ミリ秒の値を秒として解析すると、5万年以上先の未来に飛んでしまいます。逆の場合は1970年1月になります。変換結果がおかしいと感じたら、単位のドロップダウンを切り替えてみてください。ほとんどの場合、それが原因のすべてです。範囲外の値（JavaScriptの日付はエポックの前後それぞれ約1億日、おおよそ西暦275760年まで）は、意味不明な結果ではなく明確なエラーとして表示されます。</p>
+      <p>すべての解析と整形はローカルのブラウザAPIの処理です。変換中にDevToolsのNetworkタブを開いてみてください。リクエストは一切発生せず、ログのタイムスタンプがあなたのマシンから外に出ることはありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+uuid-generator.html|UUIDジェネレーター|ランダムなUUID v4識別子を一括生成。
+hash-generator.html|ハッシュジェネレーター|任意のテキストのMD5、SHA-1、SHA-256、SHA-512。
+json-formatter.html|JSONフォーマッタ|JSONを整形・検証・圧縮し、ツリー表示できます。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-timestamp.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

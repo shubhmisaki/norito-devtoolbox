@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>进制转换器：二进制、八进制、十进制、十六进制 | norito</title>
+<meta name="description" content="实时在二进制、八进制、十进制和十六进制之间转换数字，还支持 2 到 36 之间任意自定义进制。支持负数和任意大的数字。" />
+<link rel="canonical" href="https://norito.in/zh/number-base-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/number-base-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/number-base-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/number-base-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/number-base-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/number-base-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/number-base-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/number-base-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/number-base-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="进制转换器：二进制、八进制、十进制、十六进制 | norito" />
+<meta property="og:description" content="实时在二进制、八进制、十进制和十六进制之间转换数字，还支持 2 到 36 之间任意自定义进制。支持负数和任意大的数字。" />
+<meta property="og:url" content="https://norito.in/zh/number-base-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="进制转换器：二进制、八进制、十进制、十六进制 | norito" />
+<meta name="twitter:description" content="实时在二进制、八进制、十进制和十六进制之间转换数字，还支持 2 到 36 之间任意自定义进制。支持负数和任意大的数字。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "进制转换器",
+  "url": "https://norito.in/zh/number-base-converter.html",
+  "description": "实时在二进制、八进制、十进制和十六进制之间转换数字，还支持 2 到 36 之间任意自定义进制。支持负数和任意大的数字。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "进制转换器",
+      "item": "https://norito.in/zh/number-base-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 进制转换器</p>
+    <h1>进制转换器</h1>
+    <p class="lede">
+      在二进制、八进制、十进制和十六进制之间实时转换数字，或在 2 到 36 之间任意两个进制之间转换。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="baseDecimal">十进制（10 进制）</label>
+          <input type="text" id="baseDecimal" class="mono-area" placeholder="255" />
+        </div>
+        <div class="field">
+          <label for="baseHex">十六进制（16 进制）</label>
+          <input type="text" id="baseHex" class="mono-area" placeholder="ff" />
+        </div>
+        <div class="field">
+          <label for="baseBinary">二进制（2 进制）</label>
+          <input type="text" id="baseBinary" class="mono-area" placeholder="11111111" />
+        </div>
+        <div class="field">
+          <label for="baseOctal">八进制（8 进制）</label>
+          <input type="text" id="baseOctal" class="mono-area" placeholder="377" />
+        </div>
+      </div>
+      <p class="note" style="margin-top:0;">在任意一个字段中输入，其余三个字段会实时更新。支持负数和任意大的整数。</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0;">自定义进制转换</h3>
+      <p class="note" style="margin-top:0; margin-bottom:16px;">在 2 到 36 之间任意两个进制之间转换。</p>
+      <div class="field" style="margin-bottom:16px;">
+        <label for="customValue">值</label>
+        <input type="text" id="customValue" class="mono-area" placeholder="1a2b3c" value="1a2b3c" />
+      </div>
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="customFrom">源进制</label>
+          <select id="customFrom">
+            <option value="2">进制 2</option>
+            <option value="3">进制 3</option>
+            <option value="4">进制 4</option>
+            <option value="5">进制 5</option>
+            <option value="6">进制 6</option>
+            <option value="7">进制 7</option>
+            <option value="8">进制 8</option>
+            <option value="9">进制 9</option>
+            <option value="10" selected>进制 10</option>
+            <option value="11">进制 11</option>
+            <option value="12">进制 12</option>
+            <option value="13">进制 13</option>
+            <option value="14">进制 14</option>
+            <option value="15">进制 15</option>
+            <option value="16">进制 16</option>
+            <option value="17">进制 17</option>
+            <option value="18">进制 18</option>
+            <option value="19">进制 19</option>
+            <option value="20">进制 20</option>
+            <option value="21">进制 21</option>
+            <option value="22">进制 22</option>
+            <option value="23">进制 23</option>
+            <option value="24">进制 24</option>
+            <option value="25">进制 25</option>
+            <option value="26">进制 26</option>
+            <option value="27">进制 27</option>
+            <option value="28">进制 28</option>
+            <option value="29">进制 29</option>
+            <option value="30">进制 30</option>
+            <option value="31">进制 31</option>
+            <option value="32">进制 32</option>
+            <option value="33">进制 33</option>
+            <option value="34">进制 34</option>
+            <option value="35">进制 35</option>
+            <option value="36">进制 36</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customTo">目标进制</label>
+          <select id="customTo">
+            <option value="2">进制 2</option>
+            <option value="3">进制 3</option>
+            <option value="4">进制 4</option>
+            <option value="5">进制 5</option>
+            <option value="6">进制 6</option>
+            <option value="7">进制 7</option>
+            <option value="8">进制 8</option>
+            <option value="9">进制 9</option>
+            <option value="10">进制 10</option>
+            <option value="11">进制 11</option>
+            <option value="12">进制 12</option>
+            <option value="13">进制 13</option>
+            <option value="14">进制 14</option>
+            <option value="15">进制 15</option>
+            <option value="16" selected>进制 16</option>
+            <option value="17">进制 17</option>
+            <option value="18">进制 18</option>
+            <option value="19">进制 19</option>
+            <option value="20">进制 20</option>
+            <option value="21">进制 21</option>
+            <option value="22">进制 22</option>
+            <option value="23">进制 23</option>
+            <option value="24">进制 24</option>
+            <option value="25">进制 25</option>
+            <option value="26">进制 26</option>
+            <option value="27">进制 27</option>
+            <option value="28">进制 28</option>
+            <option value="29">进制 29</option>
+            <option value="30">进制 30</option>
+            <option value="31">进制 31</option>
+            <option value="32">进制 32</option>
+            <option value="33">进制 33</option>
+            <option value="34">进制 34</option>
+            <option value="35">进制 35</option>
+            <option value="36">进制 36</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box error" id="customError" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+      <div class="field">
+        <label for="customOutput">结果</label>
+        <input type="text" id="customOutput" class="mono-area" readonly />
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>你输入的每个值都会被解析为 JavaScript 的 <code>BigInt</code>，这是浏览器内置的一种任意精度整数类型。解析过程逐位处理你的输入，将累计总数乘以进制基数并加上每一位的值；反向转换则反复除以目标进制并收集余数。大于 9 的数字使用字母表示，所以 36 进制会依次使用 0-9 再到 a-z。负数同样支持：解析前会先剥离开头的负号，最后再拼接回去。</p>
+      <p>BigInt 这部分是值得了解的细节。基于普通 JavaScript 数字构建的转换器，在处理超过 9,007,199,254,740,991（2^53 - 1）的数值时会悄悄发生错误，因为超过这个值浮点数就无法精确表示每一个整数了。把一个 16 位的十六进制值（比如 <code>ffffffffffffffff</code>）粘贴进这类工具，你会得到一个四舍五入后的错误答案，且没有任何警告。而这里的运算在任意长度下都是精确的：一个 100 位的十进制数也能正确转换为二进制，只是需要更多位数而已。</p>
+      <p>每个字段在你输入时都会针对自身进制进行校验，因此在八进制框中输入 9，或在十六进制框中输入 g，会显示错误提示而不是给出一个无意义的结果，其余三个字段会根据你编辑的那个字段实时更新。这一切都发生在你的标签页内：查看开发者工具的 Network 面板，你会看到页面在你输入时不会发出任何请求，因此你转换的数字永远不会离开你的电脑。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+hash-generator.html|哈希生成器|MD5、SHA-1、SHA-256、SHA-512。
+url-encoder-decoder.html|URL 编码 / 解码工具|对 URL 进行百分号编码或解码。
+timestamp-converter.html|时间戳转换器|Unix 时间与日期互转。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-base-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

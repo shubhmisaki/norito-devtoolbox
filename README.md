@@ -224,6 +224,96 @@ version, since building per-language stopword lists was out of scope for a
 string-translation pass. It still works correctly on Spanish/Chinese/Arabic
 titles, it just won't strip filler words in those languages.
 
+## Templating (header/footer/shared chrome)
+
+Most pages are no longer edited directly. The header nav, footer, common
+`<head>` boilerplate (Clarity, favicons, font preloads), and the shared
+foot-of-page scripts (i18n runtime, nav/theme-toggle/lang-switcher, the
+command-palette overlay) live once per locale under `partials/`, not
+copy-pasted into all 394 HTML files anymore.
+
+- `src/**/*.html` — the editable source for each page: page-specific
+  `<title>`/meta/JSON-LD/`<main>` content, with `<!--INCLUDE:...-->` markers
+  standing in for the shared chrome.
+- `partials/head-common.html` — the `<head>` boilerplate shared by every
+  page on the site (one file, no locale variants).
+- `partials/{locale}/header.html`, `header-content.html` (used on
+  compare/blog pages, which get an extra nav link) — per-locale nav. Same
+  fallback rule as the footer: every locale's nav dropdown now lists the
+  full 59-tool catalog, using that locale's translated page/label where one
+  exists and the English page/label otherwise, so every tool is reachable
+  from the nav on every locale (previously each locale's nav only showed
+  its ~32 translated tools).
+- `partials/{locale}/footer.html` (`footer-home.html` is kept identical, for
+  marker compatibility) — one common mega-footer per locale: a full
+  Product/PDF/Images/Developer/Text/Utilities/SEO/Design sitemap. Each tool
+  link uses that locale's own translated page when one exists (sourced from
+  the header partial) and falls back to the English page otherwise — see
+  `scripts/build_common_footer.py`. Blog always points to the English
+  `/blog/` since it isn't translated yet.
+- `partials/{locale}/cmdk-overlay.html` — the Cmd+K search palette markup.
+- `<!--RELATED-TOOLS ... -->` — a page-body component macro (not a shared
+  partial, since the content is page-specific): a compact `href|label|desc`
+  data block per related tool, one per line. `build_site.py` renders it
+  into the full "Related tools" card grid, picking the `<h2>` text for the
+  page's locale from a fixed 7-locale translation table. Any future styling
+  change to the related-tools cards is a one-place edit instead of a
+  190-file edit. Extracted via `scripts/extract_related_tools.py`.
+- `partials/foot-scripts-head.html`, `foot-scripts-mid.html`,
+  `foot-scripts-tail.html` — the shared `<script>` tags around each page's
+  own tool-specific script.
+- `scripts/build_site.py` — expands `src/` + `partials/` back into the live
+  HTML files at the repo root. Run it after editing anything under `src/`
+  or `partials/`:
+
+  ```
+  python3 scripts/build_site.py
+  ```
+
+  It's also wired into `.githooks/pre-commit` (enable once via
+  `git config core.hooksPath .githooks`), so a forgotten rebuild before
+  commit gets caught and regenerated automatically.
+
+**To change the nav, footer, or any shared chrome for a locale:** edit the
+relevant file under `partials/{locale}/`, run the build script once, and
+every page in that locale picks up the change — no more hand-editing (or
+scripting a find-and-replace across) hundreds of files.
+
+**Coverage:** 392 of 393 pages are on this system, including
+`about.html`/`changelog.html`/`contact.html`/`privacy.html`/`how-it-works.html`/
+`tools.html`/`404.html`, once the common mega-footer above replaced their
+various one-off footer layouts. The only holdout is the English homepage
+(`index.html`), which has a small keyboard-hint widget in its Cmd+K overlay
+that no other page has yet — see `scripts/make_src.py` /
+`scripts/extract_partials.py` for how the rest of the site was converted, if
+extending this to cover it too.
+
+## Shared JS helpers (`js/utils.js`)
+
+`js/utils.js` is loaded on every page (via `partials/foot-scripts-head.html`)
+before each tool's own `js/app-*.js`. As well as the byte/ZIP helpers, it now
+has `copyToClipboard(text)`: tries `navigator.clipboard.writeText`, falls
+back to a hidden-textarea `execCommand("copy")` if that's unavailable or
+throws. All 26 `app-*.js` files that copy text to the clipboard now call
+this instead of duplicating the try/catch inline — which also fixed a real
+bug in 8 of them (`app-border-radius-generator.js`, `app-box-shadow-generator.js`,
+`app-color-converter.js`, `app-color-palette-extractor.js`,
+`app-css-gradient-generator.js`, `app-csv-to-json.js`,
+`app-meta-tag-generator.js`, `app-utm-builder.js`) that had no fallback at
+all, so the copy button silently did nothing if the Clipboard API was
+unavailable (e.g. non-HTTPS contexts, older browsers, permission denied).
+
+`wireDragDrop(el, onDrop)` does the same for the drag-and-drop dropzone
+wiring (`dragenter`/`dragover`/`dragleave`/`drop`, `.drag` hover class,
+`preventDefault`) that used to be copy-pasted, in one of two equivalent
+forms, across `app-*.js` files. 23 of 24 dropzone files now call it;
+`app-qrcode.js`'s secondary logo-dropzone was left as-is since it toggles a
+different class (`drag-active`) for a distinct, smaller drop target and
+isn't worth complicating the shared helper for one file. Converted via
+`scripts/consolidate_dropzones.py`; each file's own file-handling logic
+(single file, batch, image vs. text) is untouched -- only the
+event-wiring boilerplate around it moved into `utils.js`.
+
 ## Roadmap
 
 From the original wishlist, still open:

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Сортировка строк онлайн: по алфавиту, числам, вперемешку | norito</title>
+<meta name="description" content="Сортируйте список строк по алфавиту, по числам, по длине или перемешивайте случайным образом прямо в браузере. Ничего не загружается." />
+<link rel="canonical" href="https://norito.in/ru/sort-lines.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/sort-lines.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/sort-lines.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/sort-lines.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/sort-lines.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/sort-lines.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/sort-lines.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/sort-lines.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/sort-lines.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Сортировка строк онлайн: по алфавиту, числам, вперемешку | norito" />
+<meta property="og:description" content="Сортируйте список строк по алфавиту, по числам, по длине или перемешивайте случайным образом прямо в браузере. Ничего не загружается." />
+<meta property="og:url" content="https://norito.in/ru/sort-lines.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Сортировка строк онлайн: по алфавиту, числам, вперемешку | norito" />
+<meta name="twitter:description" content="Сортируйте список строк по алфавиту, по числам, по длине или перемешивайте случайным образом прямо в браузере. Ничего не загружается." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Сортировка строк",
+  "url": "https://norito.in/ru/sort-lines.html",
+  "description": "Сортируйте список строк по алфавиту, по числам, по длине или перемешивайте случайным образом прямо в браузере. Ничего не загружается.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Сортировка строк",
+      "item": "https://norito.in/ru/sort-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Сортировка строк</p>
+    <h1>Сортировка строк</h1>
+    <p class="lede">
+      Сортируйте список по алфавиту, по числам, по длине, или перемешайте его случайным образом. По возрастанию или убыванию, с опциональным удалением дубликатов.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Ввод (один элемент на строку)</label>
+          <textarea id="textInput" class="mono-output" rows="12" placeholder="банан
+яблоко
+вишня"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="sortBy">Сортировать по</label>
+            <select id="sortBy">
+              <option value="alpha">По алфавиту (с учётом регистра)</option>
+              <option value="alphaCI" selected>По алфавиту (без учёта регистра)</option>
+              <option value="numeric">По числам</option>
+              <option value="length">По длине строки</option>
+              <option value="shuffle">Перемешать случайно</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="direction">Направление</label>
+            <select id="direction">
+              <option value="asc" selected>По возрастанию</option>
+              <option value="desc">По убыванию</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Удалить повторяющиеся строки</span>
+          <label class="switch"><input type="checkbox" id="optDedupe" /><span class="track"></span></label>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <span class="option-label">Удалить пустые строки</span>
+          <label class="switch"><input type="checkbox" id="optRemoveBlank" checked /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">Результат</label>
+            <textarea id="textOutput" class="mono-output" rows="12" readonly></textarea>
+          </div>
+          <p class="note" id="statInfo" style="margin-top:0;">0 строк.</p>
+          <button id="sortNowBtn" class="secondary" style="margin-right:8px;">Сортировать сейчас</button>
+          <button id="copyBtn">Скопировать результат</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>Ваш текст разбивается по переносам строк и сортируется компаратором, выбранным в выпадающем списке. Алфавитный порядок использует <code>localeCompare</code> — языково-зависимое сравнение браузера — вместо необработанных кодов символов. Разница видна сразу: наивная сортировка по кодовым точкам ставит каждую заглавную букву перед каждой строчной (поэтому "Zebra" сортируется перед "apple"), и она искажает порядок символов с диакритическими знаками. Языково-зависимое сравнение упорядочивает слова так, как это сделал бы словарь.</p>
+      <p>Числовая сортировка разбирает каждую строку функцией <code>parseFloat</code> и сравнивает числа, что исправляет классическую ошибку строковой сортировки, при которой "10" оказывается перед "9", потому что "1" — меньший символ. Строки, не начинающиеся с числа, считаются равными 0 и группируются вместе. Сортировка по длине сравнивает количество символов, а перемешивание использует алгоритм Фишера — Йетса, который даёт каждому порядку равную вероятность. Стоит пояснить: популярный трюк <code>sort(() =&gt; Math.random() - 0.5)</code> даёт смещённое перемешивание, потому что алгоритмы сортировки предполагают согласованный компаратор, тогда как Фишер — Йетс проходит по массиву один раз, меняя каждый элемент местами с равномерно случайной более ранней позицией.</p>
+      <p>Сортировка по убыванию — это сортировка по возрастанию с последующим разворотом, удаление дубликатов выполняется после сортировки с помощью <code>Set</code>, поэтому удаляются только точные повторы, а пустые строки можно отфильтровать ещё до всего этого. Весь процесс — это операции с массивом над строкой прямо в вашей вкладке: при вставке или сортировке не отправляется ни одного запроса (проверьте на панели «Сеть» в инструментах разработчика), поэтому сортировка списка имён, email-адресов или ключей никогда не затрагивает сервер.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+remove-duplicate-lines.html|Удаление дублирующихся строк|Удаление дубликатов до или после сортировки.
+/case-converter.html|Конвертер регистра|Преобразование текста между верхним, нижним регистром, camelCase и другими.
+json-formatter.html|Форматирование JSON|Форматирование и проверка JSON.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-sort-lines.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>HTMLエンティティエンコーダー/デコーダー | norito</title>
+<meta name="description" content="HTMLエンティティ（&lt; &gt; &amp; など）をブラウザ内でリアルタイムにエスケープ・アンエスケープ。名前付きエンティティと数値エンティティに対応。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/html-entity-encoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/html-entity-encoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/html-entity-encoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/html-entity-encoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/html-entity-encoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/html-entity-encoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/html-entity-encoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HTMLエンティティエンコーダー/デコーダー | norito" />
+<meta property="og:description" content="HTMLエンティティ（&lt; &gt; &amp; など）をブラウザ内でリアルタイムにエスケープ・アンエスケープ。名前付きエンティティと数値エンティティに対応。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/html-entity-encoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HTMLエンティティエンコーダー/デコーダー | norito" />
+<meta name="twitter:description" content="HTMLエンティティ（&lt; &gt; &amp; など）をブラウザ内でリアルタイムにエスケープ・アンエスケープ。名前付きエンティティと数値エンティティに対応。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HTMLエンティティエンコーダー/デコーダー",
+  "url": "https://norito.in/ja/html-entity-encoder.html",
+  "description": "HTMLエンティティ（&lt; &gt; &amp; など）をブラウザ内でリアルタイムにエスケープ・アンエスケープ。名前付きエンティティと数値エンティティに対応。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HTMLエンティティエンコーダー/デコーダー",
+      "item": "https://norito.in/ja/html-entity-encoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / HTMLエンティティエンコーダー</p>
+    <h1>HTMLエンティティエンコーダー/デコーダー</h1>
+    <p class="lede">
+      特殊文字をHTMLエンティティにエスケープ、またはエンティティをプレーンテキストにデコードします。入力するとリアルタイムに反映されます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">エンコード</button>
+          <button type="button" class="tab" data-value="decode">デコード</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="option-row" style="margin-bottom:16px;">
+          <div>
+            <div class="option-label">すべての非ASCII文字をエンコード</div>
+            <div class="option-hint">&lt; &gt; &amp; " ' だけでなく、アクセント付き文字や絵文字もエスケープします。</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="optAllNonAscii" /><span class="track"></span></label>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">入力</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="HTMLまたはテキストを入力または貼り付け..."></textarea>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">出力</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            入れ替え
+          </button>
+          <button id="copyBtn">出力をコピー</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-teal" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3>HTMLエンティティが存在する理由</h3>
+              <p>一部の文字はHTML自体によって予約されています。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            <code>&lt;</code>、<code>&gt;</code>、<code>&amp;</code>のような文字はHTMLマークアップにおいて特別な意味を持ちます。ページコンテンツ内にそのまま入力するとページが壊れたり、さらに悪い場合はユーザー入力が実行可能なマークアップとして解釈されてしまうことがあります。<code>&amp;lt;</code>のようなエンティティとしてエンコードすることで、その文字を安全にプレーンテキストとして表示できます。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">名前付きエンティティ vs 数値エンティティ</h3>
+          <p class="note" style="margin-top:0;">
+            <code>&amp;amp;</code>と<code>&amp;#38;</code>はどちらも同じアンパサンドにデコードされます。名前付きエンティティは一般的な文字向けに存在し、数値エンティティ（10進または16進）はあらゆるUnicode文字を表現できます。このツールは両方の形式をデコードします。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>エンコードは単純な置換処理です。正規表現がHTMLで予約された5つの文字（<code>&amp;</code>、<code>&lt;</code>、<code>&gt;</code>、<code>"</code>、<code>'</code>）をそれぞれのエンティティに置き換えます。「すべての非ASCII文字をエンコード」オプションはさらに進んで、<code>codePointAt</code>を使ってASCII範囲を超えるすべての文字を数値参照に変換します。これは、古いメールテンプレートシステムやUTF-8を壊してしまう設定ファイルのようなASCII専用の処理経路を出力が通過する必要がある場合に便利です。</p>
+      <p>デコードには知っておく価値のあるテクニックが使われています。文字列を切り離された<code>&lt;textarea&gt;</code>要素の<code>innerHTML</code>に代入し、その<code>.value</code>から読み戻すという方法です。これによりブラウザ自身のHTMLパーサーに処理を委ねることができ、パーサーはすでに2000以上の名前付きエンティティに加え、あらゆる10進・16進の数値形式を把握しているため、このツールは古くなる可能性のあるルックアップテーブルを持つ必要がありません。これはまた、信頼できない入力をここでデコードしても安全な理由でもあります。textareaの内容は常にプレーンテキストとして扱われるため、デコードされた<code>&amp;lt;script&amp;gt;</code>はscriptタグのテキストになるだけで、何も実行されません。</p>
+      <p>どちらの方向も、このページのJavaScript内でキー入力のたびに実行されます。入力中にDevToolsのNetworkタブを開いてみてください。リクエストは一切発生せず、あなたのマークアップがブラウザの外に出ることはありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|URLエンコード/デコードツール|URLをパーセントエンコードまたはデコード。
+base64-encoder.html|Base64 エンコード / デコード|テキストを Base64 との間で変換、UTF-8 セーフ。
+json-formatter.html|JSONフォーマッタ|JSONを整形・検証・圧縮。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-html-entity.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

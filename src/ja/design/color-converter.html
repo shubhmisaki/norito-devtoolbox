@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>カラーコンバーター:HEX、RGB、HSL、CMYK変換 | norito</title>
+<meta name="description" content="色をHEX、RGB、HSL、CMYKの間でリアルタイムに変換。各形式をワンクリックでコピーできます。" />
+<link rel="canonical" href="https://norito.in/ja/design/color-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/color-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/color-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/color-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/color-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/color-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/color-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/design/color-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/color-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="カラーコンバーター:HEX、RGB、HSL、CMYK変換 | norito" />
+<meta property="og:description" content="色をHEX、RGB、HSL、CMYKの間でリアルタイムに変換。各形式をワンクリックでコピーできます。" />
+<meta property="og:url" content="https://norito.in/ja/design/color-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="カラーコンバーター:HEX、RGB、HSL、CMYK変換 | norito" />
+<meta name="twitter:description" content="色をHEX、RGB、HSL、CMYKの間でリアルタイムに変換。各形式をワンクリックでコピーできます。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "カラーコンバーター",
+  "url": "https://norito.in/ja/design/color-converter.html",
+  "description": "色をHEX、RGB、HSL、CMYKの間でリアルタイムに変換。各形式をワンクリックでコピーできます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "CMYKが近似値になるのはなぜですか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CMYKは印刷用のカラースペースであり、正確な見え方は使用するインクと紙に左右されます。ここで表示される値は標準的なRGB→CMYK変換によるもので、良い出発点にはなりますが、プリンターのカラープロファイルの代わりにはなりません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "HSLは何に役立ちますか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "色相(Hue)、彩度(Saturation)、明度(Lightness)です。色相を固定したまま明度/彩度を変化させる方が、RGBや16進値を直接推測するよりもカラーパレットを組み立てやすいことがよくあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "選んだ色は保存されますか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。すべてブラウザ内で完結し、何も保存・送信されません。"
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "カラーコンバーター",
+      "item": "https://norito.in/ja/design/color-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / カラーコンバーター</p>
+    <h1>カラーコンバーター</h1>
+    <p class="lede">
+      色を1回選ぶだけで、HEX、RGB、HSL、CMYKに同時変換されます。必要な形式をコピーしてください。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <input type="color" id="colorPicker" value="#ff4d7a" style="width:100%; height:56px; cursor:pointer; padding:4px;" />
+        <div class="color-swatch-lg" id="swatchLg"></div>
+        <div class="color-field-grid">
+          <div class="field">
+            <label>HEX</label>
+            <div class="color-copy-row"><input type="text" id="hexOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hexOut">コピー</button></div>
+          </div>
+          <div class="field">
+            <label>RGB</label>
+            <div class="color-copy-row"><input type="text" id="rgbOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="rgbOut">コピー</button></div>
+          </div>
+          <div class="field">
+            <label>HSL</label>
+            <div class="color-copy-row"><input type="text" id="hslOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hslOut">コピー</button></div>
+          </div>
+          <div class="field">
+            <label>CMYK</label>
+            <div class="color-copy-row"><input type="text" id="cmykOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="cmykOut">コピー</button></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">こんなに形式がある理由は?</h3>
+          <p class="note" style="margin-top:0;">HEXとRGBはウェブの標準的な形式、HSLは明度や彩度を調整したいときに扱いやすく、CMYKは印刷ワークフローで求められる形式です。</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        HEX値は正規表現で2桁ずつ3組に分割され、16進数としてR・G・Bそれぞれ0〜255の値にパースされます。HSLは標準的な計算式に従います。明度は最大チャンネルと最小チャンネルの平均、彩度はその差を明度が両極端にどれだけ近いかでスケーリングした値、色相はどのチャンネルが優勢かによって決まり、赤・緑・青をそれぞれ0度・120度・240度に固定し、残り2チャンネルから正確な角度を補間します。CMYKは単純な変換式を使用します。K(黒)は最も強いチャンネルを1から引いた値、C・M・Yはそれぞれ黒を差し引いた後に足りない分として算出され、純粋な黒はゼロ除算を避けるため特別扱いされます。4つの出力値はすべて読みやすさのために整数に丸められるため、変換を繰り返すと数値が少しずつずれることがあります。
+      </p>
+      <p>
+        このCMYK値についての注意点です。これは出発点であって、印刷そのものの正解ではありません。画面の色はsRGBで定義されており、それをインクの被覆率へ正しく変換するには、特定の印刷機・インク・用紙を記述したICCカラープロファイルが本来必要です。ここで使われている式は現実には存在しない理想的なインクを前提としており、鮮やかなオレンジや電光ブルーなど画面上の彩やかな色の多くは、コート紙で再現できる範囲の外にあります。印刷会社はどのみち自社のプロファイルで再変換するため、このツールのCMYK値は意図を伝える目安として使い、プルーフは画面より少しくすんで見えると考えておいてください。
+      </p>
+      <p>
+        上記の計算はすべてこのページ内の小さな関数で完結しており、色を選ぶたびにローカルな演算とDOM更新が走るだけです。開発者ツールの「ネットワーク」タブを見れば、何も送信されていないことを確認できます。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+contrast-checker.html|コントラストチェッカー|2つの色がWCAGコントラスト基準を満たすか確認します。
+css-gradient-generator.html|CSSグラデーションジェネレーター|好きな色からグラデーションを作成します。
+color-palette-extractor.html|カラーパレット抽出ツール|画像から主要な色を抽出します。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>CMYKが近似値になるのはなぜですか?</summary>
+        <p>CMYKは印刷用のカラースペースであり、正確な見え方は使用するインクと紙に左右されます。ここで表示される値は標準的なRGB→CMYK変換によるもので、良い出発点にはなりますが、プリンターのカラープロファイルの代わりにはなりません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>HSLは何に役立ちますか?</summary>
+        <p>色相(Hue)、彩度(Saturation)、明度(Lightness)です。色相を固定したまま明度/彩度を変化させる方が、RGBや16進値を直接推測するよりもカラーパレットを組み立てやすいことがよくあります。</p>
+      </details>
+      <details class="faq-item">
+        <summary>選んだ色は保存されますか?</summary>
+        <p>いいえ。すべてブラウザ内で完結し、何も保存・送信されません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-color-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>画像のメタデータ削除：EXIFとGPSデータを消去 | norito</title>
+<meta name="description" content="ブラウザ内で写真からEXIF、GPS位置情報、その他の隠されたメタデータを削除。削除前に何が見つかったか確認できます。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/remove-metadata.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-metadata.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/remove-metadata.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/remove-metadata.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/remove-metadata.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/remove-metadata.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/remove-metadata.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/remove-metadata.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-metadata.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="画像のメタデータ削除：EXIFとGPSデータを消去 | norito" />
+<meta property="og:description" content="ブラウザ内で写真からEXIF、GPS位置情報、その他の隠されたメタデータを削除。削除前に何が見つかったか確認できます。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/remove-metadata.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="画像のメタデータ削除：EXIFとGPSデータを消去 | norito" />
+<meta name="twitter:description" content="ブラウザ内で写真からEXIF、GPS位置情報、その他の隠されたメタデータを削除。削除前に何が見つかったか確認できます。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "メタデータを削除",
+  "url": "https://norito.in/ja/remove-metadata.html",
+  "description": "ブラウザ内で写真からEXIF、GPS位置情報、その他の隠されたメタデータを削除。削除前に何が見つかったか確認できます。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メタデータを削除",
+      "item": "https://norito.in/ja/remove-metadata.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / メタデータを削除</p>
+    <h1>メタデータを削除</h1>
+    <p class="lede">
+      写真からEXIF、GPS位置情報、カメラ情報、タイムスタンプを消去します。削除する前に、何が埋め込まれているか正確に確認できます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><strong>クリックして画像を選択</strong>、またはここにドラッグ＆ドロップ</p>
+          <p class="note" style="margin-top:2px;">既存のメタデータを読み取るにはJPGが最も適しています。PNG/WebPにも対応。デバイス内にとどまります。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="meta-panel" id="metaPanel" style="display:none;">
+          <p class="meta-summary"></p>
+          <div class="meta-list" id="metaList"></div>
+        </div>
+
+        <button id="cleanBtn" disabled style="margin-top:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          メタデータを削除してダウンロード
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="クリーンにされた画像" />
+          <p class="note" id="previewHint" style="margin-top:0;">生成されると、クリーンにされた画像がここに表示されます。</p>
+        </div>
+        <p class="note">
+          スマートフォンやカメラの写真には、撮影された正確なGPS座標、カメラやスマートフォンの機種、タイムスタンプなどのEXIFデータがよく埋め込まれています。このツールはまずファイルに実際に含まれている内容を読み取り、その後画像をゼロから再エンコードすることですべてを消去します。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>JPEGをドロップすると、ツールは<code>DataView</code>でファイルの生バイトを読み取り、EXIFが格納されているAPP1セグメントを探してJPEGのマーカー構造をたどります。その内部では、TIFFディレクトリツリーを解析します。IFD0（カメラのメーカーとモデル、ソフトウェア、更新日時）、Exifサブディレクトリ（実際の撮影時刻、露出、絞り、ISO）、GPSサブディレクトリです。両方のバイト順（IntelスタイルとMotorolaスタイルのファイル）と、インライン値・オフセット格納値の両方を処理し、何かを確定する前に見つかった内容をシンプルなリストとして表示します。</p>
+      <p>そのリストこそが重要なポイントです。ほとんどの人は、スマートフォンの写真に何が同梱されているかを見たことがありません。典型的なJPEGには、正確な機種名、シャッターが切られた瞬間の時刻、使用された編集ソフトウェア、そして位置情報がオンになっていれば家を特定できるほど正確なGPS座標が含まれています。オリジナルの写真を投稿するということは、それらすべてを一緒に投稿することを意味します。</p>
+      <p>クリーニングのステップは見事なまでに単純明快です。画像は新しい<code>&lt;canvas&gt;</code>に描画され、<code>canvas.toBlob()</code>で再エクスポートされます。これは設計上ピクセルデータのみを書き出すため、EXIF、XMP、ICCプロファイル、サムネイルなど、それらすべてが新しいファイルの中に単純に入り込む余地がありません。何かを選択的に削除するわけではないので、見落としも起こり得ません。唯一のトレードオフは、JPEGが再エンコードされること（品質0.95で、写真では視覚的に区別がつきません）と、カスタムのカラープロファイルが失われることです。PNGとWebPファイルはEXIFを持つことはまれですが、テキストチャンクやプロファイルを保持することがあり、同じ再描画処理でそれらも削除されます。</p>
+      <p>バイトレベルの検査もcanvasの再エンコードも、すべてあなたのタブ内で実行されます。写真を読み込んでクリーンにする間、DevToolsのNetworkパネルを見てみてください。画像はどこにもアップロードされません。これはメタデータを守ることだけを目的としたツールにとって、まさに求められる動作です。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+compress-image.html|画像を圧縮|クリーニング後にファイルサイズを縮小。
+image-converter.html|画像コンバーター|別の形式に変換。
+watermark-image.html|画像に透かしを追加|写真を保護するためのテキスト透かしを追加。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-remove-metadata.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

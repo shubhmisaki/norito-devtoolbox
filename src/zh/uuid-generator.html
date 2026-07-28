@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>UUID 生成器：批量生成 UUID v4 | norito</title>
+<meta name="description" content="直接在浏览器中批量生成随机 UUID v4 标识符。支持大写和去连字符选项，可复制单个或全部。不会向任何地方发送任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/uuid-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/uuid-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/uuid-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/uuid-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/uuid-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/uuid-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/uuid-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/uuid-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/uuid-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="UUID 生成器：批量生成 UUID v4 | norito" />
+<meta property="og:description" content="直接在浏览器中批量生成随机 UUID v4 标识符。支持大写和去连字符选项，可复制单个或全部。不会向任何地方发送任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/uuid-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="UUID 生成器：批量生成 UUID v4 | norito" />
+<meta name="twitter:description" content="直接在浏览器中批量生成随机 UUID v4 标识符。支持大写和去连字符选项，可复制单个或全部。不会向任何地方发送任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UUID 生成器",
+  "url": "https://norito.in/zh/uuid-generator.html",
+  "description": "直接在浏览器中批量生成随机 UUID v4 标识符。支持大写和去连字符选项，可复制单个或全部。不会向任何地方发送任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "UUID 生成器",
+      "item": "https://norito.in/zh/uuid-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / UUID 生成器</p>
+    <h1>UUID 生成器</h1>
+    <p class="lede">
+      使用浏览器内置的加密随机数生成器生成随机 UUID v4 标识符。一次生成一个或上百个，不会向任何地方发送任何内容。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="count">数量</label>
+            <input type="number" id="count" min="1" max="100" value="5" style="width:100px;" />
+          </div>
+          <button id="genBtn" style="align-self:flex-end;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            生成
+          </button>
+          <button id="copyAllBtn" class="secondary" style="align-self:flex-end;">复制全部</button>
+        </div>
+
+        <div class="option-row">
+          <span class="option-label">大写</span>
+          <label class="switch"><input type="checkbox" id="optUppercase" /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">去除连字符</span>
+          <label class="switch"><input type="checkbox" id="optNoHyphens" /><span class="track"></span></label>
+        </div>
+
+        <div id="uuidList" style="margin-top:20px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-indigo" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg>
+            </div>
+            <div>
+              <h3>什么是 UUID v4？</h3>
+              <p>128 位随机数，格式化为标准标识符。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            UUID v4 由 122 个随机比特组成（另外 6 位固定用于标记版本和变体），能产生约 5.3 万亿的万亿的万亿种可能值。冲突的概率极低，对于数据库主键、请求 ID 或文件名来说，实际上不构成问题。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">常见用途</h3>
+          <p class="note" style="margin-top:0;">
+            不泄露行数的数据库主键、API 请求的幂等键、用于跨服务追踪日志的关联 ID，以及即使在不同机器上同时生成也不会冲突的唯一文件名或会话名。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>每个 ID 都来自浏览器内置的生成器 <code>crypto.randomUUID()</code>。其底层从操作系统的加密安全随机源（与生成 TLS 密钥的来源相同）中提取 128 位，然后将其中 6 位固定为特定值：版本半字节被设为 4，变体位被设为 10。这就是为什么这里的每个 UUID 第三组开头都是 4，第四组开头都是 8、9、a 或 b。剩下的 122 位是纯随机的，这正是冲突在实践中几乎不成问题的原因。</p>
+      <p>到底有多不成问题？一共有 2^122 种可能的 v4 UUID，约 5.3 万亿的万亿的万亿种。根据生日问题的数学原理，大约需要生成 103 万亿个 UUID，出现哪怕一次冲突的概率才会达到百万分之一。你的系统所生成的每一个 ID，相对这个数字而言都只是舍入误差，这也是为什么 v4 UUID 可以在任何机器上无需协调地安全生成。</p>
+      <p>生成过程只是一次浏览器 API 调用，因此不会向服务器请求任何内容，也不会发送任何内容：打开开发者工具的网络面板，点击「生成」，你会看到什么都没发生。大写和去连字符开关只是对已生成的 ID 重新格式化；底层的值并不会改变。</p>
+      <p>一个实用提示：v4 UUID 是刻意无序的，因此作为数据库主键时会使插入操作分散到索引各处。如果你需要按创建时间排序的 ID，可以了解一下 UUID v7，它把时间戳放在高位比特中。至于其他场景（请求 ID、文件名、关联令牌），随机的 v4 正合适。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+hash-generator.html|哈希生成器|任意文本的 MD5、SHA-1、SHA-256 和 SHA-512。
+base64-encoder.html|Base64 编码 / 解码|文本与 Base64 互转，UTF-8 安全。
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON，附带树状视图。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-uuid.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

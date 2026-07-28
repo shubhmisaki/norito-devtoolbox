@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Счётчик символов: проверка лимитов платформ | norito</title>
+<meta name="description" content="Считайте символы с пробелами и без, а также размер в байтах, и сверяйтесь в реальном времени с лимитами твитов, SMS и мета-описаний. Ничего не загружается." />
+<link rel="canonical" href="https://norito.in/ru/character-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/character-counter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/character-counter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/character-counter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/character-counter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/character-counter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/character-counter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/character-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/character-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Счётчик символов: проверка лимитов платформ | norito" />
+<meta property="og:description" content="Считайте символы с пробелами и без, а также размер в байтах, и сверяйтесь в реальном времени с лимитами твитов, SMS и мета-описаний. Ничего не загружается." />
+<meta property="og:url" content="https://norito.in/ru/character-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Счётчик символов: проверка лимитов платформ | norito" />
+<meta name="twitter:description" content="Считайте символы с пробелами и без, а также размер в байтах, и сверяйтесь в реальном времени с лимитами твитов, SMS и мета-описаний. Ничего не загружается." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Счётчик символов",
+  "url": "https://norito.in/ru/character-counter.html",
+  "description": "Считайте символы с пробелами и без, а также размер в байтах, и сверяйтесь в реальном времени с лимитами твитов, SMS и мета-описаний. Ничего не загружается.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Счётчик символов",
+      "item": "https://norito.in/ru/character-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Счётчик символов</p>
+    <h1>Счётчик символов</h1>
+    <p class="lede">
+      Подсчёт символов в реальном времени, с пробелами и без, размер в байтах, и насколько вы близки к типичным лимитам платформ вроде твитов и мета-описаний.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Ваш текст</label>
+          <textarea id="textInput" class="mono-output" rows="10" placeholder="Вставьте или введите текст здесь..."></textarea>
+        </div>
+        <div class="meta-list">
+          <div class="meta-row"><span class="meta-label">Символы (с пробелами)</span><span class="meta-value" id="statWithSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">Символы (без пробелов)</span><span class="meta-value" id="statNoSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">Размер в байтах (UTF-8)</span><span class="meta-value" id="statBytes">0</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Типичные лимиты</h3>
+          <div class="meta-list" id="limitList"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        При каждом нажатии клавиши страница пересчитывает три значения. Количество символов — это <code>.length</code> в JavaScript, которое считает единицы кода UTF-16. Подсчёт без пробелов сначала удаляет все пробельные символы (пробелы, табуляции, переносы строк) с помощью регулярного выражения. Размер в байтах пропускает ваш текст через API <code>TextEncoder</code> браузера, который выдаёт реальные байты UTF-8, которые текст займёт в файле, столбце базы данных или теле HTTP-запроса. Список лимитов платформ — это просто вычитание относительно каждого лимита, переключающееся на стиль «превышено» в момент, когда вы его пересекаете.
+      </p>
+      <p>
+        Разрыв между этими числами — вот где люди попадают впросак. Эмодзи вроде улыбающегося лица — это один видимый символ, но две единицы кода UTF-16 (поэтому здесь, как и на многих платформах, он считается за 2 символа) и четыре байта UTF-8. Что касается SMS, лимит в 160 символов предполагает, что сообщение остаётся в рамках старого алфавита GSM-7: добавьте один эмодзи или изогнутую "умную" кавычку — и оператор незаметно переключает всё сообщение на кодировку UCS-2, снижая лимит на сегмент до 70 символов. Если правка одного символа вдруг разбила ваш текст на два SMS-сегмента, вот почему.
+      </p>
+      <p>
+        Подсчёт происходит полностью в JavaScript этой страницы. Откройте вкладку «Сеть» в инструментах разработчика во время набора текста: вы увидите ноль запросов, потому что ваш текст никогда не покидает браузер.
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+/word-counter.html|Счётчик слов|Подсчёт слов, предложений и абзацев плюс время чтения.
+limited-text-generator.html|Генератор текста заданной длины|Генерация текста-заполнителя точной длины.
+seo-slug-generator.html|Генератор SEO-слагов|Чистые URL-слаги из заголовков.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-character-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

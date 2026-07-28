@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>norito 的工作原理：无需上传，无需账号 | norito</title>
+<meta name="description" content="norito 如何完全在你的浏览器中处理文件，无需上传、无需账号、没有人为设置的限制。这里详细说明具体是如何做到的。" />
+<link rel="canonical" href="https://norito.in/zh/how-it-works.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="norito 的工作原理：无需上传，无需账号 | norito" />
+<meta property="og:description" content="免费的浏览器端工具集：测试文件生成、图片压缩、占位图、密码生成、二维码、JSON 格式化、Markdown 编辑等。无需上传，无需注册。" />
+<meta property="og:url" content="https://norito.in/zh/how-it-works.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="norito 的工作原理：无需上传，无需账号 | norito" />
+<meta name="twitter:description" content="免费的浏览器端工具集：测试文件生成、图片压缩、占位图、密码生成、二维码、JSON 格式化、Markdown 编辑等。无需上传，无需注册。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="index.html">norito</a> / norito 的工作原理</p>
+    <h1>norito 的工作原理</h1>
+    <p class="lede">每个工具都在你的浏览器中运行。无需上传，无需账号，没有人为限制。以下是具体原理，以及原因。</p>
+
+    <h2>你上传的任何内容都不会离开你的设备</h2>
+    <p>norito 上的每个工具，无论是合并 PDF、压缩图片，还是格式化 JSON，都完全在你的浏览器内使用 JavaScript 运行。当你把文件拖入某个工具时，它会被直接读入浏览器的内存并在那里处理。另一端并没有服务器在接收它，因为根本就没有上传这一步。</p>
+
+    <p>这之所以可行，是因为现代浏览器提供了强大的 API（File API、Canvas、Web Crypto 和 WebAssembly），这些能力过去需要服务器端处理才能实现。norito 建立在这些能力之上，再加上几个成熟的开源 PDF 处理库（<strong>pdf-lib</strong> 用于生成 PDF，<strong>pdf.js</strong> 用于渲染 PDF），它们同样完全在客户端运行。</p>
+
+    <h2>无需账号，无需注册，无需邮箱</h2>
+    <p>你现在就可以使用任何工具，无需创建账号或提供邮箱地址。没有什么需要记住，没有什么需要验证，也没有任何东西与你的身份绑定。</p>
+
+    <h2>首次访问后即可离线使用</h2>
+    <p>norito 是一个渐进式 Web 应用（PWA）。首次访问后，一个 Service Worker 会缓存网站的核心文件，因此大多数工具即使在没有网络连接的情况下也能继续使用，你还可以把 norito 安装到主屏幕或桌面，像原生应用一样使用。</p>
+
+    <h2>norito 如何维持运营</h2>
+    <p>norito 依靠极简、非侵入式的展示广告来维持运营，而不是订阅或付费墙。没有付费方案，没有功能限制，也没有为了推动你付费而设置的人为限制。关于我们的广告提供商会收集哪些数据（如果有的话）的完整细节，请见<a href="privacy.html">隐私政策</a>。</p>
+
+    <h2>我们能看到什么，不能看到什么</h2>
+    <p>由于处理都在你的设备上进行，我们没有办法看到你处理的文件内容，也没有服务器日志记录它们——因为根本没有上传可供记录。和大多数网站一样，我们确实使用标准的、尊重隐私的分析工具来了解哪些工具被使用、网站表现如何，但那只是聚合的流量数据，而不是你文件的内容。</p>
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>norito 真的免费吗？</summary>
+        <p>是的，每个工具都免费，没有每日限额，无需账号，也没有水印。网站依靠极简广告维持运营，而不是订阅制。</p>
+      </details>
+      <details class="faq-item">
+        <summary>使用 norito 需要创建账号吗？</summary>
+        <p>不需要。每个工具都可以立即使用，无需注册、登录或提供邮箱。</p>
+      </details>
+      <details class="faq-item">
+        <summary>norito 能在没有网络连接的情况下使用吗？</summary>
+        <p>可以，对大多数工具来说，只要你至少加载过一次 norito。它可以作为渐进式 Web 应用安装，并缓存核心文件以供离线使用。</p>
+      </details>
+      <details class="faq-item">
+        <summary>文件大小有限制吗？</summary>
+        <p>norito 本身没有设置任何人为限制。实际使用中，非常大的文件会受到你设备可用内存的限制，因为一切都在浏览器标签页中进行，而不是受 norito 设置的任何上限约束。</p>
+      </details>
+      <details class="faq-item">
+        <summary>关闭标签页后我的文件会怎样？</summary>
+        <p>什么都不会发生，因为它们从未被发送到任何地方。一旦你关闭或刷新标签页，浏览器内存中的内容就会直接消失。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<script src="../js/scroll-reveal.js"></script>
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

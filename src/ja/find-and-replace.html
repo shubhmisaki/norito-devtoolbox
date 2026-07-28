@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>テキストの検索と置換をオンラインで（正規表現対応）| norito</title>
+<meta name="description" content="正規表現、大文字小文字の区別、単語単位の一致をオプションで指定し、ブラウザ内でリアルタイムにテキストを検索・置換。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/find-and-replace.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/find-and-replace.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/find-and-replace.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/find-and-replace.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/find-and-replace.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/find-and-replace.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/find-and-replace.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/find-and-replace.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/find-and-replace.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="テキストの検索と置換をオンラインで（正規表現対応）| norito" />
+<meta property="og:description" content="正規表現、大文字小文字の区別、単語単位の一致をオプションで指定し、ブラウザ内でリアルタイムにテキストを検索・置換。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/find-and-replace.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="テキストの検索と置換をオンラインで（正規表現対応）| norito" />
+<meta name="twitter:description" content="正規表現、大文字小文字の区別、単語単位の一致をオプションで指定し、ブラウザ内でリアルタイムにテキストを検索・置換。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "検索と置換",
+  "url": "https://norito.in/ja/find-and-replace.html",
+  "description": "正規表現、大文字小文字の区別、単語単位の一致をオプションで指定し、ブラウザ内でリアルタイムにテキストを検索・置換。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "検索と置換",
+      "item": "https://norito.in/ja/find-and-replace.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 検索と置換</p>
+    <h1>検索と置換</h1>
+    <p class="lede">
+      正規表現、大文字小文字の区別、単語単位の一致をオプションで指定し、ドキュメント内のテキストを検索・置換します。入力するとリアルタイムに反映されます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="field" style="margin-bottom:16px;">
+        <label for="input">テキスト</label>
+        <textarea id="input" class="mono-area" rows="10" placeholder="テキストを貼り付けまたは入力..."></textarea>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="findText">検索</label>
+          <input type="text" id="findText" class="mono-area" placeholder="検索するテキストまたはパターン" />
+        </div>
+        <div class="field">
+          <label for="replaceText">置換後</label>
+          <input type="text" id="replaceText" class="mono-area" placeholder="置換テキスト" />
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="useRegex" />
+          <span>正規表現を使用</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="caseSensitive" />
+          <span>大文字小文字を区別</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="wholeWord" />
+          <span>単語単位のみ</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="replaceAll" checked />
+          <span>すべての一致を置換</span>
+        </label>
+      </div>
+
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="field" style="margin-bottom:8px;">
+        <label for="output">結果 <span id="matchCount" class="note" style="display:inline; margin-left:8px;"></span></label>
+        <textarea id="output" class="mono-area" rows="10" readonly></textarea>
+      </div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn">結果をコピー</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>プレーンテキストであれ正規表現であれ、すべての検索は内部で単一のJavaScript <code>RegExp</code>にコンパイルされます。プレーンテキストモードでは、検索語がまずエスケープされ（<code>.</code>、<code>(</code>、<code>$</code>などがそのまま文字として一致するように）、「単語単位」はパターンを<code>\b</code>の単語境界で囲みます。大文字小文字の切り替えは単に<code>i</code>フラグを付け外しするだけです。結果はキー入力のたびに再描画され、一致件数は置換前に同じパターンをグローバルフラグ付きで実行することで得られます。無効な正規表現を入力してもテキストは消去されず、エンジンのエラーが表示されるだけで出力はそのまま保持されます。</p>
+      <p>ほとんどの検索・置換ページが触れない機能をご紹介します。置換にはJavaScriptネイティブの<code>String.replace</code>が使われているため、正規表現モードで後方参照が使えます。キャプチャグループには<code>$1</code>、<code>$2</code>を、一致全体には<code>$&amp;</code>を使用します。つまり<code>(\w+), (\w+)</code>を検索し<code>$2 $1</code>で置換すれば、ファイル全体で「Doe, Jane」が「Jane Doe」に反転し、<code>$$</code>を使えば文字通りのドル記号が必要な時に得られます。</p>
+      <p>この処理はすべて、あなたのマシン上でこのページのJavaScriptとして実行されます。作業中にDevToolsのNetworkタブを開いてみてください。あなたのテキストを運ぶリクエストは一切なく、だからこそログや設定ファイル、あるいはランダムなウェブサイトにアップロードしたくないものを貼り付けても安全なのです。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+regex-tester.html|正規表現テストツール|正規表現をリアルタイムのハイライト付きでテスト。
+remove-duplicate-lines.html|重複行の削除|並べ替えの前後でリストの重複を削除。
+case-converter.html|大文字小文字変換ツール|大文字、camelCase、snake_caseなど。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-find-replace.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

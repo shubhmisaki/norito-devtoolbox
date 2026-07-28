@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Проверка контраста цвета: WCAG AA/AAA | norito</title>
+<meta name="description" content="Проверьте коэффициент контрастности между двумя цветами по порогам WCAG AA и AAA для обычного и крупного текста, с живым предпросмотром." />
+<link rel="canonical" href="https://norito.in/ru/design/contrast-checker.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/contrast-checker.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/contrast-checker.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/contrast-checker.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/contrast-checker.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/contrast-checker.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/contrast-checker.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/contrast-checker.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Проверка контраста цвета: WCAG AA/AAA | norito" />
+<meta property="og:description" content="Проверьте коэффициент контрастности между двумя цветами по порогам WCAG AA и AAA для обычного и крупного текста, с живым предпросмотром." />
+<meta property="og:url" content="https://norito.in/ru/design/contrast-checker.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Проверка контраста цвета: WCAG AA/AAA | norito" />
+<meta name="twitter:description" content="Проверьте коэффициент контрастности между двумя цветами по порогам WCAG AA и AAA для обычного и крупного текста, с живым предпросмотром." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Проверка контраста",
+  "url": "https://norito.in/ru/design/contrast-checker.html",
+  "description": "Проверьте коэффициент контрастности между двумя цветами по порогам WCAG AA и AAA для обычного и крупного текста, с живым предпросмотром.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "В чём разница между AA и AAA?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AA — базовый уровень, к которому стремится большинство сайтов: 4.5:1 для обычного текста, 3:1 для крупного текста (18pt и больше, или полужирный от 14pt). AAA строже и рассчитан на контент для пользователей со слабым зрением: 7:1 для обычного текста, 4.5:1 для крупного." }
+    },
+    {
+      "@type": "Question",
+      "name": "Это проверяет изображения или только сплошные цвета?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Только два сплошных цвета — текст на фоне. Для текста на фото или градиенте проверяйте контраст относительно самых тёмных и самых светлых участков, на которые он может попасть." }
+    },
+    {
+      "@type": "Question",
+      "name": "Это та же формула, что используют браузеры и аудиты?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да. Это стандартная формула относительной яркости и коэффициента контрастности WCAG 2.1 — та же, что используют Lighthouse и axe." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Проверка контраста",
+      "item": "https://norito.in/ru/design/contrast-checker.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Проверка контраста</p>
+    <h1>Проверка контраста</h1>
+    <p class="lede">
+      Выберите цвет текста и цвет фона и узнайте точный коэффициент контрастности WCAG, а также проходит ли он по уровню AA или AAA.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="fgHex">Цвет текста</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="fgColor" value="#1a1418" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="fgHex" value="#1a1418" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="bgHex">Цвет фона</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="bgColor" value="#ffffff" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="bgHex" value="#ffffff" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+        </div>
+        <button type="button" class="secondary" id="swapBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3 3 21"/></svg>
+          Поменять местами цвета
+        </button>
+
+        <div class="contrast-ratio-display" id="ratioDisplay">--</div>
+        <div class="contrast-badges" id="badges"></div>
+
+        <div class="contrast-preview" id="previewBox">
+          <p class="cp-large">Предпросмотр крупного текста (18pt+)</p>
+          <p class="cp-normal">Предпросмотр обычного текста, размер, который используется для большей части текста.</p>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Что означают значки</h3>
+          <p class="note" style="margin-top:0;">WCAG 2.1 требует коэффициент 4.5:1 для обычного текста и 3:1 для крупного текста (18pt+ или полужирный от 14pt) для соответствия уровню AA. AAA строже: 7:1 для обычного текста, 4.5:1 для крупного.</p>
+        </div>
+      </div>
+    </div>
+
+<!--RELATED-TOOLS
+color-converter.html|Конвертер цвета|Конвертируйте любой цвет в HEX, RGB, HSL или CMYK.
+color-palette-extractor.html|Извлечение палитры цветов|Извлеките доминирующие цвета из изображения.
+css-gradient-generator.html|Генератор градиентов CSS|Создайте градиент визуально, скопируйте CSS.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>В чём разница между AA и AAA?</summary>
+        <p>AA — базовый уровень, к которому стремится большинство сайтов: 4.5:1 для обычного текста, 3:1 для крупного текста (18pt и больше, или полужирный от 14pt). AAA строже и рассчитан на контент для пользователей со слабым зрением: 7:1 для обычного текста, 4.5:1 для крупного.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Это проверяет изображения или только сплошные цвета?</summary>
+        <p>Только два сплошных цвета — текст на фоне. Для текста на фото или градиенте проверяйте контраст относительно самых тёмных и самых светлых участков, на которые он может попасть.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Это та же формула, что используют браузеры и аудиты?</summary>
+        <p>Да. Это стандартная формула относительной яркости и коэффициента контрастности WCAG 2.1 — та же, что используют Lighthouse и axe.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-contrast-checker.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

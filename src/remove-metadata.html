@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Remove Image Metadata: Strip EXIF & GPS Data | norito</title>
+<meta name="description" content="Remove EXIF, GPS location, and other hidden metadata from a photo, right in your browser. See what's found before you strip it. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/remove-metadata.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-metadata.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-metadata.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Remove Image Metadata: Strip EXIF & GPS Data | norito" />
+<meta property="og:description" content="Remove EXIF, GPS location, and other hidden metadata from a photo, right in your browser. See what's found before you strip it. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/remove-metadata.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Remove Image Metadata: Strip EXIF & GPS Data | norito" />
+<meta name="twitter:description" content="Remove EXIF, GPS location, and other hidden metadata from a photo, right in your browser. See what's found before you strip it. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Remove Metadata",
+  "url": "https://norito.in/remove-metadata.html",
+  "description": "Remove EXIF, GPS location, and other hidden metadata from a photo, right in your browser. See what's found before you strip it. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What metadata does this remove?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Everything embedded outside the actual pixel data: EXIF (camera make/model, exposure settings), GPS location, timestamps, software tags, and ICC color profiles. The tool re-encodes the image from its pixels alone, so none of that can survive." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you actually see my GPS location before I remove it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if your photo has it, it's shown in the \"Found metadata\" list before you click remove, specifically so you know what was in there. Nothing is sent anywhere: this reads the file entirely in your browser." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this affect image quality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There's a small amount of re-encoding loss for JPEG (comparable to saving a JPEG once more), and none for PNG, since PNG is lossless. Dimensions and visual content aren't changed." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remove Metadata",
+      "item": "https://norito.in/remove-metadata.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Remove Metadata</p>
+    <h1>Remove Metadata</h1>
+    <p class="lede">
+      Strip EXIF, GPS location, camera info, and timestamps from a photo. See exactly what's embedded before you remove it.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><strong>Click to choose an image</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">JPG works best for reading existing metadata. PNG/WebP supported too. Stays on your device.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="meta-panel" id="metaPanel" style="display:none;">
+          <p class="meta-summary"></p>
+          <div class="meta-list" id="metaList"></div>
+        </div>
+
+        <button id="cleanBtn" disabled style="margin-top:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          Remove metadata & download
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Cleaned image" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your cleaned image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          Photos from phones and cameras often embed EXIF data: the exact GPS coordinates where it
+          was taken, the camera or phone model, and a timestamp. This reads what's actually in your
+          file first, then strips all of it by re-encoding the image from scratch.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>When you drop in a JPEG, the tool reads the file's raw bytes with a <code>DataView</code> and walks the JPEG marker structure looking for the APP1 segment, which is where EXIF lives. Inside it parses the TIFF directory tree: IFD0 (camera make and model, software, modification date), the Exif sub-directory (original capture time, exposure, aperture, ISO), and the GPS sub-directory. It handles both byte orders (Intel and Motorola style files) and both inline and offset-stored values, then shows you a plain list of what it found before you commit to anything.</p>
+      <p>That list is the point: most people have never seen what rides along in a phone photo. A typical JPEG carries the exact device model, the second the shutter fired, the editing software used, and, if location was on, GPS coordinates precise enough to identify a house. Posting an original photo posts all of that with it.</p>
+      <p>The cleaning step is beautifully blunt. The image is drawn onto a fresh <code>&lt;canvas&gt;</code> and re-exported with <code>canvas.toBlob()</code>, which by design writes pixel data only: EXIF, XMP, ICC profiles, thumbnails, all of it simply has nowhere to go in the new file. Nothing is selectively deleted, so nothing can be missed. The one tradeoff is that JPEGs get re-encoded (at 0.95 quality, visually indistinguishable for photos), and a custom color profile would be dropped. PNG and WebP files rarely carry EXIF but can hold text chunks and profiles; the same redraw strips those too.</p>
+      <p>Both the byte-level inspection and the canvas re-encode run in your tab. Watch DevTools' Network panel while you load and clean a photo: the image is never uploaded anywhere, which is exactly what you want from a tool whose whole job is protecting your metadata.</p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|Compress Image to Size|Shrink the file size after cleaning.
+image-converter.html|Image Converter|Convert to a different format.
+watermark-image.html|Watermark Image|Add a text watermark to protect your photos.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What metadata does this remove?</summary>
+        <p>Everything embedded outside the actual pixel data: EXIF (camera make/model, exposure settings), GPS location, timestamps, software tags, and ICC color profiles. The tool re-encodes the image from its pixels alone, so none of that can survive.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you actually see my GPS location before I remove it?</summary>
+        <p>Yes, if your photo has it, it's shown in the "Found metadata" list before you click remove, specifically so you know what was in there. Nothing is sent anywhere: this reads the file entirely in your browser.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will this affect image quality?</summary>
+        <p>There's a small amount of re-encoding loss for JPEG (comparable to saving a JPEG once more), and none for PNG, since PNG is lossless. Dimensions and visual content aren't changed.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-remove-metadata.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

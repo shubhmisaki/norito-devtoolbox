@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Text Diff Checker: Compare Two Texts Online | norito</title>
+<meta name="description" content="Compare two blocks of text line by line and see exactly what changed. Ignore whitespace or case, copy the diff. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/text-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/text-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/text-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Text Diff Checker: Compare Two Texts Online | norito" />
+<meta property="og:description" content="Compare two blocks of text line by line and see exactly what changed. Ignore whitespace or case, copy the diff. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/text-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Text Diff Checker: Compare Two Texts Online | norito" />
+<meta name="twitter:description" content="Compare two blocks of text line by line and see exactly what changed. Ignore whitespace or case, copy the diff. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Text Diff Checker",
+  "url": "https://norito.in/text-diff.html",
+  "description": "Compare two blocks of text line by line and see exactly what changed. Ignore whitespace or case, copy the diff. Runs entirely in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does the comparison work?", "acceptedAnswer": { "@type": "Answer", "text": "It compares the two texts line by line and finds the longest common subsequence, the same core approach used by tools like git diff. Lines that only exist in one side are marked added or removed; everything else is shown unchanged." } },
+    { "@type": "Question", "name": "Can I ignore whitespace or capitalization differences?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the two checkboxes above the input boxes let you ignore leading/trailing whitespace and repeated spaces, and ignore case, so only meaningful changes show up." } },
+    { "@type": "Question", "name": "Is there a size limit?", "acceptedAnswer": { "@type": "Answer", "text": "Each side is capped at 4,000 lines to keep the comparison fast in your browser. For most code files, configs, and documents that's more than enough room." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Text Diff",
+      "item": "https://norito.in/text-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Text Diff</p>
+    <h1>Text Diff Checker</h1>
+    <p class="lede">
+      Compare two blocks of text line by line and see exactly what was added, removed, or left unchanged.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreWhitespace" />
+          <span>Ignore whitespace</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreCase" />
+          <span>Ignore case</span>
+        </label>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="inputA">Original</label>
+          <textarea id="inputA" class="mono-area" rows="10" placeholder="Paste the original text..."></textarea>
+        </div>
+        <div class="field">
+          <label for="inputB">Changed</label>
+          <textarea id="inputB" class="mono-area" rows="10" placeholder="Paste the changed text..."></textarea>
+        </div>
+      </div>
+
+      <div id="tooLarge" class="result-box error" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body">One of these texts is over 4,000 lines. Try comparing a smaller section.</div>
+      </div>
+
+      <div id="emptyState" class="note" style="display:block;">Paste text in both boxes to see a line-by-line comparison.</div>
+
+      <div id="diffStatsRow" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+        <div class="diff-stats" id="statsBox" style="display:none;"></div>
+      </div>
+      <div class="diff-view" id="diffOutput" style="display:none;"></div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn" class="secondary">Copy diff as text</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The comparison is a line-level diff built on the longest common subsequence (LCS) algorithm, the same family of logic behind <code>git diff</code>. Both texts are split into lines, then a dynamic-programming table works out the largest set of lines the two versions share in order. Walking that table back produces the operations you see: lines only in the left text become red removals, lines only in the right become green additions, shared lines stay neutral, each with its original line number.</p>
+      <p>Line-level diffing is a deliberate tradeoff. Character-level diffs can show that one word changed inside a line, but on real documents they degenerate into confetti: hundreds of tiny fragments that are harder to read than just seeing the old line removed and the new line added. Line-level output stays readable and maps directly onto how code review and version control present changes. The two checkboxes tune what "equal" means: ignore whitespace collapses runs of spaces and trims line ends before comparing (great for reformatted code), and ignore case lowercases both sides. The displayed lines keep their original formatting either way.</p>
+      <p>Because the DP table costs memory and time proportional to (lines in A) x (lines in B), the tool caps input at 4,000 lines per side; past that, the table alone would be tens of millions of cells and the tab would stutter. Within the cap, everything runs synchronously in your browser: both texts live only in your tab, no request fires when you type (check DevTools' Network panel), and confidential drafts or configs never touch a server.</p>
+    </div>
+
+<!--RELATED-TOOLS
+json-diff.html|JSON Diff|Compare two JSON documents.
+remove-duplicate-lines.html|Remove Duplicate Lines|Deduplicate a list of lines.
+sort-lines.html|Sort Lines|Sort alphabetically, numerically, or shuffle.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How does the comparison work?</summary>
+        <p>It compares the two texts line by line and finds the longest common subsequence, the same core approach used by tools like git diff. Lines that only exist in one side are marked added or removed; everything else is shown unchanged.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I ignore whitespace or capitalization differences?</summary>
+        <p>Yes, the two checkboxes above the input boxes let you ignore leading/trailing whitespace and repeated spaces, and ignore case, so only meaningful changes show up.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a size limit?</summary>
+        <p>Each side is capped at 4,000 lines to keep the comparison fast in your browser. For most code files, configs, and documents that's more than enough room.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-text-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

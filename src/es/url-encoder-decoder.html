@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Codificador / Decodificador de URL Online | norito</title>
+<meta name="description" content="Codifica o decodifica una URL o un componente de URL (percent-encoding), en vivo en tu navegador. Modos de componente y URI completa. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/url-encoder-decoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Codificador / Decodificador de URL Online | norito" />
+<meta property="og:description" content="Codifica o decodifica una URL o un componente de URL (percent-encoding), en vivo en tu navegador. Modos de componente y URI completa. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/url-encoder-decoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Codificador / Decodificador de URL Online | norito" />
+<meta name="twitter:description" content="Codifica o decodifica una URL o un componente de URL (percent-encoding), en vivo en tu navegador. Modos de componente y URI completa. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Codificador / Decodificador de URL",
+  "url": "https://norito.in/es/url-encoder-decoder.html",
+  "description": "Codifica o decodifica una URL o un componente de URL (percent-encoding), en vivo en tu navegador. Modos de componente y URI completa. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Codificador / Decodificador de URL",
+      "item": "https://norito.in/es/url-encoder-decoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Codificador / Decodificador de URL</p>
+    <h1>Codificador / Decodificador de URL</h1>
+    <p class="lede">
+      Codifica o decodifica en porcentaje una URL o un solo componente de URL, en vivo mientras escribes. Nada de lo que escribes se envía a ningún sitio.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">Codificar</button>
+          <button type="button" class="tab" data-value="decode">Decodificar</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="encodeType">Tipo de codificación</label>
+          <select id="encodeType">
+            <option value="component" selected>Componente (encodeURIComponent), recomendado</option>
+            <option value="full">URI completa (encodeURI)</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Entrada</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Escribe o pega texto o una URL..."></textarea>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">Salida</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Intercambiar
+          </button>
+          <button id="copyBtn">Copiar salida</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <h3>Componente vs. URI completa</h3>
+              <p>Codifican caracteres diferentes.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            <strong>Componente</strong> escapa todo lo que no es seguro dentro de un solo segmento de URL, incluyendo <code>&amp;</code>, <code>=</code>, y <code>?</code>, úsalo para el valor de un parámetro de consulta. <strong>URI completa</strong> deja esos caracteres intactos porque tienen significado estructural en una URL completa, úsalo al codificar una dirección entera en vez de una sola parte.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Por qué codificar una URL</h3>
+          <p class="note" style="margin-top:0;">
+            Las URL solo pueden contener un conjunto limitado de caracteres ASCII. Espacios, letras acentuadas, emoji, y símbolos reservados como <code>&amp;</code> o <code>#</code> necesitan codificarse en porcentaje (como <code>%20</code> para un espacio) para sobrevivir al pasar como parte de un enlace sin romperlo.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La codificación llama a las funciones propias del navegador <code>encodeURIComponent</code> o <code>encodeURI</code>, las mismas que usa el código JavaScript, así que la salida es exactamente lo que produciría un navegador o una librería HTTP. Cada byte inseguro se convierte en un signo de porcentaje más dos dígitos hexadecimales de su codificación UTF-8: un espacio se convierte en <code>%20</code>, y los caracteres multi-byte se expanden en varios escapes (é es <code>%C3%A9</code>).</p>
+      <p>Los dos modos de codificación existen porque "codificar una URL" significa dos cosas distintas. El modo componente escapa todo lo que no sea una letra, un dígito o un puñado de símbolos seguros, incluyendo <code>/ ? &amp; = :</code>. Eso es lo que quieres para un único valor que va dentro de una cadena de consulta, de lo contrario un ampersand dentro del valor parte tu parámetro en dos. El modo URI completa deja los caracteres estructurales intactos para que una URL completa siga funcionando, y solo escapa caracteres que no pueden aparecer en crudo en absoluto. Usar codificación de componente en una URL entera la rompe; usar codificación de URI completa en el valor de un parámetro es un bug de inyección esperando a ocurrir. Elige según lo que estás codificando, no por costumbre.</p>
+      <p>El modo de decodificación ejecuta <code>decodeURIComponent</code>, con un extra práctico: los signos más se convierten primero en espacios, porque la codificación de formularios HTML (el formato <code>application/x-www-form-urlencoded</code> que ves en las cadenas de consulta) históricamente escribe los espacios como <code>+</code>. Una entrada malformada, como un <code>%</code> suelto no seguido de dos dígitos hexadecimales, lanza un <code>URIError</code> que la herramienta captura y reporta en vez de mostrar texto medio decodificado. Si al decodificar una vez todavía quedan secuencias <code>%25xx</code>, tu cadena estaba codificada dos veces; pásala por decodificar de nuevo.</p>
+      <p>Ambas direcciones son llamadas a una sola función incorporada en tu pestaña. El panel Red de las DevTools no muestra tráfico mientras escribes, así que los tokens y URLs con secretos se quedan en tu máquina.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+base64-encoder.html|Codificar / Decodificar Base64|Convierte texto a y desde Base64, seguro para UTF-8.
+html-entity-encoder.html|Codificador de entidades HTML|Escapa o desescapa entidades HTML.
+json-formatter.html|Formateador JSON|Formatea, valida y minifica JSON.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-url-encoder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

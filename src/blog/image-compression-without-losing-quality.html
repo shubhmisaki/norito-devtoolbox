@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>How to Compress Images Without Losing Quality | norito</title>
+<meta name="description" content="Why smaller files sometimes look worse, and the three settings (quality, resolution, format) that actually determine how much detail survives compression." />
+<link rel="canonical" href="https://norito.in/blog/image-compression-without-losing-quality.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/image-compression-without-losing-quality.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/image-compression-without-losing-quality.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Compress Images Without Losing Quality | norito" />
+<meta property="og:description" content="Why smaller files sometimes look worse, and the three settings (quality, resolution, format) that actually determine how much detail survives compression." />
+<meta property="og:url" content="https://norito.in/blog/image-compression-without-losing-quality.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Compress Images Without Losing Quality | norito" />
+<meta name="twitter:description" content="Why smaller files sometimes look worse, and the three settings (quality, resolution, format) that actually determine how much detail survives compression." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Compress Images Without Losing Quality",
+  "description": "Why smaller files sometimes look worse, and the three settings (quality, resolution, format) that actually determine how much detail survives compression.",
+  "url": "https://norito.in/blog/image-compression-without-losing-quality.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/blog/image-compression-without-losing-quality.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / How to Compress Images Without Losing Quality</p>
+    <h1>How to Compress Images Without Losing Quality</h1>
+    <p class="byline">By Shubham Singh &middot; <time datetime="2026-07-15">July 15, 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Published 2026-07-15</p>
+    <p class="lede">Shrinking a file always means throwing away some data. The trick is throwing away data you won't notice, which comes down to three settings: quality, resolution, and format.</p>
+
+    <h2>Why "quality" and "file size" are a trade-off</h2>
+    <p>Every photo is a grid of pixels, and each pixel needs data to describe its color. A raw,
+      uncompressed image would be enormous, so image formats use compression to throw away or
+      approximate some of that data. JPEG, the most common photo format, uses <strong>lossy</strong>
+      compression: it deliberately discards detail a human eye is unlikely to notice, in exchange
+      for a much smaller file. The more aggressively you compress, the more detail gets discarded,
+      and eventually that shows up as blurriness or blocky artifacts, especially around sharp edges
+      and text.</p>
+
+    <h2>The three levers that actually matter</h2>
+    <p>Most of the visible quality loss in a compressed image comes down to three settings, and
+      understanding them is more useful than blindly dragging a quality slider down until the file
+      is small enough.</p>
+    <p><strong>Quality percentage.</strong> This directly controls how much detail JPEG or WebP
+      throws away per block of pixels. Above roughly 80%, quality loss is nearly invisible to the
+      naked eye on most photos. Between 60 and 80%, you'll see mild softening if you look closely.
+      Below 50%, blockiness and color banding start becoming obvious, especially in skies, skin
+      tones, and other smooth gradients.</p>
+    <p><strong>Resolution.</strong> A photo that's larger than it needs to be for its final use
+      (say, a 4000-pixel-wide photo displayed at 800 pixels wide on a webpage) is wasting file size
+      on detail nobody will ever see. Downscaling to the actual display size, before compressing,
+      almost always beats compressing an oversized image harder. This is why a good compressor will
+      offer to resize as well as compress.</p>
+    <p><strong>Format.</strong> PNG is lossless and excels at flat colors, screenshots, and
+      graphics with sharp edges, but it's a poor choice for photos, where it produces much larger
+      files than JPEG or WebP for the same visual result. WebP typically beats JPEG at an
+      equivalent visual quality by 25 to 35%, making it the best default for photos when you don't
+      need maximum compatibility with very old software.</p>
+
+    <h2>A practical approach</h2>
+    <p>If you have a specific file size target, like a 200 KB limit for a job application upload
+      or a 2 MB limit for an email attachment, the most reliable method is to compress toward that
+      exact target rather than guessing at a quality percentage. A tool that lets you type in a
+      target size and automatically finds the right quality (and resizes if needed) removes the
+      trial-and-error entirely.</p>
+    <p>If you don't have a hard size limit, a good default is: keep the resolution at whatever size
+      the image will actually be displayed, use WebP if your destination supports it, and start at
+      80% quality, only dropping lower if the file is still too large.</p>
+
+    <h2>What about PNG screenshots and logos?</h2>
+    <p>For anything with flat colors, transparency, or crisp text, like a screenshot, a logo, or an
+      icon, PNG's lossless compression is still the right call, it just doesn't compress nearly as
+      efficiently as JPEG or WebP for photographic content. If a PNG screenshot is too large, the
+      most effective fix is usually cropping out unnecessary parts of the image or reducing the
+      color palette, rather than trying to force it into a lossy format that will visibly degrade
+      the sharp edges of text and UI elements.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Try it yourself:</strong> <a href="../compress-image.html">Compress Image</a>, which targets an exact file size automatically instead of making you guess at a quality percentage.</div>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

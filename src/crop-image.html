@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Crop Image Online: Drag to Crop | norito</title>
+<meta name="description" content="Crop an image with a draggable box, right in your browser. Free-form or fixed aspect ratios like 1:1, 4:3, 16:9. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/crop-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/crop-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/crop-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Crop Image Online: Drag to Crop | norito" />
+<meta property="og:description" content="Crop an image with a draggable box, right in your browser. Free-form or fixed aspect ratios like 1:1, 4:3, 16:9. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/crop-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Crop Image Online: Drag to Crop | norito" />
+<meta name="twitter:description" content="Crop an image with a draggable box, right in your browser. Free-form or fixed aspect ratios like 1:1, 4:3, 16:9. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crop Image",
+  "url": "https://norito.in/crop-image.html",
+  "description": "Crop an image with a draggable box, right in your browser. Free-form or fixed aspect ratios like 1:1, 4:3, 16:9. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the crop stay at full resolution?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The preview you drag is scaled down to fit on screen, but the actual crop is calculated against your image's real pixel dimensions, so there's no quality loss from the interface itself." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I crop to a specific aspect ratio like a profile photo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, pick Square (1:1) for most profile photo requirements, or 4:3/16:9/9:16 for common photo and video ratios. The crop box keeps that ratio locked while you resize it." }
+    },
+    {
+      "@type": "Question",
+      "name": "What file formats are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "JPG, PNG, and WebP uploads. The cropped output keeps your original format, PNG stays PNG, everything else exports as JPEG." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Crop Image",
+      "item": "https://norito.in/crop-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Crop Image</p>
+    <h1>Crop Image</h1>
+    <p class="lede">
+      Drag a box over your image to crop it. Free-form or locked to a common aspect ratio, the crop happens at full resolution.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          <p><strong>Click to choose an image</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="aspect">Aspect ratio</label>
+          <select id="aspect">
+            <option value="free" selected>Free</option>
+            <option value="1:1">Square (1:1)</option>
+            <option value="4:3">4:3</option>
+            <option value="16:9">16:9</option>
+            <option value="9:16">9:16 (portrait)</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="Crop preview" />
+            <div class="crop-box" id="cropBox">
+              <div class="crop-handle"></div>
+            </div>
+          </div>
+          <p class="note" style="margin-top:10px;">Drag inside the box to move it, drag the corner handle to resize.</p>
+        </div>
+
+        <button id="cropBtn" disabled style="margin-top:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          Crop & download
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Cropped result" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your cropped image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          Choose an aspect ratio first if you need one (like 1:1 for a profile photo), then drag
+          the box into position. The crop happens at your image's full resolution, not the
+          preview's display size, so the output stays sharp.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your file is loaded through <code>URL.createObjectURL</code>, a local in-memory reference,
+        never an upload, and displayed scaled down to fit the editor. The crop box you drag is
+        tracked in on-screen pixels, but the moment you hit crop, those coordinates are multiplied
+        by the ratio between the image's natural size and its displayed size. So if your 4000px
+        photo is shown at 800px wide, a 200px-wide box on screen selects a 1000px-wide region of
+        the real image. The selected rectangle is then copied with the canvas API's
+        <code>drawImage</code> source-rectangle form, which lifts exactly those pixels from the
+        full-resolution original.
+      </p>
+      <p>
+        The output format follows the input: PNG in, PNG out (lossless, pixel-identical to the
+        source region), anything else is re-encoded as JPEG at 92% quality via
+        <code>canvas.toBlob</code>. That distinction is worth knowing: cropping a JPEG means one
+        extra generation of JPEG compression, usually invisible at 92% but real. If you need a
+        pixel-exact crop, feed the tool a PNG.
+      </p>
+      <p>
+        Everything above happens in your browser's own image decoder and canvas. Open DevTools'
+        Network tab before dropping in a photo: no request ever carries the image, which also
+        means there's no server-side size limit and no queue.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+resize-image.html|Resize Image|Change overall dimensions instead of cutting out a region.
+compress-image.html|Compress Image to Size|Hit an exact file size target after cropping.
+remove-background.html|Remove Background|Cut a person out of a photo automatically.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does the crop stay at full resolution?</summary>
+        <p>Yes. The preview you drag is scaled down to fit on screen, but the actual crop is calculated against your image's real pixel dimensions, so there's no quality loss from the interface itself.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I crop to a specific aspect ratio like a profile photo?</summary>
+        <p>Yes, pick Square (1:1) for most profile photo requirements, or 4:3/16:9/9:16 for common photo and video ratios. The crop box keeps that ratio locked while you resize it.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What file formats are supported?</summary>
+        <p>JPG, PNG, and WebP uploads. The cropped output keeps your original format, PNG stays PNG, everything else exports as JPEG.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-crop-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

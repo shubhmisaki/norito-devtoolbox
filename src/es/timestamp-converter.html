@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Conversor de Timestamp: Unix Time y Fechas | norito</title>
+<meta name="description" content="Convierte entre timestamps Unix y fechas legibles, en ambas direcciones, en vivo. Salida en hora local, UTC e ISO 8601." />
+<link rel="canonical" href="https://norito.in/es/timestamp-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/timestamp-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/timestamp-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/timestamp-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/timestamp-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/timestamp-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/timestamp-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/timestamp-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/timestamp-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Conversor de Timestamp: Unix Time y Fechas | norito" />
+<meta property="og:description" content="Convierte entre timestamps Unix y fechas legibles, en ambas direcciones, en vivo. Salida en hora local, UTC e ISO 8601." />
+<meta property="og:url" content="https://norito.in/es/timestamp-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Conversor de Timestamp: Unix Time y Fechas | norito" />
+<meta name="twitter:description" content="Convierte entre timestamps Unix y fechas legibles, en ambas direcciones, en vivo. Salida en hora local, UTC e ISO 8601." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Conversor de Timestamp",
+  "url": "https://norito.in/es/timestamp-converter.html",
+  "description": "Convierte entre timestamps Unix y fechas legibles, en ambas direcciones, en vivo. Salida en hora local, UTC e ISO 8601.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Conversor de Timestamp",
+      "item": "https://norito.in/es/timestamp-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Conversor de Timestamp</p>
+    <h1>Conversor de Timestamp</h1>
+    <p class="lede">
+      Convierte timestamps Unix a fechas legibles y viceversa; ambas direcciones se mantienen sincronizadas mientras editas cualquiera de las dos.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Timestamp Unix</h3>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="tsInput">Timestamp</label>
+            <input type="text" id="tsInput" class="mono-output" style="height:42px; font-size:0.95rem;" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="tsUnit">Unidad</label>
+            <select id="tsUnit">
+              <option value="s">Segundos</option>
+              <option value="ms" selected>Milisegundos</option>
+            </select>
+          </div>
+          <button id="nowBtn" class="secondary" style="align-self:flex-end;">Ahora</button>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-bottom:14px;">
+          <label>Hora local</label>
+          <input type="text" id="localOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>UTC</label>
+          <input type="text" id="utcOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>ISO 8601</label>
+          <input type="text" id="isoOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field">
+          <label>Relativo</label>
+          <input type="text" id="relativeOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+
+        <h3>Fecha y hora</h3>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="dateInput">Elige una fecha y hora (tu zona horaria local)</label>
+          <input type="datetime-local" id="dateInput" step="1" />
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Segundos Unix</label>
+            <input type="text" id="secOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copySecBtn" class="secondary" style="align-self:flex-end;">Copiar</button>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Milisegundos Unix</label>
+            <input type="text" id="msOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copyMsBtn" class="secondary" style="align-self:flex-end;">Copiar</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>¿Qué es un timestamp Unix?</h3>
+              <p>Segundos (o ms) desde el 1 de enero de 1970.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            La época Unix es la medianoche UTC del 1 de enero de 1970. Un timestamp es simplemente el número de segundos (o milisegundos) transcurridos desde entonces, por eso se ordena y compara como un número simple, a diferencia de una cadena de fecha con formato.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Segundos vs. milisegundos</h3>
+          <p class="note" style="margin-top:0;">
+            Unix, Linux y la mayoría de las APIs de backend usan segundos. El propio <code>Date.now()</code> de JavaScript y la mayoría del código frontend usan milisegundos. Confundir ambos es uno de los errores de timestamp más comunes: un valor en "segundos" pegado en un campo de "milisegundos" cae en algún punto de 1970.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Todo pasa por el objeto <code>Date</code> del navegador, que almacena internamente un solo número: milisegundos desde la época Unix, medianoche UTC del 1 de enero de 1970. Al convertir un timestamp, la herramienta multiplica por 1000 si indicaste segundos, construye un <code>Date</code>, y lo muestra de cuatro formas: tu hora local vía <code>toLocaleString</code> (el formateador Intl del navegador, usando tu propia zona horaria e idioma), UTC, ISO 8601, y una etiqueta relativa "en 3 días / hace 2 horas" calculada agrupando la diferencia con el ahora en años, meses, días, horas, minutos o segundos.</p>
+      <p>En la dirección contraria, el valor del selector de fecha se interpreta como hora local y se convierte de nuevo a segundos y milisegundos. El campo datetime-local se alimenta desplazando primero el timestamp por tu desfase horario, que es la parte delicada que la mayoría de los conversores hacen mal sutilmente: <code>toISOString()</code> siempre habla en UTC, así que sin ese desplazamiento el selector mostraría una hora desviada varias horas de la hora de reloj que esperas.</p>
+      <p>El error clásico contra el que esta herramienta protege haciendo la unidad explícita: segundos vs milisegundos. Los timestamps Unix actuales tienen 10 dígitos en segundos y 13 en milisegundos. Interpreta un valor en milisegundos como segundos y aterrizas más de 50.000 años en el futuro; haz lo contrario y obtienes enero de 1970. Si una conversión se ve absurda, cambia el desplegable de unidad, eso casi siempre es todo el error. Los valores fuera de rango (las fechas de JavaScript tienen un tope de 100 millones de días a cada lado de la época, aproximadamente el año 275760) producen un error claro en lugar de basura.</p>
+      <p>Todo el análisis y formateo son trabajo de la API local del navegador. Abre la pestaña Red de las DevTools mientras conviertes: no se dispara ninguna petición, y los timestamps de tus logs nunca salen de tu máquina.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+uuid-generator.html|Generador de UUID|Identificadores UUID v4 aleatorios en lote.
+hash-generator.html|Generador de hashes|MD5, SHA-1, SHA-256 y SHA-512 de cualquier texto.
+json-formatter.html|Formateador JSON|Formatea, valida y minifica JSON con una vista de árbol.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-timestamp.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

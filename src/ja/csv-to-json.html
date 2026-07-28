@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSVからJSONへの変換ツール | norito</title>
+<meta name="description" content="ブラウザ内でCSVをJSONにリアルタイム変換。区切り文字を自動検出し、1行目をヘッダーとして扱い、出力を整形します。" />
+<link rel="canonical" href="https://norito.in/ja/csv-to-json.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/csv-to-json.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/csv-to-json.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/csv-to-json.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/csv-to-json.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/csv-to-json.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/csv-to-json.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/csv-to-json.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/csv-to-json.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSVからJSONへの変換ツール | norito" />
+<meta property="og:description" content="ブラウザ内でCSVをJSONにリアルタイム変換。区切り文字を自動検出し、1行目をヘッダーとして扱い、出力を整形します。" />
+<meta property="og:url" content="https://norito.in/ja/csv-to-json.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSVからJSONへの変換ツール | norito" />
+<meta name="twitter:description" content="ブラウザ内でCSVをJSONにリアルタイム変換。区切り文字を自動検出し、1行目をヘッダーとして扱い、出力を整形します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSVからJSON",
+  "url": "https://norito.in/ja/csv-to-json.html",
+  "description": "ブラウザ内でCSVをJSONにリアルタイム変換。区切り文字を自動検出し、1行目をヘッダーとして扱い、出力を整形します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSVからJSON",
+      "item": "https://norito.in/ja/csv-to-json.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSVからJSON</p>
+    <h1>CSVからJSON</h1>
+    <p class="lede">
+      CSVファイルを貼り付けまたはアップロードすると、すぐにきれいなJSONが得られます。ヘッダーはオブジェクトのキーになり、数値や真偽値は自動的に検出されます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
+          <p><strong>クリックして.csvファイルを選択</strong>、またはここにドラッグ＆ドロップ</p>
+          <p class="note" style="margin-top:2px;">または下のボックスにCSVテキストを直接貼り付けてください。</p>
+          <input type="file" id="fileInput" accept=".csv,text/csv" />
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label for="csvInput">CSVテキスト</label>
+          <textarea id="csvInput" class="mono-area" rows="8" placeholder="名前,年齢,都市
+太郎,30,東京
+花子,25,大阪"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="delimiter">区切り文字</label>
+            <select id="delimiter">
+              <option value="auto" selected>自動検出</option>
+              <option value=",">カンマ (,)</option>
+              <option value=";">セミコロン (;)</option>
+              <option value="\t">タブ</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">1行目はヘッダー</span>
+          <label class="switch"><input type="checkbox" id="headerToggle" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">JSONを整形</span>
+          <label class="switch"><input type="checkbox" id="prettyToggle" checked /><span class="track"></span></label>
+        </div>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">出力</h3>
+          <pre class="code-output" id="jsonOutput"></pre>
+          <div class="batch-actions">
+            <button type="button" class="secondary" id="copyBtn">JSONをコピー</button>
+            <button type="button" id="downloadBtn">.jsonをダウンロード</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>ファイルはブラウザの<code>FileReader</code> APIで読み込まれ、RFC 4180のルールに従って書かれた手作りのシングルパスパーサーで解析されます。テキストを1文字ずつたどりながら、引用符で囲まれたフィールド内かどうかを追跡します。ここが単純な「カンマで分割」する変換ツールが間違えやすい部分です。引用符の中では、カンマや改行までもがそのセルの一部になり、二重引用符（<code>""</code>）はリテラルな引用符文字として扱われます。区切り文字の自動検出は賢さよりも実用性を重視しています。1行目のカンマ、セミコロン、タブの出現回数を数え、最も多いものを選ぶという方式で、これによりヨーロッパ版Excelのエクスポートでよく見られるセミコロン区切りのCSVも正しく処理できます。</p>
+      <p>型の強制変換は、出力結果を二度見すべきポイントです。整数や小数のように見える値はJSONの数値に変換され、<code>true</code>/<code>false</code>は真偽値になります。これは通常望ましい動作ですが、郵便番号や内線番号のように先頭にゼロが付く値も数値として出力されてしまうことを意味します。<code>01234</code>は<code>1234</code>になります。ある列が数量ではなく識別子である場合は、変換後に確認してください。短い行で末尾のセルが欠けている場合、その行を壊すのではなく空文字列として扱われます。</p>
+      <p>解析、型変換、さらには.jsonのダウンロード（メモリ内の<code>Blob</code>から構築）まで、すべてこのページのJavaScript内で行われます。変換中にDevToolsのNetworkタブを開いてみてください。あなたのデータを運ぶリクエストは一切発生しないため、顧客リストやエクスポートファイルがあなたのマシンから外に出ることはありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+csv-viewer.html|CSVビューア|CSVを編集可能な表として表示・編集。
+json-formatter.html|JSONフォーマッタ|JSONを整形・検証・圧縮。
+json-diff.html|JSON Diff|2つのJSONドキュメントを比較。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-csv-to-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

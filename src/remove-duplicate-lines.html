@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Remove Duplicate Lines Online | norito</title>
+<meta name="description" content="Remove duplicate lines from a list, right in your browser. Case-sensitive toggle, trim whitespace, remove blank lines. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-duplicate-lines.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Remove Duplicate Lines Online | norito" />
+<meta property="og:description" content="Remove duplicate lines from a list, right in your browser. Case-sensitive toggle, trim whitespace, remove blank lines. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/remove-duplicate-lines.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Remove Duplicate Lines Online | norito" />
+<meta name="twitter:description" content="Remove duplicate lines from a list, right in your browser. Case-sensitive toggle, trim whitespace, remove blank lines. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Remove Duplicate Lines",
+  "url": "https://norito.in/remove-duplicate-lines.html",
+  "description": "Remove duplicate lines from a list, right in your browser. Case-sensitive toggle, trim whitespace, remove blank lines. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does order matter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The first occurrence of each line is kept, later duplicates are removed. The remaining lines stay in their original order." }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as a duplicate with case-sensitive off?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lines that are identical except for letter casing, \"Apple\" and \"apple\" would be treated as the same line and only the first one kept." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, deduplication happens entirely in your browser as you type. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remove Duplicate Lines",
+      "item": "https://norito.in/remove-duplicate-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Remove Duplicate Lines</p>
+    <h1>Remove Duplicate Lines</h1>
+    <p class="lede">
+      Paste a list and remove duplicate lines, keeping the first occurrence of each. Case-sensitive toggle and blank-line cleanup included.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Input (one item per line)</label>
+          <textarea id="textInput" class="mono-output" rows="12" placeholder="apple&#10;banana&#10;apple&#10;cherry"></textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Case-sensitive</span>
+          <label class="switch"><input type="checkbox" id="optCaseSensitive" /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Trim whitespace on each line</span>
+          <label class="switch"><input type="checkbox" id="optTrimLines" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <span class="option-label">Remove blank lines</span>
+          <label class="switch"><input type="checkbox" id="optRemoveBlank" checked /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">Result</label>
+            <textarea id="textOutput" class="mono-output" rows="12" readonly></textarea>
+          </div>
+          <p class="note" id="statRemoved" style="margin-top:0;">0 duplicate lines removed.</p>
+          <button id="copyBtn">Copy result</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The tool splits your text on newlines, then walks the lines once with a JavaScript <code>Set</code> keeping track of what it has already seen. The first occurrence of each line is kept in its original position; later repeats are dropped. Because it's a single pass with constant-time lookups, even tens of thousands of lines dedupe instantly, and unlike the classic <code>sort | uniq</code> shell trick, your line order is preserved: nothing gets alphabetized as a side effect.</p>
+      <p>The options change what counts as "the same line". With case sensitivity off, each line is lowercased before the comparison (the kept line still shows its original casing). "Trim whitespace" strips leading and trailing spaces and tabs first, which matters more than you'd think: two lines can look pixel-identical on screen but differ by a trailing space or a tab, and a byte-exact comparison treats them as different. If your duplicates aren't being caught, invisible whitespace is almost always why, and trimming fixes it. Blank-line removal runs before deduping, so a lone empty line doesn't survive as "the first blank".</p>
+      <p>Processing is a few lines of JavaScript running on the text already in your tab. Nothing is uploaded: open DevTools, switch to the Network tab, and paste or edit all you want. No request ever fires, and the tool works offline once the page has loaded, which matters if you're cleaning lists that contain emails, URLs, or anything else you'd rather not send to a random server.</p>
+    </div>
+
+<!--RELATED-TOOLS
+sort-lines.html|Sort Lines|Alphabetize, reverse, or shuffle a list of lines.
+case-converter.html|Case Converter|Convert text between upper, lower, camelCase, and more.
+word-counter.html|Word Counter|Count words, characters, and reading time.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does order matter?</summary>
+        <p>The first occurrence of each line is kept, later duplicates are removed. The remaining lines stay in their original order.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What counts as a duplicate with case-sensitive off?</summary>
+        <p>Lines that are identical except for letter casing, "Apple" and "apple" would be treated as the same line and only the first one kept.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my text sent anywhere?</summary>
+        <p>No, deduplication happens entirely in your browser as you type. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-remove-duplicate-lines.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

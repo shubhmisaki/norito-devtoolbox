@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>कलर पैलेट एक्सट्रैक्टर: इमेज से रंग निकालें | norito</title>
+<meta name="description" content="इमेज अपलोड करें और उसके डोमिनेंट रंगों को पैलेट के रूप में निकालें, HEX और RGB वैल्यू कॉपी के लिए तैयार. पूरी तरह आपके ब्राउज़र में चलता है." />
+<link rel="canonical" href="https://norito.in/hi/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/color-palette-extractor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="कलर पैलेट एक्सट्रैक्टर: इमेज से रंग निकालें | norito" />
+<meta property="og:description" content="इमेज अपलोड करें और उसके डोमिनेंट रंगों को पैलेट के रूप में निकालें, HEX और RGB वैल्यू कॉपी के लिए तैयार. पूरी तरह आपके ब्राउज़र में चलता है." />
+<meta property="og:url" content="https://norito.in/hi/design/color-palette-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="कलर पैलेट एक्सट्रैक्टर: इमेज से रंग निकालें | norito" />
+<meta name="twitter:description" content="इमेज अपलोड करें और उसके डोमिनेंट रंगों को पैलेट के रूप में निकालें, HEX और RGB वैल्यू कॉपी के लिए तैयार. पूरी तरह आपके ब्राउज़र में चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "कलर पैलेट एक्सट्रैक्टर",
+  "url": "https://norito.in/hi/design/color-palette-extractor.html",
+  "description": "इमेज अपलोड करें और उसके डोमिनेंट रंगों को पैलेट के रूप में निकालें, HEX और RGB वैल्यू कॉपी के लिए तैयार. पूरी तरह आपके ब्राउज़र में चलता है.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/hi/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "क्या मेरी इमेज कहीं अपलोड होती है?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "नहीं. हर पिक्सेल canvas API का इस्तेमाल करके लोकली पढ़ा जाता है. कुछ भी सर्वर पर नहीं भेजा जाता."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "रंग कैसे चुने जाते हैं?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "पिक्सेल को समानता के आधार पर बकेट में बांटा जाता है, और सबसे आम बकेट आपका पैलेट बनते हैं, जो हर बकेट में आए असली पिक्सेल के औसत से बनते हैं."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "मेरी उम्मीद के मुताबिक़ रंग बिल्कुल मेल क्यों नहीं खाते?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "बहुत छोटे या पतले डीटेल अगर इमेज का ज़्यादा हिस्सा नहीं कवर करते तो वे औसत में दब सकते हैं. ज़्यादा डीटेल पकड़ने के लिए रंगों की संख्या बढ़ाकर देखें."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/hi/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "कलर पैलेट एक्सट्रैक्टर",
+      "item": "https://norito.in/hi/design/color-palette-extractor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / कलर पैलेट एक्सट्रैक्टर</p>
+    <h1>कलर पैलेट एक्सट्रैक्टर</h1>
+    <p class="lede">
+      इमेज अपलोड करें और उसे असल में परिभाषित करने वाले रंग निकालें. किसी भी स्वॉच पर क्लिक करके उसका hex कोड कॉपी करें.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+          <p><strong>इमेज चुनने के लिए क्लिक करें</strong>, या उसे यहां खींचकर लाएं</p>
+          <p class="note" style="margin-top:2px;">पेस्ट (Ctrl+V) से भी काम करता है. आपकी डिवाइस पर ही रहती है, कुछ भी अपलोड नहीं होता.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div id="previewWrap" style="display:none; margin-top:16px;">
+          <img id="previewImg" style="max-width:100%; max-height:220px; border-radius:var(--radius-md); display:block;" alt="अपलोड की गई इमेज का प्रीव्यू" />
+        </div>
+        <div class="field" style="margin-top:16px; max-width:200px;">
+          <label for="colorCount">रंगों की संख्या</label>
+          <select id="colorCount">
+            <option value="5">5</option>
+            <option value="8" selected>8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+          </select>
+        </div>
+        <div class="palette-grid" id="paletteGrid" style="display:none;"></div>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">यह कैसे काम करता है</h3>
+          <p class="note" style="margin-top:0;">रंग सीधे आपकी इमेज से canvas API का इस्तेमाल करके सैंपल किए जाते हैं और समानता के आधार पर ग्रुप किए जाते हैं. कुछ भी अपलोड नहीं होता, सब कुछ आपके ब्राउज़र में होता है.</p>
+        </div>
+      </div>
+    </div>
+
+<!--RELATED-TOOLS
+color-converter.html|कलर कन्वर्टर|किसी भी रंग को HEX, RGB, HSL या CMYK में बदलें.
+contrast-checker.html|कॉन्ट्रास्ट चेकर|देखें कि दो रंग WCAG कॉन्ट्रास्ट नियमों पर खरे उतरते हैं या नहीं.
+css-gradient-generator.html|CSS ग्रेडिएंट जनरेटर|अपने पसंदीदा रंगों से ग्रेडिएंट बनाएं.
+-->
+
+    <h2>सामान्य प्रश्न</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>क्या मेरी इमेज कहीं अपलोड होती है?</summary>
+        <p>नहीं. हर पिक्सेल canvas API का इस्तेमाल करके लोकली पढ़ा जाता है. कुछ भी सर्वर पर नहीं भेजा जाता.</p>
+      </details>
+      <details class="faq-item">
+        <summary>रंग कैसे चुने जाते हैं?</summary>
+        <p>पिक्सेल को समानता के आधार पर बकेट में बांटा जाता है, और सबसे आम बकेट आपका पैलेट बनते हैं, जो हर बकेट में आए असली पिक्सेल के औसत से बनते हैं.</p>
+      </details>
+      <details class="faq-item">
+        <summary>मेरी उम्मीद के मुताबिक़ रंग बिल्कुल मेल क्यों नहीं खाते?</summary>
+        <p>बहुत छोटे या पतले डीटेल अगर इमेज का ज़्यादा हिस्सा नहीं कवर करते तो वे औसत में दब सकते हैं. ज़्यादा डीटेल पकड़ने के लिए रंगों की संख्या बढ़ाकर देखें.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-color-palette-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

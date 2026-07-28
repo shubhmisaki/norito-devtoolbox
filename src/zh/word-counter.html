@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>字数统计：单词、字符、阅读时间 | norito</title>
+<meta name="description" content="输入即时统计单词数、字符数、句子数和段落数，并估算阅读和朗读所需时间。不会上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/word-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/word-counter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/word-counter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/word-counter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/word-counter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/word-counter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/word-counter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/word-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/word-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="字数统计：单词、字符、阅读时间 | norito" />
+<meta property="og:description" content="输入即时统计单词数、字符数、句子数和段落数，并估算阅读和朗读所需时间。不会上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/word-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="字数统计：单词、字符、阅读时间 | norito" />
+<meta name="twitter:description" content="输入即时统计单词数、字符数、句子数和段落数，并估算阅读和朗读所需时间。不会上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "字数统计",
+  "url": "https://norito.in/zh/word-counter.html",
+  "description": "输入即时统计单词数、字符数、句子数和段落数，并估算阅读和朗读所需时间。不会上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "字数统计",
+      "item": "https://norito.in/zh/word-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 字数统计</p>
+    <h1>字数统计</h1>
+    <p class="lede">
+      输入时实时统计单词数、字符数、句子数和段落数，并给出预计阅读和朗读时间。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">你的文本</label>
+          <textarea id="textInput" class="mono-output" rows="14" placeholder="在此粘贴或输入文本…"></textarea>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">统计数据</h3>
+          <div class="meta-list">
+            <div class="meta-row"><span class="meta-label">单词数</span><span class="meta-value" id="statWords">0</span></div>
+            <div class="meta-row"><span class="meta-label">字符数</span><span class="meta-value" id="statChars">0</span></div>
+            <div class="meta-row"><span class="meta-label">句子数</span><span class="meta-value" id="statSentences">0</span></div>
+            <div class="meta-row"><span class="meta-label">段落数</span><span class="meta-value" id="statParagraphs">0</span></div>
+            <div class="meta-row"><span class="meta-label">阅读时间</span><span class="meta-value" id="statReadingTime">0 sec</span></div>
+            <div class="meta-row"><span class="meta-label">朗读时间</span><span class="meta-value" id="statSpeakingTime">0 sec</span></div>
+          </div>
+        </div>
+        <p class="note">
+          阅读时间按每分钟 225 词计算（成年人默读的平均速度）。朗读时间按每分钟 130 词计算（口头演讲的平均语速）。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>每次按键时，计数器都会从原始文本重新推导全部六项统计数据。单词是由非空白字符组成的连续片段，通过正则表达式 <code>\s+</code> 分割来统计；句子是以 <code>.</code>、<code>!</code> 或 <code>?</code> 结尾、后接空格或文本结束的连续片段；段落是由空行分隔的文本块。阅读时间按每分钟 225 词计算（典型的默读速度），朗读时间按每分钟 130 词计算（大致是会议演讲的语速），两者都四舍五入到最近的一秒。</p>
+      <p>这些都是合理的近似值，了解它们在哪些地方会出现偏差也很有意义。句子统计无法区分缩写和句号，所以"Mr. Smith arrived."会被算作两个句子。不同工具的单词统计也存在合理的差异：本工具把"state-of-the-art"算作一个单词（内部没有空格），而有些文字处理软件对连字符复合词的处理方式不同，这就是为什么你的文章在这里是 998 词，在别处却是 1002 词。两者都没有错，只是对"单词边界"的定义不同。</p>
+      <p>字符数是文本的原始长度，包含空格和换行符。有一点需要注意：JavaScript 字符串统计的是 UTF-16 单元，因此大多数表情符号会被算作 2 个字符，有些（如家庭或旗帜表情）会被算作更多。这与 Twitter 风格的平台限制通常的计算方式一致，因此这是一个很有参考价值的数字。</p>
+      <p>统计工作只是在你的标签页里进行的几次正则表达式运算。你输入的任何内容都不会被发送到任何地方：书写时开发者工具的网络面板始终为空，即使断网，计数器依然可以正常工作。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+character-counter.html|字符计数器|对照推文、短信和 meta 描述的限制。
+limited-text-generator.html|限长文本生成器|生成精确长度的占位文本。
+/case-converter.html|大小写转换器|在大写、小写、驼峰式等之间转换文本。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-word-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

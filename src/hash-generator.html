@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Hash Generator: MD5, SHA-1, SHA-256, SHA-512 | norito</title>
+<meta name="description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes of any text, live as you type, entirely in your browser. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/hash-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/hash-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/hash-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hash Generator: MD5, SHA-1, SHA-256, SHA-512 | norito" />
+<meta property="og:description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes of any text, live as you type, entirely in your browser. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/hash-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hash Generator: MD5, SHA-1, SHA-256, SHA-512 | norito" />
+<meta name="twitter:description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes of any text, live as you type, entirely in your browser. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hash Generator",
+  "url": "https://norito.in/hash-generator.html",
+  "description": "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes of any text, live as you type, entirely in your browser. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which hash algorithm should I use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SHA-256 is the safe general-purpose default for checksums and integrity checks. MD5 and SHA-1 are both cryptographically broken (collisions are practical to construct), fine for checking a file didn't get corrupted in transit, not fine for anything security-sensitive like password storage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these hashes to store passwords?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. None of these algorithms should be used to store passwords, they're deliberately fast, which is exactly wrong for that job. Password storage needs a slow, purpose-built algorithm like bcrypt, scrypt, or Argon2 instead."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hash Generator",
+      "item": "https://norito.in/hash-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Hash Generator</p>
+    <h1>Hash Generator</h1>
+    <p class="lede">
+      MD5, SHA-1, SHA-256, and SHA-512 hashes of any text, computed live in your browser
+      using the Web Crypto API. Nothing you type is sent anywhere.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:20px;">
+          <label for="input">Text</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Type or paste text to hash..."></textarea>
+        </div>
+        <div id="hashList"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-coral" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
+            </div>
+            <div>
+              <h3>Which one should I use?</h3>
+              <p>Depends on what you're hashing for.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            SHA-256 is the safe general-purpose default for checksums and integrity checks.
+            MD5 and SHA-1 are both cryptographically broken (collisions are practical to
+            construct), fine for checking a file didn't get corrupted in transit, not fine
+            for anything security-sensitive like password storage.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Not for passwords</h3>
+          <p class="note" style="margin-top:0;">
+            None of these algorithms should be used to store passwords, they're deliberately
+            fast, which is exactly wrong for that job. Password storage needs a slow,
+            purpose-built algorithm like bcrypt, scrypt, or Argon2 instead.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        SHA-1, SHA-256, and SHA-512 are computed by your browser's built-in
+        <code>crypto.subtle.digest</code> API: your text is converted to UTF-8 bytes with
+        <code>TextEncoder</code>, digested natively, and the resulting buffer is formatted as
+        lowercase hex. MD5 is the odd one out: Web Crypto deliberately refuses to implement it
+        (it's cryptographically broken), so this tool ships a small JavaScript implementation of
+        RFC 1321 just for MD5. All four recompute on every keystroke, with a guard that throws
+        away stale results if you type faster than the digests finish.
+      </p>
+      <p>
+        A practical gotcha when cross-checking against a terminal: this tool hashes exactly the
+        bytes you typed, with no trailing newline. <code>echo "hello" | sha256sum</code> will
+        never match it, because <code>echo</code> appends a newline and you're actually hashing
+        "hello\n". Use <code>printf '%s' "hello" | sha256sum</code> instead and the digests line
+        up exactly. The same trap explains most "why doesn't my hash match" moments between
+        languages and tools.
+      </p>
+      <p>
+        Because <code>crypto.subtle</code> lives inside the browser, nothing needs to be sent
+        anywhere to compute a digest. You can confirm it: open DevTools' Network tab and type a
+        password or API key into the input. No request appears, your text stays in the tab.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+base64-encoder.html|Base64 Encode / Decode|Convert text to and from Base64, UTF-8 safe.
+uuid-generator.html|UUID Generator|Bulk random UUID v4 identifiers.
+password-generator.html|Password Generator|Strong random passwords and passphrases.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-hash.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

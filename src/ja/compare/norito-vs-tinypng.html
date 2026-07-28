@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>norito 対 TinyPNG：画像圧縮ツールの比較 | norito</title>
+<meta name="description" content="画像圧縮についてnoritoとTinyPNGを比較：プライバシー、バッチ処理の上限、目標サイズ圧縮。noritoはブラウザ内だけで完結します。" />
+<link rel="canonical" href="https://norito.in/ja/compare/norito-vs-tinypng.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="norito 対 TinyPNG：画像圧縮ツールの比較 | norito" />
+<meta property="og:description" content="画像圧縮についてnoritoとTinyPNGを比較：プライバシー、バッチ処理の上限、目標サイズ圧縮。noritoはブラウザ内だけで完結します。" />
+<meta property="og:url" content="https://norito.in/ja/compare/norito-vs-tinypng.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="norito 対 TinyPNG：画像圧縮ツールの比較 | norito" />
+<meta name="twitter:description" content="画像圧縮についてnoritoとTinyPNGを比較：プライバシー、バッチ処理の上限、目標サイズ圧縮。noritoはブラウザ内だけで完結します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "norito 対 TinyPNG",
+  "url": "https://norito.in/ja/compare/norito-vs-tinypng.html",
+  "description": "画像圧縮についてnoritoとTinyPNGを比較：プライバシー、バッチ処理の上限、目標サイズ圧縮。noritoはブラウザ内だけで完結します。",
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "noritoの画像圧縮はTinyPNGと同じくらい優れていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "noritoはブラウザネイティブのcanvas再エンコードに加え、インデックスPNG向けの色量子化ステップを使っており、日常的な画像の大半では専用圧縮ツールに近い結果が得られます。大規模な本番アセットを極限まで最適化する場合は、専用ツールやAPIの方が効果的な場合もあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "noritoで正確なファイルサイズに圧縮できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。画像圧縮ツールでは目標サイズ（例：100KB）を指定でき、できるだけそれに近づけるよう反復的に調整します — これは多くの品質スライダー方式の圧縮ツールにはない機能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "noritoは一度に圧縮できる画像数に制限がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。バッチ圧縮に固定の上限はありませんが、非常に大きなバッチは、noritoそのものではなく、あなたの端末のメモリやブラウザタブの性能に制限されます。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "比較",
+      "item": "https://norito.in/ja/compare/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "norito 対 TinyPNG",
+      "item": "https://norito.in/ja/compare/norito-vs-tinypng.html"
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">比較</a> / norito 対 TinyPNG</p>
+    <h1>norito 対 TinyPNG</h1>
+    <p class="lede">TinyPNGは速くてシンプルです。noritoは目標サイズ圧縮、より多くの形式に対応し、画像を端末内にとどめます。</p>
+
+    <p>TinyPNGは、PNGやJPGを縮小する定番となった、余計な機能のない高速な画像圧縮ツールです。一つのことをうまくこなします。ただし、処理のために各画像を彼らのサーバーへアップロードする必要があり、無料のウェブツールは一度に圧縮できる画像数に制限があります。</p>
+    <p>noritoの画像ツールは、圧縮（品質スライダーだけでなく、正確な目標ファイルサイズへの調整を含む）、形式変換、リサイズ、トリミング、背景除去、透かし、メタデータ削除をカバーしており、すべてブラウザ内でローカルに処理され、バッチ数の上限もありません。</p>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>norito</th>
+            <th>TinyPNG</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>処理場所</td>
+              <td class="yes">あなたのブラウザ内（アップロードなし）</td>
+              <td class="no">彼らのサーバーへアップロード</td>
+            </tr>
+            <tr>
+              <td>アカウントの要否</td>
+              <td class="yes">不要</td>
+              <td class="yes">ウェブツールでは不要</td>
+            </tr>
+            <tr>
+              <td>価格</td>
+              <td class="yes">無料、上限なし</td>
+              <td class="no">ウェブツールはバッチ上限付きで無料、大量利用は有料API</td>
+            </tr>
+            <tr>
+              <td>対応形式</td>
+              <td class="yes">JPG、PNG、WebP、リサイズ、変換、トリミング、透かし、メタデータ</td>
+              <td class="no">PNGとJPGの圧縮、WebP出力</td>
+            </tr>
+            <tr>
+              <td>一括アップロード</td>
+              <td class="yes">対応、ファイル数無制限</td>
+              <td class="no">対応、無料プランはバッチ数制限あり</td>
+            </tr>
+            <tr>
+              <td>目標サイズ圧縮</td>
+              <td class="yes">対応、正確なファイルサイズに調整</td>
+              <td class="no">非対応、品質ベースのみ</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>こんな場合はこちらが向いています TinyPNG</h2>
+    <ul>
+          <li>ビルドプロセスの一部として画像を自動圧縮する開発者向けAPIが必要な場合。</li>
+          <li>彼らの圧縮アルゴリズム特有の出力仕様が必要な場合。</li>
+          <li>端末上ではなく、すでにリモートに置かれている画像を圧縮する場合。</li>
+    </ul>
+
+    <h2>こんな場合はこちらが向いています norito</h2>
+    <ul>
+          <li>品質レベルを推測するのではなく、特定の目標ファイルサイズ（例：「200KB未満」）に収めたい場合。</li>
+          <li>アップロードしたくないスクリーンショット、写真、文書を圧縮する場合。</li>
+          <li>圧縮に加えてリサイズ、トリミング、形式変換、メタデータ削除も一か所で行いたい場合。</li>
+    </ul>
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+        <details class="faq-item">
+          <summary>noritoの画像圧縮はTinyPNGと同じくらい優れていますか？</summary>
+          <p>noritoはブラウザネイティブのcanvas再エンコードに加え、インデックスPNG向けの色量子化ステップを使っており、日常的な画像の大半では専用圧縮ツールに近い結果が得られます。大規模な本番アセットを極限まで最適化する場合は、専用ツールやAPIの方が効果的な場合もあります。</p>
+        </details>
+        <details class="faq-item">
+          <summary>noritoで正確なファイルサイズに圧縮できますか？</summary>
+          <p>はい。画像圧縮ツールでは目標サイズ（例：100KB）を指定でき、できるだけそれに近づけるよう反復的に調整します — これは多くの品質スライダー方式の圧縮ツールにはない機能です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>noritoは一度に圧縮できる画像数に制限がありますか？</summary>
+          <p>いいえ。バッチ圧縮に固定の上限はありませんが、非常に大きなバッチは、noritoそのものではなく、あなたの端末のメモリやブラウザタブの性能に制限されます。</p>
+        </details>
+    </div>
+
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

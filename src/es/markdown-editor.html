@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Editor Markdown con vista previa en vivo | norito</title>
+<meta name="description" content="Escribe markdown con vista previa en vivo lado a lado. Barra de formato, desplazamiento sincronizado, exporta como Markdown o HTML." />
+<link rel="canonical" href="https://norito.in/es/markdown-editor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/markdown-editor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/markdown-editor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/markdown-editor.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/markdown-editor.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/markdown-editor.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/markdown-editor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/markdown-editor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Editor Markdown con vista previa en vivo | norito" />
+<meta property="og:description" content="Escribe markdown con vista previa en vivo lado a lado. Barra de formato, desplazamiento sincronizado, exporta como Markdown o HTML." />
+<meta property="og:url" content="https://norito.in/es/markdown-editor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Editor Markdown con vista previa en vivo | norito" />
+<meta name="twitter:description" content="Escribe markdown con vista previa en vivo lado a lado. Barra de formato, desplazamiento sincronizado, exporta como Markdown o HTML." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Editor Markdown",
+  "url": "https://norito.in/es/markdown-editor.html",
+  "description": "Escribe markdown con vista previa en vivo lado a lado. Barra de formato, desplazamiento sincronizado, exporta como Markdown o HTML.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Editor Markdown",
+      "item": "https://norito.in/es/markdown-editor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Editor Markdown</p>
+    <h1>Editor Markdown</h1>
+    <p class="lede">
+      Escribe a la izquierda, míralo renderizado a la derecha. Desplazamiento sincronizado, una barra de herramientas de formato y exportación como Markdown o HTML cuando termines.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+        <div class="md-toolbar" id="mdToolbar" style="border:none; padding:0; margin:0;">
+          <button type="button" class="md-toolbar-icon" id="undoBtn" data-action="undo" title="Deshacer" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+          <button type="button" class="md-toolbar-icon" id="redoBtn" data-action="redo" title="Rehacer" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg></button>
+          <span class="md-toolbar-divider" aria-hidden="true"></span>
+          <button type="button" data-action="h1" title="Heading 1">H1</button>
+          <button type="button" data-action="h2" title="Heading 2">H2</button>
+          <button type="button" data-action="bold" title="Bold"><strong>B</strong></button>
+          <button type="button" data-action="italic" title="Italic"><em>I</em></button>
+          <button type="button" data-action="strike" title="Strikethrough"><s>S</s></button>
+          <button type="button" data-action="code" title="Inline code">code</button>
+          <button type="button" data-action="codeblock" title="Code block">{ }</button>
+          <button type="button" data-action="link" title="Link">link</button>
+          <button type="button" data-action="quote" title="Quote">"</button>
+          <button type="button" data-action="ul" title="Bullet list">•</button>
+          <button type="button" data-action="ol" title="Numbered list">1.</button>
+          <button type="button" data-action="table" title="Table">▦</button>
+        </div>
+        <div class="tabs" id="view-tabs">
+          <button type="button" class="tab active" data-value="split">Dividido</button>
+          <button type="button" class="tab" data-value="editor">Editor</button>
+          <button type="button" class="tab" data-value="preview">Vista previa</button>
+        </div>
+      </div>
+
+      <div class="two-col" style="gap:16px;">
+        <div class="md-pane" id="editorPane">
+          <textarea id="mdEditor" class="md-source" spellcheck="false"># Bienvenido al editor Markdown de norito
+
+Escribe a la izquierda y mira cómo se renderiza a la derecha, **en vivo**, sin necesidad de botón guardar.
+
+## Funciones
+
+- Vista previa de doble panel que se desplaza en sincronía
+- Una pequeña barra de herramientas de formato arriba
+- Exporta como `.md` o `.html` cuando termines
+
+> Todo ocurre en tu navegador. Nada de lo que escribas aquí se sube a ningún sitio.
+
+```
+console.log("hasta los bloques de código funcionan");
+```
+
+| Función | Estado |
+| --- | --- |
+| Vista previa en vivo | listo |
+| Exportar | listo |
+</textarea>
+        </div>
+        <div class="md-pane" id="previewPane">
+          <div id="mdPreview" class="md-preview"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+        <span class="note" id="mdCharCount" style="margin:0;">0 characters</span>
+        <div style="display:flex; gap:10px;">
+          <button id="downloadMdBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Descargar .md
+</button>
+          <button id="downloadHtmlBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Descargar .html
+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        La vista previa se genera con marked, un analizador de Markdown de código abierto incluido en
+        este sitio (sin CDN), configurado para GitHub Flavored Markdown con saltos de línea activados.
+        Vuelve a analizar todo el documento con cada pulsación; suena costoso, pero marked compila en una
+        sola pasada muy rápida, y hasta documentos del tamaño de un libro se renderizan en pocos
+        milisegundos. El editor también mantiene su propio historial de deshacer de hasta 100
+        instantáneas, porque los botones de la barra de herramientas cambian el valor del textarea
+        mediante código, lo que evita silenciosamente la pila de deshacer nativa del navegador. La
+        escritura consecutiva se agrupa en un solo paso tras una breve pausa, así que Ctrl+Z retrocede
+        por ediciones, no por pulsaciones.
+      </p>
+      <p>
+        El desplazamiento sincronizado entre los paneles es proporcional: la posición de scroll de cada
+        panel se convierte en una proporción de 0 a 1 y se refleja en el otro lado. Una nota de
+        portabilidad: con los saltos de línea activados, un único salto de línea se convierte en un salto
+        real, igual que renderiza GitHub los comentarios. Los renderizadores estrictos de CommonMark,
+        incluidos muchos generadores de sitios estáticos, unirán esas líneas en un solo párrafo. Si tu
+        Markdown va a un destino estricto, termina la línea con dos espacios o deja una línea en blanco
+        para conservar el salto. La exportación a .html es exactamente el marcado del panel de vista
+        previa envuelto en un documento mínimo, así que lo que ves es literalmente lo que se exporta.
+      </p>
+      <p>
+        Todo, incluido el analizador, se carga con la página y funciona localmente. Abre las herramientas
+        de desarrollador y observa la pestaña Red mientras escribes: ninguna petición transporta tu
+        texto, y el editor sigue funcionando sin conexión.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|Formateador JSON|Formatea, valida y minifica JSON con una vista de árbol.
+limited-text-generator.html|Generador de texto limitado|Texto de relleno con un número exacto de caracteres.
+test-file-generator.html|Generador de archivos de prueba|Archivos de relleno del tamaño o extensión exactos.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/vendor/marked.umd.js"></script>
+<script src="../js/app-markdown.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Character Counter: Check Platform Limits | norito</title>
+<meta name="description" content="Count characters with and without spaces, plus byte size, and check against tweet, SMS, and meta description limits live. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/character-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/character-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/character-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Character Counter: Check Platform Limits | norito" />
+<meta property="og:description" content="Count characters with and without spaces, plus byte size, and check against tweet, SMS, and meta description limits live. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/character-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Character Counter: Check Platform Limits | norito" />
+<meta name="twitter:description" content="Count characters with and without spaces, plus byte size, and check against tweet, SMS, and meta description limits live. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Character Counter",
+  "url": "https://norito.in/character-counter.html",
+  "description": "Count characters with and without spaces, plus byte size, and check against tweet, SMS, and meta description limits live. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does byte size differ from character count?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Character count is the number of Unicode characters. Byte size (UTF-8) is how many bytes those characters actually take up when encoded, plain English letters are 1 byte each, but emoji and many non-Latin scripts can take 2-4 bytes per character." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the platform limits always accurate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "They're the commonly cited limits as of when this tool was built. Platforms change their limits occasionally, treat these as a helpful reference rather than a guarantee." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, counting happens live in your browser as you type. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Character Counter",
+      "item": "https://norito.in/character-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Character Counter</p>
+    <h1>Character Counter</h1>
+    <p class="lede">
+      Live character count, with and without spaces, byte size, and how close you are to common platform limits like tweets and meta descriptions.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Your text</label>
+          <textarea id="textInput" class="mono-output" rows="10" placeholder="Paste or type your text here..."></textarea>
+        </div>
+        <div class="meta-list">
+          <div class="meta-row"><span class="meta-label">Characters (with spaces)</span><span class="meta-value" id="statWithSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">Characters (no spaces)</span><span class="meta-value" id="statNoSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">Byte size (UTF-8)</span><span class="meta-value" id="statBytes">0</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Common limits</h3>
+          <div class="meta-list" id="limitList"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        On every keystroke the page recomputes three numbers. The character count is JavaScript's
+        <code>.length</code>, which counts UTF-16 code units. The no-spaces count strips all
+        whitespace (spaces, tabs, line breaks) with a regex first. The byte size runs your text
+        through the browser's <code>TextEncoder</code> API, which produces the actual UTF-8 bytes
+        the text would occupy in a file, a database column, or an HTTP request body. The platform
+        limits list is then just subtraction against each limit, flipping to "over" styling the
+        moment you cross one.
+      </p>
+      <p>
+        The gap between those numbers is where people get burned. An emoji like a smiley is one
+        visible symbol but two UTF-16 code units (so it counts as 2 characters here, and on many
+        platforms) and four bytes of UTF-8. For SMS specifically, the 160-character limit assumes
+        the message stays within the old GSM-7 alphabet: include a single emoji or curly "smart
+        quote" and the carrier silently switches the whole message to UCS-2 encoding, dropping
+        the per-segment limit to 70 characters. If a one-character edit suddenly split your text
+        into two SMS segments, that's why.
+      </p>
+      <p>
+        Counting happens entirely in this page's JavaScript. Open DevTools' Network tab while you
+        type: you'll see zero requests, because your text never leaves the browser.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+word-counter.html|Word Counter|Word, sentence, and paragraph counts plus reading time.
+limited-text-generator.html|Limited Text Generator|Generate placeholder text to an exact length.
+seo-slug-generator.html|SEO Slug Generator|Clean URL slugs from titles.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why does byte size differ from character count?</summary>
+        <p>Character count is the number of Unicode characters. Byte size (UTF-8) is how many bytes those characters actually take up when encoded, plain English letters are 1 byte each, but emoji and many non-Latin scripts can take 2-4 bytes per character.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are the platform limits always accurate?</summary>
+        <p>They're the commonly cited limits as of when this tool was built. Platforms change their limits occasionally, treat these as a helpful reference rather than a guarantee.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my text sent anywhere?</summary>
+        <p>No, counting happens live in your browser as you type. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-character-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

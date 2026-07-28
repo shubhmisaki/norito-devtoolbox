@@ -58,7 +58,7 @@
     const idx = parseInt(btn.dataset.index, 10);
     const value = formatUuid(current[idx]);
     try {
-      await navigator.clipboard.writeText(value);
+      await copyToClipboard(value);
     } catch (err) {
       const ta = document.createElement("textarea");
       ta.value = value;
@@ -76,7 +76,7 @@
     if (!current.length) return;
     const text = current.map(formatUuid).join("\n");
     try {
-      await navigator.clipboard.writeText(text);
+      await copyToClipboard(text);
     } catch (err) {
       const ta = document.createElement("textarea");
       ta.value = text;

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>URL Encoder / Decoder: Percent-Encoding Online | norito</title>
+<meta name="description" content="Encode or decode a URL or URL component (percent-encoding), live in your browser. Component and full-URI modes. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/url-encoder-decoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="URL Encoder / Decoder: Percent-Encoding Online | norito" />
+<meta property="og:description" content="Encode or decode a URL or URL component (percent-encoding), live in your browser. Component and full-URI modes. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/url-encoder-decoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="URL Encoder / Decoder: Percent-Encoding Online | norito" />
+<meta name="twitter:description" content="Encode or decode a URL or URL component (percent-encoding), live in your browser. Component and full-URI modes. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "URL Encoder / Decoder",
+  "url": "https://norito.in/url-encoder-decoder.html",
+  "description": "Encode or decode a URL or URL component (percent-encoding), live in your browser. Component and full-URI modes. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What's the difference between component and full URI encoding?", "acceptedAnswer": { "@type": "Answer", "text": "Component encoding (encodeURIComponent) escapes every character that isn't safe inside one piece of a URL, including &amp;, =, and ?, the right choice for a query parameter value. Full URI encoding (encodeURI) leaves those structural characters alone since they have meaning in a complete address, use it when encoding a whole URL rather than one part of it." } },
+    { "@type": "Question", "name": "Why does a space become %20 or +?", "acceptedAnswer": { "@type": "Answer", "text": "Spaces aren't valid in a URL, so they get percent-encoded as %20. Some older systems (particularly form submissions) use + instead of %20 inside query strings specifically, both mean the same thing in that context, which is why decode mode here treats + as a space." } },
+    { "@type": "Question", "name": "Does this upload my text anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. Encoding and decoding happen entirely in your browser using built-in JavaScript functions. Nothing you type is sent anywhere." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "URL Encoder / Decoder",
+      "item": "https://norito.in/url-encoder-decoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / URL Encoder / Decoder</p>
+    <h1>URL Encoder / Decoder</h1>
+    <p class="lede">
+      Percent-encode or decode a URL or a single URL component, live as you type. Nothing you type is sent anywhere.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">Encode</button>
+          <button type="button" class="tab" data-value="decode">Decode</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="encodeType">Encoding type</label>
+          <select id="encodeType">
+            <option value="component" selected>Component (encodeURIComponent), recommended</option>
+            <option value="full">Full URI (encodeURI)</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Input</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Type or paste text or a URL..."></textarea>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">Output</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Swap
+          </button>
+          <button id="copyBtn">Copy output</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <h3>Component vs full URI</h3>
+              <p>They encode different characters.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            <strong>Component</strong> encoding escapes everything that isn't safe inside a single
+            URL segment, including <code>&amp;</code>, <code>=</code>, and <code>?</code>, use it
+            for a query parameter value. <strong>Full URI</strong> encoding leaves those characters
+            alone since they're structurally meaningful in a complete URL, use it when encoding an
+            entire address rather than one piece of it.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Why encode a URL at all</h3>
+          <p class="note" style="margin-top:0;">
+            URLs can only contain a limited set of ASCII characters. Spaces, accented letters,
+            emoji, and reserved symbols like <code>&amp;</code> or <code>#</code> need to be
+            percent-encoded (like <code>%20</code> for a space) so they survive being passed
+            around as part of a link without breaking it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Encoding calls the browser's own <code>encodeURIComponent</code> or <code>encodeURI</code>, the same functions JavaScript code uses, so the output is exactly what a browser or HTTP library would produce. Each unsafe byte becomes a percent sign plus two hex digits of its UTF-8 encoding: a space becomes <code>%20</code>, and multi-byte characters expand to several escapes (é is <code>%C3%A9</code>).</p>
+      <p>The two encode modes exist because "encode a URL" means two different things. Component mode escapes everything that isn't a letter, digit, or a handful of safe marks, including <code>/ ? &amp; = :</code>. That's what you want for a single value going into a query string, otherwise an ampersand inside the value splits your parameter in two. Full-URL mode leaves the structural characters alone so a complete URL keeps working, and only escapes characters that can't appear raw at all. Using component encoding on a whole URL breaks it; using full-URL encoding on a parameter value is an injection bug waiting to happen. Pick by what you're encoding, not by habit.</p>
+      <p>Decode mode runs <code>decodeURIComponent</code>, with one practical extra: plus signs are converted to spaces first, because HTML form encoding (the <code>application/x-www-form-urlencoded</code> format you see in query strings) historically writes spaces as <code>+</code>. Malformed input, like a stray <code>%</code> not followed by two hex digits, throws a <code>URIError</code> that the tool catches and reports instead of showing half-decoded text. If decoding once still leaves <code>%25xx</code> sequences, your string was encoded twice; run it through decode again.</p>
+      <p>Both directions are single built-in function calls in your tab. The Network panel in DevTools shows no traffic while you type, so tokens and URLs with secrets in them stay on your machine.</p>
+    </div>
+
+<!--RELATED-TOOLS
+base64-encoder.html|Base64 Encode / Decode|Text to and from Base64, UTF-8 safe.
+html-entity-encoder.html|HTML Entity Encoder|Escape or unescape HTML entities.
+json-formatter.html|JSON Formatter|Format, validate, and minify JSON.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What's the difference between component and full URI encoding?</summary>
+        <p>Component encoding (encodeURIComponent) escapes every character that isn't safe inside one piece of a URL, including &amp;, =, and ?, the right choice for a query parameter value. Full URI encoding (encodeURI) leaves those structural characters alone since they have meaning in a complete address, use it when encoding a whole URL rather than one part of it.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why does a space become %20 or +?</summary>
+        <p>Spaces aren't valid in a URL, so they get percent-encoded as %20. Some older systems (particularly form submissions) use + instead of %20 inside query strings specifically, both mean the same thing in that context, which is why decode mode here treats + as a space.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this upload my text anywhere?</summary>
+        <p>No. Encoding and decoding happen entirely in your browser using built-in JavaScript functions. Nothing you type is sent anywhere.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-url-encoder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>删除图片元数据：清除 EXIF 和 GPS 数据 | norito</title>
+<meta name="description" content="在浏览器中删除照片中的 EXIF、GPS 位置及其他隐藏元数据。在清除之前先查看发现了哪些信息。不上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/remove-metadata.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-metadata.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/remove-metadata.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/remove-metadata.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/remove-metadata.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/remove-metadata.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/remove-metadata.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/remove-metadata.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-metadata.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="删除图片元数据：清除 EXIF 和 GPS 数据 | norito" />
+<meta property="og:description" content="在浏览器中删除照片中的 EXIF、GPS 位置及其他隐藏元数据。在清除之前先查看发现了哪些信息。不上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/remove-metadata.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="删除图片元数据：清除 EXIF 和 GPS 数据 | norito" />
+<meta name="twitter:description" content="在浏览器中删除照片中的 EXIF、GPS 位置及其他隐藏元数据。在清除之前先查看发现了哪些信息。不上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "删除元数据",
+  "url": "https://norito.in/zh/remove-metadata.html",
+  "description": "在浏览器中删除照片中的 EXIF、GPS 位置及其他隐藏元数据。在清除之前先查看发现了哪些信息。不上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "删除元数据",
+      "item": "https://norito.in/zh/remove-metadata.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 删除元数据</p>
+    <h1>删除元数据</h1>
+    <p class="lede">
+      清除照片中的 EXIF、GPS 位置、相机信息和时间戳。在删除之前先准确查看嵌入了哪些信息。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><strong>点击选择一张图片</strong>，或将其拖放到此处</p>
+          <p class="note" style="margin-top:2px;">JPG 格式最适合读取现有元数据。同样支持 PNG/WebP。文件保留在你的设备上。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="meta-panel" id="metaPanel" style="display:none;">
+          <p class="meta-summary"></p>
+          <div class="meta-list" id="metaList"></div>
+        </div>
+
+        <button id="cleanBtn" disabled style="margin-top:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          删除元数据并下载
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="已清理的图片" />
+          <p class="note" id="previewHint" style="margin-top:0;">生成后，清理后的图片会显示在这里。</p>
+        </div>
+        <p class="note">
+          手机和相机拍摄的照片通常会嵌入 EXIF 数据：拍摄时的精确 GPS 坐标、相机或手机型号，以及时间戳。该工具会先读取你文件中实际存在的信息，然后通过从头重新编码图片来清除所有这些数据。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>当你拖入一张 JPEG 图片时，工具会用 <code>DataView</code> 读取文件的原始字节，并遍历 JPEG 标记结构以寻找 APP1 分段，EXIF 数据就存放在那里。在其内部，工具会解析 TIFF 目录树：IFD0（相机品牌和型号、软件、修改日期）、Exif 子目录（原始拍摄时间、曝光、光圈、ISO），以及 GPS 子目录。它可以处理两种字节序（Intel 和 Motorola 风格的文件）以及内联和偏移存储两种值的方式，然后在你确认操作之前，向你展示一份找到内容的清晰列表。</p>
+      <p>这份列表正是关键所在：大多数人从未见过一张手机照片中都携带了哪些信息。一张典型的 JPEG 照片会携带确切的设备型号、快门按下的具体秒数、使用的编辑软件，以及——如果开启了定位——精确到足以识别某栋房子的 GPS 坐标。发布一张原始照片，也就等于把这一切都一并发布了出去。</p>
+      <p>清理步骤简单粗暴，效果极佳。图片会被绘制到一个全新的 <code>&lt;canvas&gt;</code> 上，并通过 <code>canvas.toBlob()</code> 重新导出，按设计该方法只写入像素数据：EXIF、XMP、ICC 配置文件、缩略图，这一切在新文件中根本没有存放的地方。没有任何内容是被选择性删除的，因此也不会有遗漏。唯一的取舍是 JPEG 会被重新编码（质量为 0.95，在照片上视觉上几乎无法察觉差异），并且自定义颜色配置文件会被丢弃。PNG 和 WebP 文件很少携带 EXIF，但可能包含文本块和配置文件；同样的重绘过程也会一并清除这些内容。</p>
+      <p>字节级检查和 canvas 重新编码都在你的标签页中运行。在加载和清理照片时打开开发者工具的 Network 面板看看：图片从未被上传到任何地方，而这正是一个专门用于保护你元数据的工具所应该做到的。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+compress-image.html|压缩图片|清理后缩小文件大小。
+image-converter.html|图片格式转换器|转换为不同的格式。
+watermark-image.html|图片水印|添加文字水印以保护你的照片。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-remove-metadata.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

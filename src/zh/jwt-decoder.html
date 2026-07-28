@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JWT 解码器：在线解码 JSON Web Token | norito</title>
+<meta name="description" content="在浏览器中解码 JWT 的 header 和 payload。查看过期时间以及标准声明的解释。签名永远不会被验证，不会上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/jwt-decoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/jwt-decoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/jwt-decoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/jwt-decoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/jwt-decoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/jwt-decoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/jwt-decoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/jwt-decoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/jwt-decoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JWT 解码器：在线解码 JSON Web Token | norito" />
+<meta property="og:description" content="在浏览器中解码 JWT 的 header 和 payload。查看过期时间以及标准声明的解释。签名永远不会被验证，不会上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/jwt-decoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JWT 解码器：在线解码 JSON Web Token | norito" />
+<meta name="twitter:description" content="在浏览器中解码 JWT 的 header 和 payload。查看过期时间以及标准声明的解释。签名永远不会被验证，不会上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JWT 解码器",
+  "url": "https://norito.in/zh/jwt-decoder.html",
+  "description": "在浏览器中解码 JWT 的 header 和 payload。查看过期时间以及标准声明的解释。签名永远不会被验证，不会上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JWT 解码器",
+      "item": "https://norito.in/zh/jwt-decoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JWT 解码器</p>
+    <h1>JWT 解码器</h1>
+    <p class="lede">
+      粘贴一个 JWT，查看解码后的 header 和 payload，并附带过期时间等标准声明的解释。不会上传任何内容，签名永远不会被验证或与密钥进行核对。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="jwtInput">JWT</label>
+          <textarea id="jwtInput" class="mono-output" rows="6" spellcheck="false" placeholder="粘贴一个 JWT，例如 eyJhbGciOi...">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
+        </div>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="meta-panel" id="claimsPanel" style="display:none;">
+          <p class="meta-summary">已识别的标准声明</p>
+          <div class="meta-list" id="claimsList"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Header</h3>
+          <pre class="code-output" id="headerOut"></pre>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Payload</h3>
+          <pre class="code-output" id="payloadOut"></pre>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>一个 JWT 由三个用点连接的 Base64URL 片段组成：header、payload、signature。工具按点进行拆分，然后通过把 URL 安全字母表映射回标准 Base64（<code>-</code> 变回 <code>+</code>，<code>_</code> 变回 <code>/</code>），恢复 JWT 省略的填充字符，运行 <code>atob()</code>，再用 <code>TextDecoder</code> 将字节解码为 UTF-8，从而解码前两个片段。每个片段随后都会经过 <code>JSON.parse</code> 处理并进行格式化输出。标准声明（<code>iss</code>、<code>sub</code>、<code>aud</code>、<code>exp</code>、<code>nbf</code>、<code>iat</code>、<code>jti</code>）会被赋予易读的标签，Unix 时间戳会转换成可读日期，<code>exp</code> 会与你的系统时钟进行比较，从而告诉你该令牌是否已过期。第三段——签名——则完全不会被解析。</p>
+      <p>这正是该工具严格遵循的区别：解码不是验证。任何 JWT 的 payload 都可以被任何人读取，它是编码过的，而不是加密的。要证明令牌真实有效，需要重新计算签名，这需要签名密钥（对于 HMAC）或颁发者的密钥（对于 RSA/ECDSA）。该工具刻意不提供「粘贴你的密钥」输入框：习惯性地把生产环境的签名密钥粘贴到网页中，是任何便利性都无法证明其合理的风险，而且验证本来就应该在你的服务器上完成。永远不要信任一个你没有在服务器端验证过的解码声明。</p>
+      <p>一切都在这个页面自身的 JavaScript 中运行，使用 <code>atob</code> 和文本解码 API。打开开发者工具的 Network 标签页，粘贴一个真实令牌观察一下：不会发出任何请求，令牌永远不会离开浏览器标签页。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+base64-encoder.html|Base64 编码 / 解码|手动解码单个 Base64 片段。
+timestamp-converter.html|时间戳转换器|将 Unix 时间戳转换为可读日期。
+json-formatter.html|JSON 格式化|格式化解码后的 payload，便于阅读。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-jwt-decoder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

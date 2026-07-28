@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Base64 Encode / Decode: Free Online Converter | norito</title>
+<meta name="description" content="Encode text to Base64 or decode Base64 back to text, right in your browser. Handles full UTF-8 correctly, with a URL-safe variant option." />
+<link rel="canonical" href="https://norito.in/base64-encoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/base64-encoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/base64-encoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Base64 Encode / Decode: Free Online Converter | norito" />
+<meta property="og:description" content="Encode text to Base64 or decode Base64 back to text, right in your browser. Handles full UTF-8 correctly, with a URL-safe variant option." />
+<meta property="og:url" content="https://norito.in/base64-encoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Base64 Encode / Decode: Free Online Converter | norito" />
+<meta name="twitter:description" content="Encode text to Base64 or decode Base64 back to text, right in your browser. Handles full UTF-8 correctly, with a URL-safe variant option." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Base64 Encode / Decode",
+  "url": "https://norito.in/base64-encoder.html",
+  "description": "Encode text to Base64 or decode Base64 back to text, right in your browser. Handles full UTF-8 correctly, with a URL-safe variant option.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Base64 used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Base64 turns arbitrary bytes into a string using only letters, digits, +, and /, safe to embed in JSON, URLs, or email where raw binary would break. It's not encryption: anyone can decode it back instantly, so it doesn't hide or protect anything on its own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the URL-safe Base64 variant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard Base64's + and / characters have special meaning in URLs. The URL-safe variant swaps them for - and _ and drops the trailing = padding, so the result can go straight into a query string or file name."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Base64 Encode / Decode",
+      "item": "https://norito.in/base64-encoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Base64 Encode / Decode</p>
+    <h1>Base64 Encode / Decode</h1>
+    <p class="lede">
+      Convert text to Base64 or decode it back, live as you type. Full UTF-8 support, so
+      accented letters, emoji, and non-Latin scripts round-trip correctly.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">Encode</button>
+          <button type="button" class="tab" data-value="decode">Decode</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Input</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Type or paste text to encode..."></textarea>
+        </div>
+
+        <div class="option-row">
+          <span class="option-label">URL-safe variant</span>
+          <label class="switch"><input type="checkbox" id="optUrlSafe" /><span class="track"></span></label>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">Output</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Swap
+          </button>
+          <button id="copyBtn">Copy output</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-purple" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg>
+            </div>
+            <div>
+              <h3>What Base64 is for</h3>
+              <p>Binary-safe text, not encryption.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Base64 turns arbitrary bytes into a string using only letters, digits, <code>+</code>,
+            and <code>/</code>, safe to embed in JSON, URLs, or email where raw binary would
+            break. It's not encryption: anyone can decode it back instantly, so it doesn't hide
+            or protect anything on its own.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">URL-safe variant</h3>
+          <p class="note" style="margin-top:0;">
+            Standard Base64's <code>+</code> and <code>/</code> characters have special meaning
+            in URLs. The URL-safe variant swaps them for <code>-</code> and <code>_</code> and
+            drops the trailing <code>=</code> padding, so the result can go straight into a
+            query string or file name.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        When you encode, your text is first converted to raw UTF-8 bytes with the browser's
+        <code>TextEncoder</code> API, and those bytes are fed to the built-in <code>btoa()</code>
+        function. That first step matters: <code>btoa()</code> on its own only handles Latin-1
+        characters and throws on anything else, so tools that skip it silently break on emoji,
+        accents, or any non-Latin script. Decoding runs the same pipeline in reverse:
+        <code>atob()</code> turns the Base64 back into bytes, and <code>TextDecoder</code>
+        reassembles them into text. The decoder is also deliberately forgiving: it trims
+        whitespace, accepts both the standard and URL-safe alphabets, and re-adds any stripped
+        <code>=</code> padding, so a segment copied straight out of a JWT or query string decodes
+        without hand-fixing.
+      </p>
+      <p>
+        Expect the output to be about 33% bigger than the input. Base64 uses 64 symbols, and 64
+        symbols can only carry 6 bits each, so every 3 bytes of input become 4 characters of
+        output. That's why inlining a 1 MB image as a Base64 data URI costs you roughly 1.37 MB
+        of HTML, and why Base64 is a transport format, not a compression format.
+      </p>
+      <p>
+        Both directions run in this page's own JavaScript on every keystroke, using nothing but
+        <code>btoa</code>, <code>atob</code>, and the text encoding APIs your browser already
+        ships. You can verify that: open DevTools, switch to the Network tab, and type away. No
+        request ever carries your text anywhere.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, and SHA-512 of any text.
+uuid-generator.html|UUID Generator|Bulk random UUID v4 identifiers.
+json-formatter.html|JSON Formatter|Format, validate, and minify JSON with a tree view.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-base64.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<script>
+  document.querySelectorAll("#mode-tabs .tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#mode-tabs .tab").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const modeSelect = document.getElementById("mode");
+      modeSelect.value = btn.dataset.value;
+      modeSelect.dispatchEvent(new Event("change"));
+    });
+  });
+</script>
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

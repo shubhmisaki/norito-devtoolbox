@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>ハッシュジェネレーター: MD5, SHA-1, SHA-256, SHA-512 | norito</title>
+<meta name="description" content="任意のテキストの MD5、SHA-1、SHA-256、SHA-512 ハッシュを、入力と同時にブラウザ内だけで生成します。アップロードは一切行われません。" />
+<link rel="canonical" href="https://norito.in/ja/hash-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/hash-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/hash-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/hash-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/hash-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/hash-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/hash-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/hash-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/hash-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ハッシュジェネレーター: MD5, SHA-1, SHA-256, SHA-512 | norito" />
+<meta property="og:description" content="任意のテキストの MD5、SHA-1、SHA-256、SHA-512 ハッシュを、入力と同時にブラウザ内だけで生成します。アップロードは一切行われません。" />
+<meta property="og:url" content="https://norito.in/ja/hash-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ハッシュジェネレーター: MD5, SHA-1, SHA-256, SHA-512 | norito" />
+<meta name="twitter:description" content="任意のテキストの MD5、SHA-1、SHA-256、SHA-512 ハッシュを、入力と同時にブラウザ内だけで生成します。アップロードは一切行われません。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ハッシュジェネレーター",
+  "url": "https://norito.in/ja/hash-generator.html",
+  "description": "任意のテキストの MD5、SHA-1、SHA-256、SHA-512 ハッシュを、入力と同時にブラウザ内だけで生成します。アップロードは一切行われません。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ハッシュジェネレーター",
+      "item": "https://norito.in/ja/hash-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / ハッシュジェネレーター</p>
+    <h1>ハッシュジェネレーター</h1>
+    <p class="lede">
+      任意のテキストの MD5、SHA-1、SHA-256、SHA-512 ハッシュを、Web Crypto API を使ってブラウザ内でリアルタイムに計算します。入力した内容はどこにも送信されません。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:20px;">
+          <label for="input">テキスト</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="ハッシュ化するテキストを入力または貼り付け..."></textarea>
+        </div>
+        <div id="hashList"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-coral" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
+            </div>
+            <div>
+              <h3>どれを使えばいい？</h3>
+              <p>何のためにハッシュを計算するかによります。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            SHA-256 はチェックサムや整合性確認における安全なデフォルトです。MD5 と SHA-1 はどちらも暗号学的に破られており（衝突の作成が現実的に可能）、転送中にファイルが壊れていないかの確認には使えますが、パスワード保存のようなセキュリティ上重要な用途には適していません。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">パスワードには使えません</h3>
+          <p class="note" style="margin-top:0;">
+            これらのアルゴリズムはいずれもパスワードの保存に使うべきではありません。意図的に高速に作られており、それはこの用途にとってまさに逆効果だからです。パスワードの保存には、bcrypt、scrypt、Argon2 のような、あえて低速に設計された専用アルゴリズムが必要です。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        SHA-1、SHA-256、SHA-512 はブラウザ組み込みの <code>crypto.subtle.digest</code> API で計算されます。テキストは <code>TextEncoder</code> で UTF-8 バイト列に変換され、ネイティブにダイジェストされ、結果は小文字の16進数としてフォーマットされます。MD5 だけは例外です。Web Crypto は（暗号学的に破られているため）意図的に MD5 を実装していないので、このツールは MD5 専用に RFC 1321 の小さな JavaScript 実装を同梱しています。4つとも入力のたびに再計算され、計算が終わるより速くタイプした場合は古い結果を破棄するガードが働きます。
+      </p>
+      <p>
+        ターミナルと突き合わせるときによくある落とし穴があります。このツールは入力したバイト列そのものをハッシュ化し、末尾に改行は付きません。<code>echo "hello" | sha256sum</code> は決して一致しません。<code>echo</code> は改行を付加するため、実際には "hello\n" をハッシュ化していることになるからです。代わりに <code>printf '%s' "hello" | sha256sum</code> を使えば、ダイジェストは正確に一致します。同じ落とし穴が、言語やツール間で「ハッシュが一致しない」問題の大半の原因になっています。
+      </p>
+      <p>
+        <code>crypto.subtle</code> はブラウザ内部で動作するため、ダイジェストの計算に何かをどこかへ送信する必要はありません。実際に確認できます。開発者ツールのネットワークタブを開き、入力欄にパスワードや API キーを入力してみてください。リクエストは一切発生せず、テキストはそのタブの中にとどまります。
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+/base64-encoder.html|Base64 エンコード / デコード|テキストを Base64 との間で変換、UTF-8 セーフ。
+/uuid-generator.html|UUID ジェネレーター|ランダムな UUID v4 識別子を一括生成。
+password-generator.html|パスワードジェネレーター|安全なランダムパスワード、または覚えやすいフレーズ。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-hash.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

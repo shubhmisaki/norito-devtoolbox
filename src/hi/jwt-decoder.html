@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JWT डिकोडर: JSON वेब टोकन ऑनलाइन डिकोड करें | norito</title>
+<meta name="description" content="अपने ब्राउज़र में ही JWT का header और payload डिकोड करें। एक्सपायरी और स्टैंडर्ड क्लेम्स को समझाया गया देखें। सिग्नेचर कभी वेरिफ़ाई नहीं होता, कुछ भी अपलोड नहीं होता।" />
+<link rel="canonical" href="https://norito.in/hi/jwt-decoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/jwt-decoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/jwt-decoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/jwt-decoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/jwt-decoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/jwt-decoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/jwt-decoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/jwt-decoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/jwt-decoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JWT डिकोडर: JSON वेब टोकन ऑनलाइन डिकोड करें | norito" />
+<meta property="og:description" content="अपने ब्राउज़र में ही JWT का header और payload डिकोड करें। एक्सपायरी और स्टैंडर्ड क्लेम्स को समझाया गया देखें। सिग्नेचर कभी वेरिफ़ाई नहीं होता, कुछ भी अपलोड नहीं होता।" />
+<meta property="og:url" content="https://norito.in/hi/jwt-decoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JWT डिकोडर: JSON वेब टोकन ऑनलाइन डिकोड करें | norito" />
+<meta name="twitter:description" content="अपने ब्राउज़र में ही JWT का header और payload डिकोड करें। एक्सपायरी और स्टैंडर्ड क्लेम्स को समझाया गया देखें। सिग्नेचर कभी वेरिफ़ाई नहीं होता, कुछ भी अपलोड नहीं होता।" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JWT डिकोडर",
+  "url": "https://norito.in/hi/jwt-decoder.html",
+  "description": "अपने ब्राउज़र में ही JWT का header और payload डिकोड करें। एक्सपायरी और स्टैंडर्ड क्लेम्स को समझाया गया देखें। सिग्नेचर कभी वेरिफ़ाई नहीं होता, कुछ भी अपलोड नहीं होता।",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/hi/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/hi/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JWT डिकोडर",
+      "item": "https://norito.in/hi/jwt-decoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JWT डिकोडर</p>
+    <h1>JWT डिकोडर</h1>
+    <p class="lede">
+      डिकोड किया गया header और payload देखने के लिए एक JWT पेस्ट करें, एक्सपायरी जैसे स्टैंडर्ड क्लेम्स को समझाया गया। कुछ भी अपलोड नहीं होता, सिग्नेचर कभी वेरिफ़ाई या किसी सीक्रेट के ख़िलाफ़ चेक नहीं होते।
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="jwtInput">JWT</label>
+          <textarea id="jwtInput" class="mono-output" rows="6" spellcheck="false" placeholder="एक JWT पेस्ट करें, जैसे eyJhbGciOi...">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
+        </div>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="meta-panel" id="claimsPanel" style="display:none;">
+          <p class="meta-summary">पहचाने गए स्टैंडर्ड क्लेम्स</p>
+          <div class="meta-list" id="claimsList"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Header</h3>
+          <pre class="code-output" id="headerOut"></pre>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Payload</h3>
+          <pre class="code-output" id="payloadOut"></pre>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>एक JWT डॉट्स से जुड़े तीन Base64URL सेगमेंट होते हैं: header, payload, signature। टूल डॉट्स पर स्प्लिट करता है, फिर पहले दो सेगमेंट्स को URL-सेफ़ अल्फ़ाबेट को वापस स्टैंडर्ड Base64 में मैप करके डिकोड करता है (<code>-</code> को <code>+</code>, <code>_</code> को <code>/</code>), JWT द्वारा छोड़ी गई पैडिंग को रीस्टोर करते हुए, <code>atob()</code> चलाते हुए, और <code>TextDecoder</code> से बाइट्स को UTF-8 के रूप में डिकोड करते हुए। हर सेगमेंट को फिर <code>JSON.parse</code> किया जाता है और प्रेटी-प्रिंट किया जाता है। स्टैंडर्ड क्लेम्स (<code>iss</code>, <code>sub</code>, <code>aud</code>, <code>exp</code>, <code>nbf</code>, <code>iat</code>, <code>jti</code>) को ह्यूमन लेबल्स मिलते हैं, यूनिक्स टाइमस्टैंप्स पढ़ने लायक तारीख़ों में बदल जाते हैं, और <code>exp</code> की तुलना आपकी घड़ी से की जाती है यह बताने के लिए कि टोकन एक्सपायर हो चुका है या नहीं। तीसरा सेगमेंट, सिग्नेचर, कभी पार्स ही नहीं होता।</p>
+      <p>यही वह भेद है जिस पर यह टूल सख़्त है: डिकोड करना वेरिफ़ाई करना नहीं है। किसी भी JWT का payload किसी के भी द्वारा पढ़ा जा सकता है, यह एनकोडेड है, एन्क्रिप्टेड नहीं। टोकन को असली साबित करने का मतलब है सिग्नेचर को दोबारा कैलकुलेट करना, जिसके लिए साइनिंग सीक्रेट (HMAC के लिए) या इशूअर की की (RSA/ECDSA के लिए) चाहिए होती है। यह टूल जानबूझकर "अपना सीक्रेट पेस्ट करें" बॉक्स ऑफ़र नहीं करता: प्रोडक्शन साइनिंग सीक्रेट्स को वेब पेजेज़ में पेस्ट करने की आदत डालना एक ऐसा रिस्क है जिसे कोई भी सुविधा जस्टिफ़ाई नहीं कर सकती, और वेरिफ़िकेशन वैसे भी आपके सर्वर पर होनी चाहिए। किसी ऐसे डिकोड किए गए क्लेम पर कभी भरोसा न करें जिसे आपने सर्वर-साइड वेरिफ़ाई न किया हो।</p>
+      <p>यह सब इस पेज के JavaScript में <code>atob</code> और टेक्स्ट डिकोडिंग APIs इस्तेमाल करते हुए चलता है। डेवटूल्स का Network टैब खोलकर एक असली टोकन पेस्ट करें और देखें: कोई रिक्वेस्ट नहीं होती, टोकन कभी ब्राउज़र टैब से बाहर नहीं जाता।</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+base64-encoder.html|Base64 एनकोड / डिकोड|किसी सिंगल Base64 सेगमेंट को मैनुअली डिकोड करें।
+timestamp-converter.html|टाइमस्टैंप कन्वर्टर|किसी Unix टाइमस्टैंप को पढ़ने लायक तारीख़ में बदलें।
+json-formatter.html|JSON फ़ॉर्मैटर|पढ़ने में आसानी के लिए डिकोड किए गए payload को फ़ॉर्मैट करें।
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-jwt-decoder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

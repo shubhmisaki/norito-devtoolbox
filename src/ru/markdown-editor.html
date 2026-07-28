@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Редактор Markdown с живым предпросмотром | norito</title>
+<meta name="description" content="Пишите markdown с живым предпросмотром рядом. Панель форматирования, синхронная прокрутка, экспорт в Markdown или HTML. Работает полностью в вашем браузере." />
+<link rel="canonical" href="https://norito.in/ru/markdown-editor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/markdown-editor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/markdown-editor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/markdown-editor.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/markdown-editor.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/markdown-editor.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/markdown-editor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/markdown-editor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Редактор Markdown с живым предпросмотром | norito" />
+<meta property="og:description" content="Пишите markdown с живым предпросмотром рядом. Панель форматирования, синхронная прокрутка, экспорт в Markdown или HTML. Работает полностью в вашем браузере." />
+<meta property="og:url" content="https://norito.in/ru/markdown-editor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Редактор Markdown с живым предпросмотром | norito" />
+<meta name="twitter:description" content="Пишите markdown с живым предпросмотром рядом. Панель форматирования, синхронная прокрутка, экспорт в Markdown или HTML. Работает полностью в вашем браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Редактор Markdown",
+  "url": "https://norito.in/ru/markdown-editor.html",
+  "description": "Пишите markdown с живым предпросмотром рядом. Панель форматирования, синхронная прокрутка, экспорт в Markdown или HTML. Работает полностью в вашем браузере.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Редактор Markdown",
+      "item": "https://norito.in/ru/markdown-editor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Редактор Markdown</p>
+    <h1>Редактор Markdown</h1>
+    <p class="lede">
+      Пишите слева, смотрите отрендеренный результат справа. Синхронная прокрутка, панель форматирования и экспорт в Markdown или HTML по завершении.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+        <div class="md-toolbar" id="mdToolbar" style="border:none; padding:0; margin:0;">
+          <button type="button" class="md-toolbar-icon" id="undoBtn" data-action="undo" title="Отменить" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+          <button type="button" class="md-toolbar-icon" id="redoBtn" data-action="redo" title="Повторить" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg></button>
+          <span class="md-toolbar-divider" aria-hidden="true"></span>
+          <button type="button" data-action="h1" title="Заголовок 1">H1</button>
+          <button type="button" data-action="h2" title="Заголовок 2">H2</button>
+          <button type="button" data-action="bold" title="Жирный"><strong>B</strong></button>
+          <button type="button" data-action="italic" title="Курсив"><em>I</em></button>
+          <button type="button" data-action="strike" title="Зачёркнутый"><s>S</s></button>
+          <button type="button" data-action="code" title="Встроенный код">код</button>
+          <button type="button" data-action="codeblock" title="Блок кода">{ }</button>
+          <button type="button" data-action="link" title="Ссылка">ссылка</button>
+          <button type="button" data-action="quote" title="Цитата">"</button>
+          <button type="button" data-action="ul" title="Маркированный список">•</button>
+          <button type="button" data-action="ol" title="Нумерованный список">1.</button>
+          <button type="button" data-action="table" title="Таблица">▦</button>
+        </div>
+        <div class="tabs" id="view-tabs">
+          <button type="button" class="tab active" data-value="split">Раздельно</button>
+          <button type="button" class="tab" data-value="editor">Редактор</button>
+          <button type="button" class="tab" data-value="preview">Предпросмотр</button>
+        </div>
+      </div>
+
+      <div class="two-col" style="gap:16px;">
+        <div class="md-pane" id="editorPane">
+          <textarea id="mdEditor" class="md-source" spellcheck="false"># Bienvenido al editor Markdown de norito
+
+Escribe a la izquierda y mira cómo se renderiza a la derecha, **en vivo**, sin necesidad de botón guardar.
+
+## Funciones
+
+- Vista previa de doble panel que se desplaza en sincronía
+- Una pequeña barra de herramientas de formato arriba
+- Exporta como `.md` o `.html` cuando termines
+
+> Всё происходит в вашем браузере. Ничего из того, что вы здесь напишете, никуда не загружается.
+
+```
+console.log("даже блоки кода работают");
+```
+
+| Функция | Статус |
+| --- | --- |
+| Предпросмотр в реальном времени | готово |
+| Экспорт | готово |
+</textarea>
+        </div>
+        <div class="md-pane" id="previewPane">
+          <div id="mdPreview" class="md-preview"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+        <span class="note" id="mdCharCount" style="margin:0;">0 символов</span>
+        <div style="display:flex; gap:10px;">
+          <button id="downloadMdBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Скачать .md
+</button>
+          <button id="downloadHtmlBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Скачать .html
+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Предпросмотр рендерится библиотекой marked — open-source парсером Markdown, встроенным прямо в
+        этот сайт (без какого-либо CDN), настроенным на GitHub Flavored Markdown с включёнными переносами
+        строк. Он заново разбирает весь документ при каждом нажатии клавиши; звучит расточительно, но
+        marked компилируется в один быстрый проход, и даже документы размером с книгу рендерятся за
+        считаные миллисекунды. Редактор также ведёт собственную историю отмены на до 100 снимков, потому
+        что кнопки панели инструментов программно меняют значение textarea, что незаметно обходит нативный
+        стек отмены браузера. Последовательный набор текста объединяется в один шаг после короткой паузы,
+        поэтому Ctrl+Z откатывает по правкам, а не по нажатиям клавиш.
+      </p>
+      <p>
+        Синхронизация прокрутки между панелями пропорциональна: позиция прокрутки каждой панели
+        переводится в соотношение от 0 до 1 и отражается на другой стороне. Заметка о переносимости: при
+        включённых переносах строк одиночный перенос строки становится настоящим разрывом строки — так же,
+        как GitHub рендерит комментарии. Строгие рендереры CommonMark, включая многие генераторы
+        статических сайтов, вместо этого объединят такие строки в один абзац. Если ваш Markdown
+        направляется куда-то со строгими правилами, завершайте строку двумя пробелами или оставляйте
+        пустую строку, чтобы сохранить перенос. Экспорт в .html — это ровно разметка панели предпросмотра,
+        обёрнутая в минимальный документ, так что вы видите именно то, что экспортируется.
+      </p>
+      <p>
+        Всё, включая сам парсер, загружается вместе со страницей и работает локально. Откройте инструменты
+        разработчика и понаблюдайте за вкладкой «Сеть» во время набора текста: ни один запрос не передаёт
+        ваш текст, а редактор продолжает работать даже офлайн.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|Форматирование JSON|Форматирует, проверяет и минифицирует JSON с древовидным представлением.
+limited-text-generator.html|Генератор текста заданной длины|Текст-заполнитель с точным числом символов.
+test-file-generator.html|Генератор тестовых файлов|Файлы-заполнители точного размера или расширения.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/vendor/marked.umd.js"></script>
+<script src="../js/app-markdown.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

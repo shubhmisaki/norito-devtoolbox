@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JPG to PNG Converter, Free & Online | norito</title>
+<meta name="description" content="Convert a JPG or JPEG photo to PNG, right in your browser. Lossless output, nothing is uploaded to a server." />
+<link rel="canonical" href="https://norito.in/jpg-to-png-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/jpg-to-png-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/jpg-to-png-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JPG to PNG Converter, Free & Online | norito" />
+<meta property="og:description" content="Convert a JPG or JPEG photo to PNG, right in your browser. Lossless output, nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/jpg-to-png-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JPG to PNG Converter, Free & Online | norito" />
+<meta name="twitter:description" content="Convert a JPG or JPEG photo to PNG, right in your browser. Lossless output, nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JPG to PNG Converter",
+  "url": "https://norito.in/jpg-to-png-converter.html",
+  "description": "Convert a JPG or JPEG photo to PNG, right in your browser. Lossless output, nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why convert JPG to PNG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PNG is lossless, so it won't introduce any new compression artifacts, and it supports transparency, which JPG can't. Common reasons: preparing a JPG for further editing, or a tool/upload form that only accepts PNG." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will converting to PNG make the file bigger?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes. PNG is lossless so it typically produces a larger file than the JPG it came from, especially for photos. If file size matters more than format, keep it as JPG or use WebP instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this upload my photo anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The conversion happens entirely in your browser using the canvas API. Nothing about your photo is sent anywhere." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JPG to PNG Converter",
+      "item": "https://norito.in/jpg-to-png-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JPG to PNG Converter</p>
+    <h1>JPG to PNG Converter</h1>
+    <p class="lede">
+      Convert a JPG or JPEG photo to PNG in one click. The target format is already set to PNG, just drop in a photo. Lossless output, everything happens on your device.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose an image</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Stays on your device, nothing is uploaded. Select multiple to batch convert.</p>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="format">Convert to</label>
+          <select id="format" data-lock="true">
+            <option value="jpeg">JPEG</option>
+            <option value="png" selected>PNG</option>
+            <option value="webp">WebP</option>
+          </select>
+        </div>
+        <div class="field-row" id="qualityRow">
+          <div class="field" style="flex:1;">
+            <label for="quality">Quality: <span id="qualityValue">92%</span></label>
+            <input type="range" id="quality" class="slider" min="10" max="100" value="92" />
+          </div>
+        </div>
+
+        <button id="convertBtn" disabled style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+          Convert image
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchConvertBtn">Convert all</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>Download all as .zip</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Converted preview" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your converted image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          PNG is lossless (larger files, supports transparency). JPEG and WebP are lossy with a
+          quality slider (smaller files, no transparency for JPEG). WebP usually beats JPEG at the
+          same visual quality, but JPEG has the widest compatibility.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The browser decodes your JPG into raw pixels, those pixels are drawn onto a canvas at the
+        image's full natural width and height, and <code>canvas.toBlob("image/png")</code> writes
+        the result as a PNG. There's no quality slider for this direction because PNG's DEFLATE
+        compression is lossless: every pixel the decoder produced is stored exactly. The file
+        itself never leaves your machine; it's referenced through a local object URL, not an
+        upload.
+      </p>
+      <p>
+        Two things to keep expectations straight. First, converting to PNG can't undo JPEG
+        compression: blockiness and ringing that already exist in the JPG are preserved
+        pixel-perfectly, so PNG is the right target when you're going to edit or re-save the
+        image repeatedly from here on, not a way to improve it. Second, photographic images are
+        full of sensor noise that DEFLATE can't compress well, which is why the PNG is routinely
+        several times larger than the JPG it came from. That's normal, not a bug.
+      </p>
+      <p>
+        The canvas round-trip also rewrites the file from scratch, so EXIF data (camera info,
+        GPS position) is dropped from the output. Orientation still looks right, because modern
+        browsers bake the EXIF rotation into the pixels during decoding. And since the whole
+        pipeline is browser APIs, you can open DevTools' Network tab while converting and watch
+        exactly zero requests go out with your photo.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|Compress Image to Size|Hit an exact file size target after converting.
+resize-image.html|Resize Image|Change dimensions before or after converting format.
+remove-metadata.html|Remove Metadata|Strip EXIF and location data from a photo.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why convert JPG to PNG?</summary>
+        <p>PNG is lossless, so it won't introduce any new compression artifacts, and it supports transparency, which JPG can't. Common reasons: preparing a JPG for further editing, or a tool/upload form that only accepts PNG.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will converting to PNG make the file bigger?</summary>
+        <p>Usually, yes. PNG is lossless so it typically produces a larger file than the JPG it came from, especially for photos. If file size matters more than format, keep it as JPG or use WebP instead.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this upload my photo anywhere?</summary>
+        <p>No. The conversion happens entirely in your browser using the canvas API. Nothing about your photo is sent anywhere.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-image-converter.js"></script>
+<script src="js/prefill.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

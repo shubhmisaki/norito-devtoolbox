@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Recortar Imagen Online: Arrastra para Recortar | norito</title>
+<meta name="description" content="Recorta una imagen con un cuadro arrastrable, en tu navegador. Formato libre o proporciones fijas como 1:1, 4:3, 16:9. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/crop-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/crop-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/crop-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/crop-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/crop-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/crop-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/crop-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/crop-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/crop-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Recortar Imagen Online: Arrastra para Recortar | norito" />
+<meta property="og:description" content="Recorta una imagen con un cuadro arrastrable, en tu navegador. Formato libre o proporciones fijas como 1:1, 4:3, 16:9. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/crop-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Recortar Imagen Online: Arrastra para Recortar | norito" />
+<meta name="twitter:description" content="Recorta una imagen con un cuadro arrastrable, en tu navegador. Formato libre o proporciones fijas como 1:1, 4:3, 16:9. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Recortar Imagen",
+  "url": "https://norito.in/es/crop-image.html",
+  "description": "Recorta una imagen con un cuadro arrastrable, en tu navegador. Formato libre o proporciones fijas como 1:1, 4:3, 16:9. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Recortar Imagen",
+      "item": "https://norito.in/es/crop-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Recortar Imagen</p>
+    <h1>Recortar Imagen</h1>
+    <p class="lede">
+      Arrastra un cuadro sobre tu imagen para recortarla. Formato libre o fijado a una proporción común, el recorte ocurre a resolución completa.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          <p><strong>Haz clic para elegir una imagen</strong>, o arrástrala aquí</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Se queda en tu dispositivo, no se sube nada.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="aspect">Proporción</label>
+          <select id="aspect">
+            <option value="free" selected>Libre</option>
+            <option value="1:1">Cuadrado (1:1)</option>
+            <option value="4:3">4:3</option>
+            <option value="16:9">16:9</option>
+            <option value="9:16">9:16 (vertical)</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="Vista previa de recorte" />
+            <div class="crop-box" id="cropBox">
+              <div class="crop-handle"></div>
+            </div>
+          </div>
+          <p class="note" style="margin-top:10px;">Arrastra dentro del cuadro para moverlo, arrastra el controlador de la esquina para redimensionarlo.</p>
+        </div>
+
+        <button id="cropBtn" disabled style="margin-top:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          Recortar y descargar
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Resultado recortado" />
+          <p class="note" id="previewHint" style="margin-top:0;">Tu imagen recortada aparecerá aquí una vez generada.</p>
+        </div>
+        <p class="note">
+          Elige primero una proporción si necesitas una (como 1:1 para una foto de perfil), luego arrastra el cuadro a su posición. El recorte ocurre a la resolución completa de tu imagen, no al tamaño de visualización de la vista previa, así que la salida se mantiene nítida.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Tu archivo se carga a través de <code>URL.createObjectURL</code>, una referencia local en memoria, nunca una subida, y se muestra reducido para caber en el editor. El cuadro de recorte que arrastras se rastrea en píxeles de pantalla, pero en el momento en que pulsas recortar, esas coordenadas se multiplican por la proporción entre el tamaño natural de la imagen y su tamaño mostrado. Así que si tu foto de 4000px se muestra a 800px de ancho, un cuadro de 200px de ancho en pantalla selecciona una región de 1000px de ancho de la imagen real. El rectángulo seleccionado se copia entonces con la forma de rectángulo de origen de <code>drawImage</code> de la API canvas, que extrae exactamente esos píxeles del original a resolución completa.</p>
+      <p>El formato de salida sigue al de entrada: PNG entra, PNG sale (sin pérdida, idéntico píxel a píxel a la región de origen), cualquier otra cosa se recodifica como JPEG al 92% de calidad vía <code>canvas.toBlob</code>. Esa distinción vale la pena conocer: recortar un JPEG significa una generación extra de compresión JPEG, normalmente invisible al 92% pero real. Si necesitas un recorte exacto a nivel de píxel, dale a la herramienta un PNG.</p>
+      <p>Todo lo anterior ocurre en el propio decodificador de imágenes y canvas de tu navegador. Abre la pestaña Red de las DevTools antes de soltar una foto: ninguna petición transporta la imagen jamás, lo que también significa que no hay límite de tamaño del lado del servidor ni cola de espera.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+resize-image.html|Redimensionar imagen|Cambia las dimensiones generales en vez de recortar una región.
+compress-image.html|Comprimir imagen|Consigue un tamaño de archivo exacto después de recortar.
+remove-background.html|Quitar fondo|Recorta a una persona de una foto, directamente en tu navegador.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-crop-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

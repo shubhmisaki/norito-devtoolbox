@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>進数変換ツール：2進数、8進数、10進数、16進数 | norito</title>
+<meta name="description" content="2進数、8進数、10進数、16進数の間でリアルタイムに数値を変換。2〜36の任意のカスタム進数にも対応。負の数や任意の大きさの数値も扱えます。" />
+<link rel="canonical" href="https://norito.in/ja/number-base-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/number-base-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/number-base-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/number-base-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/number-base-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/number-base-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/number-base-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/number-base-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/number-base-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="進数変換ツール：2進数、8進数、10進数、16進数 | norito" />
+<meta property="og:description" content="2進数、8進数、10進数、16進数の間でリアルタイムに数値を変換。2〜36の任意のカスタム進数にも対応。負の数や任意の大きさの数値も扱えます。" />
+<meta property="og:url" content="https://norito.in/ja/number-base-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="進数変換ツール：2進数、8進数、10進数、16進数 | norito" />
+<meta name="twitter:description" content="2進数、8進数、10進数、16進数の間でリアルタイムに数値を変換。2〜36の任意のカスタム進数にも対応。負の数や任意の大きさの数値も扱えます。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "進数変換ツール",
+  "url": "https://norito.in/ja/number-base-converter.html",
+  "description": "2進数、8進数、10進数、16進数の間でリアルタイムに数値を変換。2〜36の任意のカスタム進数にも対応。負の数や任意の大きさの数値も扱えます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "進数変換ツール",
+      "item": "https://norito.in/ja/number-base-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 進数変換ツール</p>
+    <h1>進数変換ツール</h1>
+    <p class="lede">
+      2進数、8進数、10進数、16進数の間で数値をリアルタイムに変換、または2〜36の任意の2つの進数間で変換します。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="baseDecimal">10進数（基数10）</label>
+          <input type="text" id="baseDecimal" class="mono-area" placeholder="255" />
+        </div>
+        <div class="field">
+          <label for="baseHex">16進数（基数16）</label>
+          <input type="text" id="baseHex" class="mono-area" placeholder="ff" />
+        </div>
+        <div class="field">
+          <label for="baseBinary">2進数（基数2）</label>
+          <input type="text" id="baseBinary" class="mono-area" placeholder="11111111" />
+        </div>
+        <div class="field">
+          <label for="baseOctal">8進数（基数8）</label>
+          <input type="text" id="baseOctal" class="mono-area" placeholder="377" />
+        </div>
+      </div>
+      <p class="note" style="margin-top:0;">いずれかのフィールドに入力すると、残りの3つがリアルタイムに更新されます。負の数や任意の大きさの整数に対応しています。</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0;">カスタム進数変換</h3>
+      <p class="note" style="margin-top:0; margin-bottom:16px;">2〜36の任意の2つの進数間で変換します。</p>
+      <div class="field" style="margin-bottom:16px;">
+        <label for="customValue">値</label>
+        <input type="text" id="customValue" class="mono-area" placeholder="1a2b3c" value="1a2b3c" />
+      </div>
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="customFrom">変換元の基数</label>
+          <select id="customFrom">
+            <option value="2">基数 2</option>
+            <option value="3">基数 3</option>
+            <option value="4">基数 4</option>
+            <option value="5">基数 5</option>
+            <option value="6">基数 6</option>
+            <option value="7">基数 7</option>
+            <option value="8">基数 8</option>
+            <option value="9">基数 9</option>
+            <option value="10" selected>基数 10</option>
+            <option value="11">基数 11</option>
+            <option value="12">基数 12</option>
+            <option value="13">基数 13</option>
+            <option value="14">基数 14</option>
+            <option value="15">基数 15</option>
+            <option value="16">基数 16</option>
+            <option value="17">基数 17</option>
+            <option value="18">基数 18</option>
+            <option value="19">基数 19</option>
+            <option value="20">基数 20</option>
+            <option value="21">基数 21</option>
+            <option value="22">基数 22</option>
+            <option value="23">基数 23</option>
+            <option value="24">基数 24</option>
+            <option value="25">基数 25</option>
+            <option value="26">基数 26</option>
+            <option value="27">基数 27</option>
+            <option value="28">基数 28</option>
+            <option value="29">基数 29</option>
+            <option value="30">基数 30</option>
+            <option value="31">基数 31</option>
+            <option value="32">基数 32</option>
+            <option value="33">基数 33</option>
+            <option value="34">基数 34</option>
+            <option value="35">基数 35</option>
+            <option value="36">基数 36</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customTo">変換先の基数</label>
+          <select id="customTo">
+            <option value="2">基数 2</option>
+            <option value="3">基数 3</option>
+            <option value="4">基数 4</option>
+            <option value="5">基数 5</option>
+            <option value="6">基数 6</option>
+            <option value="7">基数 7</option>
+            <option value="8">基数 8</option>
+            <option value="9">基数 9</option>
+            <option value="10">基数 10</option>
+            <option value="11">基数 11</option>
+            <option value="12">基数 12</option>
+            <option value="13">基数 13</option>
+            <option value="14">基数 14</option>
+            <option value="15">基数 15</option>
+            <option value="16" selected>基数 16</option>
+            <option value="17">基数 17</option>
+            <option value="18">基数 18</option>
+            <option value="19">基数 19</option>
+            <option value="20">基数 20</option>
+            <option value="21">基数 21</option>
+            <option value="22">基数 22</option>
+            <option value="23">基数 23</option>
+            <option value="24">基数 24</option>
+            <option value="25">基数 25</option>
+            <option value="26">基数 26</option>
+            <option value="27">基数 27</option>
+            <option value="28">基数 28</option>
+            <option value="29">基数 29</option>
+            <option value="30">基数 30</option>
+            <option value="31">基数 31</option>
+            <option value="32">基数 32</option>
+            <option value="33">基数 33</option>
+            <option value="34">基数 34</option>
+            <option value="35">基数 35</option>
+            <option value="36">基数 36</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box error" id="customError" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+      <div class="field">
+        <label for="customOutput">結果</label>
+        <input type="text" id="customOutput" class="mono-area" readonly />
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>入力した各値は、ブラウザに組み込まれた任意精度整数型であるJavaScriptの<code>BigInt</code>として解析されます。解析は入力を1桁ずつ処理し、累計値を基数倍しながら各桁の値を加算します。逆変換は目標の基数で繰り返し除算し、余りを収集します。9より大きい桁は文字を使用するため、基数36では0-9の後にa-zが続きます。負の数も扱えます。解析前に先頭のマイナス記号が取り除かれ、最後に再び付加されます。</p>
+      <p>知っておく価値があるのはBigInt部分です。通常のJavaScript数値の上に構築された変換ツールは、9,007,199,254,740,991（2^53 - 1）を超える値を警告なしに静かに壊してしまいます。これは浮動小数点がすべての整数を正確に表現できなくなる境界だからです。<code>ffffffffffffffff</code>のような16桁の16進値をそうしたツールに貼り付けると、警告なしに丸められた誤った答えが返ってきます。ここでの計算はどんな桁数でも正確です。100桁の10進数も正しく2進数に変換されます。ただ、桁数が多くなるだけです。</p>
+      <p>各フィールドは入力中にそれぞれの基数に対して検証されるため、8進数ボックスに9を入力したり16進数にgを入力したりすると、無意味な結果ではなくエラーが表示されます。他の3つのフィールドは、編集したフィールドに基づいてリアルタイムに更新されます。これらはすべてタブ内で行われます。DevToolsのNetworkパネルを確認すると、入力中にページが一切リクエストを送信していないことがわかります。そのため、変換する数値があなたのマシンから外に出ることはありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+hash-generator.html|ハッシュジェネレーター|MD5、SHA-1、SHA-256、SHA-512。
+url-encoder-decoder.html|URLエンコード/デコードツール|URLをパーセントエンコードまたはデコード。
+timestamp-converter.html|タイムスタンプ変換ツール|Unix時間と日付を双方向に変換。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-base-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

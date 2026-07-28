@@ -109,7 +109,7 @@
     return async () => {
       if (!el.value) return;
       try {
-        await navigator.clipboard.writeText(el.value);
+        await copyToClipboard(el.value);
       } catch (e) {
         el.select();
         document.execCommand("copy");

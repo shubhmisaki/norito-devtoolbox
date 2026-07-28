@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>テキスト差分チェッカー：2つのテキストをオンライン比較 | norito</title>
+<meta name="description" content="2つのテキストブロックを行単位で比較し、変更点を正確に表示。空白や大文字小文字を無視、差分をコピー。すべてブラウザ内で完結します。" />
+<link rel="canonical" href="https://norito.in/ja/text-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/text-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/text-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/text-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/text-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/text-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/text-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/text-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/text-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="テキスト差分チェッカー：2つのテキストをオンライン比較 | norito" />
+<meta property="og:description" content="2つのテキストブロックを行単位で比較し、変更点を正確に表示。空白や大文字小文字を無視、差分をコピー。すべてブラウザ内で完結します。" />
+<meta property="og:url" content="https://norito.in/ja/text-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="テキスト差分チェッカー：2つのテキストをオンライン比較 | norito" />
+<meta name="twitter:description" content="2つのテキストブロックを行単位で比較し、変更点を正確に表示。空白や大文字小文字を無視、差分をコピー。すべてブラウザ内で完結します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "テキスト差分チェッカー",
+  "url": "https://norito.in/ja/text-diff.html",
+  "description": "2つのテキストブロックを行単位で比較し、変更点を正確に表示。空白や大文字小文字を無視、差分をコピー。すべてブラウザ内で完結します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "テキスト差分チェッカー",
+      "item": "https://norito.in/ja/text-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / テキスト差分チェッカー</p>
+    <h1>テキスト差分チェッカー</h1>
+    <p class="lede">
+      2つのテキストブロックを行単位で比較し、追加、削除、変更なしの箇所を正確に確認できます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreWhitespace" />
+          <span>空白を無視</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreCase" />
+          <span>大文字小文字を無視</span>
+        </label>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="inputA">変更前</label>
+          <textarea id="inputA" class="mono-area" rows="10" placeholder="変更前のテキストを貼り付け..."></textarea>
+        </div>
+        <div class="field">
+          <label for="inputB">変更後</label>
+          <textarea id="inputB" class="mono-area" rows="10" placeholder="変更後のテキストを貼り付け..."></textarea>
+        </div>
+      </div>
+
+      <div id="tooLarge" class="result-box error" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body">どちらかのテキストが4,000行を超えています。より小さいセクションで比較してください。</div>
+      </div>
+
+      <div id="emptyState" class="note" style="display:block;">両方のボックスにテキストを貼り付けると、行単位の比較が表示されます。</div>
+
+      <div id="diffStatsRow" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+        <div class="diff-stats" id="statsBox" style="display:none;"></div>
+      </div>
+      <div class="diff-view" id="diffOutput" style="display:none;"></div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn" class="secondary">差分をテキストとしてコピー</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>この比較は最長共通部分列（LCS）アルゴリズムに基づく行レベルの差分計算で、<code>git diff</code>の背後にあるロジックと同じ系統のものです。両方のテキストは行に分割され、動的計画法のテーブルによって両バージョンが順序を保って共有する最大の行の集合が求められます。このテーブルを逆にたどることで、表示される操作が得られます。左側のテキストにしか存在しない行は削除として赤で、右側にしか存在しない行は追加として緑でマークされ、共通の行はニュートラルなまま、それぞれ元の行番号を保持します。</p>
+      <p>行レベルでの差分表示は意図的なトレードオフです。文字レベルの差分は行内の1単語の変更を示せますが、実際のドキュメントでは無数の小さな断片に分解されてしまい、単に旧行の削除と新行の追加を見るよりもかえって読みづらくなります。行レベルの出力は読みやすさを保ち、コードレビューやバージョン管理が変更を提示する方法にそのまま対応します。2つのチェックボックスは「等しい」の意味を調整します。空白を無視は比較前に連続する空白をまとめ行末をトリムします（再フォーマットされたコードに最適）。大文字小文字を無視は両側を小文字に変換します。表示される行はいずれの場合も元の書式を保持します。</p>
+      <p>動的計画法テーブルは（Aの行数）×（Bの行数）に比例したメモリと時間を要するため、このツールは各側の入力を4,000行に制限しています。それを超えるとテーブルだけで数千万セルになり、タブがフリーズしてしまいます。制限内であれば、すべての処理はブラウザ内で同期的に実行されます。両方のテキストはタブ内にのみ存在し、入力してもリクエストは一切発生しません（DevToolsのNetworkパネルで確認できます）。機密性の高い下書きや設定がサーバーに触れることは一切ありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-diff.html|JSON差分ツール|2つのJSONドキュメントを比較。
+remove-duplicate-lines.html|重複行の削除|並べ替えの前後でリストの重複を削除。
+sort-lines.html|行の並べ替え|テキストの行をアルファベット順または数値順に並べ替え。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-text-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

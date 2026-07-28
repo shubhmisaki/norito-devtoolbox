@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Robots.txt 生成器 | norito</title>
+<meta name="description" content="在浏览器中生成带有 allow/disallow 规则和站点地图引用的 robots.txt 文件，完成后即可下载。" />
+<link rel="canonical" href="https://norito.in/zh/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/seo/robots-txt-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/seo/robots-txt-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Robots.txt 生成器 | norito" />
+<meta property="og:description" content="在浏览器中生成带有 allow/disallow 规则和站点地图引用的 robots.txt 文件，完成后即可下载。" />
+<meta property="og:url" content="https://norito.in/zh/seo/robots-txt-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Robots.txt 生成器 | norito" />
+<meta name="twitter:description" content="在浏览器中生成带有 allow/disallow 规则和站点地图引用的 robots.txt 文件，完成后即可下载。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Robots.txt 生成器",
+  "url": "https://norito.in/zh/seo/robots-txt-generator.html",
+  "description": "在浏览器中生成带有 allow/disallow 规则和站点地图引用的 robots.txt 文件，完成后即可下载。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "robots.txt 真的能阻止 Google 收录页面吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "它阻止的是抓取，而不一定是收录。如果有其他网站链接到某个被禁止抓取的网址，它仍然可能出现在搜索结果中（只是没有描述文字）。如果要彻底不让页面出现在搜索结果中，应改用 noindex meta 标签，而这需要页面本身是可以被抓取的。" }
+    },
+    {
+      "@type": "Question",
+      "name": "robots.txt 应该放在哪里？",
+      "acceptedAnswer": { "@type": "Answer", "text": "必须放在域名根目录，也就是 https://example.com/robots.txt，不能放在其他位置。爬虫不会去子文件夹中查找它。" }
+    },
+    {
+      "@type": "Question",
+      "name": "空的 Disallow 是什么意思？",
+      "acceptedAnswer": { "@type": "Answer", "text": "Disallow: 后面什么都不写，表示“禁止什么都不禁止”，也就是允许该 user-agent 抓取所有内容。这也是本工具默认从 Allow: / 开始的原因。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Robots.txt 生成器",
+      "item": "https://norito.in/zh/seo/robots-txt-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Robots.txt 生成器</p>
+    <h1>Robots.txt 生成器</h1>
+    <p class="lede">
+      为不同爬虫设置 allow 和 disallow 规则，可选择添加抓取延迟和站点地图引用，生成 robots.txt 文件。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">规则</h3>
+        <div id="rulesWrap"></div>
+        <button type="button" id="addRuleBtn" class="secondary" style="margin-top:4px;">+ 添加规则</button>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="sitemapUrl">站点地图链接 <span class="note">(可选)</span></label>
+          <input type="text" id="sitemapUrl" placeholder="https://example.com/sitemap.xml" />
+        </div>
+        <div class="field">
+          <label for="crawlDelay">抓取延迟（秒） <span class="note">(可选，按 user-agent 分组应用)</span></label>
+          <input type="number" id="crawlDelay" min="0" placeholder="例如 10" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">robots.txt</h3>
+          <pre class="code-output" id="output"></pre>
+          <button id="downloadBtn" style="margin-top:12px;">下载 robots.txt</button>
+        </div>
+        <p class="note">
+          user-agent 填 <code>*</code> 可以让规则应用于所有爬虫，也可以填写具体的爬虫名称，例如
+          <code>Googlebot</code>。Disallow 会阻止某个路径被抓取，Allow 则明确允许某个路径（适合在被禁止的
+          文件夹中开放个别例外）。
+        </p>
+      </div>
+    </div>
+
+
+<!--RELATED-TOOLS
+sitemap-generator.html|站点地图生成器|生成可以在 robots.txt 中引用的 sitemap.xml。
+meta-tag-generator.html|Meta 标签生成器|生成标题、描述和社交标签。
+utm-builder.html|UTM 链接生成器|为链接添加营销跟踪参数。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>robots.txt 真的能阻止 Google 收录页面吗？</summary>
+        <p>它阻止的是抓取，而不一定是收录。如果有其他网站链接到某个被禁止抓取的网址，它仍然可能出现在搜索结果中（只是没有描述文字）。如果要彻底不让页面出现在搜索结果中，应改用 noindex meta 标签，而这需要页面本身是可以被抓取的。</p>
+      </details>
+      <details class="faq-item">
+        <summary>robots.txt 应该放在哪里？</summary>
+        <p>必须放在域名根目录，也就是 https://example.com/robots.txt，不能放在其他位置。爬虫不会去子文件夹中查找它。</p>
+      </details>
+      <details class="faq-item">
+        <summary>空的 Disallow 是什么意思？</summary>
+        <p>Disallow: 后面什么都不写，表示“禁止什么都不禁止”，也就是允许该 user-agent 抓取所有内容。这也是本工具默认从 Allow: / 开始的原因。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-robots-txt-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

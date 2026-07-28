@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JSON Diff：在线比较两个 JSON 文件 | norito</title>
+<meta name="description" content="比较两个 JSON 文档，精确查看新增、删除和修改的内容，全部在浏览器中完成。不上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/json-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSON Diff：在线比较两个 JSON 文件 | norito" />
+<meta property="og:description" content="比较两个 JSON 文档，精确查看新增、删除和修改的内容，全部在浏览器中完成。不上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/json-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JSON Diff：在线比较两个 JSON 文件 | norito" />
+<meta name="twitter:description" content="比较两个 JSON 文档，精确查看新增、删除和修改的内容，全部在浏览器中完成。不上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Diff",
+  "url": "https://norito.in/zh/json-diff.html",
+  "description": "比较两个 JSON 文档，精确查看新增、删除和修改的内容，全部在浏览器中完成。不上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSON Diff",
+      "item": "https://norito.in/zh/json-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSON Diff</p>
+    <h1>JSON Diff</h1>
+    <p class="lede">
+      粘贴两个 JSON 文档，精确查看它们之间哪些键被添加、删除或更改。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="leftInput">左侧 JSON</label>
+            <textarea id="leftInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 1,
+  "tools": ["compress", "resize"]
+}</textarea>
+          </div>
+          <div class="field" style="flex:1;">
+            <label for="rightInput">右侧 JSON</label>
+            <textarea id="rightInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 2,
+  "tools": ["compress", "resize", "crop"]
+}</textarea>
+          </div>
+        </div>
+        <button id="diffBtn" style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+          比较
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div id="diffOutput" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">工作方式</h3>
+          <p class="note" style="margin-top:0;">
+            两侧都会被解析为 JSON，然后逐键、逐索引进行比较。只出现在右侧的键为新增，只出现在左侧的键为删除，两侧都存在但值不同的键为修改。对象键的顺序不重要，重要的只是值。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>两侧都会先经过 <code>JSON.parse</code>，因此如果其中一方不是有效的 JSON，你会得到解析器自身指出问题所在的错误消息，而不是一份毫无意义的差异结果。然后，比较过程会递归遍历两个解析后的结构：对于对象，会取两个键集合的并集并对每个键递归比较；对于数组，会逐个索引进行比较；叶子值只有在序列化结果完全一致时才被视为相等。每一处差异都会以类似 <code>user.address[1].zip</code> 的路径形式输出，并标记为新增、删除或修改，最后汇总成计数。</p>
+      <p>由于差异比较是针对解析后的值而非文本进行的，格式差异是不可见的：缩进、键的顺序以及空白字符的差异都不会产生任何噪音，这正是相较于基于行的文本差异工具的核心优势所在。需要理解的一个权衡是数组的对齐方式。它是按位置比较的，因此在一个较长的数组开头插入一个元素，会导致后面每个索引都被报告为「已修改」，外加末尾一处新增。当你看到一大片看起来整体错位了一位的修改条目时，应把它理解为「这个数组早期插入或删除了某个元素」，而不是数十处独立的编辑。</p>
+      <p>解析和比较都完全在这个页面的 JavaScript 中进行。打开开发者工具的 Network 标签页并点击「比较」：不会有任何请求携带你的 JSON，因此包含密钥的 API 响应和配置文件都只留在你的电脑上。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-formatter.html|JSON 格式化|格式化、校验并压缩单个 JSON 文档。
+base64-encoder.html|Base64 编码 / 解码|文本与 Base64 互转。
+regex-tester.html|正则表达式测试工具|针对示例文本实时测试正则表达式。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

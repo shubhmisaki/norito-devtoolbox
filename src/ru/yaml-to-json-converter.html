@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Конвертер YAML в JSON (и обратно) | norito</title>
+<meta name="description" content="Конвертируйте YAML в JSON или JSON в YAML прямо в браузере. Поддерживает отображения, последовательности, строки в кавычках и комментарии. Ничего не загружается." />
+<link rel="canonical" href="https://norito.in/ru/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/yaml-to-json-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Конвертер YAML в JSON (и обратно) | norito" />
+<meta property="og:description" content="Конвертируйте YAML в JSON или JSON в YAML прямо в браузере. Поддерживает отображения, последовательности, строки в кавычках и комментарии. Ничего не загружается." />
+<meta property="og:url" content="https://norito.in/ru/yaml-to-json-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Конвертер YAML в JSON (и обратно) | norito" />
+<meta name="twitter:description" content="Конвертируйте YAML в JSON или JSON в YAML прямо в браузере. Поддерживает отображения, последовательности, строки в кавычках и комментарии. Ничего не загружается." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Конвертер YAML в JSON",
+  "url": "https://norito.in/ru/yaml-to-json-converter.html",
+  "description": "Конвертируйте YAML в JSON или JSON в YAML прямо в браузере. Поддерживает отображения, последовательности, строки в кавычках и комментарии. Ничего не загружается.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Конвертер YAML в JSON",
+      "item": "https://norito.in/ru/yaml-to-json-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Конвертер YAML в JSON</p>
+    <h1>Конвертер YAML в JSON</h1>
+    <p class="lede">
+      Конвертируйте YAML в JSON или JSON в YAML в реальном времени по мере ввода. Работает полностью в браузере, ничего из вставленного не загружается.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="yaml2json">YAML &rarr; JSON</button>
+          <button type="button" class="tab" data-value="json2yaml">JSON &rarr; YAML</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="yaml2json">yaml2json</option>
+          <option value="json2yaml">json2yaml</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="indentSize">Отступ JSON</label>
+          <select id="indentSize">
+            <option value="2" selected>2 пробела</option>
+            <option value="4">4 пробела</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Ввод</label>
+          <textarea id="input" class="mono-area" rows="12" placeholder="Вставьте YAML..."></textarea>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">Вывод</label>
+          <textarea id="output" class="mono-area" rows="12" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Поменять местами
+          </button>
+          <button id="copyBtn">Скопировать вывод</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-indigo" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg>
+            </div>
+            <div>
+              <h3>Конфигурационные файлы, переносимые</h3>
+              <p>YAML часто встречается в Docker Compose, Kubernetes и конфигурациях CI.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            YAML легче читать и редактировать людям, но большинство API и языков программирования ожидают JSON. Этот инструмент конвертирует между ними полностью в браузере, в обоих направлениях.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Что поддерживается</h3>
+          <p class="note" style="margin-top:0;">
+            Блочные и потоковые отображения и последовательности, строки в кавычках и без них, числа, булевы значения, null и комментарии. Якоря/алиасы, многодокументные файлы и многострочные блочные скаляры (<code>|</code> / <code>&gt;</code>) не поддерживаются.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>YAML в JSON запускает небольшой рекурсивный нисходящий парсер, написанный специально для этой страницы. Сначала он удаляет комментарии (аккуратно, чтобы <code>#</code> внутри строки в кавычках сохранился), фиксирует отступ каждой строки, затем строит структуру так, как это определяет YAML: отступ открывает вложенные отображения, строки, начинающиеся с <code>-</code>, формируют последовательности, а всё остальное — скаляр. Скаляры типизируются по тем же правилам, что и в настоящих парсерах YAML: <code>true</code>/<code>false</code> становятся булевыми значениями, <code>~</code> и <code>null</code> становятся null, числа без кавычек становятся числами, строки в кавычках остаются строками, а встроенный потоковый синтаксис <code>[a, b]</code> или <code>{k: v}</code> тоже обрабатывается. Результат сериализуется через <code>JSON.stringify</code> с выбранным вами отступом. JSON в YAML — обратный процесс: <code>JSON.parse</code> проверяет ввод, затем эмиттер проходит по значению и записывает YAML с отступами, заключая в кавычки любую строку, которая иначе была бы неверно прочитана как число, булево значение или null.</p>
+      <p>Осознанное решение, о котором стоит знать: этот парсер трактует как булевы значения только буквальные <code>true</code> и <code>false</code>. Более старые парсеры YAML 1.1 также преобразуют <code>yes</code>, <code>no</code>, <code>on</code> и <code>off</code>, из-за чего код страны Норвегии <code>NO</code> печально известно превращается в <code>false</code> в конфигурационных файлах («проблема Норвегии»). Здесь он остаётся той строкой, какой и выглядит.</p>
+      <p>Это парсер подмножества, намеренно сделанный небольшим: якоря и алиасы (<code>&amp;</code>/<code>*</code>), многодокументные файлы и блочные скаляры (<code>|</code> и <code>&gt;</code>) не поддерживаются, поэтому сложный манифест Kubernetes, использующий эти возможности, не пройдёт конвертацию туда и обратно корректно. Для повседневной конвертации конфигураций он покрывает именно то, что вы реально вставляете.</p>
+      <p>Конвертация происходит полностью в вашей вкладке при каждом нажатии клавиши. Никакой сервис парсинга не вызывается: панель Network в DevTools остаётся безмолвной, пока вы печатаете, поэтому конфигурационные файлы, полные имён хостов и секретов, никогда не покидают ваш компьютер.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+csv-to-json.html|CSV в JSON|Преобразуйте файл CSV в JSON.
+json-formatter.html|Форматирование JSON|Форматирование, проверка и минификация JSON.
+json-diff.html|Сравнение JSON|Сравните два JSON-документа.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-yaml-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

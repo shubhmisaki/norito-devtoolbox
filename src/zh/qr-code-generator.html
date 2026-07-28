@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>二维码生成器：自定义颜色与 Logo，完全免费 | norito</title>
+<meta name="description" content="边输入边将任意链接或文本转换为二维码。自定义颜色、纠错级别,添加中心 Logo,并导出为 PNG 或 SVG。在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/qr-code-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/qr-code-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/qr-code-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/qr-code-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/qr-code-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/qr-code-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/qr-code-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/qr-code-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/qr-code-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="二维码生成器：自定义颜色与 Logo，完全免费 | norito" />
+<meta property="og:description" content="边输入边将任意链接或文本转换为二维码。自定义颜色、纠错级别,添加中心 Logo,并导出为 PNG 或 SVG。在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/qr-code-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="二维码生成器：自定义颜色与 Logo，完全免费 | norito" />
+<meta name="twitter:description" content="边输入边将任意链接或文本转换为二维码。自定义颜色、纠错级别,添加中心 Logo,并导出为 PNG 或 SVG。在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "二维码生成器",
+  "url": "https://norito.in/zh/qr-code-generator.html",
+  "description": "边输入边将任意链接或文本转换为二维码。自定义颜色、纠错级别,添加中心 Logo,并导出为 PNG 或 SVG。在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "二维码生成器",
+      "item": "https://norito.in/zh/qr-code-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 二维码生成器</p>
+    <h1>二维码生成器</h1>
+    <p class="lede">
+      输入网址或任意文本,二维码会实时更新。支持自定义颜色、纠错级别、可选的中心 Logo,并可导出为 PNG 或 SVG。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:16px;">
+          <label for="qrText">内容</label>
+          <textarea id="qrText" class="mono-area" rows="3">https://norito.in</textarea>
+        </div>
+        <div class="result-box" id="qrStatus" style="display:none;"></div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="ecLevel">纠错级别</label>
+            <select id="ecLevel">
+              <option value="L">L（7%）</option>
+              <option value="M" selected>M（15%，推荐）</option>
+              <option value="Q">Q（25%）</option>
+              <option value="H">H（30%，添加 Logo 时最佳）</option>
+            </select>
+            <div class="hint">即使二维码部分损坏或被遮挡,也能保持可扫描。百分比越高越安全,但图案也更密。</div>
+          </div>
+          <div class="field">
+            <label for="fgColor">前景色</label>
+            <input type="color" id="fgColor" value="#29202e" />
+          </div>
+          <div class="field">
+            <label for="bgColor">背景色</label>
+            <input type="color" id="bgColor" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom:18px;">
+          <label for="qrSize">导出尺寸</label>
+          <div class="slider-row">
+            <input type="range" id="qrSize" class="slider" min="160" max="1000" step="20" value="400" />
+            <input type="number" id="qrSizeInput" class="slider-num" min="160" max="1000" step="20" value="400" />
+            <span class="slider-suffix">px</span>
+          </div>
+        </div>
+
+        <div class="option-row" id="logoDropzone" style="border:none; padding-top:0;">
+          <div>
+            <div class="option-label">中心 Logo（可选）</div>
+            <div class="option-hint">如需最佳扫描效果,请使用纠错级别 H。将图片拖到此处或点击上传</div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button type="button" class="secondary" id="logoClear" style="padding:7px 12px; font-size:0.8rem;">清除</button>
+            <label class="btn secondary" style="padding:7px 12px; font-size:0.8rem; cursor:pointer;">
+              上传
+              <input type="file" id="logoInput" accept="image/*" style="display:none;" />
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+          <canvas id="qrCanvas" class="preview" style="width:100%; max-width:320px; height:auto;"></canvas>
+          <div style="display:flex; gap:10px; width:100%;">
+            <button id="downloadPngBtn" style="flex:1;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  下载 PNG
+</button>
+            <button id="downloadSvgBtn" class="secondary" style="flex:1;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  下载 SVG
+</button>
+          </div>
+        </div>
+        <p class="note">
+          要添加 Logo？请先将纠错级别切换为 H,这样二维码即使中心被遮挡也有足够的冗余度保持可扫描。
+        </p>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        你输入的文本会由页面内置的开源生成器编码成二维码符号。它会自动选择能容纳你内容的最小版本，从 21×21 到
+        177×177 个模块，然后附加 Reed-Solomon 纠错码字——这正是 CD
+        和卫星通信用来抵御划痕和噪声干扰的同一套数学方法。那些百分比等级，实际上就是符号能被破坏多少仍可正常解码的比例。这也是中心
+        logo 功能的全部原理：工具会把你的 logo 直接绘制在中间模块之上，故意"破坏"这部分区域，并把方框大小（宽度的
+        22% 加上留白）控制在 H 级纠错 30% 的容错范围之内。
+      </p>
+      <p>
+        最终结果是一个由真假值组成的模块网格：PNG 格式下把它们画成方块绘制在 canvas 上，SVG
+        格式下则为每个深色模块写出一个 &lt;rect&gt;，这也是为什么 SVG
+        在任何打印尺寸下都能保持锐利清晰。重新设计样式前，有两条扫描规则值得了解：扫描器默认深色模块配浅色背景，所以要保持前景色明显深于背景色，不要反转配色；另外，把导出的二维码放进设计稿时，四周要留出大约四个模块宽的空白"静区"，扫描器需要靠它来定位符号的边界。
+      </p>
+      <p>
+        编码在你每次按键时都会在本地实时运行。打开开发者工具，输入网址时观察"网络"面板：不会发送任何数据，这也是为什么这些二维码永远不会过期，也没有人能统计你的扫描次数。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+password-generator.html|密码生成器|生成安全的随机密码或易记的密码短语。
+placeholder-generator.html|占位图生成器|即时生成任意尺寸和颜色的占位图片。
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON，附带树状视图。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/vendor/qrcode.js"></script>
+<script src="../js/vendor/qrcode-utf8.js"></script>
+<script src="../js/app-qrcode.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

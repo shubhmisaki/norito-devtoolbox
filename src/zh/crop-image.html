@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>在线裁剪图片：拖拽裁剪 | norito</title>
+<meta name="description" content="在浏览器中用可拖动的裁剪框裁剪图片。自由裁剪或固定比例，如 1:1、4:3、16:9。不上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/crop-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/crop-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/crop-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/crop-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/crop-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/crop-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/crop-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/crop-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/crop-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="在线裁剪图片：拖拽裁剪 | norito" />
+<meta property="og:description" content="在浏览器中用可拖动的裁剪框裁剪图片。自由裁剪或固定比例，如 1:1、4:3、16:9。不上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/crop-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在线裁剪图片：拖拽裁剪 | norito" />
+<meta name="twitter:description" content="在浏览器中用可拖动的裁剪框裁剪图片。自由裁剪或固定比例，如 1:1、4:3、16:9。不上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "裁剪图片",
+  "url": "https://norito.in/zh/crop-image.html",
+  "description": "在浏览器中用可拖动的裁剪框裁剪图片。自由裁剪或固定比例，如 1:1、4:3、16:9。不上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "裁剪图片",
+      "item": "https://norito.in/zh/crop-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 裁剪图片</p>
+    <h1>裁剪图片</h1>
+    <p class="lede">
+      在图片上拖动裁剪框即可完成裁剪。可自由裁剪，也可锁定为常见比例，裁剪结果保持原始分辨率。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          <p><strong>点击选择一张图片</strong>，或将其拖放到此处</p>
+          <p class="note" style="margin-top:2px;">支持 JPG、PNG、WebP。文件保留在你的设备上，不会上传任何内容。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="aspect">裁剪比例</label>
+          <select id="aspect">
+            <option value="free" selected>自由</option>
+            <option value="1:1">正方形 (1:1)</option>
+            <option value="4:3">4:3</option>
+            <option value="16:9">16:9</option>
+            <option value="9:16">9:16（竖版）</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="裁剪预览" />
+            <div class="crop-box" id="cropBox">
+              <div class="crop-handle"></div>
+            </div>
+          </div>
+          <p class="note" style="margin-top:10px;">在框内拖动可移动位置，拖动角部控制点可调整大小。</p>
+        </div>
+
+        <button id="cropBtn" disabled style="margin-top:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          裁剪并下载
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="裁剪结果" />
+          <p class="note" id="previewHint" style="margin-top:0;">生成后，裁剪后的图片会显示在这里。</p>
+        </div>
+        <p class="note">
+          如果需要特定比例（比如头像照片用 1:1），请先选择比例，然后把裁剪框拖到合适的位置。裁剪是按图片的完整分辨率进行的，而不是按预览的显示尺寸，因此输出结果始终保持清晰。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>你的文件通过 <code>URL.createObjectURL</code> 加载，这是一个本地内存引用，绝不会被上传，并会缩小显示以适配编辑器窗口。你拖动的裁剪框以屏幕像素为单位进行跟踪，但当你点击裁剪的那一刻，这些坐标会按图片原始尺寸与显示尺寸之间的比例进行换算。也就是说，如果你 4000 像素宽的照片以 800 像素宽显示，屏幕上一个 200 像素宽的裁剪框，实际选中的是原图中 1000 像素宽的区域。选中的矩形随后通过 canvas API 的 <code>drawImage</code> 源矩形形式进行复制，精确地从完整分辨率的原图中提取出对应像素。</p>
+      <p>输出格式与输入保持一致：PNG 输入，PNG 输出（无损，与原始区域逐像素相同），其他格式都会通过 <code>canvas.toBlob</code> 以 92% 质量重新编码为 JPEG。这一区别值得了解：裁剪一张 JPEG 意味着多经历一次 JPEG 压缩，在 92% 质量下通常不易察觉，但确实存在。如果你需要像素级精确的裁剪，请给工具提供一张 PNG 图片。</p>
+      <p>以上所有过程都在你浏览器自身的图像解码器和 canvas 中完成。在拖入照片之前打开开发者工具的 Network 标签页看看：从来没有任何请求携带过图片，这也意味着没有服务器端的大小限制，也不用排队等待。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+resize-image.html|调整图片尺寸|改变整体尺寸，而不是裁剪出某个区域。
+compress-image.html|压缩图片|裁剪后达到精确的文件大小目标。
+remove-background.html|去除背景|在浏览器中直接从照片中抠出人像。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-crop-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

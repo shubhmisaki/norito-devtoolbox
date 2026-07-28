@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Remove Background from a Photo: Free, In-Browser | norito</title>
+<meta name="description" content="Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export." />
+<link rel="canonical" href="https://norito.in/remove-background.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-background.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/remove-background.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/remove-background.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/remove-background.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/remove-background.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/remove-background.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/remove-background.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-background.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Remove Background from a Photo: Free, In-Browser | norito" />
+<meta property="og:description" content="Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export." />
+<meta property="og:url" content="https://norito.in/remove-background.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Remove Background from a Photo: Free, In-Browser | norito" />
+<meta name="twitter:description" content="Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Remove Background from a Photo",
+  "url": "https://norito.in/remove-background.html",
+  "description": "Remove the background from a photo of a person, right in your browser. No upload to a server, transparent PNG or solid color export.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does it only work well on people?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It runs MODNet, an open-source portrait-matting model trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The model runs inside your browser using ONNX Runtime Web, so your photo never leaves your device. The only thing downloaded is the model and runtime itself, about 18 MB combined, once per browser session, and it's cached after that." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do the edges look soft or rough?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The model works at a capped internal resolution (around 512px on the longer side), so very fine detail like flyaway hairs can still come out soft on large photos. You'll get the cleanest edges from sharp photos with good contrast between the person and the background." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I replace the background instead of making it transparent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, pick a solid color under \"Result background\" before processing. The download is always a PNG, so if you keep it transparent you can layer the cutout over anything in another editor." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remove Background",
+      "item": "https://norito.in/remove-background.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Remove Background</p>
+    <h1>Remove Background</h1>
+    <p class="lede">
+      Cut a person out of a photo, entirely in your browser. The image never leaves your device.
+      Built on a lightweight open-source segmentation model, so it works best when a person is
+      clearly the main subject.
+    </p>
+    </div>
+  </div>
+    <div class="result-box" style="margin-bottom:28px;">
+      <span class="r-body">
+        <strong>Heads up:</strong> this uses MODNet, a portrait-matting model tuned for people,
+        not general objects or products. Portraits and selfies work best. The model and the
+        WebAssembly runtime it needs are about 18 MB combined and download once per browser
+        session, then stay cached.
+      </span>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose a photo</strong>, drag and drop it here, or paste with Ctrl+V</p>
+          <p class="note" style="margin-top:2px;">Works best with one person, clearly in frame. Select multiple photos to batch process.</p>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field-row" style="margin-top:20px;">
+          <div class="field">
+            <label for="bgMode">Result background</label>
+            <select id="bgMode">
+              <option value="transparent" selected>Transparent</option>
+              <option value="color">Solid color</option>
+            </select>
+          </div>
+          <div class="field" id="bgColorField" style="display:none;">
+            <label for="bgColor">Color</label>
+            <input type="color" id="bgColor" value="#ffffff" />
+          </div>
+        </div>
+
+        <button id="processBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
+          Remove background
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchProcessBtn">Remove backgrounds from all</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>Download all as .zip</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Background-removed result" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your cutout will appear here once processed.</p>
+        </div>
+        <button id="downloadBtn" class="secondary" disabled style="width:100%;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Download PNG
+</button>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The heavy lifting is done by MODNet, an open-source portrait-matting network, run
+        through ONNX Runtime Web (Microsoft's WebAssembly build of the ONNX inference
+        engine) and served entirely from this site's own files. Unlike a plain segmentation
+        model, MODNet is trained to predict a real alpha matte, a per-pixel opacity value,
+        rather than a blunt "person or background" guess, so hair and soft edges come out
+        closer to true transparency instead of a hard cutout line. The image is first
+        resized so its longer side lands near 512px, since that's the resolution the model
+        was trained at; feeding it a bigger photo doesn't sharpen the result, just slows
+        processing down.
+      </p>
+      <p>
+        Even a real alpha matte has some noise at its edges, so the tool still does a light
+        cleanup pass: a small box blur smooths resizing artifacts, then the alpha curve gets
+        a gentle smoothstep remap so background haze near zero snaps fully transparent and
+        confident subject pixels snap fully opaque, while the soft transition in between
+        (hair, blur, motion) is preserved rather than flattened.
+      </p>
+      <p>
+        The network story is verifiable in DevTools: on your first run, the Network tab
+        shows the model and runtime files loading from this site, about 18 MB combined.
+        After that, process as many photos as you like and watch: no request ever carries
+        your image. The photo is read into memory, matted, and composited entirely in this
+        tab.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|Compress Image|Hit an exact file size instead of guessing quality.
+placeholder-generator.html|Placeholder Generator|Instant placeholder images, any size and color.
+qr-code-generator.html|QR Code Generator|Custom QR codes with colors and a center logo.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why does it only work well on people?</summary>
+        <p>It runs MODNet, an open-source portrait-matting model that was trained specifically to separate people from backgrounds. Products, pets, and objects aren't what it learned, so those cutouts will be rough. Portraits with the person clearly in frame work best.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my photo uploaded anywhere?</summary>
+        <p>No. The model runs inside your browser using ONNX Runtime Web, so your photo never leaves your device. The only thing downloaded is the model and runtime itself, about 18 MB combined, once per browser session, and it's cached after that.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why do the edges look soft or rough?</summary>
+        <p>The model works at a capped internal resolution (around 512px on the longer side), so very fine detail like flyaway hairs can still come out soft on large photos. You'll get the cleanest edges from sharp photos with good contrast between the person and the background.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I replace the background instead of making it transparent?</summary>
+        <p>Yes, pick a solid color under "Result background" before processing. The download is always a PNG, so if you keep it transparent you can layer the cutout over anything in another editor.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/vendor/onnxruntime/ort.wasm.min.js"></script>
+<script src="js/app-removebg.js"></script>
+<script src="js/prefill.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

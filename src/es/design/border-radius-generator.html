@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de border-radius por esquina | norito</title>
+<meta name="description" content="Crea un border-radius de CSS por esquina de forma visual, directamente en tu navegador. Copia el CSS cuando quede como quieres." />
+<link rel="canonical" href="https://norito.in/es/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/border-radius-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de border-radius por esquina | norito" />
+<meta property="og:description" content="Crea un border-radius de CSS por esquina de forma visual, directamente en tu navegador. Copia el CSS cuando quede como quieres." />
+<meta property="og:url" content="https://norito.in/es/design/border-radius-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de border-radius por esquina | norito" />
+<meta name="twitter:description" content="Crea un border-radius de CSS por esquina de forma visual, directamente en tu navegador. Copia el CSS cuando quede como quieres." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de border-radius",
+  "url": "https://norito.in/es/design/border-radius-generator.html",
+  "description": "Crea un border-radius de CSS por esquina de forma visual, directamente en tu navegador. Copia el CSS cuando quede como quieres.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia con poner un solo valor de border-radius?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un solo valor redondea las cuatro esquinas por igual. Esta herramienta te deja ajustar cada esquina de forma independiente, útil para efectos como una tarjeta con solo las esquinas superiores redondeadas, o una forma «blob» asimétrica." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué unidades usa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Píxeles. Si necesitas radios en porcentaje (para círculos/elipses perfectos sin importar el tamaño del elemento), tendrías que ajustar el CSS generado a mano, cambiando px por % en cada valor." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía esto a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, la vista previa y el CSS se generan por completo en tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Generador de border-radius",
+      "item": "https://norito.in/es/design/border-radius-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de border-radius</p>
+    <h1>Generador de border-radius</h1>
+    <p class="lede">
+      Ajusta el border-radius de cada esquina de forma independiente y mira cómo cambia la forma en vivo, luego copia el CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="option-row">
+          <span class="option-label">Vincular todas las esquinas</span>
+          <label class="switch"><input type="checkbox" id="linkAll" checked /><span class="track"></span></label>
+        </div>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="radTL">Superior izquierda (<span id="radTLVal">12px</span>)</label>
+            <input type="range" id="radTL" min="0" max="100" value="12" />
+          </div>
+          <div class="field">
+            <label for="radTR">Superior derecha (<span id="radTRVal">12px</span>)</label>
+            <input type="range" id="radTR" min="0" max="100" value="12" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="radBL">Inferior izquierda (<span id="radBLVal">12px</span>)</label>
+            <input type="range" id="radBL" min="0" max="100" value="12" />
+          </div>
+          <div class="field">
+            <label for="radBR">Inferior derecha (<span id="radBRVal">12px</span>)</label>
+            <input type="range" id="radBR" min="0" max="100" value="12" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:50px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:160px; height:120px; margin:0 auto; background:var(--primary);"></div>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copiar CSS</button>
+        </div>
+      </div>
+    </div>
+
+
+<!--RELATED-TOOLS
+css-gradient-generator.html|Generador de degradados CSS|Crea un degradado lineal o radial de forma visual.
+box-shadow-generator.html|Generador de sombras (box-shadow)|Crea un box-shadow de CSS de forma visual.
+favicon-generator.html|Generador de favicon|Genera un favicon a partir de una imagen.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Cuál es la diferencia con poner un solo valor de border-radius?</summary>
+        <p>Un solo valor redondea las cuatro esquinas por igual. Esta herramienta te deja ajustar cada esquina de forma independiente, útil para efectos como una tarjeta con solo las esquinas superiores redondeadas, o una forma «blob» asimétrica.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué unidades usa?</summary>
+        <p>Píxeles. Si necesitas radios en porcentaje (para círculos/elipses perfectos sin importar el tamaño del elemento), tendrías que ajustar el CSS generado a mano, cambiando px por % en cada valor.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía esto a algún sitio?</summary>
+        <p>No, la vista previa y el CSS se generan por completo en tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-border-radius-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

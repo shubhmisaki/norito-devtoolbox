@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>行の並べ替え：アルファベット順、数値順、シャッフル | norito</title>
+<meta name="description" content="行のリストをアルファベット順、数値順、長さ順に並べ替えたり、ランダムにシャッフルしたりできます。ブラウザ内で完結。アップロードは一切行われません。" />
+<link rel="canonical" href="https://norito.in/ja/sort-lines.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/sort-lines.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/sort-lines.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/sort-lines.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/sort-lines.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/sort-lines.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/sort-lines.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/sort-lines.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/sort-lines.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="行の並べ替え：アルファベット順、数値順、シャッフル | norito" />
+<meta property="og:description" content="行のリストをアルファベット順、数値順、長さ順に並べ替えたり、ランダムにシャッフルしたりできます。ブラウザ内で完結。アップロードは一切行われません。" />
+<meta property="og:url" content="https://norito.in/ja/sort-lines.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="行の並べ替え：アルファベット順、数値順、シャッフル | norito" />
+<meta name="twitter:description" content="行のリストをアルファベット順、数値順、長さ順に並べ替えたり、ランダムにシャッフルしたりできます。ブラウザ内で完結。アップロードは一切行われません。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "行の並べ替え",
+  "url": "https://norito.in/ja/sort-lines.html",
+  "description": "行のリストをアルファベット順、数値順、長さ順に並べ替えたり、ランダムにシャッフルしたりできます。ブラウザ内で完結。アップロードは一切行われません。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "行の並べ替え",
+      "item": "https://norito.in/ja/sort-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 行の並べ替え</p>
+    <h1>行の並べ替え</h1>
+    <p class="lede">
+      リストをアルファベット順、数値順、長さ順に並べ替えたり、ランダムにシャッフルしたりできます。昇順・降順、重複削除オプション付き。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">入力（1行に1項目）</label>
+          <textarea id="textInput" class="mono-output" rows="12" placeholder="バナナ
+りんご
+さくらんぼ"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="sortBy">並べ替え基準</label>
+            <select id="sortBy">
+              <option value="alpha">アルファベット順（大文字小文字を区別）</option>
+              <option value="alphaCI" selected>アルファベット順（大文字小文字を無視）</option>
+              <option value="numeric">数値順</option>
+              <option value="length">行の長さ順</option>
+              <option value="shuffle">ランダムにシャッフル</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="direction">方向</label>
+            <select id="direction">
+              <option value="asc" selected>昇順</option>
+              <option value="desc">降順</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">重複行を削除</span>
+          <label class="switch"><input type="checkbox" id="optDedupe" /><span class="track"></span></label>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <span class="option-label">空行を削除</span>
+          <label class="switch"><input type="checkbox" id="optRemoveBlank" checked /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">結果</label>
+            <textarea id="textOutput" class="mono-output" rows="12" readonly></textarea>
+          </div>
+          <p class="note" id="statInfo" style="margin-top:0;">0 行。</p>
+          <button id="sortNowBtn" class="secondary" style="margin-right:8px;">今すぐ並べ替え</button>
+          <button id="copyBtn">結果をコピー</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>入力されたテキストは改行で分割され、ドロップダウンで選んだ比較関数で並べ替えられます。アルファベット順は生の文字コードではなく、ブラウザの言語対応比較機能である <code>localeCompare</code> を使用します。この違いはすぐにわかります。素朴なコードポイント順の並べ替えでは、すべての大文字がすべての小文字より前に来てしまい（そのため "Zebra" は "apple" より前に並びます）、アクセント記号付きの文字の順序も崩れてしまいます。ロケールを考慮した比較なら、辞書と同じように単語を並べられます。</p>
+      <p>数値順の並べ替えは各行を <code>parseFloat</code> で解析して数値を比較するため、"1" が小さい文字であるために "10" が "9" より前に来てしまうという文字列ソートの典型的なバグを解消します。数値で始まらない行は0として扱われ、まとめてグループ化されます。長さ順は文字数を比較し、シャッフルはFisher-Yatesアルゴリズムを使用するため、すべての並び順が等しい確率になります。ここは一言触れておく価値があります。よく使われる <code>sort(() =&gt; Math.random() - 0.5)</code> というテクニックは、ソートアルゴリズムが一貫した比較関数を前提としているため偏ったシャッフルになりますが、Fisher-Yatesは配列を1回だけ走査し、各要素を一様にランダムな前方のスロットと入れ替えます。</p>
+      <p>降順は昇順に並べ替えてから反転する処理で、重複削除は並べ替え後に <code>Set</code> を使って行われるため、完全に一致するものだけが削除されます。空行はそれより前の段階でフィルタリングできます。この一連の処理はすべて、そのタブ内の文字列に対する配列操作です。貼り付けや並べ替えを行ってもリクエストは一切発生しません（開発者ツールのネットワークパネルで確認できます）。そのため、名前やメールアドレス、キーのリストを並べ替える際にサーバーが関わることは一切ありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+remove-duplicate-lines.html|重複行の削除|並べ替えの前後でリストの重複を削除。
+/case-converter.html|大文字小文字変換ツール|大文字、小文字、camelCaseなどの間でテキストを変換。
+json-formatter.html|JSONフォーマッタ|JSONを整形・検証。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-sort-lines.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

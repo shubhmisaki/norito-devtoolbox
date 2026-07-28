@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Color Contrast Checker: WCAG AA/AAA | norito</title>
+<meta name="description" content="Check the contrast ratio between two colors against WCAG AA and AAA thresholds for normal and large text, with a live preview." />
+<link rel="canonical" href="https://norito.in/design/contrast-checker.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/contrast-checker.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/contrast-checker.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Color Contrast Checker: WCAG AA/AAA | norito" />
+<meta property="og:description" content="Check the contrast ratio between two colors against WCAG AA and AAA thresholds for normal and large text, with a live preview." />
+<meta property="og:url" content="https://norito.in/design/contrast-checker.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Color Contrast Checker: WCAG AA/AAA | norito" />
+<meta name="twitter:description" content="Check the contrast ratio between two colors against WCAG AA and AAA thresholds for normal and large text, with a live preview." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Contrast Checker",
+  "url": "https://norito.in/design/contrast-checker.html",
+  "description": "Check the contrast ratio between two colors against WCAG AA and AAA thresholds for normal and large text, with a live preview.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between AA and AAA?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AA is the baseline most sites target: 4.5:1 for normal text, 3:1 for large text (18pt+, or bold 14pt+). AAA is stricter, aimed at content for users with low vision: 7:1 normal, 4.5:1 large." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this check images or just flat colors?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Just two solid colors, text against a background. For text over a photo or gradient, check contrast against the darkest and lightest areas it could sit on." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same formula browsers and audits use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It's the standard WCAG 2.1 relative luminance and contrast ratio formula, the same one used by Lighthouse and axe." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contrast Checker",
+      "item": "https://norito.in/design/contrast-checker.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Contrast Checker</p>
+    <h1>Contrast Checker</h1>
+    <p class="lede">
+      Pick a text color and a background color and see the exact WCAG contrast ratio, plus whether it passes AA or AAA.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="fgHex">Text color</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="fgColor" value="#1a1418" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="fgHex" value="#1a1418" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="bgHex">Background color</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="bgColor" value="#ffffff" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="bgHex" value="#ffffff" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+        </div>
+        <button type="button" class="secondary" id="swapBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3 3 21"/></svg>
+          Swap colors
+        </button>
+
+        <div class="contrast-ratio-display" id="ratioDisplay">--</div>
+        <div class="contrast-badges" id="badges"></div>
+
+        <div class="contrast-preview" id="previewBox">
+          <p class="cp-large">Large text preview (18pt+)</p>
+          <p class="cp-normal">Normal text preview, the size most body copy uses.</p>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What the badges mean</h3>
+          <p class="note" style="margin-top:0;">WCAG 2.1 requires a 4.5:1 ratio for normal text and 3:1 for large text (18pt+, or 14pt+ bold) to meet AA. AAA is stricter: 7:1 for normal text, 4.5:1 for large text.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The ratio is computed with the actual WCAG relative-luminance formula, not an
+        approximation. Each channel is divided by 255, then linearized to undo the sRGB gamma
+        curve: values at or below 0.03928 are divided by 12.92, everything else goes through
+        <code>((c + 0.055) / 1.055)^2.4</code>. The linear channels are then weighted 0.2126 red,
+        0.7152 green, and 0.0722 blue, mirroring how much each contributes to perceived brightness
+        (your eyes are far more sensitive to green than blue). The contrast ratio is
+        <code>(lighter + 0.05) / (darker + 0.05)</code>, which lands between 1:1 for identical
+        colors and 21:1 for pure black on pure white. The badges just compare that number against
+        the WCAG cutoffs: 4.5:1 for AA normal text, 3:1 for AA large text, 7:1 for AAA normal, and
+        4.5:1 for AAA large.
+      </p>
+      <p>
+        "Large text" has a precise definition people rarely quote: 18pt (about 24px) regular, or
+        14pt (about 18.7px) bold. That's why a 3.2:1 pairing can be perfectly legal for a headline
+        and a failure for body copy. Also notice the formula is symmetric: swapping foreground and
+        background never changes the ratio, so the swap button is for previewing, not for gaming
+        the score. One honest limitation: the ratio only measures luminance difference. A red on
+        green combination can clear 4.5:1 on paper and still be genuinely hard to read for someone
+        with color vision deficiency, so treat a passing badge as necessary, not sufficient.
+      </p>
+      <p>
+        Both colors are crunched through those formulas right here in the page's JavaScript on
+        every change. No color values are transmitted anywhere, and you can verify that in the
+        DevTools Network tab while you drag the pickers around.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+color-converter.html|Color Converter|Convert any color to HEX, RGB, HSL, or CMYK.
+color-palette-extractor.html|Color Palette Extractor|Pull dominant colors out of an image.
+css-gradient-generator.html|CSS Gradient Generator|Build a gradient visually, copy the CSS.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What's the difference between AA and AAA?</summary>
+        <p>AA is the baseline most sites target: 4.5:1 for normal text, 3:1 for large text (18pt+, or bold 14pt+). AAA is stricter, aimed at content for users with low vision: 7:1 normal, 4.5:1 large.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this check images or just flat colors?</summary>
+        <p>Just two solid colors, text against a background. For text over a photo or gradient, check contrast against the darkest and lightest areas it could sit on.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this the same formula browsers and audits use?</summary>
+        <p>Yes. It's the standard WCAG 2.1 relative luminance and contrast ratio formula, the same one used by Lighthouse and axe.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-contrast-checker.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

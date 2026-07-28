@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Конвертер систем счисления: двоичная, восьмеричная, десятичная, шестнадцатеричная | norito</title>
+<meta name="description" content="Конвертируйте числа между двоичной, восьмеричной, десятичной и шестнадцатеричной системами в реальном времени, а также в любой пользовательской системе от 2 до 36. Поддерживает отрицательные и произвольно большие числа." />
+<link rel="canonical" href="https://norito.in/ru/number-base-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/number-base-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/number-base-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/number-base-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/number-base-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/number-base-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/number-base-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/number-base-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/number-base-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Конвертер систем счисления: двоичная, восьмеричная, десятичная, шестнадцатеричная | norito" />
+<meta property="og:description" content="Конвертируйте числа между двоичной, восьмеричной, десятичной и шестнадцатеричной системами в реальном времени, а также в любой пользовательской системе от 2 до 36. Поддерживает отрицательные и произвольно большие числа." />
+<meta property="og:url" content="https://norito.in/ru/number-base-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Конвертер систем счисления: двоичная, восьмеричная, десятичная, шестнадцатеричная | norito" />
+<meta name="twitter:description" content="Конвертируйте числа между двоичной, восьмеричной, десятичной и шестнадцатеричной системами в реальном времени, а также в любой пользовательской системе от 2 до 36. Поддерживает отрицательные и произвольно большие числа." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Конвертер систем счисления",
+  "url": "https://norito.in/ru/number-base-converter.html",
+  "description": "Конвертируйте числа между двоичной, восьмеричной, десятичной и шестнадцатеричной системами в реальном времени, а также в любой пользовательской системе от 2 до 36. Поддерживает отрицательные и произвольно большие числа.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Конвертер систем счисления",
+      "item": "https://norito.in/ru/number-base-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Конвертер систем счисления</p>
+    <h1>Конвертер систем счисления</h1>
+    <p class="lede">
+      Конвертируйте число между двоичной, восьмеричной, десятичной и шестнадцатеричной системами в реальном времени, или между любыми двумя системами от 2 до 36.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="baseDecimal">Десятичная (основание 10)</label>
+          <input type="text" id="baseDecimal" class="mono-area" placeholder="255" />
+        </div>
+        <div class="field">
+          <label for="baseHex">Шестнадцатеричная (основание 16)</label>
+          <input type="text" id="baseHex" class="mono-area" placeholder="ff" />
+        </div>
+        <div class="field">
+          <label for="baseBinary">Двоичная (основание 2)</label>
+          <input type="text" id="baseBinary" class="mono-area" placeholder="11111111" />
+        </div>
+        <div class="field">
+          <label for="baseOctal">Восьмеричная (основание 8)</label>
+          <input type="text" id="baseOctal" class="mono-area" placeholder="377" />
+        </div>
+      </div>
+      <p class="note" style="margin-top:0;">Введите значение в любое поле — остальные три обновятся автоматически. Поддерживает отрицательные числа и произвольно большие целые числа.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0;">Конвертация в произвольную систему</h3>
+      <p class="note" style="margin-top:0; margin-bottom:16px;">Конвертируйте между любыми двумя системами от 2 до 36.</p>
+      <div class="field" style="margin-bottom:16px;">
+        <label for="customValue">Значение</label>
+        <input type="text" id="customValue" class="mono-area" placeholder="1a2b3c" value="1a2b3c" />
+      </div>
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="customFrom">Из системы</label>
+          <select id="customFrom">
+            <option value="2">Основание 2</option>
+            <option value="3">Основание 3</option>
+            <option value="4">Основание 4</option>
+            <option value="5">Основание 5</option>
+            <option value="6">Основание 6</option>
+            <option value="7">Основание 7</option>
+            <option value="8">Основание 8</option>
+            <option value="9">Основание 9</option>
+            <option value="10" selected>Основание 10</option>
+            <option value="11">Основание 11</option>
+            <option value="12">Основание 12</option>
+            <option value="13">Основание 13</option>
+            <option value="14">Основание 14</option>
+            <option value="15">Основание 15</option>
+            <option value="16">Основание 16</option>
+            <option value="17">Основание 17</option>
+            <option value="18">Основание 18</option>
+            <option value="19">Основание 19</option>
+            <option value="20">Основание 20</option>
+            <option value="21">Основание 21</option>
+            <option value="22">Основание 22</option>
+            <option value="23">Основание 23</option>
+            <option value="24">Основание 24</option>
+            <option value="25">Основание 25</option>
+            <option value="26">Основание 26</option>
+            <option value="27">Основание 27</option>
+            <option value="28">Основание 28</option>
+            <option value="29">Основание 29</option>
+            <option value="30">Основание 30</option>
+            <option value="31">Основание 31</option>
+            <option value="32">Основание 32</option>
+            <option value="33">Основание 33</option>
+            <option value="34">Основание 34</option>
+            <option value="35">Основание 35</option>
+            <option value="36">Основание 36</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customTo">В систему</label>
+          <select id="customTo">
+            <option value="2">Основание 2</option>
+            <option value="3">Основание 3</option>
+            <option value="4">Основание 4</option>
+            <option value="5">Основание 5</option>
+            <option value="6">Основание 6</option>
+            <option value="7">Основание 7</option>
+            <option value="8">Основание 8</option>
+            <option value="9">Основание 9</option>
+            <option value="10">Основание 10</option>
+            <option value="11">Основание 11</option>
+            <option value="12">Основание 12</option>
+            <option value="13">Основание 13</option>
+            <option value="14">Основание 14</option>
+            <option value="15">Основание 15</option>
+            <option value="16" selected>Основание 16</option>
+            <option value="17">Основание 17</option>
+            <option value="18">Основание 18</option>
+            <option value="19">Основание 19</option>
+            <option value="20">Основание 20</option>
+            <option value="21">Основание 21</option>
+            <option value="22">Основание 22</option>
+            <option value="23">Основание 23</option>
+            <option value="24">Основание 24</option>
+            <option value="25">Основание 25</option>
+            <option value="26">Основание 26</option>
+            <option value="27">Основание 27</option>
+            <option value="28">Основание 28</option>
+            <option value="29">Основание 29</option>
+            <option value="30">Основание 30</option>
+            <option value="31">Основание 31</option>
+            <option value="32">Основание 32</option>
+            <option value="33">Основание 33</option>
+            <option value="34">Основание 34</option>
+            <option value="35">Основание 35</option>
+            <option value="36">Основание 36</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box error" id="customError" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+      <div class="field">
+        <label for="customOutput">Результат</label>
+        <input type="text" id="customOutput" class="mono-area" readonly />
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>Каждое введённое вами значение разбирается в JavaScript-тип <code>BigInt</code> — целое число произвольной точности, встроенное в браузер. Разбор проходит по вашему вводу цифра за цифрой, умножая текущий итог на основание системы и прибавляя значение каждой цифры; обратная конвертация многократно делит на целевое основание и собирает остатки. Цифры выше 9 используют буквы, поэтому в системе с основанием 36 идёт последовательность 0-9, а затем a-z. Отрицательные числа тоже работают: ведущий знак минус отделяется перед разбором и добавляется обратно в конце.</p>
+      <p>Часть с BigInt — это деталь, которую стоит знать. Конвертеры, построенные на обычных числах JavaScript, незаметно повреждают любое значение выше 9 007 199 254 740 991 (2^53 - 1), потому что именно с этого момента числа с плавающей точкой перестают точно представлять каждое целое число. Вставьте в такой конвертер 16-значное шестнадцатеричное значение вроде <code>ffffffffffffffff</code>, и вы получите округлённый, неверный ответ без какого-либо предупреждения. Здесь же вычисления точны при любой длине: 100-значное десятичное число корректно конвертируется в двоичное, просто получится больше цифр.</p>
+      <p>Каждое поле проверяется на соответствие своей системе счисления по мере ввода, поэтому ввод 9 в восьмеричное поле или g в шестнадцатеричное покажет ошибку вместо бессмысленного результата, а остальные три поля обновляются в реальном времени в зависимости от того, какое вы редактировали. Всё это происходит в вашей вкладке: проверьте панель Network в DevTools, и вы увидите, что страница не отправляет ни одного запроса во время ввода, поэтому конвертируемые вами числа никогда не покидают ваш компьютер.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+hash-generator.html|Генератор хешей|MD5, SHA-1, SHA-256, SHA-512.
+url-encoder-decoder.html|Кодировщик / декодировщик URL|Кодируйте в процентном формате или декодируйте URL.
+timestamp-converter.html|Конвертер меток времени|Unix-время в дату и обратно.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-base-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

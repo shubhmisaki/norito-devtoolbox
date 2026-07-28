@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Visor y editor de CSV | norito</title>
+<meta name="description" content="Visualiza un archivo CSV como una tabla editable directamente en tu navegador. Edita celdas, añade filas o columnas y exporta de vuelta a CSV." />
+<link rel="canonical" href="https://norito.in/es/csv-viewer.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/csv-viewer.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/csv-viewer.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/csv-viewer.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/csv-viewer.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/csv-viewer.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/csv-viewer.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/csv-viewer.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/csv-viewer.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Visor y editor de CSV | norito" />
+<meta property="og:description" content="Visualiza un archivo CSV como una tabla editable directamente en tu navegador. Edita celdas, añade filas o columnas y exporta de vuelta a CSV." />
+<meta property="og:url" content="https://norito.in/es/csv-viewer.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Visor y editor de CSV | norito" />
+<meta name="twitter:description" content="Visualiza un archivo CSV como una tabla editable directamente en tu navegador. Edita celdas, añade filas o columnas y exporta de vuelta a CSV." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Visor de CSV",
+  "url": "https://norito.in/es/csv-viewer.html",
+  "description": "Visualiza un archivo CSV como una tabla editable directamente en tu navegador. Edita celdas, añade filas o columnas y exporta de vuelta a CSV.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Visor de CSV",
+      "item": "https://norito.in/es/csv-viewer.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Visor de CSV</p>
+    <h1>Visor de CSV</h1>
+    <p class="lede">
+      Abre un archivo CSV como una tabla realmente editable, corrige un valor, añade una fila o columna, y expórtalo de nuevo. No necesitas ninguna hoja de cálculo.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+        <p><strong>Haz clic para elegir un archivo .csv</strong>, o arrástralo y suéltalo aquí</p>
+        <p class="note" style="margin-top:2px;">Edita cualquier celda directamente en la tabla de abajo y luego exporta.</p>
+        <input type="file" id="fileInput" accept=".csv,text/csv" />
+      </div>
+      <div class="result-box" id="result" style="display:none;"></div>
+      <div class="csv-table-wrap" id="tableWrap" style="display:none;"></div>
+      <div class="csv-table-actions">
+        <button type="button" class="secondary" id="addRowBtn">Añadir fila</button>
+        <button type="button" class="secondary" id="addColBtn">Añadir columna</button>
+        <button type="button" id="downloadBtn">Descargar .csv</button>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Tu archivo se lee como texto con la API <code>FileReader</code> del navegador, el delimitador se detecta automáticamente contando comas, puntos y coma y tabulaciones en la primera línea, y un analizador consciente de las comillas (estilo RFC 4180: los campos entre comillas pueden contener comas y saltos de línea, <code>""</code> significa una comilla literal) lo convierte en una cuadrícula en memoria. La tabla que ves es HTML real: cada celda es un elemento <code>&lt;input&gt;</code> conectado para escribir los cambios directamente en esa cuadrícula, por eso editar se siente instantáneo y por eso deshacer funciona celda por celda como cualquier campo de formulario.
+      </p>
+      <p>
+        La exportación es donde esta herramienta es más cuidadosa que la mayoría. El serializador solo pone entre comillas los campos que realmente lo necesitan (los que contienen una coma, comilla o salto de línea), duplica las comillas incrustadas, y une las filas con saltos de línea CRLF (<code>\r\n</code>), exactamente lo que especifica RFC 4180 y lo que espera Excel. Una consecuencia: un archivo puede ir y volver con datos idénticos pero bytes ligeramente distintos, porque el uso inconsistente de comillas en el original se normaliza. Eso es cosmético, no pérdida de datos.
+      </p>
+      <p>
+        Nada de esto toca un servidor. Abre la pestaña Red de las herramientas de desarrollador, carga un CSV, edita algunas celdas, descarga el resultado: verás cero peticiones relacionadas con tus datos. La descarga en sí es un <code>Blob</code> ensamblado en memoria y guardado por tu navegador.
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+/csv-to-json.html|CSV a JSON|Convierte un archivo CSV a JSON.
+json-formatter.html|Formateador JSON|Formatea, valida y minifica JSON con una vista de árbol.
+/sort-lines.html|Ordenar líneas|Ordena líneas de texto alfabética o numéricamente.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-csv-viewer.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Favicon 生成器：一张图片生成所有尺寸 | norito</title>
+<meta name="description" content="上传一张图片，在浏览器中生成你需要的所有 favicon 尺寸，从浏览器标签到 iOS 主屏幕图标都能覆盖，打包为 zip 下载。" />
+<link rel="canonical" href="https://norito.in/zh/design/favicon-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/favicon-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/favicon-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/favicon-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/favicon-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/favicon-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/favicon-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/favicon-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Favicon 生成器：一张图片生成所有尺寸 | norito" />
+<meta property="og:description" content="上传一张图片，在浏览器中生成你需要的所有 favicon 尺寸，从浏览器标签到 iOS 主屏幕图标都能覆盖，打包为 zip 下载。" />
+<meta property="og:url" content="https://norito.in/zh/design/favicon-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Favicon 生成器：一张图片生成所有尺寸 | norito" />
+<meta name="twitter:description" content="上传一张图片，在浏览器中生成你需要的所有 favicon 尺寸，从浏览器标签到 iOS 主屏幕图标都能覆盖，打包为 zip 下载。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Favicon 生成器",
+  "url": "https://norito.in/zh/design/favicon-generator.html",
+  "description": "上传一张图片，在浏览器中生成你需要的所有 favicon 尺寸，从浏览器标签到 iOS 主屏幕图标都能覆盖，打包为 zip 下载。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "为什么不生成 .ico 文件？",
+      "acceptedAnswer": { "@type": "Answer", "text": "现代浏览器、iOS 和 Android 都可以直接支持 PNG 格式的 favicon，本工具生成的每个尺寸都是 PNG。.ico 文件过去的作用是把多个尺寸打包进一个容器，但现在已经不是必需的了，下载包中附带的 HTML 代码会为每种场景指向正确的 PNG 文件。" }
+    },
+    {
+      "@type": "Question",
+      "name": "应该上传什么样的图片？",
+      "acceptedAnswer": { "@type": "Answer", "text": "正方形图片效果最好，裁剪也最干净。非正方形图片会在缩放前自动裁剪为居中的正方形，因此请确保你 logo 中重要的部分靠近图片中心。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的图片会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。所有尺寸都是通过 canvas API 在你的浏览器本地生成的，不会发送到任何服务器。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Favicon 生成器",
+      "item": "https://norito.in/zh/design/favicon-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Favicon 生成器</p>
+    <h1>Favicon 生成器</h1>
+    <p class="lede">
+      只需上传一次图片，即可下载所有你需要的 favicon 尺寸：浏览器标签、iOS 主屏幕图标、Android/PWA 图标，以及配套使用的 HTML 代码。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+          <p><strong>点击选择图片</strong>，或将它拖放到这里</p>
+          <p class="note" style="margin-top:2px;">正方形图片效果最好。文件留在你的设备上，不会被上传。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="favicon-preview-grid" id="previewGrid" style="display:none;"></div>
+
+        <button id="generateBtn" disabled style="margin-top:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+          生成并下载 favicon
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">你将获得</h3>
+          <p class="note" style="margin-top:0;">
+            一个 .zip 压缩包，内含用于浏览器标签的 16&times;16、32&times;32、48&times;48 PNG，用于 iOS 主屏幕
+            的 180&times;180 apple-touch-icon，以及用于 Android 和 PWA manifest 的 192&times;192 / 512&times;512
+            PNG，还附带一个文本文件，里面是可以直接粘贴到你网站 &lt;head&gt; 中的 &lt;link&gt; 标签代码。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+<!--RELATED-TOOLS
+css-gradient-generator.html|CSS 渐变生成器|可视化构建线性或径向渐变。
+../../image-converter.html|图片格式转换|先把你的 logo 转换成其他格式。
+../../resize-image.html|调整图片尺寸|把图片精确调整到指定尺寸。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>为什么不生成 .ico 文件？</summary>
+        <p>现代浏览器、iOS 和 Android 都可以直接支持 PNG 格式的 favicon，本工具生成的每个尺寸都是 PNG。.ico 文件过去的作用是把多个尺寸打包进一个容器，但现在已经不是必需的了，下载包中附带的 HTML 代码会为每种场景指向正确的 PNG 文件。</p>
+      </details>
+      <details class="faq-item">
+        <summary>应该上传什么样的图片？</summary>
+        <p>正方形图片效果最好，裁剪也最干净。非正方形图片会在缩放前自动裁剪为居中的正方形，因此请确保你 logo 中重要的部分靠近图片中心。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的图片会被上传到别的地方吗？</summary>
+        <p>不会。所有尺寸都是通过 canvas API 在你的浏览器本地生成的，不会发送到任何服务器。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-favicon-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

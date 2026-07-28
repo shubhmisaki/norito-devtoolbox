@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>محوّل الألوان: HEX وRGB وHSL وCMYK | norito</title>
+<meta name="description" content="حوّل لونًا بين HEX وRGB وHSL وCMYK مباشرةً، مع نسخ بنقرة واحدة لكل صيغة." />
+<link rel="canonical" href="https://norito.in/ar/design/color-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/color-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/color-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/color-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/color-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/color-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/color-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/color-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="محوّل الألوان: HEX وRGB وHSL وCMYK | norito" />
+<meta property="og:description" content="حوّل لونًا بين HEX وRGB وHSL وCMYK مباشرةً، مع نسخ بنقرة واحدة لكل صيغة." />
+<meta property="og:url" content="https://norito.in/ar/design/color-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="محوّل الألوان: HEX وRGB وHSL وCMYK | norito" />
+<meta name="twitter:description" content="حوّل لونًا بين HEX وRGB وHSL وCMYK مباشرةً، مع نسخ بنقرة واحدة لكل صيغة." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "محوّل الألوان",
+  "url": "https://norito.in/ar/design/color-converter.html",
+  "description": "حوّل لونًا بين HEX وRGB وHSL وCMYK مباشرةً، مع نسخ بنقرة واحدة لكل صيغة.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "محوّل الألوان",
+      "item": "https://norito.in/ar/design/color-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / محوّل الألوان</p>
+    <h1>محوّل الألوان</h1>
+    <p class="lede">
+      اختر لونًا مرة واحدة، واحصل عليه بصيغ HEX وRGB وHSL وCMYK في الوقت نفسه. انسخ الصيغة التي تحتاجها.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <input type="color" id="colorPicker" value="#ff4d7a" style="width:100%; height:56px; cursor:pointer; padding:4px;" />
+        <div class="color-swatch-lg" id="swatchLg"></div>
+        <div class="color-field-grid">
+          <div class="field">
+            <label>HEX</label>
+            <div class="color-copy-row"><input type="text" id="hexOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hexOut">نسخ</button></div>
+          </div>
+          <div class="field">
+            <label>RGB</label>
+            <div class="color-copy-row"><input type="text" id="rgbOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="rgbOut">نسخ</button></div>
+          </div>
+          <div class="field">
+            <label>HSL</label>
+            <div class="color-copy-row"><input type="text" id="hslOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="hslOut">نسخ</button></div>
+          </div>
+          <div class="field">
+            <label>CMYK</label>
+            <div class="color-copy-row"><input type="text" id="cmykOut" readonly /><button type="button" class="secondary copy-field-btn" data-target="cmykOut">نسخ</button></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">لماذا كل هذه الصيغ؟</h3>
+          <p class="note" style="margin-top:0;">HEX وRGB هما الصيغتان القياسيتان على الويب، وHSL أسهل في التفكير بها عند ضبط الإضاءة أو التشبع، وCMYK ما تتوقعه عمليات الطباعة.</p>
+        </div>
+      </div>
+    </div>
+
+<!--RELATED-TOOLS
+contrast-checker.html|فاحص التباين|تحقّق مما إذا كان لونان يستوفيان قواعد تباين WCAG.
+css-gradient-generator.html|مولّد تدرجات CSS|أنشئ تدرجًا من الألوان التي تعجبك.
+color-palette-extractor.html|مستخرج لوحة الألوان|استخرج الألوان السائدة من صورة.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>لماذا CMYK تقريبية فقط؟</summary>
+        <p>CMYK هو فضاء ألوان للطباعة ومظهره الدقيق يعتمد على الحبر والورق المحددين. القيم هنا تحويل قياسي من RGB إلى CMYK، نقطة بداية جيدة لكنها ليست بديلاً عن ملف ألوان طابعتك.</p>
+      </details>
+      <details class="faq-item">
+        <summary>فيمَ تفيد HSL؟</summary>
+        <p>درجة اللون، والتشبع، والإضاءة. غالبًا ما يكون بناء لوحة ألوان أسهل بإبقاء درجة اللون ثابتة وتغيير الإضاءة/التشبع، بدلاً من تخمين قيم RGB أو hex مباشرة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تحفظ هذه الأداة الألوان التي أختارها؟</summary>
+        <p>لا. كل شيء يحدث محليًا داخل متصفحك، ولا يُحفظ أو يُرسل شيء إلى أي مكان.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-color-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -118,7 +118,7 @@
     const value = out ? out.textContent : "";
     if (!value) return;
     try {
-      await navigator.clipboard.writeText(value);
+      await copyToClipboard(value);
     } catch (err) {
       const ta = document.createElement("textarea");
       ta.value = value;

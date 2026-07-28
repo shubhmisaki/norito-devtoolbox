@@ -115,7 +115,7 @@
   els.copyBtn.addEventListener("click", async function () {
     if (!els.output.value) return;
     try {
-      await navigator.clipboard.writeText(els.output.value);
+      await copyToClipboard(els.output.value);
     } catch (err) {
       els.output.select();
       document.execCommand("copy");

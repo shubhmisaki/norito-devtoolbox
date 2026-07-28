@@ -39,7 +39,7 @@
     <a class="brand" href="/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
         <nav class="site-nav" id="siteNav">
       <div class="nav-group">
-        <a class="nav-cat" href="/pdf/">PDF</a>
+        <a class="nav-cat" href="/pdf/index.html">PDF</a>
         <div class="nav-panel">
           <a href="/pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">Merge PDF<span>Combine multiple PDFs into one</span></div></a>
           <a href="/pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">Split PDF<span>Pull out pages or split into files</span></div></a>
@@ -139,14 +139,14 @@
         <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
         <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
       </button>
-
       <div class="lang-switch" id="langSwitch">
-        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा / Язык / 言語">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           <span class="lang-switch-current" id="langSwitchCurrent">EN</span>
         </button>
         <div class="lang-switch-panel" id="langSwitchPanel"></div>
       </div>
+
   </div>
 </header>
 
@@ -213,7 +213,18 @@
         <div class="footer-brand-name">norito</div>
         <p class="footer-tagline">Small utilities that solve one annoying problem each. Everything runs in your browser, nothing is uploaded.</p>
       </div>
-            <div class="footer-col">
+      <div class="footer-col footer-product">
+        <h3>Product</h3>
+        <a href="/tools.html">All tools</a>
+        <a href="/changelog.html">Changelog</a>
+        <a href="/how-it-works.html">How it Works</a>
+        <a href="/blog/">Blog</a>
+        <a href="/compare/">Compare</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+      <div class="footer-col">
         <h3>PDF</h3>
         <a href="/pdf/merge-pdf.html">Merge PDF</a>
         <a href="/pdf/split-pdf.html">Split PDF</a>
@@ -296,6 +307,7 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 norito. All tools run locally in your browser.</span>
+      <a href="/changelog.html">Changelog</a>
       <a href="/blog/">Blog</a>
       <a href="/compare/">Compare</a>
       <a href="/how-it-works.html">How it Works</a>
@@ -305,7 +317,8 @@
   </div>
 </footer>
 
-<div class="cmdk-overlay" id="cmdkOverlay" hidden>
+
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="No tools match that search.">
   <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="Search tools">
     <div class="cmdk-input-row">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>

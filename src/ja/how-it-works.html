@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>norito の仕組み：アップロード不要、アカウント不要 | norito</title>
+<meta name="description" content="norito がファイルをどのようにブラウザ内だけで処理するか。アップロードなし、アカウントなし、人為的な制限なし。その仕組みを詳しく解説します。" />
+<link rel="canonical" href="https://norito.in/ja/how-it-works.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="norito の仕組み：アップロード不要、アカウント不要 | norito" />
+<meta property="og:description" content="ブラウザで使える無料ツール:テストファイル、画像圧縮、プレースホルダー、パスワード、QRコード、JSON整形、Markdown。ファイルのアップロード不要、登録不要。" />
+<meta property="og:url" content="https://norito.in/ja/how-it-works.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="norito の仕組み：アップロード不要、アカウント不要 | norito" />
+<meta name="twitter:description" content="ブラウザで使える無料ツール:テストファイル、画像圧縮、プレースホルダー、パスワード、QRコード、JSON整形、Markdown。ファイルのアップロード不要、登録不要。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="index.html">norito</a> / norito の仕組み</p>
+    <h1>norito の仕組み</h1>
+    <p class="lede">すべてのツールはあなたのブラウザ内で動作します。アップロードなし、アカウントなし、人為的な制限なし。その仕組みと理由を詳しく説明します。</p>
+
+    <h2>アップロードしたものが端末から出ることは決してありません</h2>
+    <p>PDFの結合、画像の圧縮、JSONの整形まで、norito のすべてのツールはブラウザ内でJavaScriptとして完全に動作します。ツールにファイルをドロップすると、そのファイルはブラウザのメモリに直接読み込まれ、そこで処理されます。受け取る側にサーバーは存在しません。そもそもアップロードというステップ自体がないからです。</p>
+
+    <p>これが可能なのは、以前はサーバー側の処理が必要だった強力なAPI（File API、Canvas、Web Crypto、WebAssembly）を最近のブラウザが備えているからです。norito はこれらの上に構築されており、さらにPDFを扱うための実績あるオープンソースライブラリを2つ使用しています（PDFの書き出し用の<strong>pdf-lib</strong>、表示用の<strong>pdf.js</strong>）。どちらも完全にクライアント側で動作します。</p>
+
+    <h2>アカウント・登録・メールアドレス不要</h2>
+    <p>アカウントを作成したりメールアドレスを提供したりすることなく、今すぐすべてのツールを使えます。覚えておくことも、確認することも、あなたの身元に紐づくものも何もありません。</p>
+
+    <h2>一度訪れればオフラインでも使える</h2>
+    <p>norito はプログレッシブウェブアプリ（PWA）です。初回訪問後、サービスワーカーがサイトの主要ファイルをキャッシュするため、インターネット接続がなくてもほとんどのツールが動作し続けます。また norito をホーム画面やデスクトップにネイティブアプリのようにインストールすることもできます。</p>
+
+    <h2>norito の収益方法</h2>
+    <p>norito はサブスクリプションや有料の壁ではなく、最小限で邪魔にならない表示広告によって運営されています。有料プランも、機能制限も、支払いへ誘導するための人為的な制限もありません。広告プロバイダーが収集するデータ（もしあれば）の詳細については<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+
+    <h2>私たちが見られること・見られないこと</h2>
+    <p>処理はすべてあなたの端末上で行われるため、私たちにはあなたが扱うファイルの内容を見る方法がなく、サーバーログも存在しません。そもそも記録すべきアップロード自体が存在しないからです。多くのウェブサイトと同様に、どのツールが使われているか、サイトのパフォーマンスがどうかを把握するために、標準的でプライバシーに配慮した解析を利用していますが、それは集計されたトラフィックデータであり、あなたのファイルの内容ではありません。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>norito は本当に無料ですか？</summary>
+        <p>はい、すべてのツールが無料で、1日の利用制限もアカウントも透かしもありません。このサイトはサブスクリプションではなく、最小限の広告で運営されています。</p>
+      </details>
+      <details class="faq-item">
+        <summary>norito を使うのにアカウント作成は必要ですか？</summary>
+        <p>いいえ。すべてのツールは登録、ログイン、メールアドレスなしですぐに使えます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>norito はインターネット接続なしでも動作しますか？</summary>
+        <p>はい、一度 norito を読み込んでいれば、ほとんどのツールが動作します。プログレッシブウェブアプリとしてインストール可能で、オフライン利用のために主要ファイルをキャッシュします。</p>
+      </details>
+      <details class="faq-item">
+        <summary>ファイルサイズに制限はありますか？</summary>
+        <p>norito が設定する人為的な制限はありません。実際には、すべての処理がブラウザのタブ内で行われるため、非常に大きなファイルはお使いの端末の空きメモリによって制限されますが、norito が設けた上限によるものではありません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>タブを閉じた後、ファイルはどうなりますか？</summary>
+        <p>何も起こりません。そもそもどこにも送信されていないからです。タブを閉じるか更新すると、ブラウザのメモリにあったものは単純に消えます。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<script src="../js/scroll-reveal.js"></script>
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

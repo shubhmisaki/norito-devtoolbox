@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>محول قاعدة الأرقام: ثنائي، ثماني، عشري، ست عشري | norito</title>
+<meta name="description" content="حوّل الأرقام بين الثنائي والثماني والعشري والست عشري مباشرة، بالإضافة إلى أي قاعدة مخصصة من 2 إلى 36. يتعامل مع الأرقام السالبة والكبيرة جدًا." />
+<link rel="canonical" href="https://norito.in/ar/number-base-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/number-base-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/number-base-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/number-base-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/number-base-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/number-base-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/number-base-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/number-base-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/number-base-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="محول قاعدة الأرقام: ثنائي، ثماني، عشري، ست عشري | norito" />
+<meta property="og:description" content="حوّل الأرقام بين الثنائي والثماني والعشري والست عشري مباشرة، بالإضافة إلى أي قاعدة مخصصة من 2 إلى 36. يتعامل مع الأرقام السالبة والكبيرة جدًا." />
+<meta property="og:url" content="https://norito.in/ar/number-base-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="محول قاعدة الأرقام: ثنائي، ثماني، عشري، ست عشري | norito" />
+<meta name="twitter:description" content="حوّل الأرقام بين الثنائي والثماني والعشري والست عشري مباشرة، بالإضافة إلى أي قاعدة مخصصة من 2 إلى 36. يتعامل مع الأرقام السالبة والكبيرة جدًا." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "محول قاعدة الأرقام",
+  "url": "https://norito.in/ar/number-base-converter.html",
+  "description": "حوّل الأرقام بين الثنائي والثماني والعشري والست عشري مباشرة، بالإضافة إلى أي قاعدة مخصصة من 2 إلى 36. يتعامل مع الأرقام السالبة والكبيرة جدًا.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ar/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "محول قاعدة الأرقام",
+      "item": "https://norito.in/ar/number-base-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / محول قاعدة الأرقام</p>
+    <h1>محول قاعدة الأرقام</h1>
+    <p class="lede">
+      حوّل رقمًا بين الثنائي والثماني والعشري والست عشري مباشرة، أو بين أي قاعدتين من 2 إلى 36.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="baseDecimal">عشري (قاعدة 10)</label>
+          <input type="text" id="baseDecimal" class="mono-area" placeholder="255" />
+        </div>
+        <div class="field">
+          <label for="baseHex">ست عشري (قاعدة 16)</label>
+          <input type="text" id="baseHex" class="mono-area" placeholder="ff" />
+        </div>
+        <div class="field">
+          <label for="baseBinary">ثنائي (قاعدة 2)</label>
+          <input type="text" id="baseBinary" class="mono-area" placeholder="11111111" />
+        </div>
+        <div class="field">
+          <label for="baseOctal">ثماني (قاعدة 8)</label>
+          <input type="text" id="baseOctal" class="mono-area" placeholder="377" />
+        </div>
+      </div>
+      <p class="note" style="margin-top:0;">اكتب في أي حقل، وستتحدّث الحقول الثلاثة الأخرى مباشرة. يدعم الأرقام السالبة والأعداد الصحيحة الكبيرة بشكل عشوائي.</p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0;">تحويل قاعدة مخصصة</h3>
+      <p class="note" style="margin-top:0; margin-bottom:16px;">حوّل بين أي قاعدتين من 2 إلى 36.</p>
+      <div class="field" style="margin-bottom:16px;">
+        <label for="customValue">القيمة</label>
+        <input type="text" id="customValue" class="mono-area" placeholder="1a2b3c" value="1a2b3c" />
+      </div>
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="customFrom">من قاعدة</label>
+          <select id="customFrom">
+            <option value="2">القاعدة 2</option>
+            <option value="3">القاعدة 3</option>
+            <option value="4">القاعدة 4</option>
+            <option value="5">القاعدة 5</option>
+            <option value="6">القاعدة 6</option>
+            <option value="7">القاعدة 7</option>
+            <option value="8">القاعدة 8</option>
+            <option value="9">القاعدة 9</option>
+            <option value="10" selected>القاعدة 10</option>
+            <option value="11">القاعدة 11</option>
+            <option value="12">القاعدة 12</option>
+            <option value="13">القاعدة 13</option>
+            <option value="14">القاعدة 14</option>
+            <option value="15">القاعدة 15</option>
+            <option value="16">القاعدة 16</option>
+            <option value="17">القاعدة 17</option>
+            <option value="18">القاعدة 18</option>
+            <option value="19">القاعدة 19</option>
+            <option value="20">القاعدة 20</option>
+            <option value="21">القاعدة 21</option>
+            <option value="22">القاعدة 22</option>
+            <option value="23">القاعدة 23</option>
+            <option value="24">القاعدة 24</option>
+            <option value="25">القاعدة 25</option>
+            <option value="26">القاعدة 26</option>
+            <option value="27">القاعدة 27</option>
+            <option value="28">القاعدة 28</option>
+            <option value="29">القاعدة 29</option>
+            <option value="30">القاعدة 30</option>
+            <option value="31">القاعدة 31</option>
+            <option value="32">القاعدة 32</option>
+            <option value="33">القاعدة 33</option>
+            <option value="34">القاعدة 34</option>
+            <option value="35">القاعدة 35</option>
+            <option value="36">القاعدة 36</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customTo">إلى قاعدة</label>
+          <select id="customTo">
+            <option value="2">القاعدة 2</option>
+            <option value="3">القاعدة 3</option>
+            <option value="4">القاعدة 4</option>
+            <option value="5">القاعدة 5</option>
+            <option value="6">القاعدة 6</option>
+            <option value="7">القاعدة 7</option>
+            <option value="8">القاعدة 8</option>
+            <option value="9">القاعدة 9</option>
+            <option value="10">القاعدة 10</option>
+            <option value="11">القاعدة 11</option>
+            <option value="12">القاعدة 12</option>
+            <option value="13">القاعدة 13</option>
+            <option value="14">القاعدة 14</option>
+            <option value="15">القاعدة 15</option>
+            <option value="16" selected>القاعدة 16</option>
+            <option value="17">القاعدة 17</option>
+            <option value="18">القاعدة 18</option>
+            <option value="19">القاعدة 19</option>
+            <option value="20">القاعدة 20</option>
+            <option value="21">القاعدة 21</option>
+            <option value="22">القاعدة 22</option>
+            <option value="23">القاعدة 23</option>
+            <option value="24">القاعدة 24</option>
+            <option value="25">القاعدة 25</option>
+            <option value="26">القاعدة 26</option>
+            <option value="27">القاعدة 27</option>
+            <option value="28">القاعدة 28</option>
+            <option value="29">القاعدة 29</option>
+            <option value="30">القاعدة 30</option>
+            <option value="31">القاعدة 31</option>
+            <option value="32">القاعدة 32</option>
+            <option value="33">القاعدة 33</option>
+            <option value="34">القاعدة 34</option>
+            <option value="35">القاعدة 35</option>
+            <option value="36">القاعدة 36</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box error" id="customError" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+      <div class="field">
+        <label for="customOutput">النتيجة</label>
+        <input type="text" id="customOutput" class="mono-area" readonly />
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>كل قيمة تكتبها تُحلَّل إلى <code>BigInt</code> في جافاسكريبت، وهو نوع عدد صحيح ذو دقة عشوائية مدمج في المتصفح. يمر التحليل عبر إدخالك رقمًا رقمًا، مضاعفًا المجموع الجاري بالقاعدة ومضيفًا قيمة كل رقم؛ والتحويل العكسي يقسّم بشكل متكرر على القاعدة الهدف ويجمع الباقي. الأرقام فوق 9 تستخدم أحرفًا، لذا تمر القاعدة 36 عبر 0-9 ثم a-z. الأرقام السالبة تعمل أيضًا: تُنزَع علامة الطرح البادئة قبل التحليل وتُعاد في النهاية.</p>
+      <p>جزء BigInt هو التفصيل الذي يستحق المعرفة. المحوّلات المبنية على أرقام جافاسكريبت العادية تُفسد بصمت أي قيمة فوق 9,007,199,254,740,991 (2^53 - 1)، لأن هذا هو المكان الذي تتوقف فيه الفاصلة العائمة عن تمثيل كل عدد صحيح بدقة. الصق قيمة ست عشرية من 16 رقمًا مثل <code>ffffffffffffffff</code> في واحدة من تلك الأدوات وستحصل على إجابة مقرّبة وخاطئة دون أي تحذير. هنا الرياضيات دقيقة بأي طول: يتحول عدد عشري من 100 رقم إلى ثنائي بشكل صحيح، فقط يستغرق أرقامًا أكثر.</p>
+      <p>يتحقق كل حقل من صحته وفق قاعدته الخاصة أثناء الكتابة، لذا يؤدي إدخال 9 في خانة الثماني أو g في الست عشري إلى إظهار خطأ بدلاً من نتيجة عشوائية، وتتحدّث الحقول الثلاثة الأخرى مباشرة وفقًا للحقل الذي عدّلته. كل هذا يحدث في تبويبك: تحقّق من لوحة Network في أدوات المطوّر وسترى أن الصفحة لا تُجري أي طلبات أثناء الكتابة، لذا الأرقام التي تحوّلها لا تغادر جهازك أبدًا.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+hash-generator.html|مولّد التجزئة|MD5 وSHA-1 وSHA-256 وSHA-512.
+url-encoder-decoder.html|ترميز / فك ترميز URL|رمّز بالنسبة المئوية أو فكّ ترميز رابط.
+timestamp-converter.html|محول الطابع الزمني|توقيت Unix إلى تاريخ، في كلا الاتجاهين.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-base-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

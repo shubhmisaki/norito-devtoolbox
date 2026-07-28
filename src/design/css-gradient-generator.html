@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS Gradient Generator: Linear & Radial | norito</title>
+<meta name="description" content="Build a linear or radial CSS gradient visually with multiple color stops, right in your browser. Copy the CSS when it looks right." />
+<link rel="canonical" href="https://norito.in/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/css-gradient-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS Gradient Generator: Linear & Radial | norito" />
+<meta property="og:description" content="Build a linear or radial CSS gradient visually with multiple color stops, right in your browser. Copy the CSS when it looks right." />
+<meta property="og:url" content="https://norito.in/design/css-gradient-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS Gradient Generator: Linear & Radial | norito" />
+<meta name="twitter:description" content="Build a linear or radial CSS gradient visually with multiple color stops, right in your browser. Copy the CSS when it looks right." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS Gradient Generator",
+  "url": "https://norito.in/design/css-gradient-generator.html",
+  "description": "Build a linear or radial CSS gradient visually with multiple color stops, right in your browser. Copy the CSS when it looks right.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I add more than two colors?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, click \"Add color stop\" as many times as you like. Each stop has its own color and position percentage, so you can build multi-color gradients, not just simple two-tone ones." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between linear and radial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Linear gradients transition in a straight line at whatever angle you set. Radial gradients transition outward from a center point in a circle, angle doesn't apply to those." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the gradient is built and previewed entirely in your browser's CSS engine. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSS Gradient Generator",
+      "item": "https://norito.in/design/css-gradient-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS Gradient Generator</p>
+    <h1>CSS Gradient Generator</h1>
+    <p class="lede">
+      Build a linear or radial gradient visually with any number of color stops, then copy the CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="gradType">Type</label>
+            <select id="gradType">
+              <option value="linear" selected>Linear</option>
+              <option value="radial">Radial</option>
+            </select>
+          </div>
+          <div class="field" id="angleRow">
+            <label for="gradAngle">Angle (°)</label>
+            <input type="number" id="gradAngle" min="0" max="360" value="135" />
+          </div>
+        </div>
+        <h3>Color stops</h3>
+        <div id="stopsWrap"></div>
+        <button type="button" id="addStopBtn" class="secondary" style="margin-top:4px;">+ Add color stop</button>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copy CSS</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Every stop is an object holding a color and a position from 0 to 100. On each change the
+        stops are sorted by position before serialization, so you can type positions in any order
+        and the output stays valid, then joined into either
+        <code>linear-gradient(&lt;angle&gt;deg, ...)</code> or
+        <code>radial-gradient(circle, ...)</code> depending on the type you picked. That exact
+        string is set as the preview's <code>background</code> and printed as the output, so the
+        preview is rendered by your browser from the same CSS you'll copy, not a lookalike. New
+        stops drop in at 50% in green so you can spot them, and the remove button only appears once
+        you have more than two stops, since a gradient needs at least two.
+      </p>
+      <p>
+        If a gradient between two saturated colors looks muddy in the middle, that's not this tool,
+        that's CSS: browsers interpolate gradients in the sRGB color space by default, and the
+        straight line between certain pairs (blue to yellow is the classic) passes through
+        desaturated gray. Two fixes: add a stop in the middle and set it to the vivid intermediate
+        color you actually want, which this tool makes easy, or use the newer color-space syntax
+        like <code>linear-gradient(in oklab, blue, yellow)</code>, which modern browsers now
+        support and which interpolates perceptually so the middle stays clean. Worth knowing before
+        you blame your color choices.
+      </p>
+      <p>
+        The gradient string is built and applied entirely in this page's JavaScript; picking colors
+        and dragging the angle slider triggers zero network requests, which the DevTools Network
+        tab will happily confirm.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+box-shadow-generator.html|Box Shadow Generator|Build a CSS box-shadow visually.
+border-radius-generator.html|Border Radius Generator|Build per-corner border radius visually.
+favicon-generator.html|Favicon Generator|Generate a favicon from an image.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Can I add more than two colors?</summary>
+        <p>Yes, click "Add color stop" as many times as you like. Each stop has its own color and position percentage, so you can build multi-color gradients, not just simple two-tone ones.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the difference between linear and radial?</summary>
+        <p>Linear gradients transition in a straight line at whatever angle you set. Radial gradients transition outward from a center point in a circle, angle doesn't apply to those.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this sent anywhere?</summary>
+        <p>No, the gradient is built and previewed entirely in your browser's CSS engine. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-gradient-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

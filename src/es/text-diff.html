@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Comparador de Texto: Compara Dos Textos Online | norito</title>
+<meta name="description" content="Compara dos bloques de texto línea por línea y ve exactamente qué cambió. Ignora espacios o mayúsculas, copia el diff. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/text-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/text-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/text-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/text-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/text-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/text-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/text-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/text-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/text-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Comparador de Texto: Compara Dos Textos Online | norito" />
+<meta property="og:description" content="Compara dos bloques de texto línea por línea y ve exactamente qué cambió. Ignora espacios o mayúsculas, copia el diff. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/text-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Comparador de Texto: Compara Dos Textos Online | norito" />
+<meta name="twitter:description" content="Compara dos bloques de texto línea por línea y ve exactamente qué cambió. Ignora espacios o mayúsculas, copia el diff. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Comparador de Texto",
+  "url": "https://norito.in/es/text-diff.html",
+  "description": "Compara dos bloques de texto línea por línea y ve exactamente qué cambió. Ignora espacios o mayúsculas, copia el diff. Funciona por completo en tu navegador.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Comparador de Texto",
+      "item": "https://norito.in/es/text-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Comparador de Texto</p>
+    <h1>Comparador de Texto</h1>
+    <p class="lede">
+      Compara dos bloques de texto línea por línea y ve exactamente qué se añadió, se eliminó o quedó sin cambios.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreWhitespace" />
+          <span>Ignorar espacios</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreCase" />
+          <span>Ignorar mayúsculas/minúsculas</span>
+        </label>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="inputA">Original</label>
+          <textarea id="inputA" class="mono-area" rows="10" placeholder="Pega el texto original..."></textarea>
+        </div>
+        <div class="field">
+          <label for="inputB">Modificado</label>
+          <textarea id="inputB" class="mono-area" rows="10" placeholder="Pega el texto modificado..."></textarea>
+        </div>
+      </div>
+
+      <div id="tooLarge" class="result-box error" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body">Uno de estos textos supera las 4000 líneas. Prueba a comparar una sección más pequeña.</div>
+      </div>
+
+      <div id="emptyState" class="note" style="display:block;">Pega texto en ambos cuadros para ver una comparación línea por línea.</div>
+
+      <div id="diffStatsRow" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+        <div class="diff-stats" id="statsBox" style="display:none;"></div>
+      </div>
+      <div class="diff-view" id="diffOutput" style="display:none;"></div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn" class="secondary">Copiar diff como texto</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>La comparación es un diff a nivel de línea basado en el algoritmo de la subsecuencia común más larga (LCS), la misma familia de lógica detrás de <code>git diff</code>. Ambos textos se dividen en líneas y luego una tabla de programación dinámica calcula el mayor conjunto de líneas que comparten las dos versiones en orden. Recorrer esa tabla hacia atrás produce las operaciones que ves: las líneas que solo están en el texto izquierdo se marcan en rojo como eliminadas, las que solo están en el derecho se marcan en verde como añadidas, y las líneas compartidas permanecen neutras, cada una con su número de línea original.</p>
+      <p>El diff a nivel de línea es una decisión deliberada. Los diffs a nivel de carácter pueden mostrar que una sola palabra cambió dentro de una línea, pero en documentos reales degeneran en confeti: cientos de fragmentos diminutos más difíciles de leer que simplemente ver la línea antigua eliminada y la nueva añadida. La salida a nivel de línea se mantiene legible y encaja directamente con cómo la revisión de código y el control de versiones presentan los cambios. Las dos casillas ajustan qué significa "igual": ignorar espacios colapsa las secuencias de espacios y recorta los finales de línea antes de comparar (ideal para código reformateado), e ignorar mayúsculas/minúsculas pone ambos lados en minúsculas. Las líneas mostradas conservan su formato original en cualquier caso.</p>
+      <p>Como la tabla de programación dinámica cuesta memoria y tiempo proporcional a (líneas en A) x (líneas en B), la herramienta limita la entrada a 4000 líneas por lado; más allá de eso, la tabla por sí sola tendría decenas de millones de celdas y la pestaña se trabaría. Dentro del límite, todo se ejecuta de forma síncrona en tu navegador: ambos textos viven solo en tu pestaña, no se dispara ninguna petición al escribir (comprueba el panel Red de las DevTools), y los borradores o configuraciones confidenciales nunca tocan un servidor.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-diff.html|Comparador de JSON|Compara dos documentos JSON.
+remove-duplicate-lines.html|Eliminar líneas duplicadas|Elimina duplicados antes o después de ordenar.
+sort-lines.html|Ordenar líneas|Ordena líneas de texto alfabética o numéricamente.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-text-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

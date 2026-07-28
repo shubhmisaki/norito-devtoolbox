@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Probador de Regex: Prueba Expresiones Regulares en Vivo | norito</title>
+<meta name="description" content="Prueba una expresión regular contra un texto de muestra con resaltado de coincidencias en vivo, en tu navegador. Ve grupos de captura y todas las coincidencias. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/regex-tester.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/regex-tester.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/regex-tester.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/regex-tester.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/regex-tester.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/regex-tester.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/regex-tester.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/regex-tester.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/regex-tester.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Probador de Regex: Prueba Expresiones Regulares en Vivo | norito" />
+<meta property="og:description" content="Prueba una expresión regular contra un texto de muestra con resaltado de coincidencias en vivo, en tu navegador. Ve grupos de captura y todas las coincidencias. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/regex-tester.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Probador de Regex: Prueba Expresiones Regulares en Vivo | norito" />
+<meta name="twitter:description" content="Prueba una expresión regular contra un texto de muestra con resaltado de coincidencias en vivo, en tu navegador. Ve grupos de captura y todas las coincidencias. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Probador de Regex",
+  "url": "https://norito.in/es/regex-tester.html",
+  "description": "Prueba una expresión regular contra un texto de muestra con resaltado de coincidencias en vivo, en tu navegador. Ve grupos de captura y todas las coincidencias. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Probador de Regex",
+      "item": "https://norito.in/es/regex-tester.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Probador de Regex</p>
+    <h1>Probador de Regex</h1>
+    <p class="lede">
+      Prueba una expresión regular contra un texto de muestra, con las coincidencias resaltadas en vivo mientras escribes. Ve cada coincidencia y sus grupos de captura.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field" style="flex:2;">
+            <label for="pattern">Patrón</label>
+            <input type="text" id="pattern" class="mono-output" spellcheck="false" value="\b[A-Z][a-z]+\b" />
+          </div>
+          <div class="field">
+            <label for="flags">Flags</label>
+            <input type="text" id="flags" class="mono-output" spellcheck="false" value="g" placeholder="gimsuy" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="testString">Texto de prueba</label>
+          <textarea id="testString" class="mono-output" rows="6" spellcheck="false">El Rápido Zorro Marrón salta sobre el Perro perezoso.</textarea>
+        </div>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="field" style="margin-top:16px;">
+          <label>Coincidencias resaltadas</label>
+          <div class="regex-highlighted" id="highlighted"></div>
+        </div>
+        <div class="meta-panel" id="matchesPanel" style="display:none; margin-top:16px;">
+          <p class="meta-summary">Todas las coincidencias</p>
+          <div id="matchesList"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Referencia de flags</h3>
+          <p class="note" style="margin-top:0;">
+            <strong>g</strong> global (encuentra todas las coincidencias, siempre aplicado internamente aquí), <strong>i</strong> insensible a mayúsculas, <strong>m</strong> multilínea (^ y $ coinciden con los límites de línea), <strong>s</strong> dotAll (. coincide con saltos de línea), <strong>u</strong> unicode, <strong>y</strong> sticky.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Tu patrón se compila con el motor <code>RegExp</code> nativo del navegador, exactamente el mismo motor que tu código JavaScript usará en producción. Ese es el punto de probar aquí en vez de en una herramienta basada en PCRE: la sintaxis que difiere entre variantes (soporte de lookbehind, semántica de <code>\d</code> bajo la bandera <code>u</code>, grupos con nombre) se comporta aquí exactamente como lo hará en Node o en el navegador. El campo de flags se sanea al conjunto válido (<code>d g i m s u y</code>), y el probador añade silenciosamente <code>g</code> internamente para poder recorrer cada coincidencia, sin cambiar lo que escribiste.</p>
+      <p>La coincidencia se ejecuta en cada pulsación: el probador llama a <code>exec()</code> en un bucle, recopilando el texto de la coincidencia, su posición, y los grupos de captura. Dos protecciones lo mantienen honesto: las coincidencias de longitud cero (de patrones como <code>a*</code>) reciben un avance manual de índice para que el bucle no gire para siempre, y la iteración se limita a 5000 coincidencias. El resaltado se construye recorriendo tu texto de prueba una vez y envolviendo cada tramo coincidente, con todo el texto escapado a HTML primero para que una coincidencia que contenga <code>&lt;script&gt;</code> se muestre como texto, no como marcado.</p>
+      <p>Todo permanece en tu pestaña; el panel Red de las DevTools muestra cero peticiones mientras escribes, así que los textos de prueba con datos reales nunca salen de tu máquina.</p>
+      <p>Un detalle que vale la pena conocer: cuantificadores anidados como <code>(a+)+$</code> pueden desencadenar un retroceso catastrófico, donde el tiempo de coincidencia explota exponencialmente en una entrada larga casi-coincidente. Si la página se congela con un patrón así, no es la herramienta, es el regex, y colgará tu código de producción de la misma manera. Reescribe el patrón para que los grupos cuantificados no puedan coincidir con los mismos caracteres de múltiples formas.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-formatter.html|Formateador JSON|Formatea y valida JSON.
+seo-slug-generator.html|Generador de slugs SEO|Slugs de URL limpios a partir de títulos.
+case-converter.html|Conversor de mayúsculas/minúsculas|Convierte texto entre mayúsculas y minúsculas.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-regex-tester.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

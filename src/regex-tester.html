@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Regex Tester: Test Regular Expressions Live | norito</title>
+<meta name="description" content="Test a regular expression against sample text with live match highlighting, right in your browser. See capture groups and all matches. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/regex-tester.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/regex-tester.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/regex-tester.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Regex Tester: Test Regular Expressions Live | norito" />
+<meta property="og:description" content="Test a regular expression against sample text with live match highlighting, right in your browser. See capture groups and all matches. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/regex-tester.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Regex Tester: Test Regular Expressions Live | norito" />
+<meta name="twitter:description" content="Test a regular expression against sample text with live match highlighting, right in your browser. See capture groups and all matches. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Regex Tester",
+  "url": "https://norito.in/regex-tester.html",
+  "description": "Test a regular expression against sample text with live match highlighting, right in your browser. See capture groups and all matches. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this use JavaScript regex syntax?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, since it runs in your browser using JavaScript's native RegExp engine. That's the same syntax used in Node.js and most browser-side code, close to but not identical to PCRE (used by PHP, Python's re module differs slightly too)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it always seem to act like the global flag is on?",
+      "acceptedAnswer": { "@type": "Answer", "text": "So every match gets found and highlighted rather than stopping at the first one. Whatever you type in the flags field is still respected for everything else (case sensitivity, multiline, etc.), the global behavior is just always applied for finding all matches to display." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my test string sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, matching happens entirely in your browser's JavaScript engine. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Regex Tester",
+      "item": "https://norito.in/regex-tester.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Regex Tester</p>
+    <h1>Regex Tester</h1>
+    <p class="lede">
+      Test a regular expression against sample text, with matches highlighted live as you type. See every match and its capture groups.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field" style="flex:2;">
+            <label for="pattern">Pattern</label>
+            <input type="text" id="pattern" class="mono-output" spellcheck="false" value="\b[A-Z][a-z]+\b" />
+          </div>
+          <div class="field">
+            <label for="flags">Flags</label>
+            <input type="text" id="flags" class="mono-output" spellcheck="false" value="g" placeholder="gimsuy" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="testString">Test string</label>
+          <textarea id="testString" class="mono-output" rows="6" spellcheck="false">The Quick Brown Fox jumps over the lazy Dog.</textarea>
+        </div>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="field" style="margin-top:16px;">
+          <label>Highlighted matches</label>
+          <div class="regex-highlighted" id="highlighted"></div>
+        </div>
+        <div class="meta-panel" id="matchesPanel" style="display:none; margin-top:16px;">
+          <p class="meta-summary">All matches</p>
+          <div id="matchesList"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Flags reference</h3>
+          <p class="note" style="margin-top:0;">
+            <strong>g</strong> global (find all matches, always applied here internally),
+            <strong>i</strong> case-insensitive, <strong>m</strong> multiline (^ and $ match line
+            boundaries), <strong>s</strong> dotAll (. matches newlines), <strong>u</strong>
+            unicode, <strong>y</strong> sticky.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Your pattern is compiled with the browser's native <code>RegExp</code> engine, the exact same engine your JavaScript code will use in production. That's the point of testing here rather than in a PCRE-based tool: syntax that differs between flavors (lookbehind support, <code>\d</code> semantics under the <code>u</code> flag, named groups) behaves here exactly as it will in Node or the browser. The flags field is sanitized to the valid set (<code>d g i m s u y</code>), and the tester quietly adds <code>g</code> internally so it can walk every match, without changing what you typed.</p>
+      <p>Matching runs on every keystroke: the tester calls <code>exec()</code> in a loop, collecting match text, position, and capture groups. Two guards keep it honest: zero-length matches (from patterns like <code>a*</code>) get a manual index bump so the loop can't spin forever, and iteration caps at 5,000 matches. Highlighting is built by walking your test string once and wrapping each matched span, with all text HTML-escaped first so a match containing <code>&lt;script&gt;</code> renders as text, not markup.</p>
+      <p>Everything stays in your tab; the Network panel in DevTools shows zero requests while you type, so test strings with real data in them never leave your machine.</p>
+      <p>One gotcha worth knowing: nested quantifiers like <code>(a+)+$</code> can trigger catastrophic backtracking, where match time explodes exponentially on a long almost-matching input. If the page freezes on a pattern like that, it's not the tool, it's the regex, and it will hang your production code the same way. Rewrite the pattern so quantified groups can't match the same characters in multiple ways.</p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|JSON Formatter|Format and validate JSON.
+seo-slug-generator.html|SEO Slug Generator|Clean URL slugs from titles.
+case-converter.html|Case Converter|Convert text between cases.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does this use JavaScript regex syntax?</summary>
+        <p>Yes, since it runs in your browser using JavaScript's native RegExp engine. That's the same syntax used in Node.js and most browser-side code, close to but not identical to PCRE (used by PHP, Python's re module differs slightly too).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why does it always seem to act like the global flag is on?</summary>
+        <p>So every match gets found and highlighted rather than stopping at the first one. Whatever you type in the flags field is still respected for everything else (case sensitivity, multiline, etc.), the global behavior is just always applied for finding all matches to display.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my test string sent anywhere?</summary>
+        <p>No, matching happens entirely in your browser's JavaScript engine. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-regex-tester.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>在线免费压缩 PDF 以便通过邮件发送（25MB 以内）| norito</title>
+<meta name="description" content="把 PDF 缩小到符合邮件附件大小限制，比如 Gmail 的 25MB，直接在浏览器中完成。真实文字保持可选中，只有照片和扫描件会被重新压缩。" />
+<link rel="canonical" href="https://norito.in/zh/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/pdf/compress-pdf-for-email.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/pdf/compress-pdf-for-email.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="在线免费压缩 PDF 以便通过邮件发送（25MB 以内）| norito" />
+<meta property="og:description" content="把 PDF 缩小到符合邮件附件大小限制，比如 Gmail 的 25MB，直接在浏览器中完成。真实文字保持可选中，只有照片和扫描件会被重新压缩。" />
+<meta property="og:url" content="https://norito.in/zh/pdf/compress-pdf-for-email.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在线免费压缩 PDF 以便通过邮件发送（25MB 以内）| norito" />
+<meta name="twitter:description" content="把 PDF 缩小到符合邮件附件大小限制，比如 Gmail 的 25MB，直接在浏览器中完成。真实文字保持可选中，只有照片和扫描件会被重新压缩。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "压缩 PDF 以便通过邮件发送",
+  "url": "https://norito.in/zh/pdf/compress-pdf-for-email.html",
+  "description": "把 PDF 缩小到符合邮件附件大小限制，比如 Gmail 的 25MB。完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Gmail 的附件大小限制是多少？",
+      "acceptedAnswer": { "@type": "Answer", "text": "Gmail 单封邮件是 25MB，包含所有附件总和。Outlook.com 和大多数其他邮箱服务商的上限也在 20 到 25MB 左右。如果你的 PDF 更大，请先压缩，或者改用分享链接的方式。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的 PDF 文件会被上传吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。压缩操作完全在你的浏览器内通过 JavaScript 完成。你的文件不会离开设备，也不会接触任何服务器。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这具体是怎么压缩文件的？",
+      "acceptedAnswer": { "@type": "Answer", "text": "包含真实文字的页面在结构上不会被改动，只有页面上内嵌的照片会按你选择的质量重新压缩。那些实际上只是一张大扫描图（完全没有真实文字）的页面，会按你选择的分辨率重新渲染为压缩过的 JPEG。无论哪种情况，文件都会围绕这些更小的部分重新构建。" }
+    },
+    {
+      "@type": "Question",
+      "name": "压缩后文字还能选中吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以，任何包含真实文字的页面，其文字都不会被改动，因此仍然可以选中和搜索。只有那些原本就是扁平扫描图的页面会被再次压平，因为上面本来就没有真实文字可以损失。" }
+    },
+    {
+      "@type": "Question",
+      "name": "如果压缩后没有变小怎么办？",
+      "acceptedAnswer": { "@type": "Answer", "text": "如果 PDF 中没有任何内容能在不压平真实文字或明显损害画质的前提下安全缩小，你会得到与原文件完全一致的结果（逐字节相同），而不是一个更大或更差的版本。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我可以压缩带密码保护的 PDF 吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "压缩 PDF 以便通过邮件发送",
+      "item": "https://norito.in/zh/pdf/compress-pdf-for-email.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / 压缩 PDF 以便通过邮件发送</p>
+    <h1>压缩 PDF 以便通过邮件发送</h1>
+    <p class="lede">
+      把 PDF 缩小到符合邮件附件大小限制，比如 Gmail 的 25MB 上限。分辨率和质量已经预设为较小的档位，真实文字全程保持可选中。不会上传任何内容，一切都在你的设备上完成。
+    </p>
+    </div>
+  </div>
+
+    <div class="result-box ok" style="margin-bottom:24px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>你的文字始终是文字。</strong> 任何包含真实、可选中文字的页面都会完全保持不变，只有其中内嵌的照片会被重新压缩。只有那些原本就是一张大扫描图的页面才会被再次压平，因为那里没有什么可以损失的。如果一个 PDF 已经没有可以安全缩小的内容，你会得到未经改动的原文件，而不是一个更大的版本。</div>
+    </div>
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>点击选择 PDF 文件</strong>，或将它拖放到这里</p>
+        <p class="note" style="margin-top:2px;">文件留在你的设备上，不会被上传。</p>
+        <input type="file" id="fileInput" accept="application/pdf" />
+      </div>
+      <p class="note" id="fileInfo" style="display:none;"></p>
+
+      <div class="field-row" style="margin-top:20px; margin-bottom:20px;">
+        <div class="field">
+          <label for="dpiSelect">分辨率</label>
+          <select id="dpiSelect" disabled>
+            <option value="72">72 DPI（最小）</option>
+            <option value="100" selected>100 DPI（邮件预设）</option>
+            <option value="150">150 DPI（均衡）</option>
+            <option value="200">200 DPI（更高画质）</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qualitySelect">质量</label>
+          <select id="qualitySelect" disabled>
+            <option value="0.9">高</option>
+            <option value="0.75">中</option>
+            <option value="0.5" selected>低（文件更小，邮件预设）</option>
+          </select>
+        </div>
+      </div>
+      <p class="note" style="margin-top:-12px; margin-bottom:20px;">分辨率和质量只影响扫描页面和内嵌照片，真实文字不会受到任何影响。</p>
+
+      <button id="compressBtn" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        压缩 PDF
+      </button>
+      <div class="result-box" id="result" style="display:none;"></div>
+    </div>
+
+    <div class="faq-list" style="margin-top:32px;">
+      <details class="faq-item">
+        <summary>Gmail 的附件大小限制是多少？</summary>
+        <p>Gmail 单封邮件是 25MB，包含所有附件总和。Outlook.com 和大多数其他邮箱服务商的上限也在 20 到 25MB 左右。如果你的 PDF 更大，请先压缩，或者改用分享链接的方式。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的 PDF 文件会被上传吗？</summary>
+        <p>不会。压缩操作完全在你的浏览器内通过 JavaScript 完成。你的文件不会离开设备，也不会接触任何服务器。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这具体是怎么压缩文件的？</summary>
+        <p>包含真实文字的页面在结构上不会被改动，只有页面上内嵌的照片会按你选择的质量重新压缩。那些实际上只是一张大扫描图（完全没有真实文字）的页面，会按你选择的分辨率重新渲染为压缩过的 JPEG。无论哪种情况，文件都会围绕这些更小的部分重新构建。</p>
+      </details>
+      <details class="faq-item">
+        <summary>压缩后文字还能选中吗？</summary>
+        <p>可以，任何包含真实文字的页面，其文字都不会被改动，因此仍然可以选中和搜索。只有那些原本就是扁平扫描图的页面会被再次压平，因为上面本来就没有真实文字可以损失。</p>
+      </details>
+      <details class="faq-item">
+        <summary>如果压缩后没有变小怎么办？</summary>
+        <p>如果 PDF 中没有任何内容能在不压平真实文字或明显损害画质的前提下安全缩小，你会得到与原文件完全一致的结果（逐字节相同），而不是一个更大或更差的版本。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我可以压缩带密码保护的 PDF 吗？</summary>
+        <p>目前还不行。工具无法读取带密码保护或加密的 PDF，会显示错误，请先用 PDF 阅读器移除密码。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/vendor/pdf-lib.min.js"></script>
+<script type="module" src="../../js/app-pdf-compress.js"></script>
+<script src="../../js/prefill.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

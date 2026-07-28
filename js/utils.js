@@ -159,11 +159,60 @@ function createZip(entries) {
   return concatBytes([localData, centralDir, eocd]);
 }
 
+// ---- clipboard copy with automatic fallback ----
+// Centralizes the navigator.clipboard.writeText() + execCommand("copy")
+// fallback that used to be duplicated (inconsistently -- some tools had no
+// fallback at all, so copying silently did nothing when the Clipboard API
+// was unavailable) across ~26 app-*.js files. Throws only if both the
+// modern API and the fallback fail.
+async function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch (e) {
+      // fall through to the execCommand fallback below
+    }
+  }
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch (e) {
+    ok = false;
+  }
+  ta.remove();
+  if (!ok) throw new Error("copyToClipboard: no copy mechanism available");
+}
+
+// ---- dropzone drag-and-drop wiring ----
+// Centralizes the dragenter/dragover/dragleave/drop event wiring (add/remove
+// the "drag" hover class, preventDefault so the browser doesn't navigate to
+// the dropped file) that used to be copy-pasted, in one of two equivalent
+// forms, across 24 app-*.js files. `onDrop(e)` is called only for the actual
+// drop, with the hover class already cleared and the default already
+// prevented -- callers just read e.dataTransfer.files.
+function wireDragDrop(el, onDrop) {
+  el.addEventListener("dragover", (e) => { e.preventDefault(); el.classList.add("drag"); });
+  el.addEventListener("dragleave", (e) => { e.preventDefault(); el.classList.remove("drag"); });
+  el.addEventListener("drop", (e) => {
+    e.preventDefault();
+    el.classList.remove("drag");
+    onDrop(e);
+  });
+}
+
 // Export for both browser (globals) and Node (module.exports), so the same
 // file can be unit-tested headlessly.
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     crc32, crc32Final, concatBytes, u16le, u32le, u16be, u32be,
-    textBytes, randomBytes, parseSize, formatBytes, createZip,
+    textBytes, randomBytes, parseSize, formatBytes, createZip, copyToClipboard,
+    wireDragDrop,
   };
 }

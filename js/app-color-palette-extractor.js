@@ -101,7 +101,7 @@
     els.grid.querySelectorAll(".palette-swatch").forEach((btn) => {
       btn.addEventListener("click", async () => {
         try {
-          await navigator.clipboard.writeText(btn.dataset.hex);
+          await copyToClipboard(btn.dataset.hex);
           celebrateSuccess(null, btn, "Copied " + btn.dataset.hex);
         } catch (e) {
           /* clipboard unavailable */
@@ -138,11 +138,7 @@
     if (els.fileInput.files[0]) handleFile(els.fileInput.files[0]);
   });
   els.drop.addEventListener("click", () => els.fileInput.click());
-  els.drop.addEventListener("dragover", (e) => { e.preventDefault(); els.drop.classList.add("drag"); });
-  els.drop.addEventListener("dragleave", () => els.drop.classList.remove("drag"));
-  els.drop.addEventListener("drop", (e) => {
-    e.preventDefault();
-    els.drop.classList.remove("drag");
+  wireDragDrop(els.drop, (e) => {
     if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });
   document.addEventListener("paste", (e) => {

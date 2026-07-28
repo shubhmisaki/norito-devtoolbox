@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>YAML から JSON への変換ツール（相互変換）| norito</title>
+<meta name="description" content="YAMLをJSONに、またはJSONをYAMLにブラウザ内でリアルタイム変換。マッピング、シーケンス、引用符付き文字列、コメントに対応。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/yaml-to-json-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/yaml-to-json-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="YAML から JSON への変換ツール（相互変換）| norito" />
+<meta property="og:description" content="YAMLをJSONに、またはJSONをYAMLにブラウザ内でリアルタイム変換。マッピング、シーケンス、引用符付き文字列、コメントに対応。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/yaml-to-json-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="YAML から JSON への変換ツール（相互変換）| norito" />
+<meta name="twitter:description" content="YAMLをJSONに、またはJSONをYAMLにブラウザ内でリアルタイム変換。マッピング、シーケンス、引用符付き文字列、コメントに対応。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "YAMLからJSONへの変換ツール",
+  "url": "https://norito.in/ja/yaml-to-json-converter.html",
+  "description": "YAMLをJSONに、またはJSONをYAMLにブラウザ内でリアルタイム変換。マッピング、シーケンス、引用符付き文字列、コメントに対応。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "YAMLからJSONへの変換ツール",
+      "item": "https://norito.in/ja/yaml-to-json-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / YAMLからJSONへの変換ツール</p>
+    <h1>YAMLからJSONへの変換ツール</h1>
+    <p class="lede">
+      YAMLをJSONに、またはJSONをYAMLに、入力しながらリアルタイムで変換します。すべてブラウザ内で動作し、貼り付けた内容がアップロードされることはありません。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="yaml2json">YAML &rarr; JSON</button>
+          <button type="button" class="tab" data-value="json2yaml">JSON &rarr; YAML</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="yaml2json">yaml2json</option>
+          <option value="json2yaml">json2yaml</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="indentSize">JSONインデント</label>
+          <select id="indentSize">
+            <option value="2" selected>スペース2個</option>
+            <option value="4">スペース4個</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">入力</label>
+          <textarea id="input" class="mono-area" rows="12" placeholder="YAMLを貼り付け..."></textarea>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">出力</label>
+          <textarea id="output" class="mono-area" rows="12" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            入れ替え
+          </button>
+          <button id="copyBtn">出力をコピー</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-indigo" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg>
+            </div>
+            <div>
+              <h3>設定ファイルを、どこでも使えるように</h3>
+              <p>YAMLはDocker Compose、Kubernetes、CI設定でよく使われます。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            YAMLは人間が読み書きしやすい形式ですが、ほとんどのAPIやプログラミング言語が想定しているのはJSONです。このツールはブラウザ内だけで、双方向にこの2つを変換します。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">対応している内容</h3>
+          <p class="note" style="margin-top:0;">
+            ブロック形式・フロー形式のマッピングとシーケンス、引用符付き・プレーンなスカラー値、数値、真偽値、null、コメントに対応しています。アンカー／エイリアス、複数ドキュメントファイル、複数行のブロックスカラー（<code>|</code> / <code>&gt;</code>）には対応していません。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>YAMLからJSONへの変換は、このページ専用に書かれた小さな再帰下降パーサーで行われます。まずコメントを除去し（引用符付き文字列内の<code>#</code>が誤って消えないよう慎重に処理します）、各行のインデントを記録した上で、YAMLの定義どおりに構造を構築します。インデントはネストしたマップを開き、<code>-</code>で始まる行はシーケンスを構築し、それ以外はすべてスカラー値になります。スカラー値は実際のYAMLパーサーと同じルールで型付けされます。<code>true</code>/<code>false</code>は真偽値に、<code>~</code>と<code>null</code>はnullに、引用符のない数字は数値に、引用符付き文字列はそのまま文字列となり、インラインの<code>[a, b]</code>や<code>{k: v}</code>のようなフロー構文も処理されます。結果は選択したインデントで<code>JSON.stringify</code>によりシリアライズされます。JSONからYAMLはその逆で、<code>JSON.parse</code>で入力を検証した後、エミッターが値をたどってインデント付きのYAMLを書き出し、数値・真偽値・nullと誤読されうる文字列には引用符を付けます。</p>
+      <p>知っておく価値のある意図的な選択があります。このパーサーはリテラルの<code>true</code>と<code>false</code>のみを真偽値として扱います。古いYAML 1.1パーサーは<code>yes</code>、<code>no</code>、<code>on</code>、<code>off</code>も変換してしまい、これがノルウェーの国コード<code>NO</code>が設定ファイル内で有名にも<code>false</code>になってしまう原因です（いわゆる「ノルウェー問題」）。ここでは見た目どおりの文字列のまま保たれます。</p>
+      <p>これは意図的に小さく保たれたサブセットパーサーです。アンカーとエイリアス（<code>&amp;</code>/<code>*</code>）、複数ドキュメントファイル、ブロックスカラー（<code>|</code>と<code>&gt;</code>）には対応していないため、これらの機能を使う複雑なKubernetesマニフェストは正しく往復変換できません。日常的な設定変換であれば、実際に貼り付ける内容はカバーされています。</p>
+      <p>変換はキーストロークのたびに、すべてタブ内で完結します。パーサーサービスは一切呼び出されません。入力中はDevToolsのNetworkパネルが静かなままなので、ホスト名やシークレットが詰まった設定ファイルが端末から出ていくことはありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+csv-to-json.html|CSVからJSONへ|CSVファイルをJSONに変換。
+json-formatter.html|JSONフォーマッター|JSONの整形、検証、圧縮。
+json-diff.html|JSON差分比較|2つのJSONドキュメントを比較。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-yaml-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

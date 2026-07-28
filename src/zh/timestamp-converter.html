@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>时间戳转换器：Unix 时间与日期互转 | norito</title>
+<meta name="description" content="在 Unix 时间戳与可读日期之间实时双向转换。支持本地时间、UTC 和 ISO 8601 输出。" />
+<link rel="canonical" href="https://norito.in/zh/timestamp-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/timestamp-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/timestamp-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/timestamp-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/timestamp-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/timestamp-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/timestamp-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/timestamp-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/timestamp-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="时间戳转换器：Unix 时间与日期互转 | norito" />
+<meta property="og:description" content="在 Unix 时间戳与可读日期之间实时双向转换。支持本地时间、UTC 和 ISO 8601 输出。" />
+<meta property="og:url" content="https://norito.in/zh/timestamp-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="时间戳转换器：Unix 时间与日期互转 | norito" />
+<meta name="twitter:description" content="在 Unix 时间戳与可读日期之间实时双向转换。支持本地时间、UTC 和 ISO 8601 输出。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "时间戳转换器",
+  "url": "https://norito.in/zh/timestamp-converter.html",
+  "description": "在 Unix 时间戳与可读日期之间实时双向转换。支持本地时间、UTC 和 ISO 8601 输出。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "时间戳转换器",
+      "item": "https://norito.in/zh/timestamp-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 时间戳转换器</p>
+    <h1>时间戳转换器</h1>
+    <p class="lede">
+      将 Unix 时间戳转换为可读日期，也可反向转换；编辑任意一方，两边都会实时同步。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Unix 时间戳</h3>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="tsInput">时间戳</label>
+            <input type="text" id="tsInput" class="mono-output" style="height:42px; font-size:0.95rem;" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="tsUnit">单位</label>
+            <select id="tsUnit">
+              <option value="s">秒</option>
+              <option value="ms" selected>毫秒</option>
+            </select>
+          </div>
+          <button id="nowBtn" class="secondary" style="align-self:flex-end;">当前时间</button>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-bottom:14px;">
+          <label>本地时间</label>
+          <input type="text" id="localOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>UTC</label>
+          <input type="text" id="utcOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>ISO 8601</label>
+          <input type="text" id="isoOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field">
+          <label>相对时间</label>
+          <input type="text" id="relativeOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+
+        <h3>日期和时间</h3>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="dateInput">选择日期和时间（你的本地时区）</label>
+          <input type="datetime-local" id="dateInput" step="1" />
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Unix 秒数</label>
+            <input type="text" id="secOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copySecBtn" class="secondary" style="align-self:flex-end;">复制</button>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Unix 毫秒数</label>
+            <input type="text" id="msOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copyMsBtn" class="secondary" style="align-self:flex-end;">复制</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>什么是 Unix 时间戳？</h3>
+              <p>自 1970 年 1 月 1 日起的秒数（或毫秒数）。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Unix 纪元是 1970 年 1 月 1 日 UTC 零点。时间戳就是自那时起经过的秒数（或毫秒数），因此它可以像普通数字一样排序和比较，而不像格式化的日期字符串那样。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">秒和毫秒的区别</h3>
+          <p class="note" style="margin-top:0;">
+            Unix、Linux 以及大多数后端 API 使用秒。JavaScript 自身的 <code>Date.now()</code> 和大多数前端代码使用毫秒。混淆这两者是最常见的时间戳错误之一——把一个「秒」值粘贴到「毫秒」字段中，结果会落在 1970 年附近。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>一切都通过浏览器的 <code>Date</code> 对象处理，该对象内部只存储一个数字：自 Unix 纪元（1970 年 1 月 1 日 UTC 零点）以来的毫秒数。转换时间戳时，如果你选择了「秒」，工具会先乘以 1000，构建一个 <code>Date</code> 对象，然后以四种方式呈现：通过 <code>toLocaleString</code>（浏览器的 Intl 格式化器，使用你自己的时区和语言）显示本地时间、UTC、ISO 8601，以及一个通过将与当前时刻的差值归入年、月、日、时、分或秒来计算出的「3 天后 / 2 小时前」相对时间标签。</p>
+      <p>反过来，日期选择器的值会被解析为本地时间，再转换回秒和毫秒。datetime-local 字段的填充方式是先按你的时区偏移量对时间戳进行平移，这是大多数转换工具容易出微妙错误的细节：<code>toISOString()</code> 始终以 UTC 表示，如果没有这一步平移，选择器显示的时间会与你预期的挂钟时间相差数小时。</p>
+      <p>这个工具通过明确单位来防范一个经典错误：秒 vs 毫秒。当前的 Unix 时间在「秒」单位下是 10 位数字，在「毫秒」单位下是 13 位数字。把一个毫秒值当作秒来解析，你会跳到 5 万多年后的未来；反过来则会得到 1970 年 1 月。如果转换结果看起来很荒谬，切换一下单位下拉框，几乎总能解决问题。超出范围的值（JavaScript 日期在纪元两侧最多支持 1 亿天，大约到公元 275760 年）会给出清晰的错误提示，而不是无意义的结果。</p>
+      <p>所有解析和格式化都是本地浏览器 API 的工作。转换时打开开发者工具的 Network 面板：不会发出任何请求，你日志里的时间戳永远不会离开你的电脑。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+uuid-generator.html|UUID 生成器|批量生成随机 UUID v4 标识符。
+hash-generator.html|哈希生成器|任意文本的 MD5、SHA-1、SHA-256 和 SHA-512。
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON，附带树状视图。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-timestamp.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

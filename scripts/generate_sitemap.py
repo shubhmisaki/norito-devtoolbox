@@ -33,6 +33,7 @@ TODAY = datetime.date.today().isoformat()
 def collect_pages():
     pages = []
     for root, _dirs, fnames in os.walk("."):
+        _dirs[:] = [d for d in _dirs if d not in ("src", "partials", "scripts", ".git", ".githooks", "node_modules")]
         # never descend into vendor/asset/build dirs looking for pages
         if any(part in (".git", "node_modules", "js", "css", "assets") for part in root.split(os.sep)):
             continue

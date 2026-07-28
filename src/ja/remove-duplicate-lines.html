@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>重複行の削除オンライン | norito</title>
+<meta name="description" content="リストから重複行をブラウザ内で削除。大文字小文字区別の切り替え、空白のトリム、空行の削除に対応。アップロードは一切行われません。" />
+<link rel="canonical" href="https://norito.in/ja/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/remove-duplicate-lines.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/remove-duplicate-lines.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="重複行の削除オンライン | norito" />
+<meta property="og:description" content="リストから重複行をブラウザ内で削除。大文字小文字区別の切り替え、空白のトリム、空行の削除に対応。アップロードは一切行われません。" />
+<meta property="og:url" content="https://norito.in/ja/remove-duplicate-lines.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="重複行の削除オンライン | norito" />
+<meta name="twitter:description" content="リストから重複行をブラウザ内で削除。大文字小文字区別の切り替え、空白のトリム、空行の削除に対応。アップロードは一切行われません。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "重複行の削除",
+  "url": "https://norito.in/ja/remove-duplicate-lines.html",
+  "description": "リストから重複行をブラウザ内で削除。大文字小文字区別の切り替え、空白のトリム、空行の削除に対応。アップロードは一切行われません。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "重複行の削除",
+      "item": "https://norito.in/ja/remove-duplicate-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 重複行の削除</p>
+    <h1>重複行の削除</h1>
+    <p class="lede">
+      リストを貼り付けて重複行を削除し、それぞれ最初に出現したものを残します。大文字小文字区別の切り替えと空行のクリーンアップも含まれます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">入力（1行に1項目）</label>
+          <textarea id="textInput" class="mono-output" rows="12" placeholder="りんご
+バナナ
+りんご
+さくらんぼ"></textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">大文字小文字を区別</span>
+          <label class="switch"><input type="checkbox" id="optCaseSensitive" /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">各行の空白をトリム</span>
+          <label class="switch"><input type="checkbox" id="optTrimLines" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <span class="option-label">空行を削除</span>
+          <label class="switch"><input type="checkbox" id="optRemoveBlank" checked /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">結果</label>
+            <textarea id="textOutput" class="mono-output" rows="12" readonly></textarea>
+          </div>
+          <p class="note" id="statRemoved" style="margin-top:0;">0行の重複を削除しました。</p>
+          <button id="copyBtn">結果をコピー</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>このツールはテキストを改行で分割し、その後JavaScriptの <code>Set</code> を使って一度だけ各行を走査し、すでに見た内容を記録します。各行の最初の出現は元の位置に保持され、それ以降の重複は削除されます。1回の走査で定数時間のルックアップを行うため、数万行でも即座に重複削除でき、古典的なシェルのテクニック <code>sort | uniq</code> とは異なり、行の順序も保持されます。副作用としてアルファベット順に並べ替えられることもありません。</p>
+      <p>オプションによって「同じ行」とみなす基準が変わります。大文字小文字の区別をオフにすると、比較の前に各行が小文字に変換されます（保持される行は元の大文字小文字表記のまま表示されます）。「空白をトリム」は先頭と末尾のスペースやタブを最初に取り除きます。これは思っている以上に重要です。画面上ではピクセル単位で同じに見える2行でも、末尾のスペースやタブが原因で実際には異なることがあり、バイト単位の比較ではそれらは別の行として扱われます。重複が検出されない場合、ほとんどの場合は目に見えない空白が原因であり、トリムすることで解決します。空行の削除は重複削除の前に行われるため、単独の空行が「最初の空行」として残ることはありません。</p>
+      <p>処理はタブ内にすでにあるテキストに対して実行される、ほんの数行のJavaScriptです。何もアップロードされません。開発者ツールを開き、ネットワークタブに切り替えて、好きなだけ貼り付けたり編集したりしてみてください。リクエストは一切発生せず、ページの読み込みが完了すればこのツールはオフラインでも動作します。これは、メールアドレスやURL、あるいは見知らぬサーバーには送りたくない情報を含むリストを整理する際に重要なポイントです。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+sort-lines.html|行の並べ替え|行のリストをアルファベット順に並べ替え、反転、またはシャッフル。
+/case-converter.html|大文字小文字変換ツール|大文字、小文字、camelCaseなどの間でテキストを変換。
+word-counter.html|単語数カウンター|単語数、文字数、読了時間をカウント。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-remove-duplicate-lines.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

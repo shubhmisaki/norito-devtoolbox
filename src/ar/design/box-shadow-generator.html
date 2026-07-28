@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مولّد ظلال الصناديق: أداة بناء box-shadow في CSS | norito</title>
+<meta name="description" content="أنشئ ظل صندوق CSS مفردًا أو متعدد الطبقات بصريًا، مباشرة داخل متصفحك. انسخ الكود عندما يبدو مناسبًا." />
+<link rel="canonical" href="https://norito.in/ar/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/box-shadow-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد ظلال الصناديق: أداة بناء box-shadow في CSS | norito" />
+<meta property="og:description" content="أنشئ ظل صندوق CSS مفردًا أو متعدد الطبقات بصريًا، مباشرة داخل متصفحك. انسخ الكود عندما يبدو مناسبًا." />
+<meta property="og:url" content="https://norito.in/ar/design/box-shadow-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد ظلال الصناديق: أداة بناء box-shadow في CSS | norito" />
+<meta name="twitter:description" content="أنشئ ظل صندوق CSS مفردًا أو متعدد الطبقات بصريًا، مباشرة داخل متصفحك. انسخ الكود عندما يبدو مناسبًا." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد ظلال الصناديق",
+  "url": "https://norito.in/ar/design/box-shadow-generator.html",
+  "description": "أنشئ ظل صندوق CSS مفردًا أو متعدد الطبقات بصريًا، مباشرة داخل متصفحك. انسخ الكود عندما يبدو مناسبًا.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "مولّد ظلال الصناديق",
+      "item": "https://norito.in/ar/design/box-shadow-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="13" height="13" rx="2"/><path d="M8 8h13v13H8z" opacity="0.4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / مولّد ظلال الصناديق</p>
+    <h1>مولّد ظلال الصناديق</h1>
+    <p class="lede">
+      أنشئ ظل صندوق CSS بصريًا، مع دعم عدة طبقات متراكمة وظلال داخلية (inset).
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="layersWrap"></div>
+        <button type="button" id="addLayerBtn" class="secondary" style="margin-top:4px;">+ إضافة طبقة ظل</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:50px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:140px; height:100px; margin:0 auto; background:var(--surface); border-radius:12px;"></div>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">نسخ CSS</button>
+        </div>
+      </div>
+    </div>
+
+
+<!--RELATED-TOOLS
+css-gradient-generator.html|مولّد تدرجات CSS|أنشئ تدرجًا خطيًا أو دائريًا بصريًا.
+border-radius-generator.html|مولّد نصف قطر الحدود|اضبط نصف قطر كل زاوية بصريًا.
+favicon-generator.html|مولّد أيقونة الموقع|أنشئ أيقونة موقع من صورة.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ماذا يفعل خيار "Inset"؟</summary>
+        <p>يقلب الظل من خارج الصندوق إلى داخله، فيمنح مظهرًا محفورًا للداخل بدلاً من مظهر عائم.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني تكديس عدة ظلال؟</summary>
+        <p>نعم، اضغط "إضافة طبقة ظل" بقدر ما تريد لتكديس ظلال إضافية، وهو ما يدعمه box-shadow في CSS بشكل أصلي عبر قيم مفصولة بفواصل. تكديس ظل ناعم كبير مع آخر أدق وأغمق طريقة شائعة للحصول على تأثير عمق أكثر واقعية.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا إلى أي مكان؟</summary>
+        <p>لا، تُنشأ المعاينة والكود بالكامل داخل متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-box-shadow-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

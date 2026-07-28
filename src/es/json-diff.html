@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JSON Diff: Compara Dos Archivos JSON Online | norito</title>
+<meta name="description" content="Compara dos documentos JSON y ve exactamente qué se añadió, eliminó, y cambió, en tu navegador. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/json-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSON Diff: Compara Dos Archivos JSON Online | norito" />
+<meta property="og:description" content="Compara dos documentos JSON y ve exactamente qué se añadió, eliminó, y cambió, en tu navegador. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/json-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JSON Diff: Compara Dos Archivos JSON Online | norito" />
+<meta name="twitter:description" content="Compara dos documentos JSON y ve exactamente qué se añadió, eliminó, y cambió, en tu navegador. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Diff",
+  "url": "https://norito.in/es/json-diff.html",
+  "description": "Compara dos documentos JSON y ve exactamente qué se añadió, eliminó, y cambió, en tu navegador. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSON Diff",
+      "item": "https://norito.in/es/json-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSON Diff</p>
+    <h1>JSON Diff</h1>
+    <p class="lede">
+      Pega dos documentos JSON y ve exactamente qué claves se añadieron, eliminaron, o cambiaron entre ellos.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="leftInput">JSON izquierdo</label>
+            <textarea id="leftInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 1,
+  "tools": ["compress", "resize"]
+}</textarea>
+          </div>
+          <div class="field" style="flex:1;">
+            <label for="rightInput">JSON derecho</label>
+            <textarea id="rightInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 2,
+  "tools": ["compress", "resize", "crop"]
+}</textarea>
+          </div>
+        </div>
+        <button id="diffBtn" style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+          Comparar
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div id="diffOutput" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Cómo funciona esto</h3>
+          <p class="note" style="margin-top:0;">
+            Ambos lados se analizan como JSON, luego se comparan clave por clave e índice por índice. Las claves que solo están a la derecha son adiciones, las que solo están a la izquierda son eliminaciones, y las claves presentes en ambos lados con valores diferentes son cambios. El orden de las claves del objeto no importa, solo los valores.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Ambos lados pasan primero por <code>JSON.parse</code>, así que si uno no es JSON válido obtienes el propio mensaje de error del parser señalando el problema en vez de un diff inservible. La comparación recorre entonces las dos estructuras analizadas recursivamente: para objetos toma la unión de ambos conjuntos de claves y recurre en cada clave, para arrays compara índice por índice, y los valores hoja se consideran iguales solo si se serializan de forma idéntica. Cada diferencia se emite como una ruta tipo <code>user.address[1].zip</code> etiquetada como añadida, eliminada, o cambiada, y luego se resume en conteos.</p>
+      <p>Como el diff se ejecuta sobre valores analizados en vez de texto, el formato es invisible: la indentación, el orden de claves, y las diferencias de espacios en blanco no producen ruido alguno, que es el punto entero frente a un diff de texto basado en líneas. El compromiso a entender es la alineación de arrays. Es posicional, así que insertar un elemento al principio de un array largo reporta cada índice siguiente como "cambiado" más una adición al final. Cuando veas una pared de entradas cambiadas que parecen todas desplazadas por uno, léelo como "algo se insertó o eliminó al principio de este array", no como docenas de ediciones independientes.</p>
+      <p>El análisis y la comparación ocurren por completo en el JavaScript de esta página. Abre la pestaña Red de las DevTools y pulsa Comparar: ninguna petición transporta tu JSON, así que las respuestas de API y archivos de configuración con secretos se quedan en tu máquina.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-formatter.html|Formateador JSON|Formatea, valida y minifica un único documento JSON.
+base64-encoder.html|Codificar / Decodificar Base64|Convierte texto a y desde Base64.
+regex-tester.html|Probador de Regex|Prueba una expresión regular contra un texto de muestra en vivo.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

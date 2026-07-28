@@ -129,13 +129,7 @@
   if (els.imageDrop) {
     els.imageDrop.addEventListener("click", () => els.bgImageInput.click());
     els.bgImageInput.addEventListener("change", (e) => loadBgImageFile(e.target.files[0]));
-    ["dragenter", "dragover"].forEach((evt) =>
-      els.imageDrop.addEventListener(evt, (e) => { e.preventDefault(); els.imageDrop.classList.add("drag"); })
-    );
-    ["dragleave", "drop"].forEach((evt) =>
-      els.imageDrop.addEventListener(evt, (e) => { e.preventDefault(); els.imageDrop.classList.remove("drag"); })
-    );
-    els.imageDrop.addEventListener("drop", (e) => {
+    wireDragDrop(els.imageDrop, (e) => {
       const file = e.dataTransfer.files[0];
       if (file) loadBgImageFile(file);
     });

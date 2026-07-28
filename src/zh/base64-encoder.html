@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Base64 编码 / 解码，免费在线工具 | norito</title>
+<meta name="description" content="直接在浏览器中将文本编码为 Base64 或解码回来。完整支持 UTF-8，并可选 URL 安全变体。" />
+<link rel="canonical" href="https://norito.in/zh/base64-encoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/base64-encoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/base64-encoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/base64-encoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/base64-encoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/base64-encoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/base64-encoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/base64-encoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/base64-encoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Base64 编码 / 解码，免费在线工具 | norito" />
+<meta property="og:description" content="直接在浏览器中将文本编码为 Base64 或解码回来。完整支持 UTF-8，并可选 URL 安全变体。" />
+<meta property="og:url" content="https://norito.in/zh/base64-encoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Base64 编码 / 解码，免费在线工具 | norito" />
+<meta name="twitter:description" content="直接在浏览器中将文本编码为 Base64 或解码回来。完整支持 UTF-8，并可选 URL 安全变体。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Base64 编码 / 解码",
+  "url": "https://norito.in/zh/base64-encoder.html",
+  "description": "直接在浏览器中将文本编码为 Base64 或解码回来。完整支持 UTF-8，并可选 URL 安全变体。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Base64 编码 / 解码",
+      "item": "https://norito.in/zh/base64-encoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Base64 编码 / 解码</p>
+    <h1>Base64 编码 / 解码</h1>
+    <p class="lede">
+      输入即时将文本转换为 Base64 或解码回来。完整支持 UTF-8，因此带重音符号的字母、表情符号和非拉丁字母都能正确地双向转换。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">编码</button>
+          <button type="button" class="tab" data-value="decode">解码</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">输入</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="输入或粘贴要编码的文本…"></textarea>
+        </div>
+
+        <div class="option-row">
+          <span class="option-label">URL 安全变体</span>
+          <label class="switch"><input type="checkbox" id="optUrlSafe" /><span class="track"></span></label>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">输出</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            交换
+          </button>
+          <button id="copyBtn">复制输出</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-purple" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg>
+            </div>
+            <div>
+              <h3>Base64 的用途</h3>
+              <p>二进制安全文本，不是加密。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Base64 把任意字节转换成一串只由字母、数字、<code>+</code> 和 <code>/</code> 组成的字符串，可以安全地嵌入到原始二进制会出问题的 JSON、URL 或邮件中。它不是加密：任何人都能立即将其解码回来，所以它本身不隐藏也不保护任何东西。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">URL 安全变体</h3>
+          <p class="note" style="margin-top:0;">
+            标准 Base64 中的 <code>+</code> 和 <code>/</code> 字符在 URL 中具有特殊含义。URL 安全变体会把它们替换为 <code>-</code> 和 <code>_</code>，并去掉末尾的 <code>=</code> 填充符，因此结果可以直接用在查询字符串或文件名中。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        编码时，你的文本首先通过浏览器的 <code>TextEncoder</code> API 转换为原始 UTF-8 字节，然后这些字节被送入内置的 <code>btoa()</code> 函数。这一步很关键：单独使用 <code>btoa()</code> 只能处理 Latin-1 字符，遇到其他字符就会报错，因此跳过这一步的工具在处理表情符号、重音字符或任何非拉丁文字时会悄悄出错。解码则以相反顺序执行同样的流程：<code>atob()</code> 把 Base64 转回字节，<code>TextDecoder</code> 再把这些字节重新组装成文本。解码器还特意做得很宽容：会去除空白，同时接受标准和 URL 安全两种字母表，并自动补回被去掉的 <code>=</code> 填充符，因此直接从 JWT 或查询字符串中复制出来的片段无需手动修正就能正确解码。
+      </p>
+      <p>
+        预计输出会比输入大约大 33%。Base64 使用 64 个符号，每个符号只能携带 6 位信息，所以每 3 字节的输入会变成 4 个字符的输出。这就是为什么把一张 1 MB 的图片内联为 Base64 数据 URI 会耗费大约 1.37 MB 的 HTML，也是为什么 Base64 是一种传输格式，而不是压缩格式。
+      </p>
+      <p>
+        两个方向的转换都在这个页面自身的 JavaScript 中随每次按键实时运行，只使用 <code>btoa</code>、<code>atob</code> 以及浏览器自带的文本编码 API。你可以自己验证：打开开发者工具，切换到网络面板，随意输入。不会有任何请求把你的文本发送到任何地方。
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+/hash-generator.html|哈希生成器|任意文本的 MD5、SHA-1、SHA-256 和 SHA-512。
+/uuid-generator.html|UUID 生成器|批量生成随机 UUID v4 标识符。
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON，附带树状视图。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-base64.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<script>
+  document.querySelectorAll("#mode-tabs .tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#mode-tabs .tab").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const modeSelect = document.getElementById("mode");
+      modeSelect.value = btn.dataset.value;
+      modeSelect.dispatchEvent(new Event("change"));
+    });
+  });
+</script>
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

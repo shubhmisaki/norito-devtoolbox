@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>AVIF, WebP, JPEG, PNG: Which Format When, in 2026 | norito</title>
+<meta name="description" content="A practical guide to AVIF, WebP, JPEG, and PNG in 2026: compression numbers, compatibility realities, transparency, animation, and when JPEG still wins." />
+<link rel="canonical" href="https://norito.in/blog/image-format-guide-2026.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/image-format-guide-2026.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/image-format-guide-2026.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AVIF, WebP, JPEG, PNG: Which Format When, in 2026 | norito" />
+<meta property="og:description" content="A practical guide to AVIF, WebP, JPEG, and PNG in 2026: compression numbers, compatibility realities, transparency, animation, and when JPEG still wins." />
+<meta property="og:url" content="https://norito.in/blog/image-format-guide-2026.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AVIF, WebP, JPEG, PNG: Which Format When, in 2026 | norito" />
+<meta name="twitter:description" content="A practical guide to AVIF, WebP, JPEG, and PNG in 2026: compression numbers, compatibility realities, transparency, animation, and when JPEG still wins." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AVIF, WebP, JPEG, PNG: Which Format When, in 2026",
+  "description": "A practical guide to AVIF, WebP, JPEG, and PNG in 2026: compression numbers, compatibility realities, transparency, animation, and when JPEG still wins.",
+  "url": "https://norito.in/blog/image-format-guide-2026.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/blog/image-format-guide-2026.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / AVIF, WebP, JPEG, PNG: Which Format When, in 2026</p>
+    <h1>AVIF, WebP, JPEG, PNG: Which Format When, in 2026</h1>
+    <p class="byline">By Shubham Singh &middot; <time datetime="2026-07-20">July 20, 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Published 2026-07-20</p>
+    <p class="lede">Four formats cover essentially every image on the web in 2026, and the good news is that you rarely need to think about more than two of them for any given job. Here is a practical decision guide with real numbers, plus the cases where 30-year-old JPEG is still the correct answer.</p>
+
+    <h2>The contenders, one line each</h2>
+    <p>JPEG (1992): lossy, built for photographs, universally accepted. PNG (1996): lossless, transparency, sharp edges, universally accepted. WebP (2010): lossy and lossless modes, transparency, animation, roughly a generation better than JPEG at compression. AVIF (2019, built on the AV1 video codec): the current compression champion, with transparency, animation, and HDR support, at the cost of slow encoding and patchier support outside browsers.</p>
+
+    <h2>What about HEIC and JPEG XL?</h2>
+    <p>Two formats you will run into but should mostly not publish in. HEIC is what iPhones shoot by default: excellent compression, but effectively an Apple-ecosystem format, with unreliable support in browsers and on Windows, so convert to JPEG before sharing. JPEG XL is technically superb, arguably the best all-rounder on paper, but its adoption story is messy: Chrome removed its experimental support in 2022 while Safari later added it, and the standoff has kept it off the safe list. Treat both as capture or archival formats, not delivery formats, until that settles.</p>
+
+    <h2>Compression, with numbers</h2>
+    <p>For a typical photograph at equivalent visual quality, WebP lands around 25 to 30 percent smaller than JPEG, and AVIF around 40 to 50 percent smaller than JPEG, with its biggest advantage at aggressive compression levels. Concretely: a 1.2 MB JPEG saved at quality 80 tends to come out around 850 KB as WebP and 600 to 700 KB as AVIF at comparable quality. For lossless work, optimized PNG is the baseline, and lossless WebP typically beats it by 20 to 25 percent.</p>
+    <p>AVIF's numbers come with two caveats. Encoding is slow, seconds per image rather than milliseconds, which matters for build pipelines and bulk conversions. And at very low quality settings AVIF fails differently than JPEG: instead of blocky artifacts it smooths away fine texture such as skin grain and foliage. That looks cleaner at a glance but can read as plasticky on close inspection.</p>
+    <p>One trap when comparing: quality sliders are not comparable across formats. JPEG quality 80, WebP quality 80, and AVIF quality 80 describe three different internal scales, so "same quality setting" comparisons are meaningless. Compare by output size at a visual quality you find acceptable, which in practice means compressing to a target size and inspecting the result side by side.</p>
+
+    <h2>Browser support is solved; everything else is not</h2>
+    <p>As of 2026 the browser question is easy: every evergreen browser renders all four formats. WebP has been safe everywhere since 2020, and AVIF since Safari 16 shipped in 2022. The real compatibility problems now live outside the browser: email clients that will not render WebP or AVIF, older built-in photo viewers, upload forms that accept only .jpg and .png, print shops, and CMS or social pipelines that re-encode or reject unfamiliar formats. That leads to the single most useful rule in this guide: on web pages you control, use modern formats freely; for files you hand to someone else's system, JPEG and PNG remain the lingua franca.</p>
+
+    <h2>Transparency and animation</h2>
+    <p>JPEG has no transparency, full stop; PNG, WebP, and AVIF all support alpha channels. The interesting case is photographic images with transparency, such as product shots cut out from their background: as PNG these are enormous, because PNG compresses photographic detail poorly, and converting one to WebP with alpha routinely cuts 80 to 90 percent of the size. For animation, animated WebP and AVIF are far smaller than GIF, which is stuck with 256 colors and 1987-era compression. For anything longer than a couple of seconds, though, a muted looping video file beats every image format.</p>
+
+    <h2>When JPEG and PNG are still right</h2>
+    <p>JPEG remains correct when compatibility outranks bytes: email attachments, files destined for forms and portals, anything headed to print, and platforms that re-encode uploads anyway (most social networks), where your carefully tuned AVIF gets converted to their JPEG on arrival. It also encodes essentially instantly and supports progressive rendering, so a slow connection shows a usable image early.</p>
+    <p>PNG remains correct for screenshots, UI mockups, diagrams, and logos, anywhere hard edges and flat color dominate, because lossy codecs produce visible ringing around sharp edges. The classic mistake runs the other way: saving photographs as PNG, which produces files 5 to 10 times larger with no visible benefit. We covered that trap, and the basics of all three older formats, in <a href="jpg-vs-png-vs-webp.html">JPG vs PNG vs WebP</a>.</p>
+
+    <h2>The decision in five lines</h2>
+    <p>Photo on a site you control: AVIF, with a WebP or JPEG fallback via the picture element. Photo going to email, an upload form, or print: JPEG. Screenshot, diagram, or logo: PNG, or lossless WebP where you control the destination. Photo that needs transparency: WebP or AVIF. Short animation: animated WebP or AVIF, or better yet a small looping video.</p>
+    <p>And before format choice at all: check resolution. A 4000-pixel-wide photo displayed in an 800-pixel column wastes more bytes than any codec can win back, so <a href="../resize-image.html">resize to the display size</a> first, then pick the format.</p>
+    <p>For the conversions themselves, norito's <a href="../image-converter.html">image converter</a> switches between JPG, PNG, and WebP directly in your browser, and the <a href="../compress-image.html">image compressor</a> will squeeze any of them down to a target file size. If you are deciding how hard you can compress before quality visibly suffers, <a href="image-compression-without-losing-quality.html">this guide</a> covers the settings that matter.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Try it yourself:</strong> <a href="../image-converter.html">Image Converter</a> converts between JPG, PNG, and WebP locally in your browser. Nothing is uploaded.</div>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

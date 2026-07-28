@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSV 转 JSON 转换器 | norito</title>
+<meta name="description" content="在浏览器中实时将 CSV 转换为 JSON。自动检测分隔符，将第一行作为表头，并对输出进行格式化。" />
+<link rel="canonical" href="https://norito.in/zh/csv-to-json.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/csv-to-json.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/csv-to-json.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/csv-to-json.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/csv-to-json.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/csv-to-json.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/csv-to-json.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/csv-to-json.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/csv-to-json.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSV 转 JSON 转换器 | norito" />
+<meta property="og:description" content="在浏览器中实时将 CSV 转换为 JSON。自动检测分隔符，将第一行作为表头，并对输出进行格式化。" />
+<meta property="og:url" content="https://norito.in/zh/csv-to-json.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSV 转 JSON 转换器 | norito" />
+<meta name="twitter:description" content="在浏览器中实时将 CSV 转换为 JSON。自动检测分隔符，将第一行作为表头，并对输出进行格式化。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSV 转 JSON",
+  "url": "https://norito.in/zh/csv-to-json.html",
+  "description": "在浏览器中实时将 CSV 转换为 JSON。自动检测分隔符，将第一行作为表头，并对输出进行格式化。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSV 转 JSON",
+      "item": "https://norito.in/zh/csv-to-json.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSV 转 JSON</p>
+    <h1>CSV 转 JSON</h1>
+    <p class="lede">
+      粘贴或上传一个 CSV 文件，立即获得整洁的 JSON，表头会自动变成对象的键，数字和布尔值会被自动识别。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
+          <p><strong>点击选择一个 .csv 文件</strong>，或将其拖放到此处</p>
+          <p class="note" style="margin-top:2px;">或者直接将 CSV 文本粘贴到下面的框中。</p>
+          <input type="file" id="fileInput" accept=".csv,text/csv" />
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label for="csvInput">CSV 文本</label>
+          <textarea id="csvInput" class="mono-area" rows="8" placeholder="姓名,年龄,城市
+爱丽丝,30,波士顿
+鲍勃,25,丹佛"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="delimiter">分隔符</label>
+            <select id="delimiter">
+              <option value="auto" selected>自动检测</option>
+              <option value=",">逗号 (,)</option>
+              <option value=";">分号 (;)</option>
+              <option value="\t">制表符</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">第一行是表头</span>
+          <label class="switch"><input type="checkbox" id="headerToggle" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">格式化 JSON</span>
+          <label class="switch"><input type="checkbox" id="prettyToggle" checked /><span class="track"></span></label>
+        </div>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">输出</h3>
+          <pre class="code-output" id="jsonOutput"></pre>
+          <div class="batch-actions">
+            <button type="button" class="secondary" id="copyBtn">复制 JSON</button>
+            <button type="button" id="downloadBtn">下载 .json</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>文件通过浏览器的 <code>FileReader</code> API 读取，并由一个手写的单遍解析器按照 RFC 4180 规则解析：它逐字符遍历文本，同时跟踪当前是否处于带引号的字段内。这正是简单的「按逗号分割」转换器容易出错的地方：在引号内，逗号甚至换行符都属于该单元格的一部分，而双引号（<code>""</code>）会被视为一个字面意义上的引号字符。分隔符的自动检测是实用型而非智能型的：它统计第一行中逗号、分号和制表符的出现次数，并选择出现次数最多的那个，这样就能正确处理欧洲版 Excel 导出常见的以分号分隔的 CSV 文件。</p>
+      <p>类型强制转换是你应该重点检查输出结果的地方。看起来像整数或小数的值会被转换成 JSON 数字，<code>true</code>/<code>false</code> 会被转换成布尔值。这通常是你想要的效果，但也意味着带前导零的值（比如邮编或分机号）会被输出为数字：<code>01234</code> 会变成 <code>1234</code>。如果某一列是标识符而不是数量，请在转换后进行核对。较短行中缺失的末尾单元格会变成空字符串，而不会导致整行出错。</p>
+      <p>解析、类型转换，甚至 .json 文件的下载（基于内存中的 <code>Blob</code> 构建）都在这个页面自身的 JavaScript 中完成。转换时打开开发者工具的 Network 标签页：不会有任何请求携带你的数据，因此客户名单和导出文件永远不会离开你的电脑。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+csv-viewer.html|CSV 查看器|以可编辑表格的形式查看和编辑 CSV。
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON。
+json-diff.html|JSON Diff|比较两个 JSON 文档。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-csv-to-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

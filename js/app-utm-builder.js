@@ -60,7 +60,7 @@
   els.copyBtn.addEventListener("click", async () => {
     if (!els.output.textContent) return;
     try {
-      await navigator.clipboard.writeText(els.output.textContent);
+      await copyToClipboard(els.output.textContent);
       const original = els.copyBtn.textContent;
       els.copyBtn.textContent = "Copied!";
       setTimeout(() => { els.copyBtn.textContent = original; }, 1500);

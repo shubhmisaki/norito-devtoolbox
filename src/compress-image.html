@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Compress Image to Exact Size (100KB, 200KB, 1MB...) | norito</title>
+<meta name="description" content="Compress an image to a target file size, like 100KB, 200KB, 500KB, or 1MB, instead of fiddling with a quality slider. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/compress-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/compress-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/compress-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/compress-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/compress-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/compress-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/compress-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/compress-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/compress-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Compress Image to Exact Size (100KB, 200KB, 1MB...) | norito" />
+<meta property="og:description" content="Compress an image to a target file size, like 100KB, 200KB, 500KB, or 1MB, instead of fiddling with a quality slider. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/compress-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Compress Image to Exact Size (100KB, 200KB, 1MB...) | norito" />
+<meta name="twitter:description" content="Compress an image to a target file size, like 100KB, 200KB, 500KB, or 1MB, instead of fiddling with a quality slider. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Compress Image to Exact Size (100KB, 200KB, 1MB...)",
+  "url": "https://norito.in/compress-image.html",
+  "description": "Compress an image to a target file size, like 100KB, 200KB, 500KB, or 1MB, instead of fiddling with a quality slider. Runs entirely in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why can't it always hit my exact target size?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For JPEG and WebP the tool binary-searches the quality setting at your image's original dimensions. If even the lowest quality is still bigger than your target, you get the smallest file possible without changing the width and height. Turn on \"Allow resizing\" to let it shrink dimensions too, which reaches much smaller targets." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which image formats are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can drop in JPG, PNG, or WebP files and export as JPEG, WebP, or PNG. JPEG and WebP give the best size control because their quality setting is adjustable. PNG is lossless, so its size varies and small targets usually need resizing turned on." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Compression happens entirely in your browser using the canvas API, so your images never leave your device. That also means there's no server-side file size cap or upload queue." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compress several images at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select or drag in multiple files, set one target size, and hit \"Compress all\". You can download the results one by one or grab everything as a single .zip." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Compress to Size",
+      "item": "https://norito.in/compress-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Compress to Size</p>
+    <h1>Compress Image to a Target Size</h1>
+    <p class="lede">
+      Skip the quality slider guesswork. Tell it the size you need, say 100 KB, and it finds
+      the highest quality that fits, keeping your image's original width and height by default.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose images</strong>, drag and drop them here, or paste with Ctrl+V</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Select more than one to compress in bulk. Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchCompressBtn">Compress all</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>Download all as .zip</button>
+        </div>
+
+        <div class="field-row" style="margin-top:20px;">
+          <div class="field">
+            <label for="targetSize">Target size</label>
+            <div class="size-unit-group">
+              <select id="targetUnit">
+                <option value="B">Bytes</option>
+                <option value="KB" selected>KB</option>
+                <option value="MB">MB</option>
+              </select>
+              <input type="number" id="targetSize" value="100" min="0" step="any" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="format">Output format</label>
+            <select id="format">
+              <option value="jpeg" selected>JPEG (best for size control)</option>
+              <option value="webp">WebP</option>
+              <option value="png">PNG (lossless, size varies)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-row" style="margin-bottom:20px;">
+          <div>
+            <div class="option-label">Allow resizing</div>
+            <div class="option-hint">Off by default. Keeps the original width and height. Turn on to shrink dimensions too, for smaller targets quality alone can't reach.</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="allowResize" /><span class="track"></span></label>
+        </div>
+
+        <button id="compressBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 14h6m0 0v6m0-6-7 7M20 10h-6m0 0V4m0 6 7-7"/></svg>
+          Compress to target
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Compressed preview" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your compressed image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          For JPEG/WebP, it binary-searches quality at your image's original size. If "Allow
+          resizing" is off and quality alone can't hit the target, you'll get the smallest size
+          possible without changing dimensions. PNG is lossless, so hitting a small target needs
+          resizing turned on. JPEG or WebP will get you much closer to a small target at full size.
+        </p>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The quality search for JPEG and WebP runs eight rounds of binary search over the
+        encoder's quality parameter: encode at 0.5, compare the byte count against your target,
+        then halve the interval up or down and encode again. Eight rounds pin the quality value
+        down to within about 0.4% of its full range, which is why results usually land just
+        under your target rather than far below it. With resizing enabled, that same search
+        repeats at progressively smaller dimensions, shrinking 15% per step, until it finds a
+        scale where quality alone can close the remaining gap.
+      </p>
+      <p>
+        PNG needs a completely different lever, because the browser's canvas encoder only
+        writes full truecolor files and has no quality knob at all. So this page ships its own
+        indexed-color PNG encoder: a median-cut quantizer builds a palette of 128 down to 8
+        representative colors, Floyd-Steinberg dithering diffuses the rounding error so
+        gradients don't turn into visible bands, and the palette indices are compressed with
+        the browser's native <code>CompressionStream</code> and written byte by byte into a
+        valid color-type-3 PNG, one byte per pixel instead of three or four. That's the same
+        technique pngquant and TinyPNG use, and on screenshots and flat graphics it routinely
+        cuts 60-80% without resizing. It requires a fully opaque image, since indexed PNG can't
+        store per-pixel transparency.
+      </p>
+      <p>
+        A practical shortcut before you reach for resizing: at equal visual quality, WebP files
+        come out roughly a quarter to a third smaller than JPEG, so an image JPEG can't squeeze
+        under your target at full resolution often fits once you switch the output format to
+        WebP.
+      </p>
+      <p>
+        All of this runs against an in-memory canvas in this tab. You can verify it: open
+        DevTools, switch to the Network tab, and compress something. No request ever carries
+        your image, in either direction, and the tool keeps working with Wi-Fi switched off.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+placeholder-generator.html|Placeholder Generator|Instant placeholder images, any size and color.
+remove-background.html|Remove Background|Cut a person out of a photo, right in your browser.
+test-file-generator.html|Test File Generator|Byte-exact dummy files for any size or extension.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why can't it always hit my exact target size?</summary>
+        <p>For JPEG and WebP the tool binary-searches the quality setting at your image's original dimensions. If even the lowest quality is still bigger than your target, you get the smallest file possible without changing the width and height. Turn on "Allow resizing" to let it shrink dimensions too, which reaches much smaller targets.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which image formats are supported?</summary>
+        <p>You can drop in JPG, PNG, or WebP files and export as JPEG, WebP, or PNG. JPEG and WebP give the best size control because their quality setting is adjustable. PNG is lossless, so its size varies and small targets usually need resizing turned on.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my image uploaded anywhere?</summary>
+        <p>No. Compression happens entirely in your browser using the canvas API, so your images never leave your device. That also means there's no server-side file size cap or upload queue.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I compress several images at once?</summary>
+        <p>Yes. Select or drag in multiple files, set one target size, and hit "Compress all". You can download the results one by one or grab everything as a single .zip.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-compress.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>أداة مقارنة JSON: قارن ملفي JSON أونلاين | norito</title>
+<meta name="description" content="قارن مستندي JSON وشاهد بالضبط ما أُضيف وحُذف وتغيّر، مباشرة في متصفحك. لا شيء يُرفَع." />
+<link rel="canonical" href="https://norito.in/ar/json-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="أداة مقارنة JSON: قارن ملفي JSON أونلاين | norito" />
+<meta property="og:description" content="قارن مستندي JSON وشاهد بالضبط ما أُضيف وحُذف وتغيّر، مباشرة في متصفحك. لا شيء يُرفَع." />
+<meta property="og:url" content="https://norito.in/ar/json-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="أداة مقارنة JSON: قارن ملفي JSON أونلاين | norito" />
+<meta name="twitter:description" content="قارن مستندي JSON وشاهد بالضبط ما أُضيف وحُذف وتغيّر، مباشرة في متصفحك. لا شيء يُرفَع." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "أداة مقارنة JSON",
+  "url": "https://norito.in/ar/json-diff.html",
+  "description": "قارن مستندي JSON وشاهد بالضبط ما أُضيف وحُذف وتغيّر، مباشرة في متصفحك. لا شيء يُرفَع.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ar/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "أداة مقارنة JSON",
+      "item": "https://norito.in/ar/json-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / أداة مقارنة JSON</p>
+    <h1>أداة مقارنة JSON</h1>
+    <p class="lede">
+      الصق مستندي JSON وشاهد بالضبط أي مفاتيح أُضيفت أو حُذفت أو تغيّرت بينهما.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="leftInput">JSON الأيسر</label>
+            <textarea id="leftInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 1,
+  "tools": ["compress", "resize"]
+}</textarea>
+          </div>
+          <div class="field" style="flex:1;">
+            <label for="rightInput">JSON الأيمن</label>
+            <textarea id="rightInput" class="mono-output" rows="12" spellcheck="false">{
+  "name": "norito",
+  "version": 2,
+  "tools": ["compress", "resize", "crop"]
+}</textarea>
+          </div>
+        </div>
+        <button id="diffBtn" style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+          مقارنة
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div id="diffOutput" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">كيف يعمل هذا</h3>
+          <p class="note" style="margin-top:0;">
+            يُحلَّل الجانبان كـ JSON، ثم يُقارَنان مفتاحًا بمفتاح وفهرسًا بفهرس. المفاتيح الموجودة في اليمين فقط هي إضافات، والموجودة في اليسار فقط هي حذوفات، والمفاتيح الموجودة في كلا الجانبين بقيم مختلفة هي تغييرات. ترتيب مفاتيح الكائن لا يهم، القيم فقط هي المهمة.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>يمرّ كلا الجانبين أولًا عبر <code>JSON.parse</code>، لذا إذا لم يكن أحدهما JSON صالحًا، تحصل على رسالة خطأ المحلِّل نفسها تشير إلى المشكلة بدلًا من فرق عديم الفائدة. تمرّ المقارنة بعدها عبر البنيتين المحلَّلتين بشكل تكراري: بالنسبة للكائنات، تأخذ اتحاد مجموعتي المفاتيح وتتكرر في كل مفتاح، وبالنسبة للمصفوفات، تقارن فهرسًا بفهرس، وتُعتبَر القيم الطرفية متساوية فقط إذا تسلسلت بشكل متطابق. يُصدَر كل فرق كمسار مثل <code>user.address[1].zip</code> موسومًا بأنه مُضاف أو محذوف أو مُغيَّر، ثم يُلخَّص في أعداد.</p>
+      <p>بما أن الفرق يعمل على قيم محلَّلة وليس نصًا، فإن التنسيق غير مرئي: المسافات البادئة، وترتيب المفاتيح، واختلافات المسافات البيضاء لا تُنتِج أي ضجيج، وهذا هو بيت القصيد مقارنة بفرق نصي قائم على الأسطر. المفاضلة التي يجب فهمها هي محاذاة المصفوفات. إنها موضعية، لذا فإن إدراج عنصر واحد في مقدمة مصفوفة طويلة يُبلِغ عن كل فهرس تالٍ بأنه «مُغيَّر» بالإضافة إلى إضافة واحدة في النهاية. عندما ترى جدارًا من الإدخالات المُغيَّرة التي تبدو جميعها منزاحة بواحد، اقرأها على أنها «شيء أُدرِج أو حُذِف مبكرًا في هذه المصفوفة»، وليس كعشرات التعديلات المستقلة.</p>
+      <p>يحدث التحليل والمقارنة بالكامل في جافاسكريبت هذه الصفحة. افتح لسان Network في أدوات المطوّر واضغط مقارنة: لا يحمل أي طلب JSON الخاص بك، لذا تبقى استجابات API وملفات الإعدادات التي تحتوي أسرارًا على جهازك.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-formatter.html|منسّق JSON|تنسيق وتحقق وضغط مستند JSON واحد.
+base64-encoder.html|ترميز / فك ترميز Base64|حوّل النص من وإلى Base64.
+regex-tester.html|أداة اختبار Regex|اختبر تعبيرًا نمطيًا مقابل نص عينة مباشرة.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /src/
+Disallow: /partials/
+Disallow: /scripts/
 
 Sitemap: https://norito.in/sitemap.xml

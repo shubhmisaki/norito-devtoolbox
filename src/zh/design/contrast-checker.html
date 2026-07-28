@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>颜色对比度检查器：WCAG AA/AAA | norito</title>
+<meta name="description" content="检查两种颜色之间的对比度，对照 WCAG AA 和 AAA 标准（含正常文字和大号文字），并提供实时预览。" />
+<link rel="canonical" href="https://norito.in/zh/design/contrast-checker.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/contrast-checker.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/contrast-checker.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/contrast-checker.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/contrast-checker.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/contrast-checker.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/contrast-checker.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/contrast-checker.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="颜色对比度检查器：WCAG AA/AAA | norito" />
+<meta property="og:description" content="检查两种颜色之间的对比度，对照 WCAG AA 和 AAA 标准（含正常文字和大号文字），并提供实时预览。" />
+<meta property="og:url" content="https://norito.in/zh/design/contrast-checker.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="颜色对比度检查器：WCAG AA/AAA | norito" />
+<meta name="twitter:description" content="检查两种颜色之间的对比度，对照 WCAG AA 和 AAA 标准（含正常文字和大号文字），并提供实时预览。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "对比度检查器",
+  "url": "https://norito.in/zh/design/contrast-checker.html",
+  "description": "检查两种颜色之间的对比度，对照 WCAG AA 和 AAA 标准（含正常文字和大号文字），并提供实时预览。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "AA 和 AAA 有什么区别？",
+      "acceptedAnswer": { "@type": "Answer", "text": "AA 是大多数网站的基础目标：正常文字要求 4.5:1，大号文字（18pt 以上，或加粗 14pt 以上）要求 3:1。AAA 标准更严格，主要面向视力较弱的用户：正常文字 7:1，大号文字 4.5:1。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这个工具只检查纯色，还是也能检查图片？",
+      "acceptedAnswer": { "@type": "Answer", "text": "只检查两种纯色，也就是文字颜色和背景颜色。如果文字叠加在照片或渐变背景上，应该分别针对它可能出现的最深和最浅区域检查对比度。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这和浏览器、审计工具用的公式一样吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "是的。这里使用的是标准的 WCAG 2.1 相对亮度和对比度公式，与 Lighthouse 和 axe 使用的公式相同。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "对比度检查器",
+      "item": "https://norito.in/zh/design/contrast-checker.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / 对比度检查器</p>
+    <h1>对比度检查器</h1>
+    <p class="lede">
+      选择文字颜色和背景颜色，即可查看精确的 WCAG 对比度，以及是否通过 AA 或 AAA 标准。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="fgHex">文字颜色</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="fgColor" value="#1a1418" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="fgHex" value="#1a1418" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="bgHex">背景颜色</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="color" id="bgColor" value="#ffffff" style="width:44px; flex-shrink:0;" />
+              <input type="text" id="bgHex" value="#ffffff" style="font-family:var(--font-mono, monospace);" />
+            </div>
+          </div>
+        </div>
+        <button type="button" class="secondary" id="swapBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3 3 21"/></svg>
+          交换颜色
+        </button>
+
+        <div class="contrast-ratio-display" id="ratioDisplay">--</div>
+        <div class="contrast-badges" id="badges"></div>
+
+        <div class="contrast-preview" id="previewBox">
+          <p class="cp-large">大号文字预览（18pt 以上）</p>
+          <p class="cp-normal">正常文字预览，也就是大多数正文使用的字号。</p>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">标识含义说明</h3>
+          <p class="note" style="margin-top:0;">根据 WCAG 2.1，要达到 AA 标准，正常文字需要 4.5:1 的对比度，大号文字（18pt 以上，或加粗 14pt 以上）需要 3:1。AAA 标准更严格：正常文字需要 7:1，大号文字需要 4.5:1。</p>
+        </div>
+      </div>
+    </div>
+
+<!--RELATED-TOOLS
+color-converter.html|颜色转换器|把任意颜色转换成 HEX、RGB、HSL 或 CMYK。
+color-palette-extractor.html|调色板提取器|从图片中提取主要颜色。
+css-gradient-generator.html|CSS 渐变生成器|可视化构建渐变，复制 CSS。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>AA 和 AAA 有什么区别？</summary>
+        <p>AA 是大多数网站的基础目标：正常文字要求 4.5:1，大号文字（18pt 以上，或加粗 14pt 以上）要求 3:1。AAA 标准更严格，主要面向视力较弱的用户：正常文字 7:1，大号文字 4.5:1。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这个工具只检查纯色，还是也能检查图片？</summary>
+        <p>只检查两种纯色，也就是文字颜色和背景颜色。如果文字叠加在照片或渐变背景上，应该分别针对它可能出现的最深和最浅区域检查对比度。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这和浏览器、审计工具用的公式一样吗？</summary>
+        <p>是的。这里使用的是标准的 WCAG 2.1 相对亮度和对比度公式，与 Lighthouse 和 axe 使用的公式相同。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-contrast-checker.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

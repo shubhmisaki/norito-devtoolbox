@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>ツリー表示付きJSONフォーマッタ・バリデーター | norito</title>
+<meta name="description" content="入力しながらJSONを整形・検証・圧縮します。折りたたみ可能なツリー表示、エラー箇所のインライン表示、キーのソート、結果のコピーやダウンロードが可能です。ブラウザ内で完結します。" />
+<link rel="canonical" href="https://norito.in/ja/json-formatter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-formatter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-formatter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-formatter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-formatter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-formatter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-formatter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ツリー表示付きJSONフォーマッタ・バリデーター | norito" />
+<meta property="og:description" content="入力しながらJSONを整形・検証・圧縮します。折りたたみ可能なツリー表示、エラー箇所のインライン表示、キーのソート、結果のコピーやダウンロードが可能です。ブラウザ内で完結します。" />
+<meta property="og:url" content="https://norito.in/ja/json-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ツリー表示付きJSONフォーマッタ・バリデーター | norito" />
+<meta name="twitter:description" content="入力しながらJSONを整形・検証・圧縮します。折りたたみ可能なツリー表示、エラー箇所のインライン表示、キーのソート、結果のコピーやダウンロードが可能です。ブラウザ内で完結します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSONフォーマッタ",
+  "url": "https://norito.in/ja/json-formatter.html",
+  "description": "入力しながらJSONを整形・検証・圧縮します。折りたたみ可能なツリー表示、エラー箇所のインライン表示、キーのソート、結果のコピーやダウンロードが可能です。ブラウザ内で完結します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSONフォーマッタ",
+      "item": "https://norito.in/ja/json-formatter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSONフォーマッタ</p>
+    <h1>JSONフォーマッタ・バリデーター</h1>
+    <p class="lede">
+      JSONを貼り付けると、ツリー表示またはテキストとしてリアルタイムで検証・整形されます。エラーは「無効なJSON」とだけ表示するのではなく、正確な行と列を示します。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:14px;">
+          <label for="jsonInput">入力</label>
+          <textarea id="jsonInput" class="mono-area" rows="14">{
+  "name": "norito",
+  "tagline": "small tools, one job each",
+  "tools": ["test files", "compress", "json formatter", "qr code"],
+  "version": 1,
+  "public": true,
+  "maintainer": null
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field-row" style="margin-bottom:0;">
+            <div class="field">
+              <label style="visibility:hidden;">表示</label>
+              <div class="tabs" id="view-tabs">
+                <button type="button" class="tab active" data-value="tree">ツリー表示</button>
+                <button type="button" class="tab" data-value="text">テキスト</button>
+              </div>
+            </div>
+            <div class="field" style="min-width:110px;">
+              <label for="indentSize">インデント</label>
+              <select id="indentSize">
+                <option value="2" selected>スペース2つ</option>
+                <option value="4">スペース4つ</option>
+                <option value="tab">タブ</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-row" style="margin-bottom:16px;">
+            <span class="option-label">キーをアルファベット順に並べ替え</span>
+            <label class="switch"><input type="checkbox" id="optSortKeys" /><span class="track"></span></label>
+          </div>
+
+          <div id="treeView" class="json-tree"></div>
+          <textarea id="textOutput" class="mono-area" rows="14" readonly style="display:none;"></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button id="formatBtn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg>
+  入力を整形
+</button>
+            <button id="minifyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg>
+  入力を圧縮
+</button>
+            <button id="copyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+  出力をコピー
+</button>
+            <button id="downloadBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  .jsonをダウンロード
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        検証にはJSON.parseを使用します。これはブラウザやNode.jsが実行時に使うのと同じネイティブパーサーなので、ここで通ったものは本番環境でも確実にパースされます。類似文法による近似ではありません。パースに失敗すると、エンジンは行番号と列番号を直接返すか、あるいは生の文字位置だけを返します。後者の場合、このツールは入力をその位置まで切り出し、改行数を数えることでエラーボックスに表示する行・列番号に変換しています。
+      </p>
+      <p>
+        ツリー表示はパース済みの値を再帰的にたどり、折りたたみ可能なノードとして構築されます。300件を超える要素を持つオブジェクトや配列は、表示上のみ省略されます(コピーやダウンロードされる出力では省略されません)。これにより、数メガバイトのAPIレスポンスでもスクロール可能な状態を保てます。エンジンを経由することの副作用として知っておくべき点があります。数値はJavaScriptの64ビット浮動小数点数として再シリアライズされるため、1e2は100に、0.50は0.5にといった見た目の表記が正規化されます。また2の53乗を超える整数、たとえば19桁のデータベースIDやTwitter形式のIDでは、末尾の桁が静かに失われることがあります。そのような大きなIDを含むJSONを扱う場合は、整形前に文字列型として保持してください。
+      </p>
+      <p>
+        パース、整形、圧縮はすべて、キーを押すたびにこのページ自身のJavaScriptで処理されます。開発者ツールの「ネットワーク」タブを開いて実際のAPIレスポンスを貼り付けて確認できます。トークンや顧客データを含むペイロードを貼り付けても安全な理由です。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+test-file-generator.html|テストファイルジェネレーター|正確なサイズや拡張子のダミーファイル。
+markdown-editor.html|Markdownエディタ|リアルタイムプレビュー付き2ペインMarkdownエディタ。
+qr-code-generator.html|QRコードジェネレーター|色とロゴをカスタマイズできるQRコード。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

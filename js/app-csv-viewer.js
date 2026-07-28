@@ -131,11 +131,7 @@
     reader.readAsText(file);
   });
   els.drop.addEventListener("click", () => els.fileInput.click());
-  els.drop.addEventListener("dragover", (e) => { e.preventDefault(); els.drop.classList.add("drag"); });
-  els.drop.addEventListener("dragleave", () => els.drop.classList.remove("drag"));
-  els.drop.addEventListener("drop", (e) => {
-    e.preventDefault();
-    els.drop.classList.remove("drag");
+  wireDragDrop(els.drop, (e) => {
     const file = e.dataTransfer.files[0];
     if (!file) return;
     const reader = new FileReader();

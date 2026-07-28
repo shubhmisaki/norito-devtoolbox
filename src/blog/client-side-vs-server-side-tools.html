@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Where Your Files Actually Go With an Online Tool | norito</title>
+<meta name="description" content="Some online tools upload your files to a server; others process them entirely in your browser. How to tell the difference in two minutes with DevTools." />
+<link rel="canonical" href="https://norito.in/blog/client-side-vs-server-side-tools.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/client-side-vs-server-side-tools.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/client-side-vs-server-side-tools.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Where Your Files Actually Go With an Online Tool | norito" />
+<meta property="og:description" content="Some online tools upload your files to a server; others process them entirely in your browser. How to tell the difference in two minutes with DevTools." />
+<meta property="og:url" content="https://norito.in/blog/client-side-vs-server-side-tools.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Where Your Files Actually Go With an Online Tool | norito" />
+<meta name="twitter:description" content="Some online tools upload your files to a server; others process them entirely in your browser. How to tell the difference in two minutes with DevTools." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Where Your Files Actually Go When You Use an Online Tool",
+  "description": "Some online tools upload your files to a server; others process them entirely in your browser. How to tell the difference in two minutes with DevTools.",
+  "url": "https://norito.in/blog/client-side-vs-server-side-tools.html",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/blog/client-side-vs-server-side-tools.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / Where Your Files Actually Go When You Use an Online Tool</p>
+    <h1>Where Your Files Actually Go When You Use an Online Tool</h1>
+    <p class="byline">By Shubham Singh &middot; <time datetime="2026-07-20">July 20, 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Published 2026-07-20</p>
+    <p class="lede">Every "free online tool" page looks the same: a friendly drop zone, a button, a download. What happens in between splits the entire category in two. Some tools upload your file to a server and process it there. Others do all the work inside your browser tab, and the file never leaves your machine. The page looks identical either way, so here is how to tell them apart, and when each approach is actually legitimate.</p>
+
+    <h2>The two architectures</h2>
+    <p>An upload-based tool sends your file over the network to the company's servers, runs the processing there, and sends a result back. A client-side tool downloads code instead: JavaScript and, increasingly, WebAssembly builds of real libraries (PDF engines, image codecs, even ffmpeg) that run inside the tab. When you hit "download," the browser is just saving a file it already built in memory. Both models are old; what changed over the last decade is that WebAssembly made the client-side one capable of serious work.</p>
+
+    <h2>What "uploaded" actually means</h2>
+    <p>Once a file is uploaded, it exists on infrastructure you do not control. The service may promise deletion after an hour, and most reputable ones mean it, but the promise is unverifiable from the outside: you cannot audit their storage, their backups, their logs, or the jurisdiction their servers sit in. Every uploaded file is also part of a breach surface, because a compromise of the service is a compromise of whatever is on it at the time. None of this makes upload services malicious. It means using one is an act of trust, and the sensible question is whether the file justifies it. A meme, sure. A signed contract, a medical record, or a passport scan is a different calculation.</p>
+
+    <h2>The padlock is about transit, not destination</h2>
+    <p>A common misreading is the HTTPS padlock. TLS encrypts the connection between your browser and the server, so nobody in the middle can read the file while it travels. It says nothing about what happens on arrival: an upload over HTTPS is still an upload, and the server decrypts and processes your file exactly as if you had handed it over directly. Retention policies, not padlocks, govern that side, and the padlock appears on every serious upload-based site anyway. "Secure connection" and "your file stays on your machine" are unrelated claims.</p>
+
+    <h2>Verify it yourself in two minutes</h2>
+    <p>You do not have to take any site's word for it, including this one. Open your browser's DevTools (F12), switch to the Network tab, clear it, then run a file through the tool. Watch for a POST or PUT request whose payload size roughly matches your file. If your 20 MB PDF triggers a 20 MB request, it was uploaded, whatever the marketing copy says. A genuinely client-side tool shows no such request; you will typically see only small analytics pings measured in bytes.</p>
+    <p>The second test is even simpler: load the tool's page, disconnect from the internet (airplane mode works), then process your file. Client-side tools keep working, because everything they need arrived with the page. Upload-based tools fail immediately. Every tool on norito passes both tests, and the <a href="../how-it-works.html">how it works page</a> documents the architecture; try the Network-tab check against <a href="../pdf/merge-pdf.html">Merge PDF</a> right now if you are curious.</p>
+    <p>Two refinements make the check more reliable. First, run your actual workflow end to end, since a tool might process locally but upload when you hit a share or cloud-save button. Second, on first visit a client-side tool may legitimately download a few megabytes of JavaScript or WebAssembly, its processing engine arriving at your machine. That traffic flows toward you, not from you, and the direction is plainly visible in the request list.</p>
+
+    <h2>What can still leak without an upload</h2>
+    <p>Client-side processing is not a privacy force field, and it is worth being precise about the gaps. Analytics scripts can transmit metadata even when file contents stay local: filenames, sizes, which features you used. The output file can carry sensitive metadata inherited from the input; photos are the classic case, where EXIF data including GPS coordinates survives most editing operations, which is why a dedicated <a href="../remove-metadata.html">metadata remover</a> exists. Browser extensions you have installed can read anything on any page, however the page was built. And "client-side" says nothing about whether the site's code is honest: a malicious page could process locally and still quietly exfiltrate. Client-side is necessary for privacy here, not sufficient. Verifiability plus reputation is the real standard.</p>
+
+    <h2>When a server is genuinely necessary</h2>
+    <p>Plenty of tasks cannot reasonably run in a tab, and it is worth being fair about it. High-accuracy OCR on messy scans still favors server-side engines; Tesseract compiles to WebAssembly and works, but the strongest models are large and slow in a browser. Modern background removal and image upscaling lean on ML models that run to hundreds of megabytes. Long video transcodes exceed what a tab can do in acceptable time, and a browser tab's practical memory ceiling, commonly 2 to 4 GB, rules out very large files entirely. Anything collaborative involves a server by definition. So "upload equals bad" is too simple; the right question is whether the task requires a server. For the everyday cases, <a href="how-to-merge-pdfs-for-free.html">merging PDFs</a>, converting and resizing images, generating passwords and QR codes, it does not.</p>
+
+    <h2>A reasonable default</h2>
+    <p>For anything you would hesitate to email to a stranger, prefer a tool you have personally verified processes locally. When a job genuinely needs a server, pick a provider with a written retention policy and strip metadata from files before uploading them. And make the two-minute DevTools check a habit: it is the rare privacy claim any user can test directly, and sites that are honest about their architecture will survive it.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>See it for yourself:</strong> open <a href="../pdf/merge-pdf.html">Merge PDF</a> with the Network tab open, or read <a href="../how-it-works.html">how norito works</a>. Your files never leave your browser.</div>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

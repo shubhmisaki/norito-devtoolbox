@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Contador de caracteres: comprueba límites de plataformas | norito</title>
+<meta name="description" content="Cuenta caracteres con y sin espacios, más el tamaño en bytes, y compáralo en vivo con los límites de tuits, SMS y meta descripciones. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/character-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/character-counter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/character-counter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/character-counter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/character-counter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/character-counter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/character-counter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/character-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/character-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Contador de caracteres: comprueba límites de plataformas | norito" />
+<meta property="og:description" content="Cuenta caracteres con y sin espacios, más el tamaño en bytes, y compáralo en vivo con los límites de tuits, SMS y meta descripciones. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/character-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contador de caracteres: comprueba límites de plataformas | norito" />
+<meta name="twitter:description" content="Cuenta caracteres con y sin espacios, más el tamaño en bytes, y compáralo en vivo con los límites de tuits, SMS y meta descripciones. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Contador de caracteres",
+  "url": "https://norito.in/es/character-counter.html",
+  "description": "Cuenta caracteres con y sin espacios, más el tamaño en bytes, y compáralo en vivo con los límites de tuits, SMS y meta descripciones. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contador de caracteres",
+      "item": "https://norito.in/es/character-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Contador de caracteres</p>
+    <h1>Contador de caracteres</h1>
+    <p class="lede">
+      Recuento de caracteres en vivo, con y sin espacios, tamaño en bytes, y qué tan cerca estás de los límites habituales de plataformas como tuits y meta descripciones.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Tu texto</label>
+          <textarea id="textInput" class="mono-output" rows="10" placeholder="Pega o escribe tu texto aquí..."></textarea>
+        </div>
+        <div class="meta-list">
+          <div class="meta-row"><span class="meta-label">Caracteres (con espacios)</span><span class="meta-value" id="statWithSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">Caracteres (sin espacios)</span><span class="meta-value" id="statNoSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">Tamaño en bytes (UTF-8)</span><span class="meta-value" id="statBytes">0</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Límites habituales</h3>
+          <div class="meta-list" id="limitList"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        En cada pulsación la página recalcula tres números. El recuento de caracteres es <code>.length</code> de JavaScript, que cuenta unidades de código UTF-16. El recuento sin espacios elimina primero todos los espacios en blanco (espacios, tabulaciones, saltos de línea) con una expresión regular. El tamaño en bytes pasa tu texto por la API <code>TextEncoder</code> del navegador, que produce los bytes UTF-8 reales que el texto ocuparía en un archivo, una columna de base de datos o el cuerpo de una petición HTTP. La lista de límites de plataformas es entonces solo una resta contra cada límite, cambiando al estilo "excedido" en cuanto lo superas.
+      </p>
+      <p>
+        La diferencia entre esos números es donde la gente se sorprende. Un emoji como una carita sonriente es un símbolo visible pero dos unidades de código UTF-16 (por lo que cuenta como 2 caracteres aquí, y en muchas plataformas) y cuatro bytes de UTF-8. Para SMS en concreto, el límite de 160 caracteres asume que el mensaje se mantiene dentro del antiguo alfabeto GSM-7: incluye un solo emoji o una comilla tipográfica y el operador cambia silenciosamente todo el mensaje a codificación UCS-2, reduciendo el límite por segmento a 70 caracteres. Si al editar un solo carácter tu texto de repente se divide en dos segmentos de SMS, esa es la razón.
+      </p>
+      <p>
+        El recuento ocurre por completo en el JavaScript de esta página. Abre la pestaña Red de las herramientas de desarrollador mientras escribes: verás cero peticiones, porque tu texto nunca sale del navegador.
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+/word-counter.html|Contador de palabras|Recuento de palabras, frases y párrafos, más tiempo de lectura.
+limited-text-generator.html|Generador de texto limitado|Genera texto de relleno con una longitud exacta.
+seo-slug-generator.html|Generador de slugs SEO|Slugs de URL limpios a partir de títulos.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-character-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

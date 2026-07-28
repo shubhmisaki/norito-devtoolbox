@@ -201,7 +201,7 @@
   els.copyBtn.addEventListener("click", async () => {
     const text = els.textOutput.value || els.input.value;
     try {
-      await navigator.clipboard.writeText(text);
+      await copyToClipboard(text);
     } catch (e) {
       els.textOutput.select();
       document.execCommand("copy");

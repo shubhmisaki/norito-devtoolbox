@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>HTML Entity Encoder / Decoder Online | norito</title>
+<meta name="description" content="Escape or unescape HTML entities (&lt; &gt; &amp; and more), live in your browser. Handles named and numeric entities. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/html-entity-encoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/html-entity-encoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/html-entity-encoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HTML Entity Encoder / Decoder Online | norito" />
+<meta property="og:description" content="Escape or unescape HTML entities (&lt; &gt; &amp; and more), live in your browser. Handles named and numeric entities. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/html-entity-encoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HTML Entity Encoder / Decoder Online | norito" />
+<meta name="twitter:description" content="Escape or unescape HTML entities (&lt; &gt; &amp; and more), live in your browser. Handles named and numeric entities. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HTML Entity Encoder / Decoder",
+  "url": "https://norito.in/html-entity-encoder.html",
+  "description": "Escape or unescape HTML entities (&lt; &gt; &amp; and more), live in your browser. Handles named and numeric entities. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which characters get encoded by default?", "acceptedAnswer": { "@type": "Answer", "text": "The five HTML-significant characters: < > & \" and '. Turn on \"Encode all non-ASCII characters\" to also escape accented letters, emoji, and other Unicode characters as numeric entities, useful for older systems that only handle plain ASCII safely." } },
+    { "@type": "Question", "name": "Does this decode numeric entities like &#38;?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, both decimal (&#38;) and hexadecimal (&#x26;) numeric entities decode correctly, alongside all the common named entities like &amp;amp; and &amp;copy;." } },
+    { "@type": "Question", "name": "Is this safe to use on untrusted HTML?", "acceptedAnswer": { "@type": "Answer", "text": "This tool only converts text back and forth, it never renders the HTML as a live page, so pasting untrusted content here is safe. The encoded output is meant to be inserted into your own page's source where it will display as literal text rather than run as markup." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HTML Entity Encoder",
+      "item": "https://norito.in/html-entity-encoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / HTML Entity Encoder</p>
+    <h1>HTML Entity Encoder / Decoder</h1>
+    <p class="lede">
+      Escape special characters into HTML entities, or decode entities back into plain text, live as you type.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">Encode</button>
+          <button type="button" class="tab" data-value="decode">Decode</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="option-row" style="margin-bottom:16px;">
+          <div>
+            <div class="option-label">Encode all non-ASCII characters</div>
+            <div class="option-hint">Also escapes accented letters and emoji, not just &lt; &gt; &amp; " '.</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="optAllNonAscii" /><span class="track"></span></label>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Input</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Type or paste HTML or text..."></textarea>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">Output</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Swap
+          </button>
+          <button id="copyBtn">Copy output</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-teal" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3>Why HTML entities exist</h3>
+              <p>Some characters are reserved by HTML itself.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Characters like <code>&lt;</code>, <code>&gt;</code>, and <code>&amp;</code> have
+            special meaning in HTML markup, typing them literally inside page content can break
+            the page or, worse, let user input be interpreted as executable markup. Encoding them
+            as entities like <code>&amp;lt;</code> displays the character safely as plain text.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Named vs numeric entities</h3>
+          <p class="note" style="margin-top:0;">
+            <code>&amp;amp;</code> and <code>&amp;#38;</code> both decode to the same ampersand,
+            named entities exist for common characters, numeric entities (decimal or hex) can
+            represent any Unicode character at all. This tool decodes both forms.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Encoding is a straightforward substitution: a regex replaces the five HTML-reserved
+        characters (<code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>"</code>,
+        <code>'</code>) with their entities. The "encode all non-ASCII" option goes further and
+        converts every character above the ASCII range to a numeric reference using
+        <code>codePointAt</code>, handy when output has to survive an ASCII-only pipeline like an
+        old email template system or a config file that mangles UTF-8.
+      </p>
+      <p>
+        Decoding uses a trick worth knowing: the string is assigned to the
+        <code>innerHTML</code> of a detached <code>&lt;textarea&gt;</code>, then read back from
+        its <code>.value</code>. That hands the work to the browser's own HTML parser, which
+        already knows all 2,000-plus named entities plus every decimal and hex numeric form, so
+        the tool doesn't ship a lookup table that can go stale. It's also why decoding untrusted
+        input is safe here: a textarea's contents are always treated as plain text, so a decoded
+        <code>&amp;lt;script&amp;gt;</code> becomes the text of a script tag, and nothing ever
+        executes.
+      </p>
+      <p>
+        Both directions run on each keystroke inside this page's JavaScript. Open DevTools'
+        Network tab while you type: there are no requests, your markup never leaves the browser.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|URL Encoder / Decoder|Percent-encode or decode a URL.
+base64-encoder.html|Base64 Encode / Decode|Text to and from Base64, UTF-8 safe.
+json-formatter.html|JSON Formatter|Format, validate, and minify JSON.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Which characters get encoded by default?</summary>
+        <p>The five HTML-significant characters: < > & " and '. Turn on "Encode all non-ASCII characters" to also escape accented letters, emoji, and other Unicode characters as numeric entities, useful for older systems that only handle plain ASCII safely.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this decode numeric entities like &#38;?</summary>
+        <p>Yes, both decimal (&#38;) and hexadecimal (&#x26;) numeric entities decode correctly, alongside all the common named entities like &amp;amp; and &amp;copy;.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this safe to use on untrusted HTML?</summary>
+        <p>This tool only converts text back and forth, it never renders the HTML as a live page, so pasting untrusted content here is safe. The encoded output is meant to be inserted into your own page's source where it will display as literal text rather than run as markup.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-html-entity.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Color Palette Extractor: Get Colors from an Image | norito</title>
+<meta name="description" content="Upload an image and extract its dominant colors as a palette, with HEX and RGB values ready to copy. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/color-palette-extractor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/color-palette-extractor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Color Palette Extractor: Get Colors from an Image | norito" />
+<meta property="og:description" content="Upload an image and extract its dominant colors as a palette, with HEX and RGB values ready to copy. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/design/color-palette-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Color Palette Extractor: Get Colors from an Image | norito" />
+<meta name="twitter:description" content="Upload an image and extract its dominant colors as a palette, with HEX and RGB values ready to copy. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Color Palette Extractor",
+  "url": "https://norito.in/design/color-palette-extractor.html",
+  "description": "Upload an image and extract its dominant colors as a palette, with HEX and RGB values ready to copy. Runs entirely in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Every pixel is read locally using the canvas API. Nothing is sent to a server." }
+    },
+    {
+      "@type": "Question",
+      "name": "How are the colors chosen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pixels are grouped into buckets by similarity, and the most common buckets become your palette, averaged from the real pixels that landed in each one." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why don't the colors exactly match what I expected?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Very small or thin details can get averaged out if they don't cover enough of the image. Try increasing the color count to catch more detail." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Color Palette Extractor",
+      "item": "https://norito.in/design/color-palette-extractor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Color Palette Extractor</p>
+    <h1>Color Palette Extractor</h1>
+    <p class="lede">
+      Upload an image and pull out the colors that actually define it. Click any swatch to copy its hex code.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+          <p><strong>Click to choose an image</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">Also works with paste (Ctrl+V). Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div id="previewWrap" style="display:none; margin-top:16px;">
+          <img id="previewImg" style="max-width:100%; max-height:220px; border-radius:var(--radius-md); display:block;" alt="Uploaded image preview" />
+        </div>
+        <div class="field" style="margin-top:16px; max-width:200px;">
+          <label for="colorCount">Number of colors</label>
+          <select id="colorCount">
+            <option value="5">5</option>
+            <option value="8" selected>8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+          </select>
+        </div>
+        <div class="palette-grid" id="paletteGrid" style="display:none;"></div>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">How it works</h3>
+          <p class="note" style="margin-top:0;">Colors are sampled directly from your image using the canvas API and grouped by similarity. Nothing is uploaded, everything happens in your browser.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your image is drawn onto an offscreen canvas scaled down to at most 200px on its longest
+        side, because a thumbnail has nearly the same color distribution as the original and reads
+        thousands of times faster. The raw RGBA pixels come back from <code>getImageData()</code>,
+        and anything more than half transparent is skipped so a logo on a transparent background
+        doesn't report "mostly nothing". Each remaining pixel is dropped into a coarse grid of 6
+        levels per channel, 216 buckets total, while the bucket keeps a running sum of the real
+        channel values. The buckets are ranked by pixel count, the top N win, and each swatch is
+        the average of the actual pixels that landed in its bucket rather than the bucket's center,
+        which keeps the results from looking posterized. So this is a frequency histogram with
+        uniform quantization, not k-means or median cut, and that's deliberate: it's instant, and
+        it gives the same answer every run, where k-means starts from random seeds and can return a
+        slightly different palette each time.
+      </p>
+      <p>
+        The honest tradeoff of frequency ranking: it measures area, not importance. A portrait
+        against a beige wall will hand you five beiges before it mentions the subject's blue
+        jacket, because the wall simply has more pixels. If you're after accent colors rather than
+        dominant ones, raise the color count and look toward the end of the list, or crop the image
+        to the region you care about before dropping it in. The percentage under each swatch is
+        that bucket's share of all sampled pixels, so it doubles as a quick check on how dominant a
+        color really is.
+      </p>
+      <p>
+        The image itself never leaves your machine: it's loaded through a local object URL, drawn
+        to a canvas in memory, and read back as bytes, all inside this page's JavaScript. There's
+        no upload step to intercept, and the DevTools Network tab stays empty while you extract.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+color-converter.html|Color Converter|Convert any color to HEX, RGB, HSL, or CMYK.
+contrast-checker.html|Contrast Checker|Check if two colors meet WCAG contrast rules.
+css-gradient-generator.html|CSS Gradient Generator|Build a gradient from colors you like.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is my image uploaded anywhere?</summary>
+        <p>No. Every pixel is read locally using the canvas API. Nothing is sent to a server.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How are the colors chosen?</summary>
+        <p>Pixels are grouped into buckets by similarity, and the most common buckets become your palette, averaged from the real pixels that landed in each one.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why don't the colors exactly match what I expected?</summary>
+        <p>Very small or thin details can get averaged out if they don't cover enough of the image. Try increasing the color count to catch more detail.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-color-palette-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

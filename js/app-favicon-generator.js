@@ -83,13 +83,7 @@
 
   els.drop.addEventListener("click", () => els.fileInput.click());
   els.fileInput.addEventListener("change", (e) => handleFile(e.target.files[0]));
-  ["dragenter", "dragover"].forEach((evt) =>
-    els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.add("drag"); })
-  );
-  ["dragleave", "drop"].forEach((evt) =>
-    els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.remove("drag"); })
-  );
-  els.drop.addEventListener("drop", (e) => {
+  wireDragDrop(els.drop, (e) => {
     const file = e.dataTransfer.files[0];
     if (file) handleFile(file);
   });

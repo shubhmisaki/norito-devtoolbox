@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Кодировщик / декодировщик URL онлайн | norito</title>
+<meta name="description" content="Кодируйте или декодируйте URL или компонент URL (percent-encoding), прямо в браузере. Режимы компонента и полного URI. Ничего не загружается." />
+<link rel="canonical" href="https://norito.in/ru/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/url-encoder-decoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/url-encoder-decoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Кодировщик / декодировщик URL онлайн | norito" />
+<meta property="og:description" content="Кодируйте или декодируйте URL или компонент URL (percent-encoding), прямо в браузере. Режимы компонента и полного URI. Ничего не загружается." />
+<meta property="og:url" content="https://norito.in/ru/url-encoder-decoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Кодировщик / декодировщик URL онлайн | norito" />
+<meta name="twitter:description" content="Кодируйте или декодируйте URL или компонент URL (percent-encoding), прямо в браузере. Режимы компонента и полного URI. Ничего не загружается." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Кодировщик / декодировщик URL",
+  "url": "https://norito.in/ru/url-encoder-decoder.html",
+  "description": "Кодируйте или декодируйте URL или компонент URL (percent-encoding), прямо в браузере. Режимы компонента и полного URI. Ничего не загружается.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Кодировщик / декодировщик URL",
+      "item": "https://norito.in/ru/url-encoder-decoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Кодировщик / декодировщик URL</p>
+    <h1>Кодировщик / декодировщик URL</h1>
+    <p class="lede">
+      Кодируйте в процентном формате или декодируйте URL или один компонент URL прямо во время ввода. Ничего из введённого никуда не отправляется.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="tabs" id="mode-tabs" role="tablist" style="margin-bottom:20px;">
+          <button type="button" class="tab active" data-value="encode">Кодировать</button>
+          <button type="button" class="tab" data-value="decode">Декодировать</button>
+        </div>
+        <select id="mode" style="display:none;">
+          <option value="encode">encode</option>
+          <option value="decode">decode</option>
+        </select>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="encodeType">Тип кодирования</label>
+          <select id="encodeType">
+            <option value="component" selected>Компонент (encodeURIComponent), рекомендуется</option>
+            <option value="full">Полный URI (encodeURI)</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Ввод</label>
+          <textarea id="input" class="mono-area" rows="6" placeholder="Введите или вставьте текст или URL..."></textarea>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="output">Вывод</label>
+          <textarea id="output" class="mono-area" rows="6" readonly></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button id="swapBtn" class="secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Поменять местами
+          </button>
+          <button id="copyBtn">Скопировать вывод</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <h3>Компонент vs полный URI</h3>
+              <p>Они кодируют разные символы.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Кодирование <strong>компонента</strong> экранирует всё, что небезопасно внутри одного сегмента URL, включая <code>&amp;</code>, <code>=</code> и <code>?</code>, используйте его для значения параметра запроса. Кодирование <strong>полного URI</strong> оставляет эти символы нетронутыми, поскольку они структурно значимы в полном URL, используйте его при кодировании целого адреса, а не одной его части.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Зачем вообще кодировать URL</h3>
+          <p class="note" style="margin-top:0;">
+            URL может содержать лишь ограниченный набор ASCII-символов. Пробелы, буквы с диакритикой, эмодзи и зарезервированные символы вроде <code>&amp;</code> или <code>#</code> нужно кодировать в процентном формате (например, <code>%20</code> для пробела), чтобы они уцелели при передаче в составе ссылки, не сломав её.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>Кодирование вызывает собственные функции браузера <code>encodeURIComponent</code> или <code>encodeURI</code>, те же самые, что использует JavaScript-код, поэтому вывод в точности совпадает с тем, что произвёл бы браузер или HTTP-библиотека. Каждый небезопасный байт превращается в знак процента плюс два шестнадцатеричных символа его UTF-8-кодировки: пробел становится <code>%20</code>, а многобайтовые символы разворачиваются в несколько escape-последовательностей (é это <code>%C3%A9</code>).</p>
+      <p>Два режима кодирования существуют потому, что «закодировать URL» означает две разные вещи. Режим компонента экранирует всё, что не является буквой, цифрой или горсткой безопасных символов, включая <code>/ ? &amp; = :</code>. Это то, что нужно для одного значения, попадающего в строку запроса, иначе амперсанд внутри значения разобьёт ваш параметр надвое. Режим полного URL оставляет структурные символы нетронутыми, чтобы полный URL продолжал работать, и экранирует только те символы, которые вообще не могут появляться в необработанном виде. Использование кодирования компонента для целого URL ломает его; использование кодирования полного URL для значения параметра — это готовая уязвимость для инъекции. Выбирайте исходя из того, что кодируете, а не по привычке.</p>
+      <p>Режим декодирования запускает <code>decodeURIComponent</code> с одним практичным дополнением: плюсы сначала преобразуются в пробелы, потому что кодирование HTML-форм (формат <code>application/x-www-form-urlencoded</code>, который вы видите в строках запроса) исторически записывает пробелы как <code>+</code>. Некорректный ввод, например одинокий <code>%</code>, за которым не следуют два шестнадцатеричных символа, вызывает <code>URIError</code>, который инструмент перехватывает и сообщает вместо показа наполовину декодированного текста. Если после одного декодирования всё ещё остаются последовательности <code>%25xx</code>, значит строка была закодирована дважды; пропустите её через декодирование ещё раз.</p>
+      <p>Оба направления — это единичный вызов встроенной функции в вашей вкладке. Панель Network в DevTools не показывает никакого трафика во время ввода, так что токены и URL с секретами остаются только на вашем компьютере.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+base64-encoder.html|Кодировщик / декодировщик Base64|Преобразование текста в Base64 и обратно, безопасно для UTF-8.
+html-entity-encoder.html|Кодировщик HTML-сущностей|Экранирование и раскодирование HTML-сущностей.
+json-formatter.html|Форматирование JSON|Форматирует, проверяет и минифицирует JSON.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-url-encoder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

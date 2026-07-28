@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Форматирование и проверка JSON онлайн | norito</title>
+<meta name="description" content="Форматирует, проверяет и минифицирует JSON по мере набора. Сворачиваемое дерево, указание ошибок по месту, копирование или скачивание результата." />
+<link rel="canonical" href="https://norito.in/ru/json-formatter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-formatter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-formatter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-formatter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-formatter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-formatter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-formatter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Форматирование и проверка JSON онлайн | norito" />
+<meta property="og:description" content="Форматирует, проверяет и минифицирует JSON по мере набора. Сворачиваемое дерево, указание ошибок по месту, копирование или скачивание результата." />
+<meta property="og:url" content="https://norito.in/ru/json-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Форматирование и проверка JSON онлайн | norito" />
+<meta name="twitter:description" content="Форматирует, проверяет и минифицирует JSON по мере набора. Сворачиваемое дерево, указание ошибок по месту, копирование или скачивание результата." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Форматирование JSON",
+  "url": "https://norito.in/ru/json-formatter.html",
+  "description": "Форматирует, проверяет и минифицирует JSON по мере набора. Сворачиваемое дерево, указание ошибок по месту, копирование или скачивание результата.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Форматирование JSON",
+      "item": "https://norito.in/ru/json-formatter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Форматирование JSON</p>
+    <h1>Форматирование и проверка JSON</h1>
+    <p class="lede">
+      Вставьте JSON и смотрите, как он проверяется и форматируется на лету, как сворачиваемое дерево или как текст. Ошибки указывают точную строку и столбец, а не просто «Неверный JSON».
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:14px;">
+          <label for="jsonInput">Ввод</label>
+          <textarea id="jsonInput" class="mono-area" rows="14">{
+  "name": "norito",
+  "tagline": "small tools, one job each",
+  "tools": ["test files", "compress", "json formatter", "qr code"],
+  "version": 1,
+  "public": true,
+  "maintainer": null
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field-row" style="margin-bottom:0;">
+            <div class="field">
+              <label style="visibility:hidden;">Просмотр</label>
+              <div class="tabs" id="view-tabs">
+                <button type="button" class="tab active" data-value="tree">Древовидный вид</button>
+                <button type="button" class="tab" data-value="text">Текст</button>
+              </div>
+            </div>
+            <div class="field" style="min-width:110px;">
+              <label for="indentSize">Отступ</label>
+              <select id="indentSize">
+                <option value="2" selected>2 пробела</option>
+                <option value="4">4 пробела</option>
+                <option value="tab">Табуляция</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-row" style="margin-bottom:16px;">
+            <span class="option-label">Сортировать ключи по алфавиту</span>
+            <label class="switch"><input type="checkbox" id="optSortKeys" /><span class="track"></span></label>
+          </div>
+
+          <div id="treeView" class="json-tree"></div>
+          <textarea id="textOutput" class="mono-area" rows="14" readonly style="display:none;"></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button id="formatBtn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg>
+  Форматировать ввод
+</button>
+            <button id="minifyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg>
+  Минифицировать ввод
+</button>
+            <button id="copyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+  Копировать результат
+</button>
+            <button id="downloadBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  Скачать .json
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Проверка выполняется через JSON.parse — тот же нативный парсер, который браузер и Node.js
+        используют во время выполнения, поэтому всё, что проходит здесь, точно так же распарсится в
+        продакшене, а не является приближением по похожей грамматике. При ошибке парсинга движок сообщает
+        либо строку и столбец напрямую, либо просто позицию символа; во втором случае инструмент обрезает
+        ввод до этой позиции и считает переносы строк, чтобы перевести это в строку и столбец, которые вы
+        видите в окне ошибки.
+      </p>
+      <p>
+        Древовидное представление строится рекурсивным обходом распарсенного значения в сворачиваемые
+        узлы, а любой объект или массив с более чем 300 элементами обрезается только в отображении —
+        никогда в скопированном или скачанном результате, поэтому многомегабайтный дамп API остаётся
+        прокручиваемым. Стоит знать о побочном эффекте прохождения через движок: числа заново
+        сериализуются как 64-битные числа с плавающей точкой JavaScript. Косметические формы
+        нормализуются (1e2 становится 100, 0.50 становится 0.5), а целые числа больше 2 в степени 53,
+        например 19-значные ID баз данных или в стиле Twitter, могут незаметно потерять последние цифры.
+      </p>
+      <p>
+        Парсинг, форматирование и минификация происходят в JavaScript этой страницы при каждом нажатии
+        клавиши. Проверить это можно самостоятельно: откройте инструменты разработчика, вкладку «Сеть», и
+        вставьте настоящий ответ API — ни один запрос не покинет ваш браузер.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+test-file-generator.html|Генератор тестовых файлов|Файлы-заполнители точного размера или расширения.
+markdown-editor.html|Редактор Markdown|Редактор Markdown с двумя панелями и предпросмотром в реальном времени.
+qr-code-generator.html|Генератор QR-кодов|QR-коды с настраиваемыми цветами и логотипом в центре.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

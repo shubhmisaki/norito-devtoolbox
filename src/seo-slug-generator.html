@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SEO Slug Generator: Clean URL Slugs From Any Title | norito</title>
+<meta name="description" content="Turn a title into a clean, SEO-friendly URL slug live as you type. Separator, casing, stopword removal, and batch mode for multiple titles at once." />
+<link rel="canonical" href="https://norito.in/seo-slug-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/seo-slug-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/seo-slug-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/seo-slug-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/seo-slug-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/seo-slug-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/seo-slug-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/seo-slug-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/seo-slug-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SEO Slug Generator: Clean URL Slugs From Any Title | norito" />
+<meta property="og:description" content="Turn a title into a clean, SEO-friendly URL slug live as you type. Separator, casing, stopword removal, and batch mode for multiple titles at once." />
+<meta property="og:url" content="https://norito.in/seo-slug-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SEO Slug Generator: Clean URL Slugs From Any Title | norito" />
+<meta name="twitter:description" content="Turn a title into a clean, SEO-friendly URL slug live as you type. Separator, casing, stopword removal, and batch mode for multiple titles at once." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SEO Slug Generator",
+  "url": "https://norito.in/seo-slug-generator.html",
+  "description": "Turn a title into a clean, SEO-friendly URL slug live as you type. Separator, casing, stopword removal, and batch mode for multiple titles at once.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I remove stopwords from my slugs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Google doesn't need stopwords removed to rank a page, which is why the option is off by default. Shorter slugs are just easier to read and share, so it's a style call: best-way-learn-javascript and the-best-way-to-learn-javascript both work." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to accents and special characters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Accented letters are converted to their plain equivalents, so \"Café\" becomes \"cafe\", and punctuation is stripped entirely. Spaces collapse into your chosen separator, leaving a clean URL-safe slug." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the max length 60 characters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's a safe default that keeps most slugs on one line in search results. When a slug needs trimming, the tool cuts at a word boundary where possible instead of chopping mid-word. Set it to 0 for no limit." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hyphens or underscores?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hyphens. Google treats hyphens as word separators but tends to read underscores as joining words together, so seo-tips is understood as two words while seo_tips may not be. The underscore option is there for things like file names and code identifiers." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO Slug Generator",
+      "item": "https://norito.in/seo-slug-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SEO Slug Generator</p>
+    <h1>SEO Slug Generator</h1>
+    <p class="lede">
+      Paste a title, get a clean URL slug back live as you type. Accents stripped, stopwords
+      trimmed, separators your way. Switch to batch mode to slug a whole list of titles at once.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;">
+          <div>
+            <div class="option-label">Batch mode</div>
+            <div class="option-hint">One title per line</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="batchToggle" /><span class="track"></span></label>
+        </div>
+
+        <div id="singleWrap">
+          <div class="field" style="margin-bottom:16px;">
+            <label for="titleInput">Title</label>
+            <input type="text" id="titleInput" placeholder="e.g. The Best Way to Learn JavaScript in 2026!" value="The Best Way to Learn JavaScript in 2026!" />
+          </div>
+          <div class="field" style="margin-bottom:16px;">
+            <label for="output">Slug</label>
+            <input type="text" id="output" class="mono-output" readonly style="font-size:0.95rem; padding:10px 14px;" />
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+            <span class="note" id="charCount" style="margin:0;">0 characters</span>
+            <button id="copyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+  Copy slug
+</button>
+          </div>
+
+          <div class="field" style="margin-bottom:10px;">
+            <label>URL preview</label>
+          </div>
+          <div class="url-preview">
+            <span class="url-scheme">https://</span><span class="url-domain" id="urlDomainPreview">yoursite.com/blog/</span><span class="url-slug" id="urlSlugPreview">your-slug-here</span>
+          </div>
+        </div>
+
+        <div id="batchWrap" style="display:none;">
+          <div class="field" style="margin-bottom:16px;">
+            <label for="batchInput">Titles (one per line)</label>
+            <textarea id="batchInput" class="mono-area" rows="6" placeholder="One title per line&#10;Another title here&#10;A third one">10 Tips for Better Sleep
+How to Start a Podcast in 2026
+Café Culture: A Traveler's Guide to Europe</textarea>
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-bottom:12px;">
+            <button id="copyAllBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+  Copy all slugs
+</button>
+          </div>
+          <div id="batchResults"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-coral" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            </div>
+            <div>
+              <h3>Options</h3>
+              <p>Applies to both single and batch mode.</p>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:14px;">
+            <label for="separator">Separator</label>
+            <select id="separator">
+              <option value="-" selected>Hyphen (-)</option>
+              <option value="_">Underscore (_)</option>
+            </select>
+          </div>
+          <div class="field" style="margin-bottom:14px;">
+            <label for="maxLength">Max length (0 = no limit)</label>
+            <input type="number" id="maxLength" value="60" min="0" step="1" />
+          </div>
+          <div class="field" style="margin-bottom:6px;">
+            <label for="domainInput">Preview domain</label>
+            <input type="text" id="domainInput" value="yoursite.com/blog/" />
+          </div>
+          <div class="option-row">
+            <span class="option-label">Lowercase</span>
+            <label class="switch"><input type="checkbox" id="optLowercase" checked /><span class="track"></span></label>
+          </div>
+          <div class="option-row">
+            <div>
+              <div class="option-label">Remove stopwords</div>
+              <div class="option-hint">Drops "the", "a", "and"...</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="optRemoveStopwords" /><span class="track"></span></label>
+          </div>
+        </div>
+        <p class="note">
+          Google doesn't need stopwords removed to rank a page, but shorter slugs are easier to
+          read and share. 60 characters is a safe default that keeps most slugs on one line in
+          search results.
+        </p>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The accent handling relies on a Unicode trick called NFKD normalization. A character
+        like <code>é</code> decomposes into a plain <code>e</code> plus a separate combining
+        accent mark; the tool then strips the combining marks, leaving the bare letter. The
+        K in NFKD (compatibility decomposition) also flattens typographic variants, so
+        <code>ﬁ</code> ligatures and full-width letters from CJK keyboards become their
+        plain ASCII forms too. After that, <code>&amp;</code> is spelled out as "and",
+        everything that isn't a letter or digit collapses into your separator, and runs of
+        separators are squeezed to one. Stopword removal checks each word against a list of
+        about 64 filler words, with a guard: if a title is made entirely of stopwords, it's
+        left alone rather than reduced to nothing. Length trimming cuts at your limit, then
+        backtracks to the previous word boundary as long as that doesn't sacrifice more than
+        40% of the slug.
+      </p>
+      <p>
+        Note the limits of transliteration: it maps Latin-based accents, but Cyrillic,
+        Arabic, or CJK titles have no ASCII decomposition and will mostly strip away. And
+        treat the slug you pick as permanent: it becomes the page's URL identity, and
+        changing it after publishing means 301 redirects and re-earning any links pointing
+        at the old address. It's the one piece of on-page SEO that's genuinely annoying to
+        revise, which is why generating it deliberately, before publishing, is worth the
+        thirty seconds.
+      </p>
+      <p>
+        Slugs are computed in-page on every keystroke. Open DevTools, watch the Network tab
+        while you type: no request fires, so pasting titles of unpublished or embargoed
+        articles leaks nothing.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+limited-text-generator.html|Limited Text Generator|Placeholder text at an exact character count.
+markdown-editor.html|Markdown Editor|Split-pane markdown editor with live preview.
+json-formatter.html|JSON Formatter|Format, validate, and minify JSON with a tree view.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Should I remove stopwords from my slugs?</summary>
+        <p>Google doesn't need stopwords removed to rank a page, which is why the option is off by default. Shorter slugs are just easier to read and share, so it's a style call: best-way-learn-javascript and the-best-way-to-learn-javascript both work.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens to accents and special characters?</summary>
+        <p>Accented letters are converted to their plain equivalents, so "Café" becomes "cafe", and punctuation is stripped entirely. Spaces collapse into your chosen separator, leaving a clean URL-safe slug.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is the max length 60 characters?</summary>
+        <p>It's a safe default that keeps most slugs on one line in search results. When a slug needs trimming, the tool cuts at a word boundary where possible instead of chopping mid-word. Set it to 0 for no limit.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Hyphens or underscores?</summary>
+        <p>Hyphens. Google treats hyphens as word separators but tends to read underscores as joining words together, so seo-tips is understood as two words while seo_tips may not be. The underscore option is there for things like file names and code identifiers.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-slug.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

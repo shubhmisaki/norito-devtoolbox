@@ -72,7 +72,7 @@
       const target = document.getElementById(btn.dataset.target);
       if (!target || !target.value) return;
       try {
-        await navigator.clipboard.writeText(target.value);
+        await copyToClipboard(target.value);
         celebrateSuccess(null, btn, "Copied");
       } catch (e) {
         /* clipboard unavailable */

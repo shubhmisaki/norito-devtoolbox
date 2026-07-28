@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JWTデコーダー：JSON Web Tokenをオンラインでデコード | norito</title>
+<meta name="description" content="ブラウザ内でJWTのヘッダーとペイロードをデコード。有効期限と標準クレームの説明を確認できます。署名は検証されません。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/jwt-decoder.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/jwt-decoder.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/jwt-decoder.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/jwt-decoder.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/jwt-decoder.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/jwt-decoder.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/jwt-decoder.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/jwt-decoder.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/jwt-decoder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JWTデコーダー：JSON Web Tokenをオンラインでデコード | norito" />
+<meta property="og:description" content="ブラウザ内でJWTのヘッダーとペイロードをデコード。有効期限と標準クレームの説明を確認できます。署名は検証されません。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/jwt-decoder.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JWTデコーダー：JSON Web Tokenをオンラインでデコード | norito" />
+<meta name="twitter:description" content="ブラウザ内でJWTのヘッダーとペイロードをデコード。有効期限と標準クレームの説明を確認できます。署名は検証されません。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JWTデコーダー",
+  "url": "https://norito.in/ja/jwt-decoder.html",
+  "description": "ブラウザ内でJWTのヘッダーとペイロードをデコード。有効期限と標準クレームの説明を確認できます。署名は検証されません。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JWTデコーダー",
+      "item": "https://norito.in/ja/jwt-decoder.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JWTデコーダー</p>
+    <h1>JWTデコーダー</h1>
+    <p class="lede">
+      JWTを貼り付けると、デコードされたヘッダーとペイロード、そして有効期限などの標準クレームの説明が表示されます。何もアップロードされず、署名が検証されたり秘密鍵と照合されたりすることもありません。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="jwtInput">JWT</label>
+          <textarea id="jwtInput" class="mono-output" rows="6" spellcheck="false" placeholder="JWTを貼り付け、例：eyJhbGciOi...">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
+        </div>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="meta-panel" id="claimsPanel" style="display:none;">
+          <p class="meta-summary">認識された標準クレーム</p>
+          <div class="meta-list" id="claimsList"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">ヘッダー</h3>
+          <pre class="code-output" id="headerOut"></pre>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">ペイロード</h3>
+          <pre class="code-output" id="payloadOut"></pre>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>JWTはドットで結合された3つのBase64URLセグメントです。ヘッダー、ペイロード、署名です。このツールはドットで分割し、最初の2つのセグメントをデコードします。URLセーフなアルファベットを標準のBase64に戻し（<code>-</code>を<code>+</code>に、<code>_</code>を<code>/</code>に）、JWTが省略しているパディングを復元し、<code>atob()</code>を実行し、<code>TextDecoder</code>でバイト列をUTF-8としてデコードします。各セグメントはその後<code>JSON.parse</code>され、整形されて表示されます。標準クレーム（<code>iss</code>、<code>sub</code>、<code>aud</code>、<code>exp</code>、<code>nbf</code>、<code>iat</code>、<code>jti</code>）にはわかりやすいラベルが付き、Unixタイムスタンプは読みやすい日付に変換され、<code>exp</code>はあなたの時計と比較されてトークンが期限切れかどうかを教えてくれます。3番目のセグメントである署名は、一切解析されません。</p>
+      <p>これがこのツールが厳密に守っている区別です。デコードは検証ではありません。あらゆるJWTのペイロードは誰でも読むことができます。それは暗号化ではなくエンコードされているだけです。トークンが本物であることを証明するには署名を再計算する必要があり、そのためには署名用の秘密鍵（HMACの場合）または発行者の鍵（RSA/ECDSAの場合）が必要です。このツールは意図的に「秘密鍵を貼り付ける」ボックスを提供していません。本番環境の署名用秘密鍵をウェブページに貼り付ける習慣は、どんな利便性をもってしても正当化できないリスクであり、検証はいずれにせよサーバー側で行うべきものです。サーバー側で検証していないデコード済みのクレームを決して信用しないでください。</p>
+      <p>すべての処理は、<code>atob</code>とテキストデコードAPIを使ってこのページのJavaScript内で実行されます。DevToolsのNetworkタブを開いた状態で実際のトークンを貼り付けて観察してみてください。リクエストは一切発生せず、トークンがブラウザのタブから外に出ることはありません。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+base64-encoder.html|Base64 エンコード / デコード|単一のBase64セグメントを手動でデコード。
+timestamp-converter.html|タイムスタンプ変換ツール|Unixタイムスタンプを読みやすい日付に変換。
+json-formatter.html|JSONフォーマッタ|デコードされたペイロードを整形して読みやすくします。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-jwt-decoder.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>带实时预览的 Markdown 编辑器 | norito</title>
+<meta name="description" content="边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/markdown-editor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/markdown-editor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/markdown-editor.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/markdown-editor.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/markdown-editor.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/markdown-editor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/markdown-editor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="带实时预览的 Markdown 编辑器 | norito" />
+<meta property="og:description" content="边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/markdown-editor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="带实时预览的 Markdown 编辑器 | norito" />
+<meta name="twitter:description" content="边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Markdown 编辑器",
+  "url": "https://norito.in/zh/markdown-editor.html",
+  "description": "边写 Markdown 边查看左右实时渲染预览。带格式化工具栏、同步滚动,可导出为 Markdown 或 HTML。完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Markdown 编辑器",
+      "item": "https://norito.in/zh/markdown-editor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Markdown 编辑器</p>
+    <h1>Markdown 编辑器</h1>
+    <p class="lede">
+      左侧编写,右侧实时查看渲染效果。支持同步滚动、格式化工具栏,完成后可导出为 Markdown 或 HTML。
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+        <div class="md-toolbar" id="mdToolbar" style="border:none; padding:0; margin:0;">
+          <button type="button" class="md-toolbar-icon" id="undoBtn" data-action="undo" title="撤销" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+          <button type="button" class="md-toolbar-icon" id="redoBtn" data-action="redo" title="重做" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg></button>
+          <span class="md-toolbar-divider" aria-hidden="true"></span>
+          <button type="button" data-action="h1" title="Heading 1">H1</button>
+          <button type="button" data-action="h2" title="Heading 2">H2</button>
+          <button type="button" data-action="bold" title="Bold"><strong>B</strong></button>
+          <button type="button" data-action="italic" title="Italic"><em>I</em></button>
+          <button type="button" data-action="strike" title="Strikethrough"><s>S</s></button>
+          <button type="button" data-action="code" title="Inline code">code</button>
+          <button type="button" data-action="codeblock" title="Code block">{ }</button>
+          <button type="button" data-action="link" title="Link">link</button>
+          <button type="button" data-action="quote" title="Quote">"</button>
+          <button type="button" data-action="ul" title="Bullet list">•</button>
+          <button type="button" data-action="ol" title="Numbered list">1.</button>
+          <button type="button" data-action="table" title="Table">▦</button>
+        </div>
+        <div class="tabs" id="view-tabs">
+          <button type="button" class="tab active" data-value="split">双栏</button>
+          <button type="button" class="tab" data-value="editor">编辑器</button>
+          <button type="button" class="tab" data-value="preview">预览</button>
+        </div>
+      </div>
+
+      <div class="two-col" style="gap:16px;">
+        <div class="md-pane" id="editorPane">
+          <textarea id="mdEditor" class="md-source" spellcheck="false"># 欢迎使用 norito Markdown 编辑器
+
+左侧编写,右侧**实时**渲染,无需点击保存按钮。
+
+## 功能特性
+
+- 双栏预览,滚动同步
+- 上方配有简洁的格式化工具栏
+- 完成后可导出为 `.md` 或 `.html`
+
+> 一切都在你的浏览器中完成。你输入的任何内容都不会被上传到任何地方。
+
+```
+console.log("连代码块也能正常工作");
+```
+
+| 功能 | 状态 |
+| --- | --- |
+| 实时预览 | 已完成 |
+| 导出 | 已完成 |
+</textarea>
+        </div>
+        <div class="md-pane" id="previewPane">
+          <div id="mdPreview" class="md-preview"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+        <span class="note" id="mdCharCount" style="margin:0;">0 characters</span>
+        <div style="display:flex; gap:10px;">
+          <button id="downloadMdBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  下载 .md
+</button>
+          <button id="downloadHtmlBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  下载 .html
+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        预览由 marked 渲染，这是本站自带的开源 Markdown
+        解析器（不依赖任何 CDN），配置为支持 GitHub 风格 Markdown 并启用了换行功能。它在你每次按键时都会重新解析整份文档——听起来很浪费，但
+        marked
+        编译为一次快速的单遍扫描，即使是书籍长度的文档也能在几毫秒内渲染完成。编辑器还维护着自己的撤销历史，最多保存
+        100
+        个快照，因为工具栏按钮是以编程方式设置文本框的值，这会悄悄绕过浏览器原生的撤销栈。连续输入会在短暂停顿后合并为一步，所以
+        Ctrl+Z 是按编辑步骤回退，而不是按按键次数。
+      </p>
+      <p>
+        两个面板之间的滚动同步是按比例进行的：每个面板的滚动位置都会换算成 0 到 1
+        之间的比例，并映射到另一侧。有一点关于可移植性值得注意：启用换行后，单个换行符会变成真正的换行，这与
+        GitHub 渲染评论的方式一致。而严格遵循 CommonMark
+        规范的渲染器（包括许多静态网站生成器）则会把这些行合并成一个段落。如果你的
+        Markdown 最终要发布到要求严格的平台，请在行尾加两个空格或留一个空行来保留换行。导出的
+        .html 文件正是预览面板的标记内容，包裹在一个极简的文档结构中，所见即所得。
+      </p>
+      <p>
+        包括解析器在内的一切都随页面加载，完全在本地运行。打开开发者工具，输入时观察"网络"面板：不会有任何请求携带你的文本，编辑器在离线状态下也能继续工作。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON，附带树状视图。
+limited-text-generator.html|限字数文本生成器|生成指定字符数的占位文本。
+test-file-generator.html|测试文件生成器|生成任意大小或扩展名的精确测试文件。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/vendor/marked.umd.js"></script>
+<script src="../js/app-markdown.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>画像をオンラインでトリミング：ドラッグで切り抜き | norito</title>
+<meta name="description" content="ブラウザ内でドラッグ可能なボックスを使って画像をトリミング。自由な形または1:1、4:3、16:9などの固定比率に対応。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/crop-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/crop-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/crop-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/crop-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/crop-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/crop-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/crop-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/crop-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/crop-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="画像をオンラインでトリミング：ドラッグで切り抜き | norito" />
+<meta property="og:description" content="ブラウザ内でドラッグ可能なボックスを使って画像をトリミング。自由な形または1:1、4:3、16:9などの固定比率に対応。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/crop-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="画像をオンラインでトリミング：ドラッグで切り抜き | norito" />
+<meta name="twitter:description" content="ブラウザ内でドラッグ可能なボックスを使って画像をトリミング。自由な形または1:1、4:3、16:9などの固定比率に対応。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "画像をトリミング",
+  "url": "https://norito.in/ja/crop-image.html",
+  "description": "ブラウザ内でドラッグ可能なボックスを使って画像をトリミング。自由な形または1:1、4:3、16:9などの固定比率に対応。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "画像をトリミング",
+      "item": "https://norito.in/ja/crop-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 画像をトリミング</p>
+    <h1>画像をトリミング</h1>
+    <p class="lede">
+      画像の上にボックスをドラッグしてトリミングします。自由な形または一般的なアスペクト比に固定でき、トリミングはフル解像度で行われます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          <p><strong>クリックして画像を選択</strong>、またはここにドラッグ＆ドロップ</p>
+          <p class="note" style="margin-top:2px;">JPG、PNG、WebPに対応。デバイス内にとどまり、アップロードは一切されません。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="aspect">アスペクト比</label>
+          <select id="aspect">
+            <option value="free" selected>自由</option>
+            <option value="1:1">正方形（1:1）</option>
+            <option value="4:3">4:3</option>
+            <option value="16:9">16:9</option>
+            <option value="9:16">9:16（縦向き）</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="トリミングプレビュー" />
+            <div class="crop-box" id="cropBox">
+              <div class="crop-handle"></div>
+            </div>
+          </div>
+          <p class="note" style="margin-top:10px;">ボックス内をドラッグして移動、角のハンドルをドラッグしてサイズ変更。</p>
+        </div>
+
+        <button id="cropBtn" disabled style="margin-top:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          トリミングしてダウンロード
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="トリミング結果" />
+          <p class="note" id="previewHint" style="margin-top:0;">生成されると、トリミングされた画像がここに表示されます。</p>
+        </div>
+        <p class="note">
+          必要であれば先にアスペクト比を選び（プロフィール写真なら1:1など）、次にボックスを目的の位置にドラッグしてください。トリミングはプレビューの表示サイズではなく画像のフル解像度で行われるため、出力は鮮明なままです。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>あなたのファイルは<code>URL.createObjectURL</code>を通じて読み込まれます。これはローカルのメモリ内参照であり、アップロードでは決してありません。そしてエディターに収まるよう縮小して表示されます。あなたがドラッグするトリミングボックスは画面上のピクセルで追跡されますが、トリミングをクリックした瞬間、その座標は画像の実際のサイズと表示サイズの比率で乗算されます。つまり、4000ピクセルの写真が800ピクセル幅で表示されている場合、画面上の200ピクセル幅のボックスは、実際の画像の1000ピクセル幅の領域を選択することになります。選択された矩形はcanvas APIの<code>drawImage</code>のソース矩形形式でコピーされ、フル解像度のオリジナルからその正確なピクセルを抽出します。</p>
+      <p>出力形式は入力形式に従います。PNGを入力すればPNGを出力し（可逆で、元の領域とピクセル単位で完全に同一）、それ以外は<code>canvas.toBlob</code>を介して92%の品質でJPEGとして再エンコードされます。この違いは知っておく価値があります。JPEGをトリミングするということは、JPEG圧縮がもう1世代加わることを意味し、92%の品質では通常目に見えませんが実際には発生しています。ピクセル単位で正確なトリミングが必要な場合は、ツールにPNGを渡してください。</p>
+      <p>上記のすべては、あなたのブラウザ自身の画像デコーダーとcanvas内で行われます。写真をドロップする前にDevToolsのNetworkタブを開いてみてください。画像を運ぶリクエストは一切発生しません。これはサーバー側のサイズ制限も待ち行列も存在しないことを意味します。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+resize-image.html|画像のリサイズ|領域を切り取るのではなく、全体のサイズを変更。
+compress-image.html|画像を圧縮|トリミング後に正確なファイルサイズを実現。
+remove-background.html|背景を削除|写真から人物をブラウザ内で直接切り抜きます。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-crop-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

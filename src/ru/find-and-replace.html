@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Поиск и замена текста онлайн (с поддержкой Regex) | norito</title>
+<meta name="description" content="Ищите и заменяйте текст с опциональной поддержкой regex, учётом регистра и совпадением по целому слову, прямо в браузере. Ничего не загружается." />
+<link rel="canonical" href="https://norito.in/ru/find-and-replace.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/find-and-replace.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/find-and-replace.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/find-and-replace.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/find-and-replace.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/find-and-replace.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/find-and-replace.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/find-and-replace.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/find-and-replace.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Поиск и замена текста онлайн (с поддержкой Regex) | norito" />
+<meta property="og:description" content="Ищите и заменяйте текст с опциональной поддержкой regex, учётом регистра и совпадением по целому слову, прямо в браузере. Ничего не загружается." />
+<meta property="og:url" content="https://norito.in/ru/find-and-replace.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Поиск и замена текста онлайн (с поддержкой Regex) | norito" />
+<meta name="twitter:description" content="Ищите и заменяйте текст с опциональной поддержкой regex, учётом регистра и совпадением по целому слову, прямо в браузере. Ничего не загружается." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Поиск и замена",
+  "url": "https://norito.in/ru/find-and-replace.html",
+  "description": "Ищите и заменяйте текст с опциональной поддержкой regex, учётом регистра и совпадением по целому слову, прямо в браузере. Ничего не загружается.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Поиск и замена",
+      "item": "https://norito.in/ru/find-and-replace.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Поиск и замена</p>
+    <h1>Поиск и замена</h1>
+    <p class="lede">
+      Ищите и заменяйте текст в документе с опциональной поддержкой regex, учётом регистра и совпадением по целому слову, прямо во время ввода.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div class="field" style="margin-bottom:16px;">
+        <label for="input">Текст</label>
+        <textarea id="input" class="mono-area" rows="10" placeholder="Вставьте или введите ваш текст..."></textarea>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="findText">Найти</label>
+          <input type="text" id="findText" class="mono-area" placeholder="текст или шаблон для поиска" />
+        </div>
+        <div class="field">
+          <label for="replaceText">Заменить на</label>
+          <input type="text" id="replaceText" class="mono-area" placeholder="текст замены" />
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="useRegex" />
+          <span>Использовать regex</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="caseSensitive" />
+          <span>Учитывать регистр</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="wholeWord" />
+          <span>Только целое слово</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="replaceAll" checked />
+          <span>Заменить все совпадения</span>
+        </label>
+      </div>
+
+      <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body"></div>
+      </div>
+
+      <div class="field" style="margin-bottom:8px;">
+        <label for="output">Результат <span id="matchCount" class="note" style="display:inline; margin-left:8px;"></span></label>
+        <textarea id="output" class="mono-area" rows="10" readonly></textarea>
+      </div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn">Скопировать результат</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>Каждый поиск, обычный или regex, внутренне компилируется в единый JavaScript <code>RegExp</code>. В режиме обычного текста ваш поисковый запрос сначала экранируется (чтобы <code>.</code>, <code>(</code>, <code>$</code> и подобные символы совпадали буквально), «целое слово» оборачивает шаблон в границы слова <code>\b</code>, а переключатель регистра просто добавляет или убирает флаг <code>i</code>. Результат перерисовывается при каждом нажатии клавиши, а счётчик совпадений получается запуском того же шаблона с глобальным флагом перед заменой. Некорректный regex-ввод не стирает ваш текст, а просто показывает ошибку движка и оставляет вывод нетронутым.</p>
+      <p>Вот функция, которую почти ни одна страница поиска и замены не упоминает: поскольку замена использует нативный <code>String.replace</code> JavaScript, обратные ссылки работают в режиме regex. Используйте <code>$1</code>, <code>$2</code> для групп захвата и <code>$&amp;</code> для всего совпадения. Так, поиск <code>(\w+), (\w+)</code> и замена на <code>$2 $1</code> превращает «Doe, Jane» в «Jane Doe» по всему файлу, а <code>$$</code> даёт буквальный знак доллара, когда он вам нужен.</p>
+      <p>Всё это выполняется в JavaScript этой страницы на вашем компьютере. Откройте вкладку Network в DevTools во время работы: ни один запрос не передаёт ваш текст, именно поэтому безопасно вставлять сюда логи, конфигурационные файлы или что угодно ещё, что вы предпочли бы не загружать на случайный сайт.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+regex-tester.html|Тестер регулярных выражений|Проверьте regex с подсветкой совпадений в реальном времени.
+remove-duplicate-lines.html|Удаление дублирующихся строк|Удаление дубликатов до или после сортировки.
+case-converter.html|Конвертер регистра|ВЕРХНИЙ РЕГИСТР, camelCase, snake_case и другие.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-find-replace.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

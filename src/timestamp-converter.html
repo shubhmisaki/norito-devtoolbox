@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Timestamp Converter: Unix Time &amp; Date Converter | norito</title>
+<meta name="description" content="Convert between Unix timestamps and human-readable dates, both directions, live. Local time, UTC, and ISO 8601 output." />
+<link rel="canonical" href="https://norito.in/timestamp-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/timestamp-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/timestamp-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Timestamp Converter: Unix Time &amp; Date Converter | norito" />
+<meta property="og:description" content="Convert between Unix timestamps and human-readable dates, both directions, live. Local time, UTC, and ISO 8601 output." />
+<meta property="og:url" content="https://norito.in/timestamp-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Timestamp Converter: Unix Time &amp; Date Converter | norito" />
+<meta name="twitter:description" content="Convert between Unix timestamps and human-readable dates, both directions, live. Local time, UTC, and ISO 8601 output." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Timestamp Converter",
+  "url": "https://norito.in/timestamp-converter.html",
+  "description": "Convert between Unix timestamps and human-readable dates, both directions, live. Local time, UTC, and ISO 8601 output.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's a Unix timestamp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Unix epoch is midnight UTC on January 1, 1970. A timestamp is just the number of seconds (or milliseconds) since then, which is why it sorts and compares as a plain number, unlike a formatted date string."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between seconds and milliseconds timestamps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unix, Linux, and most backend APIs use seconds. JavaScript's own Date.now() and most frontend code use milliseconds. Mixing the two up is one of the most common timestamp bugs, a \"seconds\" value pasted into a \"milliseconds\" field lands somewhere in 1970."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Timestamp Converter",
+      "item": "https://norito.in/timestamp-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Timestamp Converter</p>
+    <h1>Timestamp Converter</h1>
+    <p class="lede">
+      Convert Unix timestamps to human-readable dates and back, both directions stay in
+      sync as you edit either one.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Unix timestamp</h3>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="tsInput">Timestamp</label>
+            <input type="text" id="tsInput" class="mono-output" style="height:42px; font-size:0.95rem;" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="tsUnit">Unit</label>
+            <select id="tsUnit">
+              <option value="s">Seconds</option>
+              <option value="ms" selected>Milliseconds</option>
+            </select>
+          </div>
+          <button id="nowBtn" class="secondary" style="align-self:flex-end;">Now</button>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-bottom:14px;">
+          <label>Local time</label>
+          <input type="text" id="localOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>UTC</label>
+          <input type="text" id="utcOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>ISO 8601</label>
+          <input type="text" id="isoOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field">
+          <label>Relative</label>
+          <input type="text" id="relativeOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+
+        <h3>Date &amp; time</h3>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="dateInput">Pick a date and time (your local timezone)</label>
+          <input type="datetime-local" id="dateInput" step="1" />
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Unix seconds</label>
+            <input type="text" id="secOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copySecBtn" class="secondary" style="align-self:flex-end;">Copy</button>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Unix milliseconds</label>
+            <input type="text" id="msOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copyMsBtn" class="secondary" style="align-self:flex-end;">Copy</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>What's a Unix timestamp?</h3>
+              <p>Seconds (or ms) since Jan 1, 1970 UTC.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            The Unix epoch is midnight UTC on January 1, 1970. A timestamp is just the number
+            of seconds (or milliseconds) since then, which is why it sorts and compares as a
+            plain number, unlike a formatted date string.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Seconds vs. milliseconds</h3>
+          <p class="note" style="margin-top:0;">
+            Unix, Linux, and most backend APIs use seconds. JavaScript's own
+            <code>Date.now()</code> and most frontend code use milliseconds. Mixing the two
+            up is one of the most common timestamp bugs, a "seconds" value pasted into a
+            "milliseconds" field lands somewhere in 1970.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Everything routes through the browser's <code>Date</code> object, which internally stores one number: milliseconds since the Unix epoch, midnight UTC on January 1, 1970. Convert a timestamp and the tool multiplies by 1,000 if you said seconds, builds a <code>Date</code>, then renders it four ways: your local time via <code>toLocaleString</code> (the browser's Intl formatter, using your own timezone and language), UTC, ISO 8601, and a relative "in 3 days / 2 hours ago" label computed by bucketing the difference from now into years, months, days, hours, minutes, or seconds.</p>
+      <p>Going the other way, the date picker's value is parsed as local time and converted back to both seconds and milliseconds. The datetime-local field is fed by shifting the timestamp by your timezone offset first, which is the fiddly part most converters get subtly wrong: <code>toISOString()</code> always speaks UTC, so without that shift the picker would show a time hours off from the wall-clock time you expect.</p>
+      <p>The classic mistake this tool guards against by making the unit explicit: seconds vs milliseconds. Current Unix times are 10 digits in seconds and 13 in milliseconds. Parse a millisecond value as seconds and you land 50,000+ years in the future; do the reverse and you get January 1970. If a conversion looks absurd, flip the unit dropdown, that's almost always the whole bug. Out-of-range values (JavaScript dates cap at 100 million days either side of the epoch, roughly the year 275760) produce a clear error instead of garbage.</p>
+      <p>All parsing and formatting is local browser API work. Open DevTools' Network tab while you convert: no request fires, and timestamps from your logs never leave your machine.</p>
+    </div>
+
+<!--RELATED-TOOLS
+uuid-generator.html|UUID Generator|Bulk random UUID v4 identifiers.
+hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, and SHA-512 of any text.
+json-formatter.html|JSON Formatter|Format, validate, and minify JSON with a tree view.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="js/utils.js"></script>
+<script src="js/i18n-runtime.js"></script>
+<script src="js/app-timestamp.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>What Is a UUID? A Plain-English Explanation | norito</title>
+<meta name="description" content="What a UUID actually is, why it's practically guaranteed to be unique without a central authority, and when you'd actually need to generate one." />
+<link rel="canonical" href="https://norito.in/blog/what-is-a-uuid.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/blog/what-is-a-uuid.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/blog/what-is-a-uuid.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What Is a UUID? A Plain-English Explanation | norito" />
+<meta property="og:description" content="What a UUID actually is, why it's practically guaranteed to be unique without a central authority, and when you'd actually need to generate one." />
+<meta property="og:url" content="https://norito.in/blog/what-is-a-uuid.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Is a UUID? A Plain-English Explanation | norito" />
+<meta name="twitter:description" content="What a UUID actually is, why it's practically guaranteed to be unique without a central authority, and when you'd actually need to generate one." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is a UUID? A Plain-English Explanation",
+  "description": "What a UUID actually is, why it's practically guaranteed to be unique without a central authority, and when you'd actually need to generate one.",
+  "url": "https://norito.in/blog/what-is-a-uuid.html",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": { "@type": "Person", "name": "Shubham Singh" },
+  "publisher": { "@type": "Organization", "name": "norito", "url": "https://norito.in/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norito.in/blog/what-is-a-uuid.html" }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:content-->
+
+<main>
+  <div class="wrap legal-content">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Blog</a> / What Is a UUID? A Plain-English Explanation</p>
+    <h1>What Is a UUID? A Plain-English Explanation</h1>
+    <p class="byline">By Shubham Singh &middot; <time datetime="2026-07-15">July 15, 2026</time></p>
+    <p class="note" style="margin-bottom:4px;">Published 2026-07-15</p>
+    <p class="lede">UUIDs show up constantly in software, database keys, API tokens, file names, but the explanations are often more confusing than the concept itself. Here's the short version.</p>
+
+    <h2>The plain-English definition</h2>
+    <p>A UUID (Universally Unique Identifier) is a 128-bit number, usually written as 32
+      hexadecimal characters split into five groups, like
+      <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code>. Its entire purpose is to serve as an
+      identifier that's astronomically unlikely to collide with any other UUID ever generated,
+      anywhere, by anyone, without needing a central authority to hand out unique numbers.</p>
+
+    <h2>Why not just use an incrementing number?</h2>
+    <p>A database's auto-incrementing ID (1, 2, 3...) works great inside a single database, but it
+      falls apart the moment you need uniqueness across multiple systems. If two separate databases
+      both generate "order #4521" independently, and you later need to merge that data, you have a
+      collision. UUIDs solve this by being generated independently, with no coordination needed,
+      while still being unique in practice. This is why UUIDs are everywhere in distributed
+      systems: database primary keys, API request IDs, session tokens, file names, tracking IDs for
+      analytics events, and so on.</p>
+
+    <h2>How is uniqueness actually guaranteed?</h2>
+    <p>It isn't guaranteed in an absolute mathematical sense, it's guaranteed in a practical,
+      "will never happen" sense. The most common version, UUID v4, is generated almost entirely
+      from random bits: 122 of its 128 bits are random, with the remaining 6 bits fixed to identify
+      it as a v4 UUID. With that much randomness, the number of UUIDs you'd need to generate before
+      a 50% chance of a single collision is about 2.71 quintillion. Even generating a billion UUIDs
+      per second, it would take roughly 85 years to reach even a one-in-a-billion chance of a
+      collision. For virtually every practical purpose, that's as good as impossible.</p>
+
+    <h2>UUID versions, briefly</h2>
+    <p>UUIDs come in several versions with different generation methods. Version 1 is based on a
+      timestamp plus the generating computer's network hardware address (rarely used today, since
+      it can leak information about when and where it was generated). Version 4, almost entirely
+      random, is by far the most common in modern software because it requires no special input and
+      carries no metadata about its origin. Version 5 is generated deterministically from a
+      namespace and a name using a hash function, so the same input always produces the same UUID,
+      useful when you need a stable identifier derived from existing data rather than a fresh
+      random one.</p>
+
+    <h2>When you'd actually need to generate one</h2>
+    <p>Common cases: assigning a unique ID to a new database record without waiting for the
+      database to hand one out, generating a unique filename to avoid overwriting an existing file,
+      creating a one-off API key or session token, or tagging a batch of test data with an ID
+      that's guaranteed not to clash with real production data. Anywhere you need "a unique
+      identifier, right now, with no coordination," a UUID is usually the simplest answer.</p>
+
+    <div class="result-box ok" style="margin-top:32px;">
+      <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <div class="r-body"><strong>Try it yourself:</strong> <a href="../uuid-generator.html">UUID Generator</a>, to generate random UUID v4 identifiers in bulk, right in your browser.</div>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

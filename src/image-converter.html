@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Image Converter: JPG, PNG, WebP Online | norito</title>
+<meta name="description" content="Convert images between JPG, PNG, and WebP, right in your browser. Adjustable quality, nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/image-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/image-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/image-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Image Converter: JPG, PNG, WebP Online | norito" />
+<meta property="og:description" content="Convert images between JPG, PNG, and WebP, right in your browser. Adjustable quality, nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/image-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Image Converter: JPG, PNG, WebP Online | norito" />
+<meta name="twitter:description" content="Convert images between JPG, PNG, and WebP, right in your browser. Adjustable quality, nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image Converter",
+  "url": "https://norito.in/image-converter.html",
+  "description": "Convert images between JPG, PNG, and WebP, right in your browser. Adjustable quality, nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which format should I pick?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PNG for screenshots, logos, or anything needing transparency. JPEG for photos where small file size matters more than perfect quality. WebP for the best of both, smaller than JPEG at equivalent quality, if you don't need to support very old software." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will converting to JPEG lose transparency?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, JPEG has no alpha channel. Transparent areas are filled with white before converting. If you need to keep transparency, convert to PNG or WebP instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this upload my image anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The conversion happens entirely in your browser using the canvas API. Nothing about your image is sent anywhere." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Image Converter",
+      "item": "https://norito.in/image-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Image Converter</p>
+    <h1>Image Converter</h1>
+    <p class="lede">
+      Convert an image between JPG, PNG, and WebP. Adjustable quality for lossy formats, everything happens on your device.
+    </p>
+    <p class="note">Just converting JPG to PNG? Try the <a href="jpg-to-png-converter.html">dedicated JPG to PNG page</a>.</p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose an image</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Stays on your device, nothing is uploaded. Select multiple to batch convert.</p>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div class="field" style="margin-top:20px;">
+          <label for="format">Convert to</label>
+          <select id="format">
+            <option value="jpeg">JPEG</option>
+            <option value="png">PNG</option>
+            <option value="webp">WebP</option>
+          </select>
+        </div>
+        <div class="field-row" id="qualityRow">
+          <div class="field" style="flex:1;">
+            <label for="quality">Quality: <span id="qualityValue">92%</span></label>
+            <input type="range" id="quality" class="slider" min="10" max="100" value="92" />
+          </div>
+        </div>
+
+        <button id="convertBtn" disabled style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+          Convert image
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchConvertBtn">Convert all</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>Download all as .zip</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Converted preview" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your converted image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          PNG is lossless (larger files, supports transparency). JPEG and WebP are lossy with a
+          quality slider (smaller files, no transparency for JPEG). WebP usually beats JPEG at the
+          same visual quality, but JPEG has the widest compatibility.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your image is loaded through a local object URL (<code>URL.createObjectURL</code>), decoded
+        by the browser's own image decoder, drawn onto an offscreen canvas at its full natural
+        resolution, and re-encoded with <code>canvas.toBlob</code> in the format and quality you
+        picked. One detail handled for you: JPEG has no alpha channel, so before drawing, the
+        canvas is filled white when JPEG is the target. Without that step, transparent areas of a
+        PNG would come out black. The quality slider only applies to JPEG and WebP; PNG encoding
+        is lossless and ignores it.
+      </p>
+      <p>
+        A side effect of the canvas round-trip that's worth knowing either way: the output
+        contains only pixels. EXIF metadata, camera model, timestamps, and embedded GPS
+        coordinates from phone photos, doesn't survive re-encoding. That makes this converter a
+        quiet privacy win before sharing a photo publicly, and a thing to be aware of if you
+        actually needed the metadata (keep the original in that case). Browsers apply the EXIF
+        orientation flag while decoding, so sideways-shot phone photos still come out correctly
+        rotated.
+      </p>
+      <p>
+        Conversion, batch mode, and even the .zip bundling (assembled byte-by-byte in
+        JavaScript) all run in your browser. Open DevTools' Network tab and convert something:
+        no request carries the image, which is also why there's no file size cap beyond your
+        machine's memory.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+compress-image.html|Compress Image to Size|Hit an exact file size target after converting.
+resize-image.html|Resize Image|Change dimensions before or after converting format.
+remove-metadata.html|Remove Metadata|Strip EXIF and location data from a photo.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Which format should I pick?</summary>
+        <p>PNG for screenshots, logos, or anything needing transparency. JPEG for photos where small file size matters more than perfect quality. WebP for the best of both, smaller than JPEG at equivalent quality, if you don't need to support very old software.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will converting to JPEG lose transparency?</summary>
+        <p>Yes, JPEG has no alpha channel. Transparent areas are filled with white before converting. If you need to keep transparency, convert to PNG or WebP instead.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this upload my image anywhere?</summary>
+        <p>No. The conversion happens entirely in your browser using the canvas API. Nothing about your image is sent anywhere.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-image-converter.js"></script>
+<script src="js/prefill.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

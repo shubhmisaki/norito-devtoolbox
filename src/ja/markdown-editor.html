@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>リアルタイムプレビュー付きMarkdownエディタ | norito</title>
+<meta name="description" content="左右に並んだリアルタイムプレビューを見ながらMarkdownを入力できます。書式設定ツールバー、スクロール連動、Markdownまたは HTMLで書き出せます。すべてブラウザ内で完結します。" />
+<link rel="canonical" href="https://norito.in/ja/markdown-editor.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/markdown-editor.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/markdown-editor.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/markdown-editor.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/markdown-editor.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/markdown-editor.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/markdown-editor.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/markdown-editor.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/markdown-editor.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="リアルタイムプレビュー付きMarkdownエディタ | norito" />
+<meta property="og:description" content="左右に並んだリアルタイムプレビューを見ながらMarkdownを入力できます。書式設定ツールバー、スクロール連動、Markdownまたは HTMLで書き出せます。すべてブラウザ内で完結します。" />
+<meta property="og:url" content="https://norito.in/ja/markdown-editor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="リアルタイムプレビュー付きMarkdownエディタ | norito" />
+<meta name="twitter:description" content="左右に並んだリアルタイムプレビューを見ながらMarkdownを入力できます。書式設定ツールバー、スクロール連動、Markdownまたは HTMLで書き出せます。すべてブラウザ内で完結します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Markdownエディタ",
+  "url": "https://norito.in/ja/markdown-editor.html",
+  "description": "左右に並んだリアルタイムプレビューを見ながらMarkdownを入力できます。書式設定ツールバー、スクロール連動、Markdownまたは HTMLで書き出せます。すべてブラウザ内で完結します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Markdownエディタ",
+      "item": "https://norito.in/ja/markdown-editor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Markdownエディタ</p>
+    <h1>Markdownエディタ</h1>
+    <p class="lede">
+      左側で入力し、右側でレンダリング結果を確認できます。スクロール連動、書式設定ツールバー、完成したらMarkdownまたはHTMLで書き出せます。
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+        <div class="md-toolbar" id="mdToolbar" style="border:none; padding:0; margin:0;">
+          <button type="button" class="md-toolbar-icon" id="undoBtn" data-action="undo" title="元に戻す" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+          <button type="button" class="md-toolbar-icon" id="redoBtn" data-action="redo" title="やり直す" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg></button>
+          <span class="md-toolbar-divider" aria-hidden="true"></span>
+          <button type="button" data-action="h1" title="見出し1">H1</button>
+          <button type="button" data-action="h2" title="見出し2">H2</button>
+          <button type="button" data-action="bold" title="太字"><strong>B</strong></button>
+          <button type="button" data-action="italic" title="斜体"><em>I</em></button>
+          <button type="button" data-action="strike" title="取り消し線"><s>S</s></button>
+          <button type="button" data-action="code" title="インラインコード">コード</button>
+          <button type="button" data-action="codeblock" title="コードブロック">{ }</button>
+          <button type="button" data-action="link" title="リンク">リンク</button>
+          <button type="button" data-action="quote" title="引用">"</button>
+          <button type="button" data-action="ul" title="箇条書きリスト">•</button>
+          <button type="button" data-action="ol" title="番号付きリスト">1.</button>
+          <button type="button" data-action="table" title="表">▦</button>
+        </div>
+        <div class="tabs" id="view-tabs">
+          <button type="button" class="tab active" data-value="split">分割表示</button>
+          <button type="button" class="tab" data-value="editor">エディタ</button>
+          <button type="button" class="tab" data-value="preview">プレビュー</button>
+        </div>
+      </div>
+
+      <div class="two-col" style="gap:16px;">
+        <div class="md-pane" id="editorPane">
+          <textarea id="mdEditor" class="md-source" spellcheck="false"># Bienvenido al editor Markdown de norito
+
+Escribe a la izquierda y mira cómo se renderiza a la derecha, **en vivo**, sin necesidad de botón guardar.
+
+## Funciones
+
+- Vista previa de doble panel que se desplaza en sincronía
+- Una pequeña barra de herramientas de formato arriba
+- Exporta como `.md` o `.html` cuando termines
+
+> すべてブラウザ内で行われます。ここに書いたものはどこにもアップロードされません。
+
+```
+console.log("コードブロックも動作します");
+```
+
+| 機能 | 状態 |
+| --- | --- |
+| リアルタイムプレビュー | 対応済み |
+| 書き出し | 対応済み |
+</textarea>
+        </div>
+        <div class="md-pane" id="previewPane">
+          <div id="mdPreview" class="md-preview"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+        <span class="note" id="mdCharCount" style="margin:0;">0文字</span>
+        <div style="display:flex; gap:10px;">
+          <button id="downloadMdBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  .mdをダウンロード
+</button>
+          <button id="downloadHtmlBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  .htmlをダウンロード
+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        プレビューはmarkedによってレンダリングされます。これはこのサイトに同梱された(CDNを使わない)オープンソースのMarkdownパーサーで、改行を有効にしたGitHub
+        Flavored
+        Markdown向けに設定されています。キーを押すたびに文書全体を再パースしますが、markedは高速な単一パスにコンパイルされるため、無駄に思えても書籍並みの長さの文書でも数ミリ秒でレンダリングされます。エディタは最大100件のスナップショットからなる独自のUndo履歴も保持しています。ツールバーのボタンがプログラム的にtextareaの値を書き換えるため、ブラウザ標準のUndoスタックを黙ってバイパスしてしまうからです。連続した入力は短い一時停止の後に1ステップへまとめられるので、Ctrl+Zはキー入力単位ではなく編集単位で戻ります。
+      </p>
+      <p>
+        2つのペイン間のスクロール同期は比例方式です。各ペインのスクロール位置を0から1の比率に変換し、反対側にミラーリングします。移植性に関する注意点が一つあります。改行が有効な場合、単一の改行は実際の改行として扱われ、これはGitHubがコメントをレンダリングする方法と一致します。一方、多くの静的サイトジェネレーターを含む厳格なCommonMarkレンダラーは、それらの行を1つの段落にまとめてしまいます。厳格な出力先にMarkdownを送る場合は、行末に半角スペース2つを置くか、空行を挟んで改行を維持してください。.htmlエクスポートはプレビューペインのマークアップそのものを最小限の文書で包んだものなので、見たままが実際に出力されます。
+      </p>
+      <p>
+        パーサーを含むすべてがページと一緒に読み込まれ、ローカルで動作します。開発者ツールを開き、入力しながら「ネットワーク」タブを観察してください。テキストを運ぶリクエストは一つもなく、エディタはオフラインでも動作し続けます。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|JSONフォーマッタ|JSONを整形・検証・圧縮し、ツリー表示できます。
+limited-text-generator.html|文字数指定テキストジェネレーター|正確な文字数のダミーテキスト。
+test-file-generator.html|テストファイルジェネレーター|正確なサイズや拡張子のダミーファイル。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/vendor/marked.umd.js"></script>
+<script src="../js/app-markdown.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

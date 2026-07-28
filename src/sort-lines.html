@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Sort Lines Online: Alphabetical, Numeric, Shuffle | norito</title>
+<meta name="description" content="Sort a list of lines alphabetically, numerically, by length, or shuffle randomly, right in your browser. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/sort-lines.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/sort-lines.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/sort-lines.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sort Lines Online: Alphabetical, Numeric, Shuffle | norito" />
+<meta property="og:description" content="Sort a list of lines alphabetically, numerically, by length, or shuffle randomly, right in your browser. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/sort-lines.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sort Lines Online: Alphabetical, Numeric, Shuffle | norito" />
+<meta name="twitter:description" content="Sort a list of lines alphabetically, numerically, by length, or shuffle randomly, right in your browser. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sort Lines",
+  "url": "https://norito.in/sort-lines.html",
+  "description": "Sort a list of lines alphabetically, numerically, by length, or shuffle randomly, right in your browser. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does \"Numeric\" sort do with non-numbers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any line that doesn't start with a number is treated as 0 for sorting purposes, so pure numeric lines will sort correctly to the front or back and non-numeric lines will cluster together." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does shuffle re-shuffle if I pick it again?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, changing the dropdown to Shuffle (or re-selecting it) generates a fresh random order each time using a proper Fisher-Yates shuffle, not just a cosmetic re-sort." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, sorting happens entirely in your browser. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sort Lines",
+      "item": "https://norito.in/sort-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Sort Lines</p>
+    <h1>Sort Lines</h1>
+    <p class="lede">
+      Sort a list alphabetically, numerically, by length, or shuffle it randomly. Ascending or descending, with optional deduplication.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Input (one item per line)</label>
+          <textarea id="textInput" class="mono-output" rows="12" placeholder="banana&#10;apple&#10;cherry"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="sortBy">Sort by</label>
+            <select id="sortBy">
+              <option value="alpha">Alphabetical (case-sensitive)</option>
+              <option value="alphaCI" selected>Alphabetical (ignore case)</option>
+              <option value="numeric">Numeric</option>
+              <option value="length">Line length</option>
+              <option value="shuffle">Shuffle randomly</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="direction">Direction</label>
+            <select id="direction">
+              <option value="asc" selected>Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Remove duplicate lines</span>
+          <label class="switch"><input type="checkbox" id="optDedupe" /><span class="track"></span></label>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <span class="option-label">Remove blank lines</span>
+          <label class="switch"><input type="checkbox" id="optRemoveBlank" checked /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">Result</label>
+            <textarea id="textOutput" class="mono-output" rows="12" readonly></textarea>
+          </div>
+          <p class="note" id="statInfo" style="margin-top:0;">0 lines.</p>
+          <button id="sortNowBtn" class="secondary" style="margin-right:8px;">Sort now</button>
+          <button id="copyBtn">Copy result</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Your text is split on newlines and sorted with a comparator picked by the dropdown. Alphabetical order uses <code>localeCompare</code>, the browser's language-aware comparison, instead of raw character codes. That distinction is visible immediately: a naive code-point sort puts every capital letter before every lowercase one (so "Zebra" sorts before "apple"), and it mangles accented characters. Locale-aware comparison orders words the way a dictionary would.</p>
+      <p>Numeric sort parses each line with <code>parseFloat</code> and compares the numbers, which fixes the classic string-sort bug where "10" comes before "9" because "1" is a smaller character. Lines that don't start with a number are treated as 0 and grouped together. Length sort compares character counts, and shuffle uses the Fisher-Yates algorithm, which gives every ordering equal probability. That's worth a sentence: the popular <code>sort(() =&gt; Math.random() - 0.5)</code> trick produces biased shuffles because sort algorithms assume a consistent comparator, while Fisher-Yates walks the array once, swapping each item with a uniformly random earlier slot.</p>
+      <p>Descending order sorts ascending then reverses, dedupe runs after sorting with a <code>Set</code> so only exact repeats are dropped, and blank lines can be filtered before any of it. The whole pipeline is array operations on a string in your tab: no request fires when you paste or sort (verify in DevTools' Network panel), so sorting a list of names, emails, or keys never involves a server.</p>
+    </div>
+
+<!--RELATED-TOOLS
+remove-duplicate-lines.html|Remove Duplicate Lines|Deduplicate a list before or after sorting.
+case-converter.html|Case Converter|Convert text between upper, lower, camelCase, and more.
+json-formatter.html|JSON Formatter|Format and validate JSON.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What does "Numeric" sort do with non-numbers?</summary>
+        <p>Any line that doesn't start with a number is treated as 0 for sorting purposes, so pure numeric lines will sort correctly to the front or back and non-numeric lines will cluster together.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does shuffle re-shuffle if I pick it again?</summary>
+        <p>Yes, changing the dropdown to Shuffle (or re-selecting it) generates a fresh random order each time using a proper Fisher-Yates shuffle, not just a cosmetic re-sort.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my text sent anywhere?</summary>
+        <p>No, sorting happens entirely in your browser. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-sort-lines.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Cron 表达式解析器：解释并预览下次运行时间 | norito</title>
+<meta name="description" content="粘贴一个 cron 表达式，获取通俗易懂的解释以及接下来 5 次运行时间的预览。完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/cron-expression-parser.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/cron-expression-parser.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/cron-expression-parser.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/cron-expression-parser.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/cron-expression-parser.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/cron-expression-parser.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/cron-expression-parser.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/cron-expression-parser.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/cron-expression-parser.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cron 表达式解析器：解释并预览下次运行时间 | norito" />
+<meta property="og:description" content="粘贴一个 cron 表达式，获取通俗易懂的解释以及接下来 5 次运行时间的预览。完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/cron-expression-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cron 表达式解析器：解释并预览下次运行时间 | norito" />
+<meta name="twitter:description" content="粘贴一个 cron 表达式，获取通俗易懂的解释以及接下来 5 次运行时间的预览。完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cron 表达式解析器",
+  "url": "https://norito.in/zh/cron-expression-parser.html",
+  "description": "粘贴一个 cron 表达式，获取通俗易懂的解释以及接下来 5 次运行时间的预览。完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cron 表达式解析器",
+      "item": "https://norito.in/zh/cron-expression-parser.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Cron 表达式解析器</p>
+    <h1>Cron 表达式解析器</h1>
+    <p class="lede">
+      粘贴一个 cron 表达式，获取通俗易懂的解释，以及接下来 5 次运行时间的预览。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:16px;">
+          <label for="presetSelect">常用模式</label>
+          <select id="presetSelect">
+            <option value="">选择一个预设...</option>
+            <option value="* * * * *">每分钟</option>
+            <option value="*/5 * * * *">每 5 分钟</option>
+            <option value="0 * * * *">每小时整点</option>
+            <option value="0 0 * * *">每天午夜</option>
+            <option value="0 9 * * 1-5">每个工作日上午 9:00</option>
+            <option value="0 0 1 * *">每月第一天</option>
+            <option value="30 14 * * 0">每周日下午 2:30</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label for="input">Cron 表达式</label>
+          <input type="text" id="input" class="mono-area" style="font-family:'JetBrains Mono',monospace;" value="*/15 9-17 * * 1-5" placeholder="* * * * *" />
+          <p class="note" style="margin-top:6px; margin-bottom:0;">标准 5 字段格式：分钟 小时 日 月 星期。</p>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div id="resultWrap" style="display:none;">
+          <div class="result-box" style="margin-bottom:16px;">
+            <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div class="r-body" id="description"></div>
+          </div>
+          <h3 style="margin-top:0;">接下来 5 次运行</h3>
+          <ol id="nextRunsList" class="mono-area" style="list-style:decimal; padding-left:22px; line-height:2;"></ol>
+          <p class="note">基于你浏览器当前的本地时区。</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-purple" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg>
+            </div>
+            <div>
+              <h3>5 个字段</h3>
+              <p>分钟、小时、日、月、星期。</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            <code>*</code> 表示「每个值」。<code>*/5</code> 表示「每隔 5 个单位」。<code>1-5</code> 是一个范围。<code>1,3,5</code> 是一个列表。星期字段从 0（星期日）到 6（星期六）。
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">一个简单示例</h3>
+          <p class="note" style="margin-top:0;">
+            <code>*/15 9-17 * * 1-5</code> 表示「周一至周五，上午 9 点到下午 5 点之间，每 15 分钟」。试试预设下拉菜单，查看更多常见的调度设置。
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>解析器将你的表达式拆分成 5 个字段，并将每个字段展开成一组明确的允许值：分钟字段中的 <code>*/15</code> 会变成集合 {0, 15, 30, 45}，星期字段中的 <code>1-5</code> 会变成 {1, 2, 3, 4, 5}，而像 <code>1,3,5</code> 这样的列表会被合并在一起。每个值在展开时都会进行范围检查，这就是为什么像 <code>61 * * * *</code> 这样的拼写错误会立即失败，并给出明确指出具体字段和预期范围的错误提示，而不是悄无声息地生成一个永远不会触发的调度。</p>
+      <p>「接下来 5 次运行」列表是通过暴力计算得出的，这其实是一个优点：从下一个整分钟开始，代码每次前进一分钟（最多推算一年，约 52.7 万次检查，只需几毫秒），并将每个候选分钟与展开后的集合进行比对。这种模拟而非直接计算的方式还有一个有用的副作用：像 <code>0 0 30 2 *</code>（2 月 30 日）这样语法正确但永远不会触发的表达式不会被当作错误，而是会返回「未来一年内未找到匹配的运行时间」。如果你看到这条提示，说明你的表达式解析没问题，但描述的日期要么不存在，要么在一年之后。</p>
+      <p>所有日期计算都使用浏览器的 <code>Date</code> 对象，基于你的本地时区，并且全部在此页面的 JavaScript 中运行。查看开发者工具的 Network 标签页：输入表达式时不会发出任何请求，因此你基础设施的调度信息不会离开你的电脑。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+timestamp-converter.html|时间戳转换器|Unix 时间与日期互转。
+regex-tester.html|正则表达式测试工具|测试正则表达式，实时高亮匹配结果。
+json-formatter.html|JSON 格式化|格式化、校验并压缩 JSON。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-cron-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

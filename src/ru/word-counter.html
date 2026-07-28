@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Счётчик слов: слова, символы, время чтения | norito</title>
+<meta name="description" content="Считайте слова, символы, предложения и абзацы в реальном времени по мере набора текста, с оценкой времени чтения и произнесения вслух. Ничего не загружается." />
+<link rel="canonical" href="https://norito.in/ru/word-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/word-counter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/word-counter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/word-counter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/word-counter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/word-counter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/word-counter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/word-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/word-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Счётчик слов: слова, символы, время чтения | norito" />
+<meta property="og:description" content="Считайте слова, символы, предложения и абзацы в реальном времени по мере набора текста, с оценкой времени чтения и произнесения вслух. Ничего не загружается." />
+<meta property="og:url" content="https://norito.in/ru/word-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Счётчик слов: слова, символы, время чтения | norito" />
+<meta name="twitter:description" content="Считайте слова, символы, предложения и абзацы в реальном времени по мере набора текста, с оценкой времени чтения и произнесения вслух. Ничего не загружается." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Счётчик слов",
+  "url": "https://norito.in/ru/word-counter.html",
+  "description": "Считайте слова, символы, предложения и абзацы в реальном времени по мере набора текста, с оценкой времени чтения и произнесения вслух. Ничего не загружается.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Счётчик слов",
+      "item": "https://norito.in/ru/word-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Счётчик слов</p>
+    <h1>Счётчик слов</h1>
+    <p class="lede">
+      Подсчёт слов, символов, предложений и абзацев в реальном времени по мере набора текста, плюс оценка времени чтения и произнесения вслух.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Ваш текст</label>
+          <textarea id="textInput" class="mono-output" rows="14" placeholder="Вставьте или введите текст здесь..."></textarea>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Статистика</h3>
+          <div class="meta-list">
+            <div class="meta-row"><span class="meta-label">Слова</span><span class="meta-value" id="statWords">0</span></div>
+            <div class="meta-row"><span class="meta-label">Символы</span><span class="meta-value" id="statChars">0</span></div>
+            <div class="meta-row"><span class="meta-label">Предложения</span><span class="meta-value" id="statSentences">0</span></div>
+            <div class="meta-row"><span class="meta-label">Абзацы</span><span class="meta-value" id="statParagraphs">0</span></div>
+            <div class="meta-row"><span class="meta-label">Время чтения</span><span class="meta-value" id="statReadingTime">0 sec</span></div>
+            <div class="meta-row"><span class="meta-label">Время произнесения</span><span class="meta-value" id="statSpeakingTime">0 sec</span></div>
+          </div>
+        </div>
+        <p class="note">
+          Время чтения рассчитывается исходя из 225 слов в минуту (часто упоминаемая средняя скорость молчаливого чтения у взрослых). Время произнесения рассчитывается исходя из 130 слов в минуту (средний темп устного выступления).
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>При каждом нажатии клавиши счётчик заново выводит все шесть показателей из исходного текста. Слова — это последовательности без пробельных символов, подсчитываемые разбиением по регулярному выражению <code>\s+</code>; предложения — это фрагменты текста, заканчивающиеся на <code>.</code>, <code>!</code> или <code>?</code> и за которыми следует пробел или конец текста; абзацы — это блоки, разделённые пустыми строками. Время чтения рассчитывается исходя из 225 слов в минуту (типичный темп молчаливого чтения), а время произнесения — из 130, что примерно соответствует темпу доклада на конференции; оба значения округляются до ближайшей секунды.</p>
+      <p>Это честные приближения, и стоит знать, где они дают сбой. Подсчёт предложений не может отличить сокращение от точки в конце предложения, поэтому "Г-н Смирнов пришёл." считается за два предложения. Подсчёт слов также законно различается между инструментами: этот инструмент считает "состояние-искусства" одним словом (внутри нет пробелов), в то время как некоторые текстовые редакторы считают составные слова через дефис иначе, поэтому ваше эссе может быть 998 слов здесь и 1002 слова в другом месте. Ни один из вариантов не ошибочен — они просто по-разному определяют границу слова.</p>
+      <p>Количество символов — это необработанная длина текста, включающая пробелы и переносы строк. Один нюанс: строки JavaScript считают единицы UTF-16, поэтому большинство эмодзи считаются за 2 символа, а некоторые (например, семейные эмодзи или флаги) — за больше. Это соответствует тому, как обычно применяются лимиты платформ в стиле Twitter, поэтому это полезное число для отслеживания.</p>
+      <p>Подсчёт — это всего лишь несколько операций с регулярными выражениями прямо в вашей вкладке. Ничто из набранного вами никуда не передаётся: панель «Сеть» в инструментах разработчика остаётся пустой во время письма, и счётчик продолжает работать даже при отключённом соединении.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+character-counter.html|Счётчик символов|Сравните с лимитами твитов, SMS и мета-описаний.
+limited-text-generator.html|Генератор текста заданной длины|Генерация текста-заполнителя точной длины.
+/case-converter.html|Конвертер регистра|Преобразование текста между верхним, нижним регистром, camelCase и другими.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-word-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

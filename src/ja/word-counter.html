@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>単語数カウンター：単語数・文字数・読了時間 | norito</title>
+<meta name="description" content="入力と同時に単語数、文字数、文の数、段落数をカウントし、読了時間と話す時間の目安も表示。アップロードは一切行われません。" />
+<link rel="canonical" href="https://norito.in/ja/word-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/word-counter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/word-counter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/word-counter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/word-counter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/word-counter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/word-counter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/word-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/word-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="単語数カウンター：単語数・文字数・読了時間 | norito" />
+<meta property="og:description" content="入力と同時に単語数、文字数、文の数、段落数をカウントし、読了時間と話す時間の目安も表示。アップロードは一切行われません。" />
+<meta property="og:url" content="https://norito.in/ja/word-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="単語数カウンター：単語数・文字数・読了時間 | norito" />
+<meta name="twitter:description" content="入力と同時に単語数、文字数、文の数、段落数をカウントし、読了時間と話す時間の目安も表示。アップロードは一切行われません。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "単語数カウンター",
+  "url": "https://norito.in/ja/word-counter.html",
+  "description": "入力と同時に単語数、文字数、文の数、段落数をカウントし、読了時間と話す時間の目安も表示。アップロードは一切行われません。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "単語数カウンター",
+      "item": "https://norito.in/ja/word-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 単語数カウンター</p>
+    <h1>単語数カウンター</h1>
+    <p class="lede">
+      入力中にリアルタイムで単語数、文字数、文数、段落数をカウントし、読了時間と話す時間の目安も表示します。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">テキスト</label>
+          <textarea id="textInput" class="mono-output" rows="14" placeholder="ここにテキストを貼り付けるか入力..."></textarea>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">統計</h3>
+          <div class="meta-list">
+            <div class="meta-row"><span class="meta-label">単語数</span><span class="meta-value" id="statWords">0</span></div>
+            <div class="meta-row"><span class="meta-label">文字数</span><span class="meta-value" id="statChars">0</span></div>
+            <div class="meta-row"><span class="meta-label">文数</span><span class="meta-value" id="statSentences">0</span></div>
+            <div class="meta-row"><span class="meta-label">段落数</span><span class="meta-value" id="statParagraphs">0</span></div>
+            <div class="meta-row"><span class="meta-label">読了時間</span><span class="meta-value" id="statReadingTime">0 sec</span></div>
+            <div class="meta-row"><span class="meta-label">話す時間</span><span class="meta-value" id="statSpeakingTime">0 sec</span></div>
+          </div>
+        </div>
+        <p class="note">
+          読了時間は毎分225語（成人の黙読の平均速度としてよく引用される値）を想定しています。話す時間は毎分130語（口頭発表の平均的なペース）を想定しています。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>キー入力のたびに、カウンターは元のテキストから6つの統計値をすべて再計算します。単語は空白を含まない連続文字列で、正規表現 <code>\s+</code> で分割してカウントします。文は <code>.</code>、<code>!</code>、<code>?</code> のいずれかで終わり、その後にスペースまたはテキストの終端が続く連続文字列です。段落は空行で区切られたまとまりです。読了時間は毎分225語（典型的な黙読ペース）、話す時間は毎分130語（おおよそ講演のペース）を想定し、どちらも最も近い秒数に丸められます。</p>
+      <p>これらは正直な近似値であり、どこで実態とずれるかを知っておく価値があります。文のカウントは略語と句点の区別ができないため、「Mr. Smith arrived.」は2文としてカウントされます。単語数も、ツールによって正当に異なります。このツールは「state-of-the-art」を（内部にスペースがないため）1語としてカウントしますが、ワープロソフトの中にはハイフン付きの複合語を別の方法で数えるものもあり、そのため同じ文章がここでは998語、別の場所では1002語になることがあります。どちらも間違いではなく、単に単語の境界の定義が異なるだけです。</p>
+      <p>文字数はテキストの生の長さで、スペースや改行も含まれます。一つ注意点があります。JavaScriptの文字列はUTF-16単位でカウントするため、ほとんどの絵文字は2文字としてカウントされ、一部（家族や国旗の絵文字など）はさらに多くカウントされます。これはTwitterのようなプラットフォームの文字数制限が通常適用される方法と一致するため、確認する価値のある数値です。</p>
+      <p>カウント処理はタブ内で行われるわずかな正規表現の演算にすぎません。入力した内容がどこかに送信されることはありません。書いている間、開発者ツールのネットワークパネルは空のままで、接続を切ってもカウンターは動作し続けます。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+character-counter.html|文字数カウンター|ツイート、SMS、meta descriptionの上限と比較。
+limited-text-generator.html|文字数制限テキストジェネレーター|指定した長さぴったりのダミーテキストを生成。
+/case-converter.html|大文字小文字変換ツール|大文字、小文字、camelCaseなどの間でテキストを変換。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-word-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

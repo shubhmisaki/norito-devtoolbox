@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Sitemap Generator: Build sitemap.xml Online | norito</title>
+<meta name="description" content="Paste a list of URLs and generate a valid sitemap.xml, right in your browser. Optional changefreq, priority, and lastmod. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/seo/sitemap-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/seo/sitemap-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/seo/sitemap-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sitemap Generator: Build sitemap.xml Online | norito" />
+<meta property="og:description" content="Paste a list of URLs and generate a valid sitemap.xml, right in your browser. Optional changefreq, priority, and lastmod. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/seo/sitemap-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sitemap Generator: Build sitemap.xml Online | norito" />
+<meta name="twitter:description" content="Paste a list of URLs and generate a valid sitemap.xml, right in your browser. Optional changefreq, priority, and lastmod. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sitemap Generator",
+  "url": "https://norito.in/seo/sitemap-generator.html",
+  "description": "Paste a list of URLs and generate a valid sitemap.xml, right in your browser. Optional changefreq, priority, and lastmod. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need changefreq and priority?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, both are optional hints, and Google has said for years it largely ignores priority and treats changefreq loosely at best. Include them if another crawler you care about uses them, otherwise a plain URL list with lastmod is perfectly valid." }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as a valid URL here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any line that parses as a full http:// or https:// URL. Relative paths or lines missing the protocol are skipped and called out in the result message so you know what got left out." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a limit to how many URLs I can add?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The sitemap protocol caps a single file at 50,000 URLs, this tool doesn't enforce that limit itself, but if you're near it, consider splitting into multiple sitemap files with a sitemap index." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sitemap Generator",
+      "item": "https://norito.in/seo/sitemap-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Sitemap Generator</p>
+    <h1>Sitemap Generator</h1>
+    <p class="lede">
+      Paste a list of URLs, get back a valid sitemap.xml with optional change frequency, priority, and last-modified date.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="urlsInput">URLs (one per line)</label>
+          <textarea id="urlsInput" class="mono-output" rows="12" placeholder="https://example.com/&#10;https://example.com/about&#10;https://example.com/contact"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="changefreq">Change frequency</label>
+            <select id="changefreq">
+              <option value="none">Don't include</option>
+              <option value="always">Always</option>
+              <option value="hourly">Hourly</option>
+              <option value="daily">Daily</option>
+              <option value="weekly" selected>Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="yearly">Yearly</option>
+              <option value="never">Never</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="priority">Priority</label>
+            <select id="priority">
+              <option value="none">Don't include</option>
+              <option value="1.0">1.0</option>
+              <option value="0.9">0.9</option>
+              <option value="0.8" selected>0.8</option>
+              <option value="0.7">0.7</option>
+              <option value="0.5">0.5</option>
+              <option value="0.3">0.3</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <div>
+            <div class="option-label">Include lastmod (today's date)</div>
+            <div class="option-hint">Stamps every URL with today's date as the last-modified value.</div>
+          </div>
+          <label class="switch"><input type="checkbox" id="includeLastmod" checked /><span class="track"></span></label>
+        </div>
+        <button id="generateBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+          Generate sitemap
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">sitemap.xml</h3>
+          <pre class="code-output" id="output"></pre>
+          <button id="downloadBtn" style="margin-top:12px;" disabled>Download sitemap.xml</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Your input is split on newlines, trimmed, and each line is validated by actually
+        constructing a <code>URL</code> object from it; only lines that parse and use
+        <code>http:</code> or <code>https:</code> make it in, and the tool tells you how many lines
+        it skipped rather than silently eating them. Every accepted URL is run through an XML
+        escaper covering all five special characters (<code>&amp;</code>, <code>&lt;</code>,
+        <code>&gt;</code>, <code>&quot;</code>, <code>'</code>), which matters more than it sounds:
+        a URL with <code>?page=2&amp;sort=asc</code> in a sitemap without escaping is invalid XML
+        and some parsers will reject the whole file. Each entry gets a <code>&lt;loc&gt;</code>,
+        optionally a <code>&lt;lastmod&gt;</code> stamped with today's date in
+        <code>YYYY-MM-DD</code> form, and optionally the changefreq and priority you picked, all
+        wrapped in a <code>&lt;urlset&gt;</code> with the sitemaps.org 0.9 namespace and an XML
+        declaration up top.
+      </p>
+      <p>
+        Here's the part most sitemap tools won't tell you: Google has publicly said it ignores
+        <code>&lt;changefreq&gt;</code> and <code>&lt;priority&gt;</code> entirely. They exist in
+        the spec, this tool supports them, but they don't do anything for Google. The one optional
+        field that does matter is <code>&lt;lastmod&gt;</code>, and only if it's truthful. That
+        cuts both ways: if you regenerate your sitemap weekly and every URL gets stamped with the
+        generation date, Google learns your lastmod is noise and starts ignoring it. Include it
+        when the dates mean something, skip it when they don't. Also keep the hard limits in mind:
+        50,000 URLs and 50 MB uncompressed per sitemap file before you need an index file.
+      </p>
+      <p>
+        Generation, validation, and the download all run in this page's JavaScript. The XML is
+        built as a string in memory and handed to you as a Blob; your URL list is never uploaded,
+        which you can verify by watching the Network tab while you generate.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+robots-txt-generator.html|Robots.txt Generator|Reference your new sitemap from robots.txt.
+meta-tag-generator.html|Meta Tag Generator|Generate title, description, and social tags.
+utm-builder.html|UTM Builder|Add campaign tracking parameters to a URL.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do I need changefreq and priority?</summary>
+        <p>No, both are optional hints, and Google has said for years it largely ignores priority and treats changefreq loosely at best. Include them if another crawler you care about uses them, otherwise a plain URL list with lastmod is perfectly valid.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What counts as a valid URL here?</summary>
+        <p>Any line that parses as a full http:// or https:// URL. Relative paths or lines missing the protocol are skipped and called out in the result message so you know what got left out.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a limit to how many URLs I can add?</summary>
+        <p>The sitemap protocol caps a single file at 50,000 URLs, this tool doesn't enforce that limit itself, but if you're near it, consider splitting into multiple sitemap files with a sitemap index.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-sitemap-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

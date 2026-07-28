@@ -77,13 +77,7 @@
     if (e.target.files.length > 1) startBatch(e.target.files);
     else if (e.target.files[0]) handleFile(e.target.files[0]);
   });
-  ["dragenter", "dragover"].forEach((evt) =>
-    els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.add("drag"); })
-  );
-  ["dragleave", "drop"].forEach((evt) =>
-    els.drop.addEventListener(evt, (e) => { e.preventDefault(); els.drop.classList.remove("drag"); })
-  );
-  els.drop.addEventListener("drop", (e) => {
+  wireDragDrop(els.drop, (e) => {
     if (e.dataTransfer.files.length > 1) startBatch(e.dataTransfer.files);
     else if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });

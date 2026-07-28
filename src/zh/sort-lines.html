@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>在线排序行：字母、数字、随机打乱 | norito</title>
+<meta name="description" content="直接在浏览器中按字母、数字、长度排序一列文本行，或随机打乱。不会上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/sort-lines.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/sort-lines.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/sort-lines.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/sort-lines.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/sort-lines.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/sort-lines.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/sort-lines.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/sort-lines.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/sort-lines.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="在线排序行：字母、数字、随机打乱 | norito" />
+<meta property="og:description" content="直接在浏览器中按字母、数字、长度排序一列文本行，或随机打乱。不会上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/sort-lines.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在线排序行：字母、数字、随机打乱 | norito" />
+<meta name="twitter:description" content="直接在浏览器中按字母、数字、长度排序一列文本行，或随机打乱。不会上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "行排序",
+  "url": "https://norito.in/zh/sort-lines.html",
+  "description": "直接在浏览器中按字母、数字、长度排序一列文本行，或随机打乱。不会上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "行排序",
+      "item": "https://norito.in/zh/sort-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 行排序</p>
+    <h1>行排序</h1>
+    <p class="lede">
+      按字母、数字或长度排序一个列表，或随机打乱它。支持升序或降序，以及可选的去重。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">输入内容（每行一项）</label>
+          <textarea id="textInput" class="mono-output" rows="12" placeholder="香蕉
+苹果
+樱桃"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="sortBy">排序方式</label>
+            <select id="sortBy">
+              <option value="alpha">按字母（区分大小写）</option>
+              <option value="alphaCI" selected>按字母（忽略大小写）</option>
+              <option value="numeric">按数字</option>
+              <option value="length">按行长度</option>
+              <option value="shuffle">随机打乱</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="direction">方向</label>
+            <select id="direction">
+              <option value="asc" selected>升序</option>
+              <option value="desc">降序</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">删除重复行</span>
+          <label class="switch"><input type="checkbox" id="optDedupe" /><span class="track"></span></label>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <span class="option-label">删除空行</span>
+          <label class="switch"><input type="checkbox" id="optRemoveBlank" checked /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">结果</label>
+            <textarea id="textOutput" class="mono-output" rows="12" readonly></textarea>
+          </div>
+          <p class="note" id="statInfo" style="margin-top:0;">0 行。</p>
+          <button id="sortNowBtn" class="secondary" style="margin-right:8px;">立即排序</button>
+          <button id="copyBtn">复制结果</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>你的文本会按换行符拆分，并用下拉菜单选择的比较器进行排序。字母排序使用 <code>localeCompare</code>，即浏览器提供的语言感知比较方式，而不是原始字符编码。这个区别立刻就能看出来：简单粗暴的按码位排序会把所有大写字母排在所有小写字母之前（所以 "Zebra" 会排在 "apple" 之前），并且会打乱带重音符号的字符顺序。语言感知比较会按照词典的方式排列单词。</p>
+      <p>数字排序会用 <code>parseFloat</code> 解析每一行并比较数值，从而修正字符串排序中的经典问题——比如 "10" 会排在 "9" 前面，因为字符 "1" 比较小。不以数字开头的行会被当作 0 处理，并归到一起。长度排序比较字符数，随机打乱则使用 Fisher-Yates 算法，保证每种排列的概率相同。值得一提的是：流行的 <code>sort(() =&gt; Math.random() - 0.5)</code> 技巧会产生有偏差的打乱结果，因为排序算法假定比较器是一致的，而 Fisher-Yates 只遍历数组一次，每次都把当前元素与前面某个均匀随机选取的位置交换。</p>
+      <p>降序是先升序排列再反转，去重是在排序之后用 <code>Set</code> 完成的，因此只会去掉完全相同的重复项，空行则可以在这一切之前就被过滤掉。整个流程都是在你的标签页里对一段字符串进行数组操作：粘贴或排序时不会触发任何请求（可在开发者工具的网络面板中验证），所以排序姓名、邮箱或密钥列表永远不会涉及服务器。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+remove-duplicate-lines.html|删除重复行|在排序前后对列表去重。
+/case-converter.html|大小写转换器|在大写、小写、驼峰式等之间转换文本。
+json-formatter.html|JSON 格式化|格式化并校验 JSON。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-sort-lines.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

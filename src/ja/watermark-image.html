@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>オンラインで画像に透かしを追加 | norito</title>
+<meta name="description" content="ブラウザ内でリアルタイムプレビュー付きで写真にテキストの透かしを追加。サイズ、不透明度、角度、色、位置を調整可能。アップロードなし。" />
+<link rel="canonical" href="https://norito.in/ja/watermark-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/watermark-image.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/watermark-image.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/watermark-image.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/watermark-image.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/watermark-image.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/watermark-image.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/watermark-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/watermark-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="オンラインで画像に透かしを追加 | norito" />
+<meta property="og:description" content="ブラウザ内でリアルタイムプレビュー付きで写真にテキストの透かしを追加。サイズ、不透明度、角度、色、位置を調整可能。アップロードなし。" />
+<meta property="og:url" content="https://norito.in/ja/watermark-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="オンラインで画像に透かしを追加 | norito" />
+<meta name="twitter:description" content="ブラウザ内でリアルタイムプレビュー付きで写真にテキストの透かしを追加。サイズ、不透明度、角度、色、位置を調整可能。アップロードなし。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "画像に透かしを追加",
+  "url": "https://norito.in/ja/watermark-image.html",
+  "description": "ブラウザ内でリアルタイムプレビュー付きで写真にテキストの透かしを追加。サイズ、不透明度、角度、色、位置を調整可能。アップロードなし。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ja/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "画像に透かしを追加",
+      "item": "https://norito.in/ja/watermark-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 画像に透かしを追加</p>
+    <h1>画像に透かしを追加</h1>
+    <p class="lede">
+      写真にテキストの透かしを追加します。実際の画像上でリアルタイムプレビューが表示されるため、サイズ、不透明度、角度、位置がどう見えるか正確に確認できます。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          <p><strong>クリックして画像を選択</strong>、またはここにドラッグ＆ドロップ</p>
+          <p class="note" style="margin-top:2px;">JPG、PNG、WebPに対応。デバイス内にとどまり、アップロードは一切されません。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="透かしプレビュー" />
+            <span class="wm-live-preview" id="wmPreviewText">サンプル</span>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="wmText">透かしテキスト</label>
+          <input type="text" id="wmText" value="© あなたの名前" maxlength="80" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="wmSize">フォントサイズ（px）</label>
+            <input type="number" id="wmSize" min="8" max="200" value="32" />
+          </div>
+          <div class="field">
+            <label for="wmOpacity">不透明度（%）</label>
+            <input type="number" id="wmOpacity" min="1" max="100" value="40" />
+          </div>
+          <div class="field">
+            <label for="wmAngle">角度（°）</label>
+            <input type="number" id="wmAngle" min="-180" max="180" value="0" />
+          </div>
+          <div class="field">
+            <label for="wmColor">色</label>
+            <input type="color" id="wmColor" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="wmPosition">位置</label>
+          <select id="wmPosition">
+            <option value="top-left">左上</option>
+            <option value="top-center">上中央</option>
+            <option value="top-right">右上</option>
+            <option value="center-left">左中央</option>
+            <option value="center" selected>中央</option>
+            <option value="center-right">右中央</option>
+            <option value="bottom-left">左下</option>
+            <option value="bottom-center">下中央</option>
+            <option value="bottom-right">右下</option>
+          </select>
+        </div>
+
+        <button id="applyBtn" disabled style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          透かしを適用してダウンロード
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="透かし適用後の結果" />
+          <p class="note" id="previewHint" style="margin-top:0;">生成されると、透かしが入った画像がここに表示されます。</p>
+        </div>
+        <p class="note">
+          上のプレビューは、サイズ、不透明度、角度、色、位置を調整するたびに実際の画像上でリアルタイムに透かしを表示します。最終的なダウンロードファイルは、表示されているものと一致し、画像のフル解像度に拡大されます。
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>ライブプレビューは写真の上に重ねて配置されたDOM要素ですが、最終的な画像は<code>&lt;canvas&gt;</code>上での実際のピクセル処理です。適用をクリックすると、元の画像がフル解像度で描画され、canvasのコンテキストが9つの基準点（四隅、辺の中点、中央、それぞれ6%のマージンで内側に配置）のいずれかに移動され、指定した角度で回転し、テキストが<code>fillText()</code>で描画されます。色と不透明度は<code>globalAlpha</code>を通じて適用されます。テキストの配置とベースラインは基準点ごとに設定されるため、プレビューでの「右下」は出力でも同じ相対位置に配置されます。</p>
+      <p>微妙な部分はスケールです。画面上のプレビューは500ピクセル幅かもしれませんが、実際の写真は4000ピクセルあるため、単純なツールではプレビューでは正しく見えた透かしが、実際には極小になってしまいます。このツールは表示されているプレビューの幅と画像の本来の幅の比率を測定し、その比率でフォントサイズを掛け合わせます。そのため、プレビューでの48pxは、フル解像度のファイルでも同じ比率のサイズになります。結果は元の形式で再エンコードされます。JPEGは品質0.95、PNGは可逆です（できるだけシャープなテキストの縁が欲しい場合はPNGを選んでください）。</p>
+      <p>透かしとは何かを理解しておく価値があります。このテキストはレイヤーやメタデータとして保存されるのではなく、ピクセルに焼き込まれるため、EXIFデータのように誰かが取り除くことはできません。これは諸刃の剣でもあります。隅にある小さく不透明度の低い透かしは、切り抜きツールやAIによるインペインティングの格好の餌食になります。実際に画像を保護する透かしは、被写体に重なり、角度がついていて、適度な不透明度を持つものです。これはまさに位置、角度、不透明度のコントロールが存在する理由です。</p>
+      <p>プレビューも最終レンダリングも、あなたのタブ内で実行されます。作業中にDevToolsのNetworkパネルを確認してみてください。写真は決してアップロードされないため、クライアントの校正刷りや未公開のショットはあなたのマシン内にとどまります。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+remove-metadata.html|メタデータを削除|写真を共有する前にEXIFとGPSデータを削除。
+compress-image.html|画像を圧縮|透かしを追加した後にファイルサイズを縮小。
+pdf/add-watermark.html|透かしを追加（PDF）|代わりにPDF文書の全ページに透かしを追加。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-watermark-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

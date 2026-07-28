@@ -123,11 +123,7 @@
     reader.readAsText(file);
   });
   els.drop.addEventListener("click", () => els.fileInput.click());
-  els.drop.addEventListener("dragover", (e) => { e.preventDefault(); els.drop.classList.add("drag"); });
-  els.drop.addEventListener("dragleave", () => els.drop.classList.remove("drag"));
-  els.drop.addEventListener("drop", (e) => {
-    e.preventDefault();
-    els.drop.classList.remove("drag");
+  wireDragDrop(els.drop, (e) => {
     const file = e.dataTransfer.files[0];
     if (!file) return;
     const reader = new FileReader();
@@ -143,7 +139,7 @@
   els.copyBtn.addEventListener("click", async () => {
     if (!els.output.textContent) return;
     try {
-      await navigator.clipboard.writeText(els.output.textContent);
+      await copyToClipboard(els.output.textContent);
       celebrateSuccess(els.copyBtn, els.output.parentElement, "Copied to clipboard");
     } catch (e) { /* clipboard unavailable */ }
   });

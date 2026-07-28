@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>文本对比工具：在线比较两段文本 | norito</title>
+<meta name="description" content="逐行比较两段文本，精确显示发生的更改。可忽略空格或大小写，复制差异结果。完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/text-diff.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/text-diff.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/text-diff.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/text-diff.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/text-diff.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/text-diff.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/text-diff.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/text-diff.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/text-diff.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="文本对比工具：在线比较两段文本 | norito" />
+<meta property="og:description" content="逐行比较两段文本，精确显示发生的更改。可忽略空格或大小写，复制差异结果。完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/text-diff.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="文本对比工具：在线比较两段文本 | norito" />
+<meta name="twitter:description" content="逐行比较两段文本，精确显示发生的更改。可忽略空格或大小写，复制差异结果。完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "文本对比工具",
+  "url": "https://norito.in/zh/text-diff.html",
+  "description": "逐行比较两段文本，精确显示发生的更改。可忽略空格或大小写，复制差异结果。完全在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "文本对比工具",
+      "item": "https://norito.in/zh/text-diff.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 文本对比工具</p>
+    <h1>文本对比工具</h1>
+    <p class="lede">
+      逐行比较两段文本，精确查看哪些内容被添加、删除或保持不变。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="panel">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreWhitespace" />
+          <span>忽略空格</span>
+        </label>
+        <label class="option-row" style="flex:0 0 auto;">
+          <input type="checkbox" id="ignoreCase" />
+          <span>忽略大小写</span>
+        </label>
+      </div>
+
+      <div class="two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="inputA">原始文本</label>
+          <textarea id="inputA" class="mono-area" rows="10" placeholder="粘贴原始文本..."></textarea>
+        </div>
+        <div class="field">
+          <label for="inputB">修改后</label>
+          <textarea id="inputB" class="mono-area" rows="10" placeholder="粘贴修改后的文本..."></textarea>
+        </div>
+      </div>
+
+      <div id="tooLarge" class="result-box error" style="display:none; margin-bottom:16px;">
+        <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <div class="r-body">其中一段文本超过 4000 行。请尝试比较更小的部分。</div>
+      </div>
+
+      <div id="emptyState" class="note" style="display:block;">在两个文本框中粘贴内容，即可查看逐行对比结果。</div>
+
+      <div id="diffStatsRow" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+        <div class="diff-stats" id="statsBox" style="display:none;"></div>
+      </div>
+      <div class="diff-view" id="diffOutput" style="display:none;"></div>
+
+      <div style="margin-top:16px;">
+        <button id="copyBtn" class="secondary">复制差异为文本</button>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>该对比功能是基于最长公共子序列（LCS）算法实现的逐行差异比较，与 <code>git diff</code> 背后的逻辑属于同一类。两段文本先被拆分成行，然后通过一张动态规划表计算出两个版本按顺序共有的最大行集合。反向遍历这张表就能得出你看到的操作结果：只存在于左侧文本的行被标记为红色删除，只存在于右侧的行被标记为绿色添加，共有的行保持中性显示，并各自附带原始行号。</p>
+      <p>采用逐行对比是一个刻意的权衡。逐字符对比可以显示某一行中某个词发生了变化，但在真实文档中，这种方式往往会退化成满屏碎片：数百个细小片段，比直接看到旧行被删除、新行被添加更难阅读。逐行输出保持易读性，也直接对应代码审查和版本控制展示更改的方式。两个复选框可以调整"相等"的定义：忽略空格会在比较前折叠连续空格并去除行末空白（非常适合重新格式化过的代码），忽略大小写会将两侧统一转为小写。无论如何设置，显示的行都会保留其原始格式。</p>
+      <p>由于动态规划表所需的内存和时间与（A 的行数）x（B 的行数）成正比，该工具将每侧输入限制在 4000 行以内；超过这个限制，仅这张表就会有数千万个单元格，标签页会卡顿。在限制范围内，一切都在你的浏览器中同步运行：两段文本只存在于你的标签页中，输入时不会发出任何请求（可在开发者工具的 Network 面板中查看），机密草稿或配置内容永远不会接触服务器。</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+json-diff.html|JSON 对比工具|比较两个 JSON 文档。
+remove-duplicate-lines.html|删除重复行|在排序前后对列表去重。
+sort-lines.html|行排序|按字母或数字顺序对文本行排序。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-text-diff.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

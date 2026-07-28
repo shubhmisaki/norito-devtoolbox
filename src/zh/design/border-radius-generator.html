@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>圆角生成器：分角设置 CSS border-radius | norito</title>
+<meta name="description" content="在浏览器中可视化设置矩形每个角的 CSS border-radius 圆角半径，满意后一键复制 CSS 代码。" />
+<link rel="canonical" href="https://norito.in/zh/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/border-radius-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/border-radius-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="圆角生成器：分角设置 CSS border-radius | norito" />
+<meta property="og:description" content="在浏览器中可视化设置矩形每个角的 CSS border-radius 圆角半径，满意后一键复制 CSS 代码。" />
+<meta property="og:url" content="https://norito.in/zh/design/border-radius-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="圆角生成器：分角设置 CSS border-radius | norito" />
+<meta name="twitter:description" content="在浏览器中可视化设置矩形每个角的 CSS border-radius 圆角半径，满意后一键复制 CSS 代码。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "圆角生成器",
+  "url": "https://norito.in/zh/design/border-radius-generator.html",
+  "description": "在浏览器中可视化设置矩形每个角的 CSS border-radius 圆角半径，满意后一键复制 CSS 代码。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "和只设置一个 border-radius 值有什么区别？",
+      "acceptedAnswer": { "@type": "Answer", "text": "单个数值会让四个角以相同的弧度圆角化。这个工具可以让你独立设置每个角，适合制作只有上方两角是圆角的卡片，或者不对称的“不规则形状”等效果。" }
+    },
+    {
+      "@type": "Question",
+      "name": "使用的单位是什么？",
+      "acceptedAnswer": { "@type": "Answer", "text": "像素（px）。如果你需要基于百分比的圆角（无论元素尺寸如何都能得到完美的圆形/椭圆），可以手动调整生成的 CSS，把每个数值的 px 换成 %。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这些内容会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。预览和 CSS 完全在你的浏览器中生成，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "圆角生成器",
+      "item": "https://norito.in/zh/design/border-radius-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / 圆角生成器</p>
+    <h1>圆角生成器</h1>
+    <p class="lede">
+      独立设置每个角的圆角半径，实时查看形状变化，然后复制 CSS。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="option-row">
+          <span class="option-label">四角联动</span>
+          <label class="switch"><input type="checkbox" id="linkAll" checked /><span class="track"></span></label>
+        </div>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="radTL">左上（<span id="radTLVal">12px</span>）</label>
+            <input type="range" id="radTL" min="0" max="100" value="12" />
+          </div>
+          <div class="field">
+            <label for="radTR">右上（<span id="radTRVal">12px</span>）</label>
+            <input type="range" id="radTR" min="0" max="100" value="12" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="radBL">左下（<span id="radBLVal">12px</span>）</label>
+            <input type="range" id="radBL" min="0" max="100" value="12" />
+          </div>
+          <div class="field">
+            <label for="radBR">右下（<span id="radBRVal">12px</span>）</label>
+            <input type="range" id="radBR" min="0" max="100" value="12" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:50px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:160px; height:120px; margin:0 auto; background:var(--primary);"></div>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">复制 CSS</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        四个滑块，每个角一个，输入时立即触发更新。开启"锁定全部角"后，拖动任意一个滑块都会把它的值复制给其余三个，然后重新生成
+        CSS。这些数值按 CSS 实际使用的顺序拼接成简写形式——从左上角开始顺时针：左上、右上、右下、左下。同一串文本会直接写入预览框的
+        style.borderRadius，所以预览不是对输出效果的近似模拟，它就是你复制的那段 CSS，由你的浏览器亲自渲染出来。
+      </p>
+      <p>
+        有两个行为滑块本身展示不出来，但值得了解。第一，这个工具使用像素，而像素和百分比的表现并不相同：在矩形上设置 border-radius:
+        50% 会分别按两个轴计算，得到一个椭圆；而像 9999px
+        这样的大像素值，才会得到人们通常想要的胶囊形状。第二，规范会对重叠的圆角做限制：当一条边上的圆角之和超过该边的长度时，浏览器会按比例缩小所有圆角。这就是为什么在小盒子上把所有滑块都拉到
+        100，形状最终会停止变化，也是为什么你从不需要精确计算"高度的一半"——超出的部分浏览器会自动帮你限制住。
+      </p>
+      <p>
+        整个工具只是这个页面里几十行 JavaScript：滑块的值在 DOM
+        之间传递，全程没有任何网络请求，你可以在开发者工具的"网络"面板中亲自确认这一点。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-gradient-generator.html|CSS 渐变生成器|可视化构建线性或径向渐变。
+box-shadow-generator.html|阴影生成器|可视化构建 CSS 阴影。
+favicon-generator.html|Favicon 生成器|从图片生成 favicon。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>和只设置一个 border-radius 值有什么区别？</summary>
+        <p>单个数值会让四个角以相同的弧度圆角化。这个工具可以让你独立设置每个角，适合制作只有上方两角是圆角的卡片，或者不对称的“不规则形状”等效果。</p>
+      </details>
+      <details class="faq-item">
+        <summary>使用的单位是什么？</summary>
+        <p>像素（px）。如果你需要基于百分比的圆角（无论元素尺寸如何都能得到完美的圆形/椭圆），可以手动调整生成的 CSS，把每个数值的 px 换成 %。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这些内容会被发送到别的地方吗？</summary>
+        <p>不会。预览和 CSS 完全在你的浏览器中生成，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-border-radius-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

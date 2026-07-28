@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Ordenar líneas online: alfabético, numérico, aleatorio | norito</title>
+<meta name="description" content="Ordena una lista de líneas alfabética o numéricamente, por longitud, o mézclala aleatoriamente, directamente en tu navegador. No se sube nada." />
+<link rel="canonical" href="https://norito.in/es/sort-lines.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/sort-lines.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/sort-lines.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/sort-lines.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/sort-lines.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/sort-lines.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/sort-lines.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/sort-lines.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/sort-lines.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ordenar líneas online: alfabético, numérico, aleatorio | norito" />
+<meta property="og:description" content="Ordena una lista de líneas alfabética o numéricamente, por longitud, o mézclala aleatoriamente, directamente en tu navegador. No se sube nada." />
+<meta property="og:url" content="https://norito.in/es/sort-lines.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ordenar líneas online: alfabético, numérico, aleatorio | norito" />
+<meta name="twitter:description" content="Ordena una lista de líneas alfabética o numéricamente, por longitud, o mézclala aleatoriamente, directamente en tu navegador. No se sube nada." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Ordenar líneas",
+  "url": "https://norito.in/es/sort-lines.html",
+  "description": "Ordena una lista de líneas alfabética o numéricamente, por longitud, o mézclala aleatoriamente, directamente en tu navegador. No se sube nada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/es/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ordenar líneas",
+      "item": "https://norito.in/es/sort-lines.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Ordenar líneas</p>
+    <h1>Ordenar líneas</h1>
+    <p class="lede">
+      Ordena una lista alfabética o numéricamente, por longitud, o mézclala aleatoriamente. Ascendente o descendente, con eliminación de duplicados opcional.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Entrada (un elemento por línea)</label>
+          <textarea id="textInput" class="mono-output" rows="12" placeholder="plátano
+manzana
+cereza"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="sortBy">Ordenar por</label>
+            <select id="sortBy">
+              <option value="alpha">Alfabético (sensible a mayúsculas)</option>
+              <option value="alphaCI" selected>Alfabético (ignorar mayúsculas)</option>
+              <option value="numeric">Numérico</option>
+              <option value="length">Longitud de línea</option>
+              <option value="shuffle">Mezclar aleatoriamente</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="direction">Dirección</label>
+            <select id="direction">
+              <option value="asc" selected>Ascendente</option>
+              <option value="desc">Descendente</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Eliminar líneas duplicadas</span>
+          <label class="switch"><input type="checkbox" id="optDedupe" /><span class="track"></span></label>
+        </div>
+        <div class="option-row" style="margin-bottom:20px;">
+          <span class="option-label">Eliminar líneas en blanco</span>
+          <label class="switch"><input type="checkbox" id="optRemoveBlank" checked /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field">
+            <label for="textOutput">Resultado</label>
+            <textarea id="textOutput" class="mono-output" rows="12" readonly></textarea>
+          </div>
+          <p class="note" id="statInfo" style="margin-top:0;">0 líneas.</p>
+          <button id="sortNowBtn" class="secondary" style="margin-right:8px;">Ordenar ahora</button>
+          <button id="copyBtn">Copiar resultado</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>Tu texto se divide por saltos de línea y se ordena con un comparador elegido según el menú desplegable. El orden alfabético usa <code>localeCompare</code>, la comparación consciente del idioma del navegador, en lugar de códigos de carácter en bruto. La diferencia se nota de inmediato: un ordenamiento ingenuo por punto de código pone toda letra mayúscula antes que cualquier minúscula (así que "Zebra" se ordena antes que "manzana"), y desordena los caracteres acentuados. La comparación consciente del idioma ordena las palabras como lo haría un diccionario.</p>
+      <p>El orden numérico analiza cada línea con <code>parseFloat</code> y compara los números, lo que corrige el clásico error del ordenamiento de cadenas donde "10" va antes que "9" porque "1" es un carácter menor. Las líneas que no empiezan con un número se tratan como 0 y se agrupan juntas. El orden por longitud compara el número de caracteres, y la mezcla usa el algoritmo Fisher-Yates, que da a cada ordenación la misma probabilidad. Vale la pena aclararlo: el popular truco <code>sort(() =&gt; Math.random() - 0.5)</code> produce mezclas sesgadas porque los algoritmos de ordenamiento asumen un comparador consistente, mientras que Fisher-Yates recorre el array una sola vez, intercambiando cada elemento con una posición anterior elegida uniformemente al azar.</p>
+      <p>El orden descendente ordena de forma ascendente y luego invierte, la eliminación de duplicados se ejecuta después de ordenar usando un <code>Set</code> para que solo se eliminen las repeticiones exactas, y las líneas en blanco pueden filtrarse antes de todo esto. Todo el proceso son operaciones de array sobre una cadena en tu pestaña: no se dispara ninguna petición al pegar u ordenar (verifícalo en el panel Red de las herramientas de desarrollador), así que ordenar una lista de nombres, correos o claves nunca involucra a un servidor.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+remove-duplicate-lines.html|Eliminar líneas duplicadas|Elimina duplicados antes o después de ordenar.
+/case-converter.html|Conversor de mayúsculas/minúsculas|Convierte texto entre mayúsculas, minúsculas, camelCase y más.
+json-formatter.html|Formateador JSON|Formatea y valida JSON.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-sort-lines.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

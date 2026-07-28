@@ -111,7 +111,7 @@
       out += marker + " " + content + "\n";
     });
     try {
-      await navigator.clipboard.writeText(out);
+      await copyToClipboard(out);
     } catch (err) {
       const ta = document.createElement("textarea");
       ta.value = out;

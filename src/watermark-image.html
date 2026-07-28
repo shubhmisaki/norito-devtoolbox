@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Add Watermark to Image Online | norito</title>
+<meta name="description" content="Add a text watermark to a photo with a live preview, right in your browser. Control size, opacity, angle, color, and position. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/watermark-image.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/watermark-image.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/watermark-image.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Add Watermark to Image Online | norito" />
+<meta property="og:description" content="Add a text watermark to a photo with a live preview, right in your browser. Control size, opacity, angle, color, and position. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/watermark-image.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Add Watermark to Image Online | norito" />
+<meta name="twitter:description" content="Add a text watermark to a photo with a live preview, right in your browser. Control size, opacity, angle, color, and position. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Watermark Image",
+  "url": "https://norito.in/watermark-image.html",
+  "description": "Add a text watermark to a photo with a live preview, right in your browser. Control size, opacity, angle, color, and position. Nothing is uploaded.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the preview match the final download exactly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the live preview is drawn directly on your actual uploaded image, not an approximation. The font size scales up proportionally to your image's full resolution when you download, so what you see is what you get." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I watermark a batch of photos at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not yet, this tool handles one image at a time. If you need the same watermark on many photos, you'll need to repeat the process for each one." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this protect my photos from being stolen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A visible watermark discourages casual reuse and makes attribution clear, but it can be cropped or edited out by someone determined to remove it. It's a deterrent, not an unbreakable protection." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Watermark Image",
+      "item": "https://norito.in/watermark-image.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Watermark Image</p>
+    <h1>Watermark Image</h1>
+    <p class="lede">
+      Add a text watermark to a photo, with a live preview on the actual image so you can see exactly how size, opacity, angle, and position will look.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          <p><strong>Click to choose an image</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP. Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <p class="note" id="originalInfo" style="display:none;"></p>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="stage-wrap" id="stage">
+            <img id="stageImg" alt="Watermark preview" />
+            <span class="wm-live-preview" id="wmPreviewText">SAMPLE</span>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="wmText">Watermark text</label>
+          <input type="text" id="wmText" value="© Your Name" maxlength="80" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="wmSize">Font size (px)</label>
+            <input type="number" id="wmSize" min="8" max="200" value="32" />
+          </div>
+          <div class="field">
+            <label for="wmOpacity">Opacity (%)</label>
+            <input type="number" id="wmOpacity" min="1" max="100" value="40" />
+          </div>
+          <div class="field">
+            <label for="wmAngle">Angle (°)</label>
+            <input type="number" id="wmAngle" min="-180" max="180" value="0" />
+          </div>
+          <div class="field">
+            <label for="wmColor">Color</label>
+            <input type="color" id="wmColor" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="wmPosition">Position</label>
+          <select id="wmPosition">
+            <option value="top-left">Top left</option>
+            <option value="top-center">Top center</option>
+            <option value="top-right">Top right</option>
+            <option value="center-left">Center left</option>
+            <option value="center" selected>Center</option>
+            <option value="center-right">Center right</option>
+            <option value="bottom-left">Bottom left</option>
+            <option value="bottom-center">Bottom center</option>
+            <option value="bottom-right">Bottom right</option>
+          </select>
+        </div>
+
+        <button id="applyBtn" disabled style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+          Apply watermark & download
+        </button>
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Watermarked result" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your watermarked image will appear here once generated.</p>
+        </div>
+        <p class="note">
+          The preview above shows your watermark live on the actual image as you adjust size,
+          opacity, angle, color, and position. The final download matches what you see, scaled up
+          to your image's full resolution.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The live preview is a positioned DOM element layered over your photo, but the final image is real pixel work on a <code>&lt;canvas&gt;</code>. When you hit apply, the original image is drawn at full resolution, then the canvas context is translated to one of nine anchor points (corners, edge midpoints, center, each inset by a 6% margin), rotated by your angle, and the text is drawn with <code>fillText()</code> using your color and opacity via <code>globalAlpha</code>. Text alignment and baseline are set per anchor so "bottom-right" in the preview lands in the same relative spot in the output.</p>
+      <p>The subtle part is scale. Your on-screen preview might be 500 pixels wide while the actual photo is 4,000, so a naive tool renders a watermark that looked right in preview but comes out microscopic. This one measures the ratio between the displayed preview width and the image's natural width and multiplies the font size by it, so 48px in the preview means the same proportional size in the full-resolution file. The result is re-encoded in the original format: JPEG at 0.95 quality, PNG losslessly (pick PNG if you want the crispest possible text edges).</p>
+      <p>Worth understanding about what a watermark is: this text is baked into the pixels, not stored as a layer or metadata, so nobody can strip it the way EXIF data gets stripped. That cuts both ways. A small, low-opacity mark in a corner is easy prey for crop tools and AI inpainting; a watermark that actually protects an image overlaps the subject, at an angle, at moderate opacity, which is exactly what the position, angle, and opacity controls are for.</p>
+      <p>Both preview and final render run in your tab. Check DevTools' Network panel while you work: the photo is never uploaded, so client proofs and unreleased shots stay on your machine.</p>
+    </div>
+
+<!--RELATED-TOOLS
+remove-metadata.html|Remove Metadata|Strip EXIF and GPS data before sharing a photo.
+compress-image.html|Compress Image to Size|Shrink the file size after watermarking.
+pdf/add-watermark.html|Add Watermark (PDF)|Watermark every page of a PDF document instead.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does the preview match the final download exactly?</summary>
+        <p>Yes, the live preview is drawn directly on your actual uploaded image, not an approximation. The font size scales up proportionally to your image's full resolution when you download, so what you see is what you get.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I watermark a batch of photos at once?</summary>
+        <p>Not yet, this tool handles one image at a time. If you need the same watermark on many photos, you'll need to repeat the process for each one.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will this protect my photos from being stolen?</summary>
+        <p>A visible watermark discourages casual reuse and makes attribution clear, but it can be cropped or edited out by someone determined to remove it. It's a deterrent, not an unbreakable protection.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-watermark-image.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

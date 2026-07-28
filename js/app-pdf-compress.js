@@ -97,19 +97,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     els.fileInput.value = "";
   });
 
-  ["dragenter", "dragover"].forEach((evt) =>
-    els.drop.addEventListener(evt, (e) => {
-      e.preventDefault();
-      els.drop.classList.add("drag");
-    })
-  );
-  ["dragleave", "drop"].forEach((evt) =>
-    els.drop.addEventListener(evt, (e) => {
-      e.preventDefault();
-      els.drop.classList.remove("drag");
-    })
-  );
-  els.drop.addEventListener("drop", (e) => {
+  wireDragDrop(els.drop, (e) => {
     if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
       loadFile(e.dataTransfer.files[0]);
     }

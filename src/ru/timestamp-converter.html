@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Конвертер меток времени: Unix Time и дата | norito</title>
+<meta name="description" content="Конвертируйте между метками времени Unix и читаемыми датами в обе стороны, в реальном времени. Вывод в местном времени, UTC и ISO 8601." />
+<link rel="canonical" href="https://norito.in/ru/timestamp-converter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/timestamp-converter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/timestamp-converter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/timestamp-converter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/timestamp-converter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/timestamp-converter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/timestamp-converter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/timestamp-converter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/timestamp-converter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Конвертер меток времени: Unix Time и дата | norito" />
+<meta property="og:description" content="Конвертируйте между метками времени Unix и читаемыми датами в обе стороны, в реальном времени. Вывод в местном времени, UTC и ISO 8601." />
+<meta property="og:url" content="https://norito.in/ru/timestamp-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Конвертер меток времени: Unix Time и дата | norito" />
+<meta name="twitter:description" content="Конвертируйте между метками времени Unix и читаемыми датами в обе стороны, в реальном времени. Вывод в местном времени, UTC и ISO 8601." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Конвертер меток времени",
+  "url": "https://norito.in/ru/timestamp-converter.html",
+  "description": "Конвертируйте между метками времени Unix и читаемыми датами в обе стороны, в реальном времени. Вывод в местном времени, UTC и ISO 8601.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/ru/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Конвертер меток времени",
+      "item": "https://norito.in/ru/timestamp-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Конвертер меток времени</p>
+    <h1>Конвертер меток времени</h1>
+    <p class="lede">
+      Конвертируйте метки времени Unix в читаемые даты и обратно — оба направления остаются синхронизированными при редактировании любого из них.
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Метка времени Unix</h3>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label for="tsInput">Метка времени</label>
+            <input type="text" id="tsInput" class="mono-output" style="height:42px; font-size:0.95rem;" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="tsUnit">Единица</label>
+            <select id="tsUnit">
+              <option value="s">Секунды</option>
+              <option value="ms" selected>Миллисекунды</option>
+            </select>
+          </div>
+          <button id="nowBtn" class="secondary" style="align-self:flex-end;">Сейчас</button>
+        </div>
+
+        <div class="result-box error" id="errorBox" style="display:none; margin-bottom:16px;">
+          <svg class="r-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <div class="r-body"></div>
+        </div>
+
+        <div class="field" style="margin-bottom:14px;">
+          <label>Местное время</label>
+          <input type="text" id="localOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>UTC</label>
+          <input type="text" id="utcOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>ISO 8601</label>
+          <input type="text" id="isoOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+        <div class="field">
+          <label>Относительно</label>
+          <input type="text" id="relativeOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+        </div>
+
+        <h3>Дата и время</h3>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="dateInput">Выберите дату и время (ваш местный часовой пояс)</label>
+          <input type="datetime-local" id="dateInput" step="1" />
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Секунды Unix</label>
+            <input type="text" id="secOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copySecBtn" class="secondary" style="align-self:flex-end;">Копировать</button>
+        </div>
+        <div class="field-row">
+          <div class="field" style="flex:1;">
+            <label>Миллисекунды Unix</label>
+            <input type="text" id="msOut" class="mono-output" style="height:42px; font-size:0.9rem;" readonly />
+          </div>
+          <button id="copyMsBtn" class="secondary" style="align-self:flex-end;">Копировать</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="icon-chip c-amber" style="width:36px;height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>Что такое метка времени Unix?</h3>
+              <p>Секунды (или мс) с 1 января 1970 года.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:0;">
+            Эпоха Unix — это полночь UTC 1 января 1970 года. Метка времени — это просто число секунд (или миллисекунд), прошедших с тех пор, поэтому она сортируется и сравнивается как обычное число, в отличие от отформатированной строки даты.
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Разница между секундами и миллисекундами</h3>
+          <p class="note" style="margin-top:0;">
+            Unix, Linux и большинство серверных API используют секунды. Собственный <code>Date.now()</code> JavaScript и большая часть фронтенд-кода используют миллисекунды. Путаница между ними — одна из самых распространённых ошибок с метками времени: значение в «секундах», вставленное в поле «миллисекунды», попадает куда-то в 1970 год.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>Всё проходит через объект <code>Date</code> браузера, который внутренне хранит одно число: миллисекунды с эпохи Unix, полуночи UTC 1 января 1970 года. При конвертации метки времени инструмент умножает на 1000, если вы указали секунды, строит <code>Date</code>, а затем отображает его четырьмя способами: ваше местное время через <code>toLocaleString</code> (форматтер Intl браузера, использующий ваш часовой пояс и язык), UTC, ISO 8601 и относительную метку «через 3 дня / 2 часа назад», вычисляемую путём разбиения разницы с текущим моментом на годы, месяцы, дни, часы, минуты или секунды.</p>
+      <p>В обратном направлении значение выбора даты интерпретируется как местное время и конвертируется обратно в секунды и миллисекунды. Поле datetime-local заполняется путём сдвига метки времени на смещение вашего часового пояса — это та тонкая деталь, в которой большинство конвертеров ошибаются незаметно: <code>toISOString()</code> всегда работает в UTC, поэтому без этого сдвига выбор даты показывал бы время, отличающееся на несколько часов от ожидаемого настенного времени.</p>
+      <p>Классическая ошибка, от которой защищает этот инструмент, делая единицу измерения явной: секунды против миллисекунд. Текущее время Unix — это 10 цифр в секундах и 13 цифр в миллисекундах. Разберите значение в миллисекундах как секунды — и вы окажетесь более чем на 50 000 лет в будущем; сделайте наоборот — получите январь 1970 года. Если результат конвертации выглядит абсурдно, переключите выпадающий список единиц — почти всегда в этом вся ошибка. Значения вне диапазона (даты JavaScript ограничены 100 миллионами дней в каждую сторону от эпохи, примерно до 275760 года) выдают понятную ошибку вместо бессмыслицы.</p>
+      <p>Весь разбор и форматирование — это работа локального API браузера. Откройте вкладку Network в DevTools во время конвертации: ни один запрос не отправляется, а метки времени из ваших логов никогда не покидают ваш компьютер.</p>
+    </div>
+
+
+<!--RELATED-TOOLS
+uuid-generator.html|Генератор UUID|Массовая генерация случайных идентификаторов UUID v4.
+hash-generator.html|Генератор хешей|MD5, SHA-1, SHA-256 и SHA-512 любого текста.
+json-formatter.html|Форматирование JSON|Форматирует, проверяет и минифицирует JSON с древовидным представлением.
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/app-timestamp.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

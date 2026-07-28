@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JSON 格式化、校验与树状视图工具 | norito</title>
+<meta name="description" content="边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/json-formatter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/json-formatter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/json-formatter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/json-formatter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/json-formatter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/json-formatter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/json-formatter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/json-formatter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSON 格式化、校验与树状视图工具 | norito" />
+<meta property="og:description" content="边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/json-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JSON 格式化、校验与树状视图工具 | norito" />
+<meta name="twitter:description" content="边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON 格式化",
+  "url": "https://norito.in/zh/json-formatter.html",
+  "description": "边输入边实时格式化、校验和压缩 JSON。支持可折叠的树状视图、行内错误定位、键排序,可复制或下载结果。在浏览器中运行。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JSON 格式化",
+      "item": "https://norito.in/zh/json-formatter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSON 格式化</p>
+    <h1>JSON 格式化与校验</h1>
+    <p class="lede">
+      粘贴 JSON,即可实时看到校验和格式化的结果,可选树状视图或纯文本视图。出错时会直接指出具体的行号和列号,而不只是提示“JSON 无效”。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field" style="margin-bottom:14px;">
+          <label for="jsonInput">输入</label>
+          <textarea id="jsonInput" class="mono-area" rows="14">{
+  "name": "norito",
+  "tagline": "small tools, one job each",
+  "tools": ["test files", "compress", "json formatter", "qr code"],
+  "version": 1,
+  "public": true,
+  "maintainer": null
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="field-row" style="margin-bottom:0;">
+            <div class="field">
+              <label style="visibility:hidden;">View</label>
+              <div class="tabs" id="view-tabs">
+                <button type="button" class="tab active" data-value="tree">树状视图</button>
+                <button type="button" class="tab" data-value="text">文本</button>
+              </div>
+            </div>
+            <div class="field" style="min-width:110px;">
+              <label for="indentSize">缩进</label>
+              <select id="indentSize">
+                <option value="2" selected>2 个空格</option>
+                <option value="4">4 个空格</option>
+                <option value="tab">制表符</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-row" style="margin-bottom:16px;">
+            <span class="option-label">按字母顺序排序键名</span>
+            <label class="switch"><input type="checkbox" id="optSortKeys" /><span class="track"></span></label>
+          </div>
+
+          <div id="treeView" class="json-tree"></div>
+          <textarea id="textOutput" class="mono-area" rows="14" readonly style="display:none;"></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button id="formatBtn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg>
+  格式化输入
+</button>
+            <button id="minifyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg>
+  压缩输入
+</button>
+            <button id="copyBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+  复制输出
+</button>
+            <button id="downloadBtn" class="secondary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+  下载 .json
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        验证通过 JSON.parse 完成，这正是浏览器和 Node.js 在运行时使用的原生解析器，因此凡是能通过这里的内容，在生产环境中也一定能正确解析，而不是某种近似语法的模拟。解析失败时，引擎要么直接返回行号和列号，要么只返回一个原始字符位置；对于后一种情况，工具会把输入截取到该位置，并通过统计换行符数量换算出错误框中显示的行号与列号。
+      </p>
+      <p>
+        树形视图通过递归遍历解析后的值构建为可折叠节点；任何超过 300
+        项的对象或数组只会在视图中被截断，绝不会影响复制或下载的实际输出，因此几兆字节的 API
+        响应依然可以顺畅滚动查看。经过引擎处理还有一个值得了解的副作用：数字会以 JavaScript
+        的 64 位浮点数重新序列化。外观上的写法会被规范化（1e2 变成 100，0.50 变成 0.5），而超过 2 的
+        53 次方的整数，比如 19 位的数据库或 Twitter
+        风格ID，可能会悄悄丢失末尾几位数字。如果你的 JSON 里包含这类超大 ID，请在格式化前把它们保留为字符串。
+      </p>
+      <p>
+        解析、格式化和压缩都会在你每次按键时于本页面的 JavaScript
+        中完成。打开开发者工具的"网络"面板，粘贴一段真实的 API
+        响应即可亲自验证：没有任何请求离开你的浏览器，这也是为什么粘贴包含令牌或客户数据的内容在这里是安全的。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+test-file-generator.html|测试文件生成器|生成任意大小或扩展名的精确测试文件。
+markdown-editor.html|Markdown 编辑器|双栏 Markdown 编辑器，支持实时预览。
+qr-code-generator.html|二维码生成器|自定义颜色并添加中心 Logo 的二维码。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/i18n-runtime.js"></script>
+<script src="../js/app-json.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

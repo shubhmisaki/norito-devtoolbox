@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Box Shadow Generator: CSS box-shadow Builder | norito</title>
+<meta name="description" content="Build a single or multi-layer CSS box-shadow visually, right in your browser. Copy the CSS when it looks right." />
+<link rel="canonical" href="https://norito.in/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/box-shadow-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/box-shadow-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Box Shadow Generator: CSS box-shadow Builder | norito" />
+<meta property="og:description" content="Build a single or multi-layer CSS box-shadow visually, right in your browser. Copy the CSS when it looks right." />
+<meta property="og:url" content="https://norito.in/design/box-shadow-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Box Shadow Generator: CSS box-shadow Builder | norito" />
+<meta name="twitter:description" content="Build a single or multi-layer CSS box-shadow visually, right in your browser. Copy the CSS when it looks right." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Box Shadow Generator",
+  "url": "https://norito.in/design/box-shadow-generator.html",
+  "description": "Build a single or multi-layer CSS box-shadow visually, right in your browser. Copy the CSS when it looks right.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does \"Inset\" do?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Flips the shadow from the outside of the box to the inside, creating a carved-in look instead of a floating one." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I stack multiple shadows?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, click \"Add shadow layer\" to stack additional shadows, which CSS box-shadow supports natively with comma-separated values. Layering a soft, large shadow with a tighter, darker one is a common way to get a more realistic depth effect." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the preview and CSS are generated entirely in your browser. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Box Shadow Generator",
+      "item": "https://norito.in/design/box-shadow-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="13" height="13" rx="2"/><path d="M8 8h13v13H8z" opacity="0.4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Box Shadow Generator</p>
+    <h1>Box Shadow Generator</h1>
+    <p class="lede">
+      Build a CSS box-shadow visually, with support for multiple stacked layers and inset shadows.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="layersWrap"></div>
+        <button type="button" id="addLayerBtn" class="secondary" style="margin-top:4px;">+ Add shadow layer</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:50px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:140px; height:100px; margin:0 auto; background:var(--surface); border-radius:12px;"></div>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copy CSS</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each layer is a small object holding x, y, blur, spread, color, opacity, and the inset
+        flag. Because HTML color inputs can't express transparency, the hex value from the picker
+        is parsed into its red, green, and blue bytes and recombined with the opacity slider into
+        an <code>rgba()</code> color, which is how one shadow can be soft and translucent instead
+        of a hard black block. All layers are then joined with commas into a single
+        <code>box-shadow</code> declaration, and the exact same string is applied to the preview
+        element, so what you see is what you copy. Order matters in a way that surprises people:
+        the first shadow in the list paints on top, with later ones stacking underneath.
+      </p>
+      <p>
+        The reason this tool bothers with multiple layers: one shadow almost always looks fake.
+        Real shadows have a dense core and a wide soft falloff, and a single
+        <code>0 4px 12px rgba(0,0,0,0.25)</code> can't do both, it just looks like a gray sticker.
+        The trick used by every polished design system is stacking two or three shadows at low
+        opacity, something like a tight <code>0 1px 2px</code> at 10% plus a wide
+        <code>0 8px 24px</code> at 8%. Each layer is barely visible alone; together they read as
+        depth. One caution: <code>box-shadow</code> is cheap to render once but expensive to
+        animate, since every frame forces a repaint. If you need a shadow to fade on hover, put it
+        on a pseudo-element and animate that element's <code>opacity</code> instead.
+      </p>
+      <p>
+        Everything runs in this page's JavaScript: parsing the hex, building the rgba, restyling
+        the preview. No color you pick and no CSS you generate is sent anywhere, and the DevTools
+        Network tab will confirm the page stays quiet while you work.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-gradient-generator.html|CSS Gradient Generator|Build a linear or radial gradient visually.
+border-radius-generator.html|Border Radius Generator|Build per-corner border radius visually.
+favicon-generator.html|Favicon Generator|Generate a favicon from an image.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What does "Inset" do?</summary>
+        <p>Flips the shadow from the outside of the box to the inside, creating a carved-in look instead of a floating one.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I stack multiple shadows?</summary>
+        <p>Yes, click "Add shadow layer" to stack additional shadows, which CSS box-shadow supports natively with comma-separated values. Layering a soft, large shadow with a tighter, darker one is a common way to get a more realistic depth effect.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this sent anywhere?</summary>
+        <p>No, the preview and CSS are generated entirely in your browser. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-box-shadow-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

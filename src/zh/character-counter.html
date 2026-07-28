@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>字符计数器：检查平台限制 | norito</title>
+<meta name="description" content="统计含空格和不含空格的字符数以及字节大小，并实时对照推文、短信和 meta 描述的限制。不会上传任何内容。" />
+<link rel="canonical" href="https://norito.in/zh/character-counter.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/character-counter.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/character-counter.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/character-counter.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/character-counter.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/character-counter.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/character-counter.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/character-counter.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/character-counter.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="字符计数器：检查平台限制 | norito" />
+<meta property="og:description" content="统计含空格和不含空格的字符数以及字节大小，并实时对照推文、短信和 meta 描述的限制。不会上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/character-counter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="字符计数器：检查平台限制 | norito" />
+<meta name="twitter:description" content="统计含空格和不含空格的字符数以及字节大小，并实时对照推文、短信和 meta 描述的限制。不会上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "字符计数器",
+  "url": "https://norito.in/zh/character-counter.html",
+  "description": "统计含空格和不含空格的字符数以及字节大小，并实时对照推文、短信和 meta 描述的限制。不会上传任何内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "norito",
+    "url": "https://norito.in/zh/"
+  }
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "字符计数器",
+      "item": "https://norito.in/zh/character-counter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 字符计数器</p>
+    <h1>字符计数器</h1>
+    <p class="lede">
+      实时统计含空格和不含空格的字符数、字节大小，以及与推文、meta 描述等常见平台限制的接近程度。
+    </p>
+    </div>
+  </div>
+
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">你的文本</label>
+          <textarea id="textInput" class="mono-output" rows="10" placeholder="在此粘贴或输入文本…"></textarea>
+        </div>
+        <div class="meta-list">
+          <div class="meta-row"><span class="meta-label">字符数（含空格）</span><span class="meta-value" id="statWithSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">字符数（不含空格）</span><span class="meta-value" id="statNoSpaces">0</span></div>
+          <div class="meta-row"><span class="meta-label">字节大小（UTF-8）</span><span class="meta-value" id="statBytes">0</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 style="margin-top:0;">常见限制</h3>
+          <div class="meta-list" id="limitList"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        每次按键时，页面都会重新计算三个数值。字符数是 JavaScript 的 <code>.length</code>，统计的是 UTF-16 代码单元数。不含空格的计数会先用正则表达式去除所有空白（空格、制表符、换行符）。字节大小则将你的文本传入浏览器的 <code>TextEncoder</code> API，得到该文本在文件、数据库列或 HTTP 请求体中实际占用的 UTF-8 字节数。平台限制列表只是用每个限制值做减法，一旦超出就切换为"超限"样式。
+      </p>
+      <p>
+        这些数值之间的差异正是容易踩坑的地方。一个笑脸表情符号在视觉上是一个符号，但在这里（以及许多平台上）算作 2 个 UTF-16 代码单元，也就是 2 个字符，并占用 4 个 UTF-8 字节。就短信而言，160 字符的限制是假设消息始终使用旧的 GSM-7 字符集：只要包含一个表情符号或弯引号，运营商就会悄悄把整条消息切换为 UCS-2 编码，把单段限制降到 70 个字符。如果修改了一个字符，短信突然被拆成两段，原因就在这里。
+      </p>
+      <p>
+        统计完全在本页面的 JavaScript 中完成。打字时打开开发者工具的网络面板：你会看到零请求，因为你的文本从未离开浏览器。
+      </p>
+    </div>
+
+
+<!--RELATED-TOOLS
+/word-counter.html|字数统计|统计单词数、句子数、段落数及预计阅读时间。
+limited-text-generator.html|限长文本生成器|生成精确长度的占位文本。
+seo-slug-generator.html|SEO Slug 生成器|从标题生成简洁的 URL slug。
+-->
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-character-counter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

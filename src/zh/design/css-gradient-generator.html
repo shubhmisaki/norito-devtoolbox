@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS 渐变生成器：线性与径向渐变 | norito</title>
+<meta name="description" content="在浏览器中可视化构建带有多个色标的线性或径向 CSS 渐变效果，实时预览颜色变化，满意后一键复制生成的代码。" />
+<link rel="canonical" href="https://norito.in/zh/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/css-gradient-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/css-gradient-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS 渐变生成器：线性与径向渐变 | norito" />
+<meta property="og:description" content="在浏览器中可视化构建带有多个色标的线性或径向 CSS 渐变效果，实时预览颜色变化，满意后一键复制生成的代码。" />
+<meta property="og:url" content="https://norito.in/zh/design/css-gradient-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS 渐变生成器：线性与径向渐变 | norito" />
+<meta name="twitter:description" content="在浏览器中可视化构建带有多个色标的线性或径向 CSS 渐变效果，实时预览颜色变化，满意后一键复制生成的代码。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS 渐变生成器",
+  "url": "https://norito.in/zh/design/css-gradient-generator.html",
+  "description": "在浏览器中可视化构建带有多个色标的线性或径向 CSS 渐变效果，实时预览颜色变化，满意后一键复制生成的代码。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以添加两种以上的颜色吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以，点击“添加色标”多少次都行。每个色标都有自己的颜色和位置百分比，因此你可以构建多色渐变，而不只是简单的双色渐变。" }
+    },
+    {
+      "@type": "Question",
+      "name": "线性和径向渐变有什么区别？",
+      "acceptedAnswer": { "@type": "Answer", "text": "线性渐变沿着你设置的角度，以直线方式过渡。径向渐变则从一个中心点向外呈圆形扩散，角度设置对它不起作用。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这些内容会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。渐变完全通过你浏览器的 CSS 引擎构建和预览，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "norito",
+      "item": "https://norito.in/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "CSS 渐变生成器",
+      "item": "https://norito.in/zh/design/css-gradient-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+<main>
+<div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS 渐变生成器</p>
+    <h1>CSS 渐变生成器</h1>
+    <p class="lede">
+      可视化构建线性或径向渐变，色标数量不限，完成后复制 CSS。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="gradType">类型</label>
+            <select id="gradType">
+              <option value="linear" selected>线性</option>
+              <option value="radial">径向</option>
+            </select>
+          </div>
+          <div class="field" id="angleRow">
+            <label for="gradAngle">角度（°）</label>
+            <input type="number" id="gradAngle" min="0" max="360" value="135" />
+          </div>
+        </div>
+        <h3>色标</h3>
+        <div id="stopsWrap"></div>
+        <button type="button" id="addStopBtn" class="secondary" style="margin-top:4px;">+ 添加色标</button>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">复制 CSS</button>
+        </div>
+      </div>
+    </div>
+
+
+<!--RELATED-TOOLS
+box-shadow-generator.html|阴影生成器|可视化构建 CSS 阴影。
+border-radius-generator.html|圆角生成器|可视化设置每个角的圆角半径。
+favicon-generator.html|Favicon 生成器|从图片生成 favicon。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>可以添加两种以上的颜色吗？</summary>
+        <p>可以，点击“添加色标”多少次都行。每个色标都有自己的颜色和位置百分比，因此你可以构建多色渐变，而不只是简单的双色渐变。</p>
+      </details>
+      <details class="faq-item">
+        <summary>线性和径向渐变有什么区别？</summary>
+        <p>线性渐变沿着你设置的角度，以直线方式过渡。径向渐变则从一个中心点向外呈圆形扩散，角度设置对它不起作用。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这些内容会被发送到别的地方吗？</summary>
+        <p>不会。渐变完全通过你浏览器的 CSS 引擎构建和预览，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-gradient-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->
