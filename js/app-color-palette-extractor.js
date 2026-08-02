@@ -21,20 +21,6 @@
     els.result.innerHTML = (kind === "ok" ? ICONS.ok : kind === "error" ? ICONS.error : "") + `<div class="r-body">${html}</div>`;
   }
 
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      if (!file || !file.type.startsWith("image/")) {
-        reject(new Error("Please choose an image file."));
-        return;
-      }
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve({ img, url });
-      img.onerror = () => reject(new Error("That image couldn't be read."));
-      img.src = url;
-    });
-  }
-
   function rgbToHex(r, g, b) {
     return "#" + [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("");
   }
@@ -111,11 +97,18 @@
   }
 
   let currentImg = null;
+  let currentImgUrl = null; // tracked so we can revoke it once a new image replaces it on screen
 
   async function handleFile(file) {
+    if (!file || !file.type.startsWith("image/")) {
+      setResult("error", "Please choose an image file.");
+      return;
+    }
     try {
       const { img, url } = await loadImageFile(file);
+      if (currentImgUrl) URL.revokeObjectURL(currentImgUrl);
       currentImg = img;
+      currentImgUrl = url;
       els.previewImg.src = url;
       els.previewWrap.style.display = "block";
       run();

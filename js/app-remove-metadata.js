@@ -26,16 +26,6 @@
     if (state) els.result.classList.add(state);
   }
 
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
-  }
-
   // ---- minimal JPEG EXIF reader ----
   // Walks JPEG markers looking for APP1/Exif, then reads a handful of the
   // most commonly-recognized TIFF tags directly out of the IFD0/Exif/GPS
@@ -125,7 +115,9 @@
       return;
     }
     currentFile = file;
-    currentImg = await loadImageFile(file);
+    const { img, url } = await loadImageFile(file);
+    currentImg = img;
+    URL.revokeObjectURL(url); // only used to decode; canvas draws below don't need it alive
     els.originalInfo.textContent = `${file.name}, ${currentImg.width}×${currentImg.height}, ${formatBytes(file.size)}`;
     els.originalInfo.style.display = "block";
     els.cleanBtn.disabled = false;

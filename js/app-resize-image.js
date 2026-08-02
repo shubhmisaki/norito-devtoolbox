@@ -34,23 +34,15 @@
     if (state) els.result.classList.add(state);
   }
 
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
-  }
-
   async function handleFile(file) {
     if (!file || !file.type.startsWith("image/")) {
       setResult("<strong>That's not an image.</strong> Choose a JPG, PNG, or WebP file.", "error");
       return;
     }
     currentFile = file;
-    currentImg = await loadImageFile(file);
+    const { img, url } = await loadImageFile(file);
+    currentImg = img;
+    URL.revokeObjectURL(url); // only used to decode; canvas draws below don't need it alive
     aspectRatio = currentImg.width / currentImg.height;
     els.originalInfo.textContent = `${file.name}, ${currentImg.width}×${currentImg.height}, ${formatBytes(file.size)}`;
     els.originalInfo.style.display = "block";
@@ -236,7 +228,8 @@
     batchEls.resizeBtn.textContent = "Resizing...";
     for (const bf of batchFiles) {
       try {
-        const img = await loadImageFile(bf.file);
+        const { img, url } = await loadImageFile(bf.file);
+        URL.revokeObjectURL(url);
         const { w, h } = targetDimsFor(img);
         const canvas = document.createElement("canvas");
         canvas.width = w;

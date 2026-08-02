@@ -56,22 +56,14 @@
     setTimeout(() => el.classList.remove("highlight-pulse"), 1300);
   }
 
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
-  }
-
   async function handleFile(file) {
     if (!file || !file.type.startsWith("image/")) {
       setResult(I18N_C.please_choose_image || "Please choose an image file.", "error");
       return;
     }
-    currentImg = await loadImageFile(file);
+    const { img, url } = await loadImageFile(file);
+    currentImg = img;
+    URL.revokeObjectURL(url); // only used to decode; the model/canvas work below doesn't need it alive
     els.originalInfo.textContent = `${file.name}, ${currentImg.width}×${currentImg.height}`;
     els.originalInfo.style.display = "block";
     els.processBtn.disabled = false;
@@ -453,7 +445,8 @@
       bf.status = "processing";
       renderBatchList();
       try {
-        const img = await loadImageFile(bf.file);
+        const { img, url } = await loadImageFile(bf.file);
+        URL.revokeObjectURL(url);
         const mask = await runSegmentation(session, img);
         const canvas = composite(img, mask, els.bgMode.value, els.bgColor.value);
         const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));

@@ -28,16 +28,6 @@
     if (state) els.result.classList.add(state);
   }
 
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
-  }
-
   function updateQualityVisibility() {
     const lossy = els.format.value === "jpeg" || els.format.value === "webp";
     els.qualityRow.style.display = lossy ? "flex" : "none";
@@ -55,7 +45,9 @@
       return;
     }
     currentFile = file;
-    currentImg = await loadImageFile(file);
+    const { img, url } = await loadImageFile(file);
+    currentImg = img;
+    URL.revokeObjectURL(url); // only used to decode; canvas draws below don't need it alive
     els.originalInfo.textContent = `${file.name}, ${currentImg.width}×${currentImg.height}, ${formatBytes(file.size)}, ${file.type || "unknown type"}`;
     els.originalInfo.style.display = "block";
     els.convertBtn.disabled = false;
@@ -214,7 +206,8 @@
     const ext = { jpeg: "jpg", png: "png", webp: "webp" }[outFormat];
     for (const bf of batchFiles) {
       try {
-        const img = await loadImageFile(bf.file);
+        const { img, url } = await loadImageFile(bf.file);
+        URL.revokeObjectURL(url);
         const canvas = document.createElement("canvas");
         canvas.width = img.width;
         canvas.height = img.height;

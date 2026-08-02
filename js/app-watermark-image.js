@@ -20,6 +20,7 @@
 
   let currentImg = null;
   let currentFile = null;
+  let currentImgUrl = null; // tracked so we can revoke it once a new image replaces it on screen
 
   const ICONS = {
     ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>',
@@ -31,16 +32,6 @@
     els.result.style.display = "flex";
     els.result.classList.remove("ok", "error");
     if (state) els.result.classList.add(state);
-  }
-
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
   }
 
   function positionStyles(pos) {
@@ -90,10 +81,13 @@
       return;
     }
     currentFile = file;
-    currentImg = await loadImageFile(file);
+    const { img, url } = await loadImageFile(file);
+    if (currentImgUrl) URL.revokeObjectURL(currentImgUrl);
+    currentImg = img;
+    currentImgUrl = url;
     els.originalInfo.textContent = `${file.name}, ${currentImg.width}×${currentImg.height}, ${formatBytes(file.size)}`;
     els.originalInfo.style.display = "block";
-    els.stageImg.src = currentImg.src;
+    els.stageImg.src = currentImgUrl;
     els.editorWrap.style.display = "block";
     els.applyBtn.disabled = false;
     els.result.style.display = "none";

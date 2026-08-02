@@ -16,6 +16,7 @@
 
   let currentImg = null;
   let currentFile = null;
+  let currentImgUrl = null; // tracked so we can revoke it once a new image replaces it on screen
   // Crop rect stored in DISPLAYED (on-screen) pixels, relative to the stage.
   let rect = { x: 20, y: 20, w: 100, h: 100 };
   let scaleX = 1, scaleY = 1; // displayed-px -> natural-px
@@ -30,16 +31,6 @@
     els.result.style.display = "flex";
     els.result.classList.remove("ok", "error");
     if (state) els.result.classList.add(state);
-  }
-
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
   }
 
   function drawCropBox() {
@@ -81,10 +72,13 @@
       return;
     }
     currentFile = file;
-    currentImg = await loadImageFile(file);
+    const { img, url } = await loadImageFile(file);
+    if (currentImgUrl) URL.revokeObjectURL(currentImgUrl);
+    currentImg = img;
+    currentImgUrl = url;
     els.originalInfo.textContent = `${file.name}, ${currentImg.width}×${currentImg.height}, ${formatBytes(file.size)}`;
     els.originalInfo.style.display = "block";
-    els.stageImg.src = currentImg.src;
+    els.stageImg.src = currentImgUrl;
     els.editorWrap.style.display = "block";
     els.cropBtn.disabled = false;
     els.result.style.display = "none";

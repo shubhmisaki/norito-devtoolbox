@@ -51,16 +51,6 @@
     return new Promise((resolve) => canvas.toBlob(resolve, mime, quality));
   }
 
-  function loadImageFile(file) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(file);
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
-  }
-
   // Picks a sensible starting output format for a freshly uploaded file:
   // matches the upload's own type (PNG stays PNG, WebP stays WebP), falling
   // back to JPEG for JPEGs and anything else canvas can decode but PNG/WebP
@@ -79,7 +69,9 @@
       return;
     }
     currentFile = file;
-    currentImg = await loadImageFile(file);
+    const { img, url } = await loadImageFile(file);
+    currentImg = img;
+    URL.revokeObjectURL(url); // only used to decode; canvas draws below don't need it alive
     els.originalInfo.textContent =
       `${file.name}, ${currentImg.width}×${currentImg.height}, ${formatBytes(file.size)}`;
     els.originalInfo.style.display = "block";
@@ -715,7 +707,8 @@
     batchEls.compressBtn.disabled = true;
     for (const bf of batchFiles) {
       try {
-        const img = await loadImageFile(bf.file);
+        const { img, url } = await loadImageFile(bf.file);
+        URL.revokeObjectURL(url);
         const outcome = outFormat === "png" ? await compressPng(img, target, allowResize) : await compressLossy(img, target, mime, allowResize);
         if (outcome && outcome.blob) {
           bf.blob = outcome.blob;

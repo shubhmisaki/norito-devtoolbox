@@ -1,12 +1,19 @@
 # norito
 
-Ten free, no-signup utilities. Pure HTML/CSS/vanilla JS: no build step, no
-backend for any tool except where noted, no bundler. Everything runs in the
-visitor's browser, which means free hosting and no server costs. One HTML
-page per tool (for SEO), sharing `css/style.css` and a handful of small JS
-helpers.
+63 free, no-signup utilities across PDF, Images, Developer, Text, Utilities,
+SEO, and Design categories. Pure HTML/CSS/vanilla JS: no backend for any tool
+except where noted, no bundler, no runtime third-party requests. Everything
+runs in the visitor's browser, which means free hosting and no server costs.
 
-**Tools included:**
+There *is* a build step, but only for shared chrome, not for tool logic: the
+header, footer, and other cross-page boilerplate live once per locale under
+`partials/` and get expanded into the live HTML files by
+`scripts/build_site.py` (see [Templating](#templating-headerfooter-shared-chrome)
+below). Each tool's actual functionality is still one self-contained
+`js/app-*.js` file with no bundler or transpile step.
+
+**Tools included** (a representative sample; see `tools.html` or
+`partials/en/footer.html` for the full catalog):
 
 | Page | What it does |
 | --- | --- |
@@ -20,6 +27,12 @@ helpers.
 | `qr-code-generator.html` | QR codes with custom colors, error correction, optional center logo. |
 | `markdown-editor.html` | Split-pane markdown editor with live preview and a formatting toolbar. |
 | `remove-background.html` | Cuts a person out of a photo client-side (see caveats below). |
+| `color-converter.html`, `contrast-checker.html`, `css-gradient-generator.html` | Design toolkit: HEX/RGB/HSL conversion, WCAG contrast checking, gradient CSS generation. |
+| `image-converter.html` | Convert between PNG/JPG/WebP client-side via `canvas.toBlob`. |
+
+62 more tools cover PDF merge/split/rotate/compress, image resizing/cropping,
+dev utilities (formatters, encoders, generators), and text tools. Every tool
+is one HTML page (for SEO), sharing `css/style.css` and `js/utils.js`.
 
 ## Branding
 
@@ -63,18 +76,22 @@ does, since it loads a WebAssembly runtime.
 
 ## Vendored dependencies
 
-Everything else in this project is hand-written vanilla JS. Three tools
-pull in a small MIT/Apache-licensed library, vendored locally (via `npm
-install` + copy, not a CDN) so the site has no runtime third-party
+Everything else in this project is hand-written vanilla JS. A handful of
+tools pull in a small MIT/Apache-licensed library, vendored locally (via
+`npm install` + copy, not a CDN) so the site has no runtime third-party
 requests:
 
 - **QR Code Generator**: `js/vendor/qrcode.js` + `qrcode-utf8.js`,
   kazuhikoarase/qrcode-generator, MIT. ~57KB total.
 - **Markdown Editor**: `js/vendor/marked.umd.js`, marked v18, MIT. ~44KB.
-- **Remove Background**: `js/vendor/mediapipe/`, Google's
-  `@mediapipe/selfie_segmentation`, Apache 2.0. ~12MB vendored, but only
-  ~5.5MB actually downloads per visitor (one WASM variant + a ~250KB model,
-  browser picks SIMD or non-SIMD automatically), cached after first use.
+- **PDF tools** (merge/split/rotate/etc.): `js/vendor/pdf-lib.min.js`,
+  pdf-lib v1.17.1, MIT.
+- **PDF to JPG/PNG**: `js/vendor/pdfjs/`, Mozilla's pdf.js
+  (pdfjs-dist), Apache 2.0.
+- **Remove Background**: `js/vendor/onnxruntime/` (ONNX Runtime Web
+  v1.19.2, Microsoft, MIT) + `js/vendor/modnet/` (a quantized MODNet
+  portrait-matting model, Apache 2.0). ~18MB combined, downloaded once per
+  browser session on first use of the tool, then cached.
 
 See `js/vendor/README.md` for exact versions and provenance.
 
@@ -84,11 +101,14 @@ The obvious "best" option for background removal (`@imgly/background-removal`)
 was ruled out for two reasons: it's AGPL-licensed (which has real implications
 if you monetize this site, you'd need to open-source the codebase or buy a
 commercial license), and its realistic payload is 18-30MB (a full ONNX
-runtime plus model), which didn't fit this site's "small, fast utility"
-positioning. MediaPipe's selfie segmentation model is Apache 2.0, ~5.5MB,
-and battle-tested. The tradeoff is it's tuned for photos of people, not
-general objects or products, and the UI says so up front rather than
-overpromising.
+runtime plus model). The current implementation, ONNX Runtime Web running a
+quantized MODNet model, lands in that same 18MB range but under permissive
+MIT/Apache 2.0 licenses, no copyleft obligations. The tradeoff is the model
+is tuned for photos of people, not general objects or products, and the UI
+says so up front rather than overpromising. MODNet does predict a real
+per-pixel alpha matte (not just a coarse person/background mask), so hair and
+soft edges come out closer to true transparency than a simple segmentation
+model would give.
 
 ## How the byte-exact file generation works
 
@@ -114,11 +134,12 @@ page). Run `node js/test_generators.js` if you touch `generators.js`.
 
 ## Monetization
 
-**AdSense is wired in.** Every one of the 44 pages loads the AdSense Auto
-Ads script (`ca-pub-4040839176833351`) in `<head>`, and `ads.txt` at the
-project root declares the same publisher ID so AdSense can verify the site.
-Auto Ads means Google chooses placement and format automatically, no manual
-ad-unit divs to maintain across 44 pages and 4 languages. If specific
+**AdSense is wired in.** Every one of the 640 live pages loads the AdSense
+Auto Ads script (`ca-pub-4040839176833351`) in `<head>`, and `ads.txt` at
+the project root declares the same publisher ID so AdSense can verify the
+site. Auto Ads means Google chooses placement and format automatically, no
+manual ad-unit divs to maintain across hundreds of pages and 7 languages. If
+specific
 placements (e.g. only below the lede, never near the dropzone) turn out to
 matter, swap Auto Ads for manual `<ins class="adsbygoogle">` units in those
 exact spots instead. Utility sites like this tend to do reasonably well with
@@ -171,51 +192,64 @@ Production domain is `https://norito.in`, used throughout canonical URLs,
 Open Graph tags, `sitemap.xml`, and `robots.txt`. If it ever changes, a
 project-wide find/replace on `norito.in` covers every reference.
 
-## Localization (Spanish, Chinese, Arabic)
+## Localization (7 languages)
 
-Every one of the 11 tools ships in four languages: English at the root
-(`index.html`, `compress-image.html`, ...), and full copies under `es/`,
-`zh/` (Simplified Chinese), and `ar/` (Arabic, right-to-left). That's 44
-HTML pages total, each with its own `<title>`, meta description, canonical
-URL, and `hreflang` alternate links pointing at all four versions plus an
+The tool catalog ships in seven languages: English at the root
+(`index.html`, `compress-image.html`, ...), and full copies under `es/`
+(Spanish), `zh/` (Simplified Chinese), `ar/` (Arabic, right-to-left), `hi/`
+(Hindi), `ru/` (Russian), and `ja/` (Japanese). That's 640 HTML pages total
+across the site, each with its own `<title>`, meta description, canonical
+URL, and `hreflang` alternate links pointing at all seven versions plus an
 `x-default` fallback to English, so each language ranks as its own page
 rather than competing with the others.
 
-**How it's built**, so you can extend it without re-doing the whole thing:
+**How it's built:** two generations of tooling coexist, since the three
+newer locales were added after the original pipeline:
 
 - `i18n/strings.en.json`, `strings.es.json`, `strings.zh.json`,
-  `strings.ar.json` are the source of truth: one JSON file per language,
-  same key structure, covering every static string on every page (`common`
-  = nav/footer/shared bits, `pages.<id>` = per-page copy) plus every
-  JS-generated dynamic string (`js.<file>`).
-- The localized HTML pages in `es/`, `zh/`, `ar/` are *generated* from the
-  English pages by swapping in the translated strings; they aren't
-  hand-written. If you edit an English page's copy, the localized versions
-  will drift out of sync until regenerated the same way (whitespace-tolerant,
-  word-boundary-safe find/replace keyed off `i18n/strings.en.json`, plus a
-  fresh JSON-LD block per page). There's no live script checked in for this,
-  since it was a one-time generation pass; treat the JSON files as the
-  editable source and the HTML files under `es/`/`zh/`/`ar/` as build output.
-- `js/i18n-runtime.js` adds a tiny `i18nFor(fileId)` / `fmt(str, vars)`
-  helper. Every `js/app-*.js` file reads its own slice of
+  `strings.ar.json` are the original source of truth for English/Spanish/
+  Chinese/Arabic: one JSON file per language, same key structure, covering
+  every static string on every page (`common` = nav/footer/shared bits,
+  `pages.<id>` = per-page copy) plus every JS-generated dynamic string
+  (`js.<file>`). The `es/`, `zh/`, `ar/` HTML pages were generated from the
+  English pages by swapping in these translated strings.
+- `hi/`, `ru/`, and `ja/` were added later via the `src/` + `partials/` +
+  `scripts/build_site.py` templating system described below instead: each
+  locale's page-specific copy lives directly in `src/{locale}/*.html`,
+  translated by hand rather than JSON-substituted. There are no
+  `i18n/strings.hi.json` / `strings.ru.json` / `strings.ja.json` files, and
+  there don't need to be, the templating system's per-locale `src/` and
+  `partials/` trees serve the same role for these three locales that the
+  JSON files serve for the original three.
+- Both mechanisms feed the same runtime layer at the JS level:
+  `js/i18n-runtime.js` adds a tiny `i18nFor(fileId)` / `fmt(str, vars)`
+  helper, and every `js/app-*.js` file reads its own slice of
   `window.NORITO_I18N` through this, falling back to the English string
   baked into the code if no dictionary is loaded. English pages never load
-  a dictionary, so they're unaffected. Localized pages load
-  `js/i18n/{es,zh,ar}.js` (auto-generated from the `js` section of each
-  JSON file) before the tool's own script, which populates
-  `window.NORITO_I18N`.
+  a dictionary, so they're unaffected. All six non-English locales load
+  `js/i18n/{es,zh,ar,hi,ru,ja}.js` (per-locale runtime dictionaries, one
+  file per locale regardless of which pipeline generated that locale's HTML)
+  before the tool's own script, which populates `window.NORITO_I18N`.
+- If you're adding an eighth locale: prefer the templating path (`src/` +
+  `partials/` + `build_site.py`), it's the actively maintained one and
+  doesn't require touching the older JSON-substitution scripts, which
+  aren't checked in as a live/re-runnable tool (they were a one-time
+  generation pass for the original three locales).
 - `js/lang-switcher.js` powers the globe-icon menu in the header (present on
-  all 44 pages). It reads the `hreflang` `<link>` tags already in the page's
+  every page). It reads the `hreflang` `<link>` tags already in the page's
   `<head>` and turns them into a dropdown, showing each language in its own
-  script (English / Español / 中文 / العربية) so a visitor can find their
-  language without needing to read the current one.
+  script (English / Español / 中文 / العربية / हिन्दी / Русский / 日本語) so
+  a visitor can find their language without needing to read the current one.
+  The dropdown only lists pages that actually exist in a given locale
+  (tracked via the `TRANSLATABLE_PAGES` allowlist in that file), falling
+  back to the English page otherwise.
 - RTL support for Arabic is a `[dir="rtl"]` override block at the bottom of
   `css/style.css`, covering the handful of rules that hardcode a physical
   left/right (nav dropdown position, joined size+unit inputs, toggle switch
   knob, JSON tree indentation, markdown blockquote border, table alignment).
   Everything else is flexbox/grid, which mirrors automatically under
   `dir="rtl"`.
-- `sitemap.xml` lists all 44 URLs with `xhtml:link` hreflang annotations
+- `sitemap.xml` lists every URL with `xhtml:link` hreflang annotations
   cross-referencing every language version of each page.
 
 **Known limitation:** the SEO Slug Generator's "remove stopwords" option
@@ -230,7 +264,7 @@ Most pages are no longer edited directly. The header nav, footer, common
 `<head>` boilerplate (Clarity, favicons, font preloads), and the shared
 foot-of-page scripts (i18n runtime, nav/theme-toggle/lang-switcher, the
 command-palette overlay) live once per locale under `partials/`, not
-copy-pasted into all 394 HTML files anymore.
+copy-pasted into all 640 HTML files anymore.
 
 - `src/**/*.html` — the editable source for each page: page-specific
   `<title>`/meta/JSON-LD/`<main>` content, with `<!--INCLUDE:...-->` markers
@@ -279,14 +313,15 @@ relevant file under `partials/{locale}/`, run the build script once, and
 every page in that locale picks up the change — no more hand-editing (or
 scripting a find-and-replace across) hundreds of files.
 
-**Coverage:** 392 of 393 pages are on this system, including
-`about.html`/`changelog.html`/`contact.html`/`privacy.html`/`how-it-works.html`/
-`tools.html`/`404.html`, once the common mega-footer above replaced their
-various one-off footer layouts. The only holdout is the English homepage
-(`index.html`), which has a small keyboard-hint widget in its Cmd+K overlay
-that no other page has yet — see `scripts/make_src.py` /
-`scripts/extract_partials.py` for how the rest of the site was converted, if
-extending this to cover it too.
+**Coverage:** 639 of 640 pages are on this system, including
+`index.html`, `about.html`/`changelog.html`/`contact.html`/`privacy.html`/
+`how-it-works.html`/`tools.html`/`404.html`, once the common mega-footer
+above replaced their various one-off footer layouts. The only holdout is
+`offline.html` (the service-worker offline fallback page), a small
+standalone page that doesn't need the shared nav/footer chrome since it's
+only ever shown when the visitor has no network connection — see
+`scripts/make_src.py` / `scripts/extract_partials.py` for how the rest of
+the site was converted, if extending this to cover it too.
 
 ## Shared JS helpers (`js/utils.js`)
 
@@ -319,11 +354,12 @@ event-wiring boilerplate around it moved into `utils.js`.
 From the original wishlist, still open:
 
 - Fake data generator (names/emails/CSV/JSON).
-- Color toolkit (palette, contrast checker, HEX↔RGB, gradient generator).
-- Image converter (PNG/JPG/WebP): a thin wrapper around `canvas.toBlob`,
-  similar to the compressor.
 - A lighter-weight or paid-API path for Remove Background if quality on
   non-portrait photos becomes a real ask.
+
+(Color toolkit and an image converter were both on this list earlier and
+have since shipped: see `color-converter.html`, `contrast-checker.html`,
+`css-gradient-generator.html`, and `image-converter.html`.)
 
 Each new tool should get its own HTML page and reuse `css/style.css` plus
 the existing `js/utils.js` helpers so the codebase stays one shared system

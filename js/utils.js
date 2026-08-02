@@ -198,6 +198,26 @@ async function copyToClipboard(text) {
 // drop, with the hover class already cleared and the default already
 // prevented -- callers just read e.dataTransfer.files.
 function wireDragDrop(el, onDrop) {
+  // Auto-label any <input type="file"> nested in this dropzone, using the
+  // dropzone's own visible instruction text ("Click to choose an image, or
+  // drag and drop it here", etc.) as the accessible name. Fixes a real gap:
+  // the file input is usually visually hidden or covered by the styled
+  // dropzone, so a keyboard/screen-reader user tabbing directly to it heard
+  // nothing but "file input, no file selected". Doing this here (rather
+  // than hardcoding aria-label in every tool's HTML, in every locale) means
+  // it automatically picks up each locale's own already-translated
+  // instruction text instead of needing a second, separately-maintained
+  // English-only label. Skipped entirely if the input already has its own
+  // aria-label/aria-labelledby, or if there's no usable text to derive one
+  // from.
+  const fileInput = el.querySelector('input[type="file"]');
+  if (fileInput && !fileInput.getAttribute("aria-label") && !fileInput.getAttribute("aria-labelledby")) {
+    const hint = el.querySelector("p:not(.note)");
+    const raw = (hint && hint.textContent) || el.textContent || "";
+    const label = raw.replace(/\s+/g, " ").trim().slice(0, 150);
+    if (label) fileInput.setAttribute("aria-label", label);
+  }
+
   el.addEventListener("dragover", (e) => { e.preventDefault(); el.classList.add("drag"); });
   el.addEventListener("dragleave", (e) => { e.preventDefault(); el.classList.remove("drag"); });
   el.addEventListener("drop", (e) => {
@@ -207,12 +227,46 @@ function wireDragDrop(el, onDrop) {
   });
 }
 
+// ---- File -> decoded <img>, via a blob URL ----
+// Centralizes the URL.createObjectURL(file) + `new Image()` + onload/onerror
+// boilerplate that used to be an identical (or near-identical) private
+// loadImageFile() copy-pasted across 9 app-*.js image tools. Deliberately
+// does NOT validate file.type here: callers already do their own
+// file.type.startsWith("image/") check with their own tool-specific error
+// copy before calling this, so duplicating that here would just produce a
+// second, differently-worded error message for the same condition.
+//
+// Returns { img, url } rather than a bare img: 8 of the 9 original
+// copy-pasted versions never revoked the object URL at all (a real, if
+// minor, per-session memory leak: the URL and the File data it points to
+// stay alive for the page's lifetime, accumulating with every image a
+// visitor loads). Handing the url back lets each call site revoke it once
+// it's actually done with it:
+//   - Tools that only decode the image to draw it into a canvas (compress,
+//     resize, convert, remove-metadata, watermark, favicon-generator,
+//     remove-bg) can revoke immediately after this promise resolves: once
+//     `img.onload` has fired, the decoded bitmap lives independently of the
+//     blob URL, so revoking it doesn't affect any later ctx.drawImage() call.
+//   - Tools that also display this exact URL as a persistent <img src> on
+//     the page (crop-image, watermark-image's stage preview, the color
+//     palette extractor's preview) need to hold onto it and revoke the
+//     *previous* URL only once a new image replaces it, not right away.
+function loadImageFile(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => resolve({ img, url });
+    img.onerror = () => reject(new Error("That image couldn't be read."));
+    img.src = url;
+  });
+}
+
 // Export for both browser (globals) and Node (module.exports), so the same
 // file can be unit-tested headlessly.
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     crc32, crc32Final, concatBytes, u16le, u32le, u16be, u32be,
     textBytes, randomBytes, parseSize, formatBytes, createZip, copyToClipboard,
-    wireDragDrop,
+    wireDragDrop, loadImageFile,
   };
 }

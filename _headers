@@ -20,6 +20,9 @@
 /js/*
   Cache-Control: public, max-age=604800
 
+/js/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /src/*
   X-Robots-Tag: noindex, nofollow
 
