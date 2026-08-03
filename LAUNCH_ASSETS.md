@@ -2,13 +2,15 @@
 
 Drafts only. Fill in the bracketed spots, read each one over in your own voice before posting, and adjust claims if anything below doesn't match reality by the time you post (traffic-dependent phrasing especially). None of this should go out until the site is live and you've spot-checked it.
 
+**Tool count note:** the "86" figure below is the verified count of distinct tool pages as of Aug 2026 (counted directly from `tools.html`'s card list, category by category: PDF 12, Images 13, Developer 27, Text 12, Utilities 2, SEO 6, Design 14 = 86). The homepage hero badge currently says "90" — that number is stale/inflated by 4 and should get fixed on-site before or alongside this launch push, so a sharp-eyed commenter counting cards on `tools.html` doesn't catch a mismatch. Re-count before reusing this copy later, the number will drift as tools get added.
+
 ## Product Hunt
 
 **Tagline** (60 char max):
-> 63 free browser tools. No signup, nothing leaves your device.
+> 86 free browser tools. No signup, nothing leaves your device.
 
 **Description:**
-> norito is a collection of 63 free utilities that run entirely in your browser: PDF merge/split/compress, image resize/convert/background-removal, JSON/YAML formatters, password and QR generators, text tools, and more.
+> norito is a collection of 86 free utilities that run entirely in your browser: PDF merge/split/compress, image resize/convert/background-removal, JSON/YAML formatters, password and QR generators, text tools, SEO tools, and CSS/design generators.
 >
 > No account, no watermark, no upload limit. Most tools never send your file anywhere, they process it locally with the Canvas/File/WebAssembly APIs already built into your browser, so a PDF or photo you run through norito never leaves your device. That's not a privacy *policy*, it's checkable: open the Network tab in DevTools while you use one and see for yourself.
 >
@@ -22,7 +24,7 @@ Drafts only. Fill in the bracketed spots, read each one over in your own voice b
 ## AlternativeTo
 
 **Description:**
-> A collection of 63 free, no-signup browser tools covering PDF (merge, split, compress, rotate), images (resize, convert, compress, background removal, watermark, crop), developer utilities (JSON/YAML formatters, regex tester, JWT decoder, UUID/hash generators), text tools, and SEO utilities. Most tools process files entirely client-side, nothing is uploaded to a server. Free, ad-supported, no account required. Available in 7 languages.
+> A collection of 86 free, no-signup browser tools covering PDF (merge, split, compress, rotate, compare), images (resize, convert, compress, background removal, watermark, crop, AVIF/HEIC), developer utilities (JSON/YAML formatters, regex tester, JWT decoder, UUID/hash generators, SVG tools), text tools, SEO utilities, and CSS/design generators. Most tools process files entirely client-side, nothing is uploaded to a server. Free, ad-supported, no account required. Available in 7 languages.
 
 **Suggested "Alternative to" tags** (attach norito as an alternative to the specific tool it competes with, not just a generic category — check each one still applies before submitting):
 - Smallpdf, iLovePDF (PDF tools)
@@ -33,14 +35,14 @@ Drafts only. Fill in the bracketed spots, read each one over in your own voice b
 ## Hacker News (Show HN)
 
 **Title:**
-> Show HN: norito – 63 free browser tools, most run entirely client-side
+> Show HN: norito – 86 free browser tools, most run entirely client-side
 
 **Post body:**
 > I built norito, a set of free web utilities (PDF, image, dev, text tools) after getting tired of tools that gate basic features behind signup or a paywall.
 >
 > The technical bit HN will probably care about most: every tool processes files entirely in the browser, none of them upload anything (verified this by grepping the whole codebase for outbound fetch/XHR calls — the only one that exists loads the WASM runtime binary itself, never user data). Image compression uses canvas.toBlob with a binary-search on quality/dimensions to hit an exact target file size. Background removal runs a quantized MODNet model through ONNX Runtime Web (WASM), fully client-side, about 18MB downloaded once and cached. PDF tools use pdf-lib and pdf.js.
 >
-> No backend, no database, no server-side file processing at all — every tool runs client-side. It's a static site (Netlify), so hosting cost is close to zero regardless of traffic. Source is [public/going public shortly] at [GitHub URL] under MIT.
+> No backend, no database, no server-side file processing at all — every tool runs client-side. It's a static site (Netlify), so hosting cost is close to zero regardless of traffic. Source is at github.com/ShubhMisaki/norito-devtoolbox under MIT [confirm this repo is actually set to Public in GitHub settings before posting — I couldn't verify its visibility from here, HN will click through immediately].
 >
 > Feedback on the tools themselves, the "does this actually stay local" claim (you can verify via DevTools Network tab), or the codebase is all welcome.
 
@@ -52,7 +54,7 @@ Drafts only. Fill in the bracketed spots, read each one over in your own voice b
 ## Reddit (r/webdev, r/SideProject, r/InternetIsBeautiful — check each sub's self-promo rules before posting, some require an X:1 non-self-promo ratio or mod approval first)
 
 **Title:**
-> I built 63 free browser tools (PDF, image, dev utilities) that mostly don't touch a server
+> I built 86 free browser tools (PDF, image, dev utilities) that mostly don't touch a server
 
 **Post body:**
 > Built this over [actual timeframe] — norito.in. It's a static site, one page per tool, most of them process your file entirely client-side (canvas/WASM), so nothing gets uploaded for things like image compression, resizing, or background removal.
@@ -65,11 +67,9 @@ Drafts only. Fill in the bracketed spots, read each one over in your own voice b
 
 ## Directory submission checklist (lower-effort, ongoing — no single post, just a list to work through)
 
-Each of these usually just needs a submission form, no write-up:
-- AlternativeTo (listing drafted above)
-- SaaSHub
-- ToolFinder / There's An AI For That (only if any tool is meaningfully AI/ML-driven — the background removal tool qualifies, most others don't, don't force-fit)
-- Awesome lists on GitHub for relevant categories (e.g. "awesome-pdf", "awesome-developer-tools") — search for these and open a PR adding norito where genuinely relevant, don't spam unrelated lists
-- Product directories your specific audience actually uses (e.g. if targeting developers specifically: dev.to "tools I use" style posts, not a directory submission but similar low-effort reach)
+See `BACKLINKS.md` for the full researched list with real, verified URLs, priority tiers, and per-target notes (what to submit, awesome-list contribution rules, and which directories to skip). Short version:
+- **Do first:** the GitHub awesome-lists that genuinely fit (awesome-no-login-web-apps, the awesome-pdf lists, awesome-privacy lists) — open a PR per their contribution guidelines, one line per tool, don't bulk-add.
+- **Do next:** DevHunt (dev-tool-specific, free, GitHub-authenticated so it's spam-resistant), AlternativeTo (listing drafted above), Product Hunt / Show HN / Reddit (drafted above).
+- **Skip or deprioritize:** the sprawling "indie launch directory" ecosystem (Smol Launch and the dozens of interlinked badge-exchange sites like ufind.best, toolfame.com, findly.tools, Turbo0, Fazier, etc.) — low authority, mostly link to each other, marginal SEO value for the time cost. `BACKLINKS.md` has the reasoning.
 
 Directory submissions and awesome-list PRs are typically fine even before you've built up other backlinks, since they're explicitly built for this. Reddit/HN self-promotion rules are stricter and some subs will remove a post from an account with no prior history, consider participating genuinely in a sub for a bit before posting there.
