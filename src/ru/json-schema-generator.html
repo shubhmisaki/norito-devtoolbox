@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор JSON Schema | norito</title>
+<meta name="description" content="Вставьте пример JSON и получите JSON Schema (draft-07), описывающую его структуру и типы. Работает полностью в браузере." />
+<link rel="canonical" href="https://norito.in/ru/json-schema-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор JSON Schema | norito" />
+<meta property="og:description" content="Вставьте пример JSON и получите JSON Schema (draft-07), описывающую его структуру и типы. Работает полностью в браузере." />
+<meta property="og:url" content="https://norito.in/ru/json-schema-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор JSON Schema | norito" />
+<meta name="twitter:description" content="Вставьте пример JSON и получите JSON Schema (draft-07), описывающую его структуру и типы. Работает полностью в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор JSON Schema",
+  "url": "https://norito.in/ru/json-schema-generator.html",
+  "description": "Вставьте пример JSON и получите JSON Schema (draft-07), описывающую его структуру и типы.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какую версию JSON Schema генерирует инструмент?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Draft-07 — самую широко поддерживаемую версию среди валидаторов вроде ajv, jsonschema (Python) и большинства инструментов IDE. Результат — обычный JSON, поэтому вы можете вручную отредактировать его позже, если нужны ключевые слова более новой версии." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как обрабатываются массивы?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Инструмент проверяет каждый элемент массива и объединяет выведенные типы. Если все элементы имеют одинаковую структуру, вы получаете одну схему items; если типы элементов различаются, применяется более широкая схема, чтобы ничто из вашего примера не осталось неучтённым." }
+    },
+    {
+      "@type": "Question",
+      "name": "Помечает ли он поля как обязательные?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, каждый ключ, присутствующий в объекте, добавляется в список required этого объекта, поскольку он встретился в вашем примере. Удалите ключи из сгенерированного массива required, если в реальных данных они на самом деле необязательны." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор JSON Schema", "item": "https://norito.in/ru/json-schema-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12h-8"/><path d="M21 6H8"/><path d="M21 18h-8"/><path d="M3 6v4c0 1.1.9 2 2 2h3"/><path d="M3 10v6c0 1.1.9 2 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Генератор JSON Schema</p>
+    <h1>Генератор JSON Schema</h1>
+    <p class="lede">
+      Вставьте пример JSON и получите JSON Schema draft-07, описывающую его структуру, типы и
+      обязательные поля.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="jsonInput">Пример JSON</label>
+          <textarea id="jsonInput" class="mono-area" rows="16">{
+  "id": 101,
+  "name": "norito",
+  "active": true,
+  "tags": ["tools", "privacy"],
+  "meta": { "version": 1.2, "public": true }
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Скопировать схему</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Инструмент рекурсивно обходит ваш распарсенный JSON. Объекты становятся <code>type: "object"</code>
+        с записью <code>properties</code> для каждого ключа, а каждый присутствующий ключ попадает в
+        <code>required</code>. Массивы становятся <code>type: "array"</code> со схемой <code>items</code>,
+        построенной путём вывода и объединения типа каждого элемента. Примитивы отображаются напрямую:
+        строки, числа (целые числа получают <code>"integer"</code> вместо <code>"number"</code>,
+        когда все значения в выборке целые), булевы значения и null.
+      </p>
+      <p>
+        Это происходит через <code>JSON.parse</code>, встроенный парсер вашего браузера, а затем
+        небольшой рекурсивный обходчик — оба выполняются прямо в JavaScript этой страницы. Ничего не загружается на сервер.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|Форматирование и проверка JSON|Форматирование, проверка, минификация JSON.
+json-diff.html|JSON Diff|Сравнение двух JSON-документов.
+yaml-to-json-converter.html|Конвертер YAML в JSON|Конвертация YAML и JSON в обе стороны.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Какую версию JSON Schema генерирует инструмент?</summary>
+        <p>Draft-07 — самую широко поддерживаемую версию среди валидаторов вроде ajv, jsonschema (Python) и большинства инструментов IDE. Результат — обычный JSON, поэтому вы можете вручную отредактировать его позже, если нужны ключевые слова более новой версии.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как обрабатываются массивы?</summary>
+        <p>Инструмент проверяет каждый элемент массива и объединяет выведенные типы. Если все элементы имеют одинаковую структуру, вы получаете одну схему items; если типы элементов различаются, применяется более широкая схема, чтобы ничто из вашего примера не осталось неучтённым.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Помечает ли он поля как обязательные?</summary>
+        <p>Да, каждый ключ, присутствующий в объекте, добавляется в список required этого объекта, поскольку он встретился в вашем примере. Удалите ключи из сгенерированного массива required, если в реальных данных они на самом деле необязательны.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-schema-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

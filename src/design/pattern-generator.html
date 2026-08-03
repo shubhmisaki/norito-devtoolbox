@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS Pattern Generator | norito</title>
+<meta name="description" content="Build tileable CSS background patterns, stripes, dots, grid, checkerboard, with color and spacing controls. Copy the CSS. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/design/pattern-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS Pattern Generator | norito" />
+<meta property="og:description" content="Build tileable CSS background patterns, stripes, dots, grid, checkerboard, with color and spacing controls. Copy the CSS. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/design/pattern-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS Pattern Generator | norito" />
+<meta name="twitter:description" content="Build tileable CSS background patterns, stripes, dots, grid, checkerboard, with color and spacing controls. Copy the CSS. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS Pattern Generator",
+  "url": "https://norito.in/design/pattern-generator.html",
+  "description": "Build tileable CSS background patterns with color and spacing controls.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this use an image file?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, every pattern is built from CSS gradients layered as a repeating background, no image request at all. That keeps the pattern crisp at any zoom level and any element size, since it's vector math, not a raster tile." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the pattern tile seamlessly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the background-size is set to exactly one repeat unit, so the pattern repeats edge to edge with no visible seam, at any element size." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the pattern is generated and previewed entirely in your browser's CSS engine. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS Pattern Generator", "item": "https://norito.in/design/pattern-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS Pattern Generator</p>
+    <h1>CSS Pattern Generator</h1>
+    <p class="lede">
+      Build a tileable background pattern from pure CSS gradients, no image file needed, and
+      copy the CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="patType">Pattern</label>
+          <select id="patType">
+            <option value="stripes" selected>Diagonal stripes</option>
+            <option value="stripesH">Horizontal stripes</option>
+            <option value="dots">Dots</option>
+            <option value="grid">Grid</option>
+            <option value="checkerboard">Checkerboard</option>
+            <option value="crosshatch">Crosshatch</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="patFg">Foreground color</label>
+            <input type="color" id="patFg" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="patBg">Background color</label>
+            <input type="color" id="patBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="patSize">Size (<span id="patSizeVal">24px</span>)</label>
+          <input type="range" id="patSize" min="4" max="120" value="24" />
+        </div>
+        <div class="field">
+          <label for="patThickness">Line thickness / dot size (<span id="patThicknessVal">4px</span>)</label>
+          <input type="range" id="patThickness" min="1" max="40" value="4" />
+        </div>
+        <div class="field">
+          <label for="patOpacity">Foreground opacity (<span id="patOpacityVal">100%</span>)</label>
+          <input type="range" id="patOpacity" min="5" max="100" value="100" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copy CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each preset builds one or two CSS <code>linear-gradient()</code> or
+        <code>radial-gradient()</code> layers with hard color stops (no soft blend between them),
+        which is what turns a smooth gradient into a crisp repeating shape. The
+        <code>background-size</code> is set to exactly one tile's dimensions so the pattern
+        repeats with no visible seam at the edges, and dots/grid patterns additionally offset
+        their background-position so the shapes land centered rather than clipped at the corner.
+      </p>
+      <p>
+        Everything is generated CSS, applied to the preview box's own <code>background</code>
+        style. Nothing is uploaded, and no image request is made.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+../design/css-gradient-generator.html|CSS Gradient Generator|Build a linear or radial gradient visually.
+blob-generator.html|Blob Generator|Generate organic blob shapes.
+noise-texture-generator.html|Noise Texture Generator|Generate a grain/noise texture.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does this use an image file?</summary>
+        <p>No, every pattern is built from CSS gradients layered as a repeating background, no image request at all. That keeps the pattern crisp at any zoom level and any element size, since it's vector math, not a raster tile.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will the pattern tile seamlessly?</summary>
+        <p>Yes, the background-size is set to exactly one repeat unit, so the pattern repeats edge to edge with no visible seam, at any element size.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this sent anywhere?</summary>
+        <p>No, the pattern is generated and previewed entirely in your browser's CSS engine. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-pattern-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

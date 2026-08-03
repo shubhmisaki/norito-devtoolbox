@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Tailwindシャドウジェネレーター | norito</title>
+<meta name="description" content="レイヤー化したbox-shadowを視覚的に作成し、Tailwindの任意値shadow-[...]クラスと生のCSSを取得できます。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/design/tailwind-shadow-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tailwindシャドウジェネレーター | norito" />
+<meta property="og:description" content="レイヤー化したbox-shadowを視覚的に作成し、Tailwindの任意値shadow-[...]クラスと生のCSSを取得できます。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/design/tailwind-shadow-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tailwindシャドウジェネレーター | norito" />
+<meta name="twitter:description" content="レイヤー化したbox-shadowを視覚的に作成し、Tailwindの任意値shadow-[...]クラスと生のCSSを取得できます。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tailwindシャドウジェネレーター",
+  "url": "https://norito.in/ja/design/tailwind-shadow-generator.html",
+  "description": "レイヤー化したbox-shadowを視覚的に作成し、Tailwindの任意値shadowクラスと生のCSSを取得できます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tailwindの任意値シャドウクラスはどのように機能しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tailwindではshadow-[<任意のCSS値>]と書くだけで、設定ファイルの変更なしにそのままbox-shadow: <任意のCSS値>にコンパイルされます。値の中のスペースはアンダースコアにする必要がありますが、これはこのツールが自動的に処理します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "複数のシャドウレイヤーを重ねられますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。「レイヤーを追加」をクリックするとシャドウを上に重ねて追加できます。実際のbox-shadowはカンマ区切りのレイヤーに対応しており、このツールも同じ方法でレイヤーをカンマでつないで任意値クラスを作成します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。シャドウの作成とプレビューはすべてブラウザのCSSエンジン内で行われます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "Tailwindシャドウジェネレーター", "item": "https://norito.in/ja/design/tailwind-shadow-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Tailwindシャドウジェネレーター</p>
+    <h1>Tailwindシャドウジェネレーター</h1>
+    <p class="lede">
+      レイヤー化したシャドウを視覚的に作成し、Tailwindの<code>shadow-[...]</code>任意値クラスと
+      生のCSSを取得できます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="layersWrap"></div>
+        <button type="button" id="addLayerBtn" class="secondary" style="margin-top:4px;">+ レイヤーを追加</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:40px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:140px; height:100px; margin:0 auto; background:var(--surface); border-radius:12px;"></div>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>Tailwindクラス</label>
+            <pre class="code-output" id="twOutput"></pre>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>生のCSS</label>
+            <pre class="code-output" id="cssOutput"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="copyTwBtn">Tailwindクラスをコピー</button>
+            <button id="copyCssBtn" class="secondary">CSSをコピー</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        各レイヤーのoffset-x、offset-y、ぼかし、広がり、色、insetの切り替えは、1つの
+        <code>box-shadow</code>セグメントにまとめられ、複数のレイヤーはカンマで連結されます。これは
+        標準的なCSSの複数シャドウ構文です。Tailwindクラスの場合、同じ値のスペースがアンダースコアに
+        置き換えられ、カンマはそのまま残されます（Tailwindの任意値パーサーは
+        <code>shadow-[0_4px_6px_rgba(0,0,0,0.1)]</code>のような形式を想定しています）。そのうえで
+        <code>shadow-[...]</code>にラップされます。プレビューボックスの実際の<code>box-shadow</code>
+        スタイルは生のCSSバージョンに設定されるため、表示されているものは両方の出力と正確に一致します。
+      </p>
+      <p>
+        すべて設定した値からこのページのJavaScript内で計算されます。アップロードは一切行われません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+box-shadow-generator.html|ボックスシャドウジェネレーター|CSSのbox-shadowを視覚的に作成。
+css-filter-generator.html|CSSフィルタージェネレーター|画像フィルター効果を視覚的に作成。
+border-radius-generator.html|border-radiusジェネレーター|角ごとのborder-radiusを視覚的に作成。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Tailwindの任意値シャドウクラスはどのように機能しますか?</summary>
+        <p>Tailwindではshadow-[&lt;任意のCSS値&gt;]と書くだけで、設定ファイルの変更なしにそのままbox-shadow: &lt;任意のCSS値&gt;にコンパイルされます。値の中のスペースはアンダースコアにする必要がありますが、これはこのツールが自動的に処理します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>複数のシャドウレイヤーを重ねられますか?</summary>
+        <p>はい。「レイヤーを追加」をクリックするとシャドウを上に重ねて追加できます。実際のbox-shadowはカンマ区切りのレイヤーに対応しており、このツールも同じ方法でレイヤーをカンマでつないで任意値クラスを作成します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>これはどこかに送信されますか?</summary>
+        <p>いいえ。シャドウの作成とプレビューはすべてブラウザのCSSエンジン内で行われます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-tailwind-shadow-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

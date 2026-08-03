@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG ब्लॉब जनरेटर | norito</title>
+<meta name="description" content="रैंडम ऑर्गेनिक ब्लॉब शेप जनरेट करें, इसकी रैंडमनेस और पॉइंट्स एडजस्ट करें, फिर SVG पाथ कॉपी करें या SVG डाउनलोड करें. यह आपके ब्राउज़र में ही चलता है." />
+<link rel="canonical" href="https://norito.in/hi/design/blob-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG ब्लॉब जनरेटर | norito" />
+<meta property="og:description" content="रैंडम ऑर्गेनिक ब्लॉब शेप जनरेट करें, इसकी रैंडमनेस और पॉइंट्स एडजस्ट करें, फिर SVG पाथ कॉपी करें या SVG डाउनलोड करें. यह आपके ब्राउज़र में ही चलता है." />
+<meta property="og:url" content="https://norito.in/hi/design/blob-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG ब्लॉब जनरेटर | norito" />
+<meta name="twitter:description" content="रैंडम ऑर्गेनिक ब्लॉब शेप जनरेट करें, इसकी रैंडमनेस और पॉइंट्स एडजस्ट करें, फिर SVG पाथ कॉपी करें या SVG डाउनलोड करें. यह आपके ब्राउज़र में ही चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG ब्लॉब जनरेटर",
+  "url": "https://norito.in/hi/design/blob-generator.html",
+  "description": "रैंडम ऑर्गेनिक ब्लॉब शेप जनरेट करें, रैंडमनेस और पॉइंट्स एडजस्ट करें, SVG पाथ कॉपी करें.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ब्लॉब शेप कैसे बनता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "पॉइंट्स को एक सर्कल के चारों ओर बराबर दूरी पर रखा जाता है, हर पॉइंट को \"रैंडमनेस\" स्लाइडर से कंट्रोल होने वाली एक रैंडम मात्रा से अंदर या बाहर की तरफ़ खिसकाया जाता है, फिर इन सभी को एक स्मूद बंद कर्व से जोड़ा जाता है. ज़्यादा पॉइंट्स का मतलब है ज़्यादा डिटेल वाली, कम गोल आउटलाइन." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मैं बाद में वही ब्लॉब दोबारा पा सकता हूं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "हर ब्लॉब का एक सीड नंबर होता है जो रीजनरेट बटन के पास दिखता है. वही सीड दोबारा टाइप करें (या शेयर करें) तो बिल्कुल वही शेप फिर से बन जाएगा, क्योंकि रैंडम बदलाव इसी सीड से डिटरमिनिस्टिक तरीक़े से निकाले जाते हैं." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या यह कहीं भेजा जाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं, शेप पूरी तरह आपके ब्राउज़र में ही जनरेट और रेंडर होता है. कुछ भी अपलोड नहीं होता." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG ब्लॉब जनरेटर", "item": "https://norito.in/hi/design/blob-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / SVG ब्लॉब जनरेटर</p>
+    <h1>SVG ब्लॉब जनरेटर</h1>
+    <p class="lede">
+      रैंडम ऑर्गेनिक ब्लॉब शेप जनरेट करें, इसकी रैंडमनेस और पॉइंट काउंट को ट्वीक करें, फिर SVG कॉपी करें
+      या डाउनलोड करें.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="blobRandomness">रैंडमनेस (<span id="blobRandomnessVal">30%</span>)</label>
+          <input type="range" id="blobRandomness" min="0" max="80" value="30" />
+        </div>
+        <div class="field">
+          <label for="blobPoints">पॉइंट्स (<span id="blobPointsVal">8</span>)</label>
+          <input type="range" id="blobPoints" min="3" max="16" value="8" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="blobColor">फ़िल कलर</label>
+            <input type="color" id="blobColor" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="blobSeed">सीड</label>
+            <input type="number" id="blobSeed" value="1" min="0" />
+          </div>
+        </div>
+        <button type="button" id="regenBtn">रीजनरेट करें</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <svg id="blobSvg" viewBox="0 0 200 200" style="width:200px; height:200px;"><path id="blobPath" /></svg>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:160px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">SVG पाथ कॉपी करें</button>
+            <button id="downloadBtn" class="secondary">.svg डाउनलोड करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        पॉइंट्स को एक सर्कल के चारों ओर बराबर दूरी पर रखा जाता है, फिर हर पॉइंट की सेंटर से दूरी को
+        रैंडमनेस स्लाइडर के हिसाब से स्केल किए गए एक स्यूडो-रैंडम मान से खिसकाया जाता है. सीड एक छोटे
+        डिटरमिनिस्टिक स्यूडो-रैंडम नंबर जेनरेटर को फ़ीड होती है, इसलिए एक जैसा सीड, पॉइंट काउंट और
+        रैंडमनेस हमेशा बिल्कुल वही शेप दोबारा बनाते हैं, जो पसंद आया शेप सेव या शेयर करने के काम आता है.
+        फिर इन पॉइंट्स को एक स्मूद Catmull-Rom-स्टाइल कर्व से जोड़ा जाता है जिसे SVG क्यूबिक बेज़ियर
+        सेगमेंट में बदला जाता है, यही चीज़ आउटलाइन को फ़ेसेटेड की जगह ऑर्गेनिक बनाए रखती है.
+      </p>
+      <p>
+        सब कुछ इसी पेज पर सीधे SVG के तौर पर जनरेट और रेंडर होता है. कुछ भी अपलोड नहीं होता.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|CSS पैटर्न जनरेटर|टाइल होने वाले बैकग्राउंड पैटर्न बनाएं.
+noise-texture-generator.html|नॉइज़ टेक्सचर जनरेटर|ग्रेन/नॉइज़ टेक्सचर जनरेट करें.
+../svg-optimizer.html|SVG ऑप्टिमाइज़र|SVG से कमेंट्स और मेटाडेटा हटाएं.
+-->
+
+    <h2>सामान्य प्रश्न</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ब्लॉब शेप कैसे बनता है?</summary>
+        <p>पॉइंट्स को एक सर्कल के चारों ओर बराबर दूरी पर रखा जाता है, हर पॉइंट को "रैंडमनेस" स्लाइडर से कंट्रोल होने वाली एक रैंडम मात्रा से अंदर या बाहर की तरफ़ खिसकाया जाता है, फिर इन सभी को एक स्मूद बंद कर्व से जोड़ा जाता है. ज़्यादा पॉइंट्स का मतलब है ज़्यादा डिटेल वाली, कम गोल आउटलाइन.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या मैं बाद में वही ब्लॉब दोबारा पा सकता हूं?</summary>
+        <p>हर ब्लॉब का एक सीड नंबर होता है जो रीजनरेट बटन के पास दिखता है. वही सीड दोबारा टाइप करें (या शेयर करें) तो बिल्कुल वही शेप फिर से बन जाएगा, क्योंकि रैंडम बदलाव इसी सीड से डिटरमिनिस्टिक तरीक़े से निकाले जाते हैं.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या यह कहीं भेजा जाता है?</summary>
+        <p>नहीं, शेप पूरी तरह आपके ब्राउज़र में ही जनरेट और रेंडर होता है. कुछ भी अपलोड नहीं होता.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-blob-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

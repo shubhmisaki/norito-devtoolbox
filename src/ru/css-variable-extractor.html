@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Экстрактор CSS-переменных | norito</title>
+<meta name="description" content="Вставьте таблицу стилей и извлеките все пользовательские CSS-свойства (--variable), сгруппированные по префиксу, с пометкой дубликатов. Экспорт в JSON, CSS или CSV. Работает в браузере." />
+<link rel="canonical" href="https://norito.in/ru/css-variable-extractor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Экстрактор CSS-переменных | norito" />
+<meta property="og:description" content="Вставьте таблицу стилей и извлеките все пользовательские CSS-свойства (--variable), сгруппированные по префиксу, с пометкой дубликатов. Экспорт в JSON, CSS или CSV. Работает в браузере." />
+<meta property="og:url" content="https://norito.in/ru/css-variable-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Экстрактор CSS-переменных | norito" />
+<meta name="twitter:description" content="Вставьте таблицу стилей и извлеките все пользовательские CSS-свойства (--variable), сгруппированные по префиксу, с пометкой дубликатов. Экспорт в JSON, CSS или CSV. Работает в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Экстрактор CSS-переменных",
+  "url": "https://norito.in/ru/css-variable-extractor.html",
+  "description": "Вставьте таблицу стилей и извлеките все пользовательские CSS-свойства, сгруппированные по префиксу, с пометкой дубликатов.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие пользовательские свойства он находит?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Любое объявление вида --name: value; внутри любого блока селектора, а не только :root, включая вложенные правила и медиазапросы. Для каждого вхождения фиксируется, под каким селектором оно объявлено." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как работает обнаружение дубликатов?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Если одна и та же переменная объявлена более одного раза с разными значениями (частый признак скопированных или несогласованных токенов), она помечается. Объявление одного и того же имени с одинаковым значением в разных областях (например, в переопределениях светлой/тёмной темы) — это нормально и не помечается." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли мой CSS куда-нибудь?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, разбор происходит полностью в вашем браузере с помощью небольшого JavaScript-сканера. Ничего из вставленного не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Экстрактор CSS-переменных", "item": "https://norito.in/ru/css-variable-extractor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Экстрактор CSS-переменных</p>
+    <h1>Экстрактор CSS-переменных</h1>
+    <p class="lede">
+      Вставьте таблицу стилей и извлеките каждое <code>--пользовательское-свойство</code>, сгруппированное по префиксу,
+      с пометкой повторяющихся определений.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="cssInput">CSS</label>
+          <textarea id="cssInput" class="mono-area" rows="14" placeholder=":root {
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+.dark {
+  --color-primary-500: #818cf8;
+}"></textarea>
+        </div>
+        <p class="note">Сканирует каждый блок селектора, а не только <code>:root</code>. Одно и то же имя с разным значением в разных селекторах помечается как дубликат.</p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">Сгруппированные переменные появятся здесь.</p>
+          <div id="exportRow" style="display:none; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="copyJsonBtn" class="secondary">Скопировать JSON</button>
+            <button id="copyCssBtn" class="secondary">Скопировать CSS</button>
+            <button id="downloadCsvBtn" class="secondary">Скачать CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Входные данные сканируются блок за блоком (по парам <code>selector { ... }</code>,
+        включая вложенные, например медиазапросы), и внутри каждого блока фиксируется каждое
+        объявление <code>--name: value;</code> вместе с селектором, к которому оно относится. Переменные
+        группируются по префиксу — первому сегменту после ведущих
+        <code>--</code>, разделённому дефисом, поэтому <code>--color-primary-500</code> и <code>--color-accent</code>
+        оба попадают в группу «color», что повторяет то, как обычно устроены соглашения об именовании дизайн-токенов.
+        Имя помечается как дубликат только тогда, когда оно объявлено где-то ещё с действительно другим значением,
+        а не просто повторно под другим селектором с тем же значением
+        (это обычный паттерн для переопределений темы).
+      </p>
+      <p>
+        Всё выполняется при каждом нажатии клавиши в JavaScript этой страницы с помощью лёгкого
+        сканера, сопоставляющего фигурные скобки, а не полноценного CSS-парсера. Ничего из вставленного не загружается.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/color-converter.html|Конвертер цвета|Конвертация цветов между HEX, RGB, HSL, CMYK.
+design/contrast-checker.html|Проверка контраста|Проверка контраста по WCAG, прохождение AA/AAA.
+design/css-clamp-generator.html|Генератор CSS clamp()|Создание гибких размеров, масштабируемых по вьюпорту.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Какие пользовательские свойства он находит?</summary>
+        <p>Любое объявление вида --name: value; внутри любого блока селектора, а не только :root, включая вложенные правила и медиазапросы. Для каждого вхождения фиксируется, под каким селектором оно объявлено.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как работает обнаружение дубликатов?</summary>
+        <p>Если одна и та же переменная объявлена более одного раза с разными значениями (частый признак скопированных или несогласованных токенов), она помечается. Объявление одного и того же имени с одинаковым значением в разных областях (например, в переопределениях светлой/тёмной темы) — это нормально и не помечается.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли мой CSS куда-нибудь?</summary>
+        <p>Нет, разбор происходит полностью в вашем браузере с помощью небольшого JavaScript-сканера. Ничего из вставленного не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-variable-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

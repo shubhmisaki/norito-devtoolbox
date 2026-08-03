@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>حاسبة خصوصية CSS | norito</title>
+<meta name="description" content="الصق محددات CSS وشاهد تفصيل خصوصيتها (السطرية، المعرّفات، الأصناف، العناصر) مرتبة بترتيب التتالي (cascade). تعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/css-specificity-calculator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="حاسبة خصوصية CSS | norito" />
+<meta property="og:description" content="الصق محددات CSS وشاهد تفصيل خصوصيتها (السطرية، المعرّفات، الأصناف، العناصر) مرتبة بترتيب التتالي (cascade). تعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/css-specificity-calculator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="حاسبة خصوصية CSS | norito" />
+<meta name="twitter:description" content="الصق محددات CSS وشاهد تفصيل خصوصيتها (السطرية، المعرّفات، الأصناف، العناصر) مرتبة بترتيب التتالي (cascade). تعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "حاسبة خصوصية CSS",
+  "url": "https://norito.in/ar/css-specificity-calculator.html",
+  "description": "الصق محددات CSS وشاهد تفصيل خصوصيتها مرتبة بترتيب التتالي (cascade).",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "كيف تُحسب الخصوصية؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "على شكل أربع مستويات مُعدودة: الأنماط السطرية أولاً، ثم محددات المعرّف (ID)، ثم الأصناف/محددات الخصائص/الفئات الزائفة، ثم محددات العناصر والعناصر الزائفة. تتفوق المستويات الأعلى دائمًا على الأدنى بغض النظر عن عدد محددات المستوى الأدنى المكدّسة، لذا فإن معرّف واحد (0,1,0,0) يتفوق دائمًا على 20 صنفًا (0,0,20,0)." }
+    },
+    {
+      "@type": "Question",
+      "name": "لماذا يتساوى محددان لدي؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "عندما تتساوى الخصوصية تمامًا، تعتمد CSS على ترتيب المصدر: تفوز القاعدة التي تظهر لاحقًا في ورقة الأنماط (أو أُضيفت لاحقًا). تُرتّب هذه الأداة الحالات المتساوية حسب الترتيب الذي لصقتها به، لتطابق هذا السلوك." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل هذا كود CSS الخاص بي إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا. تُحلَّل المحددات وتُقيَّم بالكامل داخل متصفحك باستخدام محلل رمزي (tokenizer) صغير بلغة جافاسكريبت. لا يُرفع أي شيء." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "حاسبة خصوصية CSS", "item": "https://norito.in/ar/css-specificity-calculator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / حاسبة خصوصية CSS</p>
+    <h1>حاسبة خصوصية CSS</h1>
+    <p class="lede">
+      الصق المحددات، كل واحد في سطر، وشاهد تفصيل خصوصية كل واحد منها مرتبة بالترتيب الذي سيُطبّقها به التتالي (cascade) فعليًا.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="selInput">المحددات (كل واحد في سطر)</label>
+          <textarea id="selInput" class="mono-area" rows="12" placeholder="#header .nav a:hover
+.card > .title
+div p span
+[data-active].btn.primary
+#app"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">تظهر النتائج هنا، مرتبة من الأعلى إلى الأقل خصوصية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        يُقسَّم كل محدد عند عناصر الربط ويُحلَّل رمزيًا: تُحسب رموز <code>#id</code> كمعرّفات،
+        وتُحسب رموز <code>.class</code> و<code>[attr]</code> و<code>:pseudo-class</code> كأصناف،
+        بينما تُحسب أسماء العناصر المجردة و<code>::pseudo-elements</code> كعناصر.
+        لا يضيف المحدد الشامل <code>*</code> ولا عناصر الربط مثل <code>&gt;</code> و<code>+</code>
+        و<code>~</code> أي شيء. ينتهي كل محدد إلى ثلاثية <code>(المعرّفات، الأصناف، العناصر)</code>،
+        وهي بالضبط الطريقة التي تُعرّف بها مواصفة CSS نفسها الخصوصية، لذا يطابق الترتيب هنا ما سيفعله
+        محرك التتالي في متصفحك.
+      </p>
+      <p>
+        يعمل كل شيء عند كل ضغطة مفتاح داخل جافاسكريبت هذه الصفحة. لصق محددات ورقة أنماط كاملة لا يغادر متصفحك أبدًا.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/css-gradient-generator.html|مولّد تدرجات CSS|أنشئ تدرجًا خطيًا أو دائريًا بصريًا.
+json-formatter.html|منسّق ومدقق JSON|نسّق وتحقق من الصحة وصغّر JSON.
+regex-tester.html|أداة اختبار Regex|اختبر تعبيرًا نمطيًا مع تمييز مباشر للمطابقات.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>كيف تُحسب الخصوصية؟</summary>
+        <p>على شكل أربع مستويات مُعدودة: الأنماط السطرية أولاً، ثم محددات المعرّف (ID)، ثم الأصناف/محددات الخصائص/الفئات الزائفة، ثم محددات العناصر والعناصر الزائفة. تتفوق المستويات الأعلى دائمًا على الأدنى بغض النظر عن عدد محددات المستوى الأدنى المكدّسة، لذا فإن معرّف واحد (0,1,0,0) يتفوق دائمًا على 20 صنفًا (0,0,20,0).</p>
+      </details>
+      <details class="faq-item">
+        <summary>لماذا يتساوى محددان لدي؟</summary>
+        <p>عندما تتساوى الخصوصية تمامًا، تعتمد CSS على ترتيب المصدر: تفوز القاعدة التي تظهر لاحقًا في ورقة الأنماط (أو أُضيفت لاحقًا). تُرتّب هذه الأداة الحالات المتساوية حسب الترتيب الذي لصقتها به، لتطابق هذا السلوك.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا كود CSS الخاص بي إلى أي مكان؟</summary>
+        <p>لا. تُحلَّل المحددات وتُقيَّم بالكامل داخل متصفحك باستخدام محلل رمزي (tokenizer) صغير بلغة جافاسكريبت. لا يُرفع أي شيء.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-specificity-calculator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

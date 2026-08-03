@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Detector de Caracteres Invisibles | norito</title>
+<meta name="description" content="Escanea un texto en busca de caracteres Unicode invisibles, de ancho cero y homoglifos, usados a menudo para ocultar contenido o suplantar texto. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/invisible-character-detector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Detector de Caracteres Invisibles | norito" />
+<meta property="og:description" content="Escanea un texto en busca de caracteres Unicode invisibles, de ancho cero y homoglifos, usados a menudo para ocultar contenido o suplantar texto. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/invisible-character-detector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Detector de Caracteres Invisibles | norito" />
+<meta name="twitter:description" content="Escanea un texto en busca de caracteres Unicode invisibles, de ancho cero y homoglifos, usados a menudo para ocultar contenido o suplantar texto. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Detector de Caracteres Invisibles",
+  "url": "https://norito.in/es/invisible-character-detector.html",
+  "description": "Escanea un texto en busca de caracteres Unicode invisibles y de ancho cero, resáltalos y límpialos.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué tendría un texto caracteres invisibles?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Causas habituales e inocentes: copiar y pegar desde Word o una página web, que a menudo arrastra unión de ancho cero o espacios de no separación. Causas menos inocentes: marcas de agua ocultas en texto generado por IA, o caracteres insertados a propósito para romper filtros de coincidencia exacta y comprobaciones de plagio." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué se considera \"invisible\" aquí?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Caracteres de ancho cero (unión, no unión, espacio, BOM), caracteres de control bidireccional, la mayoría de las categorías Unicode \"Format\" y \"Control\", y una lista curada de caracteres usados habitualmente en trucos de inyección de prompts o evasión de filtros." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía mi texto a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, el escaneo ocurre por completo en tu navegador usando el manejo de cadenas Unicode de JavaScript. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Detector de Caracteres Invisibles", "item": "https://norito.in/es/invisible-character-detector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Detector de Caracteres Invisibles</p>
+    <h1>Detector de Caracteres Invisibles</h1>
+    <p class="lede">
+      Pega un texto y encuentra los caracteres Unicode invisibles y de ancho cero que se esconden
+      dentro, luego obtén una copia limpia.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Texto a escanear</label>
+          <textarea id="textInput" class="mono-area" rows="10" placeholder="Pega el texto aquí..."></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="summaryWrap" class="note">Todavía no se encontraron caracteres invisibles, pega texto para escanear.</div>
+          <div id="matchesWrap" style="margin-top:12px;"></div>
+          <button type="button" id="cleanBtn" style="margin-top:12px;" disabled>Copiar texto limpio</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Vista resaltada</h3>
+          <div id="highlightWrap" class="mono-area" style="white-space:pre-wrap; word-break:break-word; min-height:60px; border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Cada carácter de tu texto se comprueba contra una lista curada que cubre uniones y no
+        uniones de ancho cero, espacios de ancho cero, la marca de orden de bytes (BOM), controles
+        de anulación/incrustación bidireccional, guiones suaves y los caracteres Unicode "Tag" (un
+        rango pensado originalmente para el etiquetado de idiomas obsoleto que desde entonces se ha
+        convertido en un vector conocido para ocultar instrucciones invisibles en un texto, ya que
+        no se renderizan como nada). Cada coincidencia se muestra con su código de punto, su
+        posición y una etiqueta breve, y se resalta en línea con una pequeña marca visible para que
+        veas exactamente dónde se encuentra dentro de tu texto.
+      </p>
+      <p>
+        "Copiar texto limpio" elimina cada carácter marcado y copia el resultado, dejando intactos
+        los espacios normales y los caracteres visibles. Todo ocurre localmente; nada de lo que
+        pegas se sube a ningún sitio.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+case-converter.html|Conversor de Mayúsculas/Minúsculas|MAYÚSCULAS, camelCase, snake_case, y más.
+find-and-replace.html|Buscar y Reemplazar|Busca y reemplaza texto, con soporte para regex.
+character-counter.html|Contador de caracteres|Conteo de caracteres, con límites de plataformas.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Por qué tendría un texto caracteres invisibles?</summary>
+        <p>Causas habituales e inocentes: copiar y pegar desde Word o una página web, que a menudo arrastra unión de ancho cero o espacios de no separación. Causas menos inocentes: marcas de agua ocultas en texto generado por IA, o caracteres insertados a propósito para romper filtros de coincidencia exacta y comprobaciones de plagio.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué se considera "invisible" aquí?</summary>
+        <p>Caracteres de ancho cero (unión, no unión, espacio, BOM), caracteres de control bidireccional, la mayoría de las categorías Unicode "Format" y "Control", y una lista curada de caracteres usados habitualmente en trucos de inyección de prompts o evasión de filtros.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía mi texto a algún sitio?</summary>
+        <p>No, el escaneo ocurre por completo en tu navegador usando el manejo de cadenas Unicode de JavaScript. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-invisible-character-detector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>hreflang Tag Generator | norito</title>
+<meta name="description" content="Build a full set of hreflang alternate-language link tags, including x-default, from a list of locale/URL pairs. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/seo/hreflang-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="hreflang Tag Generator | norito" />
+<meta property="og:description" content="Build a full set of hreflang alternate-language link tags, including x-default, from a list of locale/URL pairs. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/seo/hreflang-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="hreflang Tag Generator | norito" />
+<meta name="twitter:description" content="Build a full set of hreflang alternate-language link tags, including x-default, from a list of locale/URL pairs. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "hreflang Tag Generator",
+  "url": "https://norito.in/seo/hreflang-generator.html",
+  "description": "Build a full set of hreflang alternate-language link tags from locale/URL pairs.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do hreflang tags need to be reciprocal?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, this is the single most common hreflang mistake: every page in the set must link to every other page, including itself. Google explicitly ignores hreflang annotations that aren't confirmed by a matching return link. This tool always outputs the full set on every generation, including a self-referencing tag, so you can paste the identical block onto each language version." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's x-default for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It tells search engines which page to show visitors whose language or region doesn't match any of your specific hreflang entries, typically your default or English version. It's optional but recommended for any multi-language site." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the tags are assembled entirely in your browser from the rows you enter. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "hreflang Generator", "item": "https://norito.in/seo/hreflang-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / hreflang Generator</p>
+    <h1>hreflang Tag Generator</h1>
+    <p class="lede">
+      Add each language version's locale code and URL, get the full, reciprocal set of
+      <code>hreflang</code> tags to paste on every one of them.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="rowsWrap"></div>
+        <button type="button" id="addRowBtn" class="secondary" style="margin-top:4px;">+ Add language</button>
+        <div class="option-row" style="margin-top:16px;">
+          <span class="option-label">Include x-default</span>
+          <label class="switch"><input type="checkbox" id="optXDefault" checked /><span class="track"></span></label>
+        </div>
+        <div class="field" id="xDefaultRow">
+          <label for="xDefaultSelect">x-default points to</label>
+          <select id="xDefaultSelect"></select>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:200px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copy tags</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        For every row you add, the tool outputs one <code>&lt;link rel="alternate" hreflang="..."
+        href="..." /&gt;</code> tag, and critically, it outputs the <em>entire set</em> on every
+        generation, one tag per language including a self-referencing one, because that's what
+        Google's documentation requires: hreflang annotations only count when they're
+        reciprocal, every page in the cluster linking to every other page in the cluster. Paste
+        the identical output block into the <code>&lt;head&gt;</code> of each language version;
+        you don't need to hand-edit which tag points to "itself" on each page.
+      </p>
+      <p>
+        Locale codes aren't validated against a fixed list (BCP 47 supports many combinations
+        like <code>en</code>, <code>en-US</code>, <code>pt-BR</code>), so double-check yours
+        against Google's supported values if you're unsure. Nothing you enter is uploaded.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+canonical-tag-generator.html|Canonical Tag Generator|Generate a normalized canonical link tag.
+meta-tag-generator.html|Meta Tag Generator|Title, description, OG, Twitter tags.
+sitemap-generator.html|Sitemap Generator|URLs in, sitemap.xml out.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do hreflang tags need to be reciprocal?</summary>
+        <p>Yes, this is the single most common hreflang mistake: every page in the set must link to every other page, including itself. Google explicitly ignores hreflang annotations that aren't confirmed by a matching return link. This tool always outputs the full set on every generation, including a self-referencing tag, so you can paste the identical block onto each language version.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's x-default for?</summary>
+        <p>It tells search engines which page to show visitors whose language or region doesn't match any of your specific hreflang entries, typically your default or English version. It's optional but recommended for any multi-language site.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my data sent anywhere?</summary>
+        <p>No, the tags are assembled entirely in your browser from the rows you enter. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-hreflang-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

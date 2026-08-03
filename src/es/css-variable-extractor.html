@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Extractor de variables CSS | norito</title>
+<meta name="description" content="Pega cualquier hoja de estilos y extrae cada propiedad personalizada de CSS (--variable), agrupada por prefijo y con los duplicados marcados. Exporta como JSON, CSS o CSV. Se ejecuta en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/css-variable-extractor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Extractor de variables CSS | norito" />
+<meta property="og:description" content="Pega cualquier hoja de estilos y extrae cada propiedad personalizada de CSS (--variable), agrupada por prefijo y con los duplicados marcados. Exporta como JSON, CSS o CSV. Se ejecuta en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/css-variable-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Extractor de variables CSS | norito" />
+<meta name="twitter:description" content="Pega cualquier hoja de estilos y extrae cada propiedad personalizada de CSS (--variable), agrupada por prefijo y con los duplicados marcados. Exporta como JSON, CSS o CSV. Se ejecuta en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Extractor de variables CSS",
+  "url": "https://norito.in/es/css-variable-extractor.html",
+  "description": "Pega cualquier hoja de estilos y extrae cada propiedad personalizada de CSS, agrupada por prefijo y con los duplicados marcados.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué propiedades personalizadas encuentra?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cualquier declaración de la forma --nombre: valor; dentro de cualquier bloque de selector, no solo :root, incluidas reglas anidadas y media queries. Cada aparición registra bajo qué selector se declaró." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona la detección de duplicados?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el mismo nombre de variable se declara más de una vez con valores diferentes (una señal habitual de tokens copiados y pegados o inconsistentes), se marca. Declarar el mismo nombre con el mismo valor en varios ámbitos (como las variantes de tema claro/oscuro) es normal y no se marca." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía mi CSS a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, el análisis ocurre por completo en tu navegador con un pequeño escáner en JavaScript. Nada de lo que pegas se sube." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Extractor de variables CSS", "item": "https://norito.in/es/css-variable-extractor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Extractor de variables CSS</p>
+    <h1>Extractor de variables CSS</h1>
+    <p class="lede">
+      Pega una hoja de estilos y extrae cada <code>--propiedad-personalizada</code>, agrupada por
+      prefijo, con las definiciones duplicadas marcadas.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="cssInput">CSS</label>
+          <textarea id="cssInput" class="mono-area" rows="14" placeholder=":root {
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+.dark {
+  --color-primary-500: #818cf8;
+}"></textarea>
+        </div>
+        <p class="note">Analiza cada bloque de selector, no solo <code>:root</code>. El mismo nombre con un valor distinto entre selectores se marca como duplicado.</p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">Las variables agrupadas aparecerán aquí.</p>
+          <div id="exportRow" style="display:none; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="copyJsonBtn" class="secondary">Copiar JSON</button>
+            <button id="copyCssBtn" class="secondary">Copiar CSS</button>
+            <button id="downloadCsvBtn" class="secondary">Descargar CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        El texto de entrada se analiza bloque de regla por bloque de regla (emparejando pares
+        <code>selector { ... }</code>, incluidos los anidados como las media queries), y cada
+        declaración <code>--nombre: valor;</code> dentro de cada bloque se registra junto con el
+        selector al que pertenece. Las variables se agrupan por prefijo, el primer segmento
+        delimitado por guiones tras el <code>--</code> inicial, así que <code>--color-primary-500</code>
+        y <code>--color-accent</code> quedan bajo "color", lo que refleja cómo se estructuran la
+        mayoría de las convenciones de nomenclatura de tokens de diseño. Un nombre se marca como
+        duplicado solo cuando se declara con valores genuinamente distintos en otro lugar, no solo
+        cuando se declara de nuevo bajo otro selector con el mismo valor (ese es el patrón normal
+        para las variantes de tema).
+      </p>
+      <p>
+        Todo se ejecuta con cada pulsación en el JavaScript de esta página, usando un escáner
+        ligero de emparejamiento de llaves en lugar de un analizador CSS completo. Nada de lo que
+        pegas se sube.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/color-converter.html|Conversor de color|Convierte colores entre HEX, RGB, HSL y CMYK.
+design/contrast-checker.html|Verificador de contraste|Comprueba el ratio de contraste WCAG, aprobación AA/AAA.
+design/css-clamp-generator.html|Generador de CSS Clamp|Crea un tamaño fluido escalado según el viewport.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Qué propiedades personalizadas encuentra?</summary>
+        <p>Cualquier declaración de la forma --nombre: valor; dentro de cualquier bloque de selector, no solo :root, incluidas reglas anidadas y media queries. Cada aparición registra bajo qué selector se declaró.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo funciona la detección de duplicados?</summary>
+        <p>Si el mismo nombre de variable se declara más de una vez con valores diferentes (una señal habitual de tokens copiados y pegados o inconsistentes), se marca. Declarar el mismo nombre con el mismo valor en varios ámbitos (como las variantes de tema claro/oscuro) es normal y no se marca.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía mi CSS a algún sitio?</summary>
+        <p>No, el análisis ocurre por completo en tu navegador con un pequeño escáner en JavaScript. Nada de lo que pegas se sube.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-variable-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

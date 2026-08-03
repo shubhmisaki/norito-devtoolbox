@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de Patrones CSS | norito</title>
+<meta name="description" content="Construye patrones de fondo CSS repetibles: rayas, puntos, cuadrícula, tablero de ajedrez, con controles de color y espaciado. Copia el CSS. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/design/pattern-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de Patrones CSS | norito" />
+<meta property="og:description" content="Construye patrones de fondo CSS repetibles: rayas, puntos, cuadrícula, tablero de ajedrez, con controles de color y espaciado. Copia el CSS. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/design/pattern-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de Patrones CSS | norito" />
+<meta name="twitter:description" content="Construye patrones de fondo CSS repetibles: rayas, puntos, cuadrícula, tablero de ajedrez, con controles de color y espaciado. Copia el CSS. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de Patrones CSS",
+  "url": "https://norito.in/es/design/pattern-generator.html",
+  "description": "Construye patrones de fondo CSS repetibles con controles de color y espaciado.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Esto usa un archivo de imagen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, cada patrón se construye con degradados CSS superpuestos como un fondo repetido, sin ninguna petición de imagen. Eso mantiene el patrón nítido a cualquier nivel de zoom y cualquier tamaño de elemento, ya que es matemática vectorial, no un tile rasterizado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El patrón se repetirá sin costuras?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, el background-size se fija exactamente a una unidad de repetición, así que el patrón se repite de borde a borde sin costura visible, en cualquier tamaño de elemento." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía esto a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, el patrón se genera y previsualiza por completo en el motor CSS de tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de Patrones CSS", "item": "https://norito.in/es/design/pattern-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de Patrones CSS</p>
+    <h1>Generador de Patrones CSS</h1>
+    <p class="lede">
+      Construye un patrón de fondo repetible a partir de degradados CSS puros, sin necesidad de
+      ningún archivo de imagen, y copia el CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="patType">Patrón</label>
+          <select id="patType">
+            <option value="stripes" selected>Rayas diagonales</option>
+            <option value="stripesH">Rayas horizontales</option>
+            <option value="dots">Puntos</option>
+            <option value="grid">Cuadrícula</option>
+            <option value="checkerboard">Tablero de ajedrez</option>
+            <option value="crosshatch">Trama cruzada</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="patFg">Color de primer plano</label>
+            <input type="color" id="patFg" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="patBg">Color de fondo</label>
+            <input type="color" id="patBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="patSize">Tamaño (<span id="patSizeVal">24px</span>)</label>
+          <input type="range" id="patSize" min="4" max="120" value="24" />
+        </div>
+        <div class="field">
+          <label for="patThickness">Grosor de línea / tamaño de punto (<span id="patThicknessVal">4px</span>)</label>
+          <input type="range" id="patThickness" min="1" max="40" value="4" />
+        </div>
+        <div class="field">
+          <label for="patOpacity">Opacidad del primer plano (<span id="patOpacityVal">100%</span>)</label>
+          <input type="range" id="patOpacity" min="5" max="100" value="100" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copiar CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Cada preajuste construye una o dos capas <code>linear-gradient()</code> o
+        <code>radial-gradient()</code> de CSS con paradas de color duras (sin mezcla suave entre
+        ellas), que es lo que convierte un degradado suave en una forma repetitiva nítida. El
+        <code>background-size</code> se fija exactamente a las dimensiones de un tile, así que el
+        patrón se repite sin costura visible en los bordes, y los patrones de puntos/cuadrícula
+        además desplazan su background-position para que las formas queden centradas en lugar de
+        recortadas en la esquina.
+      </p>
+      <p>
+        Todo es CSS generado, aplicado al propio estilo <code>background</code> del recuadro de
+        vista previa. No se sube nada, y no se hace ninguna petición de imagen.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+../design/css-gradient-generator.html|Generador de degradados CSS|Construye un degradado lineal o radial de forma visual.
+blob-generator.html|Generador de Blobs SVG|Genera formas orgánicas tipo blob.
+noise-texture-generator.html|Generador de Textura de Ruido|Genera una textura de grano/ruido.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Esto usa un archivo de imagen?</summary>
+        <p>No, cada patrón se construye con degradados CSS superpuestos como un fondo repetido, sin ninguna petición de imagen. Eso mantiene el patrón nítido a cualquier nivel de zoom y cualquier tamaño de elemento, ya que es matemática vectorial, no un tile rasterizado.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿El patrón se repetirá sin costuras?</summary>
+        <p>Sí, el background-size se fija exactamente a una unidad de repetición, así que el patrón se repite de borde a borde sin costura visible, en cualquier tamaño de elemento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía esto a algún sitio?</summary>
+        <p>No, el patrón se genera y previsualiza por completo en el motor CSS de tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-pattern-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

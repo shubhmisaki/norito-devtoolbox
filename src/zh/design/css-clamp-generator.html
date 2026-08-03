@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS Clamp() 生成器：流体排版 | norito</title>
+<meta name="description" content="构建一个在最小值和最大值之间平滑缩放的流体 CSS clamp() 值，适用于响应式字体大小和间距设置，支持实时预览。完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/design/css-clamp-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS Clamp() 生成器：流体排版 | norito" />
+<meta property="og:description" content="构建一个在最小值和最大值之间平滑缩放的流体 CSS clamp() 值，适用于响应式字体大小和间距设置，支持实时预览。完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/design/css-clamp-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS Clamp() 生成器：流体排版 | norito" />
+<meta name="twitter:description" content="构建一个在最小值和最大值之间平滑缩放的流体 CSS clamp() 值，适用于响应式字体大小和间距设置，支持实时预览。完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS Clamp() 生成器",
+  "url": "https://norito.in/zh/design/css-clamp-generator.html",
+  "description": "构建一个在最小和最大视口宽度之间平滑缩放的流体 CSS clamp() 值。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "clamp() 到底是做什么的？",
+      "acceptedAnswer": { "@type": "Answer", "text": "clamp(最小值, 首选值, 最大值) 会取中间那个值，但会将其限制在不低于最小值、也不高于最大值的范围内。这里的“首选值”是视口宽度的线性函数，所以结果会随屏幕大小平滑增长，直到触及任一边界后就保持不变。" }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么用它而不是媒体查询？",
+      "acceptedAnswer": { "@type": "Answer", "text": "媒体查询会在特定断点处在固定尺寸之间跳变，看起来可能会有明显的“突变感”。clamp() 会随视口连续缩放，因此文字和间距在拖动窗口大小时会平滑变化，也不需要维护断点。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这些内容会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，公式和预览完全在你的浏览器中计算完成，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS Clamp() 生成器", "item": "https://norito.in/zh/design/css-clamp-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS Clamp() 生成器</p>
+    <h1>CSS Clamp() 生成器</h1>
+    <p class="lede">
+      设置最小、最大尺寸以及它们适用的视口范围，得到一个在两者之间平滑缩放的流体 <code>clamp()</code> 值。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="minSize">最小尺寸（px）</label>
+            <input type="number" id="minSize" value="16" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="minVp">对应视口宽度（px）</label>
+            <input type="number" id="minVp" value="375" min="1" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="maxSize">最大尺寸（px）</label>
+            <input type="number" id="maxSize" value="32" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="maxVp">对应视口宽度（px）</label>
+            <input type="number" id="maxVp" value="1440" min="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rootFont">根字体大小（用于 rem 换算）</label>
+          <input type="number" id="rootFont" value="16" min="1" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:30px 16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <span id="previewText" style="font-weight:700; line-height:1.2;">调整窗口大小，看看我如何缩放</span>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">复制 CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        两个（视口，尺寸）坐标点定义出一条直线。它的斜率成为视口宽度系数，截距成为一个固定的 rem 偏移量，两者共同组成 <code>clamp(最小值, 截距 + 斜率*100vw, 最大值)</code>。因为这是真正的 CSS，而不是 JavaScript 的 resize 监听器，浏览器会在每次布局计算时重新求值，不会有滚动卡顿或尺寸闪烁，即使禁用 JavaScript 也照常生效。
+      </p>
+      <p>
+        所有数值都会按你设置的根字体大小换算为 rem，因此即使用户为了无障碍访问调整了浏览器的基础字号，结果依然能正确缩放。这个工具不会读取你的页面，它只根据你输入的数字计算公式。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|CSS 缓动函数生成器|可视化 cubic-bezier 曲线编辑器。
+border-radius-generator.html|圆角生成器|可视化设置每个角的圆角半径。
+contrast-checker.html|对比度检查器|WCAG 对比度，AA/AAA 是否通过。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>clamp() 到底是做什么的？</summary>
+        <p>clamp(最小值, 首选值, 最大值) 会取中间那个值，但会将其限制在不低于最小值、也不高于最大值的范围内。这里的“首选值”是视口宽度的线性函数，所以结果会随屏幕大小平滑增长，直到触及任一边界后就保持不变。</p>
+      </details>
+      <details class="faq-item">
+        <summary>为什么用它而不是媒体查询？</summary>
+        <p>媒体查询会在特定断点处在固定尺寸之间跳变，看起来可能会有明显的“突变感”。clamp() 会随视口连续缩放，因此文字和间距在拖动窗口大小时会平滑变化，也不需要维护断点。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这些内容会被发送到别的地方吗？</summary>
+        <p>不会，公式和预览完全在你的浏览器中计算完成，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-clamp-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>不可視文字検出ツール | norito</title>
+<meta name="description" content="コンテンツを隠したりテキストを偽装したりするために使われるゼロ幅文字・不可視文字・同形異字（ホモグリフ）のUnicode文字をテキストからスキャンします。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/invisible-character-detector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="不可視文字検出ツール | norito" />
+<meta property="og:description" content="コンテンツを隠したりテキストを偽装したりするために使われるゼロ幅文字・不可視文字・同形異字（ホモグリフ）のUnicode文字をテキストからスキャンします。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/invisible-character-detector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="不可視文字検出ツール | norito" />
+<meta name="twitter:description" content="コンテンツを隠したりテキストを偽装したりするために使われるゼロ幅文字・不可視文字・同形異字（ホモグリフ）のUnicode文字をテキストからスキャンします。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "不可視文字検出ツール",
+  "url": "https://norito.in/ja/invisible-character-detector.html",
+  "description": "テキストからゼロ幅・不可視のUnicode文字をスキャンし、ハイライトして除去します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "なぜテキストに不可視文字が含まれるのですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "よくある無害な原因は、WordやWebページからのコピー&ペーストで、ゼロ幅結合子や改行禁止スペースが紛れ込むことです。あまり無害でない原因としては、AI生成テキストの隠しウォーターマークや、完全一致フィルターや重複チェックを回避するために意図的に挿入された文字が挙げられます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ここで言う「不可視」とは何を指しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ゼロ幅文字（結合子、非結合子、スペース、BOM）、双方向制御文字、Unicodeの「フォーマット」および「制御」カテゴリの大半、そしてプロンプトインジェクションやフィルター回避によく使われる文字を厳選したリストです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "テキストはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。スキャンはJavaScriptのUnicode対応文字列処理を使って、すべてブラウザ内で行われます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "不可視文字検出ツール", "item": "https://norito.in/ja/invisible-character-detector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 不可視文字検出ツール</p>
+    <h1>不可視文字検出ツール</h1>
+    <p class="lede">
+      テキストを貼り付けると、その中に隠れているゼロ幅・不可視のUnicode文字を見つけ出し、
+      きれいにした文字列を取得できます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">スキャンするテキスト</label>
+          <textarea id="textInput" class="mono-area" rows="10" placeholder="ここにテキストを貼り付け..."></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="summaryWrap" class="note">まだ不可視文字は見つかっていません。テキストを貼り付けてスキャンしてください。</div>
+          <div id="matchesWrap" style="margin-top:12px;"></div>
+          <button type="button" id="cleanBtn" style="margin-top:12px;" disabled>クリーンなテキストをコピー</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">ハイライト表示</h3>
+          <div id="highlightWrap" class="mono-area" style="white-space:pre-wrap; word-break:break-word; min-height:60px; border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        テキスト中のすべての文字が、厳選されたリストと照合されます。対象はゼロ幅結合子・非結合子、
+        ゼロ幅スペース、バイトオーダーマーク、双方向のオーバーライド/埋め込み制御文字、ソフトハイフン、
+        そしてUnicodeの「タグ」文字（もともとは非推奨の言語タグ付け用だった範囲ですが、まったく何も
+        表示されないため、テキストに不可視の指示を隠す既知の手段になっています）です。検出結果はそれぞれ
+        コードポイント、位置、簡単なラベルとともに表示され、テキスト中のどこにあるか一目でわかるよう
+        インラインで小さな可視マーカーとしてハイライトされます。
+      </p>
+      <p>
+        「クリーンなテキストをコピー」は、検出されたすべての文字を取り除いた結果をコピーし、通常の
+        空白文字や可視文字はそのまま残します。すべての処理はローカルで行われ、貼り付けた内容が
+        アップロードされることはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+case-converter.html|大文字小文字変換ツール|UPPERCASE、camelCase、snake_caseなどへ変換。
+find-and-replace.html|検索と置換|テキストの検索と置換、正規表現対応。
+character-counter.html|文字数カウンター|プラットフォームごとの上限付き文字数カウント。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>なぜテキストに不可視文字が含まれるのですか?</summary>
+        <p>よくある無害な原因は、WordやWebページからのコピー&ペーストで、ゼロ幅結合子や改行禁止スペースが紛れ込むことです。あまり無害でない原因としては、AI生成テキストの隠しウォーターマークや、完全一致フィルターや重複チェックを回避するために意図的に挿入された文字が挙げられます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>ここで言う「不可視」とは何を指しますか?</summary>
+        <p>ゼロ幅文字（結合子、非結合子、スペース、BOM）、双方向制御文字、Unicodeの「フォーマット」および「制御」カテゴリの大半、そしてプロンプトインジェクションやフィルター回避によく使われる文字を厳選したリストです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>テキストはどこかに送信されますか?</summary>
+        <p>いいえ。スキャンはJavaScriptのUnicode対応文字列処理を使って、すべてブラウザ内で行われます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-invisible-character-detector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

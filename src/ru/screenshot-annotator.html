@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Аннотатор скриншотов | norito</title>
+<meta name="description" content="Рисуйте стрелки, рамки, произвольные линии и текст на скриншоте, затем размывайте нужные области и скачивайте результат. Поддержка отмены/повтора действий. Работает полностью в вашем браузере." />
+<link rel="canonical" href="https://norito.in/ru/screenshot-annotator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Аннотатор скриншотов | norito" />
+<meta property="og:description" content="Рисуйте стрелки, рамки, произвольные линии и текст на скриншоте, затем размывайте нужные области и скачивайте результат. Поддержка отмены/повтора действий. Работает полностью в вашем браузере." />
+<meta property="og:url" content="https://norito.in/ru/screenshot-annotator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Аннотатор скриншотов | norito" />
+<meta name="twitter:description" content="Рисуйте стрелки, рамки, произвольные линии и текст на скриншоте, затем размывайте нужные области и скачивайте результат. Поддержка отмены/повтора действий. Работает полностью в вашем браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Аннотатор скриншотов",
+  "url": "https://norito.in/ru/screenshot-annotator.html",
+  "description": "Рисуйте стрелки, рамки, произвольные линии и текст на скриншоте, затем скачивайте результат.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Для чего нужен инструмент размытия/скрытия?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Проведите им по всему, что нужно скрыть — email-адресу, номеру счёта, лицу — и эта область будет навсегда запикселирована в экспортированном изображении. Эффект применяется к самим пиксельным данным, а не является наложением CSS, поэтому его нельзя «снять» в графическом редакторе." }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли отменить ошибку?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, каждая нарисованная фигура — это отдельный шаг, а «Отменить»/«Повторить» перемещаются назад и вперёд по этой истории. Ничего не «впекается» в изображение, пока вы его не скачаете." }
+    },
+    {
+      "@type": "Question",
+      "name": "Загружается ли мой скриншот куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Всё — рисование, размытие и экспорт — происходит в вашем браузере на canvas в памяти. Ничего не загружается на сервер, что особенно важно, поскольку скриншоты часто содержат личную информацию." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Аннотатор скриншотов", "item": "https://norito.in/ru/screenshot-annotator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Аннотатор скриншотов</p>
+    <h1>Аннотатор скриншотов</h1>
+    <p class="lede">
+      Загрузите скриншот, нарисуйте стрелки, рамки, произвольные пометки и текст, размойте всё
+      личное и скачайте результат.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel" id="editorPanel" style="display:none;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; align-items:center;">
+        <div class="tabs" id="toolTabs">
+          <button type="button" class="tab active" data-tool="arrow">Стрелка</button>
+          <button type="button" class="tab" data-tool="rect">Рамка</button>
+          <button type="button" class="tab" data-tool="freehand">Рисование</button>
+          <button type="button" class="tab" data-tool="text">Текст</button>
+          <button type="button" class="tab" data-tool="blur">Размытие</button>
+        </div>
+        <input type="color" id="strokeColor" value="#ef4444" title="Цвет" />
+        <input type="range" id="strokeWidth" min="2" max="16" value="4" title="Толщина линии" style="width:90px;" />
+        <button type="button" id="undoBtn" class="secondary" disabled>Отменить</button>
+        <button type="button" id="redoBtn" class="secondary" disabled>Повторить</button>
+        <button type="button" id="clearBtn" class="secondary">Начать заново</button>
+      </div>
+      <div id="canvasWrap" style="position:relative; max-width:100%; overflow:auto; background:var(--bg-subtle); border-radius:var(--radius-md);">
+        <canvas id="annCanvas" style="max-width:100%; display:block; touch-action:none; cursor:crosshair;"></canvas>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="downloadBtn">Скачать PNG</button>
+      </div>
+    </div>
+
+    <div class="panel" id="dropPanel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>Нажмите, чтобы выбрать скриншот</strong>, или перетащите его сюда</p>
+        <p class="note" style="margin-top:2px;">Остаётся на вашем устройстве, ничего не загружается.</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Каждая аннотация — стрелка, рамка, произвольный штрих, текстовая подпись или область
+        размытия — хранится как лёгкий объект-фигура, а не «впекается» напрямую в пиксели по мере
+        рисования. При каждом изменении сначала перерисовывается исходный скриншот, а затем поверх
+        него по порядку воспроизводятся все фигуры — именно это делает возможной отмену/повтор:
+        список фигур просто обрезается или воспроизводится заново. Единственное исключение — области
+        размытия, которые работают напрямую с пикселями: они сэмплируют и усредняют сетку блоков по
+        выбранной области (простое блочное размытие), так что исходная детализация действительно
+        уничтожается в экспортированном файле, а не просто визуально скрывается.
+      </p>
+      <p>
+        Скачивание — это прямой экспорт PNG с canvas через <code>toBlob</code>. Изображение никогда
+        не покидает ваш браузер, что важно, поскольку скриншоты часто содержат личную информацию.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|Обрезать изображение|Свободная обрезка или с фиксированным соотношением сторон.
+watermark-image.html|Водяной знак на изображении|Добавление текстового водяного знака с предпросмотром в реальном времени.
+remove-metadata.html|Удаление метаданных|Удаление EXIF, GPS и информации о камере.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Для чего нужен инструмент размытия/скрытия?</summary>
+        <p>Проведите им по всему, что нужно скрыть — email-адресу, номеру счёта, лицу — и эта область будет навсегда запикселирована в экспортированном изображении. Эффект применяется к самим пиксельным данным, а не является наложением CSS, поэтому его нельзя «снять» в графическом редакторе.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли отменить ошибку?</summary>
+        <p>Да, каждая нарисованная фигура — это отдельный шаг, а «Отменить»/«Повторить» перемещаются назад и вперёд по этой истории. Ничего не «впекается» в изображение, пока вы его не скачаете.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Загружается ли мой скриншот куда-либо?</summary>
+        <p>Нет. Всё — рисование, размытие и экспорт — происходит в вашем браузере на canvas в памяти. Ничего не загружается на сервер, что особенно важно, поскольку скриншоты часто содержат личную информацию.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-screenshot-annotator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

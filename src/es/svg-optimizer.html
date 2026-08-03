@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Optimizador de SVG | norito</title>
+<meta name="description" content="Pega o sube un SVG, elimina comentarios, metadatos y espacios en blanco sobrantes, y reduce el tamaño del archivo. Vista previa antes/después en vivo. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/svg-optimizer.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Optimizador de SVG | norito" />
+<meta property="og:description" content="Pega o sube un SVG, elimina comentarios, metadatos y espacios en blanco sobrantes, y reduce el tamaño del archivo. Vista previa antes/después en vivo. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/svg-optimizer.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Optimizador de SVG | norito" />
+<meta name="twitter:description" content="Pega o sube un SVG, elimina comentarios, metadatos y espacios en blanco sobrantes, y reduce el tamaño del archivo. Vista previa antes/después en vivo. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Optimizador de SVG",
+  "url": "https://norito.in/es/svg-optimizer.html",
+  "description": "Pega o sube un SVG, elimina comentarios, metadatos y espacios en blanco sobrantes, y reduce el tamaño del archivo.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Optimizar cambia el aspecto del SVG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, todo lo que se elimina es metadato invisible (comentarios, declaraciones XML, atributos específicos del editor) o espacio en blanco insignificante entre etiquetas. La forma renderizada es idéntica, solo se reduce el tamaño en bytes del archivo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué mi SVG sigue pesando mucho después de optimizarlo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si la mayor parte del tamaño proviene de los datos reales de las rutas (muchos puntos en una forma compleja) o de una imagen ráster incrustada, la limpieza por sí sola no reducirá mucho, ya que esos datos forman parte del contenido visible. Esta herramienta se centra en una limpieza segura y sin pérdida, en lugar de simplificar rutas, lo que podría alterar sutilmente las formas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se sube mi SVG a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. La optimización ocurre por completo en el JavaScript de tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Optimizador de SVG", "item": "https://norito.in/es/svg-optimizer.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Optimizador de SVG</p>
+    <h1>Optimizador de SVG</h1>
+    <p class="lede">
+      Pega o suelta un SVG, elimina comentarios, metadatos, restos de editor y espacios en blanco
+      sobrantes. Mira caer el tamaño en vivo.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Haz clic para elegir un archivo .svg</strong>, o arrástralo hasta aquí</p>
+          <p class="note" style="margin-top:2px;">O pega directamente el código SVG en el cuadro de abajo. Se queda en tu dispositivo.</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="svgInput">Código SVG</label>
+          <textarea id="svgInput" class="mono-area" rows="12" placeholder="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; ...>...</svg>"></textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Quitar width/height (conservar solo viewBox)</span>
+          <label class="switch"><input type="checkbox" id="optRemoveDims" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="previewWrap" style="padding:24px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; min-height:140px; display:flex; align-items:center; justify-content:center;">
+            <p class="note" id="previewHint">La vista previa aparecerá aquí.</p>
+          </div>
+          <div id="sizeStats" class="note" style="margin-bottom:12px;"></div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:220px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">Copiar SVG optimizado</button>
+            <button id="downloadBtn" class="secondary">Descargar .svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        El proceso de limpieza elimina las declaraciones XML/DOCTYPE, los
+        <code>&lt;!-- comentarios --&gt;</code>, los namespaces y metadatos exclusivos del editor
+        (atributos de exportación de Inkscape, Sketch, Illustrator, bloques
+        <code>&lt;metadata&gt;</code> y <code>&lt;title&gt;</code> que quedan de las herramientas
+        de diseño), y colapsa los espacios en blanco redundantes entre etiquetas, nada de lo cual
+        afecta a cómo se renderiza el SVG. Opcionalmente, también puede quitar los atributos
+        explícitos <code>width</code>/<code>height</code> del elemento raíz para que el SVG escale
+        únicamente a partir de su <code>viewBox</code>, útil al incrustarlo de forma responsiva.
+      </p>
+      <p>
+        Todo es procesamiento de texto sobre la cadena que proporcionas, hecho con el propio
+        analizador DOM de tu navegador para asegurar que el resultado siga siendo XML válido. No
+        se sube nada.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-to-react-component.html|SVG a componente React|Convierte código SVG en un componente JSX.
+design/favicon-generator.html|Generador de favicon|Genera un favicon a partir de una imagen.
+design/color-palette-extractor.html|Extractor de paleta de colores|Extrae los colores dominantes de una imagen.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Optimizar cambia el aspecto del SVG?</summary>
+        <p>No, todo lo que se elimina es metadato invisible (comentarios, declaraciones XML, atributos específicos del editor) o espacio en blanco insignificante entre etiquetas. La forma renderizada es idéntica, solo se reduce el tamaño en bytes del archivo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Por qué mi SVG sigue pesando mucho después de optimizarlo?</summary>
+        <p>Si la mayor parte del tamaño proviene de los datos reales de las rutas (muchos puntos en una forma compleja) o de una imagen ráster incrustada, la limpieza por sí sola no reducirá mucho, ya que esos datos forman parte del contenido visible. Esta herramienta se centra en una limpieza segura y sin pérdida, en lugar de simplificar rutas, lo que podría alterar sutilmente las formas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se sube mi SVG a algún sitio?</summary>
+        <p>No. La optimización ocurre por completo en el JavaScript de tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-optimizer.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

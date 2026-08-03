@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS स्पेसिफिसिटी कैलकुलेटर | norito</title>
+<meta name="description" content="CSS सिलेक्टर पेस्ट करें और उनकी स्पेसिफिसिटी को इनलाइन, ID, क्लास और एलिमेंट में विभाजित करके, कैस्केड क्रम में रैंक किया हुआ देखें। यह आपके ब्राउज़र में चलता है।" />
+<link rel="canonical" href="https://norito.in/hi/css-specificity-calculator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS स्पेसिफिसिटी कैलकुलेटर | norito" />
+<meta property="og:description" content="CSS सिलेक्टर पेस्ट करें और उनकी स्पेसिफिसिटी को इनलाइन, ID, क्लास और एलिमेंट में विभाजित करके, कैस्केड क्रम में रैंक किया हुआ देखें। यह आपके ब्राउज़र में चलता है।" />
+<meta property="og:url" content="https://norito.in/hi/css-specificity-calculator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS स्पेसिफिसिटी कैलकुलेटर | norito" />
+<meta name="twitter:description" content="CSS सिलेक्टर पेस्ट करें और उनकी स्पेसिफिसिटी को इनलाइन, ID, क्लास और एलिमेंट में विभाजित करके, कैस्केड क्रम में रैंक किया हुआ देखें। यह आपके ब्राउज़र में चलता है।" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS स्पेसिफिसिटी कैलकुलेटर",
+  "url": "https://norito.in/hi/css-specificity-calculator.html",
+  "description": "CSS सिलेक्टर पेस्ट करें और उनकी स्पेसिफिसिटी का ब्रेकडाउन, कैस्केड क्रम में रैंक किया हुआ देखें।",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "स्पेसिफिसिटी कैसे कैलकुलेट की जाती है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "इसे चार गिने जाने वाले स्तरों में मापा जाता है: पहले इनलाइन स्टाइल, फिर ID सिलेक्टर, फिर क्लास/एट्रिब्यूट सिलेक्टर/स्यूडो-क्लास, और अंत में एलिमेंट व स्यूडो-एलिमेंट सिलेक्टर। ऊँचा स्तर हमेशा निचले स्तर पर भारी पड़ता है, चाहे आप निचले स्तर के कितने भी सिलेक्टर जोड़ लें—इसलिए 1 ID (0,1,0,0) हमेशा 20 क्लास (0,0,20,0) पर भारी पड़ती है।" }
+    },
+    {
+      "@type": "Question",
+      "name": "मेरे दो सिलेक्टर बराबर (टाई) क्यों हो जाते हैं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "जब स्पेसिफिसिटी बिल्कुल बराबर हो, तो CSS सोर्स ऑर्डर पर निर्भर करता है: स्टाइलशीट में जो रूल बाद में आता है (या बाद में जोड़ा गया है), वही जीतता है। यह टूल टाई होने पर उसी क्रम में सॉर्ट करता है जिस क्रम में आपने सिलेक्टर पेस्ट किए थे, ताकि यही व्यवहार मैच करे।" }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या यह मेरा CSS कहीं भेजता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं। सिलेक्टर पूरी तरह आपके ब्राउज़र में एक छोटे जावास्क्रिप्ट टोकनाइज़र से पार्स और स्कोर किए जाते हैं। कुछ भी अपलोड नहीं होता।" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS स्पेसिफिसिटी कैलकुलेटर", "item": "https://norito.in/hi/css-specificity-calculator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSS स्पेसिफिसिटी कैलकुलेटर</p>
+    <h1>CSS स्पेसिफिसिटी कैलकुलेटर</h1>
+    <p class="lede">
+      सिलेक्टर एक-एक करके हर लाइन में पेस्ट करें, और हर एक की स्पेसिफिसिटी का ब्रेकडाउन उसी क्रम में
+      देखें जिस क्रम में कैस्केड असल में उन्हें लागू करेगा।
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="selInput">सिलेक्टर (एक लाइन में एक)</label>
+          <textarea id="selInput" class="mono-area" rows="12" placeholder="#header .nav a:hover
+.card > .title
+div p span
+[data-active].btn.primary
+#app"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">नतीजे यहाँ दिखेंगे, सबसे ज़्यादा से सबसे कम स्पेसिफिसिटी के क्रम में रैंक किए हुए।</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        हर सिलेक्टर को कॉम्बिनेटर पर तोड़ा और टोकनाइज़ किया जाता है: <code>#id</code> टोकन ID के
+        रूप में गिने जाते हैं, <code>.class</code>, <code>[attr]</code>, और
+        <code>:pseudo-class</code> टोकन क्लास के रूप में गिने जाते हैं, और सादे एलिमेंट नाम व
+        <code>::pseudo-elements</code> एलिमेंट के रूप में गिने जाते हैं। यूनिवर्सल सिलेक्टर
+        <code>*</code> और कॉम्बिनेटर जैसे <code>&gt;</code>, <code>+</code>, <code>~</code> कुछ
+        नहीं जोड़ते। हर सिलेक्टर आखिर में एक ट्रिपल <code>(IDs, classes, elements)</code> बन जाता
+        है, जो बिल्कुल वैसा ही है जैसे CSS स्पेक खुद स्पेसिफिसिटी परिभाषित करता है, इसलिए यहाँ की
+        रैंकिंग वही होती है जो आपके ब्राउज़र का कैस्केड असल में करेगा।
+      </p>
+      <p>
+        सब कुछ इस पेज के जावास्क्रिप्ट में हर कीस्ट्रोक पर चलता है। पूरी स्टाइलशीट जितने सिलेक्टर
+        पेस्ट करने पर भी वे आपके ब्राउज़र से बाहर कभी नहीं जाते।
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/css-gradient-generator.html|CSS ग्रेडिएंट जनरेटर|लीनियर या रेडियल ग्रेडिएंट को विज़ुअली बनाएं।
+json-formatter.html|JSON फ़ॉर्मैटर और वैलिडेटर|JSON को फ़ॉर्मैट, वैलिडेट और मिनिफ़ाई करें।
+regex-tester.html|Regex टेस्टर|लाइव मैच हाइलाइटिंग के साथ रेगेक्स टेस्ट करें।
+-->
+
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>स्पेसिफिसिटी कैसे कैलकुलेट की जाती है?</summary>
+        <p>इसे चार गिने जाने वाले स्तरों में मापा जाता है: पहले इनलाइन स्टाइल, फिर ID सिलेक्टर, फिर क्लास/एट्रिब्यूट सिलेक्टर/स्यूडो-क्लास, और अंत में एलिमेंट व स्यूडो-एलिमेंट सिलेक्टर। ऊँचा स्तर हमेशा निचले स्तर पर भारी पड़ता है, चाहे आप निचले स्तर के कितने भी सिलेक्टर जोड़ लें—इसलिए 1 ID (0,1,0,0) हमेशा 20 क्लास (0,0,20,0) पर भारी पड़ती है।</p>
+      </details>
+      <details class="faq-item">
+        <summary>मेरे दो सिलेक्टर बराबर (टाई) क्यों हो जाते हैं?</summary>
+        <p>जब स्पेसिफिसिटी बिल्कुल बराबर हो, तो CSS सोर्स ऑर्डर पर निर्भर करता है: स्टाइलशीट में जो रूल बाद में आता है (या बाद में जोड़ा गया है), वही जीतता है। यह टूल टाई होने पर उसी क्रम में सॉर्ट करता है जिस क्रम में आपने सिलेक्टर पेस्ट किए थे, ताकि यही व्यवहार मैच करे।</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या यह मेरा CSS कहीं भेजता है?</summary>
+        <p>नहीं। सिलेक्टर पूरी तरह आपके ब्राउज़र में एक छोटे जावास्क्रिप्ट टोकनाइज़र से पार्स और स्कोर किए जाते हैं। कुछ भी अपलोड नहीं होता।</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-specificity-calculator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

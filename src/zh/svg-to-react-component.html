@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG 转 React 组件 | norito</title>
+<meta name="description" content="粘贴 SVG 代码，生成带有 camelCase 属性和 className 写法的 React 函数组件（JSX），可选择导出为 TypeScript，全部在浏览器本地完成。" />
+<link rel="canonical" href="https://norito.in/zh/svg-to-react-component.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG 转 React 组件 | norito" />
+<meta property="og:description" content="粘贴 SVG 代码，生成带有 camelCase 属性和 className 写法的 React 函数组件（JSX），完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/svg-to-react-component.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG 转 React 组件 | norito" />
+<meta name="twitter:description" content="粘贴 SVG 代码，生成带有 camelCase 属性和 className 写法的 React 函数组件（JSX），完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG 转 React 组件",
+  "url": "https://norito.in/zh/svg-to-react-component.html",
+  "description": "粘贴 SVG 代码，生成带有 camelCase 属性和 className 写法的 React 函数组件（JSX）。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SVG 和 JSX 之间有什么变化？",
+      "acceptedAnswer": { "@type": "Answer", "text": "属性名会转换为 camelCase 写法（stroke-width 变成 strokeWidth，fill-rule 变成 fillRule），class 变成 className，自闭合标签会补上 JSX 要求的斜杠。视觉效果完全一致。" }
+    },
+    {
+      "@type": "Question",
+      "name": "可以通过 props 控制大小和颜色吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "打开 \"接受 props\" 开关，让组件把 {...props} 展开到根 <svg> 元素上，这样你就可以在任何使用它的地方覆盖 width、height、className 或其他任意属性，这是图标组件的标准写法。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这会把我的 SVG 发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。转换只是纯粹的字符串/属性变换，在你的浏览器中完成。不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG 转 React 组件", "item": "https://norito.in/zh/svg-to-react-component.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVG 转 React 组件</p>
+    <h1>SVG 转 React 组件</h1>
+    <p class="lede">
+      粘贴 SVG 代码，得到一个可以直接导入使用的 React 函数组件，属性使用 camelCase 写法。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="svgInput">SVG 代码</label>
+          <textarea id="svgInput" class="mono-area" rows="12">&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"&gt;
+  &lt;circle cx="12" cy="12" r="10"/&gt;
+  &lt;path d="M12 16v-4"/&gt;
+  &lt;path d="M12 8h.01"/&gt;
+&lt;/svg&gt;</textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="componentName">组件名称</label>
+            <input type="text" id="componentName" value="IconInfo" />
+          </div>
+          <div class="field" style="min-width:140px;">
+            <label for="exportStyle">导出方式</label>
+            <select id="exportStyle">
+              <option value="default" selected>默认导出</option>
+              <option value="named">具名导出</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">接受 props（展开到 &lt;svg&gt; 上）</span>
+          <label class="switch"><input type="checkbox" id="optProps" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">TypeScript（.tsx）</span>
+          <label class="switch"><input type="checkbox" id="optTs" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">复制组件</button>
+            <button id="downloadBtn" class="secondary">下载文件</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        SVG 会用浏览器自带的 DOM 解析器解析，所以它是被真正理解为标记语言，而不只是
+        简单的模式匹配。每个属性名都会按照 React 自身内部使用的相同映射关系转换为
+        对应的 React/DOM 写法（<code>stroke-width</code>
+        &rarr; <code>strokeWidth</code>，<code>class</code> &rarr; <code>className</code>，
+        <code>xlink:href</code> &rarr; <code>xlinkHref</code> 等等），然后整棵树被
+        重新序列化为 JSX，并包裹进一个小型函数组件中。开启 "接受 props" 后，
+        <code>{...props}</code> 会展开到根元素上，调用者就能以常规 React 方式传入
+        <code>width</code>、<code>className</code> 或 <code>onClick</code> 处理函数。
+      </p>
+      <p>
+        解析和转换全部在本页面的 JavaScript 中，针对浏览器根据你的输入构建出的 DOM
+        进行。不会上传任何内容。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|SVG 优化器|去除 SVG 中的注释和元数据。
+design/favicon-generator.html|Favicon 生成器|从图片生成 favicon。
+json-formatter.html|JSON 格式化与校验|格式化、校验、压缩 JSON。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>SVG 和 JSX 之间有什么变化？</summary>
+        <p>属性名会转换为 camelCase 写法（stroke-width 变成 strokeWidth，fill-rule 变成 fillRule），class 变成 className，自闭合标签会补上 JSX 要求的斜杠。视觉效果完全一致。</p>
+      </details>
+      <details class="faq-item">
+        <summary>可以通过 props 控制大小和颜色吗？</summary>
+        <p>打开 "接受 props" 开关，让组件把 {...props} 展开到根 &lt;svg&gt; 元素上，这样你就可以在任何使用它的地方覆盖 width、height、className 或其他任意属性，这是图标组件的标准写法。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这会把我的 SVG 发送到别的地方吗？</summary>
+        <p>不会。转换只是纯粹的字符串/属性变换，在你的浏览器中完成。不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-to-react-component.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

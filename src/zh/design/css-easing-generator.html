@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS 缓动 / 三次贝塞尔曲线生成器 | norito</title>
+<meta name="description" content="拖动可视化曲线构建自定义的 cubic-bezier() 缓动函数，实时预览动画效果，满意后复制生成的 CSS 代码，全程在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/design/css-easing-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS 缓动 / 三次贝塞尔曲线生成器 | norito" />
+<meta property="og:description" content="拖动可视化曲线构建自定义的 cubic-bezier() 缓动函数，实时预览动画效果，满意后复制生成的 CSS 代码，全程在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/design/css-easing-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS 缓动 / 三次贝塞尔曲线生成器 | norito" />
+<meta name="twitter:description" content="拖动可视化曲线构建自定义的 cubic-bezier() 缓动函数，实时预览动画效果，满意后复制生成的 CSS 代码，全程在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS 缓动 / 三次贝塞尔曲线生成器",
+  "url": "https://norito.in/zh/design/css-easing-generator.html",
+  "description": "拖动可视化曲线构建自定义的 cubic-bezier() 缓动函数，实时预览动画效果。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "两个控制点分别控制什么？",
+      "acceptedAnswer": { "@type": "Answer", "text": "三次贝塞尔缓动曲线由两个控制点定义，每个控制点都有 x（时间，0 到 1）和 y（进度，理论上不限范围，但通常在 0 到 1 之间）坐标。拖动某个控制点会直接设置该点的位置，下方显示的四个数字正是 cubic-bezier() 括号内的参数。" }
+    },
+    {
+      "@type": "Question",
+      "name": "曲线可以超出 100% 吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以。如果某个控制点的 y 值大于 1 或小于 0，动画就会在到达终值前短暂越过终值，或在开始前先低于起始值，形成“弹跳”或“预备”效果。你可以把控制点拖到图表上方或下方试试看。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这些内容会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，曲线和预览动画完全通过你浏览器的 CSS 引擎运行，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS 缓动生成器", "item": "https://norito.in/zh/design/css-easing-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 9-9"/><path d="M21 3c-4 0-8 1-11 4-2 2-3 5-3 8 3 0 6-1 8-3 3-3 4-7 4-11a9 9 0 0 0 2 2Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS 缓动生成器</p>
+    <h1>CSS 缓动生成器</h1>
+    <p class="lede">
+      拖动两个控制点塑造自定义缓动曲线，通过小球预览实时效果，然后复制
+      <code>cubic-bezier()</code> 的值。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <svg id="curveSvg" viewBox="0 0 200 200" style="width:100%; max-width:320px; display:block; margin:0 auto; background:var(--bg-subtle); border-radius:var(--radius-md); touch-action:none;">
+          <line x1="0" y1="200" x2="200" y2="0" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+          <path id="curvePath" d="" fill="none" stroke="var(--primary)" stroke-width="3" />
+          <line id="handle1Line" x1="0" y1="200" x2="0" y2="200" stroke="var(--muted)" stroke-width="1.5" />
+          <line id="handle2Line" x1="200" y1="0" x2="200" y2="0" stroke="var(--muted)" stroke-width="1.5" />
+          <circle id="handle1" cx="0" cy="200" r="7" fill="var(--accent-live, #2fbf71)" style="cursor:grab;" />
+          <circle id="handle2" cx="200" cy="0" r="7" fill="var(--primary)" style="cursor:grab;" />
+        </svg>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="p1x">P1 x</label>
+            <input type="number" id="p1x" min="0" max="1" step="0.01" value="0.42" />
+          </div>
+          <div class="field">
+            <label for="p1y">P1 y</label>
+            <input type="number" id="p1y" step="0.01" value="0" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="p2x">P2 x</label>
+            <input type="number" id="p2x" min="0" max="1" step="0.01" value="0.58" />
+          </div>
+          <div class="field">
+            <label for="p2y">P2 y</label>
+            <input type="number" id="p2y" step="0.01" value="1" />
+          </div>
+        </div>
+        <h3>预设</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="secondary preset-btn" data-p="0.25,0.1,0.25,1">ease</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,1,1">ease-in</button>
+          <button type="button" class="secondary preset-btn" data-p="0,0,0.58,1">ease-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,0.58,1">ease-in-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.68,-0.55,0.27,1.55">back</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="animTrack" style="position:relative; height:60px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <div id="animBall" style="position:absolute; top:14px; left:6px; width:32px; height:32px; border-radius:50%; background:var(--primary);"></div>
+          </div>
+          <button type="button" id="playBtn" class="secondary" style="margin-bottom:16px;">重播动画</button>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">复制 CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        图表纵轴表示进度、横轴表示一秒钟内的时间。两个控制点都可以直接拖动，下方的数字输入框会随之保持同步，你既可以用鼠标或手指拖动，也可以直接输入精确数值来匹配特定曲线。这四个数字既驱动你看到的 SVG 路径，也驱动应用在预览小球上的真实 <code>transition-timing-function</code>，所以你看到的就是实际的缓动效果，而不是近似模拟。
+      </p>
+      <p>
+        一切都基于你浏览器自身的 CSS 过渡引擎运行，动画状态和曲线数据都不会被发送到任何地方。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-clamp-generator.html|CSS Clamp() 生成器|随视口宽度平滑缩放的流体数值。
+css-filter-generator.html|CSS 滤镜生成器|可视化构建图像滤镜效果。
+box-shadow-generator.html|阴影生成器|可视化构建 CSS 阴影。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>两个控制点分别控制什么？</summary>
+        <p>三次贝塞尔缓动曲线由两个控制点定义，每个控制点都有 x（时间，0 到 1）和 y（进度，理论上不限范围，但通常在 0 到 1 之间）坐标。拖动某个控制点会直接设置该点的位置，下方显示的四个数字正是 cubic-bezier() 括号内的参数。</p>
+      </details>
+      <details class="faq-item">
+        <summary>曲线可以超出 100% 吗？</summary>
+        <p>可以。如果某个控制点的 y 值大于 1 或小于 0，动画就会在到达终值前短暂越过终值，或在开始前先低于起始值，形成“弹跳”或“预备”效果。你可以把控制点拖到图表上方或下方试试看。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这些内容会被发送到别的地方吗？</summary>
+        <p>不会，曲线和预览动画完全通过你浏览器的 CSS 引擎运行，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-easing-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

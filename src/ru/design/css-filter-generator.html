@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор CSS-фильтров | norito</title>
+<meta name="description" content="Создайте CSS-фильтр (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) визуально на своём изображении, затем скопируйте CSS. Работает прямо в браузере." />
+<link rel="canonical" href="https://norito.in/ru/design/css-filter-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор CSS-фильтров | norito" />
+<meta property="og:description" content="Создайте CSS-фильтр (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) визуально на своём изображении, затем скопируйте CSS. Работает прямо в браузере." />
+<meta property="og:url" content="https://norito.in/ru/design/css-filter-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор CSS-фильтров | norito" />
+<meta name="twitter:description" content="Создайте CSS-фильтр (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) визуально на своём изображении, затем скопируйте CSS. Работает прямо в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор CSS-фильтров",
+  "url": "https://norito.in/ru/design/css-filter-generator.html",
+  "description": "Позволяет визуально создать CSS-фильтр на собственном изображении и скопировать CSS.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Можно ли посмотреть предпросмотр на своём изображении?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, перетащите любое изображение — и каждый ползунок будет мгновенно обновлять предпросмотр. Если изображение не загружено, ползунки применяются к изображению-заглушке с градиентом." }
+    },
+    {
+      "@type": "Question",
+      "name": "Влияет ли filter на вёрстку?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. CSS filter — это чисто визуальный эффект, он никогда не меняет размер блока элемента или его положение, в отличие от замены самого файла изображения. Благодаря этому фильтр дёшево переключать по hover или классом — ничего не пересчитывается заново." }
+    },
+    {
+      "@type": "Question",
+      "name": "Загружается ли моё изображение куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Предпросмотр использует CSS-движок вашего браузера на локальном object URL. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор CSS-фильтров", "item": "https://norito.in/ru/design/css-filter-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Генератор CSS-фильтров</p>
+    <h1>Генератор CSS-фильтров</h1>
+    <p class="lede">
+      Загрузите изображение (необязательно), подвигайте ползунки и скопируйте значение CSS
+      <code>filter</code>.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop" style="padding:16px;">
+          <p><strong>Нажмите или перетащите изображение</strong>, чтобы применить предпросмотр к нему, необязательно</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="fBlur">Размытие (<span id="fBlurVal">0px</span>)</label>
+          <input type="range" id="fBlur" min="0" max="20" value="0" step="0.5" />
+        </div>
+        <div class="field">
+          <label for="fBrightness">Яркость (<span id="fBrightnessVal">100%</span>)</label>
+          <input type="range" id="fBrightness" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fContrast">Контраст (<span id="fContrastVal">100%</span>)</label>
+          <input type="range" id="fContrast" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fSaturate">Насыщенность (<span id="fSaturateVal">100%</span>)</label>
+          <input type="range" id="fSaturate" min="0" max="300" value="100" />
+        </div>
+        <div class="field">
+          <label for="fGrayscale">Оттенки серого (<span id="fGrayscaleVal">0%</span>)</label>
+          <input type="range" id="fGrayscale" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fSepia">Сепия (<span id="fSepiaVal">0%</span>)</label>
+          <input type="range" id="fSepia" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fHue">Поворот тона (<span id="fHueVal">0deg</span>)</label>
+          <input type="range" id="fHue" min="0" max="360" value="0" />
+        </div>
+        <div class="field">
+          <label for="fInvert">Инверсия (<span id="fInvertVal">0%</span>)</label>
+          <input type="range" id="fInvert" min="0" max="100" value="0" />
+        </div>
+        <button type="button" id="resetBtn" class="secondary">Сбросить всё</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <img id="previewImg" alt="Предпросмотр фильтра" src="/assets/og-image.png" style="max-width:100%; max-height:260px; border-radius:8px;" />
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Скопировать CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Каждый ползунок напрямую соответствует одной функции CSS <code>filter</code>
+        (<code>blur()</code>, <code>brightness()</code>, <code>contrast()</code>,
+        <code>saturate()</code>, <code>grayscale()</code>, <code>sepia()</code>,
+        <code>hue-rotate()</code>, <code>invert()</code>). Функции, оставленные на нейтральном
+        значении, исключаются из результата, чтобы скопированный CSS оставался минимальным, а
+        остальные соединяются пробелами — CSS применяет цепочку функций фильтра в том порядке, в
+        котором они записаны. Именно эта строка устанавливается в стиль <code>filter</code>
+        самого изображения предпросмотра, так что вы видите настоящий эффект, а не имитацию.
+      </p>
+      <p>
+        Ваше изображение загружается как локальный object URL и никогда не покидает вкладку
+        браузера — этап загрузки на сервер отсутствует.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|Генератор CSS-плавности (cubic-bezier)|Визуальный редактор кривой cubic-bezier.
+color-converter.html|Конвертер цвета|HEX, RGB, HSL, CMYK в реальном времени.
+../remove-metadata.html|Удаление метаданных|Удалите EXIF, GPS и данные о камере.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Можно ли посмотреть предпросмотр на своём изображении?</summary>
+        <p>Да, перетащите любое изображение — и каждый ползунок будет мгновенно обновлять предпросмотр. Если изображение не загружено, ползунки применяются к изображению-заглушке с градиентом.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Влияет ли filter на вёрстку?</summary>
+        <p>Нет. CSS filter — это чисто визуальный эффект, он никогда не меняет размер блока элемента или его положение, в отличие от замены самого файла изображения. Благодаря этому фильтр дёшево переключать по hover или классом — ничего не пересчитывается заново.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Загружается ли моё изображение куда-либо?</summary>
+        <p>Нет. Предпросмотр использует CSS-движок вашего браузера на локальном object URL. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-filter-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

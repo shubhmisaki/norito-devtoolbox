@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG a componente React | norito</title>
+<meta name="description" content="Pega código SVG y obtén un componente funcional de React (JSX) con atributos en camelCase y className. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/svg-to-react-component.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG a componente React | norito" />
+<meta property="og:description" content="Pega código SVG y obtén un componente funcional de React (JSX) con atributos en camelCase y className. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/svg-to-react-component.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG a componente React | norito" />
+<meta name="twitter:description" content="Pega código SVG y obtén un componente funcional de React (JSX) con atributos en camelCase y className. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG a componente React",
+  "url": "https://norito.in/es/svg-to-react-component.html",
+  "description": "Pega código SVG y obtén un componente funcional de React (JSX) con atributos en camelCase y className.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué cambia entre el SVG y el JSX?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los nombres de atributo pasan a camelCase (stroke-width se convierte en strokeWidth, fill-rule en fillRule), class se convierte en className, y las etiquetas autocerradas reciben la barra final que exige JSX. El resultado visual es idéntico." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo controlar el tamaño y el color desde props?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Activa \"Aceptar props\" para que el componente reparta {...props} en el elemento raíz <svg>, así puedes sobrescribir width, height, className o cualquier otra cosa desde donde lo uses, el patrón estándar para componentes de icono." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Esto envía mi SVG a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. La conversión es una simple transformación de cadenas y atributos hecha en tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG a componente React", "item": "https://norito.in/es/svg-to-react-component.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVG a componente React</p>
+    <h1>SVG a componente React</h1>
+    <p class="lede">
+      Pega código SVG y obtén un componente funcional de React listo para importar, con atributos
+      en camelCase.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="svgInput">Código SVG</label>
+          <textarea id="svgInput" class="mono-area" rows="12">&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"&gt;
+  &lt;circle cx="12" cy="12" r="10"/&gt;
+  &lt;path d="M12 16v-4"/&gt;
+  &lt;path d="M12 8h.01"/&gt;
+&lt;/svg&gt;</textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="componentName">Nombre del componente</label>
+            <input type="text" id="componentName" value="IconInfo" />
+          </div>
+          <div class="field" style="min-width:140px;">
+            <label for="exportStyle">Tipo de exportación</label>
+            <select id="exportStyle">
+              <option value="default" selected>Exportación por defecto</option>
+              <option value="named">Exportación con nombre</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Aceptar props (repartidas en &lt;svg&gt;)</span>
+          <label class="switch"><input type="checkbox" id="optProps" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">TypeScript (.tsx)</span>
+          <label class="switch"><input type="checkbox" id="optTs" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">Copiar componente</button>
+            <button id="downloadBtn" class="secondary">Descargar archivo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        El SVG se analiza con el propio analizador DOM del navegador, así que se entiende
+        realmente como marcado, no solo se compara con patrones de texto. Cada nombre de atributo
+        se convierte a su equivalente React/DOM usando el mismo mapeo que React usa internamente
+        (<code>stroke-width</code> &rarr; <code>strokeWidth</code>, <code>class</code> &rarr;
+        <code>className</code>, <code>xlink:href</code> &rarr; <code>xlinkHref</code>, y así
+        sucesivamente), el árbol se vuelve a serializar como JSX, y se envuelve en un pequeño
+        componente funcional. Con "Aceptar props" activado, <code>{...props}</code> se reparte en
+        el elemento raíz para que quien lo use pueda pasar <code>width</code>,
+        <code>className</code> o un manejador <code>onClick</code> a la manera habitual de React.
+      </p>
+      <p>
+        El análisis y la conversión ocurren por completo en el JavaScript de esta página, sobre el
+        DOM que el navegador construye a partir de tu entrada. No se sube nada.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|Optimizador de SVG|Elimina comentarios y metadatos de un SVG.
+design/favicon-generator.html|Generador de favicon|Genera un favicon a partir de una imagen.
+json-formatter.html|Formateador y validador JSON|Formatea, valida y minifica JSON.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Qué cambia entre el SVG y el JSX?</summary>
+        <p>Los nombres de atributo pasan a camelCase (stroke-width se convierte en strokeWidth, fill-rule en fillRule), class se convierte en className, y las etiquetas autocerradas reciben la barra final que exige JSX. El resultado visual es idéntico.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo controlar el tamaño y el color desde props?</summary>
+        <p>Activa "Aceptar props" para que el componente reparta {...props} en el elemento raíz &lt;svg&gt;, así puedes sobrescribir width, height, className o cualquier otra cosa desde donde lo uses, el patrón estándar para componentes de icono.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Esto envía mi SVG a algún sitio?</summary>
+        <p>No. La conversión es una simple transformación de cadenas y atributos hecha en tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-to-react-component.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

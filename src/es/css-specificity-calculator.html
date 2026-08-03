@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Calculadora de especificidad CSS | norito</title>
+<meta name="description" content="Pega selectores CSS y mira su especificidad desglosada (inline, IDs, clases, elementos) y ordenada según el orden de la cascada. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/css-specificity-calculator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Calculadora de especificidad CSS | norito" />
+<meta property="og:description" content="Pega selectores CSS y mira su especificidad desglosada (inline, IDs, clases, elementos) y ordenada según el orden de la cascada. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/css-specificity-calculator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Calculadora de especificidad CSS | norito" />
+<meta name="twitter:description" content="Pega selectores CSS y mira su especificidad desglosada (inline, IDs, clases, elementos) y ordenada según el orden de la cascada. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de especificidad CSS",
+  "url": "https://norito.in/es/css-specificity-calculator.html",
+  "description": "Pega selectores CSS y mira su especificidad desglosada y ordenada según el orden de la cascada.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se calcula la especificidad?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Como cuatro niveles contados: estilos inline, luego selectores de ID, luego clases/selectores de atributo/pseudo-clases, y por último elementos y pseudo-elementos. Los niveles superiores siempre superan a los inferiores sin importar cuántos selectores de nivel inferior acumules, así que 1 ID (0,1,0,0) siempre le gana a 20 clases (0,0,20,0)." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué dos de mis selectores empatan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cuando la especificidad empata exactamente, CSS recurre al orden de aparición en el código: la regla que aparece más tarde en la hoja de estilos (o que se añadió después) gana. Esta herramienta ordena los empates según el orden en que los pegaste, respetando ese comportamiento." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Esto envía mi CSS a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Los selectores se analizan y puntúan por completo en tu navegador con un pequeño tokenizador en JavaScript. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Calculadora de especificidad CSS", "item": "https://norito.in/es/css-specificity-calculator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Calculadora de especificidad CSS</p>
+    <h1>Calculadora de especificidad CSS</h1>
+    <p class="lede">
+      Pega selectores, uno por línea, y mira la especificidad de cada uno desglosada y ordenada
+      tal como la cascada realmente los aplicaría.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="selInput">Selectores (uno por línea)</label>
+          <textarea id="selInput" class="mono-area" rows="12" placeholder="#header .nav a:hover
+.card > .title
+div p span
+[data-active].btn.primary
+#app"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">Los resultados aparecen aquí, ordenados de mayor a menor especificidad.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Cada selector se divide en combinadores y se tokeniza: los tokens <code>#id</code> cuentan
+        como IDs, los tokens <code>.class</code>, <code>[attr]</code> y <code>:pseudo-class</code>
+        cuentan como clases, y los nombres de elementos sin prefijo y los
+        <code>::pseudo-elements</code> cuentan como elementos. El selector universal <code>*</code>
+        y combinadores como <code>&gt;</code>, <code>+</code>, <code>~</code> no suman nada. Cada
+        selector termina como una tripleta <code>(IDs, clases, elementos)</code>, que es exactamente
+        cómo la propia especificación CSS define la especificidad, así que el orden aquí coincide
+        con lo que hará la cascada de tu propio navegador.
+      </p>
+      <p>
+        Todo se ejecuta con cada pulsación en el JavaScript de esta página. Pegar selectores de
+        toda una hoja de estilos nunca sale de tu navegador.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/css-gradient-generator.html|Generador de degradados CSS|Crea un degradado lineal o radial de forma visual.
+json-formatter.html|Formateador y validador JSON|Formatea, valida y minifica JSON.
+regex-tester.html|Probador de Regex|Prueba una regex con resaltado de coincidencias en vivo.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Cómo se calcula la especificidad?</summary>
+        <p>Como cuatro niveles contados: estilos inline, luego selectores de ID, luego clases/selectores de atributo/pseudo-clases, y por último elementos y pseudo-elementos. Los niveles superiores siempre superan a los inferiores sin importar cuántos selectores de nivel inferior acumules, así que 1 ID (0,1,0,0) siempre le gana a 20 clases (0,0,20,0).</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Por qué dos de mis selectores empatan?</summary>
+        <p>Cuando la especificidad empata exactamente, CSS recurre al orden de aparición en el código: la regla que aparece más tarde en la hoja de estilos (o que se añadió después) gana. Esta herramienta ordena los empates según el orden en que los pegaste, respetando ese comportamiento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Esto envía mi CSS a algún sitio?</summary>
+        <p>No. Los selectores se analizan y puntúan por completo en tu navegador con un pequeño tokenizador en JavaScript. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-specificity-calculator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

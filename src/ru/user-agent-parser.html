@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Парсер User-Agent | norito</title>
+<meta name="description" content="Вставьте строку User-Agent и увидите разбор браузера, движка, ОС и устройства. По умолчанию показана ваша собственная строка. Работает полностью в браузере." />
+<link rel="canonical" href="https://norito.in/ru/user-agent-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Парсер User-Agent | norito" />
+<meta property="og:description" content="Вставьте строку User-Agent и увидите разбор браузера, движка, ОС и устройства. По умолчанию показана ваша собственная строка. Работает полностью в браузере." />
+<meta property="og:url" content="https://norito.in/ru/user-agent-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Парсер User-Agent | norito" />
+<meta name="twitter:description" content="Вставьте строку User-Agent и увидите разбор браузера, движка, ОС и устройства. По умолчанию показана ваша собственная строка. Работает полностью в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Парсер User-Agent",
+  "url": "https://norito.in/ru/user-agent-parser.html",
+  "description": "Вставьте строку User-Agent и получите разбор браузера, движка, ОС и устройства.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Почему по умолчанию показывается мой собственный браузер?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Поле изначально заполнено значением navigator.userAgent — строкой вашего собственного браузера, считанной локально прямо с этой страницы. Вставьте вместо неё любую другую строку User-Agent, чтобы разобрать её." }
+    },
+    {
+      "@type": "Question",
+      "name": "Может ли он безошибочно определить любой браузер и устройство?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Строки User-Agent по своей природе беспорядочны: многие браузеры включают токены от тех, на основе которых они построены, ради совместимости (например, и Edge, и Chrome содержат «Safari» и «KHTML, like Gecko»). Этот инструмент использует набор правил, покрывающий распространённые случаи, но редкие или подделанные строки всё же могут быть распознаны неверно." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли строка куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Разбор выполняется полностью в вашем браузере с помощью регулярных выражений. Ничего не загружается на сервер." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Парсер User-Agent", "item": "https://norito.in/ru/user-agent-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Парсер User-Agent</p>
+    <h1>Парсер User-Agent</h1>
+    <p class="lede">
+      Вставьте любую строку User-Agent и узнайте, какой браузер, движок рендеринга, ОС и тип
+      устройства она обозначает. По умолчанию показана ваша собственная строка.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="uaInput">Строка User-Agent</label>
+          <textarea id="uaInput" class="mono-area" rows="6"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Строка сканируется на известные токены в порядке, который лучше всего разрешает пересечения
+        между браузерами: браузеры на движке Chromium (Edge, Opera, Brave, Vivaldi, Samsung Internet)
+        несут токен <code>Chrome/</code> ради совместимости, поэтому их собственные, более специфичные
+        токены нужно проверять в первую очередь — иначе все они определялись бы просто как Chrome. ОС
+        определяется по отдельному набору токенов (<code>Windows NT</code>, <code>Mac OS X</code>,
+        <code>Android</code>, <code>iPhone OS</code>/<code>CPU OS</code>, распространённые метки Linux),
+        а тип устройства зависит от наличия токенов, специфичных для мобильных устройств или планшетов.
+      </p>
+      <p>
+        Всё происходит в JavaScript этой страницы: анализируется введённый вами текст либо
+        <code>navigator.userAgent</code>, если вы не меняли поле. Ничего не загружается на сервер.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-parser.html|Парсер URL|Разбор URL на составные части.
+hash-generator.html|Генератор хешей|MD5, SHA-1, SHA-256, SHA-512.
+regex-tester.html|Тестер регулярных выражений|Проверка регулярного выражения с подсветкой совпадений в реальном времени.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Почему по умолчанию показывается мой собственный браузер?</summary>
+        <p>Поле изначально заполнено значением navigator.userAgent — строкой вашего собственного браузера, считанной локально прямо с этой страницы. Вставьте вместо неё любую другую строку User-Agent, чтобы разобрать её.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Может ли он безошибочно определить любой браузер и устройство?</summary>
+        <p>Строки User-Agent по своей природе беспорядочны: многие браузеры включают токены от тех, на основе которых они построены, ради совместимости (например, и Edge, и Chrome содержат «Safari» и «KHTML, like Gecko»). Этот инструмент использует набор правил, покрывающий распространённые случаи, но редкие или подделанные строки всё же могут быть распознаны неверно.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли строка куда-либо?</summary>
+        <p>Нет. Разбор выполняется полностью в вашем браузере с помощью регулярных выражений. Ничего не загружается на сервер.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-user-agent-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

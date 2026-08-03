@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>HEIC to JPG/PNG Converter | norito</title>
+<meta name="description" content="Convert iPhone HEIC/HEIF photos to JPG or PNG, right in your browser. Batch support. Nothing is uploaded." />
+<link rel="canonical" href="https://norito.in/heic-converter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HEIC to JPG/PNG Converter | norito" />
+<meta property="og:description" content="Convert iPhone HEIC/HEIF photos to JPG or PNG, right in your browser. Batch support. Nothing is uploaded." />
+<meta property="og:url" content="https://norito.in/heic-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HEIC to JPG/PNG Converter | norito" />
+<meta name="twitter:description" content="Convert iPhone HEIC/HEIF photos to JPG or PNG, right in your browser. Batch support. Nothing is uploaded." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HEIC to JPG/PNG Converter",
+  "url": "https://norito.in/heic-converter.html",
+  "description": "Convert iPhone HEIC/HEIF photos to JPG or PNG, right in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do I need to convert HEIC at all?",
+      "acceptedAnswer": { "@type": "Answer", "text": "HEIC is the default photo format on recent iPhones, but many websites, Windows apps, and older software still can't open it directly. Converting to JPG or PNG makes the photo universally viewable." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does converting lose quality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Converting to PNG is lossless. Converting to JPG re-encodes at high quality (92%), which is visually indistinguishable from the source in almost all cases, though technically one more generation of lossy compression than staying in HEIC." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Decoding and conversion both happen in your browser using a WebAssembly build of libheif. Nothing is uploaded, which matters for personal photos." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "HEIC to JPG/PNG Converter", "item": "https://norito.in/heic-converter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / HEIC Converter</p>
+    <h1>HEIC to JPG/PNG Converter</h1>
+    <p class="lede">
+      Convert iPhone HEIC/HEIF photos to JPG or PNG. Drop in one or several, download individually
+      or as a .zip.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose HEIC photos</strong>, or drag and drop them here</p>
+          <p class="note" style="margin-top:2px;">Select multiple to convert in bulk. Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept=".heic,.heif,image/heic,image/heif" multiple />
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label for="format">Output format</label>
+          <select id="format">
+            <option value="image/jpeg" selected>JPEG</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </div>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchConvertBtn">Convert all</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>Download all as .zip</button>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Converted preview" />
+          <p class="note" id="previewHint" style="margin-top:0;">Your converted photo will appear here.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Browsers don't have a built-in HEIC decoder, so this page loads a WebAssembly build of
+        <code>libheif</code>, the same open-source decoder most photo software uses, the first
+        time you convert a file. It decodes the HEIC's raw pixel data locally, draws it to a
+        canvas, and re-encodes that canvas as JPEG or PNG using the browser's own image encoder.
+        The library (about 1.3MB) loads once per visit and is cached by your browser after that.
+      </p>
+      <p>
+        Nothing is uploaded at any point, decoding, conversion, and download all happen in this
+        browser tab. That matters here more than most tools, since HEIC files are almost always
+        personal photos straight off a phone.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+avif-converter.html|AVIF Converter|Convert images to and from AVIF.
+image-converter.html|Image Converter|Convert between JPG, PNG, and WebP.
+compress-image.html|Compress Image to Size|Shrink a converted photo to a target size.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why do I need to convert HEIC at all?</summary>
+        <p>HEIC is the default photo format on recent iPhones, but many websites, Windows apps, and older software still can't open it directly. Converting to JPG or PNG makes the photo universally viewable.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does converting lose quality?</summary>
+        <p>Converting to PNG is lossless. Converting to JPG re-encodes at high quality (92%), which is visually indistinguishable from the source in almost all cases, though technically one more generation of lossy compression than staying in HEIC.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my photo uploaded anywhere?</summary>
+        <p>No. Decoding and conversion both happen in your browser using a WebAssembly build of libheif. Nothing is uploaded, which matters for personal photos.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/vendor/heic2any/heic2any.min.js"></script>
+<script src="js/app-heic-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

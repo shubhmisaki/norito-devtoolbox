@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>スクリーンショット注釈ツール | norito</title>
+<meta name="description" content="スクリーンショットに矢印、四角形、フリーハンドの線、テキストを描き込み、ぼかし処理やダウンロードができます。元に戻す/やり直しに対応。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/screenshot-annotator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="スクリーンショット注釈ツール | norito" />
+<meta property="og:description" content="スクリーンショットに矢印、四角形、フリーハンドの線、テキストを描き込み、ぼかし処理やダウンロードができます。元に戻す/やり直しに対応。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/screenshot-annotator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="スクリーンショット注釈ツール | norito" />
+<meta name="twitter:description" content="スクリーンショットに矢印、四角形、フリーハンドの線、テキストを描き込み、ぼかし処理やダウンロードができます。元に戻す/やり直しに対応。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "スクリーンショット注釈ツール",
+  "url": "https://norito.in/ja/screenshot-annotator.html",
+  "description": "スクリーンショットに矢印、四角形、フリーハンドの線、テキストを描き込み、ダウンロードできます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ぼかし/隠蔽ツールは何のためのものですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "メールアドレス、口座番号、顔など、隠したいものの上にドラッグすると、その領域は書き出した画像内で恒久的にモザイク処理されます。CSSのオーバーレイではなく実際のピクセルデータに適用されるため、画像編集ソフトで剥がすことはできません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "間違えたときに元に戻せますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。描いた図形はそれぞれ独立したステップとして記録され、元に戻す/やり直しでその履歴を前後に移動できます。ダウンロードするまで、画像には何も焼き込まれません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "スクリーンショットはどこかにアップロードされますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。描画、ぼかし処理、書き出しはすべて、ブラウザ内のメモリ上のキャンバスで行われます。アップロードは一切行われません。スクリーンショットにはしばしば個人情報が含まれるため、これは重要なポイントです。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "スクリーンショット注釈ツール", "item": "https://norito.in/ja/screenshot-annotator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / スクリーンショット注釈ツール</p>
+    <h1>スクリーンショット注釈ツール</h1>
+    <p class="lede">
+      スクリーンショットをドロップして、矢印、四角形、フリーハンドの印、テキストを描き込み、
+      個人情報をぼかしてからダウンロードできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="panel" id="editorPanel" style="display:none;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; align-items:center;">
+        <div class="tabs" id="toolTabs">
+          <button type="button" class="tab active" data-tool="arrow">矢印</button>
+          <button type="button" class="tab" data-tool="rect">四角形</button>
+          <button type="button" class="tab" data-tool="freehand">フリーハンド</button>
+          <button type="button" class="tab" data-tool="text">テキスト</button>
+          <button type="button" class="tab" data-tool="blur">ぼかし</button>
+        </div>
+        <input type="color" id="strokeColor" value="#ef4444" title="色" />
+        <input type="range" id="strokeWidth" min="2" max="16" value="4" title="線の太さ" style="width:90px;" />
+        <button type="button" id="undoBtn" class="secondary" disabled>元に戻す</button>
+        <button type="button" id="redoBtn" class="secondary" disabled>やり直し</button>
+        <button type="button" id="clearBtn" class="secondary">はじめからやり直す</button>
+      </div>
+      <div id="canvasWrap" style="position:relative; max-width:100%; overflow:auto; background:var(--bg-subtle); border-radius:var(--radius-md);">
+        <canvas id="annCanvas" style="max-width:100%; display:block; touch-action:none; cursor:crosshair;"></canvas>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="downloadBtn">PNGをダウンロード</button>
+      </div>
+    </div>
+
+    <div class="panel" id="dropPanel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>クリックしてスクリーンショットを選択</strong>するか、ここにドラッグ&amp;ドロップしてください</p>
+        <p class="note" style="margin-top:2px;">端末内に留まり、アップロードは一切行われません。</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        矢印、四角形、フリーハンドの線、テキストラベル、ぼかし領域といった各注釈は、描くたびにピクセルへ
+        直接焼き込まれるのではなく、軽量な図形オブジェクトとして保存されます。変更のたびに、まず元の
+        スクリーンショットが再描画され、そのすべての図形が順番どおりに上へ重ねて再生されます。これが
+        元に戻す/やり直しの仕組みで、単にその図形リストを削ったり再生し直したりしているだけです。
+        ぼかし領域だけはピクセルに直接触れる例外で、選択した範囲のブロックをグリッド状にサンプリングして
+        平均化する（単純なボックスぼかし）ため、書き出したファイルでは元の詳細が視覚的に隠れるだけでなく
+        本当に破壊されます。
+      </p>
+      <p>
+        ダウンロードは<code>toBlob</code>によるキャンバスからの直接PNG書き出しです。画像はどの段階でも
+        ブラウザの外に出ることはありません。スクリーンショットにはしばしば個人情報が含まれるため、
+        これは重要なポイントです。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|画像をトリミング|自由形式または固定比率でドラッグしてトリミング。
+watermark-image.html|画像に透かしを追加|リアルタイムプレビューでテキストの透かしを追加。
+remove-metadata.html|メタデータを削除|EXIF、GPS、カメラ情報を除去。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ぼかし/隠蔽ツールは何のためのものですか?</summary>
+        <p>メールアドレス、口座番号、顔など、隠したいものの上にドラッグすると、その領域は書き出した画像内で恒久的にモザイク処理されます。CSSのオーバーレイではなく実際のピクセルデータに適用されるため、画像編集ソフトで剥がすことはできません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>間違えたときに元に戻せますか?</summary>
+        <p>はい。描いた図形はそれぞれ独立したステップとして記録され、元に戻す/やり直しでその履歴を前後に移動できます。ダウンロードするまで、画像には何も焼き込まれません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>スクリーンショットはどこかにアップロードされますか?</summary>
+        <p>いいえ。描画、ぼかし処理、書き出しはすべて、ブラウザ内のメモリ上のキャンバスで行われます。アップロードは一切行われません。スクリーンショットにはしばしば個人情報が含まれるため、これは重要なポイントです。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-screenshot-annotator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

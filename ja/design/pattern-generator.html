@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xrd6nlberg");
+    </script>
+
+<meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#ff4d7a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<title>CSSパターンジェネレーター | norito</title>
+<meta name="description" content="ストライプ、ドット、グリッド、市松模様など、タイル張り可能なCSS背景パターンを色と間隔の調整付きで作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/design/pattern-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/pattern-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/pattern-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/pattern-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/pattern-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/pattern-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/pattern-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/design/pattern-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/pattern-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSSパターンジェネレーター | norito" />
+<meta property="og:description" content="ストライプ、ドット、グリッド、市松模様など、タイル張り可能なCSS背景パターンを色と間隔の調整付きで作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/design/pattern-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSSパターンジェネレーター | norito" />
+<meta name="twitter:description" content="ストライプ、ドット、グリッド、市松模様など、タイル張り可能なCSS背景パターンを色と間隔の調整付きで作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSSパターンジェネレーター",
+  "url": "https://norito.in/ja/design/pattern-generator.html",
+  "description": "色と間隔の調整付きでタイル張り可能なCSS背景パターンを作成します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "画像ファイルを使っていますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。すべてのパターンは、繰り返しの背景として重ねられたCSSグラデーションから作られており、画像リクエストは一切ありません。ラスターのタイルではなくベクター計算なので、どのズームレベル、どの要素サイズでもパターンが鮮明なままです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "パターンは継ぎ目なくタイル状に並びますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。background-sizeがちょうど1つの繰り返し単位に設定されているため、どの要素サイズでも端から端まで目に見える継ぎ目なくパターンが繰り返されます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。パターンの生成とプレビューはすべてブラウザのCSSエンジン内で行われます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "CSSパターンジェネレーター", "item": "https://norito.in/ja/design/pattern-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/ja/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/images/">画像</a>
+        <div class="nav-panel">
+          <a href="/ja/compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">画像を圧縮<span>目標のファイルサイズまで削減</span></div></a>
+          <a href="/ja/placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">プレースホルダージェネレーター<span>カスタムプレースホルダー画像</span></div></a>
+          <a href="/ja/remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">背景を削除<span>写真から人物を切り抜き</span></div></a>
+          <a href="/ja/resize-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">画像のリサイズ<span>幅と高さを正確な数値または割合で変更</span></div></a>
+          <a href="/ja/image-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">画像コンバーター<span>JPG、PNG、WebP を相互に変換</span></div></a>
+          <a href="/ja/crop-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">画像をトリミング<span>ボックスをドラッグしてトリミング、自由形式または固定比率</span></div></a>
+          <a href="/ja/remove-metadata.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div class="nav-link-body">メタデータを削除<span>EXIF、GPS、カメラ情報を削除</span></div></a>
+          <a href="/ja/watermark-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">画像に透かしを追加<span>リアルタイムプレビュー付きでテキスト透かしを追加</span></div></a>
+          <a href="/ja/avif-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">AVIFコンバーター<span>画像をAVIFとの間で変換</span></div></a>
+          <a href="/ja/heic-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">HEICからJPG/PNGへの変換ツール<span>iPhoneの写真をJPGまたはPNGに変換</span></div></a>
+          <a href="/ja/image-dimension-inspector.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">画像サイズ検査ツール<span>幅、高さ、比率、ファイルサイズを確認</span></div></a>
+          <a href="/ja/screenshot-annotator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">スクリーンショット注釈ツール<span>矢印、四角形、テキスト、ぼかし</span></div></a>
+          <a href="/ja/social-image-cropper.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">ソーシャルメディア画像クロッパー<span>プラットフォームが必要とする正確なサイズにトリミング</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/developer/">開発</a>
+        <div class="nav-panel">
+          <a href="/ja/test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">テストファイルジェネレーター<span>正確なサイズのダミーファイル</span></div></a>
+          <a href="/ja/json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">JSONフォーマッタ<span>整形・検証・圧縮</span></div></a>
+          <a href="/ja/markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">Markdownエディタ<span>リアルタイムプレビュー、.md/.htmlで書き出し</span></div></a>
+          <a href="/ja/uuid-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg><div class="nav-link-body">UUIDジェネレーター<span>ランダムなUUID v4をまとめて生成</span></div></a>
+          <a href="/ja/base64-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg><div class="nav-link-body">Base64 エンコード／デコード<span>テキストとBase64を相互変換、UTF-8対応</span></div></a>
+          <a href="/ja/hash-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">ハッシュジェネレーター<span>MD5、SHA-1、SHA-256、SHA-512</span></div></a>
+          <a href="/ja/timestamp-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="nav-link-body">タイムスタンプ変換ツール<span>Unix時間と日付を相互変換</span></div></a>
+          <a href="/ja/json-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">JSON Diff<span>2つのJSONドキュメントを比較</span></div></a>
+          <a href="/ja/jwt-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">JWTデコーダー<span>JWTのヘッダーとペイロードをデコード</span></div></a>
+          <a href="/ja/regex-tester.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">正規表現テストツール<span>正規表現をリアルタイムのマッチ表示でテスト</span></div></a>
+          <a href="/ja/csv-to-json.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">CSVからJSON<span>CSVファイルをJSONに変換</span></div></a>
+          <a href="/ja/csv-viewer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg><div class="nav-link-body">CSVビューア<span>CSVを表として表示・編集</span></div></a>
+          <a href="/ja/url-encoder-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">URLエンコード/デコードツール<span>URLをパーセントエンコード/デコード</span></div></a>
+          <a href="/ja/html-entity-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><div class="nav-link-body">HTMLエンティティエンコーダー/デコーダー<span>HTMLエンティティをエスケープ/アンエスケープ</span></div></a>
+          <a href="/ja/yaml-to-json-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg><div class="nav-link-body">YAMLからJSONへの変換ツール<span>YAMLとJSONを相互に変換</span></div></a>
+          <a href="/ja/cron-expression-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg><div class="nav-link-body">Cron式パーサー<span>cronスケジュールを解説し、次回実行をプレビュー</span></div></a>
+          <a href="/ja/number-base-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">進数変換ツール<span>2進数、8進数、10進数、16進数など</span></div></a>
+          <a href="/ja/text-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">テキスト差分チェッカー<span>2つのテキストを行ごとに比較</span></div></a>
+          <a href="/ja/css-specificity-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">CSS詳細度計算ツール<span>セレクタを詳細度でランク付け</span></div></a>
+          <a href="/ja/css-variable-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">CSS変数抽出ツール<span>スタイルシートからカスタムプロパティを抽出</span></div></a>
+          <a href="/ja/gitignore-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><div class="nav-link-body">.gitignoreジェネレーター<span>スタックに合わせた.gitignoreファイルを結合</span></div></a>
+          <a href="/ja/json-schema-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">JSON Schemaジェネレーター<span>JSONサンプルからdraft-07スキーマを生成</span></div></a>
+          <a href="/ja/svg-optimizer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">SVGオプティマイザー<span>不要な要素を除去してSVGを軽量化</span></div></a>
+          <a href="/ja/svg-sprite-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">SVGスプライトジェネレーター<span>アイコンを1つのスプライトシートに結合</span></div></a>
+          <a href="/ja/svg-to-react-component.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">SVGからReactコンポーネントへ変換<span>SVGマークアップをReactコンポーネントに変換</span></div></a>
+          <a href="/ja/url-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">URLパーサー<span>URLを構成要素に分解</span></div></a>
+          <a href="/ja/user-agent-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">User-Agentパーサー<span>UA文字列からブラウザ、エンジン、OSを判別</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/text/">テキスト</a>
+        <div class="nav-panel">
+          <a href="/ja/seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">SEOスラッグジェネレーター<span>タイトルからクリーンなURLを生成</span></div></a>
+          <a href="/ja/limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">文字数指定テキストジェネレーター<span>正確な長さのダミーテキスト</span></div></a>
+          <a href="/ja/word-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">単語数カウンター<span>単語数、文数、段落数をリアルタイム表示</span></div></a>
+          <a href="/ja/character-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg><div class="nav-link-body">文字数カウンター<span>プラットフォームの制限付き文字数カウント</span></div></a>
+          <a href="/ja/remove-duplicate-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg><div class="nav-link-body">重複行の削除<span>リストから重複行を削除</span></div></a>
+          <a href="/ja/sort-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg><div class="nav-link-body">行の並べ替え<span>アルファベット順、数値順、またはシャッフル</span></div></a>
+          <a href="/ja/case-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M21 16h-6l6-8h-6"/></svg><div class="nav-link-body">大文字小文字変換ツール<span>UPPERCASE、camelCase、snake_caseなど</span></div></a>
+          <a href="/ja/lorem-ipsum-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Lorem Ipsumジェネレーター<span>単語・文・段落単位のプレースホルダーテキスト</span></div></a>
+          <a href="/ja/find-and-replace.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">検索と置換<span>テキストの検索と置換、正規表現対応</span></div></a>
+          <a href="/ja/invisible-character-detector.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">不可視文字検出ツール<span>隠れたゼロ幅文字を検出</span></div></a>
+          <a href="/ja/markdown-table-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">Markdownテーブルフォーマッター<span>ずれたMarkdownテーブルを再整列</span></div></a>
+          <a href="/ja/markdown-table-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">Markdownテーブルジェネレーター<span>CSV/TSVをMarkdownテーブルに変換</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/utilities/">ユーティリティ</a>
+        <div class="nav-panel">
+          <a href="/ja/password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">パスワードジェネレーター<span>ランダムなパスワードとフレーズ</span></div></a>
+          <a href="/ja/qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">QRコードジェネレーター<span>カスタムカラー、誤り訂正レベル</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/pdf/">PDF</a>
+        <div class="nav-panel">
+          <a href="/ja/pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">PDF結合<span>複数のPDFを1つに結合</span></div></a>
+          <a href="/ja/pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">PDF分割<span>ページを抜き出すか複数ファイルに分割</span></div></a>
+          <a href="/ja/pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">PDF回転<span>横向きや逆さまのページを修正</span></div></a>
+          <a href="/ja/pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF→画像<span>ページを画像に変換</span></div></a>
+          <a href="/ja/pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">画像→PDF<span>画像を1つのPDFに結合</span></div></a>
+          <a href="/ja/pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">ページ削除・並び替え<span>ページを削除または並び替え</span></div></a>
+          <a href="/ja/pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">ページ番号<span>すべてのページに番号を追加</span></div></a>
+          <a href="/ja/pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">透かし追加<span>全ページにテキストを刻印</span></div></a>
+          <a href="/ja/pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">テキスト抽出<span>PDFからテキストを抽出</span></div></a>
+          <a href="/ja/pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">PDF圧縮<span>PDFのファイルサイズを縮小</span></div></a>
+          <a href="/ja/pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">PDF署名<span>署名を描くか入力</span></div></a>
+          <a href="/ja/pdf/compare-pdfs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">PDFを比較<span>2つのPDFを1行ずつテキスト比較</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/seo/">SEO</a>
+        <div class="nav-panel">
+          <a href="/ja/seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">メタタグジェネレーター<span>タイトル、説明、OG、Twitterタグ</span></div></a>
+          <a href="/ja/seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">UTMビルダー<span>キャンペーン計測URLを作成</span></div></a>
+          <a href="/ja/seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">robots.txtジェネレーター<span>allow/disallowルール、sitemap参照</span></div></a>
+          <a href="/ja/seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">サイトマップジェネレーター<span>URLを入力、sitemap.xmlを出力</span></div></a>
+          <a href="/ja/seo/canonical-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">正規化タグジェネレーター<span>正規化されたcanonicalリンクタグ</span></div></a>
+          <a href="/ja/seo/hreflang-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">hreflangタグジェネレーター<span>すべてのロケール向けの相互参照hreflangタグ</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ja/design/">Design</a>
+        <div class="nav-panel">
+          <a href="/ja/design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">CSSグラデーション<span>線形・放射状、CSSをコピー</span></div></a>
+          <a href="/ja/design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">ボックスシャドウ<span>単一または重ねた影</span></div></a>
+          <a href="/ja/design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">border-radius<span>角ごとの半径、CSSをコピー</span></div></a>
+          <a href="/ja/design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">ファビコンジェネレーター<span>必要なすべてのサイズ</span></div></a>
+          <a href="/ja/design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">カラーパレット抽出<span>画像から主要な色を抽出</span></div></a>
+          <a href="/ja/design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">コントラストチェッカー<span>WCAGコントラスト比、AA/AAA判定</span></div></a>
+          <a href="/ja/design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">カラーコンバーター<span>HEX、RGB、HSL、CMYK、リアルタイム</span></div></a>
+          <a href="/ja/design/blob-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">SVGブロブジェネレーター<span>ランダムな有機的ブロブ形状</span></div></a>
+          <a href="/ja/design/css-clamp-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">CSS Clamp()ジェネレーター<span>ビューポートに合わせてスケーリングする流動的なサイズ</span></div></a>
+          <a href="/ja/design/css-easing-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">CSSイージングジェネレーター<span>カスタムのcubic-bezier()曲線をデザイン</span></div></a>
+          <a href="/ja/design/css-filter-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">CSSフィルタージェネレーター<span>スライダーをドラッグしてCSSフィルターをコピー</span></div></a>
+          <a href="/ja/design/noise-texture-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">ノイズテクスチャジェネレーター<span>粒状テクスチャをダウンロードまたはCSSとしてコピー</span></div></a>
+          <a href="/ja/design/pattern-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">CSSパターンジェネレーター<span>画像不要のタイル張り可能な背景パターン</span></div></a>
+          <a href="/ja/design/tailwind-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">Tailwindシャドウジェネレーター<span>レイヤー化したシャドウをTailwindクラスで</span></div></a>
+        </div>
+      </div>
+
+          
+</nav>
+      <button type="button" class="search-trigger" id="searchTrigger" aria-label="ツールを検索" title="ツールを検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+
+      <button type="button" class="theme-toggle-btn" aria-label="ダークモード切り替え">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा / Язык / 言語">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">JA</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSSパターンジェネレーター</p>
+    <h1>CSSパターンジェネレーター</h1>
+    <p class="lede">
+      純粋なCSSグラデーションだけでタイル張り可能な背景パターンを作成します。画像ファイルは不要で、
+      CSSをコピーできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="patType">パターン</label>
+          <select id="patType">
+            <option value="stripes" selected>斜めストライプ</option>
+            <option value="stripesH">水平ストライプ</option>
+            <option value="dots">ドット</option>
+            <option value="grid">グリッド</option>
+            <option value="checkerboard">市松模様</option>
+            <option value="crosshatch">クロスハッチ</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="patFg">前景色</label>
+            <input type="color" id="patFg" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="patBg">背景色</label>
+            <input type="color" id="patBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="patSize">サイズ (<span id="patSizeVal">24px</span>)</label>
+          <input type="range" id="patSize" min="4" max="120" value="24" />
+        </div>
+        <div class="field">
+          <label for="patThickness">線の太さ / ドットサイズ (<span id="patThicknessVal">4px</span>)</label>
+          <input type="range" id="patThickness" min="1" max="40" value="4" />
+        </div>
+        <div class="field">
+          <label for="patOpacity">前景の不透明度 (<span id="patOpacityVal">100%</span>)</label>
+          <input type="range" id="patOpacity" min="5" max="100" value="100" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSSをコピー</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        各プリセットは、1つまたは2つのCSS<code>linear-gradient()</code>または<code>radial-gradient()</code>
+        レイヤーを、ソフトな混ざり合いのないはっきりしたカラーストップで構築します。これがなめらかな
+        グラデーションを鮮明な繰り返し形状へと変えています。<code>background-size</code>はちょうど
+        1タイル分の寸法に設定されているため、端で目に見える継ぎ目なくパターンが繰り返されます。ドットや
+        グリッドのパターンでは、形状が角で切れずに中央に来るよう、さらにbackground-positionをオフセットして
+        います。
+      </p>
+      <p>
+        すべて生成されたCSSであり、プレビューボックス自身の<code>background</code>スタイルに適用されます。
+        アップロードは一切行われず、画像リクエストも発生しません。
+      </p>
+    </div>
+
+    <div class="related-tools">
+      <h2>関連ツール</h2>
+      <div class="related-grid">
+        <a class="related-card" href="../design/css-gradient-generator.html">
+          <strong>CSSグラデーションジェネレーター</strong>
+          <span>線形または放射状グラデーションを視覚的に作成。</span>
+        </a>
+        <a class="related-card" href="blob-generator.html">
+          <strong>ブロブジェネレーター</strong>
+          <span>有機的なブロブ形状を生成。</span>
+        </a>
+        <a class="related-card" href="noise-texture-generator.html">
+          <strong>ノイズテクスチャジェネレーター</strong>
+          <span>粒状ノイズテクスチャを生成。</span>
+        </a>
+      </div>
+    </div>
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>画像ファイルを使っていますか?</summary>
+        <p>いいえ。すべてのパターンは、繰り返しの背景として重ねられたCSSグラデーションから作られており、画像リクエストは一切ありません。ラスターのタイルではなくベクター計算なので、どのズームレベル、どの要素サイズでもパターンが鮮明なままです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>パターンは継ぎ目なくタイル状に並びますか?</summary>
+        <p>はい。background-sizeがちょうど1つの繰り返し単位に設定されているため、どの要素サイズでも端から端まで目に見える継ぎ目なくパターンが繰り返されます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>これはどこかに送信されますか?</summary>
+        <p>いいえ。パターンの生成とプレビューはすべてブラウザのCSSエンジン内で行われます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">それぞれが1つの面倒な問題を解決する小さなツール群。すべてブラウザ内で動作し、何もアップロードされません。</p>
+      </div>
+      <div class="footer-col footer-product">
+        <h3>プロダクト</h3>
+        <a href="/tools.html">すべてのツール</a>
+        <a href="/ja/changelog.html">変更履歴</a>
+        <a href="/ja/how-it-works.html">仕組み</a>
+        <a href="/blog/">ブログ</a>
+        <a href="/ja/compare/">比較</a>
+        <a href="/ja/about.html">norito について</a>
+        <a href="/ja/contact.html">お問い合わせ</a>
+        <a href="/ja/privacy.html">プライバシーポリシー</a>
+        <a href="/ja/terms.html">利用規約</a>
+      </div>
+      <div class="footer-col">
+        <h3>PDF</h3>
+        <a href="/ja/pdf/merge-pdf.html">PDF結合</a>
+        <a href="/ja/pdf/split-pdf.html">PDF分割</a>
+        <a href="/ja/pdf/rotate-pdf.html">PDF回転</a>
+        <a href="/ja/pdf/pdf-to-image.html">PDF→画像</a>
+        <a href="/ja/pdf/jpg-png-to-pdf.html">画像→PDF</a>
+        <a href="/ja/pdf/organize-pdf.html">ページ削除・並び替え</a>
+        <a href="/ja/pdf/add-page-numbers.html">ページ番号</a>
+        <a href="/ja/pdf/add-watermark.html">透かし追加</a>
+        <a href="/ja/pdf/extract-text.html">テキスト抽出</a>
+        <a href="/ja/pdf/compress-pdf.html">PDF圧縮</a>
+        <a href="/ja/pdf/sign-pdf.html">PDF署名</a>
+        <a href="/ja/pdf/compare-pdfs.html">PDF比較</a>
+      </div>
+      <div class="footer-col">
+        <h3>画像</h3>
+        <a href="/ja/compress-image.html">画像を圧縮</a>
+        <a href="/ja/resize-image.html">画像のリサイズ</a>
+        <a href="/ja/image-converter.html">画像コンバーター</a>
+        <a href="/ja/crop-image.html">画像をトリミング</a>
+        <a href="/ja/remove-metadata.html">メタデータを削除</a>
+        <a href="/ja/watermark-image.html">画像に透かしを追加</a>
+        <a href="/ja/placeholder-generator.html">プレースホルダージェネレーター</a>
+        <a href="/ja/remove-background.html">背景を削除</a>
+        <a href="/ja/avif-converter.html">AVIFコンバーター</a>
+        <a href="/ja/heic-converter.html">HEICコンバーター</a>
+        <a href="/ja/image-dimension-inspector.html">画像サイズ検査</a>
+        <a href="/ja/screenshot-annotator.html">スクリーンショット注釈</a>
+        <a href="/ja/social-image-cropper.html">SNS画像クロップ</a>
+      </div>
+      <div class="footer-col">
+        <h3>開発</h3>
+        <a href="/ja/test-file-generator.html">テストファイルジェネレーター</a>
+        <a href="/ja/json-formatter.html">JSONフォーマッタ</a>
+        <a href="/ja/markdown-editor.html">Markdownエディタ</a>
+        <a href="/ja/uuid-generator.html">UUIDジェネレーター</a>
+        <a href="/ja/base64-encoder.html">Base64</a>
+        <a href="/ja/hash-generator.html">ハッシュジェネレーター</a>
+        <a href="/ja/timestamp-converter.html">Timestamp</a>
+        <a href="/ja/json-diff.html">JSON Diff</a>
+        <a href="/ja/jwt-decoder.html">JWTデコーダー</a>
+        <a href="/ja/regex-tester.html">正規表現テストツール</a>
+        <a href="/ja/csv-to-json.html">CSVからJSON</a>
+        <a href="/ja/csv-viewer.html">CSVビューア</a>
+        <a href="/ja/url-encoder-decoder.html">URL Encoder</a>
+        <a href="/ja/html-entity-encoder.html">HTML Entities</a>
+        <a href="/ja/yaml-to-json-converter.html">YAML to JSON</a>
+        <a href="/ja/cron-expression-parser.html">Cron Parser</a>
+        <a href="/ja/number-base-converter.html">Base Converter</a>
+        <a href="/ja/text-diff.html">テキスト差分チェッカー</a>
+        <a href="/ja/css-specificity-calculator.html">CSS詳細度計算</a>
+        <a href="/ja/css-variable-extractor.html">CSS変数抽出</a>
+        <a href="/ja/gitignore-generator.html">.gitignoreジェネレーター</a>
+        <a href="/ja/json-schema-generator.html">JSON Schema</a>
+        <a href="/ja/svg-optimizer.html">SVGオプティマイザー</a>
+        <a href="/ja/svg-sprite-generator.html">SVGスプライト</a>
+        <a href="/ja/svg-to-react-component.html">SVG→React変換</a>
+        <a href="/ja/url-parser.html">URLパーサー</a>
+        <a href="/ja/user-agent-parser.html">User-Agentパーサー</a>
+      </div>
+      <div class="footer-col">
+        <h3>テキスト</h3>
+        <a href="/ja/seo-slug-generator.html">SEOスラッグジェネレーター</a>
+        <a href="/ja/limited-text-generator.html">文字数指定テキストジェネレーター</a>
+        <a href="/ja/word-counter.html">単語数カウンター</a>
+        <a href="/ja/character-counter.html">文字数カウンター</a>
+        <a href="/ja/remove-duplicate-lines.html">Dedupe Lines</a>
+        <a href="/ja/sort-lines.html">行の並べ替え</a>
+        <a href="/ja/case-converter.html">大文字小文字変換ツール</a>
+        <a href="/ja/lorem-ipsum-generator.html">Lorem Ipsum</a>
+        <a href="/ja/find-and-replace.html">Find & Replace</a>
+        <a href="/ja/invisible-character-detector.html">不可視文字検出</a>
+        <a href="/ja/markdown-table-formatter.html">MDテーブル整形</a>
+        <a href="/ja/markdown-table-generator.html">MDテーブル生成</a>
+      </div>
+      <div class="footer-col">
+        <h3>ユーティリティ</h3>
+        <a href="/ja/password-generator.html">パスワードジェネレーター</a>
+        <a href="/ja/qr-code-generator.html">QRコードジェネレーター</a>
+      </div>
+      <div class="footer-col">
+        <h3>SEO</h3>
+        <a href="/ja/seo/meta-tag-generator.html">メタタグジェネレーター</a>
+        <a href="/ja/seo/utm-builder.html">UTMビルダー</a>
+        <a href="/ja/seo/robots-txt-generator.html">robots.txtジェネレーター</a>
+        <a href="/ja/seo/sitemap-generator.html">サイトマップジェネレーター</a>
+        <a href="/ja/seo/canonical-tag-generator.html">正規化タグ</a>
+        <a href="/ja/seo/hreflang-generator.html">hreflangタグ</a>
+      </div>
+      <div class="footer-col">
+        <h3>Design</h3>
+        <a href="/ja/design/css-gradient-generator.html">CSSグラデーション</a>
+        <a href="/ja/design/box-shadow-generator.html">ボックスシャドウ</a>
+        <a href="/ja/design/border-radius-generator.html">border-radius</a>
+        <a href="/ja/design/favicon-generator.html">ファビコンジェネレーター</a>
+        <a href="/ja/design/color-palette-extractor.html">カラーパレット抽出</a>
+        <a href="/ja/design/contrast-checker.html">コントラストチェッカー</a>
+        <a href="/ja/design/color-converter.html">カラーコンバーター</a>
+        <a href="/ja/design/blob-generator.html">SVGブロブ生成</a>
+        <a href="/ja/design/css-clamp-generator.html">CSS Clamp()</a>
+        <a href="/ja/design/css-easing-generator.html">CSSイージング</a>
+        <a href="/ja/design/css-filter-generator.html">CSSフィルター</a>
+        <a href="/ja/design/noise-texture-generator.html">ノイズテクスチャ</a>
+        <a href="/ja/design/pattern-generator.html">CSSパターン</a>
+        <a href="/ja/design/tailwind-shadow-generator.html">Tailwindシャドウ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. すべてのツールはブラウザ内でローカルに動作します。</span>
+      <a href="/ja/changelog.html">変更履歴</a>
+      <a href="/blog/">ブログ</a>
+      <a href="/ja/compare/">比較</a>
+      <a href="/ja/how-it-works.html">仕組み</a>
+      <a href="/ja/privacy.html">プライバシーポリシー</a>
+      <a href="/ja/terms.html">利用規約</a>
+      <a href="https://ko-fi.com/shubhmisaki" target="_blank" rel="noopener">コーヒーをおごる</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/i18n/ja.js"></script>
+<script src="/js/i18n-runtime.js"></script>
+<script src="/js/utils.js"></script>
+<script src="../../js/app-pattern-generator.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/theme-toggle.js"></script>
+<script src="/js/lang-switcher.js"></script>
+<script src="/js/bg-blobs.js"></script>
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="検索条件に一致するツールがありません。">
+  <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="ツールを検索">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="ツールを検索..." aria-label="ツールを検索" autocomplete="off" />
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdkResults"></div>
+  </div>
+</div>
+
+<script src="/js/cmdk.js"></script>
+<script src="/js/sw-register.js" defer></script>
+<script src="/js/install-prompt.js" defer></script>
+</body>
+</html>

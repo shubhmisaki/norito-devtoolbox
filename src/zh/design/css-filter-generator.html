@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS 滤镜生成器 | norito</title>
+<meta name="description" content="在你自己的图片上可视化构建 CSS 滤镜效果（模糊、亮度、对比度、灰度、色相旋转、饱和度、复古色），完成后复制生成的 CSS，全程在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/design/css-filter-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS 滤镜生成器 | norito" />
+<meta property="og:description" content="在你自己的图片上可视化构建 CSS 滤镜效果（模糊、亮度、对比度、灰度、色相旋转、饱和度、复古色），完成后复制生成的 CSS，全程在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/design/css-filter-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS 滤镜生成器 | norito" />
+<meta name="twitter:description" content="在你自己的图片上可视化构建 CSS 滤镜效果（模糊、亮度、对比度、灰度、色相旋转、饱和度、复古色），完成后复制生成的 CSS，全程在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS 滤镜生成器",
+  "url": "https://norito.in/zh/design/css-filter-generator.html",
+  "description": "在你自己的图片上可视化构建 CSS 滤镜效果，完成后复制生成的 CSS。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以在自己的图片上预览吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以，拖入任意图片，每个滑块都会立即更新实时预览。如果没有上传图片，滑块会改为在一个占位渐变图上预览效果。" }
+    },
+    {
+      "@type": "Question",
+      "name": "滤镜会影响布局吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。CSS filter 是纯视觉效果，不会改变元素的盒子尺寸或位置，这一点不同于直接替换图片文件。因此在悬停或切换类名时应用它开销很低，因为不会触发重排。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的图片会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。预览使用你浏览器自身的 CSS 引擎，基于本地对象 URL 生成，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS 滤镜生成器", "item": "https://norito.in/zh/design/css-filter-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS 滤镜生成器</p>
+    <h1>CSS 滤镜生成器</h1>
+    <p class="lede">
+      拖入一张图片（可选），拖动滑块，复制生成的 CSS <code>filter</code> 值。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop" style="padding:16px;">
+          <p><strong>点击或拖放图片</strong>以在其上预览效果，此步骤可选</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="fBlur">模糊（<span id="fBlurVal">0px</span>）</label>
+          <input type="range" id="fBlur" min="0" max="20" value="0" step="0.5" />
+        </div>
+        <div class="field">
+          <label for="fBrightness">亮度（<span id="fBrightnessVal">100%</span>）</label>
+          <input type="range" id="fBrightness" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fContrast">对比度（<span id="fContrastVal">100%</span>）</label>
+          <input type="range" id="fContrast" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fSaturate">饱和度（<span id="fSaturateVal">100%</span>）</label>
+          <input type="range" id="fSaturate" min="0" max="300" value="100" />
+        </div>
+        <div class="field">
+          <label for="fGrayscale">灰度（<span id="fGrayscaleVal">0%</span>）</label>
+          <input type="range" id="fGrayscale" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fSepia">复古色（<span id="fSepiaVal">0%</span>）</label>
+          <input type="range" id="fSepia" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fHue">色相旋转（<span id="fHueVal">0deg</span>）</label>
+          <input type="range" id="fHue" min="0" max="360" value="0" />
+        </div>
+        <div class="field">
+          <label for="fInvert">反相（<span id="fInvertVal">0%</span>）</label>
+          <input type="range" id="fInvert" min="0" max="100" value="0" />
+        </div>
+        <button type="button" id="resetBtn" class="secondary">重置全部</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <img id="previewImg" alt="滤镜预览" src="/assets/og-image.png" style="max-width:100%; max-height:260px; border-radius:8px;" />
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">复制 CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        每个滑块都直接对应一个 CSS <code>filter</code> 函数
+        （<code>blur()</code>、<code>brightness()</code>、<code>contrast()</code>、
+        <code>saturate()</code>、<code>grayscale()</code>、<code>sepia()</code>、
+        <code>hue-rotate()</code>、<code>invert()</code>）。停留在中性值的函数不会出现在输出中，
+        以保持复制出来的 CSS 简洁，其余函数用空格连接，因为 CSS 会按书写顺序依次应用链式滤镜函数。
+        这段字符串会直接设为预览图片自身的 <code>filter</code> 样式，所以你看到的就是真实效果，
+        而不是模拟结果。
+      </p>
+      <p>
+        你的图片以本地对象 URL 的形式加载，永远不会离开浏览器标签页，没有上传这一步骤。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|CSS 缓动生成器|可视化的三次贝塞尔曲线编辑器。
+color-converter.html|颜色转换器|HEX、RGB、HSL、CMYK 实时转换。
+../remove-metadata.html|移除元数据|清除 EXIF、GPS 和相机信息。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>可以在自己的图片上预览吗？</summary>
+        <p>可以，拖入任意图片，每个滑块都会立即更新实时预览。如果没有上传图片，滑块会改为在一个占位渐变图上预览效果。</p>
+      </details>
+      <details class="faq-item">
+        <summary>滤镜会影响布局吗？</summary>
+        <p>不会。CSS filter 是纯视觉效果，不会改变元素的盒子尺寸或位置，这一点不同于直接替换图片文件。因此在悬停或切换类名时应用它开销很低，因为不会触发重排。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的图片会被上传到别的地方吗？</summary>
+        <p>不会。预览使用你浏览器自身的 CSS 引擎，基于本地对象 URL 生成，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-filter-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

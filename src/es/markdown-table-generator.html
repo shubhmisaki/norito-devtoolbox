@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de Tablas Markdown | norito</title>
+<meta name="description" content="Pega datos CSV/TSV o edita una cuadrícula directamente, obtén sintaxis de tabla Markdown estilo GitHub con alineación de columnas. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/markdown-table-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de Tablas Markdown | norito" />
+<meta property="og:description" content="Pega datos CSV/TSV o edita una cuadrícula directamente, obtén sintaxis de tabla Markdown estilo GitHub con alineación de columnas. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/markdown-table-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de Tablas Markdown | norito" />
+<meta name="twitter:description" content="Pega datos CSV/TSV o edita una cuadrícula directamente, obtén sintaxis de tabla Markdown estilo GitHub con alineación de columnas. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de Tablas Markdown",
+  "url": "https://norito.in/es/markdown-table-generator.html",
+  "description": "Pega CSV/TSV, obtén sintaxis de tabla Markdown estilo GitHub con alineación de columnas.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Admite tanto comas como tabulaciones?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pega desde una hoja de cálculo (separada por tabulaciones) o un archivo CSV (separado por comas) y la herramienta detecta automáticamente qué delimitador estás usando según cuál aparezca más veces en la primera línea." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona la alineación de columnas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Elige izquierda, centro o derecha por columna, y la fila separadora bajo el encabezado recibe los dos puntos en el lugar correcto (:--- para izquierda, :---: para centro, ---: para derecha), que es exactamente cómo el Markdown estilo GitHub indica la alineación a los renderizadores." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envían mis datos a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, la tabla se analiza y construye por completo en tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de Tablas Markdown", "item": "https://norito.in/es/markdown-table-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Generador de Tablas Markdown</p>
+    <h1>Generador de Tablas Markdown</h1>
+    <p class="lede">
+      Pega datos CSV o TSV (de una hoja de cálculo o un archivo), fija la alineación de columnas,
+      obtén sintaxis de tabla Markdown estilo GitHub limpia.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="csvInput">Datos CSV o TSV (la primera fila es el encabezado)</label>
+          <textarea id="csvInput" class="mono-area" rows="10">Name,Role,Location
+Shubham,Founder,India
+Ava,Engineer,Remote
+Priya,Designer,Remote</textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">La primera fila es un encabezado</span>
+          <label class="switch"><input type="checkbox" id="optHeader" checked /><span class="track"></span></label>
+        </div>
+        <div id="alignWrap" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:160px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copiar Markdown</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Vista previa renderizada</h3>
+          <div id="renderedPreview" style="overflow-x:auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        La entrada se divide según el delimitador, coma o tabulación, que aparezca más veces en la
+        primera línea, así que pegar directamente desde una hoja de cálculo (separada por
+        tabulaciones) o un archivo .csv (comas) funciona sin necesidad de un interruptor de
+        configuración. Los valores se rellenan hasta la celda más ancha de cada columna para que la
+        salida quede prolijamente alineada también en un editor de texto plano, no solo al
+        renderizarse, y los dos puntos de la fila separadora codifican la alineación que elegiste
+        para cada columna, la sintaxis estándar de Markdown estilo GitHub que entiende cualquier
+        renderizador: GitHub, GitLab, la mayoría de los generadores de sitios estáticos.
+      </p>
+      <p>
+        El análisis y formateo ocurren en el JavaScript de esta página. Nada de lo que pegas se
+        sube.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+csv-to-json.html|CSV a JSON|Convierte un archivo CSV a JSON.
+csv-viewer.html|Visor de CSV|Visualiza y edita un CSV como una tabla.
+markdown-editor.html|Editor Markdown|Vista previa en vivo, exporta como .md/.html.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Admite tanto comas como tabulaciones?</summary>
+        <p>Sí, pega desde una hoja de cálculo (separada por tabulaciones) o un archivo CSV (separado por comas) y la herramienta detecta automáticamente qué delimitador estás usando según cuál aparezca más veces en la primera línea.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo funciona la alineación de columnas?</summary>
+        <p>Elige izquierda, centro o derecha por columna, y la fila separadora bajo el encabezado recibe los dos puntos en el lugar correcto (:--- para izquierda, :---: para centro, ---: para derecha), que es exactamente cómo el Markdown estilo GitHub indica la alineación a los renderizadores.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envían mis datos a algún sitio?</summary>
+        <p>No, la tabla se analiza y construye por completo en tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-markdown-table-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

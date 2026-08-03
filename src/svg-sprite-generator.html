@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG Sprite Generator | norito</title>
+<meta name="description" content="Combine multiple SVG icons into one optimized <symbol>-based sprite sheet. Batch upload, auto-generated IDs, copy or download. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/svg-sprite-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG Sprite Generator | norito" />
+<meta property="og:description" content="Combine multiple SVG icons into one optimized <symbol>-based sprite sheet. Batch upload, auto-generated IDs, copy or download. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/svg-sprite-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG Sprite Generator | norito" />
+<meta name="twitter:description" content="Combine multiple SVG icons into one optimized <symbol>-based sprite sheet. Batch upload, auto-generated IDs, copy or download. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG Sprite Generator",
+  "url": "https://norito.in/svg-sprite-generator.html",
+  "description": "Combine multiple SVG icons into one optimized symbol-based sprite sheet.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does a symbol sprite work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each icon becomes a <symbol id=\"...\"> inside one hidden <svg>, placed once anywhere in your page's HTML. Any element then renders that icon with <svg><use href=\"#id\"></use></svg>, so the browser downloads and parses the artwork once no matter how many times it's used." }
+    },
+    {
+      "@type": "Question",
+      "name": "How are icon IDs generated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "From each file's name: lowercased, non-alphanumeric characters replaced with hyphens, extension stripped. If two files would produce the same ID, a numeric suffix is added to keep every symbol addressable." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my icons uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Files are read and combined entirely in your browser using the File API. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG Sprite Generator", "item": "https://norito.in/svg-sprite-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVG Sprite Generator</p>
+    <h1>SVG Sprite Generator</h1>
+    <p class="lede">
+      Drop in several SVG icons, get back one combined <code>&lt;symbol&gt;</code> sprite sheet
+      with auto-generated, collision-safe IDs.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose .svg files</strong>, or drag and drop them here</p>
+          <p class="note" style="margin-top:2px;">Select multiple icons at once. Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" multiple />
+        </div>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 id="previewHeading" style="margin-top:0; display:none;">Icons</h3>
+          <div id="iconPreview" style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:14px;"></div>
+          <div class="field" style="text-align:left;">
+            <label>Sprite output</label>
+            <pre class="code-output" id="output" style="max-height:220px; overflow:auto;"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">Copy sprite</button>
+            <button id="downloadBtn" class="secondary">Download sprite.svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each uploaded SVG is parsed with the browser's own DOM parser, its <code>viewBox</code>
+        (or width/height, if no viewBox is set) is read, and its inner markup is wrapped in a
+        <code>&lt;symbol id="..." viewBox="..."&gt;</code> element. All symbols are then combined
+        into a single hidden <code>&lt;svg&gt;</code>, the standard "SVG sprite" pattern used to
+        serve many icons as one request instead of many separate image files or inline copies.
+        IDs are derived from each file's name and de-duplicated automatically if two files would
+        otherwise collide.
+      </p>
+      <p>
+        Parsing and combining happen entirely in this page's JavaScript. Nothing you upload is
+        sent anywhere.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|SVG Optimizer|Strip comments and metadata from an SVG.
+svg-to-react-component.html|SVG to React Component|Convert SVG markup into a JSX component.
+design/favicon-generator.html|Favicon Generator|Generate a favicon from an image.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How does a symbol sprite work?</summary>
+        <p>Each icon becomes a &lt;symbol id="..."&gt; inside one hidden &lt;svg&gt;, placed once anywhere in your page's HTML. Any element then renders that icon with &lt;svg&gt;&lt;use href="#id"&gt;&lt;/use&gt;&lt;/svg&gt;, so the browser downloads and parses the artwork once no matter how many times it's used.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How are icon IDs generated?</summary>
+        <p>From each file's name: lowercased, non-alphanumeric characters replaced with hyphens, extension stripped. If two files would produce the same ID, a numeric suffix is added to keep every symbol addressable.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are my icons uploaded anywhere?</summary>
+        <p>No. Files are read and combined entirely in your browser using the File API. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-svg-sprite-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

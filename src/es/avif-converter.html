@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Conversor de AVIF | norito</title>
+<meta name="description" content="Convierte imágenes a AVIF para reducir el tamaño de archivo, o desde AVIF a JPG/PNG para compatibilidad. Se ejecuta por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/avif-converter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Conversor de AVIF | norito" />
+<meta property="og:description" content="Convierte imágenes a AVIF para reducir el tamaño de archivo, o desde AVIF a JPG/PNG para compatibilidad. Se ejecuta por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/avif-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Conversor de AVIF | norito" />
+<meta name="twitter:description" content="Convierte imágenes a AVIF para reducir el tamaño de archivo, o desde AVIF a JPG/PNG para compatibilidad. Se ejecuta por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Conversor de AVIF",
+  "url": "https://norito.in/es/avif-converter.html",
+  "description": "Convierte imágenes a AVIF para reducir el tamaño de archivo, o desde AVIF a JPG/PNG para compatibilidad.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué convertir a AVIF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AVIF suele producir archivos más pequeños que JPEG o WebP con una calidad visual equivalente, razón por la que se usa cada vez más en imágenes web. La contrapartida es una codificación más lenta y, hasta hace poco, una compatibilidad menos universal en software antiguo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si mi navegador no puede codificar AVIF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La decodificación de AVIF (para verlo) es compatible con todos los navegadores principales actuales, pero la compatibilidad de codificación varía. Si tu navegador no puede generar salida AVIF, esta herramienta te lo indica directamente en lugar de fallar en silencio; decodificar AVIF a JPG/PNG funciona en todos los casos." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se sube mi imagen a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Ambas direcciones usan el propio decodificador de imágenes y el codificador de canvas de tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Conversor de AVIF", "item": "https://norito.in/es/avif-converter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Conversor de AVIF</p>
+    <h1>Conversor de AVIF</h1>
+    <p class="lede">
+      Convierte JPG/PNG/WebP a AVIF para archivos más pequeños, o AVIF de vuelta a JPG/PNG para compatibilidad.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Haz clic para elegir una imagen</strong>, o arrástrala hasta aquí</p>
+          <p class="note" style="margin-top:2px;">JPG, PNG, WebP o AVIF. Se queda en tu dispositivo.</p>
+          <input type="file" id="fileInput" accept="image/*,.avif" />
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label for="format">Convertir a</label>
+          <select id="format">
+            <option value="image/avif" selected>AVIF</option>
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </div>
+        <div class="field" id="qualityRow">
+          <label for="quality">Calidad (<span id="qualityVal">80%</span>)</label>
+          <input type="range" id="quality" min="10" max="100" value="80" />
+        </div>
+        <button id="convertBtn" disabled>Convertir</button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box error" id="unsupportedNote" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="Vista previa convertida" />
+          <p class="note" id="previewHint" style="margin-top:0;">Tu imagen convertida aparecerá aquí.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Tu archivo se decodifica en un elemento <code>&lt;img&gt;</code> (los navegadores pueden
+        mostrar AVIF de forma nativa, la compatibilidad de decodificación es universal en los
+        navegadores actuales) y se dibuja en un canvas a resolución completa. Convertir a JPEG o
+        PNG usa el codificador estándar y universalmente compatible del canvas. Convertir a AVIF
+        llama a <code>canvas.toBlob("image/avif")</code>, compatible con las versiones actuales de
+        Chrome, Edge y Firefox pero todavía no con todos los navegadores; esta herramienta
+        comprueba la compatibilidad antes de ofrecer la opción y te avisa con claridad si tu
+        navegador no puede codificarlo, en lugar de generar un archivo silenciosamente roto.
+      </p>
+      <p>
+        Todo ocurre en el propio canvas de esta página. No se sube nada, y ninguna imagen sale
+        nunca de la pestaña de tu navegador.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+heic-converter.html|Conversor de HEIC|Convierte fotos HEIC de iPhone a JPG o PNG.
+image-converter.html|Conversor de Imágenes|Convierte entre JPG, PNG y WebP.
+compress-image.html|Comprimir imagen a un tamaño objetivo|Alcanza un tamaño de archivo exacto.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Por qué convertir a AVIF?</summary>
+        <p>AVIF suele producir archivos más pequeños que JPEG o WebP con una calidad visual equivalente, razón por la que se usa cada vez más en imágenes web. La contrapartida es una codificación más lenta y, hasta hace poco, una compatibilidad menos universal en software antiguo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si mi navegador no puede codificar AVIF?</summary>
+        <p>La decodificación de AVIF (para verlo) es compatible con todos los navegadores principales actuales, pero la compatibilidad de codificación varía. Si tu navegador no puede generar salida AVIF, esta herramienta te lo indica directamente en lugar de fallar en silencio; decodificar AVIF a JPG/PNG funciona en todos los casos.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se sube mi imagen a algún sitio?</summary>
+        <p>No. Ambas direcciones usan el propio decodificador de imágenes y el codificador de canvas de tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-avif-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

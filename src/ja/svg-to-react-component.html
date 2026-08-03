@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVGからReactコンポーネントへ変換 | norito</title>
+<meta name="description" content="SVGマークアップを貼り付けると、camelCase属性とclassNameを持つReact関数コンポーネント（JSX）を取得できます。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/svg-to-react-component.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVGからReactコンポーネントへ変換 | norito" />
+<meta property="og:description" content="SVGマークアップを貼り付けると、camelCase属性とclassNameを持つReact関数コンポーネント（JSX）を取得できます。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/svg-to-react-component.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVGからReactコンポーネントへ変換 | norito" />
+<meta name="twitter:description" content="SVGマークアップを貼り付けると、camelCase属性とclassNameを持つReact関数コンポーネント（JSX）を取得できます。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVGからReactコンポーネントへ変換",
+  "url": "https://norito.in/ja/svg-to-react-component.html",
+  "description": "SVGマークアップを貼り付けると、camelCase属性とclassNameを持つReact関数コンポーネント（JSX）を取得できます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SVGとJSXの間で何が変わりますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "属性名がcamelCaseに変わります（stroke-widthはstrokeWidthに、fill-ruleはfillRuleになります）。classはclassNameになり、自己終了タグにはJSXが要求する末尾のスラッシュが付きます。見た目の出力は同一です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "propsからサイズや色を制御できますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "「propsを受け取る」をオンにすると、コンポーネントはルートの<svg>要素に{...props}を展開するようになり、使用する場所からwidth、height、className、その他任意のプロパティを上書きできます。これはアイコンコンポーネントの標準的なパターンです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "このSVGはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。変換はブラウザ内で行われる単純な文字列・属性変換です。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "SVGからReactコンポーネントへ変換", "item": "https://norito.in/ja/svg-to-react-component.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVGからReactコンポーネントへ変換</p>
+    <h1>SVGからReactコンポーネントへ変換</h1>
+    <p class="lede">
+      SVGマークアップを貼り付けると、camelCase属性を持つ、そのままインポートできるReact関数コンポーネントが得られます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="svgInput">SVGマークアップ</label>
+          <textarea id="svgInput" class="mono-area" rows="12">&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"&gt;
+  &lt;circle cx="12" cy="12" r="10"/&gt;
+  &lt;path d="M12 16v-4"/&gt;
+  &lt;path d="M12 8h.01"/&gt;
+&lt;/svg&gt;</textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="componentName">コンポーネント名</label>
+            <input type="text" id="componentName" value="IconInfo" />
+          </div>
+          <div class="field" style="min-width:140px;">
+            <label for="exportStyle">エクスポート形式</label>
+            <select id="exportStyle">
+              <option value="default" selected>デフォルトエクスポート</option>
+              <option value="named">名前付きエクスポート</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">propsを受け取る（&lt;svg&gt;に展開）</span>
+          <label class="switch"><input type="checkbox" id="optProps" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">TypeScript（.tsx）</span>
+          <label class="switch"><input type="checkbox" id="optTs" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">コンポーネントをコピー</button>
+            <button id="downloadBtn" class="secondary">ファイルをダウンロード</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        SVGはブラウザ自身のDOMパーサーで解析されるため、単なるパターンマッチではなく、実際にマークアップとして理解されます。すべての属性名は、React自身が内部で使うのと同じマッピングを使ってReact/DOMの等価な名前に変換され（<code>stroke-width</code> &rarr; <code>strokeWidth</code>、<code>class</code> &rarr; <code>className</code>、<code>xlink:href</code> &rarr; <code>xlinkHref</code>など）、ツリーはJSXとして再シリアライズされ、小さな関数コンポーネントでラップされます。「propsを受け取る」をオンにすると、<code>{...props}</code>がルート要素に展開されるため、呼び出し側は通常のReactの方法で<code>width</code>、<code>className</code>、<code>onClick</code>ハンドラなどを渡せます。
+      </p>
+      <p>
+        解析と変換はすべて、入力からブラウザが構築するDOMに対して、このページのJavaScriptで行われます。アップロードは一切行われません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|SVGオプティマイザー|SVGからコメントとメタデータを取り除きます。
+design/favicon-generator.html|ファビコンジェネレーター|画像からファビコンを生成します。
+json-formatter.html|JSONフォーマッタ・バリデーター|JSONの整形・検証・圧縮。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>SVGとJSXの間で何が変わりますか?</summary>
+        <p>属性名がcamelCaseに変わります（stroke-widthはstrokeWidthに、fill-ruleはfillRuleになります）。classはclassNameになり、自己終了タグにはJSXが要求する末尾のスラッシュが付きます。見た目の出力は同一です。</p>
+      </details>
+      <details class="faq-item">
+        <summary>propsからサイズや色を制御できますか?</summary>
+        <p>「propsを受け取る」をオンにすると、コンポーネントはルートの&lt;svg&gt;要素に{...props}を展開するようになり、使用する場所からwidth、height、className、その他任意のプロパティを上書きできます。これはアイコンコンポーネントの標準的なパターンです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>このSVGはどこかに送信されますか?</summary>
+        <p>いいえ。変換はブラウザ内で行われる単純な文字列・属性変換です。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-to-react-component.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

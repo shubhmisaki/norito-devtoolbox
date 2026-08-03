@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор CSS-паттернов | norito</title>
+<meta name="description" content="Создавайте бесшовные CSS-паттерны фона — полоски, точки, сетку, шахматку — с настройкой цвета и отступов. Скопируйте CSS. Работает в браузере." />
+<link rel="canonical" href="https://norito.in/ru/design/pattern-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор CSS-паттернов | norito" />
+<meta property="og:description" content="Создавайте бесшовные CSS-паттерны фона — полоски, точки, сетку, шахматку — с настройкой цвета и отступов. Скопируйте CSS. Работает в браузере." />
+<meta property="og:url" content="https://norito.in/ru/design/pattern-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор CSS-паттернов | norito" />
+<meta name="twitter:description" content="Создавайте бесшовные CSS-паттерны фона — полоски, точки, сетку, шахматку — с настройкой цвета и отступов. Скопируйте CSS. Работает в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор CSS-паттернов",
+  "url": "https://norito.in/ru/design/pattern-generator.html",
+  "description": "Создавайте бесшовные CSS-паттерны фона с настройкой цвета и отступов.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Используется ли файл изображения?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, каждый паттерн строится из CSS-градиентов, наложенных как повторяющийся фон, без единого запроса изображения. Это сохраняет чёткость паттерна при любом масштабе и размере элемента, поскольку это векторная математика, а не растровый тайл." }
+    },
+    {
+      "@type": "Question",
+      "name": "Паттерн будет повторяться бесшовно?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, background-size задаётся ровно как один повторяющийся блок, поэтому паттерн повторяется край в край без видимого шва при любом размере элемента." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли это куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, паттерн генерируется и предпросматривается полностью в CSS-движке вашего браузера. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор CSS-паттернов", "item": "https://norito.in/ru/design/pattern-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Генератор CSS-паттернов</p>
+    <h1>Генератор CSS-паттернов</h1>
+    <p class="lede">
+      Создайте бесшовный фоновый паттерн из чистых CSS-градиентов, без файла изображения, и
+      скопируйте CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="patType">Паттерн</label>
+          <select id="patType">
+            <option value="stripes" selected>Диагональные полоски</option>
+            <option value="stripesH">Горизонтальные полоски</option>
+            <option value="dots">Точки</option>
+            <option value="grid">Сетка</option>
+            <option value="checkerboard">Шахматка</option>
+            <option value="crosshatch">Штриховка</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="patFg">Цвет переднего плана</label>
+            <input type="color" id="patFg" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="patBg">Цвет фона</label>
+            <input type="color" id="patBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="patSize">Размер (<span id="patSizeVal">24px</span>)</label>
+          <input type="range" id="patSize" min="4" max="120" value="24" />
+        </div>
+        <div class="field">
+          <label for="patThickness">Толщина линии / размер точки (<span id="patThicknessVal">4px</span>)</label>
+          <input type="range" id="patThickness" min="1" max="40" value="4" />
+        </div>
+        <div class="field">
+          <label for="patOpacity">Непрозрачность переднего плана (<span id="patOpacityVal">100%</span>)</label>
+          <input type="range" id="patOpacity" min="5" max="100" value="100" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Копировать CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Каждый пресет строит один или два слоя CSS <code>linear-gradient()</code> или
+        <code>radial-gradient()</code> с жёсткими цветовыми переходами (без плавного смешивания
+        между ними) — именно это превращает плавный градиент в чёткую повторяющуюся форму.
+        <code>background-size</code> задаётся ровно по размеру одного тайла, чтобы паттерн
+        повторялся без видимого шва по краям, а паттерны «точки» и «сетка» дополнительно смещают
+        <code>background-position</code>, чтобы фигуры оказывались по центру, а не обрезались по углу.
+      </p>
+      <p>
+        Всё это — сгенерированный CSS, применённый к собственному стилю <code>background</code>
+        блока предпросмотра. Ничего не загружается, и запрос изображения не выполняется.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+../design/css-gradient-generator.html|Генератор CSS-градиентов|Создайте линейный или радиальный градиент визуально.
+blob-generator.html|Генератор SVG-блобов|Сгенерируйте органичные формы блобов.
+noise-texture-generator.html|Генератор шумовых текстур|Сгенерируйте текстуру зерна/шума.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Используется ли файл изображения?</summary>
+        <p>Нет, каждый паттерн строится из CSS-градиентов, наложенных как повторяющийся фон, без единого запроса изображения. Это сохраняет чёткость паттерна при любом масштабе и размере элемента, поскольку это векторная математика, а не растровый тайл.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Паттерн будет повторяться бесшовно?</summary>
+        <p>Да, background-size задаётся ровно как один повторяющийся блок, поэтому паттерн повторяется край в край без видимого шва при любом размере элемента.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли это куда-либо?</summary>
+        <p>Нет, паттерн генерируется и предпросматривается полностью в CSS-движке вашего браузера. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-pattern-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

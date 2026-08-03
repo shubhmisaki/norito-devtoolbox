@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS変数抽出ツール | norito</title>
+<meta name="description" content="スタイルシートを貼り付けると、すべてのCSSカスタムプロパティ（--変数）を抽出し、接頭辞ごとにグループ化して重複をフラグ表示します。JSON、CSS、CSVでエクスポート可能。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/css-variable-extractor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS変数抽出ツール | norito" />
+<meta property="og:description" content="スタイルシートを貼り付けると、すべてのCSSカスタムプロパティ（--変数）を抽出し、接頭辞ごとにグループ化して重複をフラグ表示します。JSON、CSS、CSVでエクスポート可能。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/css-variable-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS変数抽出ツール | norito" />
+<meta name="twitter:description" content="スタイルシートを貼り付けると、すべてのCSSカスタムプロパティ（--変数）を抽出し、接頭辞ごとにグループ化して重複をフラグ表示します。JSON、CSS、CSVでエクスポート可能。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS変数抽出ツール",
+  "url": "https://norito.in/ja/css-variable-extractor.html",
+  "description": "スタイルシートを貼り付けると、すべてのCSSカスタムプロパティを抽出し、接頭辞ごとにグループ化して重複をフラグ表示します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "どのカスタムプロパティを見つけられますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "任意のセレクタブロック内にある「--name: value;」形式の宣言はすべて対象で、:root だけではなく、ネストされたルールやメディアクエリも含まれます。出現ごとに、どのセレクタの下で宣言されたかが記録されます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "重複検出はどのように機能しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "同じ変数名が異なる値で複数回宣言されている場合（コピペや一貫性のないトークンによくあるサイン）、フラグが立ちます。同じ名前を複数のスコープ（ライト/ダークテーマの上書きなど）で同じ値のまま宣言するのは通常のパターンであり、フラグは立ちません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "このCSSはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ、解析は小さなJavaScriptのスキャナーによって、すべてブラウザ内で行われます。貼り付けた内容がアップロードされることはありません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS変数抽出ツール", "item": "https://norito.in/ja/css-variable-extractor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSS変数抽出ツール</p>
+    <h1>CSS変数抽出ツール</h1>
+    <p class="lede">
+      スタイルシートを貼り付けると、すべての <code>--custom-property</code> を抽出し、接頭辞ごとにグループ化して、重複した定義にフラグを立てます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="cssInput">CSS</label>
+          <textarea id="cssInput" class="mono-area" rows="14" placeholder=":root {
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+.dark {
+  --color-primary-500: #818cf8;
+}"></textarea>
+        </div>
+        <p class="note">すべてのセレクタブロックをスキャンします。<code>:root</code> だけではありません。同じ名前でセレクタ間で値が異なる場合は重複としてフラグが立ちます。</p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">グループ化された変数がここに表示されます。</p>
+          <div id="exportRow" style="display:none; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="copyJsonBtn" class="secondary">JSONをコピー</button>
+            <button id="copyCssBtn" class="secondary">CSSをコピー</button>
+            <button id="downloadCsvBtn" class="secondary">CSVをダウンロード</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        入力はルールブロックごとにスキャンされ（メディアクエリのようなネストされたものも含めて <code>selector { ... }</code> のペアにマッチします）、各ブロック内の <code>--name: value;</code> 宣言はすべて、それが属するセレクタとともに記録されます。変数は接頭辞、つまり先頭の <code>--</code> の後の最初のハイフン区切りセグメントでグループ化されるため、<code>--color-primary-500</code> と <code>--color-accent</code> はどちらも「color」の下にまとまります。これはほとんどのデザイントークンの命名規則の構造を反映しています。名前が重複としてフラグ付けされるのは、他の場所で本当に異なる値で宣言されている場合のみで、同じ値のまま別のセレクタで再宣言されただけの場合（テーマの上書きの通常のパターン）は対象外です。
+      </p>
+      <p>
+        すべての処理はこのページのJavaScriptでキー入力のたびに実行され、完全なCSSパーサーではなく軽量な波括弧マッチングのスキャナーを使用します。貼り付けた内容がアップロードされることはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/color-converter.html|カラーコンバーター|HEX、RGB、HSL、CMYK間で色を変換。
+design/contrast-checker.html|コントラストチェッカー|WCAGコントラスト比とAA/AAA適合をチェック。
+design/css-clamp-generator.html|CSS Clamp()ジェネレーター|ビューポートに応じて滑らかに変化するサイズを構築。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>どのカスタムプロパティを見つけられますか?</summary>
+        <p>任意のセレクタブロック内にある「--name: value;」形式の宣言はすべて対象で、:root だけではなく、ネストされたルールやメディアクエリも含まれます。出現ごとに、どのセレクタの下で宣言されたかが記録されます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>重複検出はどのように機能しますか?</summary>
+        <p>同じ変数名が異なる値で複数回宣言されている場合（コピペや一貫性のないトークンによくあるサイン）、フラグが立ちます。同じ名前を複数のスコープ（ライト/ダークテーマの上書きなど）で同じ値のまま宣言するのは通常のパターンであり、フラグは立ちません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>このCSSはどこかに送信されますか?</summary>
+        <p>いいえ、解析は小さなJavaScriptのスキャナーによって、すべてブラウザ内で行われます。貼り付けた内容がアップロードされることはありません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-variable-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

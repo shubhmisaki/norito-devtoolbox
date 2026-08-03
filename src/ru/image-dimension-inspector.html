@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Инспектор размеров изображения | norito</title>
+<meta name="description" content="Загрузите изображение и мгновенно узнайте его ширину, высоту, соотношение сторон, мегапиксели, размер файла и формат. Работает полностью в вашем браузере." />
+<link rel="canonical" href="https://norito.in/ru/image-dimension-inspector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Инспектор размеров изображения | norito" />
+<meta property="og:description" content="Загрузите изображение и мгновенно узнайте его ширину, высоту, соотношение сторон, мегапиксели, размер файла и формат. Работает полностью в вашем браузере." />
+<meta property="og:url" content="https://norito.in/ru/image-dimension-inspector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Инспектор размеров изображения | norito" />
+<meta name="twitter:description" content="Загрузите изображение и мгновенно узнайте его ширину, высоту, соотношение сторон, мегапиксели, размер файла и формат. Работает полностью в вашем браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Инспектор размеров изображения",
+  "url": "https://norito.in/ru/image-dimension-inspector.html",
+  "description": "Загрузите изображение и мгновенно узнайте его ширину, высоту, соотношение сторон, мегапиксели, размер файла и формат.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Можно ли проверить сразу несколько изображений?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, выберите или перетащите сразу несколько файлов — каждый получит свою строку в таблице результатов, так что вы сможете сравнить размеры сразу для всей группы." }
+    },
+    {
+      "@type": "Question",
+      "name": "В каком виде показывается соотношение сторон?",
+      "acceptedAnswer": { "@type": "Answer", "text": "В виде упрощённого соотношения (например, 16:9 или 4:3), полученного делением обоих измерений на их наибольший общий делитель, а также в виде десятичного значения для точного сравнения." }
+    },
+    {
+      "@type": "Question",
+      "name": "Загружается ли моё изображение куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Файл читается локально и декодируется собственным движком изображений браузера. Ничего не загружается на сервер." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Инспектор размеров изображения", "item": "https://norito.in/ru/image-dimension-inspector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Инспектор размеров изображения</p>
+    <h1>Инспектор размеров изображения</h1>
+    <p class="lede">
+      Загрузите одно или несколько изображений и мгновенно узнайте ширину, высоту, соотношение
+      сторон, мегапиксели и размер файла каждого из них.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>Нажмите, чтобы выбрать изображения</strong>, или перетащите их сюда</p>
+        <p class="note" style="margin-top:2px;">Выберите несколько файлов для сравнения. Остаётся на вашем устройстве, ничего не загружается.</p>
+        <input type="file" id="fileInput" accept="image/*" multiple />
+      </div>
+      <div id="resultsWrap" style="margin-top:16px;"></div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Каждый файл загружается как локальный object URL в элемент <code>Image</code> — именно так
+        браузер считывает реальные размеры в пикселях из заголовка самого файла, а не из имени файла
+        или какого-либо предположения. Соотношение сторон упрощается делением обоих измерений на их
+        наибольший общий делитель (найденный с помощью алгоритма Евклида), а размер файла и формат
+        берутся прямо из объекта файла, который уже есть у браузера.
+      </p>
+      <p>
+        Никакие данные изображения никуда не отправляются. Всё происходит локально, а object URL
+        освобождаются сразу после того, как их размеры считаны.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+resize-image.html|Изменить размер изображения|Изменение ширины и высоты — точно или в процентах.
+social-image-cropper.html|Обрезка изображений для соцсетей|Обрезка под готовые соотношения сторон соцсетей.
+image-converter.html|Конвертер изображений|Конвертация между JPG, PNG и WebP.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Можно ли проверить сразу несколько изображений?</summary>
+        <p>Да, выберите или перетащите сразу несколько файлов — каждый получит свою строку в таблице результатов, так что вы сможете сравнить размеры сразу для всей группы.</p>
+      </details>
+      <details class="faq-item">
+        <summary>В каком виде показывается соотношение сторон?</summary>
+        <p>В виде упрощённого соотношения (например, 16:9 или 4:3), полученного делением обоих измерений на их наибольший общий делитель, а также в виде десятичного значения для точного сравнения.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Загружается ли моё изображение куда-либо?</summary>
+        <p>Нет. Файл читается локально и декодируется собственным движком изображений браузера. Ничего не загружается на сервер.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-image-dimension-inspector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

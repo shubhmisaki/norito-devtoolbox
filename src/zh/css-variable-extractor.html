@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS 变量提取器 | norito</title>
+<meta name="description" content="粘贴任意样式表，提取其中每一个 CSS 自定义属性（--variable），按前缀分组并标记出重复定义，可导出为 JSON、CSS 或 CSV，全部在浏览器本地完成。" />
+<link rel="canonical" href="https://norito.in/zh/css-variable-extractor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS 变量提取器 | norito" />
+<meta property="og:description" content="粘贴任意样式表，提取其中每一个 CSS 自定义属性，按前缀分组并标记重复定义，可导出为 JSON、CSS 或 CSV。" />
+<meta property="og:url" content="https://norito.in/zh/css-variable-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS 变量提取器 | norito" />
+<meta name="twitter:description" content="粘贴任意样式表，提取其中每一个 CSS 自定义属性，按前缀分组并标记重复定义，可导出为 JSON、CSS 或 CSV。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS 变量提取器",
+  "url": "https://norito.in/zh/css-variable-extractor.html",
+  "description": "粘贴任意样式表，提取其中每一个 CSS 自定义属性，按前缀分组并标记重复定义。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "它会找出哪些自定义属性？",
+      "acceptedAnswer": { "@type": "Answer", "text": "任何选择器块内形如 --name: value; 的声明都会被找出，不仅限于 :root，包括嵌套规则和媒体查询中的声明。每一次出现都会记录它所属的选择器。" }
+    },
+    {
+      "@type": "Question",
+      "name": "重复检测是如何工作的？",
+      "acceptedAnswer": { "@type": "Answer", "text": "如果同一个变量名被声明了多次且值不同（这通常是复制粘贴或 token 不一致的信号），就会被标记出来。在多个作用域中用相同的名字声明相同的值（比如浅色/深色主题覆盖）是正常情况，不会被标记。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的 CSS 会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，解析完全在你的浏览器中通过一个小型 JavaScript 扫描器完成。你粘贴的内容不会被上传。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS 变量提取器", "item": "https://norito.in/zh/css-variable-extractor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSS 变量提取器</p>
+    <h1>CSS 变量提取器</h1>
+    <p class="lede">
+      粘贴一份样式表，提取其中每一个 <code>--custom-property</code>，按前缀分组，
+      并标记出重复定义。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="cssInput">CSS</label>
+          <textarea id="cssInput" class="mono-area" rows="14" placeholder=":root {
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+.dark {
+  --color-primary-500: #818cf8;
+}"></textarea>
+        </div>
+        <p class="note">扫描每一个选择器块，不仅限于 <code>:root</code>。同名变量在不同选择器中值不同会被标记为重复。</p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">分组后的变量会显示在这里。</p>
+          <div id="exportRow" style="display:none; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="copyJsonBtn" class="secondary">复制 JSON</button>
+            <button id="copyCssBtn" class="secondary">复制 CSS</button>
+            <button id="downloadCsvBtn" class="secondary">下载 CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        输入内容会按规则块逐个扫描（匹配 <code>selector { ... }</code>
+        这样的配对，包括媒体查询等嵌套情况），每个块内的
+        <code>--name: value;</code> 声明都会与其所属的选择器一起被记录下来。变量
+        按前缀分组，也就是开头 <code>--</code> 之后第一个连字符分隔的片段，
+        所以 <code>--color-primary-500</code> 和 <code>--color-accent</code> 都会
+        归入 "color" 分组，这与大多数设计 token 命名规范的组织方式一致。
+        只有当一个名字在别处被声明为真正不同的值时才会被标记为重复，
+        而不是仅仅在另一个选择器下用相同的值重复声明（这是主题覆盖的正常写法）。
+      </p>
+      <p>
+        一切都在本页面的 JavaScript 中随按键实时运行，使用的是一个轻量级的
+        括号匹配扫描器，而不是完整的 CSS 解析器。你粘贴的内容不会被上传。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/color-converter.html|颜色转换器|在 HEX、RGB、HSL、CMYK 之间转换颜色。
+design/contrast-checker.html|对比度检查器|检查 WCAG 对比度，判断是否通过 AA/AAA。
+design/css-clamp-generator.html|CSS Clamp() 生成器|构建随视口缩放的流式尺寸。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>它会找出哪些自定义属性？</summary>
+        <p>任何选择器块内形如 --name: value; 的声明都会被找出，不仅限于 :root，包括嵌套规则和媒体查询中的声明。每一次出现都会记录它所属的选择器。</p>
+      </details>
+      <details class="faq-item">
+        <summary>重复检测是如何工作的？</summary>
+        <p>如果同一个变量名被声明了多次且值不同（这通常是复制粘贴或 token 不一致的信号），就会被标记出来。在多个作用域中用相同的名字声明相同的值（比如浅色/深色主题覆盖）是正常情况，不会被标记。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的 CSS 会被发送到别的地方吗？</summary>
+        <p>不会，解析完全在你的浏览器中通过一个小型 JavaScript 扫描器完成。你粘贴的内容不会被上传。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-variable-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Калькулятор специфичности CSS | norito</title>
+<meta name="description" content="Вставьте CSS-селекторы и посмотрите разбивку их специфичности (инлайн-стили, ID, классы, элементы), отсортированную в порядке каскада. Работает прямо в браузере." />
+<link rel="canonical" href="https://norito.in/ru/css-specificity-calculator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Калькулятор специфичности CSS | norito" />
+<meta property="og:description" content="Вставьте CSS-селекторы и посмотрите разбивку их специфичности (инлайн-стили, ID, классы, элементы), отсортированную в порядке каскада. Работает прямо в браузере." />
+<meta property="og:url" content="https://norito.in/ru/css-specificity-calculator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Калькулятор специфичности CSS | norito" />
+<meta name="twitter:description" content="Вставьте CSS-селекторы и посмотрите разбивку их специфичности (инлайн-стили, ID, классы, элементы), отсортированную в порядке каскада. Работает прямо в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Калькулятор специфичности CSS",
+  "url": "https://norito.in/ru/css-specificity-calculator.html",
+  "description": "Вставьте CSS-селекторы и посмотрите разбивку их специфичности, отсортированную в порядке каскада.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как рассчитывается специфичность?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Специфичность считается по четырём уровням: инлайн-стили, затем ID-селекторы, затем классы, селекторы атрибутов и псевдоклассы, затем элементы и псевдоэлементы. Более высокий уровень всегда побеждает более низкий, сколько бы селекторов низкого уровня вы ни добавили, поэтому один ID (0,1,0,0) всегда обходит 20 классов (0,0,20,0)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему два моих селектора получают одинаковый результат?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Когда специфичность совпадает полностью, CSS опирается на порядок в исходном коде: побеждает правило, которое находится ниже в таблице стилей (или было добавлено позже). Этот инструмент сортирует совпадения в том порядке, в котором вы их вставили, повторяя это поведение." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли мой CSS куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Селекторы разбираются и оцениваются полностью в вашем браузере с помощью небольшого JavaScript-токенизатора. Ничего не загружается на сервер." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Калькулятор специфичности CSS", "item": "https://norito.in/ru/css-specificity-calculator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Калькулятор специфичности CSS</p>
+    <h1>Калькулятор специфичности CSS</h1>
+    <p class="lede">
+      Вставьте селекторы, по одному на строку, и посмотрите разбивку специфичности каждого из них,
+      отсортированную в том порядке, в котором каскад применял бы их на самом деле.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="selInput">Селекторы (по одному на строку)</label>
+          <textarea id="selInput" class="mono-area" rows="12" placeholder="#header .nav a:hover
+.card > .title
+div p span
+[data-active].btn.primary
+#app"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">Результаты появятся здесь, отсортированные от самой высокой специфичности к самой низкой.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Каждый селектор разбивается по комбинаторам и токенизируется: токены <code>#id</code> считаются
+        как ID, <code>.class</code>, <code>[attr]</code> и <code>:pseudo-class</code> — как классы, а
+        обычные имена элементов и <code>::pseudo-elements</code> — как элементы. Универсальный селектор
+        <code>*</code> и комбинаторы вроде <code>&gt;</code>, <code>+</code>, <code>~</code> ничего не
+        добавляют. В итоге каждый селектор превращается в тройку <code>(ID, классы, элементы)</code> —
+        именно так сама спецификация CSS определяет специфичность, поэтому результаты здесь совпадают
+        с тем, что сделает каскад в вашем браузере.
+      </p>
+      <p>
+        Всё пересчитывается при каждом нажатии клавиши прямо в JavaScript этой страницы. Даже если вы
+        вставите селекторы из целой таблицы стилей, они никогда не покинут ваш браузер.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/css-gradient-generator.html|Генератор CSS-градиентов|Визуальное построение линейного или радиального градиента.
+json-formatter.html|Форматирование и проверка JSON|Форматирование, проверка и минификация JSON.
+regex-tester.html|Тестер регулярных выражений|Проверка регулярного выражения с подсветкой совпадений в реальном времени.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Как рассчитывается специфичность?</summary>
+        <p>Специфичность считается по четырём уровням: инлайн-стили, затем ID-селекторы, затем классы, селекторы атрибутов и псевдоклассы, затем элементы и псевдоэлементы. Более высокий уровень всегда побеждает более низкий, сколько бы селекторов низкого уровня вы ни добавили, поэтому один ID (0,1,0,0) всегда обходит 20 классов (0,0,20,0).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Почему два моих селектора получают одинаковый результат?</summary>
+        <p>Когда специфичность совпадает полностью, CSS опирается на порядок в исходном коде: побеждает правило, которое находится ниже в таблице стилей (или было добавлено позже). Этот инструмент сортирует совпадения в том порядке, в котором вы их вставили, повторяя это поведение.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли мой CSS куда-либо?</summary>
+        <p>Нет. Селекторы разбираются и оцениваются полностью в вашем браузере с помощью небольшого JavaScript-токенизатора. Ничего не загружается на сервер.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-specificity-calculator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

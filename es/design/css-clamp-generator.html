@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xrd6nlberg");
+    </script>
+
+<meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#ff4d7a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<title>Generador de CSS Clamp(): Tipografía Fluida | norito</title>
+<meta name="description" content="Construye un valor CSS clamp() fluido que escala suavemente entre un mínimo y un máximo, para tamaños de fuente y espaciados responsivos. Vista previa en vivo." />
+<link rel="canonical" href="https://norito.in/es/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/design/css-clamp-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/css-clamp-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de CSS Clamp(): Tipografía Fluida | norito" />
+<meta property="og:description" content="Construye un valor CSS clamp() fluido que escala suavemente entre un mínimo y un máximo, para tamaños de fuente y espaciados responsivos. Vista previa en vivo." />
+<meta property="og:url" content="https://norito.in/es/design/css-clamp-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de CSS Clamp(): Tipografía Fluida | norito" />
+<meta name="twitter:description" content="Construye un valor CSS clamp() fluido que escala suavemente entre un mínimo y un máximo, para tamaños de fuente y espaciados responsivos. Vista previa en vivo." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de CSS Clamp()",
+  "url": "https://norito.in/es/design/css-clamp-generator.html",
+  "description": "Construye un valor CSS clamp() fluido que escala suavemente entre un ancho de viewport mínimo y máximo.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué hace exactamente clamp()?",
+      "acceptedAnswer": { "@type": "Answer", "text": "clamp(min, preferido, max) elige el valor intermedio, pero lo recorta para que nunca baje del mínimo ni supere el máximo. Aquí el valor \"preferido\" es una función lineal del ancho del viewport, así que el resultado crece suavemente con la pantalla hasta que alcanza uno de los límites, y entonces se mantiene estable." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué usar esto en lugar de una media query?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una media query salta entre tamaños fijos en puntos de quiebre específicos, lo que puede notarse como un salto visible. clamp() escala de forma continua con el viewport, así que el texto y el espaciado se redimensionan suavemente al arrastrar la ventana, sin ningún breakpoint que mantener." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía esto a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, la fórmula y la vista previa se calculan por completo en tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de CSS Clamp()", "item": "https://norito.in/es/design/css-clamp-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/es/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <a class="nav-cat" href="/es/images/">Imágenes</a>
+        <div class="nav-panel">
+          <a href="/es/compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">Comprimir imagen<span>Reduce a un tamaño de archivo objetivo</span></div></a>
+          <a href="/es/placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">Generador de marcadores<span>Imágenes de relleno a medida</span></div></a>
+          <a href="/es/remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">Quitar fondo<span>Recorta a una persona de una foto</span></div></a>
+          <a href="/es/resize-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">Redimensionar Imagen<span>Cambia ancho y alto, exacto o por porcentaje</span></div></a>
+          <a href="/es/image-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">Conversor de Imágenes<span>Convierte entre JPG, PNG y WebP</span></div></a>
+          <a href="/es/crop-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">Recortar Imagen<span>Arrastra un recuadro para recortar, libre o con proporción fija</span></div></a>
+          <a href="/es/remove-metadata.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div class="nav-link-body">Eliminar Metadatos<span>Elimina EXIF, GPS y datos de la cámara</span></div></a>
+          <a href="/es/watermark-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Marca de Agua en Imagen<span>Añade una marca de agua de texto con vista previa en vivo</span></div></a>
+          <a href="/es/avif-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">Conversor de AVIF<span>Convierte imágenes a AVIF y viceversa</span></div></a>
+          <a href="/es/heic-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">Conversor de HEIC a JPG/PNG<span>Convierte fotos de iPhone a JPG o PNG</span></div></a>
+          <a href="/es/image-dimension-inspector.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">Inspector de Dimensiones de Imagen<span>Ancho, alto, proporción y tamaño de archivo</span></div></a>
+          <a href="/es/screenshot-annotator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Anotador de Capturas de Pantalla<span>Flechas, recuadros, texto y desenfoque</span></div></a>
+          <a href="/es/social-image-cropper.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">Recortador de Imágenes para Redes Sociales<span>Recorta al tamaño exacto que necesita una plataforma</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/es/developer/">Desarrollo</a>
+        <div class="nav-panel">
+          <a href="/es/test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">Generador de archivos de prueba<span>Archivos de relleno del tamaño exacto</span></div></a>
+          <a href="/es/json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">Formateador JSON<span>Formatea, valida y minifica</span></div></a>
+          <a href="/es/markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">Editor Markdown<span>Vista previa en vivo, exporta a .md/.html</span></div></a>
+          <a href="/es/uuid-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg><div class="nav-link-body">Generador de UUID<span>UUID v4 aleatorios en lote</span></div></a>
+          <a href="/es/base64-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg><div class="nav-link-body">Codificar / Decodificar Base64<span>Texto a y desde Base64, seguro para UTF-8</span></div></a>
+          <a href="/es/hash-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">Generador de hashes<span>MD5, SHA-1, SHA-256, SHA-512</span></div></a>
+          <a href="/es/timestamp-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="nav-link-body">Conversor de Timestamp<span>De timestamp Unix a fecha, en ambos sentidos</span></div></a>
+          <a href="/es/json-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">JSON Diff<span>Compara dos documentos JSON</span></div></a>
+          <a href="/es/jwt-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">Decodificador de JWT<span>Decodifica el header y el payload de un JWT</span></div></a>
+          <a href="/es/regex-tester.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">Probador de Regex<span>Prueba una regex con resaltado de coincidencias en vivo</span></div></a>
+          <a href="/es/csv-to-json.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">CSV a JSON<span>Convierte un archivo CSV a JSON</span></div></a>
+          <a href="/es/csv-viewer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg><div class="nav-link-body">Visor de CSV<span>Visualiza y edita un CSV como tabla</span></div></a>
+          <a href="/es/url-encoder-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">Codificador / Decodificador de URL<span>Codifica o decodifica una URL con porcentaje</span></div></a>
+          <a href="/es/html-entity-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><div class="nav-link-body">Codificador / Decodificador de Entidades HTML<span>Escapa o desescapa entidades HTML</span></div></a>
+          <a href="/es/yaml-to-json-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg><div class="nav-link-body">Conversor YAML a JSON<span>Convierte entre YAML y JSON, en ambos sentidos</span></div></a>
+          <a href="/es/cron-expression-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg><div class="nav-link-body">Analizador de Expresiones Cron<span>Explica un cron, previsualiza las próximas ejecuciones</span></div></a>
+          <a href="/es/number-base-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">Conversor de Base Numérica<span>Binario, octal, decimal, hexadecimal y más</span></div></a>
+          <a href="/es/text-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">Comparador de Texto<span>Compara dos textos línea por línea</span></div></a>
+          <a href="/es/css-specificity-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">Calculadora de Especificidad CSS<span>Clasifica selectores por especificidad</span></div></a>
+          <a href="/es/css-variable-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">Extractor de Variables CSS<span>Extrae propiedades personalizadas de una hoja de estilos</span></div></a>
+          <a href="/es/gitignore-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><div class="nav-link-body">Generador de .gitignore<span>Archivo .gitignore combinado para tu stack</span></div></a>
+          <a href="/es/json-schema-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">Generador de JSON Schema<span>De un JSON de muestra a un schema draft-07</span></div></a>
+          <a href="/es/svg-optimizer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">Optimizador de SVG<span>Elimina lo innecesario, reduce el tamaño del SVG</span></div></a>
+          <a href="/es/svg-sprite-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">Generador de Sprites SVG<span>Combina iconos en una sola hoja de sprites</span></div></a>
+          <a href="/es/svg-to-react-component.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">SVG a Componente React<span>Convierte marcado SVG en un componente React</span></div></a>
+          <a href="/es/url-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">Analizador de URL<span>Descompone una URL en sus partes</span></div></a>
+          <a href="/es/user-agent-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">Analizador de User-Agent<span>Navegador, motor y SO a partir de una cadena UA</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/es/text/">Texto</a>
+        <div class="nav-panel">
+          <a href="/es/seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">Generador de slugs SEO<span>URLs limpias a partir de títulos</span></div></a>
+          <a href="/es/limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Generador de texto limitado<span>Texto de relleno con longitud exacta</span></div></a>
+          <a href="/es/word-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Contador de palabras<span>Palabras, frases y párrafos en vivo</span></div></a>
+          <a href="/es/character-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg><div class="nav-link-body">Contador de caracteres<span>Conteo de caracteres, con límites de plataformas</span></div></a>
+          <a href="/es/remove-duplicate-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg><div class="nav-link-body">Eliminar líneas duplicadas<span>Elimina líneas duplicadas de una lista</span></div></a>
+          <a href="/es/sort-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg><div class="nav-link-body">Ordenar líneas<span>Ordena alfabética, numéricamente o al azar</span></div></a>
+          <a href="/es/case-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M21 16h-6l6-8h-6"/></svg><div class="nav-link-body">Conversor de Mayúsculas/Minúsculas<span>MAYÚSCULAS, camelCase, snake_case y más</span></div></a>
+          <a href="/es/lorem-ipsum-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Generador de Lorem Ipsum<span>Texto de relleno por palabra, frase o párrafo</span></div></a>
+          <a href="/es/find-and-replace.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">Buscar y Reemplazar<span>Busca y reemplaza texto, con soporte de regex</span></div></a>
+          <a href="/es/invisible-character-detector.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">Detector de Caracteres Invisibles<span>Encuentra caracteres ocultos de ancho cero</span></div></a>
+          <a href="/es/markdown-table-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">Formateador de Tablas Markdown<span>Realinea una tabla Markdown desalineada</span></div></a>
+          <a href="/es/markdown-table-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">Generador de Tablas Markdown<span>De CSV/TSV a una tabla Markdown</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/es/utilities/">Utilidades</a>
+        <div class="nav-panel">
+          <a href="/es/password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">Generador de contraseñas<span>Contraseñas y frases aleatorias</span></div></a>
+          <a href="/es/qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">Generador de códigos QR<span>Colores personalizados, corrección de errores</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/es/pdf/">PDF</a>
+        <div class="nav-panel">
+          <a href="/es/pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">Unir PDF<span>Combina varios PDF en uno</span></div></a>
+          <a href="/es/pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">Dividir PDF<span>Extrae páginas o divide en archivos</span></div></a>
+          <a href="/es/pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">Rotar PDF<span>Corrige páginas giradas o al revés</span></div></a>
+          <a href="/es/pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF a JPG/PNG<span>Convierte páginas en imágenes</span></div></a>
+          <a href="/es/pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">JPG/PNG a PDF<span>Combina imágenes en un solo PDF</span></div></a>
+          <a href="/es/pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">Eliminar y reordenar<span>Elimina o reordena páginas</span></div></a>
+          <a href="/es/pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">Números de página<span>Numera cada página</span></div></a>
+          <a href="/es/pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">Marca de agua<span>Estampa texto en cada página</span></div></a>
+          <a href="/es/pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">Extraer texto<span>Extrae el texto de un PDF</span></div></a>
+          <a href="/es/pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">Comprimir PDF<span>Reduce el tamaño de un PDF</span></div></a>
+          <a href="/es/pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">Firmar PDF<span>Dibuja o escribe una firma</span></div></a>
+          <a href="/es/pdf/compare-pdfs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">Comparar PDF<span>Diferencia de texto línea por línea entre dos PDF</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/es/seo/">SEO</a>
+        <div class="nav-panel">
+          <a href="/es/seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Generador de meta tags<span>Título, descripción, etiquetas OG y Twitter</span></div></a>
+          <a href="/es/seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">Generador de UTM<span>Crea URLs con seguimiento de campaña</span></div></a>
+          <a href="/es/seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">Generador de robots.txt<span>Reglas allow/disallow, referencia al sitemap</span></div></a>
+          <a href="/es/seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">Generador de sitemap<span>URLs dentro, sitemap.xml fuera</span></div></a>
+          <a href="/es/seo/canonical-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">Generador de Etiquetas Canónicas<span>Etiqueta de enlace canónico normalizada</span></div></a>
+          <a href="/es/seo/hreflang-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">Generador de Etiquetas hreflang<span>Etiquetas hreflang recíprocas para cada idioma</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/es/design/">Design</a>
+        <div class="nav-panel">
+          <a href="/es/design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">Degradado CSS<span>Lineal o radial, copia el CSS</span></div></a>
+          <a href="/es/design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">Sombra CSS<span>Sombras simples o superpuestas</span></div></a>
+          <a href="/es/design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">Border-radius<span>Radio por esquina, copia el CSS</span></div></a>
+          <a href="/es/design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">Generador de favicon<span>Todos los tamaños que necesitas</span></div></a>
+          <a href="/es/design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">Extractor de paleta<span>Extrae los colores dominantes de una imagen</span></div></a>
+          <a href="/es/design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">Verificador de contraste<span>Contraste WCAG, cumplimiento AA/AAA</span></div></a>
+          <a href="/es/design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">Conversor de color<span>HEX, RGB, HSL, CMYK, en vivo</span></div></a>
+          <a href="/es/design/blob-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">Generador de Blobs SVG<span>Formas orgánicas aleatorias tipo blob</span></div></a>
+          <a href="/es/design/css-clamp-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">Generador de CSS Clamp()<span>Tamaños fluidos que escalan con el viewport</span></div></a>
+          <a href="/es/design/css-easing-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">Generador de Curvas de Aceleración CSS<span>Diseña una curva cubic-bezier() personalizada</span></div></a>
+          <a href="/es/design/css-filter-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">Generador de Filtros CSS<span>Arrastra deslizadores, copia el filtro CSS</span></div></a>
+          <a href="/es/design/noise-texture-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">Generador de Textura de Ruido<span>Textura de grano, descarga o copia como CSS</span></div></a>
+          <a href="/es/design/pattern-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">Generador de Patrones CSS<span>Patrones de fondo repetibles, sin imágenes</span></div></a>
+          <a href="/es/design/tailwind-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">Generador de Sombras para Tailwind<span>Sombra por capas como clase Tailwind</span></div></a>
+        </div>
+      </div>
+
+          
+</nav>
+      <button type="button" class="search-trigger" id="searchTrigger" aria-label="Buscar herramientas" title="Buscar herramientas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा / Язык / 言語">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">ES</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de CSS Clamp()</p>
+    <h1>Generador de CSS Clamp()</h1>
+    <p class="lede">
+      Define un tamaño mínimo y máximo, y el rango de viewport en el que aplican, obtén un valor
+      <code>clamp()</code> fluido que escala suavemente entre ambos.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="minSize">Tamaño mínimo (px)</label>
+            <input type="number" id="minSize" value="16" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="minVp">en viewport (px)</label>
+            <input type="number" id="minVp" value="375" min="1" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="maxSize">Tamaño máximo (px)</label>
+            <input type="number" id="maxSize" value="32" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="maxVp">en viewport (px)</label>
+            <input type="number" id="maxVp" value="1440" min="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rootFont">Tamaño de fuente raíz (para conversión a rem)</label>
+          <input type="number" id="rootFont" value="16" min="1" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:30px 16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <span id="previewText" style="font-weight:700; line-height:1.2;">Redimensiona la ventana para verme escalar</span>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copiar CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Los dos puntos (viewport, tamaño) definen una línea recta. Su pendiente se convierte en el
+        coeficiente del ancho del viewport, y su intersección con el eje y se convierte en un
+        desplazamiento fijo en rem, formando juntos
+        <code>clamp(min, intersección + pendiente*100vw, max)</code>. Como esto es CSS real, no un
+        listener de redimensionado en JavaScript, el navegador lo recalcula en cada pase de layout
+        sin tirones de scroll ni parpadeo del tamaño incorrecto, y sigue funcionando incluso con
+        JavaScript desactivado.
+      </p>
+      <p>
+        Todos los valores se convierten a rem usando tu tamaño de fuente raíz, así que el resultado
+        sigue escalando correctamente si un usuario ha cambiado el tamaño de fuente base de su
+        navegador por accesibilidad. Nada aquí lee tu página, solo calcula la fórmula a partir de
+        los números que introduces.
+      </p>
+    </div>
+
+    <div class="related-tools">
+      <h2>Herramientas relacionadas</h2>
+      <div class="related-grid">
+        <a class="related-card" href="css-easing-generator.html">
+          <strong>Generador de Curvas de Aceleración CSS</strong>
+          <span>Editor visual de curvas cubic-bezier.</span>
+        </a>
+        <a class="related-card" href="border-radius-generator.html">
+          <strong>Generador de border-radius</strong>
+          <span>Construye un border-radius por esquina de forma visual.</span>
+        </a>
+        <a class="related-card" href="contrast-checker.html">
+          <strong>Verificador de contraste</strong>
+          <span>Ratio de contraste WCAG, aprobación AA/AAA.</span>
+        </a>
+      </div>
+    </div>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Qué hace exactamente clamp()?</summary>
+        <p>clamp(min, preferido, max) elige el valor intermedio, pero lo recorta para que nunca baje del mínimo ni supere el máximo. Aquí el valor "preferido" es una función lineal del ancho del viewport, así que el resultado crece suavemente con la pantalla hasta que alcanza uno de los límites, y entonces se mantiene estable.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Por qué usar esto en lugar de una media query?</summary>
+        <p>Una media query salta entre tamaños fijos en puntos de quiebre específicos, lo que puede notarse como un salto visible. clamp() escala de forma continua con el viewport, así que el texto y el espaciado se redimensionan suavemente al arrastrar la ventana, sin ningún breakpoint que mantener.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía esto a algún sitio?</summary>
+        <p>No, la fórmula y la vista previa se calculan por completo en tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">Herramientas pequeñas que resuelven un problema molesto cada una. Todo funciona en tu navegador, no se sube nada.</p>
+      </div>
+      <div class="footer-col footer-product">
+        <h3>Producto</h3>
+        <a href="/tools.html">Todas las herramientas</a>
+        <a href="/es/changelog.html">Changelog</a>
+        <a href="/es/how-it-works.html">Cómo funciona</a>
+        <a href="/blog/">Blog</a>
+        <a href="/es/compare/">Compare</a>
+        <a href="/es/about.html">Acerca de</a>
+        <a href="/es/contact.html">Contacto</a>
+        <a href="/es/privacy.html">Política de privacidad</a>
+        <a href="/es/terms.html">Términos de servicio</a>
+      </div>
+      <div class="footer-col">
+        <h3>PDF</h3>
+        <a href="/es/pdf/merge-pdf.html">Unir PDF</a>
+        <a href="/es/pdf/split-pdf.html">Dividir PDF</a>
+        <a href="/es/pdf/rotate-pdf.html">Rotar PDF</a>
+        <a href="/es/pdf/pdf-to-image.html">PDF a JPG/PNG</a>
+        <a href="/es/pdf/jpg-png-to-pdf.html">JPG/PNG a PDF</a>
+        <a href="/es/pdf/organize-pdf.html">Eliminar y reordenar</a>
+        <a href="/es/pdf/add-page-numbers.html">Números de página</a>
+        <a href="/es/pdf/add-watermark.html">Marca de agua</a>
+        <a href="/es/pdf/extract-text.html">Extraer texto</a>
+        <a href="/es/pdf/compress-pdf.html">Comprimir PDF</a>
+        <a href="/es/pdf/sign-pdf.html">Firmar PDF</a>
+        <a href="/es/pdf/compare-pdfs.html">Comparar PDF</a>
+      </div>
+      <div class="footer-col">
+        <h3>Imágenes</h3>
+        <a href="/es/compress-image.html">Comprimir imagen</a>
+        <a href="/es/resize-image.html">Redimensionar Imagen</a>
+        <a href="/es/image-converter.html">Conversor de Imágenes</a>
+        <a href="/es/crop-image.html">Recortar Imagen</a>
+        <a href="/es/remove-metadata.html">Eliminar Metadatos</a>
+        <a href="/es/watermark-image.html">Marca de Agua en Imagen</a>
+        <a href="/es/placeholder-generator.html">Generador de marcadores</a>
+        <a href="/es/remove-background.html">Quitar fondo</a>
+        <a href="/es/avif-converter.html">Conversor de AVIF</a>
+        <a href="/es/heic-converter.html">Conversor de HEIC</a>
+        <a href="/es/image-dimension-inspector.html">Dimensiones de imagen</a>
+        <a href="/es/screenshot-annotator.html">Anotador de capturas</a>
+        <a href="/es/social-image-cropper.html">Recorte para redes sociales</a>
+      </div>
+      <div class="footer-col">
+        <h3>Desarrollo</h3>
+        <a href="/es/test-file-generator.html">Generador de archivos de prueba</a>
+        <a href="/es/json-formatter.html">Formateador JSON</a>
+        <a href="/es/markdown-editor.html">Editor Markdown</a>
+        <a href="/es/uuid-generator.html">Generador de UUID</a>
+        <a href="/es/base64-encoder.html">Base64</a>
+        <a href="/es/hash-generator.html">Generador de hashes</a>
+        <a href="/es/timestamp-converter.html">Timestamp</a>
+        <a href="/es/json-diff.html">JSON Diff</a>
+        <a href="/es/jwt-decoder.html">Decodificador de JWT</a>
+        <a href="/es/regex-tester.html">Probador de Regex</a>
+        <a href="/es/csv-to-json.html">CSV a JSON</a>
+        <a href="/es/csv-viewer.html">Visor de CSV</a>
+        <a href="/es/url-encoder-decoder.html">URL Encoder</a>
+        <a href="/es/html-entity-encoder.html">HTML Entities</a>
+        <a href="/es/yaml-to-json-converter.html">YAML to JSON</a>
+        <a href="/es/cron-expression-parser.html">Cron Parser</a>
+        <a href="/es/number-base-converter.html">Base Converter</a>
+        <a href="/es/text-diff.html">Comparador de Texto</a>
+        <a href="/es/css-specificity-calculator.html">Calculadora de especificidad CSS</a>
+        <a href="/es/css-variable-extractor.html">Extractor de variables CSS</a>
+        <a href="/es/gitignore-generator.html">Generador de .gitignore</a>
+        <a href="/es/json-schema-generator.html">Generador de JSON Schema</a>
+        <a href="/es/svg-optimizer.html">Optimizador de SVG</a>
+        <a href="/es/svg-sprite-generator.html">Generador de sprites SVG</a>
+        <a href="/es/svg-to-react-component.html">SVG a componente React</a>
+        <a href="/es/url-parser.html">Analizador de URL</a>
+        <a href="/es/user-agent-parser.html">Analizador de User-Agent</a>
+      </div>
+      <div class="footer-col">
+        <h3>Texto</h3>
+        <a href="/es/seo-slug-generator.html">Generador de slugs SEO</a>
+        <a href="/es/limited-text-generator.html">Generador de texto limitado</a>
+        <a href="/es/word-counter.html">Contador de palabras</a>
+        <a href="/es/character-counter.html">Contador de caracteres</a>
+        <a href="/es/remove-duplicate-lines.html">Dedupe Lines</a>
+        <a href="/es/sort-lines.html">Ordenar líneas</a>
+        <a href="/es/case-converter.html">Conversor de Mayúsculas/Minúsculas</a>
+        <a href="/es/lorem-ipsum-generator.html">Lorem Ipsum</a>
+        <a href="/es/find-and-replace.html">Find & Replace</a>
+        <a href="/es/invisible-character-detector.html">Caracteres invisibles</a>
+        <a href="/es/markdown-table-formatter.html">Formateador de tablas MD</a>
+        <a href="/es/markdown-table-generator.html">Generador de tablas MD</a>
+      </div>
+      <div class="footer-col">
+        <h3>Utilidades</h3>
+        <a href="/es/password-generator.html">Generador de contraseñas</a>
+        <a href="/es/qr-code-generator.html">Generador de códigos QR</a>
+      </div>
+      <div class="footer-col">
+        <h3>SEO</h3>
+        <a href="/es/seo/meta-tag-generator.html">Generador de meta tags</a>
+        <a href="/es/seo/utm-builder.html">Generador de UTM</a>
+        <a href="/es/seo/robots-txt-generator.html">Generador de robots.txt</a>
+        <a href="/es/seo/sitemap-generator.html">Generador de sitemap</a>
+        <a href="/es/seo/canonical-tag-generator.html">Etiqueta Canonical</a>
+        <a href="/es/seo/hreflang-generator.html">Etiquetas hreflang</a>
+      </div>
+      <div class="footer-col">
+        <h3>Design</h3>
+        <a href="/es/design/css-gradient-generator.html">Degradado CSS</a>
+        <a href="/es/design/box-shadow-generator.html">Sombra CSS</a>
+        <a href="/es/design/border-radius-generator.html">Border-radius</a>
+        <a href="/es/design/favicon-generator.html">Generador de favicon</a>
+        <a href="/es/design/color-palette-extractor.html">Extractor de paleta</a>
+        <a href="/es/design/contrast-checker.html">Verificador de contraste</a>
+        <a href="/es/design/color-converter.html">Conversor de color</a>
+        <a href="/es/design/blob-generator.html">Generador de Blobs</a>
+        <a href="/es/design/css-clamp-generator.html">CSS Clamp()</a>
+        <a href="/es/design/css-easing-generator.html">Curvas de aceleración CSS</a>
+        <a href="/es/design/css-filter-generator.html">Filtros CSS</a>
+        <a href="/es/design/noise-texture-generator.html">Textura de ruido</a>
+        <a href="/es/design/pattern-generator.html">Patrones CSS</a>
+        <a href="/es/design/tailwind-shadow-generator.html">Sombras Tailwind</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. Todas las herramientas funcionan localmente en tu navegador.</span>
+      <a href="/es/changelog.html">Changelog</a>
+      <a href="/blog/">Blog</a>
+      <a href="/es/compare/">Compare</a>
+      <a href="/es/how-it-works.html">Cómo funciona</a>
+      <a href="/es/privacy.html">Política de privacidad</a>
+      <a href="/es/terms.html">Términos de servicio</a>
+      <a href="https://ko-fi.com/shubhmisaki" target="_blank" rel="noopener">Invítame un café</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/i18n/es.js"></script>
+<script src="/js/i18n-runtime.js"></script>
+<script src="/js/utils.js"></script>
+<script src="../../js/app-css-clamp-generator.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/theme-toggle.js"></script>
+<script src="/js/lang-switcher.js"></script>
+<script src="/js/bg-blobs.js"></script>
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="Ninguna herramienta coincide con tu búsqueda.">
+  <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="Buscar herramientas">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="Buscar herramientas..." aria-label="Buscar herramientas" autocomplete="off" />
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdkResults"></div>
+  </div>
+</div>
+
+<script src="/js/cmdk.js"></script>
+<script src="/js/sw-register.js" defer></script>
+<script src="/js/install-prompt.js" defer></script>
+</body>
+</html>

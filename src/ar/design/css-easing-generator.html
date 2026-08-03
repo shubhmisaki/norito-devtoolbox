@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مولّد دوال تسارع CSS Easing / Cubic-Bezier | norito</title>
+<meta name="description" content="اسحب منحنى بصريًا لبناء دالة تسارع cubic-bezier() مخصّصة، عاين الحركة مباشرة، ثم انسخ كود CSS. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/design/css-easing-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد دوال تسارع CSS Easing / Cubic-Bezier | norito" />
+<meta property="og:description" content="اسحب منحنى بصريًا لبناء دالة تسارع cubic-bezier() مخصّصة، عاين الحركة مباشرة، ثم انسخ كود CSS. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/design/css-easing-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد دوال تسارع CSS Easing / Cubic-Bezier | norito" />
+<meta name="twitter:description" content="اسحب منحنى بصريًا لبناء دالة تسارع cubic-bezier() مخصّصة، عاين الحركة مباشرة، ثم انسخ كود CSS. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد دوال تسارع CSS Easing / Cubic-Bezier",
+  "url": "https://norito.in/ar/design/css-easing-generator.html",
+  "description": "اسحب منحنى بصريًا لبناء دالة تسارع cubic-bezier() مخصّصة، وعاين الحركة مباشرة.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما الذي تتحكم فيه المقبضان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يُعرَّف منحنى تسارع cubic-bezier بنقطتي تحكم، لكل منهما إحداثي x (الزمن، من 0 إلى 1) وإحداثي y (التقدّم، غير محدود لكنه عادة بين 0 و1). سحب مقبض يحدّد تلك النقطة مباشرة؛ والأرقام الأربعة الظاهرة هي بالضبط ما يوضع داخل cubic-bezier()." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكن للمنحنى أن يتجاوز 100%؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم، إذا تجاوزت قيمة y لنقطة تحكم 1 أو نزلت دون 0، فسوف تتجاوز الحركة قيمتها النهائية لفترة وجيزة أو تنخفض دون قيمتها الأولية قبل أن تستقر، وهو تأثير \"الارتداد\" أو \"التمهيد المعاكس\". اسحب مقبضًا فوق أو تحت الرسم البياني لتجربة ذلك." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل هذا إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، يعمل المنحنى ومعاينة الحركة بالكامل داخل محرك CSS في متصفحك. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مولّد دوال تسارع CSS Easing", "item": "https://norito.in/ar/design/css-easing-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 9-9"/><path d="M21 3c-4 0-8 1-11 4-2 2-3 5-3 8 3 0 6-1 8-3 3-3 4-7 4-11a9 9 0 0 0 2 2Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / مولّد دوال تسارع CSS Easing</p>
+    <h1>مولّد دوال تسارع CSS Easing</h1>
+    <p class="lede">
+      اسحب المقبضين لتشكيل منحنى تسارع مخصّص، شاهد الكرة تعاينه مباشرة، وانسخ
+      قيمة <code>cubic-bezier()</code>.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <svg id="curveSvg" viewBox="0 0 200 200" style="width:100%; max-width:320px; display:block; margin:0 auto; background:var(--bg-subtle); border-radius:var(--radius-md); touch-action:none;">
+          <line x1="0" y1="200" x2="200" y2="0" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+          <path id="curvePath" d="" fill="none" stroke="var(--primary)" stroke-width="3" />
+          <line id="handle1Line" x1="0" y1="200" x2="0" y2="200" stroke="var(--muted)" stroke-width="1.5" />
+          <line id="handle2Line" x1="200" y1="0" x2="200" y2="0" stroke="var(--muted)" stroke-width="1.5" />
+          <circle id="handle1" cx="0" cy="200" r="7" fill="var(--accent-live, #2fbf71)" style="cursor:grab;" />
+          <circle id="handle2" cx="200" cy="0" r="7" fill="var(--primary)" style="cursor:grab;" />
+        </svg>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="p1x">P1 x</label>
+            <input type="number" id="p1x" min="0" max="1" step="0.01" value="0.42" />
+          </div>
+          <div class="field">
+            <label for="p1y">P1 y</label>
+            <input type="number" id="p1y" step="0.01" value="0" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="p2x">P2 x</label>
+            <input type="number" id="p2x" min="0" max="1" step="0.01" value="0.58" />
+          </div>
+          <div class="field">
+            <label for="p2y">P2 y</label>
+            <input type="number" id="p2y" step="0.01" value="1" />
+          </div>
+        </div>
+        <h3>إعدادات جاهزة</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="secondary preset-btn" data-p="0.25,0.1,0.25,1">ease</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,1,1">ease-in</button>
+          <button type="button" class="secondary preset-btn" data-p="0,0,0.58,1">ease-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,0.58,1">ease-in-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.68,-0.55,0.27,1.55">back</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="animTrack" style="position:relative; height:60px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <div id="animBall" style="position:absolute; top:14px; left:6px; width:32px; height:32px; border-radius:50%; background:var(--primary);"></div>
+          </div>
+          <button type="button" id="playBtn" class="secondary" style="margin-bottom:16px;">إعادة تشغيل الحركة</button>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">نسخ CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        يرسم الرسم البياني التقدّم (عموديًا) مقابل الزمن (أفقيًا) على مدى ثانية واحدة.
+        كلا المقبضين قابل للسحب مباشرة، وحقول الأرقام أسفلهما تبقى متزامنة معهما في
+        الحالتين؛ اسحب بالماوس أو الإصبع، أو اكتب قيمًا دقيقة إذا احتجت لمطابقة منحنى
+        معيّن. تغذّي الأرقام الأربعة نفسها كلًا من مسار SVG الذي تراه و
+        <code>transition-timing-function</code> الفعلية المطبَّقة على كرة المعاينة،
+        لذا فما تراه هو التسارع الحقيقي، لا تقريب له.
+      </p>
+      <p>
+        كل شيء يعمل على محرك انتقال CSS الخاص بمتصفحك. لا تُرسل أي بيانات حالة حركة
+        أو منحنى إلى أي مكان.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-clamp-generator.html|مولّد دالة CSS Clamp()|قيم مرنة تتدرّج مع عرض نافذة العرض.
+css-filter-generator.html|مولّد فلاتر CSS|أنشئ تأثيرات فلترة الصور بصريًا.
+box-shadow-generator.html|مولّد ظلال الصناديق|أنشئ ظل صندوق CSS بصريًا.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ما الذي تتحكم فيه المقبضان؟</summary>
+        <p>يُعرَّف منحنى تسارع cubic-bezier بنقطتي تحكم، لكل منهما إحداثي x (الزمن، من 0 إلى 1) وإحداثي y (التقدّم، غير محدود لكنه عادة بين 0 و1). سحب مقبض يحدّد تلك النقطة مباشرة؛ والأرقام الأربعة الظاهرة هي بالضبط ما يوضع داخل cubic-bezier().</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكن للمنحنى أن يتجاوز 100%؟</summary>
+        <p>نعم، إذا تجاوزت قيمة y لنقطة تحكم 1 أو نزلت دون 0، فسوف تتجاوز الحركة قيمتها النهائية لفترة وجيزة أو تنخفض دون قيمتها الأولية قبل أن تستقر، وهو تأثير "الارتداد" أو "التمهيد المعاكس". اسحب مقبضًا فوق أو تحت الرسم البياني لتجربة ذلك.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا إلى أي مكان؟</summary>
+        <p>لا، يعمل المنحنى ومعاينة الحركة بالكامل داخل محرك CSS في متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-easing-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG स्प्राइट जनरेटर | norito</title>
+<meta name="description" content="कई SVG आइकॉन को एक ऑप्टिमाइज़्ड <symbol>-बेस्ड स्प्राइट शीट में मिलाएं. बैच अपलोड, ऑटो-जनरेटेड ID, कॉपी या डाउनलोड करें. आपके ब्राउज़र में चलता है." />
+<link rel="canonical" href="https://norito.in/hi/svg-sprite-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG स्प्राइट जनरेटर | norito" />
+<meta property="og:description" content="कई SVG आइकॉन को एक ऑप्टिमाइज़्ड <symbol>-बेस्ड स्प्राइट शीट में मिलाएं. बैच अपलोड, ऑटो-जनरेटेड ID, कॉपी या डाउनलोड करें. आपके ब्राउज़र में चलता है." />
+<meta property="og:url" content="https://norito.in/hi/svg-sprite-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG स्प्राइट जनरेटर | norito" />
+<meta name="twitter:description" content="कई SVG आइकॉन को एक ऑप्टिमाइज़्ड <symbol>-बेस्ड स्प्राइट शीट में मिलाएं. बैच अपलोड, ऑटो-जनरेटेड ID, कॉपी या डाउनलोड करें. आपके ब्राउज़र में चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG स्प्राइट जनरेटर",
+  "url": "https://norito.in/hi/svg-sprite-generator.html",
+  "description": "कई SVG आइकॉन को एक ऑप्टिमाइज़्ड symbol-बेस्ड स्प्राइट शीट में मिलाएं.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "सिंबल स्प्राइट कैसे काम करता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "हर आइकॉन एक छिपे हुए <svg> के अंदर <symbol id=\"...\"> बन जाता है, जिसे आपके पेज की HTML में कहीं भी एक बार रखा जाता है. फिर कोई भी एलिमेंट <svg><use href=\"#id\"></use></svg> से उस आइकॉन को रेंडर करता है, यानी ब्राउज़र आर्टवर्क को एक ही बार डाउनलोड और पार्स करता है, चाहे वह कितनी भी बार इस्तेमाल हो." }
+    },
+    {
+      "@type": "Question",
+      "name": "आइकॉन ID कैसे जनरेट होते हैं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "हर फ़ाइल के नाम से: लोअरकेस किया जाता है, नॉन-अल्फ़ान्यूमेरिक कैरेक्टर हाइफ़न से बदले जाते हैं, एक्सटेंशन हटा दिया जाता है. अगर दो फ़ाइलों का ID एक जैसा बनता है, तो हर सिंबल को अलग एड्रेस देने के लिए एक नंबर वाला सफ़िक्स जोड़ दिया जाता है." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मेरे आइकॉन कहीं अपलोड होते हैं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं. फ़ाइलें पूरी तरह आपके ब्राउज़र में File API से पढ़ी और मिलाई जाती हैं. कुछ भी अपलोड नहीं होता." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG स्प्राइट जनरेटर", "item": "https://norito.in/hi/svg-sprite-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVG स्प्राइट जनरेटर</p>
+    <h1>SVG स्प्राइट जनरेटर</h1>
+    <p class="lede">
+      कई SVG आइकॉन ड्रॉप करें, ऑटो-जनरेटेड, कोलिज़न-सेफ़ ID के साथ एक मिली-जुली
+      <code>&lt;symbol&gt;</code> स्प्राइट शीट पाएं.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>क्लिक करके .svg फ़ाइलें चुनें</strong>, या उन्हें यहां ड्रैग-ड्रॉप करें</p>
+          <p class="note" style="margin-top:2px;">एक साथ कई आइकॉन चुनें. आपकी डिवाइस पर ही रहता है, कुछ भी अपलोड नहीं होता.</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" multiple />
+        </div>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 id="previewHeading" style="margin-top:0; display:none;">आइकॉन</h3>
+          <div id="iconPreview" style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:14px;"></div>
+          <div class="field" style="text-align:left;">
+            <label>स्प्राइट आउटपुट</label>
+            <pre class="code-output" id="output" style="max-height:220px; overflow:auto;"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">स्प्राइट कॉपी करें</button>
+            <button id="downloadBtn" class="secondary">sprite.svg डाउनलोड करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        हर अपलोड की गई SVG को ब्राउज़र के अपने DOM पार्सर से पार्स किया जाता है, इसका
+        <code>viewBox</code> (या अगर viewBox सेट नहीं है तो width/height) पढ़ा जाता है, और इसका
+        इनर मार्कअप एक <code>&lt;symbol id="..." viewBox="..."&gt;</code> एलिमेंट में लपेटा जाता
+        है. फिर सभी सिंबल को एक ही छिपे हुए <code>&lt;svg&gt;</code> में मिला दिया जाता है, यह वही
+        स्टैंडर्ड "SVG स्प्राइट" पैटर्न है जिससे कई आइकॉन एक ही रिक्वेस्ट में मिलते हैं, न कि कई
+        अलग-अलग इमेज फ़ाइलों या इनलाइन कॉपी में. ID हर फ़ाइल के नाम से बनते हैं और अगर दो फ़ाइलें
+        टकराती हैं तो अपने आप अलग कर दिए जाते हैं.
+      </p>
+      <p>
+        पार्सिंग और मिलाना दोनों पूरी तरह इस पेज के जावास्क्रिप्ट में होते हैं. आपके अपलोड किए
+        गए में से कुछ भी कहीं नहीं भेजा जाता.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|SVG ऑप्टिमाइज़र|किसी SVG से कमेंट और मेटाडेटा हटाएं.
+svg-to-react-component.html|SVG से React कॉम्पोनेंट|SVG मार्कअप को JSX कॉम्पोनेंट में बदलें.
+design/favicon-generator.html|फ़ेविकॉन जनरेटर|किसी इमेज से फ़ेविकॉन जनरेट करें.
+-->
+
+    <h2>सामान्य प्रश्न</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>सिंबल स्प्राइट कैसे काम करता है?</summary>
+        <p>हर आइकॉन एक छिपे हुए &lt;svg&gt; के अंदर &lt;symbol id="..."&gt; बन जाता है, जिसे आपके पेज की HTML में कहीं भी एक बार रखा जाता है. फिर कोई भी एलिमेंट &lt;svg&gt;&lt;use href="#id"&gt;&lt;/use&gt;&lt;/svg&gt; से उस आइकॉन को रेंडर करता है, यानी ब्राउज़र आर्टवर्क को एक ही बार डाउनलोड और पार्स करता है, चाहे वह कितनी भी बार इस्तेमाल हो.</p>
+      </details>
+      <details class="faq-item">
+        <summary>आइकॉन ID कैसे जनरेट होते हैं?</summary>
+        <p>हर फ़ाइल के नाम से: लोअरकेस किया जाता है, नॉन-अल्फ़ान्यूमेरिक कैरेक्टर हाइफ़न से बदले जाते हैं, एक्सटेंशन हटा दिया जाता है. अगर दो फ़ाइलों का ID एक जैसा बनता है, तो हर सिंबल को अलग एड्रेस देने के लिए एक नंबर वाला सफ़िक्स जोड़ दिया जाता है.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या मेरे आइकॉन कहीं अपलोड होते हैं?</summary>
+        <p>नहीं. फ़ाइलें पूरी तरह आपके ब्राउज़र में File API से पढ़ी और मिलाई जाती हैं. कुछ भी अपलोड नहीं होता.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-sprite-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

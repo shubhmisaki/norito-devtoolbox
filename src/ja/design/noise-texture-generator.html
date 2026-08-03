@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>ノイズテクスチャジェネレーター | norito</title>
+<meta name="description" content="密度・不透明度・色を調整できる粒状ノイズテクスチャを生成します。PNGとしてダウンロードするか、CSSのdata URI背景としてコピーできます。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/design/noise-texture-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ノイズテクスチャジェネレーター | norito" />
+<meta property="og:description" content="密度・不透明度・色を調整できる粒状ノイズテクスチャを生成します。PNGとしてダウンロードするか、CSSのdata URI背景としてコピーできます。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/design/noise-texture-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ノイズテクスチャジェネレーター | norito" />
+<meta name="twitter:description" content="密度・不透明度・色を調整できる粒状ノイズテクスチャを生成します。PNGとしてダウンロードするか、CSSのdata URI背景としてコピーできます。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ノイズテクスチャジェネレーター",
+  "url": "https://norito.in/ja/design/noise-texture-generator.html",
+  "description": "密度・不透明度・色を調整できる粒状ノイズテクスチャを生成します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ダウンロードしたPNGは継ぎ目なくタイル状に並びますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "繰り返しパターンではなくピクセル単位のランダムノイズなので、小さく繰り返すbackground-imageとして使っても目に見える継ぎ目はできません。すべてのピクセルが独立してランダムであり、タイルの端で崩れるような大きな構造がないためです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "PNGダウンロードとCSSコピーの違いは何ですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ダウンロードでは、スタイルシートや&lt;img&gt;から参照できる実際の.pngファイルが得られます。「CSSとしてコピー」は代わりに同じ画像をbase64のdata URIとしてbackground-imageルールの中に直接埋め込みます。別途ホストするファイルなしで自己完結したCSSブロックにしたい場合に便利です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。テクスチャはブラウザ内のメモリ上のキャンバスでピクセル単位で生成されます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "ノイズテクスチャジェネレーター", "item": "https://norito.in/ja/design/noise-texture-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / ノイズテクスチャジェネレーター</p>
+    <h1>ノイズテクスチャジェネレーター</h1>
+    <p class="lede">
+      密度・不透明度・色を調整できる粒状テクスチャを生成し、ダウンロードするかCSSとしてコピーできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="noiseSize">タイルサイズ (<span id="noiseSizeVal">128px</span>)</label>
+          <input type="range" id="noiseSize" min="32" max="512" step="32" value="128" />
+        </div>
+        <div class="field">
+          <label for="noiseDensity">密度 (<span id="noiseDensityVal">50%</span>)</label>
+          <input type="range" id="noiseDensity" min="5" max="100" value="50" />
+        </div>
+        <div class="field">
+          <label for="noiseOpacity">不透明度 (<span id="noiseOpacityVal">30%</span>)</label>
+          <input type="range" id="noiseOpacity" min="1" max="100" value="30" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="noiseColor">粒子の色</label>
+            <input type="color" id="noiseColor" value="#000000" />
+          </div>
+          <div class="field">
+            <label for="noiseBg">背景色</label>
+            <input type="color" id="noiseBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">モノクロの粒子</span>
+          <label class="switch"><input type="checkbox" id="noiseMono" checked /><span class="track"></span></label>
+        </div>
+        <button type="button" id="regenBtn">再生成</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <canvas id="noiseCanvas" width="128" height="128" style="width:100%; max-width:320px; aspect-ratio:1; border-radius:var(--radius-md); margin-bottom:16px; image-rendering:pixelated;"></canvas>
+          <div id="tiledPreview" style="height:100px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="downloadBtn">PNGをダウンロード</button>
+            <button id="copyCssBtn" class="secondary">CSS背景としてコピー</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        選択したタイルサイズのキャンバスがピクセル単位で塗りつぶされます。各ピクセルは、密度スライダーに
+        対して独立に判定され、粒子を持つかどうかが決まり、その粒子の色のアルファ値は不透明度スライダーで
+        スケーリングされます。モノクロモードでは全体に1色の粒子を使い、これをオフにすると各粒子の明るさも
+        ランダム化され、よりテクスチャの効いた不均一な見た目になります。下のタイル状プレビューは、同じ
+        キャンバスをCSS背景として繰り返し表示し、拡大したときの見え方を確認できます。
+      </p>
+      <p>
+        ダウンロードされるPNGと「CSSとしてコピー」のdata URIは、どちらもこのキャンバスから
+        <code>toDataURL</code>/<code>toBlob</code>を使って直接、ブラウザ内で生成されます。
+        アップロードは一切行われません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|CSSパターンジェネレーター|タイル張り可能な背景パターンを作成。
+blob-generator.html|ブロブジェネレーター|有機的なブロブ形状を生成。
+favicon-generator.html|ファビコンジェネレーター|画像からファビコンを生成。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ダウンロードしたPNGは継ぎ目なくタイル状に並びますか?</summary>
+        <p>繰り返しパターンではなくピクセル単位のランダムノイズなので、小さく繰り返すbackground-imageとして使っても目に見える継ぎ目はできません。すべてのピクセルが独立してランダムであり、タイルの端で崩れるような大きな構造がないためです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>PNGダウンロードとCSSコピーの違いは何ですか?</summary>
+        <p>ダウンロードでは、スタイルシートや&lt;img&gt;から参照できる実際の.pngファイルが得られます。「CSSとしてコピー」は代わりに同じ画像をbase64のdata URIとしてbackground-imageルールの中に直接埋め込みます。別途ホストするファイルなしで自己完結したCSSブロックにしたい場合に便利です。</p>
+      </details>
+      <details class="faq-item">
+        <summary>これはどこかに送信されますか?</summary>
+        <p>いいえ。テクスチャはブラウザ内のメモリ上のキャンバスでピクセル単位で生成されます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-noise-texture-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

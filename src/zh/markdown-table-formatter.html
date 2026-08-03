@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Markdown 表格格式化工具 | norito</title>
+<meta name="description" content="粘贴一个错位的 Markdown 表格，得到一个整齐对齐、内容和对齐标记都保持不变的表格。完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/markdown-table-formatter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Markdown 表格格式化工具 | norito" />
+<meta property="og:description" content="粘贴一个错位的 Markdown 表格，得到一个整齐对齐、内容和对齐标记都保持不变的表格。完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/markdown-table-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Markdown 表格格式化工具 | norito" />
+<meta name="twitter:description" content="粘贴一个错位的 Markdown 表格，得到一个整齐对齐、内容和对齐标记都保持不变的表格。完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Markdown 表格格式化工具",
+  "url": "https://norito.in/zh/markdown-table-formatter.html",
+  "description": "粘贴一个错位的 Markdown 表格，得到一个整齐对齐的表格。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "这和 Markdown 表格生成器有什么区别？",
+      "acceptedAnswer": { "@type": "Answer", "text": "生成器是根据 CSV/TSV 数据从零构建一个新表格。这个工具则是接收一个已经是 Markdown 语法、但竖线和空格已经错位（手动编辑后很常见）的表格，重新填充对齐，且不改变任何单元格内容或已有的对齐标记。" }
+    },
+    {
+      "@type": "Question",
+      "name": "会保留列的对齐方式吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "会。如果你的分隔行已经带有冒号（:--- 、:---: 或 ---:），会读取并保留该对齐方式。如果表格没有有效的分隔行，列会默认为左对齐，并附上一条说明，告知已重新生成了分隔行。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的表格会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，解析和格式化完全在你的浏览器中完成。你粘贴的内容不会被上传。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "Markdown 表格格式化工具", "item": "https://norito.in/zh/markdown-table-formatter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Markdown 表格格式化工具</p>
+    <h1>Markdown 表格格式化工具</h1>
+    <p class="lede">
+      粘贴一个竖线错位、间距不均的 Markdown 表格，得到一个整齐填充对齐的结果，内容和对齐方式都不会被改变。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="mdInput">Markdown 表格</label>
+          <textarea id="mdInput" class="mono-area" rows="12">| Name | Role | Location |
+|---|:---:|---:|
+| Shubham | Founder | India |
+| Ava | Engineer | Remote |
+| Priya | Designer | Remote |</textarea>
+        </div>
+        <p class="note" id="formatNote" style="display:none;"></p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:160px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">复制格式化后的表格</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">渲染预览</h3>
+          <div id="renderedPreview" style="overflow-x:auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        每一行都会按未转义的竖线字符拆分为单元格（前面带 <code>\</code> 的竖线会留在单元格内，不会触发拆分），每行开头和结尾可选的竖线在拆分前会先被去掉，这与 Markdown 本身的处理方式一致。第二行会与分隔符模式（<code>:---</code>、<code>:---:</code>、<code>---:</code> 或普通的 <code>---</code>）进行比对；如果匹配，其中的冒号就决定各列的对齐方式；如果不匹配，工具会回退为普通的左对齐分隔行，并给出说明。之后每一列都会按其最宽的单元格重新测量并填充空格，因此无论是在渲染后的 HTML 中查看，还是在编辑器里看原始文本，竖线都能对齐。
+      </p>
+      <p>
+        格式化完全在这个页面的 JavaScript 中随你的输入实时完成。你粘贴的内容不会被上传。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+markdown-table-generator.html|Markdown 表格生成器|将 CSV/TSV 转换为 Markdown 表格。
+markdown-editor.html|Markdown 编辑器|双栏 Markdown 编辑器，支持实时预览。
+invisible-character-detector.html|隐形字符检测器|查找隐藏的零宽字符。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>这和 Markdown 表格生成器有什么区别？</summary>
+        <p>生成器是根据 CSV/TSV 数据从零构建一个新表格。这个工具则是接收一个已经是 Markdown 语法、但竖线和空格已经错位（手动编辑后很常见）的表格，重新填充对齐，且不改变任何单元格内容或已有的对齐标记。</p>
+      </details>
+      <details class="faq-item">
+        <summary>会保留列的对齐方式吗？</summary>
+        <p>会。如果你的分隔行已经带有冒号（:--- 、:---: 或 ---:），会读取并保留该对齐方式。如果表格没有有效的分隔行，列会默认为左对齐，并附上一条说明，告知已重新生成了分隔行。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的表格会被发送到别的地方吗？</summary>
+        <p>不会，解析和格式化完全在你的浏览器中完成。你粘贴的内容不会被上传。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-markdown-table-formatter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

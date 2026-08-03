@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSSフィルタージェネレーター | norito</title>
+<meta name="description" content="ぼかし、明るさ、コントラスト、グレースケール、色相回転、彩度、セピアといったCSSフィルターを自分の画像で視覚的に作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/design/css-filter-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSSフィルタージェネレーター | norito" />
+<meta property="og:description" content="ぼかし、明るさ、コントラスト、グレースケール、色相回転、彩度、セピアといったCSSフィルターを自分の画像で視覚的に作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/design/css-filter-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSSフィルタージェネレーター | norito" />
+<meta name="twitter:description" content="ぼかし、明るさ、コントラスト、グレースケール、色相回転、彩度、セピアといったCSSフィルターを自分の画像で視覚的に作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSSフィルタージェネレーター",
+  "url": "https://norito.in/ja/design/css-filter-generator.html",
+  "description": "自分の画像でCSSフィルターを視覚的に作成し、CSSをコピーできます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "自分の画像でプレビューできますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。好きな画像をドロップすれば、すべてのスライダーがライブプレビューを即座に更新します。画像をアップロードしていない場合は、代わりにプレースホルダーのグラデーションでスライダーの効果をプレビューします。" }
+    },
+    {
+      "@type": "Question",
+      "name": "フィルターはレイアウトに影響しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。CSSフィルターは純粋に見た目だけの効果で、実際の画像ファイルを差し替える場合とは異なり、要素のボックスサイズや位置を変えることはありません。何も再レイアウトされないため、ホバー時やクラスによる切り替えのコストが低く抑えられます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "画像はどこかにアップロードされますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。プレビューはローカルのオブジェクトURLに対してブラウザ自身のCSSエンジンを使って行われます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "CSSフィルタージェネレーター", "item": "https://norito.in/ja/design/css-filter-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSSフィルタージェネレーター</p>
+    <h1>CSSフィルタージェネレーター</h1>
+    <p class="lede">
+      画像をドロップして（任意）、スライダーをドラッグし、CSSの<code>filter</code>値をコピーできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop" style="padding:16px;">
+          <p><strong>クリックまたは画像をドロップ</strong>してプレビュー（任意）</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="fBlur">ぼかし (<span id="fBlurVal">0px</span>)</label>
+          <input type="range" id="fBlur" min="0" max="20" value="0" step="0.5" />
+        </div>
+        <div class="field">
+          <label for="fBrightness">明るさ (<span id="fBrightnessVal">100%</span>)</label>
+          <input type="range" id="fBrightness" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fContrast">コントラスト (<span id="fContrastVal">100%</span>)</label>
+          <input type="range" id="fContrast" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fSaturate">彩度 (<span id="fSaturateVal">100%</span>)</label>
+          <input type="range" id="fSaturate" min="0" max="300" value="100" />
+        </div>
+        <div class="field">
+          <label for="fGrayscale">グレースケール (<span id="fGrayscaleVal">0%</span>)</label>
+          <input type="range" id="fGrayscale" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fSepia">セピア (<span id="fSepiaVal">0%</span>)</label>
+          <input type="range" id="fSepia" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fHue">色相回転 (<span id="fHueVal">0deg</span>)</label>
+          <input type="range" id="fHue" min="0" max="360" value="0" />
+        </div>
+        <div class="field">
+          <label for="fInvert">反転 (<span id="fInvertVal">0%</span>)</label>
+          <input type="range" id="fInvert" min="0" max="100" value="0" />
+        </div>
+        <button type="button" id="resetBtn" class="secondary">すべてリセット</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <img id="previewImg" alt="フィルタープレビュー" src="/assets/og-image.png" style="max-width:100%; max-height:260px; border-radius:8px;" />
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSSをコピー</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        各スライダーは、CSSの<code>filter</code>関数（<code>blur()</code>、<code>brightness()</code>、
+        <code>contrast()</code>、<code>saturate()</code>、<code>grayscale()</code>、<code>sepia()</code>、
+        <code>hue-rotate()</code>、<code>invert()</code>）のいずれか1つに直接対応しています。ニュートラルな
+        値のままの関数はコピーされるCSSを最小限に保つために出力から省かれ、残りはスペースで連結されます。
+        CSSは連結されたフィルター関数を書かれた順に適用するためです。この文字列はそのままプレビュー画像自身の
+        <code>filter</code>スタイルとして設定されるため、見えているものはシミュレーションではなく実際の効果です。
+      </p>
+      <p>
+        画像はローカルのオブジェクトURLとして読み込まれ、ブラウザのタブから出ることはありません。
+        アップロードのステップはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|CSSイージングジェネレーター|視覚的なcubic-bezier曲線エディタ。
+color-converter.html|カラーコンバーター|HEX、RGB、HSL、CMYKをライブ変換。
+../remove-metadata.html|メタデータを削除|EXIF、GPS、カメラ情報を除去。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>自分の画像でプレビューできますか?</summary>
+        <p>はい。好きな画像をドロップすれば、すべてのスライダーがライブプレビューを即座に更新します。画像をアップロードしていない場合は、代わりにプレースホルダーのグラデーションでスライダーの効果をプレビューします。</p>
+      </details>
+      <details class="faq-item">
+        <summary>フィルターはレイアウトに影響しますか?</summary>
+        <p>いいえ。CSSフィルターは純粋に見た目だけの効果で、実際の画像ファイルを差し替える場合とは異なり、要素のボックスサイズや位置を変えることはありません。何も再レイアウトされないため、ホバー時やクラスによる切り替えのコストが低く抑えられます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>画像はどこかにアップロードされますか?</summary>
+        <p>いいえ。プレビューはローカルのオブジェクトURLに対してブラウザ自身のCSSエンジンを使って行われます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-filter-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор CSS-плавности (cubic-bezier) | norito</title>
+<meta name="description" content="Перетаскивайте точки на визуальной кривой, чтобы создать свою функцию плавности cubic-bezier(), смотрите анимацию в реальном времени и скопируйте CSS. Работает прямо в браузере." />
+<link rel="canonical" href="https://norito.in/ru/design/css-easing-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор CSS-плавности (cubic-bezier) | norito" />
+<meta property="og:description" content="Перетаскивайте точки на визуальной кривой, чтобы создать свою функцию плавности cubic-bezier(), смотрите анимацию в реальном времени и скопируйте CSS. Работает прямо в браузере." />
+<meta property="og:url" content="https://norito.in/ru/design/css-easing-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор CSS-плавности (cubic-bezier) | norito" />
+<meta name="twitter:description" content="Перетаскивайте точки на визуальной кривой, чтобы создать свою функцию плавности cubic-bezier(), смотрите анимацию в реальном времени и скопируйте CSS. Работает прямо в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор CSS-плавности (cubic-bezier)",
+  "url": "https://norito.in/ru/design/css-easing-generator.html",
+  "description": "Позволяет перетаскивать точки на визуальной кривой, чтобы создать свою функцию плавности cubic-bezier(), с анимацией предпросмотра в реальном времени.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что контролируют два маркера?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Кривая плавности cubic-bezier задаётся двумя контрольными точками, у каждой из которых есть координата x (время, от 0 до 1) и y (прогресс, не ограничен, но обычно от 0 до 1). Перетаскивание маркера напрямую задаёт эту точку; четыре показанных числа — это именно то, что подставляется внутрь cubic-bezier()." }
+    },
+    {
+      "@type": "Question",
+      "name": "Может ли кривая выходить за пределы 100%?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, если значение y контрольной точки становится больше 1 или меньше 0, анимация ненадолго проскочит конечное значение или опустится ниже начального перед тем, как остановиться, — это эффект «отскока» или «замаха». Перетащите маркер выше или ниже графика, чтобы попробовать." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли это куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, кривая и анимация предпросмотра полностью работают в CSS-движке вашего браузера. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор CSS-плавности (cubic-bezier)", "item": "https://norito.in/ru/design/css-easing-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 9-9"/><path d="M21 3c-4 0-8 1-11 4-2 2-3 5-3 8 3 0 6-1 8-3 3-3 4-7 4-11a9 9 0 0 0 2 2Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Генератор CSS-плавности (cubic-bezier)</p>
+    <h1>Генератор CSS-плавности (cubic-bezier)</h1>
+    <p class="lede">
+      Перетаскивайте два маркера, чтобы задать форму кривой плавности, смотрите, как мяч в
+      реальном времени показывает анимацию, и скопируйте значение <code>cubic-bezier()</code>.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <svg id="curveSvg" viewBox="0 0 200 200" style="width:100%; max-width:320px; display:block; margin:0 auto; background:var(--bg-subtle); border-radius:var(--radius-md); touch-action:none;">
+          <line x1="0" y1="200" x2="200" y2="0" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+          <path id="curvePath" d="" fill="none" stroke="var(--primary)" stroke-width="3" />
+          <line id="handle1Line" x1="0" y1="200" x2="0" y2="200" stroke="var(--muted)" stroke-width="1.5" />
+          <line id="handle2Line" x1="200" y1="0" x2="200" y2="0" stroke="var(--muted)" stroke-width="1.5" />
+          <circle id="handle1" cx="0" cy="200" r="7" fill="var(--accent-live, #2fbf71)" style="cursor:grab;" />
+          <circle id="handle2" cx="200" cy="0" r="7" fill="var(--primary)" style="cursor:grab;" />
+        </svg>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="p1x">P1 x</label>
+            <input type="number" id="p1x" min="0" max="1" step="0.01" value="0.42" />
+          </div>
+          <div class="field">
+            <label for="p1y">P1 y</label>
+            <input type="number" id="p1y" step="0.01" value="0" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="p2x">P2 x</label>
+            <input type="number" id="p2x" min="0" max="1" step="0.01" value="0.58" />
+          </div>
+          <div class="field">
+            <label for="p2y">P2 y</label>
+            <input type="number" id="p2y" step="0.01" value="1" />
+          </div>
+        </div>
+        <h3>Пресеты</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="secondary preset-btn" data-p="0.25,0.1,0.25,1">ease</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,1,1">ease-in</button>
+          <button type="button" class="secondary preset-btn" data-p="0,0,0.58,1">ease-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,0.58,1">ease-in-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.68,-0.55,0.27,1.55">back</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="animTrack" style="position:relative; height:60px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <div id="animBall" style="position:absolute; top:14px; left:6px; width:32px; height:32px; border-radius:50%; background:var(--primary);"></div>
+          </div>
+          <button type="button" id="playBtn" class="secondary" style="margin-bottom:16px;">Повторить анимацию</button>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Скопировать CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        На графике по вертикали отложен прогресс, по горизонтали — время за один секундный
+        интервал. Оба маркера можно перетаскивать напрямую, а числовые поля под графиком всегда
+        остаются с ними синхронизированы в любую сторону; тащите мышью или пальцем либо вводите
+        точные значения, если нужно повторить конкретную кривую. Те же четыре числа задают и
+        SVG-путь, который вы видите, и настоящее свойство
+        <code>transition-timing-function</code>, применённое к мячу предпросмотра, так что перед
+        вами реальная функция плавности, а не приближение.
+      </p>
+      <p>
+        Всё работает на встроенном CSS-движке переходов вашего браузера. Никакие данные о
+        состоянии анимации или кривой никуда не отправляются.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-clamp-generator.html|Генератор CSS clamp()|Плавные значения, масштабирующиеся вместе с шириной окна.
+css-filter-generator.html|Генератор CSS-фильтров|Создавайте эффекты фильтров изображения визуально.
+box-shadow-generator.html|Генератор box-shadow|Создайте CSS box-shadow визуально.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Что контролируют два маркера?</summary>
+        <p>Кривая плавности cubic-bezier задаётся двумя контрольными точками, у каждой из которых есть координата x (время, от 0 до 1) и y (прогресс, не ограничен, но обычно от 0 до 1). Перетаскивание маркера напрямую задаёт эту точку; четыре показанных числа — это именно то, что подставляется внутрь cubic-bezier().</p>
+      </details>
+      <details class="faq-item">
+        <summary>Может ли кривая выходить за пределы 100%?</summary>
+        <p>Да, если значение y контрольной точки становится больше 1 или меньше 0, анимация ненадолго проскочит конечное значение или опустится ниже начального перед тем, как остановиться, — это эффект «отскока» или «замаха». Перетащите маркер выше или ниже графика, чтобы попробовать.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли это куда-либо?</summary>
+        <p>Нет, кривая и анимация предпросмотра полностью работают в CSS-движке вашего браузера. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-easing-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

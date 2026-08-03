@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Analizador de URL | norito</title>
+<meta name="description" content="Pega una URL y mírala desglosada en protocolo, host, puerto, ruta, parámetros de consulta y hash. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/url-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Analizador de URL | norito" />
+<meta property="og:description" content="Pega una URL y mírala desglosada en protocolo, host, puerto, ruta, parámetros de consulta y hash. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/url-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Analizador de URL | norito" />
+<meta name="twitter:description" content="Pega una URL y mírala desglosada en protocolo, host, puerto, ruta, parámetros de consulta y hash. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Analizador de URL",
+  "url": "https://norito.in/es/url-parser.html",
+  "description": "Pega una URL y mírala desglosada en protocolo, host, puerto, ruta, parámetros de consulta y hash.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se tratan los parámetros de consulta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cada par clave=valor después del ? se decodifica y se lista por separado, incluidas las claves repetidas (como ?tag=a&tag=b), que aparecen como varias filas para que nada se colapse silenciosamente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona con URLs relativas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, se requiere una URL completa con protocolo, ya que la propia API URL del navegador (que esta herramienta usa directamente) necesita una base para resolver las relativas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía la URL a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El análisis usa la API URL integrada del navegador, totalmente del lado del cliente. No se sube nada, y no se hace ninguna solicitud a la propia URL." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Analizador de URL", "item": "https://norito.in/es/url-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Analizador de URL</p>
+    <h1>Analizador de URL</h1>
+    <p class="lede">
+      Pega cualquier URL completa y mira su protocolo, host, puerto, ruta, parámetros de consulta
+      y hash desglosados.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="urlInput">URL</label>
+          <input type="text" id="urlInput" value="https://norito.in/blog/index.html?utm_source=newsletter&amp;utm_medium=email&amp;tag=tools#section-2" />
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Esto se ejecuta por completo sobre la API <code>URL</code> nativa del navegador, el mismo
+        analizador que usa tu navegador para navegar un enlace, así que el desglose es autoritativo
+        en lugar de una aproximación con una expresión regular hecha a mano. Los parámetros de
+        consulta provienen de <code>URLSearchParams</code>, que gestiona correctamente la
+        decodificación por porcentaje y las claves repetidas.
+      </p>
+      <p>
+        Nada aquí obtiene la URL, solo analiza el texto que escribiste. No se hace ninguna
+        solicitud de red, y ninguna parte de la URL sale de tu navegador.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|Codificador / Decodificador de URL|Codifica o decodifica una URL con porcentaje.
+user-agent-parser.html|Analizador de User-Agent|Analiza una cadena de User-Agent.
+seo/utm-builder.html|Generador de UTM|Crea URLs de seguimiento de campañas.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Cómo se tratan los parámetros de consulta?</summary>
+        <p>Cada par clave=valor después del ? se decodifica y se lista por separado, incluidas las claves repetidas (como ?tag=a&tag=b), que aparecen como varias filas para que nada se colapse silenciosamente.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Funciona con URLs relativas?</summary>
+        <p>No, se requiere una URL completa con protocolo, ya que la propia API URL del navegador (que esta herramienta usa directamente) necesita una base para resolver las relativas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía la URL a algún sitio?</summary>
+        <p>No. El análisis usa la API URL integrada del navegador, totalmente del lado del cliente. No se sube nada, y no se hace ninguna solicitud a la propia URL.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-url-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

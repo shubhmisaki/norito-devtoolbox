@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مولّد سبرايت SVG | norito</title>
+<meta name="description" content="ادمج عدة أيقونات SVG في ورقة سبرايت واحدة محسّنة قائمة على &lt;symbol&gt;. رفع دفعي، معرّفات تُنشأ تلقائيًا، نسخ أو تنزيل. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/svg-sprite-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد سبرايت SVG | norito" />
+<meta property="og:description" content="ادمج عدة أيقونات SVG في ورقة سبرايت واحدة محسّنة قائمة على &lt;symbol&gt;. رفع دفعي، معرّفات تُنشأ تلقائيًا، نسخ أو تنزيل. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/svg-sprite-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد سبرايت SVG | norito" />
+<meta name="twitter:description" content="ادمج عدة أيقونات SVG في ورقة سبرايت واحدة محسّنة قائمة على &lt;symbol&gt;. رفع دفعي، معرّفات تُنشأ تلقائيًا، نسخ أو تنزيل. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد سبرايت SVG",
+  "url": "https://norito.in/ar/svg-sprite-generator.html",
+  "description": "ادمج عدة أيقونات SVG في ورقة سبرايت واحدة محسّنة قائمة على symbol.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "كيف يعمل سبرايت symbol؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "تتحول كل أيقونة إلى <symbol id=\"...\"> داخل عنصر <svg> واحد مخفي، يوضع مرة واحدة في أي مكان من HTML صفحتك. يعرض أي عنصر بعد ذلك تلك الأيقونة عبر <svg><use href=\"#id\"></use></svg>، بحيث يقوم المتصفح بتنزيل وتحليل الرسم مرة واحدة فقط مهما تكرر استخدامه." }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف تُنشأ معرّفات الأيقونات؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "من اسم كل ملف: يُحوَّل إلى أحرف صغيرة، وتُستبدل الأحرف غير الأبجدية الرقمية بشرطات، ويُحذف الامتداد. إذا أنتج ملفان نفس المعرّف، تُضاف لاحقة رقمية للحفاظ على إمكانية الوصول لكل رمز." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تُرفع أيقوناتي إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا. تُقرأ الملفات وتُدمج بالكامل داخل متصفحك باستخدام File API. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مولّد سبرايت SVG", "item": "https://norito.in/ar/svg-sprite-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / مولّد سبرايت SVG</p>
+    <h1>مولّد سبرايت SVG</h1>
+    <p class="lede">
+      أضف عدة أيقونات SVG واحصل على ورقة سبرايت واحدة مدمجة من عناصر <code>&lt;symbol&gt;</code>
+      بمعرّفات تُنشأ تلقائيًا وخالية من التعارض.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>انقر لاختيار ملفات ‎.svg‎</strong>، أو اسحبها وأفلتها هنا</p>
+          <p class="note" style="margin-top:2px;">اختر عدة أيقونات دفعة واحدة. يبقى على جهازك، لا يُرفع شيء.</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" multiple />
+        </div>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 id="previewHeading" style="margin-top:0; display:none;">الأيقونات</h3>
+          <div id="iconPreview" style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:14px;"></div>
+          <div class="field" style="text-align:left;">
+            <label>ناتج السبرايت</label>
+            <pre class="code-output" id="output" style="max-height:220px; overflow:auto;"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">نسخ السبرايت</button>
+            <button id="downloadBtn" class="secondary">تنزيل sprite.svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>
+        يُحلَّل كل ملف SVG تم رفعه باستخدام محلل DOM الخاص بالمتصفح، وتُقرأ خاصية
+        <code>viewBox</code> الخاصة به (أو العرض والارتفاع إن لم تكن viewBox محددة)، ثم يُغلَّف
+        ترميزه الداخلي داخل عنصر <code>&lt;symbol id="..." viewBox="..."&gt;</code>. تُدمج جميع
+        الرموز بعد ذلك في عنصر <code>&lt;svg&gt;</code> واحد مخفي، وهو النمط القياسي المعروف
+        بـ"سبرايت SVG" المستخدم لتقديم أيقونات كثيرة كطلب واحد بدلاً من ملفات صور منفصلة أو نسخ
+        مضمّنة متكررة. تُشتق المعرّفات من اسم كل ملف، وتُميَّز تلقائيًا في حال تعارض ملفين على
+        نفس المعرّف.
+      </p>
+      <p>
+        يتم التحليل والدمج بالكامل داخل جافاسكريبت هذه الصفحة. لا يُرسل أي شيء ترفعه إلى أي مكان.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|محسّن SVG|إزالة التعليقات والبيانات الوصفية من ملف SVG.
+svg-to-react-component.html|تحويل SVG إلى مكوّن React|حوّل كود SVG إلى مكوّن JSX.
+design/favicon-generator.html|مولّد أيقونة الموقع|أنشئ أيقونة موقع من صورة.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>كيف يعمل سبرايت symbol؟</summary>
+        <p>تتحول كل أيقونة إلى &lt;symbol id="..."&gt; داخل عنصر &lt;svg&gt; واحد مخفي، يوضع مرة واحدة في أي مكان من HTML صفحتك. يعرض أي عنصر بعد ذلك تلك الأيقونة عبر &lt;svg&gt;&lt;use href="#id"&gt;&lt;/use&gt;&lt;/svg&gt;، بحيث يقوم المتصفح بتنزيل وتحليل الرسم مرة واحدة فقط مهما تكرر استخدامه.</p>
+      </details>
+      <details class="faq-item">
+        <summary>كيف تُنشأ معرّفات الأيقونات؟</summary>
+        <p>من اسم كل ملف: يُحوَّل إلى أحرف صغيرة، وتُستبدل الأحرف غير الأبجدية الرقمية بشرطات، ويُحذف الامتداد. إذا أنتج ملفان نفس المعرّف، تُضاف لاحقة رقمية للحفاظ على إمكانية الوصول لكل رمز.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تُرفع أيقوناتي إلى أي مكان؟</summary>
+        <p>لا. تُقرأ الملفات وتُدمج بالكامل داخل متصفحك باستخدام File API. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-sprite-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

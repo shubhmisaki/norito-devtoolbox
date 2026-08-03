@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>इनविज़िबल कैरेक्टर डिटेक्टर | norito</title>
+<meta name="description" content="टेक्स्ट में ज़ीरो-विड्थ, इनविज़िबल और होमोग्लिफ़ Unicode कैरेक्टर स्कैन करें, जिनका इस्तेमाल अक्सर कंटेंट छिपाने या टेक्स्ट को स्पूफ़ करने के लिए किया जाता है। पूरी तरह आपके ब्राउज़र में चलता है।" />
+<link rel="canonical" href="https://norito.in/hi/invisible-character-detector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="इनविज़िबल कैरेक्टर डिटेक्टर | norito" />
+<meta property="og:description" content="टेक्स्ट में ज़ीरो-विड्थ, इनविज़िबल और होमोग्लिफ़ Unicode कैरेक्टर स्कैन करें, जिनका इस्तेमाल अक्सर कंटेंट छिपाने या टेक्स्ट को स्पूफ़ करने के लिए किया जाता है। पूरी तरह आपके ब्राउज़र में चलता है।" />
+<meta property="og:url" content="https://norito.in/hi/invisible-character-detector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="इनविज़िबल कैरेक्टर डिटेक्टर | norito" />
+<meta name="twitter:description" content="टेक्स्ट में ज़ीरो-विड्थ, इनविज़िबल और होमोग्लिफ़ Unicode कैरेक्टर स्कैन करें, जिनका इस्तेमाल अक्सर कंटेंट छिपाने या टेक्स्ट को स्पूफ़ करने के लिए किया जाता है। पूरी तरह आपके ब्राउज़र में चलता है।" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "इनविज़िबल कैरेक्टर डिटेक्टर",
+  "url": "https://norito.in/hi/invisible-character-detector.html",
+  "description": "टेक्स्ट में ज़ीरो-विड्थ और इनविज़िबल Unicode कैरेक्टर स्कैन करें, उन्हें हाइलाइट करें और साफ़ करें।",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "टेक्स्ट में इनविज़िबल कैरेक्टर क्यों होते हैं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "आम निर्दोष वजहें: Word या किसी वेब पेज से कॉपी-पेस्ट करना, जिसमें अक्सर ज़ीरो-विड्थ जॉइनर या नॉन-ब्रेकिंग स्पेस आ जाते हैं। कम निर्दोष वजहें: AI-जनरेटेड टेक्स्ट की छिपी हुई वॉटरमार्किंग, या जानबूझकर डाले गए कैरेक्टर जो एग्ज़ैक्ट-मैच फ़िल्टर और डुप्लिकेशन जांच को तोड़ने के लिए होते हैं।" }
+    },
+    {
+      "@type": "Question",
+      "name": "\"इनविज़िबल\" यहां किसे माना जाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ज़ीरो-विड्थ कैरेक्टर (जॉइनर, नॉन-जॉइनर, स्पेस, BOM), बाइडायरेक्शनल कंट्रोल कैरेक्टर, ज़्यादातर Unicode के \"Format\" और \"Control\" कैटेगरी, और prompt-injection या फ़िल्टर-इवेज़न ट्रिक्स के लिए आमतौर पर इस्तेमाल होने वाले कैरेक्टर की एक चुनी हुई लिस्ट।" }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मेरा टेक्स्ट कहीं भेजा जाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं, स्कैनिंग पूरी तरह आपके ब्राउज़र में JavaScript की Unicode-अवेयर स्ट्रिंग हैंडलिंग का उपयोग करके होती है। कुछ भी अपलोड नहीं होता।" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "इनविज़िबल कैरेक्टर डिटेक्टर", "item": "https://norito.in/hi/invisible-character-detector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / इनविज़िबल कैरेक्टर डिटेक्टर</p>
+    <h1>इनविज़िबल कैरेक्टर डिटेक्टर</h1>
+    <p class="lede">
+      टेक्स्ट पेस्ट करें और उसमें छिपे ज़ीरो-विड्थ और इनविज़िबल Unicode कैरेक्टर ढूंढें, फिर एक
+      साफ़ की गई कॉपी पाएं।
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">स्कैन करने के लिए टेक्स्ट</label>
+          <textarea id="textInput" class="mono-area" rows="10" placeholder="यहां टेक्स्ट पेस्ट करें..."></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="summaryWrap" class="note">अभी तक कोई इनविज़िबल कैरेक्टर नहीं मिला, स्कैन करने के लिए टेक्स्ट पेस्ट करें।</div>
+          <div id="matchesWrap" style="margin-top:12px;"></div>
+          <button type="button" id="cleanBtn" style="margin-top:12px;" disabled>साफ़ किया गया टेक्स्ट कॉपी करें</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">हाइलाइट किया गया व्यू</h3>
+          <div id="highlightWrap" class="mono-area" style="white-space:pre-wrap; word-break:break-word; min-height:60px; border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        आपके टेक्स्ट के हर कैरेक्टर को एक चुनी हुई लिस्ट के खिलाफ़ जांचा जाता है, जिसमें ज़ीरो-विड्थ
+        जॉइनर और नॉन-जॉइनर, ज़ीरो-विड्थ स्पेस, बाइट-ऑर्डर मार्क, बाइडायरेक्शनल ओवरराइड/एम्बेडिंग
+        कंट्रोल, सॉफ़्ट हाइफ़न, और Unicode के "Tag" कैरेक्टर (एक रेंज जो मूल रूप से डेप्रिकेटेड
+        लैंग्वेज टैगिंग के लिए थी, लेकिन अब टेक्स्ट में इनविज़िबल इंस्ट्रक्शन छिपाने के लिए एक
+        जाना-पहचाना ज़रिया बन चुकी है, क्योंकि ये बिल्कुल कुछ नहीं दिखाते) शामिल हैं। हर मैच को
+        उसके कोडपॉइंट, पोज़िशन और एक छोटे लेबल के साथ दिखाया जाता है, और इनलाइन एक छोटे विज़िबल
+        मार्कर के रूप में हाइलाइट किया जाता है ताकि आप ठीक-ठीक देख सकें कि वह आपके टेक्स्ट में
+        कहां है।
+      </p>
+      <p>
+        "साफ़ किया गया टेक्स्ट कॉपी करें" हर फ़्लैग किए गए कैरेक्टर को हटा देता है और नतीजे को कॉपी
+        कर देता है, सामान्य व्हाइटस्पेस और विज़िबल कैरेक्टर को बिना छेड़े। सब कुछ लोकली होता है;
+        आपके पेस्ट किए गए में से कुछ भी अपलोड नहीं होता।
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+case-converter.html|केस कन्वर्टर|UPPERCASE, camelCase, snake_case और बहुत कुछ।
+find-and-replace.html|फ़ाइंड एंड रिप्लेस|टेक्स्ट फ़ाइंड और रिप्लेस करें, regex सपोर्टेड।
+character-counter.html|कैरेक्टर काउंटर|कैरेक्टर काउंट, प्लेटफ़ॉर्म लिमिट के साथ।
+-->
+
+    <h2>सामान्य सवाल</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>टेक्स्ट में इनविज़िबल कैरेक्टर क्यों होते हैं?</summary>
+        <p>आम निर्दोष वजहें: Word या किसी वेब पेज से कॉपी-पेस्ट करना, जिसमें अक्सर ज़ीरो-विड्थ जॉइनर या नॉन-ब्रेकिंग स्पेस आ जाते हैं। कम निर्दोष वजहें: AI-जनरेटेड टेक्स्ट की छिपी हुई वॉटरमार्किंग, या जानबूझकर डाले गए कैरेक्टर जो एग्ज़ैक्ट-मैच फ़िल्टर और डुप्लिकेशन जांच को तोड़ने के लिए होते हैं।</p>
+      </details>
+      <details class="faq-item">
+        <summary>"इनविज़िबल" यहां किसे माना जाता है?</summary>
+        <p>ज़ीरो-विड्थ कैरेक्टर (जॉइनर, नॉन-जॉइनर, स्पेस, BOM), बाइडायरेक्शनल कंट्रोल कैरेक्टर, ज़्यादातर Unicode के "Format" और "Control" कैटेगरी, और prompt-injection या फ़िल्टर-इवेज़न ट्रिक्स के लिए आमतौर पर इस्तेमाल होने वाले कैरेक्टर की एक चुनी हुई लिस्ट।</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या मेरा टेक्स्ट कहीं भेजा जाता है?</summary>
+        <p>नहीं, स्कैनिंग पूरी तरह आपके ब्राउज़र में JavaScript की Unicode-अवेयर स्ट्रिंग हैंडलिंग का उपयोग करके होती है। कुछ भी अपलोड नहीं होता।</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-invisible-character-detector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

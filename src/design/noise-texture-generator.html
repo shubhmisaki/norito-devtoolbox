@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Noise Texture Generator | norito</title>
+<meta name="description" content="Generate a grain/noise texture with density, opacity, and color controls. Download as PNG or copy as a CSS data-URI background. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/design/noise-texture-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Noise Texture Generator | norito" />
+<meta property="og:description" content="Generate a grain/noise texture with density, opacity, and color controls. Download as PNG or copy as a CSS data-URI background. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/design/noise-texture-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Noise Texture Generator | norito" />
+<meta name="twitter:description" content="Generate a grain/noise texture with density, opacity, and color controls. Download as PNG or copy as a CSS data-URI background. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Noise Texture Generator",
+  "url": "https://norito.in/design/noise-texture-generator.html",
+  "description": "Generate a grain/noise texture with density, opacity, and color controls.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will the downloaded PNG tile seamlessly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's random per-pixel noise rather than a repeating pattern, so used as a small repeating background-image it won't have visible seams either, since every pixel is independently random and there's no larger structure to break at the tile edge." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between the PNG download and the CSS copy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Download gives you a real .png file to reference from a stylesheet or <img>. \"Copy as CSS\" instead embeds the same image as a base64 data URI directly inside a background-image rule, useful for a single self-contained CSS block with no separate file to host." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the texture is generated pixel by pixel on an in-memory canvas in your browser. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Noise Texture Generator", "item": "https://norito.in/design/noise-texture-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Noise Texture Generator</p>
+    <h1>Noise Texture Generator</h1>
+    <p class="lede">
+      Generate a grain texture with adjustable density, opacity, and color, then download it or
+      copy it as CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="noiseSize">Tile size (<span id="noiseSizeVal">128px</span>)</label>
+          <input type="range" id="noiseSize" min="32" max="512" step="32" value="128" />
+        </div>
+        <div class="field">
+          <label for="noiseDensity">Density (<span id="noiseDensityVal">50%</span>)</label>
+          <input type="range" id="noiseDensity" min="5" max="100" value="50" />
+        </div>
+        <div class="field">
+          <label for="noiseOpacity">Opacity (<span id="noiseOpacityVal">30%</span>)</label>
+          <input type="range" id="noiseOpacity" min="1" max="100" value="30" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="noiseColor">Grain color</label>
+            <input type="color" id="noiseColor" value="#000000" />
+          </div>
+          <div class="field">
+            <label for="noiseBg">Background color</label>
+            <input type="color" id="noiseBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Monochrome grain</span>
+          <label class="switch"><input type="checkbox" id="noiseMono" checked /><span class="track"></span></label>
+        </div>
+        <button type="button" id="regenBtn">Regenerate</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <canvas id="noiseCanvas" width="128" height="128" style="width:100%; max-width:320px; aspect-ratio:1; border-radius:var(--radius-md); margin-bottom:16px; image-rendering:pixelated;"></canvas>
+          <div id="tiledPreview" style="height:100px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="downloadBtn">Download PNG</button>
+            <button id="copyCssBtn" class="secondary">Copy as CSS background</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        A canvas of the chosen tile size is filled pixel by pixel: each pixel independently rolls
+        against the density slider to decide whether it gets a grain, then that grain's color
+        alpha is scaled by the opacity slider. Monochrome mode uses one grain color throughout;
+        turning it off randomizes each grain's brightness too, for a more textured, less uniform
+        look. The tiled preview below repeats the same canvas as a CSS background to show how it
+        behaves at scale.
+      </p>
+      <p>
+        Both outputs, the downloaded PNG and the "copy as CSS" data URI, come directly from this
+        canvas via <code>toDataURL</code>/<code>toBlob</code>, entirely in your browser. Nothing
+        is uploaded.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|CSS Pattern Generator|Build tileable background patterns.
+blob-generator.html|Blob Generator|Generate organic blob shapes.
+favicon-generator.html|Favicon Generator|Generate a favicon from an image.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Will the downloaded PNG tile seamlessly?</summary>
+        <p>It's random per-pixel noise rather than a repeating pattern, so used as a small repeating background-image it won't have visible seams either, since every pixel is independently random and there's no larger structure to break at the tile edge.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the difference between the PNG download and the CSS copy?</summary>
+        <p>Download gives you a real .png file to reference from a stylesheet or &lt;img&gt;. "Copy as CSS" instead embeds the same image as a base64 data URI directly inside a background-image rule, useful for a single self-contained CSS block with no separate file to host.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this sent anywhere?</summary>
+        <p>No, the texture is generated pixel by pixel on an in-memory canvas in your browser. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-noise-texture-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

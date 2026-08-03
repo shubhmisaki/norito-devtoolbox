@@ -43,3 +43,10 @@
   of v4+), so it's loaded via `<script type="module">` and imported directly rather than as a
   plain global like the other vendored libs. Used to rasterize PDF pages to images (PDF to
   JPG/PNG). The "legacy" build is used over the standard one for broader browser compatibility.
+
+- `heic2any/heic2any.min.js`: heic2any v0.0.4, MIT license (see `heic2any/LICENSE.md`).
+  https://github.com/alexcorvi/heic2any
+  Installed via `npm install heic2any` and copied from `dist/heic2any.min.js`, unmodified. Bundles
+  a self-contained (asm.js) build of libheif, no separate .wasm file and no network calls, so it
+  decodes HEIC/HEIF entirely client-side. Used by the HEIC to JPG/PNG Converter, loaded lazily
+  only on that page since it's ~1.3MB.

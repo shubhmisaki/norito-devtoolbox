@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>AVIF 转换器 | norito</title>
+<meta name="description" content="将图片转换为体积更小的 AVIF 格式，或将 AVIF 转换回 JPG/PNG 以获得更广泛的兼容性，转换过程全部在浏览器本地完成，不会上传任何文件。" />
+<link rel="canonical" href="https://norito.in/zh/avif-converter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AVIF 转换器 | norito" />
+<meta property="og:description" content="将图片转换为体积更小的 AVIF 格式，或将 AVIF 转换回 JPG/PNG 以获得更广泛的兼容性，完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/avif-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AVIF 转换器 | norito" />
+<meta name="twitter:description" content="将图片转换为体积更小的 AVIF 格式，或将 AVIF 转换回 JPG/PNG 以获得更广泛的兼容性，完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AVIF 转换器",
+  "url": "https://norito.in/zh/avif-converter.html",
+  "description": "将图片转换为体积更小的 AVIF 格式，或将 AVIF 转换回 JPG/PNG 以获得更广泛的兼容性。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "为什么要转换成 AVIF？",
+      "acceptedAnswer": { "@type": "Answer", "text": "在同等视觉质量下，AVIF 通常比 JPEG 或 WebP 生成更小的文件，这也是它在网页图片中越来越常用的原因。代价是编码速度更慢，而且直到最近，在较旧的软件中支持度也不够普及。" }
+    },
+    {
+      "@type": "Question",
+      "name": "如果我的浏览器不能编码 AVIF 怎么办？",
+      "acceptedAnswer": { "@type": "Answer", "text": "目前所有主流现代浏览器都支持解码（查看）AVIF，但编码支持情况不一。如果你的浏览器无法输出 AVIF，这个工具会直接告诉你，而不是悄悄失败；无论如何，把 AVIF 解码为 JPG/PNG 在所有浏览器中都能正常使用。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的图片会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。两个方向的转换都使用你浏览器自带的图片解码器和 canvas 编码器完成，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "AVIF 转换器", "item": "https://norito.in/zh/avif-converter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / AVIF 转换器</p>
+    <h1>AVIF 转换器</h1>
+    <p class="lede">
+      把 JPG/PNG/WebP 转换成体积更小的 AVIF，或把 AVIF 转换回 JPG/PNG 以获得更好的兼容性。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>点击选择一张图片</strong>，或将它拖放到这里</p>
+          <p class="note" style="margin-top:2px;">支持 JPG、PNG、WebP 或 AVIF。文件留在你的设备上。</p>
+          <input type="file" id="fileInput" accept="image/*,.avif" />
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label for="format">转换为</label>
+          <select id="format">
+            <option value="image/avif" selected>AVIF</option>
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </div>
+        <div class="field" id="qualityRow">
+          <label for="quality">质量（<span id="qualityVal">80%</span>）</label>
+          <input type="range" id="quality" min="10" max="100" value="80" />
+        </div>
+        <button id="convertBtn" disabled>转换</button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box error" id="unsupportedNote" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="转换后的预览" />
+          <p class="note" id="previewHint" style="margin-top:0;">转换后的图片会显示在这里。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        你的文件会被解码进一个 <code>&lt;img&gt;</code> 元素中（浏览器能原生显示 AVIF，
+        当前浏览器中解码支持已经很普遍），然后以完整分辨率绘制到 canvas 上。转换为
+        JPEG 或 PNG 使用 canvas 标准的、通用支持的编码器。转换为 AVIF 会调用
+        <code>canvas.toBlob("image/avif")</code>，目前 Chrome、Edge 和 Firefox 的最新版本
+        支持这个方法，但还不是所有浏览器都支持；这个工具会在提供该选项之前先检测支持情况，
+        如果你的浏览器无法编码它，会直接明确告知，而不是生成一个悄悄损坏的文件。
+      </p>
+      <p>
+        一切都发生在本页面自己的 canvas 中。不会上传任何内容，图片也不会离开你的
+        浏览器标签页。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+heic-converter.html|HEIC 转 JPG/PNG 转换器|把 iPhone HEIC 照片转换为 JPG 或 PNG。
+image-converter.html|图片格式转换器|在 JPG、PNG 和 WebP 之间转换。
+compress-image.html|将图片压缩到指定大小|精确命中目标文件大小。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>为什么要转换成 AVIF？</summary>
+        <p>在同等视觉质量下，AVIF 通常比 JPEG 或 WebP 生成更小的文件，这也是它在网页图片中越来越常用的原因。代价是编码速度更慢，而且直到最近，在较旧的软件中支持度也不够普及。</p>
+      </details>
+      <details class="faq-item">
+        <summary>如果我的浏览器不能编码 AVIF 怎么办？</summary>
+        <p>目前所有主流现代浏览器都支持解码（查看）AVIF，但编码支持情况不一。如果你的浏览器无法输出 AVIF，这个工具会直接告诉你，而不是悄悄失败；无论如何，把 AVIF 解码为 JPG/PNG 在所有浏览器中都能正常使用。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的图片会被上传到别的地方吗？</summary>
+        <p>不会。两个方向的转换都使用你浏览器自带的图片解码器和 canvas 编码器完成，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-avif-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

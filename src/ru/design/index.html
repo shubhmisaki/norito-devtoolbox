@@ -40,7 +40,14 @@
     { "@type": "WebApplication", "name": "Генератор фавиконок", "url": "https://norito.in/ru/design/favicon-generator.html" },
     { "@type": "WebApplication", "name": "Экстрактор цветовой палитры", "url": "https://norito.in/ru/design/color-palette-extractor.html" },
     { "@type": "WebApplication", "name": "Проверка контраста", "url": "https://norito.in/ru/design/contrast-checker.html" },
-    { "@type": "WebApplication", "name": "Конвертер цветов", "url": "https://norito.in/ru/design/color-converter.html" }
+    { "@type": "WebApplication", "name": "Конвертер цветов", "url": "https://norito.in/ru/design/color-converter.html" },
+    { "@type": "WebApplication", "name": "Генератор CSS clamp()", "url": "https://norito.in/ru/design/css-clamp-generator.html" },
+    { "@type": "WebApplication", "name": "Генератор CSS-плавности (cubic-bezier)", "url": "https://norito.in/ru/design/css-easing-generator.html" },
+    { "@type": "WebApplication", "name": "Генератор CSS-фильтров", "url": "https://norito.in/ru/design/css-filter-generator.html" },
+    { "@type": "WebApplication", "name": "Генератор CSS-паттернов", "url": "https://norito.in/ru/design/pattern-generator.html" },
+    { "@type": "WebApplication", "name": "Генератор SVG-блобов", "url": "https://norito.in/ru/design/blob-generator.html" },
+    { "@type": "WebApplication", "name": "Генератор шумовых текстур", "url": "https://norito.in/ru/design/noise-texture-generator.html" },
+    { "@type": "WebApplication", "name": "Генератор теней Tailwind", "url": "https://norito.in/ru/design/tailwind-shadow-generator.html" }
   ]
 }
 </script>
@@ -154,6 +161,76 @@
         </div>
         <h3>Конвертер цветов</h3>
         <p>HEX, RGB, HSL и CMYK, синхронно и в реальном времени.</p>
+        <span class="card-link">Открыть инструмент
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="teal" href="css-clamp-generator.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg>
+        </div>
+        <h3>Генератор CSS clamp()</h3>
+        <p>Задайте минимальный и максимальный размер — получите гибкое значение clamp(), которое масштабируется под вьюпорт.</p>
+        <span class="card-link">Открыть инструмент
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="coral" href="css-easing-generator.html">
+        <div class="icon-chip c-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg>
+        </div>
+        <h3>Генератор CSS-плавности (cubic-bezier)</h3>
+        <p>Перетащите два маркера, чтобы задать собственную кривую плавности, скопируйте значение cubic-bezier().</p>
+        <span class="card-link">Открыть инструмент
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="purple" href="css-filter-generator.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg>
+        </div>
+        <h3>Генератор CSS-фильтров</h3>
+        <p>Загрузите изображение, подвиньте ползунки, скопируйте значение CSS filter.</p>
+        <span class="card-link">Открыть инструмент
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="indigo" href="pattern-generator.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg>
+        </div>
+        <h3>Генератор CSS-паттернов</h3>
+        <p>Создайте замощаемый фоновый узор на чистых CSS-градиентах — без файлов изображений.</p>
+        <span class="card-link">Открыть инструмент
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="rose" href="blob-generator.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </div>
+        <h3>Генератор SVG-блобов</h3>
+        <p>Сгенерируйте случайную органическую форму-блоб, настройте случайность и число точек, скопируйте или скачайте.</p>
+        <span class="card-link">Открыть инструмент
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="amber" href="noise-texture-generator.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Генератор шумовых текстур</h3>
+        <p>Сгенерируйте зернистую текстуру с настраиваемой плотностью, прозрачностью и цветом, скачайте или скопируйте как CSS.</p>
+        <span class="card-link">Открыть инструмент
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="purple" href="tailwind-shadow-generator.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg>
+        </div>
+        <h3>Генератор теней Tailwind</h3>
+        <p>Постройте многослойную тень визуально — получите класс Tailwind shadow-[...] и исходный CSS.</p>
         <span class="card-link">Открыть инструмент
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>

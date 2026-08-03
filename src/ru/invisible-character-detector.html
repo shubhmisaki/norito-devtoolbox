@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Детектор невидимых символов | norito</title>
+<meta name="description" content="Просканируйте текст на наличие невидимых Unicode-символов нулевой ширины и омоглифов, часто используемых, чтобы скрыть содержимое или подделать текст. Работает полностью в браузере." />
+<link rel="canonical" href="https://norito.in/ru/invisible-character-detector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Детектор невидимых символов | norito" />
+<meta property="og:description" content="Просканируйте текст на наличие невидимых Unicode-символов нулевой ширины и омоглифов, часто используемых, чтобы скрыть содержимое или подделать текст. Работает полностью в браузере." />
+<meta property="og:url" content="https://norito.in/ru/invisible-character-detector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Детектор невидимых символов | norito" />
+<meta name="twitter:description" content="Просканируйте текст на наличие невидимых Unicode-символов нулевой ширины и омоглифов, часто используемых, чтобы скрыть содержимое или подделать текст. Работает полностью в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Детектор невидимых символов",
+  "url": "https://norito.in/ru/invisible-character-detector.html",
+  "description": "Просканируйте текст на наличие невидимых Unicode-символов нулевой ширины, подсветите и очистите его.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Почему в тексте вообще появляются невидимые символы?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Обычные безобидные причины: копирование из Word или веб-страницы, которое часто приносит с собой соединители нулевой ширины или неразрывные пробелы. Менее безобидные причины: скрытые водяные знаки в тексте, сгенерированном ИИ, или символы, намеренно вставленные, чтобы обойти фильтры точного совпадения и проверки на плагиат." }
+    },
+    {
+      "@type": "Question",
+      "name": "Что здесь считается «невидимым»?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Символы нулевой ширины (соединитель, разъединитель, пробел, BOM), управляющие символы двунаправленного текста, большая часть категорий Unicode «Format» и «Control», а также подобранный список символов, часто используемых для prompt-инъекций или обхода фильтров." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли мой текст куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, сканирование происходит полностью в вашем браузере с использованием Unicode-совместимой обработки строк в JavaScript. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Детектор невидимых символов", "item": "https://norito.in/ru/invisible-character-detector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Детектор невидимых символов</p>
+    <h1>Детектор невидимых символов</h1>
+    <p class="lede">
+      Вставьте текст и найдите скрытые в нём символы нулевой ширины и другие невидимые
+      Unicode-символы, затем получите очищенную копию.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="textInput">Текст для сканирования</label>
+          <textarea id="textInput" class="mono-area" rows="10" placeholder="Вставьте текст сюда..."></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="summaryWrap" class="note">Невидимые символы пока не найдены, вставьте текст для сканирования.</div>
+          <div id="matchesWrap" style="margin-top:12px;"></div>
+          <button type="button" id="cleanBtn" style="margin-top:12px;" disabled>Скопировать очищенный текст</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Подсвеченный вид</h3>
+          <div id="highlightWrap" class="mono-area" style="white-space:pre-wrap; word-break:break-word; min-height:60px; border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Каждый символ вашего текста проверяется по подобранному списку, охватывающему
+        соединители и разъединители нулевой ширины, пробелы нулевой ширины, метку порядка байтов
+        (BOM), управляющие символы переопределения/встраивания двунаправленного текста, мягкие
+        переносы и Unicode-символы «Tag» (диапазон, изначально предназначенный для устаревшей
+        разметки языка, который с тех пор стал известным вектором для скрытия невидимых
+        инструкций в тексте, поскольку такие символы никак не отображаются). Каждое совпадение
+        показывается с его кодовой точкой, позицией и коротким описанием, а также подсвечивается
+        прямо в тексте небольшим видимым маркером, чтобы вы точно видели, где именно оно
+        находится.
+      </p>
+      <p>
+        «Скопировать очищенный текст» удаляет все отмеченные символы и копирует результат,
+        оставляя обычные пробелы и видимые символы нетронутыми. Всё происходит локально; ничто из
+        вставленного вами не загружается.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+case-converter.html|Конвертер регистра|UPPERCASE, camelCase, snake_case и другие.
+find-and-replace.html|Поиск и замена|Поиск и замена текста, с поддержкой регулярных выражений.
+character-counter.html|Счётчик символов|Подсчёт символов с учётом лимитов платформ.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Почему в тексте вообще появляются невидимые символы?</summary>
+        <p>Обычные безобидные причины: копирование из Word или веб-страницы, которое часто приносит с собой соединители нулевой ширины или неразрывные пробелы. Менее безобидные причины: скрытые водяные знаки в тексте, сгенерированном ИИ, или символы, намеренно вставленные, чтобы обойти фильтры точного совпадения и проверки на плагиат.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Что здесь считается «невидимым»?</summary>
+        <p>Символы нулевой ширины (соединитель, разъединитель, пробел, BOM), управляющие символы двунаправленного текста, большая часть категорий Unicode «Format» и «Control», а также подобранный список символов, часто используемых для prompt-инъекций или обхода фильтров.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли мой текст куда-либо?</summary>
+        <p>Нет, сканирование происходит полностью в вашем браузере с использованием Unicode-совместимой обработки строк в JavaScript. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-invisible-character-detector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

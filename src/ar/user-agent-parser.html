@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>محلّل User-Agent | norito</title>
+<meta name="description" content="الصق سلسلة User-Agent وشاهد المتصفح والمحرك ونظام التشغيل والجهاز مفصّلة. تبدأ بسلسلتك الخاصة. تعمل بالكامل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/user-agent-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="محلّل User-Agent | norito" />
+<meta property="og:description" content="الصق سلسلة User-Agent وشاهد المتصفح والمحرك ونظام التشغيل والجهاز مفصّلة. تبدأ بسلسلتك الخاصة. تعمل بالكامل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/user-agent-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="محلّل User-Agent | norito" />
+<meta name="twitter:description" content="الصق سلسلة User-Agent وشاهد المتصفح والمحرك ونظام التشغيل والجهاز مفصّلة. تبدأ بسلسلتك الخاصة. تعمل بالكامل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "محلّل User-Agent",
+  "url": "https://norito.in/ar/user-agent-parser.html",
+  "description": "الصق سلسلة User-Agent وشاهد المتصفح والمحرك ونظام التشغيل والجهاز مفصّلة.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "لماذا يعرض متصفحي أنا افتراضيًا؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يبدأ الحقل مُعبَّأً مسبقًا بـ navigator.userAgent، سلسلة متصفحك أنت، مقروءة محليًا من الصفحة التي أنت عليها بالفعل. الصق أي سلسلة User-Agent أخرى فوقها لتحليلها بدلًا منها." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنها اكتشاف كل متصفح وجهاز بدقة تامة؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "سلاسل User-Agent فوضوية بطبيعتها، إذ تتضمن متصفحات كثيرة رموزًا من متصفحات أخرى تعتمد عليها للتوافق (يتضمن كل من Edge وChrome كلمتي \"Safari\" و\"KHTML, like Gecko\" مثلًا). تستخدم هذه الأداة قواعد أنماط تغطي الحالات الشائعة، لكن السلاسل الغامضة أو المزيّفة قد لا تزال تُقرأ بشكل خاطئ." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تُرسل السلسلة إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا. يحدث التحليل بالكامل داخل متصفحك باستخدام تعبيرات نمطية (regex). لا يُرفع أي شيء." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "محلّل User-Agent", "item": "https://norito.in/ar/user-agent-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / محلّل User-Agent</p>
+    <h1>محلّل User-Agent</h1>
+    <p class="lede">
+      الصق أي سلسلة User-Agent وشاهد المتصفح ومحرك العرض ونظام التشغيل ونوع الجهاز الذي تحدده. تبدأ بسلسلتك الخاصة.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="uaInput">سلسلة User-Agent</label>
+          <textarea id="uaInput" class="mono-area" rows="6"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        تُفحص السلسلة بحثًا عن رموز معروفة بالترتيب الذي يُميّز على أفضل وجه بين المتصفحات المتداخلة،
+        إذ تحمل المتصفحات القائمة على Chromium (مثل Edge وOpera وBrave وSamsung Internet) جميعها رمز
+        <code>Chrome/</code> للتوافق، ويجب التحقق من رموزها الخاصة الأكثر تحديدًا أولًا، وإلا ستُقرأ
+        جميعها خطأً على أنها Chrome عادي. يُكتشف نظام التشغيل من مجموعة رموز منفصلة
+        (<code>Windows NT</code>، <code>Mac OS X</code>، <code>Android</code>،
+        <code>iPhone OS</code>/<code>CPU OS</code>، وعلامات لينكس الشائعة)، ويُستنتج نوع الجهاز من
+        وجود رموز خاصة بالهواتف أو الأجهزة اللوحية.
+      </p>
+      <p>
+        يحدث كل شيء داخل جافاسكريبت هذه الصفحة على النص الذي تقدّمه، أو على
+        <code>navigator.userAgent</code> إن لم تغيّر الحقل. لا يُرفع أي شيء.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-parser.html|محلّل الروابط|قسّم رابطًا إلى مكوّناته.
+hash-generator.html|مولّد التجزئة|MD5، SHA-1، SHA-256، SHA-512.
+regex-tester.html|أداة اختبار Regex|اختبر تعبيرًا نمطيًا مع تمييز مباشر للمطابقات.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>لماذا يعرض متصفحي أنا افتراضيًا؟</summary>
+        <p>يبدأ الحقل مُعبَّأً مسبقًا بـ navigator.userAgent، سلسلة متصفحك أنت، مقروءة محليًا من الصفحة التي أنت عليها بالفعل. الصق أي سلسلة User-Agent أخرى فوقها لتحليلها بدلًا منها.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنها اكتشاف كل متصفح وجهاز بدقة تامة؟</summary>
+        <p>سلاسل User-Agent فوضوية بطبيعتها، إذ تتضمن متصفحات كثيرة رموزًا من متصفحات أخرى تعتمد عليها للتوافق (يتضمن كل من Edge وChrome كلمتي "Safari" و"KHTML, like Gecko" مثلًا). تستخدم هذه الأداة قواعد أنماط تغطي الحالات الشائعة، لكن السلاسل الغامضة أو المزيّفة قد لا تزال تُقرأ بشكل خاطئ.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تُرسل السلسلة إلى أي مكان؟</summary>
+        <p>لا. يحدث التحليل بالكامل داخل متصفحك باستخدام تعبيرات نمطية (regex). لا يُرفع أي شيء.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-user-agent-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

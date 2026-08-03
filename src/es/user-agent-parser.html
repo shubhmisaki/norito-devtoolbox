@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Analizador de User-Agent | norito</title>
+<meta name="description" content="Pega una cadena de User-Agent y mira su navegador, motor, sistema operativo y dispositivo desglosados. Empieza con el tuyo. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/user-agent-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Analizador de User-Agent | norito" />
+<meta property="og:description" content="Pega una cadena de User-Agent y mira su navegador, motor, sistema operativo y dispositivo desglosados. Empieza con el tuyo. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/user-agent-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Analizador de User-Agent | norito" />
+<meta name="twitter:description" content="Pega una cadena de User-Agent y mira su navegador, motor, sistema operativo y dispositivo desglosados. Empieza con el tuyo. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Analizador de User-Agent",
+  "url": "https://norito.in/es/user-agent-parser.html",
+  "description": "Pega una cadena de User-Agent y mira su navegador, motor, sistema operativo y dispositivo desglosados.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué muestra mi propio navegador por defecto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El cuadro empieza precargado con navigator.userAgent, la cadena de tu propio navegador, leída localmente desde la página en la que ya estás. Pega encima cualquier otra cadena de User-Agent para analizar esa en su lugar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puede detectar cada navegador y dispositivo a la perfección?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Las cadenas de User-Agent son inherentemente confusas; muchos navegadores incluyen tokens de otros en los que se basan por compatibilidad (Edge y Chrome incluyen ambos \"Safari\" y \"KHTML, like Gecko\", por ejemplo). Esta herramienta usa reglas de patrones que cubren los casos comunes, pero las cadenas raras o falsificadas pueden interpretarse mal." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía la cadena a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El análisis ocurre por completo en tu navegador con expresiones regulares. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Analizador de User-Agent", "item": "https://norito.in/es/user-agent-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Analizador de User-Agent</p>
+    <h1>Analizador de User-Agent</h1>
+    <p class="lede">
+      Pega cualquier cadena de User-Agent y mira el navegador, motor de renderizado, sistema
+      operativo y tipo de dispositivo que identifica. Empieza con el tuyo.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="uaInput">Cadena de User-Agent</label>
+          <textarea id="uaInput" class="mono-area" rows="6"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        La cadena se escanea buscando tokens conocidos en el orden que mejor distingue entre
+        navegadores solapados, ya que los navegadores basados en Chromium (Edge, Opera, Brave,
+        Vivaldi, Samsung Internet) llevan todos un token <code>Chrome/</code> por compatibilidad y
+        deben comprobarse primero por sus propios tokens más específicos, o todos se reportarían
+        erróneamente como Chrome simple. El sistema operativo se detecta con un conjunto de tokens
+        distinto (<code>Windows NT</code>, <code>Mac OS X</code>, <code>Android</code>,
+        <code>iPhone OS</code>/<code>CPU OS</code>, marcadores comunes de Linux), y el tipo de
+        dispositivo se deduce de si hay tokens específicos de móvil o tablet presentes.
+      </p>
+      <p>
+        Todo ocurre en el JavaScript de esta página contra el texto que proporcionas, o contra
+        <code>navigator.userAgent</code> si no has cambiado el cuadro. No se sube nada.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-parser.html|Analizador de URL|Descompón una URL en sus partes.
+hash-generator.html|Generador de hashes|MD5, SHA-1, SHA-256, SHA-512.
+regex-tester.html|Probador de Regex|Prueba una regex con resaltado de coincidencias en vivo.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Por qué muestra mi propio navegador por defecto?</summary>
+        <p>El cuadro empieza precargado con navigator.userAgent, la cadena de tu propio navegador, leída localmente desde la página en la que ya estás. Pega encima cualquier otra cadena de User-Agent para analizar esa en su lugar.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puede detectar cada navegador y dispositivo a la perfección?</summary>
+        <p>Las cadenas de User-Agent son inherentemente confusas; muchos navegadores incluyen tokens de otros en los que se basan por compatibilidad (Edge y Chrome incluyen ambos "Safari" y "KHTML, like Gecko", por ejemplo). Esta herramienta usa reglas de patrones que cubren los casos comunes, pero las cadenas raras o falsificadas pueden interpretarse mal.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía la cadena a algún sitio?</summary>
+        <p>No. El análisis ocurre por completo en tu navegador con expresiones regulares. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-user-agent-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

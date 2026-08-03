@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>JSON Schemaジェネレーター | norito</title>
+<meta name="description" content="JSONサンプルを貼り付けると、その形状と型を記述するJSON Schema（draft-07）を生成します。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/json-schema-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JSON Schemaジェネレーター | norito" />
+<meta property="og:description" content="JSONサンプルを貼り付けると、その形状と型を記述するJSON Schema（draft-07）を生成します。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/json-schema-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JSON Schemaジェネレーター | norito" />
+<meta name="twitter:description" content="JSONサンプルを貼り付けると、その形状と型を記述するJSON Schema（draft-07）を生成します。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Schemaジェネレーター",
+  "url": "https://norito.in/ja/json-schema-generator.html",
+  "description": "JSONサンプルを貼り付けると、その形状と型を記述するJSON Schema（draft-07）を生成します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "どのJSON Schemaドラフトを生成しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "draft-07です。ajvやjsonschema（Python）、ほとんどのIDEツールを含むバリデータの中で最も広くサポートされているバージョンです。出力は単純なJSONなので、より新しいドラフトのキーワードが必要な場合は後から手動で編集できます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "配列はどのように扱われますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ツールは配列内のすべての要素を調べ、推論された型をマージします。すべての要素が同じ形状を共有していれば1つのitemsスキーマになり、要素間で型が異なる場合は、サンプル内のどの要素も表現から漏れないよう、より広いスキーマにフォールバックします。" }
+    },
+    {
+      "@type": "Question",
+      "name": "必須フィールドとしてマークされますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、オブジェクトに存在するすべてのキーは、サンプルに出現したという理由でそのオブジェクトのrequiredリストに追加されます。実際のデータでは任意項目であるキーは、生成されたスキーマのrequired配列から削除してください。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "JSON Schemaジェネレーター", "item": "https://norito.in/ja/json-schema-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12h-8"/><path d="M21 6H8"/><path d="M21 18h-8"/><path d="M3 6v4c0 1.1.9 2 2 2h3"/><path d="M3 10v6c0 1.1.9 2 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / JSON Schemaジェネレーター</p>
+    <h1>JSON Schemaジェネレーター</h1>
+    <p class="lede">
+      JSONサンプルを貼り付けると、その形状、型、必須フィールドを記述するdraft-07 JSON Schemaを取得できます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="jsonInput">サンプルJSON</label>
+          <textarea id="jsonInput" class="mono-area" rows="16">{
+  "id": 101,
+  "name": "norito",
+  "active": true,
+  "tags": ["tools", "privacy"],
+  "meta": { "version": 1.2, "public": true }
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">スキーマをコピー</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        このツールは、解析されたJSONを再帰的に辿ります。オブジェクトは <code>type: "object"</code> になり、各キーごとに <code>properties</code> エントリが作られ、存在するすべてのキーが <code>required</code> に列挙されます。配列は <code>type: "array"</code> になり、各要素の型を推論・マージして構築された <code>items</code> スキーマを持ちます。プリミティブ値は直接マッピングされます。文字列、数値（サンプルされた値がすべて整数の場合は <code>"number"</code> の代わりに <code>"integer"</code>）、真偽値、nullです。
+      </p>
+      <p>
+        これはブラウザネイティブのパーサーである <code>JSON.parse</code> と、その後に続く小さな再帰的ウォーカーを通じて、すべてこのページ自身のJavaScriptで実行されます。アップロードは一切行われません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|JSONフォーマッタ・バリデーター|JSONの整形・検証・圧縮。
+json-diff.html|JSON Diff|2つのJSONドキュメントを比較。
+yaml-to-json-converter.html|YAMLからJSONへの変換ツール|YAMLとJSONを双方向に変換。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>どのJSON Schemaドラフトを生成しますか?</summary>
+        <p>draft-07です。ajvやjsonschema（Python）、ほとんどのIDEツールを含むバリデータの中で最も広くサポートされているバージョンです。出力は単純なJSONなので、より新しいドラフトのキーワードが必要な場合は後から手動で編集できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>配列はどのように扱われますか?</summary>
+        <p>ツールは配列内のすべての要素を調べ、推論された型をマージします。すべての要素が同じ形状を共有していれば1つのitemsスキーマになり、要素間で型が異なる場合は、サンプル内のどの要素も表現から漏れないよう、より広いスキーマにフォールバックします。</p>
+      </details>
+      <details class="faq-item">
+        <summary>必須フィールドとしてマークされますか?</summary>
+        <p>はい、オブジェクトに存在するすべてのキーは、サンプルに出現したという理由でそのオブジェクトのrequiredリストに追加されます。実際のデータでは任意項目であるキーは、生成されたスキーマのrequired配列から削除してください。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-schema-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

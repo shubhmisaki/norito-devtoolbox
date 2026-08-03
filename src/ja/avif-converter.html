@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>AVIFコンバーター | norito</title>
+<meta name="description" content="画像をAVIFに変換してファイルサイズを小さくしたり、AVIFからJPG/PNGに変換して互換性を確保したりできます。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/avif-converter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AVIFコンバーター | norito" />
+<meta property="og:description" content="画像をAVIFに変換してファイルサイズを小さくしたり、AVIFからJPG/PNGに変換して互換性を確保したりできます。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/avif-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AVIFコンバーター | norito" />
+<meta name="twitter:description" content="画像をAVIFに変換してファイルサイズを小さくしたり、AVIFからJPG/PNGに変換して互換性を確保したりできます。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AVIFコンバーター",
+  "url": "https://norito.in/ja/avif-converter.html",
+  "description": "画像をAVIFに変換してファイルサイズを小さくしたり、AVIFからJPG/PNGに変換して互換性を確保したりできます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "なぜAVIFに変換するのですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AVIFは同等の視覚品質で、JPEGやWebPよりも一般的に小さいファイルサイズになるため、Web画像で採用が増えています。トレードオフはエンコードが遅いことと、最近まで古いソフトウェアでのサポートが限定的だったことです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ブラウザがAVIFをエンコードできない場合はどうなりますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AVIFのデコード（表示）は現行の主要ブラウザすべてでサポートされていますが、エンコードのサポートはさまざまです。ブラウザがAVIF出力を生成できない場合、このツールは黙って失敗するのではなく、その旨をはっきり伝えます。AVIFからJPG/PNGへのデコードはどのブラウザでも動作します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "画像はどこかにアップロードされますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。どちらの方向の変換も、ブラウザ自身の画像デコーダーとキャンバスエンコーダーを使用します。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "AVIFコンバーター", "item": "https://norito.in/ja/avif-converter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / AVIFコンバーター</p>
+    <h1>AVIFコンバーター</h1>
+    <p class="lede">
+      JPG/PNG/WebPをAVIFに変換してファイルを小さくしたり、AVIFをJPG/PNGに戻して互換性を確保したりできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>クリックして画像を選択</strong>するか、ここにドラッグ&amp;ドロップしてください</p>
+          <p class="note" style="margin-top:2px;">JPG、PNG、WebP、またはAVIF。端末内に留まります。</p>
+          <input type="file" id="fileInput" accept="image/*,.avif" />
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label for="format">変換先</label>
+          <select id="format">
+            <option value="image/avif" selected>AVIF</option>
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </div>
+        <div class="field" id="qualityRow">
+          <label for="quality">画質 (<span id="qualityVal">80%</span>)</label>
+          <input type="range" id="quality" min="10" max="100" value="80" />
+        </div>
+        <button id="convertBtn" disabled>変換</button>
+        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box error" id="unsupportedNote" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="変換後のプレビュー" />
+          <p class="note" id="previewHint" style="margin-top:0;">変換後の画像はここに表示されます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        ファイルは<code>&lt;img&gt;</code>要素にデコードされ（ブラウザはAVIFをネイティブに表示でき、現行のブラウザではデコードサポートが一般的です）、フル解像度でキャンバスに描画されます。JPEGやPNGへの変換にはキャンバスの標準的で広くサポートされたエンコーダーを使用します。AVIFへの変換は<code>canvas.toBlob("image/avif")</code>を呼び出しますが、これは現行のChrome、Edge、Firefoxではサポートされているものの、まだすべてのブラウザでサポートされているわけではありません。このツールはオプションを提示する前にサポート状況を確認し、ブラウザがエンコードできない場合は、壊れたファイルを黙って生成する代わりに、その旨をはっきり伝えます。
+      </p>
+      <p>
+        すべての処理はこのページ自身のキャンバス内で行われます。アップロードは一切行われず、画像がブラウザのタブから出ることはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+heic-converter.html|HEICコンバーター|iPhoneのHEIC写真をJPGまたはPNGに変換。
+image-converter.html|画像コンバーター|JPG、PNG、WebP間で変換。
+compress-image.html|画像を目標サイズまで圧縮|正確なファイルサイズの目標値に合わせます。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>なぜAVIFに変換するのですか?</summary>
+        <p>AVIFは同等の視覚品質で、JPEGやWebPよりも一般的に小さいファイルサイズになるため、Web画像で採用が増えています。トレードオフはエンコードが遅いことと、最近まで古いソフトウェアでのサポートが限定的だったことです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>ブラウザがAVIFをエンコードできない場合はどうなりますか?</summary>
+        <p>AVIFのデコード（表示）は現行の主要ブラウザすべてでサポートされていますが、エンコードのサポートはさまざまです。ブラウザがAVIF出力を生成できない場合、このツールは黙って失敗するのではなく、その旨をはっきり伝えます。AVIFからJPG/PNGへのデコードはどのブラウザでも動作します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>画像はどこかにアップロードされますか?</summary>
+        <p>いいえ。どちらの方向の変換も、ブラウザ自身の画像デコーダーとキャンバスエンコーダーを使用します。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-avif-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

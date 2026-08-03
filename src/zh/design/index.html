@@ -40,7 +40,14 @@
     { "@type": "WebApplication", "name": "Favicon 生成器", "url": "https://norito.in/zh/design/favicon-generator.html" },
     { "@type": "WebApplication", "name": "调色板提取器", "url": "https://norito.in/zh/design/color-palette-extractor.html" },
     { "@type": "WebApplication", "name": "对比度检查器", "url": "https://norito.in/zh/design/contrast-checker.html" },
-    { "@type": "WebApplication", "name": "颜色转换器", "url": "https://norito.in/zh/design/color-converter.html" }
+    { "@type": "WebApplication", "name": "颜色转换器", "url": "https://norito.in/zh/design/color-converter.html" },
+    { "@type": "WebApplication", "name": "CSS Clamp() 生成器", "url": "https://norito.in/zh/design/css-clamp-generator.html" },
+    { "@type": "WebApplication", "name": "CSS 缓动生成器", "url": "https://norito.in/zh/design/css-easing-generator.html" },
+    { "@type": "WebApplication", "name": "CSS 滤镜生成器", "url": "https://norito.in/zh/design/css-filter-generator.html" },
+    { "@type": "WebApplication", "name": "CSS 图案生成器", "url": "https://norito.in/zh/design/pattern-generator.html" },
+    { "@type": "WebApplication", "name": "SVG 随机形状生成器", "url": "https://norito.in/zh/design/blob-generator.html" },
+    { "@type": "WebApplication", "name": "噪点纹理生成器", "url": "https://norito.in/zh/design/noise-texture-generator.html" },
+    { "@type": "WebApplication", "name": "Tailwind 阴影生成器", "url": "https://norito.in/zh/design/tailwind-shadow-generator.html" }
   ]
 }
 </script>
@@ -153,6 +160,76 @@
         </div>
         <h3>颜色转换器</h3>
         <p>HEX、RGB、HSL、CMYK 实时联动转换。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="teal" href="css-clamp-generator.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg>
+        </div>
+        <h3>CSS Clamp() 生成器</h3>
+        <p>设置最小值和最大值，获取能随视口自适应缩放的流式 clamp() 数值。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="coral" href="css-easing-generator.html">
+        <div class="icon-chip c-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg>
+        </div>
+        <h3>CSS 缓动生成器</h3>
+        <p>拖动两个控制点塑造自定义缓动曲线，复制 cubic-bezier() 数值。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="purple" href="css-filter-generator.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg>
+        </div>
+        <h3>CSS 滤镜生成器</h3>
+        <p>放入一张图片，拖动滑块，复制生成的 CSS filter 数值。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="indigo" href="pattern-generator.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg>
+        </div>
+        <h3>CSS 图案生成器</h3>
+        <p>使用纯 CSS 渐变构建可平铺的背景图案，无需任何图片文件。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="rose" href="blob-generator.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </div>
+        <h3>SVG 随机形状生成器</h3>
+        <p>生成随机的有机 blob 形状，调整随机度和点数，复制或下载。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="amber" href="noise-texture-generator.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>噪点纹理生成器</h3>
+        <p>生成可调节密度、不透明度和颜色的颗粒纹理，下载或复制为 CSS。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="purple" href="tailwind-shadow-generator.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg>
+        </div>
+        <h3>Tailwind 阴影生成器</h3>
+        <p>可视化构建叠加阴影，获取 Tailwind 的 shadow-[...] 类名以及原始 CSS。</p>
         <span class="card-link">打开工具
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>

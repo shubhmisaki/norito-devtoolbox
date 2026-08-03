@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS Clamp()ジェネレーター：流動的なタイポグラフィ | norito</title>
+<meta name="description" content="最小値と最大値の間をなめらかにスケーリングする、流動的なCSS clamp()の値を作成します。レスポンシブなフォントサイズや余白に。ライブプレビュー付き。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/design/css-clamp-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS Clamp()ジェネレーター：流動的なタイポグラフィ | norito" />
+<meta property="og:description" content="最小値と最大値の間をなめらかにスケーリングする、流動的なCSS clamp()の値を作成します。レスポンシブなフォントサイズや余白に。ライブプレビュー付き。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/design/css-clamp-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS Clamp()ジェネレーター：流動的なタイポグラフィ | norito" />
+<meta name="twitter:description" content="最小値と最大値の間をなめらかにスケーリングする、流動的なCSS clamp()の値を作成します。レスポンシブなフォントサイズや余白に。ライブプレビュー付き。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS Clamp()ジェネレーター",
+  "url": "https://norito.in/ja/design/css-clamp-generator.html",
+  "description": "最小と最大のビューポート幅の間をなめらかにスケーリングする、流動的なCSS clamp()の値を作成します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "clamp()は実際には何をしているのですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "clamp(min, preferred, max)は中間の値を採用しますが、minを下回ったりmaxを上回ったりしないようにクリップします。ここでの「preferred」の値はビューポート幅の一次関数になっているため、結果は画面サイズに応じてなめらかに大きくなり、どちらかの限界に達すると、そこで止まります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "メディアクエリの代わりにこれを使う理由は?",
+      "acceptedAnswer": { "@type": "Answer", "text": "メディアクエリは特定のブレークポイントで固定サイズの間をジャンプするため、目に見える「カクつき」のように見えることがあります。clamp()はビューポートに応じて連続的にスケーリングするため、ウィンドウをドラッグしてもテキストや余白はなめらかにサイズが変わり、維持すべきブレークポイントもありません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。計算式とプレビューはすべてブラウザ内で計算されます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS Clamp()ジェネレーター", "item": "https://norito.in/ja/design/css-clamp-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS Clamp()ジェネレーター</p>
+    <h1>CSS Clamp()ジェネレーター</h1>
+    <p class="lede">
+      最小・最大サイズと、それらが適用されるビューポート範囲を設定するだけで、その間をなめらかに
+      スケーリングする流動的な<code>clamp()</code>の値が得られます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="minSize">最小サイズ (px)</label>
+            <input type="number" id="minSize" value="16" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="minVp">対応するビューポート (px)</label>
+            <input type="number" id="minVp" value="375" min="1" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="maxSize">最大サイズ (px)</label>
+            <input type="number" id="maxSize" value="32" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="maxVp">対応するビューポート (px)</label>
+            <input type="number" id="maxVp" value="1440" min="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rootFont">ルートフォントサイズ (rem変換用)</label>
+          <input type="number" id="rootFont" value="16" min="1" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:30px 16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <span id="previewText" style="font-weight:700; line-height:1.2;">ウィンドウをリサイズしてスケーリングを確認</span>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSSをコピー</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        2つの(ビューポート, サイズ)の点が直線を定義します。その傾きがビューポート幅の係数になり、
+        y切片が固定のremオフセットになって、あわせて<code>clamp(min, intercept + slope*100vw, max)</code>
+        が構成されます。これはJavaScriptのリサイズリスナーではなく実際のCSSであるため、ブラウザはレイアウトの
+        たびにこれを再計算し、スクロール時のガタつきや誤ったサイズのちらつきが発生せず、JavaScriptが
+        無効な状態でも動作し続けます。
+      </p>
+      <p>
+        すべての値はルートフォントサイズを使ってremに変換されるため、ユーザーがアクセシビリティのために
+        ブラウザの基準フォントサイズを変更していても、結果は正しくスケーリングされ続けます。このツールは
+        あなたのページを読み取ることはなく、入力した数値から計算式を計算するだけです。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|CSSイージングジェネレーター|視覚的なcubic-bezier曲線エディタ。
+border-radius-generator.html|border-radiusジェネレーター|角ごとのborder-radiusを視覚的に作成。
+contrast-checker.html|コントラストチェッカー|WCAGコントラスト比、AA/AAA判定。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>clamp()は実際には何をしているのですか?</summary>
+        <p>clamp(min, preferred, max)は中間の値を採用しますが、minを下回ったりmaxを上回ったりしないようにクリップします。ここでの「preferred」の値はビューポート幅の一次関数になっているため、結果は画面サイズに応じてなめらかに大きくなり、どちらかの限界に達すると、そこで止まります。</p>
+      </details>
+      <details class="faq-item">
+        <summary>メディアクエリの代わりにこれを使う理由は?</summary>
+        <p>メディアクエリは特定のブレークポイントで固定サイズの間をジャンプするため、目に見える「カクつき」のように見えることがあります。clamp()はビューポートに応じて連続的にスケーリングするため、ウィンドウをドラッグしてもテキストや余白はなめらかにサイズが変わり、維持すべきブレークポイントもありません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>これはどこかに送信されますか?</summary>
+        <p>いいえ。計算式とプレビューはすべてブラウザ内で計算されます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-clamp-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

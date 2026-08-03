@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de CSS Clamp(): Tipografía Fluida | norito</title>
+<meta name="description" content="Construye un valor CSS clamp() fluido que escala suavemente entre un mínimo y un máximo, para tamaños de fuente y espaciados responsivos. Vista previa en vivo." />
+<link rel="canonical" href="https://norito.in/es/design/css-clamp-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de CSS Clamp(): Tipografía Fluida | norito" />
+<meta property="og:description" content="Construye un valor CSS clamp() fluido que escala suavemente entre un mínimo y un máximo, para tamaños de fuente y espaciados responsivos. Vista previa en vivo." />
+<meta property="og:url" content="https://norito.in/es/design/css-clamp-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de CSS Clamp(): Tipografía Fluida | norito" />
+<meta name="twitter:description" content="Construye un valor CSS clamp() fluido que escala suavemente entre un mínimo y un máximo, para tamaños de fuente y espaciados responsivos. Vista previa en vivo." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de CSS Clamp()",
+  "url": "https://norito.in/es/design/css-clamp-generator.html",
+  "description": "Construye un valor CSS clamp() fluido que escala suavemente entre un ancho de viewport mínimo y máximo.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué hace exactamente clamp()?",
+      "acceptedAnswer": { "@type": "Answer", "text": "clamp(min, preferido, max) elige el valor intermedio, pero lo recorta para que nunca baje del mínimo ni supere el máximo. Aquí el valor \"preferido\" es una función lineal del ancho del viewport, así que el resultado crece suavemente con la pantalla hasta que alcanza uno de los límites, y entonces se mantiene estable." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué usar esto en lugar de una media query?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una media query salta entre tamaños fijos en puntos de quiebre específicos, lo que puede notarse como un salto visible. clamp() escala de forma continua con el viewport, así que el texto y el espaciado se redimensionan suavemente al arrastrar la ventana, sin ningún breakpoint que mantener." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía esto a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, la fórmula y la vista previa se calculan por completo en tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de CSS Clamp()", "item": "https://norito.in/es/design/css-clamp-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de CSS Clamp()</p>
+    <h1>Generador de CSS Clamp()</h1>
+    <p class="lede">
+      Define un tamaño mínimo y máximo, y el rango de viewport en el que aplican, obtén un valor
+      <code>clamp()</code> fluido que escala suavemente entre ambos.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="minSize">Tamaño mínimo (px)</label>
+            <input type="number" id="minSize" value="16" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="minVp">en viewport (px)</label>
+            <input type="number" id="minVp" value="375" min="1" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="maxSize">Tamaño máximo (px)</label>
+            <input type="number" id="maxSize" value="32" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="maxVp">en viewport (px)</label>
+            <input type="number" id="maxVp" value="1440" min="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rootFont">Tamaño de fuente raíz (para conversión a rem)</label>
+          <input type="number" id="rootFont" value="16" min="1" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:30px 16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <span id="previewText" style="font-weight:700; line-height:1.2;">Redimensiona la ventana para verme escalar</span>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copiar CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Los dos puntos (viewport, tamaño) definen una línea recta. Su pendiente se convierte en el
+        coeficiente del ancho del viewport, y su intersección con el eje y se convierte en un
+        desplazamiento fijo en rem, formando juntos
+        <code>clamp(min, intersección + pendiente*100vw, max)</code>. Como esto es CSS real, no un
+        listener de redimensionado en JavaScript, el navegador lo recalcula en cada pase de layout
+        sin tirones de scroll ni parpadeo del tamaño incorrecto, y sigue funcionando incluso con
+        JavaScript desactivado.
+      </p>
+      <p>
+        Todos los valores se convierten a rem usando tu tamaño de fuente raíz, así que el resultado
+        sigue escalando correctamente si un usuario ha cambiado el tamaño de fuente base de su
+        navegador por accesibilidad. Nada aquí lee tu página, solo calcula la fórmula a partir de
+        los números que introduces.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|Generador de Curvas de Aceleración CSS|Editor visual de curvas cubic-bezier.
+border-radius-generator.html|Generador de border-radius|Construye un border-radius por esquina de forma visual.
+contrast-checker.html|Verificador de contraste|Ratio de contraste WCAG, aprobación AA/AAA.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Qué hace exactamente clamp()?</summary>
+        <p>clamp(min, preferido, max) elige el valor intermedio, pero lo recorta para que nunca baje del mínimo ni supere el máximo. Aquí el valor "preferido" es una función lineal del ancho del viewport, así que el resultado crece suavemente con la pantalla hasta que alcanza uno de los límites, y entonces se mantiene estable.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Por qué usar esto en lugar de una media query?</summary>
+        <p>Una media query salta entre tamaños fijos en puntos de quiebre específicos, lo que puede notarse como un salto visible. clamp() escala de forma continua con el viewport, así que el texto y el espaciado se redimensionan suavemente al arrastrar la ventana, sin ningún breakpoint que mantener.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía esto a algún sitio?</summary>
+        <p>No, la fórmula y la vista previa se calculan por completo en tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-clamp-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

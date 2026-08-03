@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Tailwind शैडो जनरेटर | norito</title>
+<meta name="description" content="विज़ुअली एक लेयर्ड box-shadow बनाएं और Tailwind आर्बिट्ररी-वैल्यू shadow-[...] क्लास के साथ रॉ CSS पाएं. यह आपके ब्राउज़र में चलता है." />
+<link rel="canonical" href="https://norito.in/hi/design/tailwind-shadow-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tailwind शैडो जनरेटर | norito" />
+<meta property="og:description" content="विज़ुअली एक लेयर्ड box-shadow बनाएं और Tailwind आर्बिट्ररी-वैल्यू shadow-[...] क्लास के साथ रॉ CSS पाएं. यह आपके ब्राउज़र में चलता है." />
+<meta property="og:url" content="https://norito.in/hi/design/tailwind-shadow-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tailwind शैडो जनरेटर | norito" />
+<meta name="twitter:description" content="विज़ुअली एक लेयर्ड box-shadow बनाएं और Tailwind आर्बिट्ररी-वैल्यू shadow-[...] क्लास के साथ रॉ CSS पाएं. यह आपके ब्राउज़र में चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tailwind शैडो जनरेटर",
+  "url": "https://norito.in/hi/design/tailwind-shadow-generator.html",
+  "description": "विज़ुअली एक लेयर्ड box-shadow बनाएं और रॉ CSS के साथ Tailwind आर्बिट्ररी-वैल्यू shadow क्लास पाएं.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tailwind में आर्बिट्ररी-वैल्यू शैडो क्लास कैसे काम करती है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tailwind आपको shadow-[<any-css-value>] लिखने देता है और यह सीधे box-shadow: <any-css-value> में कंपाइल हो जाता है, किसी कॉन्फ़िग फ़ाइल बदलाव की ज़रूरत नहीं. वैल्यू के अंदर के स्पेस को अंडरस्कोर में बदलना होता है, जो यह टूल आपके लिए अपने आप कर देता है." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मैं कई शैडो लेयर स्टैक कर सकता हूं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "हां, ऊपर एक और शैडो जोड़ने के लिए \"लेयर जोड़ें\" पर क्लिक करें. असली box-shadow कॉमा-सेपरेटेड लेयर सपोर्ट करता है, और यह टूल भी वैसे ही आर्बिट्ररी-वैल्यू क्लास बनाता है, लेयर को कॉमा से जोड़कर." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या यह कहीं भेजा जाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं, शैडो पूरी तरह आपके ब्राउज़र के CSS इंजन में बनता और प्रीव्यू होता है. कुछ भी अपलोड नहीं होता." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "Tailwind शैडो जनरेटर", "item": "https://norito.in/hi/design/tailwind-shadow-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Tailwind शैडो जनरेटर</p>
+    <h1>Tailwind शैडो जनरेटर</h1>
+    <p class="lede">
+      विज़ुअली एक लेयर्ड शैडो बनाएं, Tailwind <code>shadow-[...]</code> आर्बिट्ररी-वैल्यू
+      क्लास और रॉ CSS पाएं.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="layersWrap"></div>
+        <button type="button" id="addLayerBtn" class="secondary" style="margin-top:4px;">+ लेयर जोड़ें</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:40px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:140px; height:100px; margin:0 auto; background:var(--surface); border-radius:12px;"></div>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>Tailwind क्लास</label>
+            <pre class="code-output" id="twOutput"></pre>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>रॉ CSS</label>
+            <pre class="code-output" id="cssOutput"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="copyTwBtn">Tailwind क्लास कॉपी करें</button>
+            <button id="copyCssBtn" class="secondary">CSS कॉपी करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        हर लेयर का offset-x, offset-y, blur, spread, रंग, और inset टॉगल मिलकर एक
+        <code>box-shadow</code> सेगमेंट बनाता है, और कई लेयर कॉमा से जोड़ी जाती हैं, यह स्टैंडर्ड
+        CSS मल्टी-शैडो सिंटैक्स है. Tailwind क्लास के लिए, उसी वैल्यू के स्पेस को अंडरस्कोर से
+        बदला जाता है और कॉमा वैसे ही रहते हैं (Tailwind का आर्बिट्ररी-वैल्यू पार्सर
+        <code>shadow-[0_4px_6px_rgba(0,0,0,0.1)]</code> जैसी स्टाइल चाहता है), फिर इसे
+        <code>shadow-[...]</code> में रैप किया जाता है. प्रीव्यू बॉक्स की असली
+        <code>box-shadow</code> स्टाइल रॉ CSS वर्ज़न पर सेट होती है, इसलिए जो आप देखते हैं वह दोनों
+        आउटपुट से बिल्कुल मेल खाता है.
+      </p>
+      <p>
+        सब कुछ इस पेज के जावास्क्रिप्ट में, आपकी सेट की वैल्यू के आधार पर कैलकुलेट होता है. कुछ भी
+        अपलोड नहीं होता.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+box-shadow-generator.html|बॉक्स शैडो जनरेटर|CSS बॉक्स-शैडो विज़ुअली बनाएं.
+css-filter-generator.html|CSS फ़िल्टर जनरेटर|इमेज फ़िल्टर इफ़ेक्ट विज़ुअली बनाएं.
+border-radius-generator.html|बॉर्डर रेडियस जनरेटर|हर कोने का बॉर्डर रेडियस विज़ुअली बनाएं.
+-->
+
+    <h2>सामान्य प्रश्न</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Tailwind में आर्बिट्ररी-वैल्यू शैडो क्लास कैसे काम करती है?</summary>
+        <p>Tailwind आपको shadow-[&lt;any-css-value&gt;] लिखने देता है और यह सीधे box-shadow: &lt;any-css-value&gt; में कंपाइल हो जाता है, किसी कॉन्फ़िग फ़ाइल बदलाव की ज़रूरत नहीं. वैल्यू के अंदर के स्पेस को अंडरस्कोर में बदलना होता है, जो यह टूल आपके लिए अपने आप कर देता है.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या मैं कई शैडो लेयर स्टैक कर सकता हूं?</summary>
+        <p>हां, ऊपर एक और शैडो जोड़ने के लिए "लेयर जोड़ें" पर क्लिक करें. असली box-shadow कॉमा-सेपरेटेड लेयर सपोर्ट करता है, और यह टूल भी वैसे ही आर्बिट्ररी-वैल्यू क्लास बनाता है, लेयर को कॉमा से जोड़कर.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या यह कहीं भेजा जाता है?</summary>
+        <p>नहीं, शैडो पूरी तरह आपके ब्राउज़र के CSS इंजन में बनता और प्रीव्यू होता है. कुछ भी अपलोड नहीं होता.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-tailwind-shadow-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->
+

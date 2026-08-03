@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Markdownテーブルジェネレーター | norito</title>
+<meta name="description" content="CSV/TSVを貼り付けるか、グリッドを直接編集して、列の整列付きGitHub Flavored MarkdownのテーブルSyntaxを取得します。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/markdown-table-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Markdownテーブルジェネレーター | norito" />
+<meta property="og:description" content="CSV/TSVを貼り付けるか、グリッドを直接編集して、列の整列付きGitHub Flavored MarkdownのテーブルSyntaxを取得します。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/markdown-table-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Markdownテーブルジェネレーター | norito" />
+<meta name="twitter:description" content="CSV/TSVを貼り付けるか、グリッドを直接編集して、列の整列付きGitHub Flavored MarkdownのテーブルSyntaxを取得します。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Markdownテーブルジェネレーター",
+  "url": "https://norito.in/ja/markdown-table-generator.html",
+  "description": "CSV/TSVを貼り付けて、列の整列付きGitHub Flavored MarkdownのテーブルSyntaxを取得します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "カンマとタブの両方に対応していますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。スプレッドシートから貼り付けた場合（タブ区切り）でも、CSVファイル（カンマ区切り）でも、最初の行でどちらの区切り文字がより多く出現するかを見て、ツールが自動的に判定します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "列の整列はどのように機能しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "列ごとに左揃え、中央揃え、右揃えを選ぶと、見出し行の下の区切り行に適切な位置にコロンが入ります（左揃えは:---、中央揃えは:---:、右揃えは---:）。これはGitHub Flavored Markdownがレンダラーに整列を伝える標準的な方法そのものです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "データはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。テーブルの解析と構築はすべてブラウザ内で行われます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "Markdownテーブルジェネレーター", "item": "https://norito.in/ja/markdown-table-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Markdownテーブルジェネレーター</p>
+    <h1>Markdownテーブルジェネレーター</h1>
+    <p class="lede">
+      CSVまたはTSVデータ（スプレッドシートやファイルから）を貼り付け、列の整列を設定するだけで、
+      きれいなGitHub Flavored MarkdownのテーブルSyntaxが得られます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="csvInput">CSVまたはTSVデータ（1行目は見出し）</label>
+          <textarea id="csvInput" class="mono-area" rows="10">Name,Role,Location
+Shubham,Founder,India
+Ava,Engineer,Remote
+Priya,Designer,Remote</textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">1行目を見出しにする</span>
+          <label class="switch"><input type="checkbox" id="optHeader" checked /><span class="track"></span></label>
+        </div>
+        <div id="alignWrap" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:160px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Markdownをコピー</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">レンダリングプレビュー</h3>
+          <div id="renderedPreview" style="overflow-x:auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        入力は、1行目でより多く出現する方の区切り文字（カンマまたはタブ）で分割されるため、
+        スプレッドシートからそのまま貼り付けた場合（タブ区切り）でも、.csvファイル（カンマ区切り）でも、
+        設定を切り替えることなくどちらも動作します。値は各列でもっとも幅の広いセルに合わせてパディングされる
+        ため、レンダリングしたときだけでなく、プレーンテキストエディタで見てもきれいに整列します。区切り行の
+        コロンは、列ごとに選んだ整列方式をエンコードします。これはGitHub、GitLab、ほとんどの静的サイト
+        ジェネレーターなど、あらゆるレンダラーが理解する標準的なGitHub Flavored Markdown構文です。
+      </p>
+      <p>
+        解析と整形はこのページのJavaScript内で行われます。貼り付けた内容がアップロードされることは
+        ありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+csv-to-json.html|CSVからJSON|CSVファイルをJSONに変換。
+csv-viewer.html|CSVビューア|CSVをテーブルとして表示・編集。
+markdown-editor.html|Markdownエディタ|ライブプレビュー、.md/.htmlとしてエクスポート。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>カンマとタブの両方に対応していますか?</summary>
+        <p>はい。スプレッドシートから貼り付けた場合（タブ区切り）でも、CSVファイル（カンマ区切り）でも、最初の行でどちらの区切り文字がより多く出現するかを見て、ツールが自動的に判定します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>列の整列はどのように機能しますか?</summary>
+        <p>列ごとに左揃え、中央揃え、右揃えを選ぶと、見出し行の下の区切り行に適切な位置にコロンが入ります（左揃えは:---、中央揃えは:---:、右揃えは---:）。これはGitHub Flavored Markdownがレンダラーに整列を伝える標準的な方法そのものです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>データはどこかに送信されますか?</summary>
+        <p>いいえ。テーブルの解析と構築はすべてブラウザ内で行われます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-markdown-table-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

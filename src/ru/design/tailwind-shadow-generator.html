@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор теней Tailwind | norito</title>
+<meta name="description" content="Соберите многослойную box-shadow визуально и получите класс Tailwind shadow-[...] с произвольным значением, а также обычный CSS. Работает в браузере." />
+<link rel="canonical" href="https://norito.in/ru/design/tailwind-shadow-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор теней Tailwind | norito" />
+<meta property="og:description" content="Соберите многослойную box-shadow визуально и получите класс Tailwind shadow-[...] с произвольным значением, а также обычный CSS. Работает в браузере." />
+<meta property="og:url" content="https://norito.in/ru/design/tailwind-shadow-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор теней Tailwind | norito" />
+<meta name="twitter:description" content="Соберите многослойную box-shadow визуально и получите класс Tailwind shadow-[...] с произвольным значением, а также обычный CSS. Работает в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор теней Tailwind",
+  "url": "https://norito.in/ru/design/tailwind-shadow-generator.html",
+  "description": "Соберите многослойную тень визуально и получите класс Tailwind shadow с произвольным значением, а также обычный CSS.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как работает класс тени с произвольным значением в Tailwind?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tailwind позволяет написать shadow-[<любое-css-значение>], и это напрямую компилируется в box-shadow: <любое-css-значение>, без изменений в конфигурационном файле. Пробелы внутри значения нужно заменить на подчёркивания — этот инструмент делает это автоматически." }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли наложить несколько слоёв тени?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, нажмите «Добавить слой», чтобы добавить ещё одну тень поверх. Настоящая box-shadow поддерживает слои через запятую, и этот инструмент строит класс с произвольным значением так же, соединяя слои запятыми." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли это куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, тень собирается и предпросматривается полностью в CSS-движке вашего браузера. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор теней Tailwind", "item": "https://norito.in/ru/design/tailwind-shadow-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Генератор теней Tailwind</p>
+    <h1>Генератор теней Tailwind</h1>
+    <p class="lede">
+      Соберите многослойную тень визуально, получите класс Tailwind <code>shadow-[...]</code> с
+      произвольным значением, а также обычный CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="layersWrap"></div>
+        <button type="button" id="addLayerBtn" class="secondary" style="margin-top:4px;">+ Добавить слой</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:40px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:140px; height:100px; margin:0 auto; background:var(--surface); border-radius:12px;"></div>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>Класс Tailwind</label>
+            <pre class="code-output" id="twOutput"></pre>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>Обычный CSS</label>
+            <pre class="code-output" id="cssOutput"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="copyTwBtn">Копировать класс Tailwind</button>
+            <button id="copyCssBtn" class="secondary">Копировать CSS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Смещение по X и Y, размытие, растяжение, цвет и переключатель inset каждого слоя
+        собираются в один сегмент <code>box-shadow</code>, а несколько слоёв соединяются запятыми —
+        это стандартный CSS-синтаксис множественных теней. Для класса Tailwind то же самое значение
+        получает подчёркивания вместо пробелов, а запятые остаются как есть (парсер произвольных
+        значений Tailwind ожидает синтаксис вида
+        <code>shadow-[0_4px_6px_rgba(0,0,0,0.1)]</code>), после чего оборачивается в
+        <code>shadow-[...]</code>. Стилю <code>box-shadow</code> блока предпросмотра присваивается
+        именно версия обычного CSS, поэтому то, что вы видите, точно соответствует обоим вариантам
+        вывода.
+      </p>
+      <p>
+        Всё вычисляется в JavaScript этой страницы на основе заданных вами значений. Ничего не
+        загружается.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+box-shadow-generator.html|Генератор box-shadow|Создайте CSS box-shadow визуально.
+css-filter-generator.html|Генератор CSS-фильтров|Создайте эффекты фильтров изображения визуально.
+border-radius-generator.html|Генератор border-radius|Настройте border-radius для каждого угла визуально.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Как работает класс тени с произвольным значением в Tailwind?</summary>
+        <p>Tailwind позволяет написать shadow-[&lt;любое-css-значение&gt;], и это напрямую компилируется в box-shadow: &lt;любое-css-значение&gt;, без изменений в конфигурационном файле. Пробелы внутри значения нужно заменить на подчёркивания — этот инструмент делает это автоматически.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли наложить несколько слоёв тени?</summary>
+        <p>Да, нажмите «Добавить слой», чтобы добавить ещё одну тень поверх. Настоящая box-shadow поддерживает слои через запятую, и этот инструмент строит класс с произвольным значением так же, соединяя слои запятыми.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли это куда-либо?</summary>
+        <p>Нет, тень собирается и предпросматривается полностью в CSS-движке вашего браузера. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-tailwind-shadow-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

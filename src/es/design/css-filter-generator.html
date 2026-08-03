@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de Filtros CSS | norito</title>
+<meta name="description" content="Construye un filtro CSS (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) de forma visual sobre tu propia imagen, luego copia el CSS." />
+<link rel="canonical" href="https://norito.in/es/design/css-filter-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de Filtros CSS | norito" />
+<meta property="og:description" content="Construye un filtro CSS (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) de forma visual sobre tu propia imagen, luego copia el CSS." />
+<meta property="og:url" content="https://norito.in/es/design/css-filter-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de Filtros CSS | norito" />
+<meta name="twitter:description" content="Construye un filtro CSS (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) de forma visual sobre tu propia imagen, luego copia el CSS." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de Filtros CSS",
+  "url": "https://norito.in/es/design/css-filter-generator.html",
+  "description": "Construye un filtro CSS de forma visual sobre tu propia imagen, luego copia el CSS.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo previsualizar esto sobre mi propia imagen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, suelta cualquier imagen y cada deslizador actualiza la vista previa en vivo al instante. Sin una imagen subida, los deslizadores se previsualizan sobre un degradado de marcador de posición." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Afecta filter al layout?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El filter de CSS es un efecto puramente visual, nunca cambia el tamaño o la posición de la caja de un elemento, a diferencia de cambiar el archivo de imagen real. Eso hace que sea barato activarlo con hover o con una clase, ya que nada se reajusta (reflow)." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se sube mi imagen a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. La vista previa usa el propio motor CSS de tu navegador sobre una URL de objeto local. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de Filtros CSS", "item": "https://norito.in/es/design/css-filter-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de Filtros CSS</p>
+    <h1>Generador de Filtros CSS</h1>
+    <p class="lede">
+      Suelta una imagen (opcional), arrastra los deslizadores, copia el valor CSS
+      <code>filter</code>.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop" style="padding:16px;">
+          <p><strong>Haz clic o suelta una imagen</strong> para previsualizar sobre ella, opcional</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="fBlur">Desenfoque (<span id="fBlurVal">0px</span>)</label>
+          <input type="range" id="fBlur" min="0" max="20" value="0" step="0.5" />
+        </div>
+        <div class="field">
+          <label for="fBrightness">Brillo (<span id="fBrightnessVal">100%</span>)</label>
+          <input type="range" id="fBrightness" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fContrast">Contraste (<span id="fContrastVal">100%</span>)</label>
+          <input type="range" id="fContrast" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fSaturate">Saturación (<span id="fSaturateVal">100%</span>)</label>
+          <input type="range" id="fSaturate" min="0" max="300" value="100" />
+        </div>
+        <div class="field">
+          <label for="fGrayscale">Escala de grises (<span id="fGrayscaleVal">0%</span>)</label>
+          <input type="range" id="fGrayscale" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fSepia">Sepia (<span id="fSepiaVal">0%</span>)</label>
+          <input type="range" id="fSepia" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fHue">Rotación de matiz (<span id="fHueVal">0deg</span>)</label>
+          <input type="range" id="fHue" min="0" max="360" value="0" />
+        </div>
+        <div class="field">
+          <label for="fInvert">Invertir (<span id="fInvertVal">0%</span>)</label>
+          <input type="range" id="fInvert" min="0" max="100" value="0" />
+        </div>
+        <button type="button" id="resetBtn" class="secondary">Restablecer todo</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <img id="previewImg" alt="Vista previa del filtro" src="/assets/og-image.png" style="max-width:100%; max-height:260px; border-radius:8px;" />
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copiar CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Cada deslizador se corresponde directamente con una función CSS <code>filter</code>
+        (<code>blur()</code>, <code>brightness()</code>, <code>contrast()</code>,
+        <code>saturate()</code>, <code>grayscale()</code>, <code>sepia()</code>,
+        <code>hue-rotate()</code>, <code>invert()</code>). Las funciones que se quedan en su valor
+        neutro se omiten del resultado para mantener el CSS copiado al mínimo, y las restantes se
+        unen con espacios, ya que CSS aplica las funciones de filtro encadenadas en el orden en que
+        se escriben. Esa misma cadena se aplica como el estilo <code>filter</code> propio de la
+        imagen de vista previa, así que lo que ves es el efecto real, no una simulación.
+      </p>
+      <p>
+        Tu imagen se carga como una URL de objeto local y nunca sale de la pestaña del navegador;
+        no hay ningún paso de subida.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|Generador de Curvas de Aceleración CSS|Editor visual de curvas cubic-bezier.
+color-converter.html|Conversor de color|HEX, RGB, HSL, CMYK, en vivo.
+../remove-metadata.html|Eliminar Metadatos|Elimina EXIF, GPS e información de cámara.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Puedo previsualizar esto sobre mi propia imagen?</summary>
+        <p>Sí, suelta cualquier imagen y cada deslizador actualiza la vista previa en vivo al instante. Sin una imagen subida, los deslizadores se previsualizan sobre un degradado de marcador de posición.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Afecta filter al layout?</summary>
+        <p>No. El filter de CSS es un efecto puramente visual, nunca cambia el tamaño o la posición de la caja de un elemento, a diferencia de cambiar el archivo de imagen real. Eso hace que sea barato activarlo con hover o con una clase, ya que nada se reajusta (reflow).</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se sube mi imagen a algún sitio?</summary>
+        <p>No. La vista previa usa el propio motor CSS de tu navegador sobre una URL de objeto local. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-filter-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

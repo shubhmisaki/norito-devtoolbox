@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>नॉइज़ टेक्सचर जनरेटर | norito</title>
+<meta name="description" content="डेंसिटी, ओपैसिटी और कलर कंट्रोल के साथ ग्रेन/नॉइज़ टेक्सचर जनरेट करें. PNG के तौर पर डाउनलोड करें या CSS डेटा-URI बैकग्राउंड के तौर पर कॉपी करें. यह आपके ब्राउज़र में चलता है." />
+<link rel="canonical" href="https://norito.in/hi/design/noise-texture-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="नॉइज़ टेक्सचर जनरेटर | norito" />
+<meta property="og:description" content="डेंसिटी, ओपैसिटी और कलर कंट्रोल के साथ ग्रेन/नॉइज़ टेक्सचर जनरेट करें. PNG के तौर पर डाउनलोड करें या CSS डेटा-URI बैकग्राउंड के तौर पर कॉपी करें. यह आपके ब्राउज़र में चलता है." />
+<meta property="og:url" content="https://norito.in/hi/design/noise-texture-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="नॉइज़ टेक्सचर जनरेटर | norito" />
+<meta name="twitter:description" content="डेंसिटी, ओपैसिटी और कलर कंट्रोल के साथ ग्रेन/नॉइज़ टेक्सचर जनरेट करें. PNG के तौर पर डाउनलोड करें या CSS डेटा-URI बैकग्राउंड के तौर पर कॉपी करें. यह आपके ब्राउज़र में चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "नॉइज़ टेक्सचर जनरेटर",
+  "url": "https://norito.in/hi/design/noise-texture-generator.html",
+  "description": "डेंसिटी, ओपैसिटी और कलर कंट्रोल के साथ ग्रेन/नॉइज़ टेक्सचर जनरेट करें.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "क्या डाउनलोड की गई PNG सीमलेस टाइल होगी?",
+      "acceptedAnswer": { "@type": "Answer", "text": "यह रिपीट होने वाला पैटर्न नहीं बल्कि रैंडम पर-पिक्सेल नॉइज़ है, इसलिए इसे छोटे रिपीटिंग बैकग्राउंड-इमेज के तौर पर इस्तेमाल करने पर भी कोई साफ़ सीम नज़र नहीं आएगी, क्योंकि हर पिक्सेल अपने आप में स्वतंत्र रूप से रैंडम है और टाइल किनारे पर टूटने वाला कोई बड़ा स्ट्रक्चर नहीं है." }
+    },
+    {
+      "@type": "Question",
+      "name": "PNG डाउनलोड और CSS कॉपी में क्या फ़र्क़ है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "डाउनलोड आपको एक असली .png फ़ाइल देता है जिसे आप स्टाइलशीट या <img> से रेफ़र कर सकते हैं. \"CSS के तौर पर कॉपी करें\" इसकी जगह उसी इमेज को base64 डेटा URI के तौर पर सीधे background-image रूल के अंदर एम्बेड कर देता है, जो बिना किसी अलग फ़ाइल होस्ट किए एक सेल्फ़-कंटेन्ड CSS ब्लॉक के लिए काम आता है." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या यह कहीं भेजा जाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं, टेक्सचर आपके ब्राउज़र में इन-मेमोरी कैनवस पर पिक्सेल दर पिक्सेल जनरेट होता है. कुछ भी अपलोड नहीं होता." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "नॉइज़ टेक्सचर जनरेटर", "item": "https://norito.in/hi/design/noise-texture-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / नॉइज़ टेक्सचर जनरेटर</p>
+    <h1>नॉइज़ टेक्सचर जनरेटर</h1>
+    <p class="lede">
+      एडजस्टेबल डेंसिटी, ओपैसिटी और रंग के साथ ग्रेन टेक्सचर जनरेट करें, फिर इसे डाउनलोड करें या
+      CSS के तौर पर कॉपी करें.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="noiseSize">टाइल साइज़ (<span id="noiseSizeVal">128px</span>)</label>
+          <input type="range" id="noiseSize" min="32" max="512" step="32" value="128" />
+        </div>
+        <div class="field">
+          <label for="noiseDensity">डेंसिटी (<span id="noiseDensityVal">50%</span>)</label>
+          <input type="range" id="noiseDensity" min="5" max="100" value="50" />
+        </div>
+        <div class="field">
+          <label for="noiseOpacity">ओपैसिटी (<span id="noiseOpacityVal">30%</span>)</label>
+          <input type="range" id="noiseOpacity" min="1" max="100" value="30" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="noiseColor">ग्रेन कलर</label>
+            <input type="color" id="noiseColor" value="#000000" />
+          </div>
+          <div class="field">
+            <label for="noiseBg">बैकग्राउंड कलर</label>
+            <input type="color" id="noiseBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">मोनोक्रोम ग्रेन</span>
+          <label class="switch"><input type="checkbox" id="noiseMono" checked /><span class="track"></span></label>
+        </div>
+        <button type="button" id="regenBtn">फिर से जनरेट करें</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <canvas id="noiseCanvas" width="128" height="128" style="width:100%; max-width:320px; aspect-ratio:1; border-radius:var(--radius-md); margin-bottom:16px; image-rendering:pixelated;"></canvas>
+          <div id="tiledPreview" style="height:100px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="downloadBtn">PNG डाउनलोड करें</button>
+            <button id="copyCssBtn" class="secondary">CSS बैकग्राउंड के तौर पर कॉपी करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        चुने गए टाइल साइज़ का एक कैनवस पिक्सेल दर पिक्सेल भरा जाता है: हर पिक्सेल अलग से डेंसिटी
+        स्लाइडर के हिसाब से तय करता है कि उसे ग्रेन मिलेगा या नहीं, फिर उस ग्रेन के रंग का अल्फ़ा
+        ओपैसिटी स्लाइडर के हिसाब से स्केल किया जाता है. मोनोक्रोम मोड पूरे टेक्सचर में एक ही ग्रेन
+        रंग इस्तेमाल करता है; इसे बंद करने पर हर ग्रेन की ब्राइटनेस भी रैंडम हो जाती है, जिससे
+        ज़्यादा टेक्सचर्ड, कम यूनिफ़ॉर्म लुक मिलता है. नीचे दिया टाइल्ड प्रीव्यू उसी कैनवस को CSS
+        बैकग्राउंड के तौर पर रिपीट करके दिखाता है कि यह बड़े स्केल पर कैसा दिखता है.
+      </p>
+      <p>
+        दोनों आउटपुट, डाउनलोड की गई PNG और "CSS के तौर पर कॉपी करें" डेटा URI, सीधे इसी कैनवस से
+        <code>toDataURL</code>/<code>toBlob</code> के ज़रिए आते हैं, पूरी तरह आपके ब्राउज़र में.
+        कुछ भी अपलोड नहीं होता.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|CSS पैटर्न जनरेटर|टाइल होने वाले बैकग्राउंड पैटर्न बनाएं.
+blob-generator.html|SVG ब्लॉब जनरेटर|ऑर्गेनिक ब्लॉब शेप जनरेट करें.
+favicon-generator.html|फ़ेविकॉन जनरेटर|किसी इमेज से फ़ेविकॉन जनरेट करें.
+-->
+
+    <h2>सामान्य प्रश्न</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>क्या डाउनलोड की गई PNG सीमलेस टाइल होगी?</summary>
+        <p>यह रिपीट होने वाला पैटर्न नहीं बल्कि रैंडम पर-पिक्सेल नॉइज़ है, इसलिए इसे छोटे रिपीटिंग बैकग्राउंड-इमेज के तौर पर इस्तेमाल करने पर भी कोई साफ़ सीम नज़र नहीं आएगी, क्योंकि हर पिक्सेल अपने आप में स्वतंत्र रूप से रैंडम है और टाइल किनारे पर टूटने वाला कोई बड़ा स्ट्रक्चर नहीं है.</p>
+      </details>
+      <details class="faq-item">
+        <summary>PNG डाउनलोड और CSS कॉपी में क्या फ़र्क़ है?</summary>
+        <p>डाउनलोड आपको एक असली .png फ़ाइल देता है जिसे आप स्टाइलशीट या &lt;img&gt; से रेफ़र कर सकते हैं. "CSS के तौर पर कॉपी करें" इसकी जगह उसी इमेज को base64 डेटा URI के तौर पर सीधे background-image रूल के अंदर एम्बेड कर देता है, जो बिना किसी अलग फ़ाइल होस्ट किए एक सेल्फ़-कंटेन्ड CSS ब्लॉक के लिए काम आता है.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या यह कहीं भेजा जाता है?</summary>
+        <p>नहीं, टेक्सचर आपके ब्राउज़र में इन-मेमोरी कैनवस पर पिक्सेल दर पिक्सेल जनरेट होता है. कुछ भी अपलोड नहीं होता.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-noise-texture-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->
+

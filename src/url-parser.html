@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>URL Parser | norito</title>
+<meta name="description" content="Paste a URL and see it broken into protocol, host, port, path, query parameters, and hash. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/url-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="URL Parser | norito" />
+<meta property="og:description" content="Paste a URL and see it broken into protocol, host, port, path, query parameters, and hash. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/url-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="URL Parser | norito" />
+<meta name="twitter:description" content="Paste a URL and see it broken into protocol, host, port, path, query parameters, and hash. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "URL Parser",
+  "url": "https://norito.in/url-parser.html",
+  "description": "Paste a URL and see it broken into protocol, host, port, path, query parameters, and hash.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How are query parameters handled?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each key=value pair after the ? is decoded and listed separately, including repeated keys (like ?tag=a&tag=b), which show up as multiple rows so nothing is silently collapsed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on relative URLs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, a full URL with a protocol is required, since the browser's own URL parser (which this tool uses directly) needs a base to resolve relative ones against." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the URL sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Parsing uses the browser's built-in URL API entirely client-side. Nothing is uploaded, and no request is made to the URL itself." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "URL Parser", "item": "https://norito.in/url-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / URL Parser</p>
+    <h1>URL Parser</h1>
+    <p class="lede">
+      Paste any full URL and see its protocol, host, port, path, query parameters, and hash
+      broken out.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="urlInput">URL</label>
+          <input type="text" id="urlInput" value="https://norito.in/blog/index.html?utm_source=newsletter&amp;utm_medium=email&amp;tag=tools#section-2" />
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        This runs entirely on the browser's native <code>URL</code> API, the exact same parser
+        your browser uses to navigate a link, so the breakdown is authoritative rather than an
+        approximation from a hand-rolled regex. Query parameters come from
+        <code>URLSearchParams</code>, which handles percent-decoding and repeated keys correctly.
+      </p>
+      <p>
+        Nothing here fetches the URL, it only parses the text you typed. No network request is
+        made, and no part of the URL leaves your browser.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|URL Encoder / Decoder|Percent-encode or decode a URL.
+user-agent-parser.html|User-Agent Parser|Parse a User-Agent string.
+seo/utm-builder.html|UTM Builder|Build campaign tracking URLs.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How are query parameters handled?</summary>
+        <p>Each key=value pair after the ? is decoded and listed separately, including repeated keys (like ?tag=a&tag=b), which show up as multiple rows so nothing is silently collapsed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it work on relative URLs?</summary>
+        <p>No, a full URL with a protocol is required, since the browser's own URL parser (which this tool uses directly) needs a base to resolve relative ones against.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the URL sent anywhere?</summary>
+        <p>No. Parsing uses the browser's built-in URL API entirely client-side. Nothing is uploaded, and no request is made to the URL itself.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-url-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

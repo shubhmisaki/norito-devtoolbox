@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Tailwind 阴影生成器 | norito</title>
+<meta name="description" content="可视化构建多层叠加的 box-shadow 阴影效果，一键得到 Tailwind 任意值 shadow-[...] 类名以及对应的原生 CSS，全程在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/design/tailwind-shadow-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tailwind 阴影生成器 | norito" />
+<meta property="og:description" content="可视化构建多层叠加的 box-shadow 阴影效果，一键得到 Tailwind 任意值 shadow-[...] 类名以及对应的原生 CSS，全程在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/design/tailwind-shadow-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tailwind 阴影生成器 | norito" />
+<meta name="twitter:description" content="可视化构建多层叠加的 box-shadow 阴影效果，一键得到 Tailwind 任意值 shadow-[...] 类名以及对应的原生 CSS，全程在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tailwind 阴影生成器",
+  "url": "https://norito.in/zh/design/tailwind-shadow-generator.html",
+  "description": "可视化构建多层叠加的阴影效果，得到 Tailwind 任意值 shadow 类名以及原生 CSS。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tailwind 中的任意值阴影类是怎么工作的？",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tailwind 允许你直接写 shadow-[<任意 CSS 值>]，它会原样编译成 box-shadow: <任意 CSS 值>，不需要修改配置文件。值内部的空格需要替换成下划线，这一点本工具会自动为你处理。" }
+    },
+    {
+      "@type": "Question",
+      "name": "可以叠加多层阴影吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以，点击“添加图层”即可再叠加一层阴影。真正的 box-shadow 支持用逗号分隔的多层写法，本工具生成任意值类名时也是同样的方式，用逗号连接各层。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这些内容会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，阴影完全通过你浏览器的 CSS 引擎构建和预览，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "Tailwind 阴影生成器", "item": "https://norito.in/zh/design/tailwind-shadow-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Tailwind 阴影生成器</p>
+    <h1>Tailwind 阴影生成器</h1>
+    <p class="lede">
+      可视化构建多层阴影，得到 Tailwind <code>shadow-[...]</code> 任意值类名以及原生 CSS。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="layersWrap"></div>
+        <button type="button" id="addLayerBtn" class="secondary" style="margin-top:4px;">+ 添加图层</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:40px 20px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <div id="previewBox" style="width:140px; height:100px; margin:0 auto; background:var(--surface); border-radius:12px;"></div>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>Tailwind 类名</label>
+            <pre class="code-output" id="twOutput"></pre>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label>原生 CSS</label>
+            <pre class="code-output" id="cssOutput"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="copyTwBtn">复制 Tailwind 类名</button>
+            <button id="copyCssBtn" class="secondary">复制 CSS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        每一层的 x 偏移、y 偏移、模糊、扩散、颜色和内阴影开关会组装成一段
+        <code>box-shadow</code>，多层之间用逗号连接，这是标准的 CSS 多重阴影写法。对于
+        Tailwind 类名，同一段值会把空格替换成下划线、逗号保持原样（Tailwind 的任意值解析器
+        期望类似 <code>shadow-[0_4px_6px_rgba(0,0,0,0.1)]</code> 这样的写法），
+        再包裹进 <code>shadow-[...]</code>。预览框实际的 <code>box-shadow</code>
+        样式会设为原生 CSS 版本，所以你看到的效果与两种输出完全一致。
+      </p>
+      <p>
+        一切都在本页面的 JavaScript 中根据你设置的值计算得出，不会上传任何内容。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+box-shadow-generator.html|阴影生成器|可视化构建 CSS 阴影。
+css-filter-generator.html|CSS 滤镜生成器|可视化构建图像滤镜效果。
+border-radius-generator.html|圆角生成器|可视化设置每个角的圆角半径。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Tailwind 中的任意值阴影类是怎么工作的？</summary>
+        <p>Tailwind 允许你直接写 shadow-[&lt;任意 CSS 值&gt;]，它会原样编译成 box-shadow: &lt;任意 CSS 值&gt;，不需要修改配置文件。值内部的空格需要替换成下划线，这一点本工具会自动为你处理。</p>
+      </details>
+      <details class="faq-item">
+        <summary>可以叠加多层阴影吗？</summary>
+        <p>可以，点击“添加图层”即可再叠加一层阴影。真正的 box-shadow 支持用逗号分隔的多层写法，本工具生成任意值类名时也是同样的方式，用逗号连接各层。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这些内容会被发送到别的地方吗？</summary>
+        <p>不会，阴影完全通过你浏览器的 CSS 引擎构建和预览，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-tailwind-shadow-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

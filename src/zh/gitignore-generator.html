@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>.gitignore 生成器 | norito</title>
+<meta name="description" content="勾选你使用的编程语言、框架和编辑器，即可生成一份合并好的 .gitignore 文件，支持 Node、Python、Java、macOS、Windows、VS Code 等，全部在浏览器本地完成。" />
+<link rel="canonical" href="https://norito.in/zh/gitignore-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content=".gitignore 生成器 | norito" />
+<meta property="og:description" content="勾选你的语言、框架和编辑器，生成合并好的 .gitignore 文件，支持 Node、Python、Java、macOS、Windows、VS Code 等，完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/gitignore-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content=".gitignore 生成器 | norito" />
+<meta name="twitter:description" content="勾选你的语言、框架和编辑器，生成合并好的 .gitignore 文件，支持 Node、Python、Java、macOS、Windows、VS Code 等，完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": ".gitignore 生成器",
+  "url": "https://norito.in/zh/gitignore-generator.html",
+  "description": "勾选你的语言、框架和编辑器，生成合并好的 .gitignore 文件。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以同时勾选多个模板吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以。想勾多少个就勾多少个，比如同时勾选 Node、macOS 和 VS Code，它们会被合并成一个文件，去除重复的行，并且每个模板都保留在自己的标注区块下。" }
+    },
+    {
+      "@type": "Question",
+      "name": "如果我需要的规则不在任何模板里怎么办？",
+      "acceptedAnswer": { "@type": "Answer", "text": "使用下方的自定义规则输入框。你在那里输入的任何内容都会作为独立的区块追加到结果里，这样你就可以添加项目专属的路径，事后也不用再编辑生成的文件。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这会自动把文件应用到我的仓库吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，它只生成文本。你需要自己下载为 .gitignore 并放到仓库根目录，或者复制粘贴进去。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": ".gitignore 生成器", "item": "https://norito.in/zh/gitignore-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / .gitignore 生成器</p>
+    <h1>.gitignore 生成器</h1>
+    <p class="lede">
+      勾选你的技术栈，得到一份没有重复行、合并好的 .gitignore，可以直接放进你的仓库。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">语言与运行环境</h3>
+        <div class="gi-grid" id="giLangs"></div>
+        <h3>框架与工具</h3>
+        <div class="gi-grid" id="giFrameworks"></div>
+        <h3>编辑器与操作系统</h3>
+        <div class="gi-grid" id="giEditors"></div>
+        <div class="field" style="margin-top:16px;">
+          <label for="customRules">自定义规则（可选，每行一条）</label>
+          <textarea id="customRules" class="mono-area" rows="4" placeholder=".env.local
+/secrets/"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:200px;">// 先在左侧勾选至少一个模板开始使用。</pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">复制 .gitignore</button>
+            <button id="downloadBtn" class="secondary">下载 .gitignore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        每个复选框都对应一个内置的小模板，覆盖该语言或工具典型的构建产物、依赖目录
+        和本地配置文件，与 GitHub 自己的 gitignore 模板集合所采用的模式相同。选中的模板
+        会拼接在各自的标注区块下，经过一轮去重处理，所以像
+        <code>node_modules/</code> 这样的规则即使被两个所选模板同时包含，也只会出现一次，
+        而你的自定义规则会作为最后一个独立区块追加在末尾。
+      </p>
+      <p>
+        这个工具不会读取你的实际项目，它只是从内置在本页面 JavaScript 里的模板拼装文本。
+        不会上传任何内容。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|JSON 格式化与校验|格式化、校验、压缩 JSON。
+test-file-generator.html|测试文件生成器|生成任意大小或扩展名的字节精确测试文件。
+hash-generator.html|哈希生成器|MD5、SHA-1、SHA-256、SHA-512。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>可以同时勾选多个模板吗？</summary>
+        <p>可以。想勾多少个就勾多少个，比如同时勾选 Node、macOS 和 VS Code，它们会被合并成一个文件，去除重复的行，并且每个模板都保留在自己的标注区块下。</p>
+      </details>
+      <details class="faq-item">
+        <summary>如果我需要的规则不在任何模板里怎么办？</summary>
+        <p>使用下方的自定义规则输入框。你在那里输入的任何内容都会作为独立的区块追加到结果里，这样你就可以添加项目专属的路径，事后也不用再编辑生成的文件。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这会自动把文件应用到我的仓库吗？</summary>
+        <p>不会，它只生成文本。你需要自己下载为 .gitignore 并放到仓库根目录，或者复制粘贴进去。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-gitignore-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

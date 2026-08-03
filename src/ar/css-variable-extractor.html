@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مستخرج متغيرات CSS | norito</title>
+<meta name="description" content="الصق أي ورقة أنماط واستخرج كل خاصية CSS مخصصة (--variable)، مجمّعة حسب البادئة مع تمييز التكرارات. صدّرها كـ JSON أو CSS أو CSV. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/css-variable-extractor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مستخرج متغيرات CSS | norito" />
+<meta property="og:description" content="الصق أي ورقة أنماط واستخرج كل خاصية CSS مخصصة (--variable)، مجمّعة حسب البادئة مع تمييز التكرارات. صدّرها كـ JSON أو CSS أو CSV. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/css-variable-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مستخرج متغيرات CSS | norito" />
+<meta name="twitter:description" content="الصق أي ورقة أنماط واستخرج كل خاصية CSS مخصصة (--variable)، مجمّعة حسب البادئة مع تمييز التكرارات. صدّرها كـ JSON أو CSS أو CSV. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مستخرج متغيرات CSS",
+  "url": "https://norito.in/ar/css-variable-extractor.html",
+  "description": "الصق أي ورقة أنماط واستخرج كل خاصية CSS مخصصة، مجمّعة حسب البادئة مع تمييز التكرارات.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما الخصائص المخصصة التي يجدها؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "أي تعريف على الشكل --الاسم: القيمة؛ داخل أي كتلة محدِّد، وليس :root فقط، بما في ذلك القواعد المتداخلة واستعلامات الوسائط. كل ظهور يسجَّل مع المحدِّد الذي عُرِّف تحته." }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف يعمل رصد التكرار؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "إذا عُرِّف نفس اسم المتغير أكثر من مرة بقيم مختلفة (وهي علامة شائعة على رموز منسوخة أو غير متسقة)، يُعلَّم كتكرار. أما تعريف نفس الاسم بنفس القيمة في نطاقات متعددة (مثل تجاوزات السمة الفاتحة/الداكنة) فهو أمر طبيعي ولا يُعلَّم." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل CSS الخاص بي إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، يتم التحليل بالكامل داخل متصفحك بواسطة ماسح جافاسكريبت صغير. لا شيء تلصقه يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مستخرج متغيرات CSS", "item": "https://norito.in/ar/css-variable-extractor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / مستخرج متغيرات CSS</p>
+    <h1>مستخرج متغيرات CSS</h1>
+    <p class="lede">
+      الصق ورقة أنماط واستخرج كل <code>--خاصية-مخصصة</code>، مجمّعة حسب البادئة،
+      مع تمييز التعريفات المكرّرة.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="cssInput">CSS</label>
+          <textarea id="cssInput" class="mono-area" rows="14" placeholder=":root {
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+.dark {
+  --color-primary-500: #818cf8;
+}"></textarea>
+        </div>
+        <p class="note">يفحص كل كتلة محدِّد، وليس <code>:root</code> فقط. نفس الاسم بقيمة مختلفة عبر المحددات يُعلَّم كتكرار.</p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">ستظهر هنا المتغيرات المجمّعة.</p>
+          <div id="exportRow" style="display:none; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="copyJsonBtn" class="secondary">نسخ JSON</button>
+            <button id="copyCssBtn" class="secondary">نسخ CSS</button>
+            <button id="downloadCsvBtn" class="secondary">تنزيل CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        يُفحص النص المُدخل كتلة تلو الأخرى (بمطابقة أزواج <code>محدِّد { ... }</code>،
+        بما في ذلك الكتل المتداخلة كاستعلامات الوسائط)، ويُسجَّل كل تعريف
+        <code>--الاسم: القيمة؛</code> داخل كل كتلة مع المحدِّد الذي ينتمي إليه. تُجمَّع
+        المتغيرات حسب البادئة، وهي أول جزء مفصول بشرطة بعد <code>--</code> البادئة،
+        بحيث ينتهي كل من <code>--color-primary-500</code> و<code>--color-accent</code>
+        تحت "color"، وهو ما يعكس طريقة بناء معظم اصطلاحات تسمية رموز التصميم.
+        لا يُعلَّم الاسم كتكرار إلا عندما يُعرَّف فعليًا بقيم مختلفة في مكان آخر، وليس
+        فقط لأنه أُعيد تعريفه تحت محدِّد مختلف بنفس القيمة (وهذا هو النمط الطبيعي
+        لتجاوزات السمة).
+      </p>
+      <p>
+        كل شيء يعمل مع كل ضغطة مفتاح داخل جافاسكريبت هذه الصفحة، باستخدام ماسح
+        خفيف لمطابقة الأقواس بدلاً من محلّل CSS كامل. لا شيء تلصقه يُرفع.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/color-converter.html|محوّل الألوان|حوّل الألوان بين HEX وRGB وHSL وCMYK.
+design/contrast-checker.html|فاحص التباين|تحقق من نسبة تباين WCAG، اجتياز AA/AAA.
+design/css-clamp-generator.html|مولّد دالة CSS Clamp()|أنشئ أحجامًا مرنة متكيفة مع نافذة العرض.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ما الخصائص المخصصة التي يجدها؟</summary>
+        <p>أي تعريف على الشكل --الاسم: القيمة؛ داخل أي كتلة محدِّد، وليس :root فقط، بما في ذلك القواعد المتداخلة واستعلامات الوسائط. كل ظهور يسجَّل مع المحدِّد الذي عُرِّف تحته.</p>
+      </details>
+      <details class="faq-item">
+        <summary>كيف يعمل رصد التكرار؟</summary>
+        <p>إذا عُرِّف نفس اسم المتغير أكثر من مرة بقيم مختلفة (وهي علامة شائعة على رموز منسوخة أو غير متسقة)، يُعلَّم كتكرار. أما تعريف نفس الاسم بنفس القيمة في نطاقات متعددة (مثل تجاوزات السمة الفاتحة/الداكنة) فهو أمر طبيعي ولا يُعلَّم.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل CSS الخاص بي إلى أي مكان؟</summary>
+        <p>لا، يتم التحليل بالكامل داخل متصفحك بواسطة ماسح جافاسكريبت صغير. لا شيء تلصقه يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-variable-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

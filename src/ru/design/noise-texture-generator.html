@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор шумовых текстур | norito</title>
+<meta name="description" content="Создайте текстуру зерна/шума с настройкой плотности, прозрачности и цвета. Скачайте как PNG или скопируйте как CSS-фон в формате data-URI. Работает прямо в браузере." />
+<link rel="canonical" href="https://norito.in/ru/design/noise-texture-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор шумовых текстур | norito" />
+<meta property="og:description" content="Создайте текстуру зерна/шума с настройкой плотности, прозрачности и цвета. Скачайте как PNG или скопируйте как CSS-фон в формате data-URI. Работает прямо в браузере." />
+<meta property="og:url" content="https://norito.in/ru/design/noise-texture-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор шумовых текстур | norito" />
+<meta name="twitter:description" content="Создайте текстуру зерна/шума с настройкой плотности, прозрачности и цвета. Скачайте как PNG или скопируйте как CSS-фон в формате data-URI. Работает прямо в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор шумовых текстур",
+  "url": "https://norito.in/ru/design/noise-texture-generator.html",
+  "description": "Создаёт текстуру зерна/шума с настройкой плотности, прозрачности и цвета.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Будет ли скачанный PNG бесшовно повторяться?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Это случайный попиксельный шум, а не повторяющийся узор, поэтому при использовании как небольшого повторяющегося background-image видимых швов тоже не будет: каждый пиксель случаен независимо от других, и никакой более крупной структуры, которая нарушалась бы на краю тайла, попросту нет." }
+    },
+    {
+      "@type": "Question",
+      "name": "В чём разница между скачиванием PNG и копированием CSS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Скачивание даёт настоящий файл .png, на который можно сослаться из таблицы стилей или <img>. \"Скопировать как CSS\" вместо этого встраивает то же самое изображение в виде base64 data URI прямо в правило background-image — удобно, когда нужен один самодостаточный блок CSS без отдельного файла для размещения." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли это куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, текстура генерируется попиксельно на canvas в памяти вашего браузера. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор шумовых текстур", "item": "https://norito.in/ru/design/noise-texture-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Генератор шумовых текстур</p>
+    <h1>Генератор шумовых текстур</h1>
+    <p class="lede">
+      Создайте текстуру зерна с настраиваемой плотностью, прозрачностью и цветом, затем скачайте
+      её или скопируйте как CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="noiseSize">Размер тайла (<span id="noiseSizeVal">128px</span>)</label>
+          <input type="range" id="noiseSize" min="32" max="512" step="32" value="128" />
+        </div>
+        <div class="field">
+          <label for="noiseDensity">Плотность (<span id="noiseDensityVal">50%</span>)</label>
+          <input type="range" id="noiseDensity" min="5" max="100" value="50" />
+        </div>
+        <div class="field">
+          <label for="noiseOpacity">Прозрачность (<span id="noiseOpacityVal">30%</span>)</label>
+          <input type="range" id="noiseOpacity" min="1" max="100" value="30" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="noiseColor">Цвет зерна</label>
+            <input type="color" id="noiseColor" value="#000000" />
+          </div>
+          <div class="field">
+            <label for="noiseBg">Цвет фона</label>
+            <input type="color" id="noiseBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Монохромное зерно</span>
+          <label class="switch"><input type="checkbox" id="noiseMono" checked /><span class="track"></span></label>
+        </div>
+        <button type="button" id="regenBtn">Сгенерировать заново</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <canvas id="noiseCanvas" width="128" height="128" style="width:100%; max-width:320px; aspect-ratio:1; border-radius:var(--radius-md); margin-bottom:16px; image-rendering:pixelated;"></canvas>
+          <div id="tiledPreview" style="height:100px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="downloadBtn">Скачать PNG</button>
+            <button id="copyCssBtn" class="secondary">Скопировать как CSS-фон</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Canvas заданного размера тайла заполняется попиксельно: для каждого пикселя независимо
+        разыгрывается вероятность в соответствии с ползунком плотности, чтобы решить, получит ли
+        он зерно, а затем альфа-канал цвета этого зерна масштабируется ползунком прозрачности.
+        Монохромный режим использует один цвет зерна повсюду; при его отключении яркость каждого
+        зерна тоже становится случайной — для более текстурного, менее однородного вида.
+        Плиточный предпросмотр ниже повторяет тот же самый canvas в качестве CSS-фона, чтобы
+        показать, как текстура выглядит в масштабе.
+      </p>
+      <p>
+        Оба результата — скачиваемый PNG и data URI из «скопировать как CSS» — получаются
+        напрямую из этого canvas через <code>toDataURL</code>/<code>toBlob</code>, полностью в
+        вашем браузере. Ничего не загружается.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|Генератор CSS-паттернов|Создавайте бесшовные фоновые паттерны.
+blob-generator.html|Генератор SVG-блобов|Создавайте органические формы-блобы.
+favicon-generator.html|Генератор favicon|Создайте favicon из изображения.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Будет ли скачанный PNG бесшовно повторяться?</summary>
+        <p>Это случайный попиксельный шум, а не повторяющийся узор, поэтому при использовании как небольшого повторяющегося background-image видимых швов тоже не будет: каждый пиксель случаен независимо от других, и никакой более крупной структуры, которая нарушалась бы на краю тайла, попросту нет.</p>
+      </details>
+      <details class="faq-item">
+        <summary>В чём разница между скачиванием PNG и копированием CSS?</summary>
+        <p>Скачивание даёт настоящий файл .png, на который можно сослаться из таблицы стилей или &lt;img&gt;. «Скопировать как CSS» вместо этого встраивает то же самое изображение в виде base64 data URI прямо в правило background-image — удобно, когда нужен один самодостаточный блок CSS без отдельного файла для размещения.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли это куда-либо?</summary>
+        <p>Нет, текстура генерируется попиксельно на canvas в памяти вашего браузера. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-noise-texture-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>محسّن SVG | norito</title>
+<meta name="description" content="الصق أو ارفع ملف SVG، واحذف التعليقات والبيانات الوصفية والمسافات الزائدة، وقلّص حجم الملف. معاينة حية قبل وبعد. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/svg-optimizer.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="محسّن SVG | norito" />
+<meta property="og:description" content="الصق أو ارفع ملف SVG، واحذف التعليقات والبيانات الوصفية والمسافات الزائدة، وقلّص حجم الملف. معاينة حية قبل وبعد. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/svg-optimizer.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="محسّن SVG | norito" />
+<meta name="twitter:description" content="الصق أو ارفع ملف SVG، واحذف التعليقات والبيانات الوصفية والمسافات الزائدة، وقلّص حجم الملف. معاينة حية قبل وبعد. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "محسّن SVG",
+  "url": "https://norito.in/ar/svg-optimizer.html",
+  "description": "الصق أو ارفع ملف SVG، واحذف التعليقات والبيانات الوصفية والمسافات الزائدة، وقلّص حجم الملف.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل يغيّر التحسين شكل SVG؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، فكل ما يُحذف إما بيانات وصفية غير مرئية (تعليقات، إعلانات XML، خصائص خاصة بالمحرر) أو مسافات بيضاء غير مؤثرة بين الوسوم. يبقى الشكل المعروض مطابقًا تمامًا، ولا يتقلص سوى حجم الملف بالبايت." }
+    },
+    {
+      "@type": "Question",
+      "name": "لماذا لا يزال حجم ملف SVG كبيرًا بعد التحسين؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "إذا كان معظم الحجم ناتجًا عن بيانات المسار الفعلية (نقاط كثيرة في شكل معقّد) أو صورة نقطية مضمّنة، فلن يقلّص التنظيف وحده الحجم كثيرًا، لأن تلك البيانات جزء من المحتوى المرئي. تركّز هذه الأداة على تنظيف آمن وغير فاقد للبيانات بدلاً من تبسيط المسارات، الذي قد يغيّر الأشكال بشكل طفيف." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرفع SVG الخاص بي إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا. يعمل التحسين بالكامل داخل جافاسكريبت متصفحك. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "محسّن SVG", "item": "https://norito.in/ar/svg-optimizer.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / محسّن SVG</p>
+    <h1>محسّن SVG</h1>
+    <p class="lede">
+      الصق أو أفلت ملف SVG، واحذف التعليقات والبيانات الوصفية وفوضى المحرر
+      والمسافات الزائدة. شاهد الحجم يتقلّص مباشرةً.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>اضغط لاختيار ملف .svg</strong>، أو اسحبه وأفلته هنا</p>
+          <p class="note" style="margin-top:2px;">أو الصق ترميز SVG مباشرة في المربع أدناه. يبقى على جهازك.</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="svgInput">ترميز SVG</label>
+          <textarea id="svgInput" class="mono-area" rows="12" placeholder="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; ...>...</svg>"></textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">إزالة width/height (الإبقاء على viewBox فقط)</span>
+          <label class="switch"><input type="checkbox" id="optRemoveDims" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="previewWrap" style="padding:24px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; min-height:140px; display:flex; align-items:center; justify-content:center;">
+            <p class="note" id="previewHint">ستظهر المعاينة هنا.</p>
+          </div>
+          <div id="sizeStats" class="note" style="margin-bottom:12px;"></div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:220px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">نسخ SVG المحسّن</button>
+            <button id="downloadBtn" class="secondary">تنزيل .svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>
+        تحذف عملية التنظيف إعلانات XML/DOCTYPE، و<code>&lt;!-- التعليقات --&gt;</code>،
+        ومساحات الأسماء والبيانات الوصفية الخاصة بالمحرر (Inkscape وSketch وخصائص
+        تصدير Illustrator، وكتل <code>&lt;metadata&gt;</code> و<code>&lt;title&gt;</code>
+        المتبقية من أدوات التصميم)، وتطوي المسافات البيضاء الزائدة بين الوسوم، ولا شيء
+        من ذلك يؤثر في طريقة عرض SVG. اختياريًا، يمكنها أيضًا حذف خصائص
+        <code>width</code>/<code>height</code> الصريحة من العنصر الجذر بحيث يتكيّف
+        حجم SVG اعتمادًا فقط على <code>viewBox</code> الخاص به، وهو مفيد عند تضمينه
+        بشكل متجاوب.
+      </p>
+      <p>
+        كل شيء هو معالجة نصية للسلسلة النصية التي تقدّمها، تُنفَّذ باستخدام محلّل DOM
+        الخاص بمتصفحك للتأكد من أن النتيجة تبقى XML صالحًا. لا شيء يُرفع.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-to-react-component.html|تحويل SVG إلى مكوّن React|حوّل ترميز SVG إلى مكوّن JSX.
+design/favicon-generator.html|مولّد أيقونة الموقع|أنشئ أيقونة موقع من صورة.
+design/color-palette-extractor.html|مستخرج لوحة الألوان|استخرج الألوان السائدة من صورة.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>هل يغيّر التحسين شكل SVG؟</summary>
+        <p>لا، فكل ما يُحذف إما بيانات وصفية غير مرئية (تعليقات، إعلانات XML، خصائص خاصة بالمحرر) أو مسافات بيضاء غير مؤثرة بين الوسوم. يبقى الشكل المعروض مطابقًا تمامًا، ولا يتقلص سوى حجم الملف بالبايت.</p>
+      </details>
+      <details class="faq-item">
+        <summary>لماذا لا يزال حجم ملف SVG كبيرًا بعد التحسين؟</summary>
+        <p>إذا كان معظم الحجم ناتجًا عن بيانات المسار الفعلية (نقاط كثيرة في شكل معقّد) أو صورة نقطية مضمّنة، فلن يقلّص التنظيف وحده الحجم كثيرًا، لأن تلك البيانات جزء من المحتوى المرئي. تركّز هذه الأداة على تنظيف آمن وغير فاقد للبيانات بدلاً من تبسيط المسارات، الذي قد يغيّر الأشكال بشكل طفيف.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرفع SVG الخاص بي إلى أي مكان؟</summary>
+        <p>لا. يعمل التحسين بالكامل داخل جافاسكريبت متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-optimizer.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

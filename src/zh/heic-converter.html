@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>HEIC 转 JPG/PNG 转换器 | norito</title>
+<meta name="description" content="在浏览器中直接把 iPhone 拍摄的 HEIC/HEIF 照片转换为 JPG 或 PNG，支持批量处理，转换过程不会上传任何文件，全部在本地完成。" />
+<link rel="canonical" href="https://norito.in/zh/heic-converter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HEIC 转 JPG/PNG 转换器 | norito" />
+<meta property="og:description" content="在浏览器中把 iPhone 拍摄的 HEIC/HEIF 照片转换为 JPG 或 PNG，支持批量处理，不会上传任何内容。" />
+<meta property="og:url" content="https://norito.in/zh/heic-converter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HEIC 转 JPG/PNG 转换器 | norito" />
+<meta name="twitter:description" content="在浏览器中把 iPhone 拍摄的 HEIC/HEIF 照片转换为 JPG 或 PNG，支持批量处理，不会上传任何内容。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HEIC 转 JPG/PNG 转换器",
+  "url": "https://norito.in/zh/heic-converter.html",
+  "description": "在浏览器中把 iPhone 拍摄的 HEIC/HEIF 照片转换为 JPG 或 PNG。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "为什么我需要转换 HEIC？",
+      "acceptedAnswer": { "@type": "Answer", "text": "HEIC 是近几年 iPhone 的默认照片格式，但很多网站、Windows 应用和较旧的软件仍然无法直接打开它。转换成 JPG 或 PNG 可以让照片在任何地方都能正常查看。" }
+    },
+    {
+      "@type": "Question",
+      "name": "转换会损失画质吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "转换成 PNG 是无损的。转换成 JPG 会以高质量（92%）重新编码，在几乎所有情况下与原图在视觉上难以区分，不过严格来说，比停留在 HEIC 多经历了一次有损压缩。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的照片会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。解码和转换都在你的浏览器中通过一个 WebAssembly 版本的 libheif 完成，不会上传任何内容，这对个人照片来说尤为重要。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "HEIC 转 JPG/PNG 转换器", "item": "https://norito.in/zh/heic-converter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / HEIC 转换器</p>
+    <h1>HEIC 转 JPG/PNG 转换器</h1>
+    <p class="lede">
+      把 iPhone 拍摄的 HEIC/HEIF 照片转换为 JPG 或 PNG。拖入一张或多张，单独下载
+      或打包为 .zip。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>点击选择 HEIC 照片</strong>，或将它们拖放到这里</p>
+          <p class="note" style="margin-top:2px;">选择多张即可批量转换。文件留在你的设备上，不会被上传。</p>
+          <input type="file" id="fileInput" accept=".heic,.heif,image/heic,image/heif" multiple />
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label for="format">输出格式</label>
+          <select id="format">
+            <option value="image/jpeg" selected>JPEG</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </div>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="batch-actions" id="batchActions" style="display:none;">
+          <button type="button" id="batchConvertBtn">全部转换</button>
+          <button type="button" class="secondary" id="batchZipBtn" disabled>全部下载为 .zip</button>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <img class="preview" id="preview" style="display:none; max-width:100%;" alt="转换后的预览" />
+          <p class="note" id="previewHint" style="margin-top:0;">转换后的照片会显示在这里。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        浏览器没有内置的 HEIC 解码器，所以本页面会在你第一次转换文件时加载一个
+        WebAssembly 版本的 <code>libheif</code>，这也是大多数照片软件使用的同一款
+        开源解码器。它在本地解码出 HEIC 的原始像素数据，绘制到 canvas 上，再用浏览器
+        自带的图片编码器把这个 canvas 重新编码为 JPEG 或 PNG。这个库（约 1.3MB）每次
+        访问只加载一次，之后会被浏览器缓存。
+      </p>
+      <p>
+        任何阶段都不会上传任何内容，解码、转换和下载都发生在这个浏览器标签页内。
+        这一点在这里比大多数工具更重要，因为 HEIC 文件几乎总是手机上直接拍摄的
+        个人照片。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+avif-converter.html|AVIF 转换器|在图片和 AVIF 之间互相转换。
+image-converter.html|图片格式转换器|在 JPG、PNG 和 WebP 之间转换。
+compress-image.html|将图片压缩到指定大小|把转换后的照片压缩到目标大小。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>为什么我需要转换 HEIC？</summary>
+        <p>HEIC 是近几年 iPhone 的默认照片格式，但很多网站、Windows 应用和较旧的软件仍然无法直接打开它。转换成 JPG 或 PNG 可以让照片在任何地方都能正常查看。</p>
+      </details>
+      <details class="faq-item">
+        <summary>转换会损失画质吗？</summary>
+        <p>转换成 PNG 是无损的。转换成 JPG 会以高质量（92%）重新编码，在几乎所有情况下与原图在视觉上难以区分，不过严格来说，比停留在 HEIC 多经历了一次有损压缩。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的照片会被上传到别的地方吗？</summary>
+        <p>不会。解码和转换都在你的浏览器中通过一个 WebAssembly 版本的 libheif 完成，不会上传任何内容，这对个人照片来说尤为重要。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/vendor/heic2any/heic2any.min.js"></script>
+<script src="../js/app-heic-converter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

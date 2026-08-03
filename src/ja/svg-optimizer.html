@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVGオプティマイザー | norito</title>
+<meta name="description" content="SVGを貼り付けまたはアップロードして、コメント、メタデータ、余分な空白を取り除き、ファイルサイズを小さくします。リアルタイムのビフォー/アフタープレビュー付き。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/svg-optimizer.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVGオプティマイザー | norito" />
+<meta property="og:description" content="SVGを貼り付けまたはアップロードして、コメント、メタデータ、余分な空白を取り除き、ファイルサイズを小さくします。リアルタイムのビフォー/アフタープレビュー付き。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/svg-optimizer.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVGオプティマイザー | norito" />
+<meta name="twitter:description" content="SVGを貼り付けまたはアップロードして、コメント、メタデータ、余分な空白を取り除き、ファイルサイズを小さくします。リアルタイムのビフォー/アフタープレビュー付き。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVGオプティマイザー",
+  "url": "https://norito.in/ja/svg-optimizer.html",
+  "description": "SVGを貼り付けまたはアップロードして、コメント、メタデータ、余分な空白を取り除き、ファイルサイズを小さくします。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "最適化するとSVGの見た目は変わりますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ、削除されるのはすべて目に見えないメタデータ（コメント、XML宣言、エディタ固有の属性）やタグ間の意味のない空白だけです。描画される図形は同一で、変わるのはファイルのバイトサイズだけです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "最適化してもファイルサイズがあまり小さくならないのはなぜですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "サイズの大部分が実際のパスデータ（複雑な図形の多数のポイント）や埋め込みラスター画像から来ている場合、そのデータは表示コンテンツの一部であるため、クリーンアップだけでは大きくは縮小しません。このツールは、図形をわずかに変えてしまう可能性のあるパスの簡略化ではなく、安全で無損失なクリーンアップに重点を置いています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "SVGはどこかにアップロードされますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。最適化はすべてブラウザのJavaScriptで完結します。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "SVGオプティマイザー", "item": "https://norito.in/ja/svg-optimizer.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVGオプティマイザー</p>
+    <h1>SVGオプティマイザー</h1>
+    <p class="lede">
+      SVGを貼り付けるかドロップして、コメント、メタデータ、エディタ由来のゴミ、余分な空白を取り除きます。サイズの縮小をリアルタイムに確認できます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>クリックして.svgファイルを選択</strong>するか、ここにドラッグ&amp;ドロップしてください</p>
+          <p class="note" style="margin-top:2px;">または下のボックスにSVGマークアップを直接貼り付けてください。端末内に留まります。</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="svgInput">SVGマークアップ</label>
+          <textarea id="svgInput" class="mono-area" rows="12" placeholder="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; ...>...</svg>"></textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">width/heightを削除（viewBoxのみ残す）</span>
+          <label class="switch"><input type="checkbox" id="optRemoveDims" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="previewWrap" style="padding:24px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; min-height:140px; display:flex; align-items:center; justify-content:center;">
+            <p class="note" id="previewHint">プレビューはここに表示されます。</p>
+          </div>
+          <div id="sizeStats" class="note" style="margin-bottom:12px;"></div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:220px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">最適化されたSVGをコピー</button>
+            <button id="downloadBtn" class="secondary">.svgをダウンロード</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        クリーンアップ処理では、XML/DOCTYPE宣言、<code>&lt;!-- comments --&gt;</code>、エディタ専用の名前空間やメタデータ（Inkscape、Sketch、Illustratorのエクスポート属性、デザインツールが残す<code>&lt;metadata&gt;</code>や<code>&lt;title&gt;</code>ブロック）を削除し、タグ間の冗長な空白を圧縮します。これらはいずれもSVGの描画結果に影響しません。任意で、ルート要素の明示的な<code>width</code>/<code>height</code>属性を削除し、SVGが純粋に<code>viewBox</code>に基づいてスケーリングされるようにすることもできます。レスポンシブに埋め込む際に便利です。
+      </p>
+      <p>
+        すべての処理は入力した文字列に対するテキスト処理で、結果が有効なXMLのままであることを保証するために、ブラウザ自身のDOMパーサーを使って行われます。アップロードは一切行われません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-to-react-component.html|SVGからReactコンポーネントへ変換|SVGマークアップをJSXコンポーネントに変換。
+design/favicon-generator.html|ファビコンジェネレーター|画像からファビコンを生成します。
+design/color-palette-extractor.html|カラーパレット抽出ツール|画像から主要な色を抽出。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>最適化するとSVGの見た目は変わりますか?</summary>
+        <p>いいえ、削除されるのはすべて目に見えないメタデータ（コメント、XML宣言、エディタ固有の属性）やタグ間の意味のない空白だけです。描画される図形は同一で、変わるのはファイルのバイトサイズだけです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>最適化してもファイルサイズがあまり小さくならないのはなぜですか?</summary>
+        <p>サイズの大部分が実際のパスデータ（複雑な図形の多数のポイント）や埋め込みラスター画像から来ている場合、そのデータは表示コンテンツの一部であるため、クリーンアップだけでは大きくは縮小しません。このツールは、図形をわずかに変えてしまう可能性のあるパスの簡略化ではなく、安全で無損失なクリーンアップに重点を置いています。</p>
+      </details>
+      <details class="faq-item">
+        <summary>SVGはどこかにアップロードされますか?</summary>
+        <p>いいえ。最適化はすべてブラウザのJavaScriptで完結します。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-optimizer.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

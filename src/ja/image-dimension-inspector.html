@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>画像サイズ検査ツール | norito</title>
+<meta name="description" content="画像をドロップするだけで、幅、高さ、アスペクト比、メガピクセル数、ファイルサイズ、形式を即座に確認できます。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/image-dimension-inspector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="画像サイズ検査ツール | norito" />
+<meta property="og:description" content="画像をドロップするだけで、幅、高さ、アスペクト比、メガピクセル数、ファイルサイズ、形式を即座に確認できます。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/image-dimension-inspector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="画像サイズ検査ツール | norito" />
+<meta name="twitter:description" content="画像をドロップするだけで、幅、高さ、アスペクト比、メガピクセル数、ファイルサイズ、形式を即座に確認できます。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "画像サイズ検査ツール",
+  "url": "https://norito.in/ja/image-dimension-inspector.html",
+  "description": "画像をドロップするだけで、幅、高さ、アスペクト比、メガピクセル数、ファイルサイズ、形式を即座に確認できます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "複数の画像を一度にチェックできますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。複数のファイルを選択またはドロップすると、それぞれが結果テーブルに1行ずつ表示されるので、まとめて寸法を見比べられます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "アスペクト比はどのように表示されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "両方の寸法を最大公約数で割って求めた簡略化された比率（16:9や4:3など）で表示されます。あわせて正確な比較のための生の小数比も表示します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "画像はどこかにアップロードされますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。ファイルはローカルで読み込まれ、ブラウザ自身の画像エンジンによってデコードされます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "画像サイズ検査ツール", "item": "https://norito.in/ja/image-dimension-inspector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 画像サイズ検査ツール</p>
+    <h1>画像サイズ検査ツール</h1>
+    <p class="lede">
+      1枚以上の画像をドロップするだけで、それぞれの幅、高さ、アスペクト比、メガピクセル数、
+      ファイルサイズを即座に確認できます。
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>クリックして画像を選択</strong>するか、ここにドラッグ&amp;ドロップしてください</p>
+        <p class="note" style="margin-top:2px;">複数選択で比較できます。端末内に留まり、アップロードは一切行われません。</p>
+        <input type="file" id="fileInput" accept="image/*" multiple />
+      </div>
+      <div id="resultsWrap" style="margin-top:16px;"></div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        各ファイルはローカルのオブジェクトURLとして<code>Image</code>要素に読み込まれます。これにより、
+        ファイル名や推測ではなく、ファイル自身のヘッダーから実際のピクセル寸法をブラウザが読み取ります。
+        アスペクト比は両方の寸法を最大公約数（ユークリッドの互除法で求める）で割って簡略化され、
+        ファイルサイズと形式はブラウザがすでに持っているファイルオブジェクトからそのまま取得されます。
+      </p>
+      <p>
+        画像データはどこにも送信されません。すべてローカルで処理され、寸法が読み取られ次第、
+        オブジェクトURLは即座に解放されます。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+resize-image.html|画像のリサイズ|幅と高さを正確な値または割合で変更。
+social-image-cropper.html|ソーシャル画像クロッパー|SNS向けの規定比率にトリミング。
+image-converter.html|画像コンバーター|JPG、PNG、WebP間で変換。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>複数の画像を一度にチェックできますか?</summary>
+        <p>はい。複数のファイルを選択またはドロップすると、それぞれが結果テーブルに1行ずつ表示されるので、まとめて寸法を見比べられます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>アスペクト比はどのように表示されますか?</summary>
+        <p>両方の寸法を最大公約数で割って求めた簡略化された比率（16:9や4:3など）で表示されます。あわせて正確な比較のための生の小数比も表示します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>画像はどこかにアップロードされますか?</summary>
+        <p>いいえ。ファイルはローカルで読み込まれ、ブラウザ自身の画像エンジンによってデコードされます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-image-dimension-inspector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

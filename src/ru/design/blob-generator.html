@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор SVG-блобов | norito</title>
+<meta name="description" content="Создайте случайную органическую форму-блоб, настройте случайность и количество точек, затем скопируйте SVG-путь или скачайте SVG. Работает прямо в браузере." />
+<link rel="canonical" href="https://norito.in/ru/design/blob-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор SVG-блобов | norito" />
+<meta property="og:description" content="Создайте случайную органическую форму-блоб, настройте случайность и количество точек, затем скопируйте SVG-путь или скачайте SVG. Работает прямо в браузере." />
+<meta property="og:url" content="https://norito.in/ru/design/blob-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор SVG-блобов | norito" />
+<meta name="twitter:description" content="Создайте случайную органическую форму-блоб, настройте случайность и количество точек, затем скопируйте SVG-путь или скачайте SVG. Работает прямо в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор SVG-блобов",
+  "url": "https://norito.in/ru/design/blob-generator.html",
+  "description": "Создаёт случайную органическую форму-блоб с настройкой случайности и количества точек, путь можно скопировать в SVG.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как строится форма блоба?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Точки равномерно располагаются по окружности, затем каждая случайно смещается внутрь или наружу на величину, заданную ползунком «случайность», после чего все точки соединяются плавной замкнутой кривой. Чем больше точек, тем детальнее и менее округлый получается контур." }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли получить тот же блоб позже?",
+      "acceptedAnswer": { "@type": "Answer", "text": "У каждого блоба есть число seed, которое отображается рядом с кнопкой регенерации. Введите то же значение seed заново (или поделитесь им) — форма получится в точности той же, поскольку случайные смещения вычисляются на его основе детерминированно." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли это куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, форма создаётся и отрисовывается полностью в вашем браузере. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор SVG-блобов", "item": "https://norito.in/ru/design/blob-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Генератор SVG-блобов</p>
+    <h1>Генератор SVG-блобов</h1>
+    <p class="lede">
+      Создайте случайную органическую форму-блоб, настройте случайность и количество точек, а
+      затем скопируйте или скачайте SVG.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="blobRandomness">Случайность (<span id="blobRandomnessVal">30%</span>)</label>
+          <input type="range" id="blobRandomness" min="0" max="80" value="30" />
+        </div>
+        <div class="field">
+          <label for="blobPoints">Точки (<span id="blobPointsVal">8</span>)</label>
+          <input type="range" id="blobPoints" min="3" max="16" value="8" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="blobColor">Цвет заливки</label>
+            <input type="color" id="blobColor" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="blobSeed">Seed</label>
+            <input type="number" id="blobSeed" value="1" min="0" />
+          </div>
+        </div>
+        <button type="button" id="regenBtn">Сгенерировать заново</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <svg id="blobSvg" viewBox="0 0 200 200" style="width:200px; height:200px;"><path id="blobPath" /></svg>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:160px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">Скопировать SVG-путь</button>
+            <button id="downloadBtn" class="secondary">Скачать .svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Точки равномерно распределяются по окружности, а затем расстояние каждой от центра
+        случайно меняется на величину, пропорциональную значению ползунка случайности. Seed
+        служит входом для небольшого детерминированного генератора псевдослучайных чисел, поэтому
+        одинаковые seed, количество точек и случайность всегда дают одну и ту же форму — это
+        удобно, если нужно сохранить понравившийся вариант или поделиться им. Затем точки
+        соединяются плавной кривой в стиле Catmull-Rom, преобразованной в кубические кривые Безье
+        SVG, — именно это делает контур органичным, а не гранёным.
+      </p>
+      <p>
+        Всё генерируется и отрисовывается прямо в виде SVG на этой странице. Ничего не
+        загружается на сервер.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|Генератор CSS-паттернов|Создавайте бесшовные фоновые паттерны.
+noise-texture-generator.html|Генератор шумовых текстур|Создайте текстуру зерна/шума.
+../svg-optimizer.html|Оптимизатор SVG|Удалите комментарии и метаданные из SVG.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Как строится форма блоба?</summary>
+        <p>Точки равномерно располагаются по окружности, затем каждая случайно смещается внутрь или наружу на величину, заданную ползунком «случайность», после чего все точки соединяются плавной замкнутой кривой. Чем больше точек, тем детальнее и менее округлый получается контур.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли получить тот же блоб позже?</summary>
+        <p>У каждого блоба есть число seed, которое отображается рядом с кнопкой регенерации. Введите то же значение seed заново (или поделитесь им) — форма получится в точности той же, поскольку случайные смещения вычисляются на его основе детерминированно.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли это куда-либо?</summary>
+        <p>Нет, форма создаётся и отрисовывается полностью в вашем браузере. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-blob-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

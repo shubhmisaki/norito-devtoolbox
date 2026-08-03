@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Canonical Tag Generator | norito</title>
+<meta name="description" content="Enter a URL, get a clean, normalized &lt;link rel=canonical&gt; tag ready to paste into your page's &lt;head&gt;. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/seo/canonical-tag-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Canonical Tag Generator | norito" />
+<meta property="og:description" content="Enter a URL, get a clean, normalized &lt;link rel=canonical&gt; tag ready to paste into your page's &lt;head&gt;. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/seo/canonical-tag-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Canonical Tag Generator | norito" />
+<meta name="twitter:description" content="Enter a URL, get a clean, normalized &lt;link rel=canonical&gt; tag ready to paste into your page's &lt;head&gt;. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Canonical Tag Generator",
+  "url": "https://norito.in/seo/canonical-tag-generator.html",
+  "description": "Enter a URL, get a clean, normalized link rel=canonical tag.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a canonical tag actually do?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It tells search engines which URL is the \"real\" one when the same content is reachable through more than one address, like with and without a trailing slash, or with tracking parameters. Search engines then consolidate ranking signals onto that one URL instead of splitting them across duplicates." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the tool strip query parameters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "By default it removes common tracking parameters (utm_*, fbclid, gclid, and similar) since a canonical URL is supposed to represent the content itself, not the specific link someone clicked. Toggle it off if your URL's query parameters actually change the page content and need to stay." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my URL sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the tag is generated entirely in your browser using the URL you type. Nothing is uploaded, and no request is made to the URL itself." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Canonical Tag Generator", "item": "https://norito.in/seo/canonical-tag-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Canonical Tag Generator</p>
+    <h1>Canonical Tag Generator</h1>
+    <p class="lede">
+      Enter a URL, get a normalized <code>&lt;link rel="canonical"&gt;</code> tag ready to paste
+      into your page's <code>&lt;head&gt;</code>.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="urlInput">Page URL</label>
+          <input type="text" id="urlInput" value="https://example.com/blog/my-post/?utm_source=newsletter" />
+        </div>
+        <div class="option-row">
+          <span class="option-label">Strip tracking parameters (utm_*, fbclid, gclid...)</span>
+          <label class="switch"><input type="checkbox" id="optStripParams" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Force HTTPS</span>
+          <label class="switch"><input type="checkbox" id="optForceHttps" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Force lowercase</span>
+          <label class="switch"><input type="checkbox" id="optLowercase" checked /><span class="track"></span></label>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copy tag</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The URL is parsed with the browser's native <code>URL</code> API, so malformed input is
+        caught the same way a browser itself would reject it. With tracking-parameter stripping
+        on, a fixed list of common analytics and ad parameters (<code>utm_source</code>,
+        <code>utm_medium</code>, <code>utm_campaign</code>, <code>fbclid</code>,
+        <code>gclid</code>, <code>msclkid</code>, and a few others) is removed while any other
+        query parameters are left alone, since only you know whether the rest actually change the
+        page's content.
+      </p>
+      <p>
+        Nothing here fetches the URL, it only formats the text you provide. No request is made
+        anywhere.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+meta-tag-generator.html|Meta Tag Generator|Title, description, OG, Twitter tags.
+hreflang-generator.html|hreflang Generator|Build alternate-language link tags.
+sitemap-generator.html|Sitemap Generator|URLs in, sitemap.xml out.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What does a canonical tag actually do?</summary>
+        <p>It tells search engines which URL is the "real" one when the same content is reachable through more than one address, like with and without a trailing slash, or with tracking parameters. Search engines then consolidate ranking signals onto that one URL instead of splitting them across duplicates.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why does the tool strip query parameters?</summary>
+        <p>By default it removes common tracking parameters (utm_*, fbclid, gclid, and similar) since a canonical URL is supposed to represent the content itself, not the specific link someone clicked. Toggle it off if your URL's query parameters actually change the page content and need to stay.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my URL sent anywhere?</summary>
+        <p>No, the tag is generated entirely in your browser using the URL you type. Nothing is uploaded, and no request is made to the URL itself.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-canonical-tag-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

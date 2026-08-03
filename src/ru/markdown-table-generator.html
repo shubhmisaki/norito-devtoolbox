@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор таблиц Markdown из CSV/TSV | norito</title>
+<meta name="description" content="Вставьте CSV/TSV или редактируйте таблицу прямо на странице — получите синтаксис таблицы Markdown в стиле GitHub с выравниванием колонок. Работает полностью в браузере." />
+<link rel="canonical" href="https://norito.in/ru/markdown-table-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор таблиц Markdown из CSV/TSV | norito" />
+<meta property="og:description" content="Вставьте CSV/TSV или редактируйте таблицу прямо на странице — получите синтаксис таблицы Markdown в стиле GitHub с выравниванием колонок. Работает полностью в браузере." />
+<meta property="og:url" content="https://norito.in/ru/markdown-table-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор таблиц Markdown из CSV/TSV | norito" />
+<meta name="twitter:description" content="Вставьте CSV/TSV или редактируйте таблицу прямо на странице — получите синтаксис таблицы Markdown в стиле GitHub с выравниванием колонок. Работает полностью в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор таблиц Markdown",
+  "url": "https://norito.in/ru/markdown-table-generator.html",
+  "description": "Вставьте CSV/TSV — получите синтаксис таблицы Markdown в стиле GitHub с выравниванием колонок.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Понимает ли инструмент и запятые, и табуляцию?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, вставляйте данные из таблицы (с разделителями-табуляцией) или из CSV-файла (с запятыми) — инструмент сам определяет используемый разделитель по тому, какой из символов чаще встречается в первой строке." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как работает выравнивание колонок?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Выберите для каждой колонки выравнивание по левому краю, по центру или по правому краю — и в строке-разделителе под заголовком появятся двоеточия в нужных местах (:--- слева, :---: по центру, ---: справа) — именно так GitHub-flavored Markdown сообщает рендерерам о выравнивании." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляются ли мои данные куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, таблица разбирается и собирается полностью в вашем браузере. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор таблиц Markdown", "item": "https://norito.in/ru/markdown-table-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Генератор таблиц Markdown</p>
+    <h1>Генератор таблиц Markdown</h1>
+    <p class="lede">
+      Вставьте данные CSV или TSV (из таблицы или файла), задайте выравнивание колонок — получите
+      чистый синтаксис таблицы Markdown в стиле GitHub.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="csvInput">Данные CSV или TSV (первая строка — заголовок)</label>
+          <textarea id="csvInput" class="mono-area" rows="10">Name,Role,Location
+Shubham,Founder,India
+Ava,Engineer,Remote
+Priya,Designer,Remote</textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Первая строка — заголовок</span>
+          <label class="switch"><input type="checkbox" id="optHeader" checked /><span class="track"></span></label>
+        </div>
+        <div id="alignWrap" style="margin-top:12px;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:160px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Копировать Markdown</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Предпросмотр рендера</h3>
+          <div id="renderedPreview" style="overflow-x:auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Входные данные разбиваются по тому разделителю — запятой или табуляции, — который чаще
+        встречается в первой строке, поэтому вставка прямо из таблицы (с табуляцией) или из
+        .csv-файла (с запятой) работает без переключателей в настройках. Значения дополняются
+        пробелами до ширины самой широкой ячейки колонки, так что результат аккуратно выровнен
+        и в обычном текстовом редакторе, а не только при рендере, а двоеточия в строке-разделителе
+        кодируют выбранное вами выравнивание для каждой колонки — это стандартный синтаксис
+        GitHub-flavored Markdown, который понимает любой рендерер: GitHub, GitLab, большинство
+        генераторов статических сайтов.
+      </p>
+      <p>
+        Разбор и форматирование происходят в JavaScript этой страницы. Ничего из вставленного вами
+        не загружается.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+csv-to-json.html|CSV в JSON|Преобразование CSV-файла в JSON.
+csv-viewer.html|Просмотр CSV|Просмотр и редактирование CSV в виде таблицы.
+markdown-editor.html|Редактор Markdown|Живой предпросмотр, экспорт в .md/.html.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Понимает ли инструмент и запятые, и табуляцию?</summary>
+        <p>Да, вставляйте данные из таблицы (с разделителями-табуляцией) или из CSV-файла (с запятыми) — инструмент сам определяет используемый разделитель по тому, какой из символов чаще встречается в первой строке.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как работает выравнивание колонок?</summary>
+        <p>Выберите для каждой колонки выравнивание по левому краю, по центру или по правому краю — и в строке-разделителе под заголовком появятся двоеточия в нужных местах (:--- слева, :---: по центру, ---: справа) — именно так GitHub-flavored Markdown сообщает рендерерам о выравнивании.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляются ли мои данные куда-либо?</summary>
+        <p>Нет, таблица разбирается и собирается полностью в вашем браузере. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-markdown-table-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>.gitignore Generator | norito</title>
+<meta name="description" content="Pick your languages, frameworks, and editors, get a merged .gitignore file. Node, Python, Java, macOS, Windows, VS Code, and more. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/gitignore-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content=".gitignore Generator | norito" />
+<meta property="og:description" content="Pick your languages, frameworks, and editors, get a merged .gitignore file. Node, Python, Java, macOS, Windows, VS Code, and more. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/gitignore-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content=".gitignore Generator | norito" />
+<meta name="twitter:description" content="Pick your languages, frameworks, and editors, get a merged .gitignore file. Node, Python, Java, macOS, Windows, VS Code, and more. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": ".gitignore Generator",
+  "url": "https://norito.in/gitignore-generator.html",
+  "description": "Pick your languages, frameworks, and editors, get a merged .gitignore file.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I combine multiple templates?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Check as many as you need, Node and macOS and VS Code together, for example, and they're merged into one file with duplicate lines removed and each template kept under its own labeled section." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I need a rule that isn't in any template?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the custom rules box at the bottom. Whatever you type there is appended as its own section, so you can add project-specific paths without editing the generated file afterward." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this apply the file to my repo automatically?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, it only generates the text. Download it as .gitignore and place it in your repo root yourself, or copy and paste it in." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": ".gitignore Generator", "item": "https://norito.in/gitignore-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / .gitignore Generator</p>
+    <h1>.gitignore Generator</h1>
+    <p class="lede">
+      Check off your stack, get a merged .gitignore with no duplicate lines, ready to drop into
+      your repo.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Languages &amp; runtimes</h3>
+        <div class="gi-grid" id="giLangs"></div>
+        <h3>Frameworks &amp; tools</h3>
+        <div class="gi-grid" id="giFrameworks"></div>
+        <h3>Editors &amp; OS</h3>
+        <div class="gi-grid" id="giEditors"></div>
+        <div class="field" style="margin-top:16px;">
+          <label for="customRules">Custom rules (optional, one per line)</label>
+          <textarea id="customRules" class="mono-area" rows="4" placeholder=".env.local
+/secrets/"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:200px;">// Pick at least one template on the left to get started.</pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">Copy .gitignore</button>
+            <button id="downloadBtn" class="secondary">Download .gitignore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each checkbox maps to a small built-in template covering that language's or tool's typical
+        build artifacts, dependency folders, and local config files, the same patterns GitHub's own
+        gitignore template collection uses as a starting point. Checked templates are concatenated
+        under labeled section headers, run through a de-duplication pass so a pattern like
+        <code>node_modules/</code> only appears once even if two selected templates both include it,
+        and your custom rules are appended last as their own section.
+      </p>
+      <p>
+        Nothing here reads your actual project, it only assembles text from templates baked into
+        this page's JavaScript. Nothing is uploaded.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|JSON Formatter|Format, validate, minify JSON.
+test-file-generator.html|Test File Generator|Byte-exact dummy files for any size or extension.
+hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, SHA-512.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Can I combine multiple templates?</summary>
+        <p>Yes. Check as many as you need, Node and macOS and VS Code together, for example, and they're merged into one file with duplicate lines removed and each template kept under its own labeled section.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I need a rule that isn't in any template?</summary>
+        <p>Use the custom rules box at the bottom. Whatever you type there is appended as its own section, so you can add project-specific paths without editing the generated file afterward.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this apply the file to my repo automatically?</summary>
+        <p>No, it only generates the text. Download it as .gitignore and place it in your repo root yourself, or copy and paste it in.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-gitignore-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

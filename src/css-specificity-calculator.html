@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS Specificity Calculator | norito</title>
+<meta name="description" content="Paste CSS selectors and see their specificity broken down (inline, IDs, classes, elements) and ranked in cascade order. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/css-specificity-calculator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS Specificity Calculator | norito" />
+<meta property="og:description" content="Paste CSS selectors and see their specificity broken down (inline, IDs, classes, elements) and ranked in cascade order. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/css-specificity-calculator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS Specificity Calculator | norito" />
+<meta name="twitter:description" content="Paste CSS selectors and see their specificity broken down (inline, IDs, classes, elements) and ranked in cascade order. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS Specificity Calculator",
+  "url": "https://norito.in/css-specificity-calculator.html",
+  "description": "Paste CSS selectors and see their specificity broken down and ranked in cascade order.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is specificity calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "As four counted tiers: inline styles, then ID selectors, then classes/attribute selectors/pseudo-classes, then element and pseudo-element selectors. Higher tiers always beat lower ones regardless of how many lower-tier selectors you stack, so 1 ID (0,1,0,0) always beats 20 classes (0,0,20,0)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do two of my selectors tie?",
+      "acceptedAnswer": { "@type": "Answer", "text": "When specificity ties exactly, CSS falls back to source order: whichever rule appears later in the stylesheet (or was added later) wins. This tool sorts ties by the order you pasted them in, matching that behavior." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this send my CSS anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Selectors are parsed and scored entirely in your browser with a small JavaScript tokenizer. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS Specificity Calculator", "item": "https://norito.in/css-specificity-calculator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSS Specificity Calculator</p>
+    <h1>CSS Specificity Calculator</h1>
+    <p class="lede">
+      Paste selectors, one per line, and see each one's specificity broken down and ranked in
+      the order the cascade would actually apply them.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="selInput">Selectors (one per line)</label>
+          <textarea id="selInput" class="mono-area" rows="12" placeholder="#header .nav a:hover
+.card > .title
+div p span
+[data-active].btn.primary
+#app"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">Results appear here, ranked from highest to lowest specificity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each selector is split on combinators and tokenized: <code>#id</code> tokens count as IDs,
+        <code>.class</code>, <code>[attr]</code>, and <code>:pseudo-class</code> tokens count as
+        classes, and bare element names and <code>::pseudo-elements</code> count as elements.
+        The universal selector <code>*</code> and combinators like <code>&gt;</code>, <code>+</code>,
+        <code>~</code> add nothing. Each selector ends up as a triple <code>(IDs, classes, elements)</code>,
+        which is exactly how the CSS spec itself defines specificity, so the ranking here matches
+        what your browser's own cascade will do.
+      </p>
+      <p>
+        Everything runs on keystroke in this page's JavaScript. Pasting a stylesheet's worth of
+        selectors never leaves your browser.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/css-gradient-generator.html|CSS Gradient Generator|Build a linear or radial gradient visually.
+json-formatter.html|JSON Formatter|Format, validate, minify JSON.
+regex-tester.html|Regex Tester|Test a regex with live match highlighting.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How is specificity calculated?</summary>
+        <p>As four counted tiers: inline styles, then ID selectors, then classes/attribute selectors/pseudo-classes, then element and pseudo-element selectors. Higher tiers always beat lower ones regardless of how many lower-tier selectors you stack, so 1 ID (0,1,0,0) always beats 20 classes (0,0,20,0).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why do two of my selectors tie?</summary>
+        <p>When specificity ties exactly, CSS falls back to source order: whichever rule appears later in the stylesheet (or was added later) wins. This tool sorts ties by the order you pasted them in, matching that behavior.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this send my CSS anywhere?</summary>
+        <p>No. Selectors are parsed and scored entirely in your browser with a small JavaScript tokenizer. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-css-specificity-calculator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

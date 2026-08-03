@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>أداة قص صور وسائل التواصل الاجتماعي | norito</title>
+<meta name="description" content="اقصص صورة إلى المقاسات الجاهزة الدقيقة لإنستغرام وتويتر/X ولينكدإن ويوتيوب وفيسبوك. حرّك وكبّر لإعادة التموضع. تعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/social-image-cropper.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="أداة قص صور وسائل التواصل الاجتماعي | norito" />
+<meta property="og:description" content="اقصص صورة إلى المقاسات الجاهزة الدقيقة لإنستغرام وتويتر/X ولينكدإن ويوتيوب وفيسبوك. حرّك وكبّر لإعادة التموضع. تعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/social-image-cropper.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="أداة قص صور وسائل التواصل الاجتماعي | norito" />
+<meta name="twitter:description" content="اقصص صورة إلى المقاسات الجاهزة الدقيقة لإنستغرام وتويتر/X ولينكدإن ويوتيوب وفيسبوك. حرّك وكبّر لإعادة التموضع. تعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "أداة قص صور وسائل التواصل الاجتماعي",
+  "url": "https://norito.in/ar/social-image-cropper.html",
+  "description": "اقصص صورة إلى المقاسات الجاهزة الدقيقة لإنستغرام وتويتر/X ولينكدإن ويوتيوب وفيسبوك.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "كيف يُحدَّد موضع القص افتراضيًا؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "في المنتصف، تمامًا مثل object-fit: cover في CSS، حيث تُلائَم نسبة أبعاد المقاس الجاهز لملء الإطار مع تكبير الصورة بالقدر الكافي فقط بحيث لا تظهر أي مساحة فارغة، ثم تُوسَّط. استخدم أشرطة التحريك لتغيير الجزء الذي يبقى داخل الإطار، والتكبير لقص أضيق." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُخرج المقاس بالبكسل الدقيق الذي توصي به كل منصة؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم، يُنزَّل كل مقاس جاهز بأبعاد البكسل الموصى بها حاليًا لتلك المنصة، وليس فقط بالنسبة الصحيحة، بحيث لا تحتاج إلى خطوة تغيير حجم إضافية." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تُرفع صورتي إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا. يحدث القص بالكامل داخل متصفحك باستخدام canvas API. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "قص صور وسائل التواصل", "item": "https://norito.in/ar/social-image-cropper.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / قص صور وسائل التواصل</p>
+    <h1>أداة قص صور وسائل التواصل الاجتماعي</h1>
+    <p class="lede">
+      اقصص صورة إلى المقاس الدقيق الذي تتوقعه المنصة. اختر مقاسًا جاهزًا، حرّك وكبّر لإعادة
+      التموضع، ثم نزّل.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>انقر لاختيار صورة</strong>، أو اسحبها وأفلتها هنا</p>
+          <p class="note" style="margin-top:2px;">تبقى على جهازك، لا يُرفع شيء.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="preset">المقاس الجاهز</label>
+          <select id="preset">
+            <option value="ig-post" data-w="1080" data-h="1080">منشور إنستغرام (1080×1080)</option>
+            <option value="ig-story" data-w="1080" data-h="1920">ستوري إنستغرام (1080×1920)</option>
+            <option value="ig-portrait" data-w="1080" data-h="1350">منشور عمودي بإنستغرام (1080×1350)</option>
+            <option value="x-header" data-w="1500" data-h="500">رأس صفحة X / تويتر (1500×500)</option>
+            <option value="linkedin-banner" data-w="1584" data-h="396">لافتة لينكدإن (1584×396)</option>
+            <option value="fb-cover" data-w="820" data-h="312">غلاف فيسبوك (820×312)</option>
+            <option value="yt-thumb" data-w="1280" data-h="720">صورة مصغّرة ليوتيوب (1280×720)</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="field">
+            <label for="zoom">التكبير (<span id="zoomVal">100%</span>)</label>
+            <input type="range" id="zoom" min="100" max="300" value="100" />
+          </div>
+          <div class="field">
+            <label for="panX">التحريك الأفقي</label>
+            <input type="range" id="panX" min="0" max="100" value="50" />
+          </div>
+          <div class="field">
+            <label for="panY">التحريك الرأسي</label>
+            <input type="range" id="panY" min="0" max="100" value="50" />
+          </div>
+        </div>
+
+        <button id="downloadBtn" disabled style="margin-top:12px;">تنزيل الصورة المقصوصة</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="cropStage" style="background:var(--bg-subtle); border-radius:var(--radius-md); overflow:hidden; margin:0 auto; position:relative; max-width:100%;">
+            <canvas id="cropCanvas"></canvas>
+          </div>
+          <p class="note" id="previewHint" style="margin-top:12px;">أضف صورة واختر مقاسًا جاهزًا لمعاينة القص.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>
+        لكل مقاس جاهز، تحسب الأداة مقياس التكبير اللازم بحيث تغطي صورتك نسبة الأبعاد المستهدفة
+        بالكامل دون حواف فارغة، وهي نفس الحسابات التي تقوم عليها خاصية CSS
+        <code>object-fit: cover</code>، ثم تُوسِّطها افتراضيًا. يزيد شريط التكبير التقريب أكثر،
+        وتحرّك أشرطة التحريك النافذة المرئية عبر الصورة المصدر؛ يُطبَّق كلاهما كمستطيل مصدر يُمرَّر
+        إلى <code>canvas.drawImage</code>، لذا يُرسَم القص دائمًا من الدقة الكاملة لصورتك، لا من
+        معاينة مصغّرة.
+      </p>
+      <p>
+        يعمل كل شيء على لوحة رسم في الذاكرة داخل هذا التبويب. صورتك لا تُرفع أبدًا، والتنزيل يأتي
+        مباشرة من تلك اللوحة.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|قص الصورة|اسحب إطارًا للقص، بشكل حر أو بنسبة ثابتة.
+resize-image.html|تغيير حجم الصورة|غيّر العرض والارتفاع، بالبكسل الدقيق أو بالنسبة المئوية.
+image-dimension-inspector.html|فاحص أبعاد الصور|تحقق من أبعاد الصورة بالبكسل الدقيق.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>كيف يُحدَّد موضع القص افتراضيًا؟</summary>
+        <p>في المنتصف، تمامًا مثل object-fit: cover في CSS، حيث تُلائَم نسبة أبعاد المقاس الجاهز لملء الإطار مع تكبير الصورة بالقدر الكافي فقط بحيث لا تظهر أي مساحة فارغة، ثم تُوسَّط. استخدم أشرطة التحريك لتغيير الجزء الذي يبقى داخل الإطار، والتكبير لقص أضيق.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُخرج المقاس بالبكسل الدقيق الذي توصي به كل منصة؟</summary>
+        <p>نعم، يُنزَّل كل مقاس جاهز بأبعاد البكسل الموصى بها حاليًا لتلك المنصة، وليس فقط بالنسبة الصحيحة، بحيث لا تحتاج إلى خطوة تغيير حجم إضافية.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تُرفع صورتي إلى أي مكان؟</summary>
+        <p>لا. يحدث القص بالكامل داخل متصفحك باستخدام canvas API. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-social-image-cropper.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

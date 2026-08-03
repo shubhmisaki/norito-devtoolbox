@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS वेरिएबल एक्सट्रैक्टर | norito</title>
+<meta name="description" content="किसी भी स्टाइलशीट को पेस्ट करें और हर CSS कस्टम प्रॉपर्टी (--variable) को प्रीफ़िक्स के अनुसार समूहित करके, डुप्लिकेट फ़्लैग करते हुए निकालें। JSON, CSS या CSV में एक्सपोर्ट करें। यह आपके ब्राउज़र में चलता है।" />
+<link rel="canonical" href="https://norito.in/hi/css-variable-extractor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS वेरिएबल एक्सट्रैक्टर | norito" />
+<meta property="og:description" content="किसी भी स्टाइलशीट को पेस्ट करें और हर CSS कस्टम प्रॉपर्टी (--variable) को प्रीफ़िक्स के अनुसार समूहित करके, डुप्लिकेट फ़्लैग करते हुए निकालें। JSON, CSS या CSV में एक्सपोर्ट करें। यह आपके ब्राउज़र में चलता है।" />
+<meta property="og:url" content="https://norito.in/hi/css-variable-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS वेरिएबल एक्सट्रैक्टर | norito" />
+<meta name="twitter:description" content="किसी भी स्टाइलशीट को पेस्ट करें और हर CSS कस्टम प्रॉपर्टी (--variable) को प्रीफ़िक्स के अनुसार समूहित करके, डुप्लिकेट फ़्लैग करते हुए निकालें। JSON, CSS या CSV में एक्सपोर्ट करें। यह आपके ब्राउज़र में चलता है।" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS वेरिएबल एक्सट्रैक्टर",
+  "url": "https://norito.in/hi/css-variable-extractor.html",
+  "description": "किसी भी स्टाइलशीट को पेस्ट करें और हर CSS कस्टम प्रॉपर्टी को प्रीफ़िक्स के अनुसार समूहित करके, डुप्लिकेट फ़्लैग करते हुए निकालें।",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "यह कौन-सी कस्टम प्रॉपर्टीज़ ढूंढता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "किसी भी सिलेक्टर ब्लॉक के अंदर --name: value; फ़ॉर्म की कोई भी घोषणा, न कि सिर्फ़ :root के अंदर—नेस्टेड रूल्स और मीडिया क्वेरीज़ भी शामिल। हर बार यह भी दर्ज किया जाता है कि वह किस सिलेक्टर के तहत घोषित की गई थी।" }
+    },
+    {
+      "@type": "Question",
+      "name": "डुप्लिकेट डिटेक्शन कैसे काम करता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "अगर एक ही वेरिएबल नाम को अलग-अलग वैल्यू के साथ एक से ज़्यादा बार घोषित किया गया हो (जो अक्सर कॉपी-पेस्ट किए गए या असंगत टोकन का संकेत होता है), तो उसे फ़्लैग कर दिया जाता है। एक ही नाम को अलग-अलग स्कोप में समान वैल्यू के साथ घोषित करना (जैसे लाइट/डार्क थीम ओवरराइड) सामान्य बात है और इसे फ़्लैग नहीं किया जाता।" }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मेरा CSS कहीं भेजा जाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं, पार्सिंग पूरी तरह आपके ब्राउज़र में एक छोटे जावास्क्रिप्ट स्कैनर से होती है। आप जो भी पेस्ट करते हैं, वह अपलोड नहीं होता।" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS वेरिएबल एक्सट्रैक्टर", "item": "https://norito.in/hi/css-variable-extractor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSS वेरिएबल एक्सट्रैक्टर</p>
+    <h1>CSS वेरिएबल एक्सट्रैक्टर</h1>
+    <p class="lede">
+      एक स्टाइलशीट पेस्ट करें और हर <code>--custom-property</code> को प्रीफ़िक्स के अनुसार
+      समूहित करके निकालें, साथ ही डुप्लिकेट डेफ़िनिशन फ़्लैग की जाएंगी।
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="cssInput">CSS</label>
+          <textarea id="cssInput" class="mono-area" rows="14" placeholder=":root {
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+.dark {
+  --color-primary-500: #818cf8;
+}"></textarea>
+        </div>
+        <p class="note">हर सिलेक्टर ब्लॉक को स्कैन करता है, न कि सिर्फ़ <code>:root</code> को। अलग-अलग सिलेक्टर में समान नाम लेकिन अलग वैल्यू होने पर उसे डुप्लिकेट के रूप में फ़्लैग किया जाता है।</p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">समूहित वेरिएबल यहाँ दिखेंगे।</p>
+          <div id="exportRow" style="display:none; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="copyJsonBtn" class="secondary">JSON कॉपी करें</button>
+            <button id="copyCssBtn" class="secondary">CSS कॉपी करें</button>
+            <button id="downloadCsvBtn" class="secondary">CSV डाउनलोड करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        इनपुट को रूल ब्लॉक दर रूल ब्लॉक स्कैन किया जाता है (यानी <code>selector { ... }</code>
+        जोड़े मैच किए जाते हैं, नेस्टेड मीडिया क्वेरीज़ समेत), और हर ब्लॉक के अंदर मौजूद हर
+        <code>--name: value;</code> घोषणा को उसके संबंधित सिलेक्टर के साथ दर्ज किया जाता है।
+        वेरिएबल को प्रीफ़िक्स के अनुसार समूहित किया जाता है—यानी शुरुआती <code>--</code> के बाद का
+        पहला हाइफ़न-सीमांकित हिस्सा—इसलिए <code>--color-primary-500</code> और
+        <code>--color-accent</code> दोनों "color" के अंतर्गत आते हैं, जो ज़्यादातर डिज़ाइन-टोकन
+        नेमिंग कन्वेंशन की संरचना जैसा ही है। किसी नाम को डुप्लिकेट तभी फ़्लैग किया जाता है जब वह
+        कहीं और वाकई अलग वैल्यू के साथ घोषित हो, न कि सिर्फ़ किसी अलग सिलेक्टर के तहत उसी वैल्यू
+        के साथ दोबारा घोषित होने पर (यह थीम ओवरराइड का सामान्य पैटर्न है)।
+      </p>
+      <p>
+        सब कुछ इस पेज के जावास्क्रिप्ट में हर कीस्ट्रोक पर चलता है, पूरे CSS पार्सर की बजाय एक
+        हल्के ब्रेस-मैचिंग स्कैनर का उपयोग करते हुए। आप जो भी पेस्ट करते हैं, वह अपलोड नहीं होता।
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/color-converter.html|कलर कन्वर्टर|रंगों को HEX, RGB, HSL, CMYK के बीच बदलें।
+design/contrast-checker.html|कॉन्ट्रास्ट चेकर|WCAG कॉन्ट्रास्ट रेशियो जांचें, AA/AAA पास।
+design/css-clamp-generator.html|CSS Clamp() जनरेटर|फ़्लूइड, व्यूपोर्ट-स्केल्ड साइज़िंग बनाएं।
+-->
+
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>यह कौन-सी कस्टम प्रॉपर्टीज़ ढूंढता है?</summary>
+        <p>किसी भी सिलेक्टर ब्लॉक के अंदर --name: value; फ़ॉर्म की कोई भी घोषणा, न कि सिर्फ़ :root के अंदर—नेस्टेड रूल्स और मीडिया क्वेरीज़ भी शामिल। हर बार यह भी दर्ज किया जाता है कि वह किस सिलेक्टर के तहत घोषित की गई थी।</p>
+      </details>
+      <details class="faq-item">
+        <summary>डुप्लिकेट डिटेक्शन कैसे काम करता है?</summary>
+        <p>अगर एक ही वेरिएबल नाम को अलग-अलग वैल्यू के साथ एक से ज़्यादा बार घोषित किया गया हो (जो अक्सर कॉपी-पेस्ट किए गए या असंगत टोकन का संकेत होता है), तो उसे फ़्लैग कर दिया जाता है। एक ही नाम को अलग-अलग स्कोप में समान वैल्यू के साथ घोषित करना (जैसे लाइट/डार्क थीम ओवरराइड) सामान्य बात है और इसे फ़्लैग नहीं किया जाता।</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या मेरा CSS कहीं भेजा जाता है?</summary>
+        <p>नहीं, पार्सिंग पूरी तरह आपके ब्राउज़र में एक छोटे जावास्क्रिप्ट स्कैनर से होती है। आप जो भी पेस्ट करते हैं, वह अपलोड नहीं होता।</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-variable-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

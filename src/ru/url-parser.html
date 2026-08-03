@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Парсер URL | norito</title>
+<meta name="description" content="Вставьте URL и увидите его разбор на протокол, хост, порт, путь, параметры запроса и хеш. Работает полностью в вашем браузере." />
+<link rel="canonical" href="https://norito.in/ru/url-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Парсер URL | norito" />
+<meta property="og:description" content="Вставьте URL и увидите его разбор на протокол, хост, порт, путь, параметры запроса и хеш. Работает полностью в вашем браузере." />
+<meta property="og:url" content="https://norito.in/ru/url-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Парсер URL | norito" />
+<meta name="twitter:description" content="Вставьте URL и увидите его разбор на протокол, хост, порт, путь, параметры запроса и хеш. Работает полностью в вашем браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Парсер URL",
+  "url": "https://norito.in/ru/url-parser.html",
+  "description": "Вставьте URL и получите его разбор на протокол, хост, порт, путь, параметры запроса и хеш.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как обрабатываются параметры запроса?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Каждая пара key=value после ? декодируется и выводится отдельной строкой, включая повторяющиеся ключи (например, ?tag=a&tag=b) — они показываются несколькими строками, так что ничего не пропадает незаметно." }
+    },
+    {
+      "@type": "Question",
+      "name": "Работает ли это с относительными URL?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, требуется полный URL с протоколом, поскольку встроенный в браузер парсер URL (которым этот инструмент пользуется напрямую) должен иметь базовый адрес, относительно которого разрешаются относительные ссылки." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли URL куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Разбор выполняется полностью на стороне клиента с помощью встроенного в браузер API URL. Ничего не загружается на сервер, и никакого запроса к самому URL не выполняется." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Парсер URL", "item": "https://norito.in/ru/url-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Парсер URL</p>
+    <h1>Парсер URL</h1>
+    <p class="lede">
+      Вставьте любой полный URL и увидите его протокол, хост, порт, путь, параметры запроса и хеш,
+      разложенные по полочкам.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="urlInput">URL</label>
+          <input type="text" id="urlInput" value="https://norito.in/blog/index.html?utm_source=newsletter&amp;utm_medium=email&amp;tag=tools#section-2" />
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Это работает полностью на встроенном в браузер API <code>URL</code> — том же самом парсере,
+        которым браузер пользуется при переходе по ссылке, поэтому разбор точный, а не приблизительный
+        результат самодельного регулярного выражения. Параметры запроса берутся из
+        <code>URLSearchParams</code>, который корректно обрабатывает процентное декодирование и
+        повторяющиеся ключи.
+      </p>
+      <p>
+        Ничего здесь не запрашивает сам URL — только разбирает введённый вами текст. Никаких сетевых
+        запросов не выполняется, и ни одна часть URL не покидает ваш браузер.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|Кодировщик / декодировщик URL|Процентное кодирование и декодирование URL.
+user-agent-parser.html|Парсер User-Agent|Разбор строки User-Agent.
+seo/utm-builder.html|Конструктор UTM-меток|Создание ссылок для отслеживания кампаний.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Как обрабатываются параметры запроса?</summary>
+        <p>Каждая пара key=value после ? декодируется и выводится отдельной строкой, включая повторяющиеся ключи (например, ?tag=a&tag=b) — они показываются несколькими строками, так что ничего не пропадает незаметно.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Работает ли это с относительными URL?</summary>
+        <p>Нет, требуется полный URL с протоколом, поскольку встроенный в браузер парсер URL (которым этот инструмент пользуется напрямую) должен иметь базовый адрес, относительно которого разрешаются относительные ссылки.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли URL куда-либо?</summary>
+        <p>Нет. Разбор выполняется полностью на стороне клиента с помощью встроенного в браузер API URL. Ничего не загружается на сервер, и никакого запроса к самому URL не выполняется.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-url-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

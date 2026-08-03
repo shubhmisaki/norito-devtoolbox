@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSSイージング/cubic-bezierジェネレーター | norito</title>
+<meta name="description" content="視覚的な曲線をドラッグしてカスタムのcubic-bezier()イージング関数を作成し、アニメーションをライブプレビューして、CSSをコピーできます。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/design/css-easing-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSSイージング/cubic-bezierジェネレーター | norito" />
+<meta property="og:description" content="視覚的な曲線をドラッグしてカスタムのcubic-bezier()イージング関数を作成し、アニメーションをライブプレビューして、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/design/css-easing-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSSイージング/cubic-bezierジェネレーター | norito" />
+<meta name="twitter:description" content="視覚的な曲線をドラッグしてカスタムのcubic-bezier()イージング関数を作成し、アニメーションをライブプレビューして、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSSイージング/cubic-bezierジェネレーター",
+  "url": "https://norito.in/ja/design/css-easing-generator.html",
+  "description": "視覚的な曲線をドラッグしてカスタムのcubic-bezier()イージング関数を作成し、アニメーションをライブプレビューできます。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "2つのハンドルは何を制御していますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "cubic-bezierのイージング曲線は2つの制御点で定義され、それぞれがx（時間、0～1）とy（進行度、範囲は無制限ですが通常は0～1）の座標を持ちます。ハンドルをドラッグするとその点を直接設定でき、表示される4つの数値がそのままcubic-bezier()の中身になります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "曲線が100%を超えてオーバーシュートすることはありますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。制御点のy値が1を超えたり0を下回ったりすると、アニメーションは落ち着く前に一瞬終了値を超えたり開始値を下回ったりします。いわゆる「バウンス」や「予備動作」の効果です。ハンドルをグラフの上下にドラッグして試してみてください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。曲線とプレビューアニメーションはすべてブラウザのCSSエンジン内で動作します。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "CSSイージングジェネレーター", "item": "https://norito.in/ja/design/css-easing-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 9-9"/><path d="M21 3c-4 0-8 1-11 4-2 2-3 5-3 8 3 0 6-1 8-3 3-3 4-7 4-11a9 9 0 0 0 2 2Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSSイージングジェネレーター</p>
+    <h1>CSSイージングジェネレーター</h1>
+    <p class="lede">
+      2つのハンドルをドラッグしてカスタムのイージング曲線を作り、ボールのプレビューでライブ確認しながら、
+      <code>cubic-bezier()</code>の値をコピーできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <svg id="curveSvg" viewBox="0 0 200 200" style="width:100%; max-width:320px; display:block; margin:0 auto; background:var(--bg-subtle); border-radius:var(--radius-md); touch-action:none;">
+          <line x1="0" y1="200" x2="200" y2="0" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+          <path id="curvePath" d="" fill="none" stroke="var(--primary)" stroke-width="3" />
+          <line id="handle1Line" x1="0" y1="200" x2="0" y2="200" stroke="var(--muted)" stroke-width="1.5" />
+          <line id="handle2Line" x1="200" y1="0" x2="200" y2="0" stroke="var(--muted)" stroke-width="1.5" />
+          <circle id="handle1" cx="0" cy="200" r="7" fill="var(--accent-live, #2fbf71)" style="cursor:grab;" />
+          <circle id="handle2" cx="200" cy="0" r="7" fill="var(--primary)" style="cursor:grab;" />
+        </svg>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="p1x">P1 x</label>
+            <input type="number" id="p1x" min="0" max="1" step="0.01" value="0.42" />
+          </div>
+          <div class="field">
+            <label for="p1y">P1 y</label>
+            <input type="number" id="p1y" step="0.01" value="0" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="p2x">P2 x</label>
+            <input type="number" id="p2x" min="0" max="1" step="0.01" value="0.58" />
+          </div>
+          <div class="field">
+            <label for="p2y">P2 y</label>
+            <input type="number" id="p2y" step="0.01" value="1" />
+          </div>
+        </div>
+        <h3>プリセット</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="secondary preset-btn" data-p="0.25,0.1,0.25,1">ease</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,1,1">ease-in</button>
+          <button type="button" class="secondary preset-btn" data-p="0,0,0.58,1">ease-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,0.58,1">ease-in-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.68,-0.55,0.27,1.55">back</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="animTrack" style="position:relative; height:60px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <div id="animBall" style="position:absolute; top:14px; left:6px; width:32px; height:32px; border-radius:50%; background:var(--primary);"></div>
+          </div>
+          <button type="button" id="playBtn" class="secondary" style="margin-bottom:16px;">アニメーションをリプレイ</button>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSSをコピー</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        グラフは1秒間にわたって進行度（縦軸）を時間（横軸）に対してプロットしています。両方のハンドルは
+        直接ドラッグでき、下の数値フィールドはどちらの方法で変更してもハンドルと同期します。マウスや指で
+        ドラッグしてもよいですし、特定の曲線に合わせたい場合は正確な値を入力してもかまいません。同じ4つの
+        数値が、表示されているSVGパスと、プレビューのボールに適用される実際の
+        <code>transition-timing-function</code>の両方に使われるため、見えているものは近似ではなく
+        実際のイージングそのものです。
+      </p>
+      <p>
+        すべてブラウザ自身のCSSトランジションエンジンで動作します。アニメーションの状態や曲線データが
+        どこかに送信されることはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-clamp-generator.html|CSS Clamp()ジェネレーター|ビューポート幅に応じてスケーリングする流動的な値。
+css-filter-generator.html|CSSフィルタージェネレーター|画像フィルター効果を視覚的に作成。
+box-shadow-generator.html|ボックスシャドウジェネレーター|CSSのbox-shadowを視覚的に作成。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>2つのハンドルは何を制御していますか?</summary>
+        <p>cubic-bezierのイージング曲線は2つの制御点で定義され、それぞれがx（時間、0～1）とy（進行度、範囲は無制限ですが通常は0～1）の座標を持ちます。ハンドルをドラッグするとその点を直接設定でき、表示される4つの数値がそのままcubic-bezier()の中身になります。</p>
+      </details>
+      <details class="faq-item">
+        <summary>曲線が100%を超えてオーバーシュートすることはありますか?</summary>
+        <p>はい。制御点のy値が1を超えたり0を下回ったりすると、アニメーションは落ち着く前に一瞬終了値を超えたり開始値を下回ったりします。いわゆる「バウンス」や「予備動作」の効果です。ハンドルをグラフの上下にドラッグして試してみてください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>これはどこかに送信されますか?</summary>
+        <p>いいえ。曲線とプレビューアニメーションはすべてブラウザのCSSエンジン内で動作します。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-easing-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

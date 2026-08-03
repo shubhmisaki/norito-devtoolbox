@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS Variable Extractor | norito</title>
+<meta name="description" content="Paste any stylesheet and pull out every CSS custom property (--variable), grouped by prefix with duplicates flagged. Export as JSON, CSS, or CSV. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/css-variable-extractor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS Variable Extractor | norito" />
+<meta property="og:description" content="Paste any stylesheet and pull out every CSS custom property (--variable), grouped by prefix with duplicates flagged. Export as JSON, CSS, or CSV. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/css-variable-extractor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS Variable Extractor | norito" />
+<meta name="twitter:description" content="Paste any stylesheet and pull out every CSS custom property (--variable), grouped by prefix with duplicates flagged. Export as JSON, CSS, or CSV. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS Variable Extractor",
+  "url": "https://norito.in/css-variable-extractor.html",
+  "description": "Paste any stylesheet and pull out every CSS custom property, grouped by prefix with duplicates flagged.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which custom properties does it find?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any declaration of the form --name: value; inside any selector block, not just :root, including nested rules and media queries. Each occurrence records which selector it was declared under." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does duplicate detection work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If the same variable name is declared more than once with different values (a common sign of copy-pasted or inconsistent tokens), it's flagged. Declaring the same name with the same value in multiple scopes (like light/dark theme overrides) is normal and isn't flagged." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my CSS sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, parsing happens entirely in your browser with a small JavaScript scanner. Nothing you paste is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS Variable Extractor", "item": "https://norito.in/css-variable-extractor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSS Variable Extractor</p>
+    <h1>CSS Variable Extractor</h1>
+    <p class="lede">
+      Paste a stylesheet and pull out every <code>--custom-property</code>, grouped by prefix,
+      with duplicate definitions flagged.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="cssInput">CSS</label>
+          <textarea id="cssInput" class="mono-area" rows="14" placeholder=":root {
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+.dark {
+  --color-primary-500: #818cf8;
+}"></textarea>
+        </div>
+        <p class="note">Scans every selector block, not just <code>:root</code>. Same name, different value across selectors gets flagged as a duplicate.</p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">Grouped variables will appear here.</p>
+          <div id="exportRow" style="display:none; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button id="copyJsonBtn" class="secondary">Copy JSON</button>
+            <button id="copyCssBtn" class="secondary">Copy CSS</button>
+            <button id="downloadCsvBtn" class="secondary">Download CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The input is scanned rule block by rule block (matching <code>selector { ... }</code>
+        pairs, including nested ones like media queries), and every <code>--name: value;</code>
+        declaration inside each block is recorded along with the selector it belongs to. Variables
+        are grouped by prefix, the first hyphen-delimited segment after the leading
+        <code>--</code>, so <code>--color-primary-500</code> and <code>--color-accent</code> both
+        land under "color", which mirrors how most design-token naming conventions are structured.
+        A name is flagged as a duplicate only when it's declared with genuinely different values
+        somewhere else, not just declared again under a different selector with the same value
+        (that's the normal pattern for theme overrides).
+      </p>
+      <p>
+        Everything runs on keystroke in this page's JavaScript, using a lightweight brace-matching
+        scanner rather than a full CSS parser. Nothing you paste is uploaded.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/color-converter.html|Color Converter|Convert colors between HEX, RGB, HSL, CMYK.
+design/contrast-checker.html|Contrast Checker|Check WCAG contrast ratio, AA/AAA pass.
+design/css-clamp-generator.html|CSS Clamp Generator|Build fluid, viewport-scaled sizing.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Which custom properties does it find?</summary>
+        <p>Any declaration of the form --name: value; inside any selector block, not just :root, including nested rules and media queries. Each occurrence records which selector it was declared under.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does duplicate detection work?</summary>
+        <p>If the same variable name is declared more than once with different values (a common sign of copy-pasted or inconsistent tokens), it's flagged. Declaring the same name with the same value in multiple scopes (like light/dark theme overrides) is normal and isn't flagged.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my CSS sent anywhere?</summary>
+        <p>No, parsing happens entirely in your browser with a small JavaScript scanner. Nothing you paste is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-css-variable-extractor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

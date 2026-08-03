@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Social Media Image Cropper | norito</title>
+<meta name="description" content="Crop a photo to exact preset sizes for Instagram, Twitter/X, LinkedIn, YouTube, and Facebook. Pan and zoom to reposition. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/social-image-cropper.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Social Media Image Cropper | norito" />
+<meta property="og:description" content="Crop a photo to exact preset sizes for Instagram, Twitter/X, LinkedIn, YouTube, and Facebook. Pan and zoom to reposition. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/social-image-cropper.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Social Media Image Cropper | norito" />
+<meta name="twitter:description" content="Crop a photo to exact preset sizes for Instagram, Twitter/X, LinkedIn, YouTube, and Facebook. Pan and zoom to reposition. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Social Media Image Cropper",
+  "url": "https://norito.in/social-image-cropper.html",
+  "description": "Crop a photo to exact preset sizes for Instagram, Twitter/X, LinkedIn, YouTube, and Facebook.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is the crop positioned by default?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Centered, like CSS object-fit: cover, the preset's aspect ratio is fit to fill the frame with the image scaled up just enough that no empty space shows, then centered. Use the pan sliders to shift which part of the image stays in frame, and zoom to crop in tighter." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it output the exact pixel size each platform recommends?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, each preset downloads at that platform's current recommended pixel dimensions, not just the right ratio, so you don't need a second resize step." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Cropping happens entirely in your browser using the canvas API. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Social Image Cropper", "item": "https://norito.in/social-image-cropper.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Social Image Cropper</p>
+    <h1>Social Media Image Cropper</h1>
+    <p class="lede">
+      Crop a photo to the exact size a platform expects. Pick a preset, pan and zoom to reposition,
+      download.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose an image</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">Stays on your device, nothing is uploaded.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="preset">Preset</label>
+          <select id="preset">
+            <option value="ig-post" data-w="1080" data-h="1080">Instagram post (1080&times;1080)</option>
+            <option value="ig-story" data-w="1080" data-h="1920">Instagram story (1080&times;1920)</option>
+            <option value="ig-portrait" data-w="1080" data-h="1350">Instagram portrait post (1080&times;1350)</option>
+            <option value="x-header" data-w="1500" data-h="500">X / Twitter header (1500&times;500)</option>
+            <option value="linkedin-banner" data-w="1584" data-h="396">LinkedIn banner (1584&times;396)</option>
+            <option value="fb-cover" data-w="820" data-h="312">Facebook cover (820&times;312)</option>
+            <option value="yt-thumb" data-w="1280" data-h="720">YouTube thumbnail (1280&times;720)</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="field">
+            <label for="zoom">Zoom (<span id="zoomVal">100%</span>)</label>
+            <input type="range" id="zoom" min="100" max="300" value="100" />
+          </div>
+          <div class="field">
+            <label for="panX">Pan horizontal</label>
+            <input type="range" id="panX" min="0" max="100" value="50" />
+          </div>
+          <div class="field">
+            <label for="panY">Pan vertical</label>
+            <input type="range" id="panY" min="0" max="100" value="50" />
+          </div>
+        </div>
+
+        <button id="downloadBtn" disabled style="margin-top:12px;">Download cropped image</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="cropStage" style="background:var(--bg-subtle); border-radius:var(--radius-md); overflow:hidden; margin:0 auto; position:relative; max-width:100%;">
+            <canvas id="cropCanvas"></canvas>
+          </div>
+          <p class="note" id="previewHint" style="margin-top:12px;">Drop in an image and pick a preset to preview the crop.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        For each preset, the tool computes the scale needed so your image fully covers the target
+        aspect ratio with no empty edges, the same math behind CSS <code>object-fit: cover</code>,
+        then centers it by default. The zoom slider scales further and the pan sliders shift the
+        visible window across the source image; both are applied as a source rectangle passed to
+        <code>canvas.drawImage</code>, so the crop always renders from your image's full
+        resolution, not a downscaled preview.
+      </p>
+      <p>
+        Everything runs on an in-memory canvas in this tab. Your photo is never uploaded, and the
+        download comes directly from that canvas.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|Crop Image|Free-form or locked-ratio drag-to-crop.
+resize-image.html|Resize Image|Change width and height, exact or by percentage.
+image-dimension-inspector.html|Image Dimension Inspector|Check an image's exact pixel dimensions.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How is the crop positioned by default?</summary>
+        <p>Centered, like CSS object-fit: cover, the preset's aspect ratio is fit to fill the frame with the image scaled up just enough that no empty space shows, then centered. Use the pan sliders to shift which part of the image stays in frame, and zoom to crop in tighter.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it output the exact pixel size each platform recommends?</summary>
+        <p>Yes, each preset downloads at that platform's current recommended pixel dimensions, not just the right ratio, so you don't need a second resize step.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my photo uploaded anywhere?</summary>
+        <p>No. Cropping happens entirely in your browser using the canvas API. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-social-image-cropper.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

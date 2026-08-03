@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS फ़िल्टर जनरेटर | norito</title>
+<meta name="description" content="अपनी इमेज पर विज़ुअली CSS फ़िल्टर (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) बनाएं, फिर CSS कॉपी करें. यह आपके ब्राउज़र में ही चलता है." />
+<link rel="canonical" href="https://norito.in/hi/design/css-filter-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS फ़िल्टर जनरेटर | norito" />
+<meta property="og:description" content="अपनी इमेज पर विज़ुअली CSS फ़िल्टर (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) बनाएं, फिर CSS कॉपी करें. यह आपके ब्राउज़र में ही चलता है." />
+<meta property="og:url" content="https://norito.in/hi/design/css-filter-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS फ़िल्टर जनरेटर | norito" />
+<meta name="twitter:description" content="अपनी इमेज पर विज़ुअली CSS फ़िल्टर (blur, brightness, contrast, grayscale, hue-rotate, saturate, sepia) बनाएं, फिर CSS कॉपी करें. यह आपके ब्राउज़र में ही चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS फ़िल्टर जनरेटर",
+  "url": "https://norito.in/hi/design/css-filter-generator.html",
+  "description": "अपनी इमेज पर विज़ुअली CSS फ़िल्टर बनाएं, फिर CSS कॉपी करें.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "क्या मैं इसे अपनी इमेज पर प्रीव्यू कर सकता हूं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "हां, कोई भी इमेज डालें और हर स्लाइडर लाइव प्रीव्यू को तुरंत अपडेट करेगा. अगर कोई इमेज अपलोड नहीं की गई है, तो स्लाइडर्स एक प्लेसहोल्डर ग्रेडिएंट पर प्रीव्यू दिखाते हैं." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या फ़िल्टर लेआउट को असर करता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं. CSS फ़िल्टर सिर्फ़ एक विज़ुअल इफ़ेक्ट है, यह किसी एलिमेंट का बॉक्स साइज़ या पोज़िशन कभी नहीं बदलता, असली इमेज फ़ाइल बदलने के उलट. इसी वजह से इसे hover पर या किसी क्लास से टॉगल करना सस्ता पड़ता है, क्योंकि कुछ भी रीफ़्लो नहीं होता." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मेरी इमेज कहीं अपलोड होती है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं. प्रीव्यू आपके ब्राउज़र के अपने CSS इंजन का इस्तेमाल एक लोकल ऑब्जेक्ट URL पर करता है. कुछ भी अपलोड नहीं होता." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS फ़िल्टर जनरेटर", "item": "https://norito.in/hi/design/css-filter-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS फ़िल्टर जनरेटर</p>
+    <h1>CSS फ़िल्टर जनरेटर</h1>
+    <p class="lede">
+      एक इमेज डालें (ज़रूरी नहीं), स्लाइडर खींचें, CSS <code>filter</code> वैल्यू कॉपी करें.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop" style="padding:16px;">
+          <p>प्रीव्यू के लिए <strong>इमेज पर क्लिक करें या ड्रॉप करें</strong>, यह ज़रूरी नहीं है</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="fBlur">ब्लर (<span id="fBlurVal">0px</span>)</label>
+          <input type="range" id="fBlur" min="0" max="20" value="0" step="0.5" />
+        </div>
+        <div class="field">
+          <label for="fBrightness">ब्राइटनेस (<span id="fBrightnessVal">100%</span>)</label>
+          <input type="range" id="fBrightness" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fContrast">कॉन्ट्रास्ट (<span id="fContrastVal">100%</span>)</label>
+          <input type="range" id="fContrast" min="0" max="200" value="100" />
+        </div>
+        <div class="field">
+          <label for="fSaturate">सैचुरेट (<span id="fSaturateVal">100%</span>)</label>
+          <input type="range" id="fSaturate" min="0" max="300" value="100" />
+        </div>
+        <div class="field">
+          <label for="fGrayscale">ग्रेस्केल (<span id="fGrayscaleVal">0%</span>)</label>
+          <input type="range" id="fGrayscale" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fSepia">सीपिया (<span id="fSepiaVal">0%</span>)</label>
+          <input type="range" id="fSepia" min="0" max="100" value="0" />
+        </div>
+        <div class="field">
+          <label for="fHue">ह्यू रोटेट (<span id="fHueVal">0deg</span>)</label>
+          <input type="range" id="fHue" min="0" max="360" value="0" />
+        </div>
+        <div class="field">
+          <label for="fInvert">इनवर्ट (<span id="fInvertVal">0%</span>)</label>
+          <input type="range" id="fInvert" min="0" max="100" value="0" />
+        </div>
+        <button type="button" id="resetBtn" class="secondary">सब रीसेट करें</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <img id="previewImg" alt="फ़िल्टर प्रीव्यू" src="/assets/og-image.png" style="max-width:100%; max-height:260px; border-radius:8px;" />
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSS कॉपी करें</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        हर स्लाइडर सीधे एक CSS <code>filter</code> फ़ंक्शन से जुड़ा है (<code>blur()</code>,
+        <code>brightness()</code>, <code>contrast()</code>, <code>saturate()</code>,
+        <code>grayscale()</code>, <code>sepia()</code>, <code>hue-rotate()</code>,
+        <code>invert()</code>). जो फ़ंक्शन अपनी न्यूट्रल वैल्यू पर रहते हैं उन्हें आउटपुट से हटा दिया
+        जाता है ताकि कॉपी की गई CSS कम से कम रहे, और बाक़ी बचे फ़ंक्शन को स्पेस से जोड़ा जाता है, क्योंकि
+        CSS चेन किए गए फ़िल्टर फ़ंक्शन को उसी क्रम में लागू करता है जिस क्रम में वे लिखे गए हैं. यही
+        सटीक स्ट्रिंग प्रीव्यू इमेज की अपनी <code>filter</code> स्टाइल पर सेट होती है, यानी आप जो देख
+        रहे हैं वह असली इफ़ेक्ट है, कोई सिमुलेशन नहीं.
+      </p>
+      <p>
+        आपकी इमेज एक लोकल ऑब्जेक्ट URL के तौर पर लोड होती है और कभी ब्राउज़र टैब से बाहर नहीं जाती; इसमें
+        कोई अपलोड स्टेप नहीं है.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|CSS ईज़िंग जनरेटर|विज़ुअल cubic-bezier कर्व एडिटर.
+color-converter.html|कलर कन्वर्टर|HEX, RGB, HSL, CMYK, लाइव.
+../remove-metadata.html|मेटाडेटा हटाएं|EXIF, GPS और कैमरा जानकारी हटाएं.
+-->
+
+    <h2>सामान्य प्रश्न</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>क्या मैं इसे अपनी इमेज पर प्रीव्यू कर सकता हूं?</summary>
+        <p>हां, कोई भी इमेज डालें और हर स्लाइडर लाइव प्रीव्यू को तुरंत अपडेट करेगा. अगर कोई इमेज अपलोड नहीं की गई है, तो स्लाइडर्स एक प्लेसहोल्डर ग्रेडिएंट पर प्रीव्यू दिखाते हैं.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या फ़िल्टर लेआउट को असर करता है?</summary>
+        <p>नहीं. CSS फ़िल्टर सिर्फ़ एक विज़ुअल इफ़ेक्ट है, यह किसी एलिमेंट का बॉक्स साइज़ या पोज़िशन कभी नहीं बदलता, असली इमेज फ़ाइल बदलने के उलट. इसी वजह से इसे hover पर या किसी क्लास से टॉगल करना सस्ता पड़ता है, क्योंकि कुछ भी रीफ़्लो नहीं होता.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या मेरी इमेज कहीं अपलोड होती है?</summary>
+        <p>नहीं. प्रीव्यू आपके ब्राउज़र के अपने CSS इंजन का इस्तेमाल एक लोकल ऑब्जेक्ट URL पर करता है. कुछ भी अपलोड नहीं होता.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-filter-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

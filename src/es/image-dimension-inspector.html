@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Inspector de dimensiones de imagen | norito</title>
+<meta name="description" content="Suelta una imagen y ve al instante su ancho, alto, relación de aspecto, megapíxeles, tamaño de archivo y formato. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/image-dimension-inspector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Inspector de dimensiones de imagen | norito" />
+<meta property="og:description" content="Suelta una imagen y ve al instante su ancho, alto, relación de aspecto, megapíxeles, tamaño de archivo y formato. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/image-dimension-inspector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Inspector de dimensiones de imagen | norito" />
+<meta name="twitter:description" content="Suelta una imagen y ve al instante su ancho, alto, relación de aspecto, megapíxeles, tamaño de archivo y formato. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Inspector de dimensiones de imagen",
+  "url": "https://norito.in/es/image-dimension-inspector.html",
+  "description": "Suelta una imagen y ve al instante su ancho, alto, relación de aspecto, megapíxeles, tamaño de archivo y formato.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo revisar varias imágenes a la vez?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, selecciona o suelta varios archivos y cada uno obtiene su propia fila en la tabla de resultados, así puedes comparar dimensiones de un lote de un vistazo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se muestra la relación de aspecto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Como una relación simplificada (como 16:9 o 4:3) hallada dividiendo ambas dimensiones por su máximo común divisor, junto con la relación decimal en bruto para comparaciones exactas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se sube mi imagen a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El archivo se lee localmente y lo decodifica el propio motor de imágenes de tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Inspector de dimensiones de imagen", "item": "https://norito.in/es/image-dimension-inspector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Inspector de dimensiones de imagen</p>
+    <h1>Inspector de dimensiones de imagen</h1>
+    <p class="lede">
+      Suelta una o varias imágenes y mira al instante el ancho, alto, relación de aspecto,
+      megapíxeles y tamaño de archivo de cada una.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>Haz clic para elegir imágenes</strong>, o arrástralas hasta aquí</p>
+        <p class="note" style="margin-top:2px;">Selecciona varias para comparar. Se quedan en tu dispositivo, no se sube nada.</p>
+        <input type="file" id="fileInput" accept="image/*" multiple />
+      </div>
+      <div id="resultsWrap" style="margin-top:16px;"></div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Cada archivo se carga como una URL de objeto local en un elemento <code>Image</code>, que
+        es como el navegador lee las dimensiones reales en píxeles a partir del propio encabezado
+        del archivo, no del nombre ni de ninguna suposición. La relación de aspecto se simplifica
+        dividiendo ambas dimensiones por su máximo común divisor (hallado con el algoritmo de
+        Euclides), y el tamaño de archivo y el formato provienen directamente del objeto de archivo
+        que tu navegador ya tiene.
+      </p>
+      <p>
+        No se envía ningún dato de imagen a ningún sitio. Todo ocurre localmente, y las URLs de
+        objeto se liberan en cuanto se leen sus dimensiones.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+resize-image.html|Redimensionar Imagen|Cambia el ancho y alto, exacto o por porcentaje.
+social-image-cropper.html|Recortador de imágenes para redes sociales|Recorta a las relaciones preestablecidas de redes sociales.
+image-converter.html|Conversor de Imágenes|Convierte entre JPG, PNG y WebP.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Puedo revisar varias imágenes a la vez?</summary>
+        <p>Sí, selecciona o suelta varios archivos y cada uno obtiene su propia fila en la tabla de resultados, así puedes comparar dimensiones de un lote de un vistazo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo se muestra la relación de aspecto?</summary>
+        <p>Como una relación simplificada (como 16:9 o 4:3) hallada dividiendo ambas dimensiones por su máximo común divisor, junto con la relación decimal en bruto para comparaciones exactas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se sube mi imagen a algún sitio?</summary>
+        <p>No. El archivo se lee localmente y lo decodifica el propio motor de imágenes de tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-image-dimension-inspector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

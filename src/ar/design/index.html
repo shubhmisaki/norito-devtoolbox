@@ -40,7 +40,14 @@
     { "@type": "WebApplication", "name": "مولّد أيقونة الموقع", "url": "https://norito.in/ar/design/favicon-generator.html" },
     { "@type": "WebApplication", "name": "مستخرج لوحة الألوان", "url": "https://norito.in/ar/design/color-palette-extractor.html" },
     { "@type": "WebApplication", "name": "فاحص التباين", "url": "https://norito.in/ar/design/contrast-checker.html" },
-    { "@type": "WebApplication", "name": "محوّل الألوان", "url": "https://norito.in/ar/design/color-converter.html" }
+    { "@type": "WebApplication", "name": "محوّل الألوان", "url": "https://norito.in/ar/design/color-converter.html" },
+    { "@type": "WebApplication", "name": "مولّد أشكال Blob بصيغة SVG", "url": "https://norito.in/ar/design/blob-generator.html" },
+    { "@type": "WebApplication", "name": "مولّد دالة CSS Clamp()", "url": "https://norito.in/ar/design/css-clamp-generator.html" },
+    { "@type": "WebApplication", "name": "مولّد دوال تسارع CSS Easing", "url": "https://norito.in/ar/design/css-easing-generator.html" },
+    { "@type": "WebApplication", "name": "مولّد فلاتر CSS", "url": "https://norito.in/ar/design/css-filter-generator.html" },
+    { "@type": "WebApplication", "name": "مولّد نسيج الضوضاء", "url": "https://norito.in/ar/design/noise-texture-generator.html" },
+    { "@type": "WebApplication", "name": "مولّد أنماط CSS", "url": "https://norito.in/ar/design/pattern-generator.html" },
+    { "@type": "WebApplication", "name": "مولّد ظلال Tailwind", "url": "https://norito.in/ar/design/tailwind-shadow-generator.html" }
   ]
 }
 </script>
@@ -154,6 +161,76 @@
         </div>
         <h3>محوّل الألوان</h3>
         <p>HEX وRGB وHSL وCMYK، حيّة ومترابطة.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="teal" href="css-clamp-generator.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg>
+        </div>
+        <h3>مولّد دالة CSS Clamp()</h3>
+        <p>اضبط حدًا أدنى وأقصى للحجم، واحصل على قيمة clamp() مرنة تتكيف مع حجم الشاشة.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="coral" href="css-easing-generator.html">
+        <div class="icon-chip c-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg>
+        </div>
+        <h3>مولّد دوال تسارع CSS Easing</h3>
+        <p>اسحب مقبضين لتشكيل منحنى تسارع مخصص، وانسخ قيمة cubic-bezier().</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="purple" href="css-filter-generator.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg>
+        </div>
+        <h3>مولّد فلاتر CSS</h3>
+        <p>أفلت صورة، واسحب المنزلقات، وانسخ قيمة فلتر CSS.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="indigo" href="pattern-generator.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg>
+        </div>
+        <h3>مولّد أنماط CSS</h3>
+        <p>ابنِ نمط خلفية قابلاً للتكرار من تدرجات CSS خالصة، بلا حاجة إلى ملف صورة.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="rose" href="blob-generator.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </div>
+        <h3>مولّد أشكال Blob بصيغة SVG</h3>
+        <p>أنشئ شكل blob عضويًا عشوائيًا، اضبط العشوائية وعدد النقاط، وانسخ أو نزّل.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="amber" href="noise-texture-generator.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>مولّد نسيج الضوضاء</h3>
+        <p>أنشئ نسيجًا حبيبيًا بكثافة وشفافية ولون قابلة للضبط، نزّل أو انسخ كـ CSS.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="card" data-accent="purple" href="tailwind-shadow-generator.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg>
+        </div>
+        <h3>مولّد ظلال Tailwind</h3>
+        <p>ابنِ ظلًا متعدد الطبقات بصريًا، واحصل على صنف Tailwind بصيغة shadow-[...] مع كود CSS الخام.</p>
         <span class="card-link">فتح الأداة
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>

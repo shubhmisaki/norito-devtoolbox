@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG 优化器 | norito</title>
+<meta name="description" content="粘贴或上传一个 SVG 文件，去除其中的注释、元数据和多余空白以缩小体积，处理前后的效果和文件大小实时对比展示，全部在浏览器本地完成。" />
+<link rel="canonical" href="https://norito.in/zh/svg-optimizer.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG 优化器 | norito" />
+<meta property="og:description" content="粘贴或上传一个 SVG，去除注释、元数据和多余空白以缩小体积，实时预览优化前后的效果，完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/svg-optimizer.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG 优化器 | norito" />
+<meta name="twitter:description" content="粘贴或上传一个 SVG，去除注释、元数据和多余空白以缩小体积，实时预览优化前后的效果，完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG 优化器",
+  "url": "https://norito.in/zh/svg-optimizer.html",
+  "description": "粘贴或上传一个 SVG，去除注释、元数据和多余空白以缩小体积。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "优化会改变 SVG 的显示效果吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，被移除的内容要么是不可见的元数据（注释、XML 声明、编辑器专属属性），要么是标签之间无意义的空白。渲染出来的图形完全一致，只是文件的字节大小变小了。" }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么优化后我的 SVG 文件还是很大？",
+      "acceptedAnswer": { "@type": "Answer", "text": "如果大部分体积来自真正的路径数据（复杂形状中的大量控制点）或内嵌的位图图片，仅靠清理是无法明显缩小的，因为这些数据属于可见内容的一部分。这个工具专注于安全的、无损的清理，而不是简化路径，后者可能会悄悄改变形状。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的 SVG 会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。优化过程完全在你浏览器的 JavaScript 中进行，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG 优化器", "item": "https://norito.in/zh/svg-optimizer.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVG 优化器</p>
+    <h1>SVG 优化器</h1>
+    <p class="lede">
+      粘贴或拖入一个 SVG，去除注释、元数据、编辑器冗余信息和多余空白。
+      实时查看体积变化。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>点击选择 .svg 文件</strong>，或将它拖放到这里</p>
+          <p class="note" style="margin-top:2px;">也可以直接把 SVG 代码粘贴到下方的文本框中。文件留在你的设备上。</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="svgInput">SVG 代码</label>
+          <textarea id="svgInput" class="mono-area" rows="12" placeholder="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; ...>...</svg>"></textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">移除 width/height（仅保留 viewBox）</span>
+          <label class="switch"><input type="checkbox" id="optRemoveDims" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="previewWrap" style="padding:24px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; min-height:140px; display:flex; align-items:center; justify-content:center;">
+            <p class="note" id="previewHint">预览会显示在这里。</p>
+          </div>
+          <div id="sizeStats" class="note" style="margin-bottom:12px;"></div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:220px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">复制优化后的 SVG</button>
+            <button id="downloadBtn" class="secondary">下载 .svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        清理过程会移除 XML/DOCTYPE 声明、<code>&lt;!-- 注释 --&gt;</code>、
+        编辑器专属的命名空间和元数据（Inkscape、Sketch、Illustrator 导出时留下的属性，
+        以及设计工具遗留的 <code>&lt;metadata&gt;</code> 和 <code>&lt;title&gt;</code> 区块），
+        并折叠标签之间多余的空白，这些都不会影响 SVG 的渲染效果。此外你还可以选择
+        移除根元素上显式的 <code>width</code>/<code>height</code> 属性，让 SVG 纯粹依据其
+        <code>viewBox</code> 缩放，这在响应式嵌入时很有用。
+      </p>
+      <p>
+        整个过程都是对你提供的字符串进行文本处理，并使用浏览器自带的 DOM 解析器
+        确保结果仍是合法的 XML。不会上传任何内容。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-to-react-component.html|SVG 转 React 组件|把 SVG 代码转换成 JSX 组件。
+design/favicon-generator.html|Favicon 生成器|从图片生成 favicon。
+design/color-palette-extractor.html|调色板提取器|从图片中提取主色调。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>优化会改变 SVG 的显示效果吗？</summary>
+        <p>不会，被移除的内容要么是不可见的元数据（注释、XML 声明、编辑器专属属性），要么是标签之间无意义的空白。渲染出来的图形完全一致，只是文件的字节大小变小了。</p>
+      </details>
+      <details class="faq-item">
+        <summary>为什么优化后我的 SVG 文件还是很大？</summary>
+        <p>如果大部分体积来自真正的路径数据（复杂形状中的大量控制点）或内嵌的位图图片，仅靠清理是无法明显缩小的，因为这些数据属于可见内容的一部分。这个工具专注于安全的、无损的清理，而不是简化路径，后者可能会悄悄改变形状。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的 SVG 会被上传到别的地方吗？</summary>
+        <p>不会。优化过程完全在你浏览器的 JavaScript 中进行，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-optimizer.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

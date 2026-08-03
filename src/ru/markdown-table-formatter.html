@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Форматировщик Markdown-таблиц | norito</title>
+<meta name="description" content="Вставьте неровную Markdown-таблицу и получите её обратно аккуратно выровненной, с сохранением маркеров выравнивания и содержимого. Работает полностью в браузере." />
+<link rel="canonical" href="https://norito.in/ru/markdown-table-formatter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Форматировщик Markdown-таблиц | norito" />
+<meta property="og:description" content="Вставьте неровную Markdown-таблицу и получите её обратно аккуратно выровненной, с сохранением маркеров выравнивания и содержимого. Работает полностью в браузере." />
+<meta property="og:url" content="https://norito.in/ru/markdown-table-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Форматировщик Markdown-таблиц | norito" />
+<meta name="twitter:description" content="Вставьте неровную Markdown-таблицу и получите её обратно аккуратно выровненной, с сохранением маркеров выравнивания и содержимого. Работает полностью в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Форматировщик Markdown-таблиц",
+  "url": "https://norito.in/ru/markdown-table-formatter.html",
+  "description": "Вставьте неровную Markdown-таблицу и получите её обратно аккуратно выровненной.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Чем это отличается от Генератора Markdown-таблиц?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Генератор строит новую таблицу из данных CSV/TSV. Этот инструмент, наоборот, берёт таблицу, которая уже написана в синтаксисе Markdown, но чьи вертикальные черты и отступы разъехались (обычное дело после ручного редактирования), и переформатирует её, не меняя содержимое ячеек или существующие маркеры выравнивания." }
+    },
+    {
+      "@type": "Question",
+      "name": "Сохраняется ли выравнивание столбцов?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да. Если в вашей строке-разделителе уже есть двоеточия (:--- , :---: или ---:), это выравнивание считывается и сохраняется. Если у таблицы нет корректной строки-разделителя, столбцы по умолчанию выравниваются по левому краю, а примечание объясняет, что была сгенерирована новая строка." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли моя таблица куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, разбор и форматирование происходят полностью в вашем браузере. Ничего из вставленного вами не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Форматировщик Markdown-таблиц", "item": "https://norito.in/ru/markdown-table-formatter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Форматировщик Markdown-таблиц</p>
+    <h1>Форматировщик Markdown-таблиц</h1>
+    <p class="lede">
+      Вставьте Markdown-таблицу с неровными вертикальными чертами и неравномерными отступами,
+      получите её обратно аккуратно выровненной — содержимое и выравнивание не тронуты.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="mdInput">Markdown-таблица</label>
+          <textarea id="mdInput" class="mono-area" rows="12">| Name | Role | Location |
+|---|:---:|---:|
+| Shubham | Founder | India |
+| Ava | Engineer | Remote |
+| Priya | Designer | Remote |</textarea>
+        </div>
+        <p class="note" id="formatNote" style="display:none;"></p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:160px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Скопировать отформатированную таблицу</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Предпросмотр рендера</h3>
+          <div id="renderedPreview" style="overflow-x:auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Каждая строка делится на ячейки по неэкранированным символам вертикальной черты
+        (черта, перед которой стоит <code>\</code>, остаётся внутри ячейки, а не разбивает её),
+        а необязательные крайние черты в начале и конце строки отбрасываются перед разбиением —
+        точно так же, как это делает сам Markdown. Вторая строка проверяется на соответствие
+        шаблону разделителя (<code>:---</code>, <code>:---:</code>, <code>---:</code> или
+        обычное <code>---</code>); если она совпадает, её двоеточия задают выравнивание каждого
+        столбца, а если нет — инструмент откатывается к обычному разделителю с выравниванием по
+        левому краю и сообщает об этом. Затем каждый столбец заново измеряется по самой широкой
+        ячейке и дополняется отступами, так что вертикальные черты выстраиваются в ряд как при
+        рендере в HTML, так и в виде сырого текста в редакторе.
+      </p>
+      <p>
+        Форматирование происходит полностью в JavaScript этой страницы при каждом нажатии
+        клавиши. Ничего из вставленного вами не загружается.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+markdown-table-generator.html|Генератор Markdown-таблиц|Постройте Markdown-таблицу из CSV/TSV.
+markdown-editor.html|Редактор Markdown|Живой предпросмотр, экспорт в .md/.html.
+invisible-character-detector.html|Детектор невидимых символов|Найдите скрытые символы нулевой ширины.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Чем это отличается от Генератора Markdown-таблиц?</summary>
+        <p>Генератор строит новую таблицу из данных CSV/TSV. Этот инструмент, наоборот, берёт таблицу, которая уже написана в синтаксисе Markdown, но чьи вертикальные черты и отступы разъехались (обычное дело после ручного редактирования), и переформатирует её, не меняя содержимое ячеек или существующие маркеры выравнивания.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Сохраняется ли выравнивание столбцов?</summary>
+        <p>Да. Если в вашей строке-разделителе уже есть двоеточия (:--- , :---: или ---:), это выравнивание считывается и сохраняется. Если у таблицы нет корректной строки-разделителя, столбцы по умолчанию выравниваются по левому краю, а примечание объясняет, что была сгенерирована новая строка.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли моя таблица куда-либо?</summary>
+        <p>Нет, разбор и форматирование происходят полностью в вашем браузере. Ничего из вставленного вами не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-markdown-table-formatter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

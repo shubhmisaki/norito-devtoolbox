@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>यूज़र-एजेंट पार्सर | norito</title>
+<meta name="description" content="User-Agent स्ट्रिंग पेस्ट करें और उसका ब्राउज़र, इंजन, OS और डिवाइस टूटा हुआ देखें। डिफ़ॉल्ट रूप से आपका अपना दिखाता है। पूरी तरह आपके ब्राउज़र में चलता है।" />
+<link rel="canonical" href="https://norito.in/hi/user-agent-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="यूज़र-एजेंट पार्सर | norito" />
+<meta property="og:description" content="User-Agent स्ट्रिंग पेस्ट करें और उसका ब्राउज़र, इंजन, OS और डिवाइस टूटा हुआ देखें। डिफ़ॉल्ट रूप से आपका अपना दिखाता है। पूरी तरह आपके ब्राउज़र में चलता है।" />
+<meta property="og:url" content="https://norito.in/hi/user-agent-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="यूज़र-एजेंट पार्सर | norito" />
+<meta name="twitter:description" content="User-Agent स्ट्रिंग पेस्ट करें और उसका ब्राउज़र, इंजन, OS और डिवाइस टूटा हुआ देखें। डिफ़ॉल्ट रूप से आपका अपना दिखाता है। पूरी तरह आपके ब्राउज़र में चलता है।" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "यूज़र-एजेंट पार्सर",
+  "url": "https://norito.in/hi/user-agent-parser.html",
+  "description": "User-Agent स्ट्रिंग पेस्ट करें और उसका ब्राउज़र, इंजन, OS और डिवाइस टूटा हुआ देखें।",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "यह डिफ़ॉल्ट रूप से मेरा अपना ब्राउज़र क्यों दिखाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "बॉक्स पहले से navigator.userAgent से भरा होता है, यानी आपके अपने ब्राउज़र की स्ट्रिंग, जिसे आप जिस पेज पर पहले से हैं वहीं से लोकली पढ़ा जाता है। इसकी जगह कोई और User-Agent स्ट्रिंग पेस्ट करके उसे पार्स करें।" }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या यह हर ब्राउज़र और डिवाइस को बिल्कुल सही पहचान सकता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "User-Agent स्ट्रिंग्स स्वभाव से गड़बड़ होती हैं, कई ब्राउज़र कम्पैटिबिलिटी के लिए उन ब्राउज़रों के टोकन शामिल करते हैं जिन पर वे आधारित हैं (उदाहरण के लिए, Edge और Chrome दोनों में \"Safari\" और \"KHTML, like Gecko\" शामिल होता है)। यह टूल सामान्य मामलों को कवर करने वाले पैटर्न नियमों का इस्तेमाल करता है, लेकिन अस्पष्ट या स्पूफ़ की गई स्ट्रिंग्स फिर भी ग़लत पढ़ी जा सकती हैं।" }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या यह स्ट्रिंग कहीं भेजी जाती है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं। पार्सिंग पूरी तरह आपके ब्राउज़र में रेगुलर एक्सप्रेशन से होती है। कुछ भी अपलोड नहीं होता।" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "यूज़र-एजेंट पार्सर", "item": "https://norito.in/hi/user-agent-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / यूज़र-एजेंट पार्सर</p>
+    <h1>यूज़र-एजेंट पार्सर</h1>
+    <p class="lede">
+      कोई भी User-Agent स्ट्रिंग पेस्ट करें और वह जिस ब्राउज़र, रेंडरिंग इंजन, OS और डिवाइस
+      टाइप को दर्शाती है उसे देखें। शुरुआत आपके अपने ब्राउज़र से होती है।
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="uaInput">User-Agent स्ट्रिंग</label>
+          <textarea id="uaInput" class="mono-area" rows="6"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        स्ट्रिंग को उस क्रम में जाने-पहचाने टोकन के लिए स्कैन किया जाता है जो ओवरलैप करने वाले
+        ब्राउज़रों को सबसे बेहतर तरीक़े से अलग करता है, क्योंकि Chromium-आधारित ब्राउज़र (Edge,
+        Opera, Brave, Vivaldi, Samsung Internet) कम्पैटिबिलिटी के लिए सभी में
+        <code>Chrome/</code> टोकन रखते हैं और इन्हें पहले अपने ख़ास, ज़्यादा स्पेसिफ़िक टोकन के
+        लिए जांचना पड़ता है, वरना सभी सिर्फ़ Chrome के रूप में ग़लत पहचाने जाएंगे। OS एक अलग
+        टोकन सेट से पहचाना जाता है (<code>Windows NT</code>, <code>Mac OS X</code>,
+        <code>Android</code>, <code>iPhone OS</code>/<code>CPU OS</code>, आम Linux मार्कर), और
+        डिवाइस टाइप इस बात पर निर्भर करता है कि मोबाइल- या टैबलेट-स्पेसिफ़िक टोकन मौजूद हैं या
+        नहीं।
+      </p>
+      <p>
+        सब कुछ इस पेज की जावास्क्रिप्ट में, आपके दिए टेक्स्ट पर, या अगर आपने बॉक्स नहीं बदला तो
+        <code>navigator.userAgent</code> पर होता है। कुछ भी अपलोड नहीं होता।
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-parser.html|URL पार्सर|URL को उसके कॉम्पोनेंट भागों में तोड़ें।
+hash-generator.html|हैश जनरेटर|MD5, SHA-1, SHA-256, SHA-512।
+regex-tester.html|Regex टेस्टर|लाइव मैच हाइलाइटिंग के साथ regex टेस्ट करें।
+-->
+
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>यह डिफ़ॉल्ट रूप से मेरा अपना ब्राउज़र क्यों दिखाता है?</summary>
+        <p>बॉक्स पहले से navigator.userAgent से भरा होता है, यानी आपके अपने ब्राउज़र की स्ट्रिंग, जिसे आप जिस पेज पर पहले से हैं वहीं से लोकली पढ़ा जाता है। इसकी जगह कोई और User-Agent स्ट्रिंग पेस्ट करके उसे पार्स करें।</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या यह हर ब्राउज़र और डिवाइस को बिल्कुल सही पहचान सकता है?</summary>
+        <p>User-Agent स्ट्रिंग्स स्वभाव से गड़बड़ होती हैं, कई ब्राउज़र कम्पैटिबिलिटी के लिए उन ब्राउज़रों के टोकन शामिल करते हैं जिन पर वे आधारित हैं (उदाहरण के लिए, Edge और Chrome दोनों में "Safari" और "KHTML, like Gecko" शामिल होता है)। यह टूल सामान्य मामलों को कवर करने वाले पैटर्न नियमों का इस्तेमाल करता है, लेकिन अस्पष्ट या स्पूफ़ की गई स्ट्रिंग्स फिर भी ग़लत पढ़ी जा सकती हैं।</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या यह स्ट्रिंग कहीं भेजी जाती है?</summary>
+        <p>नहीं। पार्सिंग पूरी तरह आपके ब्राउज़र में रेगुलर एक्सप्रेशन से होती है। कुछ भी अपलोड नहीं होता।</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-user-agent-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

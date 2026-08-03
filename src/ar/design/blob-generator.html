@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مولّد أشكال Blob بصيغة SVG | norito</title>
+<meta name="description" content="أنشئ شكل Blob عضويًا عشوائيًا، اضبط عشوائيته وعدد نقاطه، ثم انسخ مسار SVG أو نزّل الملف. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/design/blob-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد أشكال Blob بصيغة SVG | norito" />
+<meta property="og:description" content="أنشئ شكل Blob عضويًا عشوائيًا، اضبط عشوائيته وعدد نقاطه، ثم انسخ مسار SVG أو نزّل الملف. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/design/blob-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد أشكال Blob بصيغة SVG | norito" />
+<meta name="twitter:description" content="أنشئ شكل Blob عضويًا عشوائيًا، اضبط عشوائيته وعدد نقاطه، ثم انسخ مسار SVG أو نزّل الملف. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد أشكال Blob بصيغة SVG",
+  "url": "https://norito.in/ar/design/blob-generator.html",
+  "description": "أنشئ شكل Blob عضويًا عشوائيًا، اضبط العشوائية وعدد النقاط، وانسخ مسار SVG.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "كيف يُبنى شكل الـ Blob؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "توضع مجموعة من النقاط بشكل متساوٍ حول دائرة، وتُدفع كل نقطة للداخل أو للخارج بمقدار عشوائي يتحكم فيه شريط \"العشوائية\"، ثم تُوصل بمنحنى مغلق ناعم يمر بها جميعًا. زيادة عدد النقاط تعني حدودًا أكثر تفصيلًا وأقل استدارة." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنني الحصول على نفس شكل Blob لاحقًا؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لكل شكل Blob رقم بذرة (Seed) يظهر بجانب زر إعادة التوليد. أدخل هذه البذرة مجددًا (أو شاركها) لإعادة إنتاج الشكل نفسه بالضبط، لأن الدفعات العشوائية تُشتق منها بشكل حتمي." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل هذا إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، يُنشأ الشكل ويُعرض بالكامل داخل متصفحك. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مولّد أشكال Blob بصيغة SVG", "item": "https://norito.in/ar/design/blob-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / مولّد أشكال Blob بصيغة SVG</p>
+    <h1>مولّد أشكال Blob بصيغة SVG</h1>
+    <p class="lede">
+      أنشئ شكل Blob عضويًا عشوائيًا، عدّل عشوائيته وعدد نقاطه، ثم انسخ أو نزّل ملف
+      SVG.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="blobRandomness">العشوائية (<span id="blobRandomnessVal">30%</span>)</label>
+          <input type="range" id="blobRandomness" min="0" max="80" value="30" />
+        </div>
+        <div class="field">
+          <label for="blobPoints">النقاط (<span id="blobPointsVal">8</span>)</label>
+          <input type="range" id="blobPoints" min="3" max="16" value="8" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="blobColor">لون التعبئة</label>
+            <input type="color" id="blobColor" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="blobSeed">البذرة (Seed)</label>
+            <input type="number" id="blobSeed" value="1" min="0" />
+          </div>
+        </div>
+        <button type="button" id="regenBtn">إعادة التوليد</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px;">
+            <svg id="blobSvg" viewBox="0 0 200 200" style="width:200px; height:200px;"><path id="blobPath" /></svg>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:160px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">نسخ مسار SVG</button>
+            <button id="downloadBtn" class="secondary">تنزيل .svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        توزَّع النقاط بالتساوي حول دائرة، ثم تُدفع مسافة كل نقطة من المركز بمقدار
+        شبه عشوائي يتناسب مع شريط العشوائية. تغذي البذرة مولّد أرقام شبه عشوائي حتمي صغير،
+        لذا فإن نفس البذرة وعدد النقاط والعشوائية تُنتج دائمًا الشكل نفسه بالضبط، وهو ما
+        يفيد في حفظ شكل أعجبك أو مشاركته. تُوصل هذه النقاط بعدها بمنحنى ناعم على طراز
+        Catmull-Rom يُحوَّل إلى قطع بيزييه تكعيبية بصيغة SVG، وهذا ما يجعل الحدود عضوية
+        بدلًا من أن تكون مسطّحة الأوجه.
+      </p>
+      <p>
+        كل شيء يُنشأ ويُعرض مباشرة كـ SVG في هذه الصفحة. لا شيء يُرفع.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|مولّد أنماط CSS|أنشئ أنماط خلفية قابلة للتكرار.
+noise-texture-generator.html|مولّد نسيج الضوضاء|أنشئ نسيج حبيبي/ضوضاء.
+../svg-optimizer.html|محسّن SVG|أزل التعليقات والبيانات الوصفية من SVG.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>كيف يُبنى شكل الـ Blob؟</summary>
+        <p>توضع مجموعة من النقاط بشكل متساوٍ حول دائرة، وتُدفع كل نقطة للداخل أو للخارج بمقدار عشوائي يتحكم فيه شريط "العشوائية"، ثم تُوصل بمنحنى مغلق ناعم يمر بها جميعًا. زيادة عدد النقاط تعني حدودًا أكثر تفصيلًا وأقل استدارة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني الحصول على نفس شكل Blob لاحقًا؟</summary>
+        <p>لكل شكل Blob رقم بذرة (Seed) يظهر بجانب زر إعادة التوليد. أدخل هذه البذرة مجددًا (أو شاركها) لإعادة إنتاج الشكل نفسه بالضبط، لأن الدفعات العشوائية تُشتق منها بشكل حتمي.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا إلى أي مكان؟</summary>
+        <p>لا، يُنشأ الشكل ويُعرض بالكامل داخل متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-blob-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

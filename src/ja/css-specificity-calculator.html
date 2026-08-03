@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS詳細度計算ツール | norito</title>
+<meta name="description" content="CSSセレクタを貼り付けると、詳細度の内訳（インライン、ID、クラス、要素）をカスケード順にランク付けして表示します。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/css-specificity-calculator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS詳細度計算ツール | norito" />
+<meta property="og:description" content="CSSセレクタを貼り付けると、詳細度の内訳（インライン、ID、クラス、要素）をカスケード順にランク付けして表示します。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/css-specificity-calculator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS詳細度計算ツール | norito" />
+<meta name="twitter:description" content="CSSセレクタを貼り付けると、詳細度の内訳（インライン、ID、クラス、要素）をカスケード順にランク付けして表示します。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS詳細度計算ツール",
+  "url": "https://norito.in/ja/css-specificity-calculator.html",
+  "description": "CSSセレクタを貼り付けると、詳細度の内訳をカスケード順にランク付けして表示します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "詳細度はどのように計算されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "インラインスタイル、IDセレクタ、クラス/属性セレクタ/擬似クラス、要素・擬似要素セレクタという4段階のカウントで計算されます。下位の階層をいくつ積み重ねても上位の階層には勝てません。そのため1つのID (0,1,0,0) は常に20個のクラス (0,0,20,0) に勝ちます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "2つのセレクタが同点になるのはなぜですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "詳細度が完全に同点の場合、CSSはソースの順序にフォールバックします。スタイルシート内で後に現れるルール（または後から追加されたルール）が勝ちます。このツールも貼り付けた順序で同点をソートし、その挙動に合わせています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "このCSSはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。セレクタは小さなJavaScriptのトークナイザーによって、すべてブラウザ内で解析・採点されます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS詳細度計算ツール", "item": "https://norito.in/ja/css-specificity-calculator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / CSS詳細度計算ツール</p>
+    <h1>CSS詳細度計算ツール</h1>
+    <p class="lede">
+      1行に1つずつセレクタを貼り付けると、カスケードが実際に適用する順序で、それぞれの詳細度の内訳をランク付けして表示します。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="selInput">セレクタ（1行に1つ）</label>
+          <textarea id="selInput" class="mono-area" rows="12" placeholder="#header .nav a:hover
+.card > .title
+div p span
+[data-active].btn.primary
+#app"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+          <p class="note" id="emptyState">結果はここに、詳細度の高い順に表示されます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        各セレクタはコンビネータで分割され、トークン化されます。<code>#id</code> トークンはIDとして、
+        <code>.class</code>、<code>[attr]</code>、<code>:pseudo-class</code> トークンはクラスとして、
+        素の要素名と <code>::pseudo-elements</code> は要素としてカウントされます。
+        全称セレクタ <code>*</code> や <code>&gt;</code>、<code>+</code>、<code>~</code> のようなコンビネータは何も加算しません。
+        各セレクタは最終的に <code>(ID数, クラス数, 要素数)</code> の3つ組になります。これはCSS仕様そのものが詳細度を定義する方法と完全に一致するため、ここでのランキングはブラウザ自身のカスケードと同じ結果になります。
+      </p>
+      <p>
+        すべての処理はこのページのJavaScriptでキー入力のたびに実行されます。スタイルシート丸ごとのセレクタを貼り付けても、ブラウザの外に出ることはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+design/css-gradient-generator.html|CSSグラデーションジェネレーター|線形・放射状グラデーションをビジュアルに作成。
+json-formatter.html|JSONフォーマッタ・バリデーター|JSONの整形・検証・圧縮。
+regex-tester.html|正規表現テストツール|マッチ箇所をリアルタイムにハイライトしながら正規表現をテスト。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>詳細度はどのように計算されますか?</summary>
+        <p>インラインスタイル、IDセレクタ、クラス/属性セレクタ/擬似クラス、要素・擬似要素セレクタという4段階のカウントで計算されます。下位の階層をいくつ積み重ねても上位の階層には勝てません。そのため1つのID (0,1,0,0) は常に20個のクラス (0,0,20,0) に勝ちます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>2つのセレクタが同点になるのはなぜですか?</summary>
+        <p>詳細度が完全に同点の場合、CSSはソースの順序にフォールバックします。スタイルシート内で後に現れるルール（または後から追加されたルール）が勝ちます。このツールも貼り付けた順序で同点をソートし、その挙動に合わせています。</p>
+      </details>
+      <details class="faq-item">
+        <summary>このCSSはどこかに送信されますか?</summary>
+        <p>いいえ。セレクタは小さなJavaScriptのトークナイザーによって、すべてブラウザ内で解析・採点されます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-css-specificity-calculator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

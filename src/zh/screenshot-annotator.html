@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>截图标注工具 | norito</title>
+<meta name="description" content="在截图上绘制箭头、方框、自由线条和文字，还可以对隐私内容做模糊处理，完成后直接下载。支持撤销/重做，完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/screenshot-annotator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="截图标注工具 | norito" />
+<meta property="og:description" content="在截图上绘制箭头、方框、自由线条和文字，还可以对隐私内容做模糊处理，完成后直接下载。支持撤销/重做，完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/screenshot-annotator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="截图标注工具 | norito" />
+<meta name="twitter:description" content="在截图上绘制箭头、方框、自由线条和文字，还可以对隐私内容做模糊处理，完成后直接下载。支持撤销/重做，完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "截图标注工具",
+  "url": "https://norito.in/zh/screenshot-annotator.html",
+  "description": "在截图上绘制箭头、方框、自由线条和文字，然后下载。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "模糊/打码工具是做什么用的？",
+      "acceptedAnswer": { "@type": "Answer", "text": "把它拖到你想隐藏的内容上——比如邮箱地址、账号或人脸，导出的图片中该区域会被永久打码。它直接作用于像素数据，而不是 CSS 遮罩层，所以无法在图片编辑器中被揭开。" }
+    },
+    {
+      "@type": "Question",
+      "name": "可以撤销误操作吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以，你画的每一个图形都是独立的一步，撤销/重做可以在这段历史记录中前后移动。在你下载之前，任何操作都不会真正写入图片。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的截图会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。绘制、模糊和导出全部在浏览器里的内存画布中完成。不会上传任何内容，考虑到截图经常包含隐私信息，这一点尤为重要。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "截图标注工具", "item": "https://norito.in/zh/screenshot-annotator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 截图标注工具</p>
+    <h1>截图标注工具</h1>
+    <p class="lede">
+      上传一张截图，绘制箭头、方框、自由标记和文字，把隐私内容打码，然后下载。
+    </p>
+    </div>
+  </div>
+
+    <div class="panel" id="editorPanel" style="display:none;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; align-items:center;">
+        <div class="tabs" id="toolTabs">
+          <button type="button" class="tab active" data-tool="arrow">箭头</button>
+          <button type="button" class="tab" data-tool="rect">方框</button>
+          <button type="button" class="tab" data-tool="freehand">画笔</button>
+          <button type="button" class="tab" data-tool="text">文字</button>
+          <button type="button" class="tab" data-tool="blur">模糊</button>
+        </div>
+        <input type="color" id="strokeColor" value="#ef4444" title="颜色" />
+        <input type="range" id="strokeWidth" min="2" max="16" value="4" title="线宽" style="width:90px;" />
+        <button type="button" id="undoBtn" class="secondary" disabled>撤销</button>
+        <button type="button" id="redoBtn" class="secondary" disabled>重做</button>
+        <button type="button" id="clearBtn" class="secondary">重新开始</button>
+      </div>
+      <div id="canvasWrap" style="position:relative; max-width:100%; overflow:auto; background:var(--bg-subtle); border-radius:var(--radius-md);">
+        <canvas id="annCanvas" style="max-width:100%; display:block; touch-action:none; cursor:crosshair;"></canvas>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="downloadBtn">下载 PNG</button>
+      </div>
+    </div>
+
+    <div class="panel" id="dropPanel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>点击选择一张截图</strong>，或将其拖放到这里</p>
+        <p class="note" style="margin-top:2px;">文件留在你的设备上，不会上传任何内容。</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        每一处标注——箭头、方框、自由绘制、文字标签或模糊区域——都保存为一个轻量的图形对象，而不是在你绘制时就直接写入像素。每次改动都会先重绘底层截图，再按顺序把所有图形叠加上去，这正是撤销/重做能生效的原因：它只是裁剪或重放这份图形列表。模糊区域是唯一直接作用于像素的例外，它对所选区域内的一格格像素进行采样并取平均值（一种简单的方框模糊），因此导出的文件中底层细节是真正被破坏掉的，而不只是视觉上被遮住。
+      </p>
+      <p>
+        下载是通过 <code>toBlob</code> 从画布直接导出的 PNG。图片在任何时候都不会离开你的浏览器，考虑到截图经常包含隐私信息，这一点很重要。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|裁剪图片|自由裁剪或按锁定比例拖拽裁剪。
+watermark-image.html|图片水印|添加带实时预览的文字水印。
+remove-metadata.html|删除元数据|清除 EXIF、GPS 和相机信息。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>模糊/打码工具是做什么用的？</summary>
+        <p>把它拖到你想隐藏的内容上——比如邮箱地址、账号或人脸，导出的图片中该区域会被永久打码。它直接作用于像素数据，而不是 CSS 遮罩层，所以无法在图片编辑器中被揭开。</p>
+      </details>
+      <details class="faq-item">
+        <summary>可以撤销误操作吗？</summary>
+        <p>可以，你画的每一个图形都是独立的一步，撤销/重做可以在这段历史记录中前后移动。在你下载之前，任何操作都不会真正写入图片。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的截图会被上传到别的地方吗？</summary>
+        <p>不会。绘制、模糊和导出全部在浏览器里的内存画布中完成。不会上传任何内容，考虑到截图经常包含隐私信息，这一点尤为重要。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-screenshot-annotator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

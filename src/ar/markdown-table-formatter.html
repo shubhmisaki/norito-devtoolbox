@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>منسّق جداول Markdown | norito</title>
+<meta name="description" content="الصق جدول Markdown غير منظّم واحصل عليه مُحاذًى ومُنسّقًا بدقة، مع الحفاظ على علامات المحاذاة والمحتوى. يعمل بالكامل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/markdown-table-formatter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="منسّق جداول Markdown | norito" />
+<meta property="og:description" content="الصق جدول Markdown غير منظّم واحصل عليه مُحاذًى ومُنسّقًا بدقة، مع الحفاظ على علامات المحاذاة والمحتوى. يعمل بالكامل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/markdown-table-formatter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="منسّق جداول Markdown | norito" />
+<meta name="twitter:description" content="الصق جدول Markdown غير منظّم واحصل عليه مُحاذًى ومُنسّقًا بدقة، مع الحفاظ على علامات المحاذاة والمحتوى. يعمل بالكامل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "منسّق جداول Markdown",
+  "url": "https://norito.in/ar/markdown-table-formatter.html",
+  "description": "الصق جدول Markdown غير منظّم واحصل عليه مُحاذًى ومُنسّقًا بدقة.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما الفرق بين هذه الأداة ومولّد جداول Markdown؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يبني المولّد جدولًا جديدًا من بيانات CSV/TSV. أما هذه الأداة فتأخذ جدولًا موجودًا بالفعل بصياغة Markdown لكن أعمدته الفاصلة ومسافاته انحرفت عن المحاذاة (شائع بعد التعديل اليدوي)، وتعيد حشوه دون تغيير أي محتوى خلية أو علامات محاذاة موجودة." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تحافظ الأداة على محاذاة الأعمدة؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم. إذا كان صف الفاصل لديك يحتوي بالفعل على نقطتين (:--- أو :---: أو ---:)، تُقرأ تلك المحاذاة وتُحفظ. إذا لم يكن لدى الجدول صف فاصل صالح، تُصبح الأعمدة محاذاة لليسار افتراضيًا مع ملاحظة توضح أنه تم إنشاء صف جديد." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل جدولي إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، يحدث التحليل والتنسيق بالكامل داخل متصفحك. لا شيء تلصقه يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "منسّق جداول Markdown", "item": "https://norito.in/ar/markdown-table-formatter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / منسّق جداول Markdown</p>
+    <h1>منسّق جداول Markdown</h1>
+    <p class="lede">
+      الصق جدول Markdown بأعمدة فاصلة غير محاذاة ومسافات متفاوتة، واحصل عليه مُحشوًّا بدقة، دون
+      المساس بالمحتوى أو المحاذاة.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="mdInput">جدول Markdown</label>
+          <textarea id="mdInput" class="mono-area" rows="12">| Name | Role | Location |
+|---|:---:|---:|
+| Shubham | Founder | India |
+| Ava | Engineer | Remote |
+| Priya | Designer | Remote |</textarea>
+        </div>
+        <p class="note" id="formatNote" style="display:none;"></p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:160px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">نسخ الجدول المُنسَّق</button>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">معاينة العرض</h3>
+          <div id="renderedPreview" style="overflow-x:auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>
+        يُقسَّم كل سطر إلى خلايا عند أحرف الفاصل غير المُهرَّبة (الفاصل المسبوق بـ
+        <code>\</code> يبقى داخل الخلية بدلًا من تقسيمها)، وتُحذف الفواصل الاختيارية في بداية
+        ونهاية كل صف قبل التقسيم، بما يطابق طريقة تعامل Markdown نفسها معها. يُفحص الصف الثاني
+        مقابل نمط الفاصل (<code>:---</code>، <code>:---:</code>، <code>---:</code>، أو
+        <code>---</code> العادي)؛ فإذا طابقه، تحدد نقطتاه محاذاة كل عمود، وإذا لم يطابقه، تعود
+        الأداة إلى فاصل محاذٍ لليسار بشكل بسيط وتوضح ذلك. يُعاد بعد ذلك قياس كل عمود مقابل أعرض
+        خلية فيه ويُعاد حشوه، بحيث تتماشى الأعمدة الفاصلة سواء عُرض الجدول كـ HTML مُصيَّر أو
+        كنص خام في محرر.
+      </p>
+      <p>
+        يحدث التنسيق بالكامل داخل جافاسكريبت هذه الصفحة مع كل ضغطة مفتاح. لا شيء تلصقه يُرفع.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+markdown-table-generator.html|مولّد جداول Markdown|أنشئ جدول Markdown من بيانات CSV/TSV.
+markdown-editor.html|محرر Markdown|معاينة فورية، تصدير كـ ‎.md/.html‎.
+invisible-character-detector.html|كاشف الأحرف غير المرئية|عثر على أحرف صفرية العرض مخفية.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ما الفرق بين هذه الأداة ومولّد جداول Markdown؟</summary>
+        <p>يبني المولّد جدولًا جديدًا من بيانات CSV/TSV. أما هذه الأداة فتأخذ جدولًا موجودًا بالفعل بصياغة Markdown لكن أعمدته الفاصلة ومسافاته انحرفت عن المحاذاة (شائع بعد التعديل اليدوي)، وتعيد حشوه دون تغيير أي محتوى خلية أو علامات محاذاة موجودة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تحافظ الأداة على محاذاة الأعمدة؟</summary>
+        <p>نعم. إذا كان صف الفاصل لديك يحتوي بالفعل على نقطتين (:--- أو :---: أو ---:)، تُقرأ تلك المحاذاة وتُحفظ. إذا لم يكن لدى الجدول صف فاصل صالح، تُصبح الأعمدة محاذاة لليسار افتراضيًا مع ملاحظة توضح أنه تم إنشاء صف جديد.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل جدولي إلى أي مكان؟</summary>
+        <p>لا، يحدث التحليل والتنسيق بالكامل داخل متصفحك. لا شيء تلصقه يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-markdown-table-formatter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

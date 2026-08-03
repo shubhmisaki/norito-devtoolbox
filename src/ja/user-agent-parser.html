@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>User-Agentパーサー | norito</title>
+<meta name="description" content="User-Agent文字列を貼り付けると、ブラウザ、レンダリングエンジン、OS、デバイスに分解して表示します。初期値は自分自身のものです。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/user-agent-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="User-Agentパーサー | norito" />
+<meta property="og:description" content="User-Agent文字列を貼り付けると、ブラウザ、レンダリングエンジン、OS、デバイスに分解して表示します。初期値は自分自身のものです。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/user-agent-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="User-Agentパーサー | norito" />
+<meta name="twitter:description" content="User-Agent文字列を貼り付けると、ブラウザ、レンダリングエンジン、OS、デバイスに分解して表示します。初期値は自分自身のものです。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "User-Agentパーサー",
+  "url": "https://norito.in/ja/user-agent-parser.html",
+  "description": "User-Agent文字列を貼り付けると、ブラウザ、レンダリングエンジン、OS、デバイスに分解して表示します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "なぜデフォルトで自分自身のブラウザが表示されるのですか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "入力欄には最初から、今開いているこのページからローカルに読み取った、あなた自身のブラウザの文字列であるnavigator.userAgentが入力されています。他のUser-Agent文字列に上書きして貼り付ければ、そちらを解析できます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "すべてのブラウザとデバイスを完璧に検出できますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "User-Agent文字列は本質的に雑然としています。多くのブラウザは互換性のために、ベースにしている他のブラウザのトークンを含んでいます（例えばEdgeとChromeはどちらも「Safari」と「KHTML, like Gecko」を含みます）。このツールは一般的なケースをカバーするパターンルールを使いますが、あまり見かけない文字列や偽装された文字列は誤って解釈されることがあります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "この文字列はどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。解析は正規表現を使ってすべてブラウザ内で行われます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "User-Agentパーサー", "item": "https://norito.in/ja/user-agent-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / User-Agentパーサー</p>
+    <h1>User-Agentパーサー</h1>
+    <p class="lede">
+      任意のUser-Agent文字列を貼り付けると、それが示すブラウザ、レンダリングエンジン、OS、デバイスタイプを表示します。初期値は自分自身のものです。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="uaInput">User-Agent文字列</label>
+          <textarea id="uaInput" class="mono-area" rows="6"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        文字列は、重複するブラウザを最もうまく区別できる順序で既知のトークンをスキャンされます。Chromiumベースのブラウザ（Edge、Opera、Brave、Vivaldi、Samsung Internet）はいずれも互換性のために<code>Chrome/</code>トークンを持っているため、先にそれぞれのより特定的なトークンをチェックしないと、すべて単なるChromeとして誤検出されてしまいます。OSは別のトークン群（<code>Windows NT</code>、<code>Mac OS X</code>、<code>Android</code>、<code>iPhone OS</code>/<code>CPU OS</code>、一般的なLinuxマーカー）から検出され、デバイスタイプはモバイル/タブレット固有のトークンの有無から判定されます。
+      </p>
+      <p>
+        すべての処理は、入力したテキスト、またはボックスを変更していない場合は<code>navigator.userAgent</code>に対して、このページのJavaScriptで行われます。アップロードは一切行われません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-parser.html|URLパーサー|URLを構成要素に分解します。
+hash-generator.html|ハッシュジェネレーター|MD5, SHA-1, SHA-256, SHA-512。
+regex-tester.html|正規表現テストツール|マッチ箇所をリアルタイムにハイライトしながら正規表現をテスト。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>なぜデフォルトで自分自身のブラウザが表示されるのですか?</summary>
+        <p>入力欄には最初から、今開いているこのページからローカルに読み取った、あなた自身のブラウザの文字列であるnavigator.userAgentが入力されています。他のUser-Agent文字列に上書きして貼り付ければ、そちらを解析できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>すべてのブラウザとデバイスを完璧に検出できますか?</summary>
+        <p>User-Agent文字列は本質的に雑然としています。多くのブラウザは互換性のために、ベースにしている他のブラウザのトークンを含んでいます（例えばEdgeとChromeはどちらも「Safari」と「KHTML, like Gecko」を含みます）。このツールは一般的なケースをカバーするパターンルールを使いますが、あまり見かけない文字列や偽装された文字列は誤って解釈されることがあります。</p>
+      </details>
+      <details class="faq-item">
+        <summary>この文字列はどこかに送信されますか?</summary>
+        <p>いいえ。解析は正規表現を使ってすべてブラウザ内で行われます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-user-agent-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

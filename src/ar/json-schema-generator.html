@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مولّد مخطط JSON Schema | norito</title>
+<meta name="description" content="الصق نموذج JSON، واحصل على مخطط JSON Schema (المسودة 07) يصف شكله وأنواعه. يعمل بالكامل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/json-schema-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد مخطط JSON Schema | norito" />
+<meta property="og:description" content="الصق نموذج JSON، واحصل على مخطط JSON Schema (المسودة 07) يصف شكله وأنواعه. يعمل بالكامل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/json-schema-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد مخطط JSON Schema | norito" />
+<meta name="twitter:description" content="الصق نموذج JSON، واحصل على مخطط JSON Schema (المسودة 07) يصف شكله وأنواعه. يعمل بالكامل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد مخطط JSON Schema",
+  "url": "https://norito.in/ar/json-schema-generator.html",
+  "description": "الصق نموذج JSON، واحصل على مخطط JSON Schema (المسودة 07) يصف شكله وأنواعه.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "أي مسودة من JSON Schema يولّدها هذا؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "المسودة 07 (draft-07)، وهي الأكثر دعمًا على نطاق واسع بين أدوات التحقق مثل ajv وjsonschema (بايثون) ومعظم أدوات بيئات التطوير المتكاملة. الناتج JSON عادي، لذا يمكنك تعديله يدويًا لاحقًا إذا احتجت كلمات مفتاحية من مسودة أحدث." }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف تُعالَج المصفوفات؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "تفحص الأداة كل عنصر في المصفوفة وتدمج أنواعها المستنتجة. إذا شاركت كل العناصر نفس الشكل، تحصل على مخطط items واحد؛ وإذا اختلفت الأنواع بين العناصر، تنتقل الأداة إلى مخطط أوسع بحيث لا يبقى أي شيء في نموذجك غير ممثَّل." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تضع علامة على الحقول كإلزامية؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم، يُضاف كل مفتاح موجود في كائن إلى قائمة required الخاصة بذلك الكائن، لأنه ظهر في نموذجك. أزل المفاتيح من مصفوفة required في المخطط المُولَّد إذا كانت اختيارية فعليًا في بياناتك الحقيقية." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مولّد مخطط JSON Schema", "item": "https://norito.in/ar/json-schema-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12h-8"/><path d="M21 6H8"/><path d="M21 18h-8"/><path d="M3 6v4c0 1.1.9 2 2 2h3"/><path d="M3 10v6c0 1.1.9 2 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / مولّد مخطط JSON Schema</p>
+    <h1>مولّد مخطط JSON Schema</h1>
+    <p class="lede">
+      الصق نموذج JSON واحصل على مخطط JSON Schema (المسودة 07) يصف شكله وأنواعه
+      وحقوله الإلزامية.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="jsonInput">نموذج JSON</label>
+          <textarea id="jsonInput" class="mono-area" rows="16">{
+  "id": 101,
+  "name": "norito",
+  "active": true,
+  "tags": ["tools", "privacy"],
+  "meta": { "version": 1.2, "public": true }
+}</textarea>
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">نسخ المخطط</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        تجتاز الأداة بنية JSON التي حلّلتها بشكل تكراري. تصبح الكائنات
+        <code>type: "object"</code> مع إدخال <code>properties</code> لكل مفتاح
+        وكل مفتاح موجود مُدرَج في <code>required</code>. تصبح المصفوفات
+        <code>type: "array"</code> مع مخطط <code>items</code> يُبنى باستنتاج ودمج
+        نوع كل عنصر. تُطابَق الأنواع البدائية مباشرة: النصوص، الأرقام (تحصل الأعداد
+        الصحيحة على <code>"integer"</code> بدلاً من <code>"number"</code> عندما تكون
+        كل القيم المأخوذة كعينة صحيحة)، القيم المنطقية، والقيمة الفارغة null.
+      </p>
+      <p>
+        يعمل هذا عبر <code>JSON.parse</code>، محلّل متصفحك الأصلي، ثم عبر جهاز
+        اجتياز تكراري صغير، كلاهما داخل جافاسكريبت هذه الصفحة. لا شيء يُرفع.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|منسّق ومدقق JSON|نسّق وتحقق واختصر JSON.
+json-diff.html|أداة مقارنة JSON|قارن بين مستندي JSON.
+yaml-to-json-converter.html|محوّل YAML إلى JSON|حوّل YAML وJSON، في الاتجاهين.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>أي مسودة من JSON Schema يولّدها هذا؟</summary>
+        <p>المسودة 07 (draft-07)، وهي الأكثر دعمًا على نطاق واسع بين أدوات التحقق مثل ajv وjsonschema (بايثون) ومعظم أدوات بيئات التطوير المتكاملة. الناتج JSON عادي، لذا يمكنك تعديله يدويًا لاحقًا إذا احتجت كلمات مفتاحية من مسودة أحدث.</p>
+      </details>
+      <details class="faq-item">
+        <summary>كيف تُعالَج المصفوفات؟</summary>
+        <p>تفحص الأداة كل عنصر في المصفوفة وتدمج أنواعها المستنتجة. إذا شاركت كل العناصر نفس الشكل، تحصل على مخطط items واحد؛ وإذا اختلفت الأنواع بين العناصر، تنتقل الأداة إلى مخطط أوسع بحيث لا يبقى أي شيء في نموذجك غير ممثَّل.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تضع علامة على الحقول كإلزامية؟</summary>
+        <p>نعم، يُضاف كل مفتاح موجود في كائن إلى قائمة required الخاصة بذلك الكائن، لأنه ظهر في نموذجك. أزل المفاتيح من مصفوفة required في المخطط المُولَّد إذا كانت اختيارية فعليًا في بياناتك الحقيقية.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-json-schema-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>User-Agent 解析器 | norito</title>
+<meta name="description" content="粘贴一个 User-Agent 字符串，查看它对应的浏览器、渲染引擎、操作系统和设备类型，默认预填你自己的浏览器信息，全部在浏览器本地完成解析。" />
+<link rel="canonical" href="https://norito.in/zh/user-agent-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="User-Agent 解析器 | norito" />
+<meta property="og:description" content="粘贴一个 User-Agent 字符串，查看它对应的浏览器、渲染引擎、操作系统和设备类型，默认预填你自己的浏览器信息，完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/user-agent-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="User-Agent 解析器 | norito" />
+<meta name="twitter:description" content="粘贴一个 User-Agent 字符串，查看它对应的浏览器、渲染引擎、操作系统和设备类型，默认预填你自己的浏览器信息，完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "User-Agent 解析器",
+  "url": "https://norito.in/zh/user-agent-parser.html",
+  "description": "粘贴一个 User-Agent 字符串，查看它对应的浏览器、渲染引擎、操作系统和设备类型。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "为什么默认显示的是我自己的浏览器？",
+      "acceptedAnswer": { "@type": "Answer", "text": "文本框会预先填入 navigator.userAgent，也就是你自己浏览器的字符串，直接从你正在访问的页面本地读取。把任意其他 User-Agent 字符串粘贴进去覆盖它，即可解析那一条。" }
+    },
+    {
+      "@type": "Question",
+      "name": "它能完美识别每一种浏览器和设备吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "User-Agent 字符串本身就很混乱，很多浏览器为了兼容性会携带它们所基于的其他浏览器的标记（例如 Edge 和 Chrome 都带有 \"Safari\" 和 \"KHTML, like Gecko\"）。这个工具使用覆盖常见情况的规则集，但生僻或伪造的字符串仍可能被误判。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这个字符串会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。解析完全在你的浏览器中用正则表达式完成，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "User-Agent 解析器", "item": "https://norito.in/zh/user-agent-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / User-Agent 解析器</p>
+    <h1>User-Agent 解析器</h1>
+    <p class="lede">
+      粘贴任意 User-Agent 字符串，查看它标识出的浏览器、渲染引擎、操作系统和设备类型。
+      默认显示你自己的信息。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="uaInput">User-Agent 字符串</label>
+          <textarea id="uaInput" class="mono-area" rows="6"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        字符串会按照最能区分重叠浏览器的顺序扫描已知标记，因为基于 Chromium 的浏览器
+        （Edge、Opera、Brave、Vivaldi、三星浏览器）出于兼容性都带有 <code>Chrome/</code>
+        标记，必须先检查它们各自更具体的标记，否则都会被误判为纯 Chrome。操作系统
+        通过另一组标记检测（<code>Windows NT</code>、<code>Mac OS X</code>、
+        <code>Android</code>、<code>iPhone OS</code>/<code>CPU OS</code>、常见的 Linux
+        标记），设备类型则取决于是否存在移动端或平板专属的标记。
+      </p>
+      <p>
+        一切都在本页面的 JavaScript 中，针对你提供的文本进行处理，如果你没有修改文本框，
+        则使用 <code>navigator.userAgent</code>。不会上传任何内容。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-parser.html|URL 解析器|把 URL 拆解成各个组成部分。
+hash-generator.html|哈希生成器|MD5、SHA-1、SHA-256、SHA-512。
+regex-tester.html|正则表达式测试工具|实时高亮匹配结果测试正则表达式。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>为什么默认显示的是我自己的浏览器？</summary>
+        <p>文本框会预先填入 navigator.userAgent，也就是你自己浏览器的字符串，直接从你正在访问的页面本地读取。把任意其他 User-Agent 字符串粘贴进去覆盖它，即可解析那一条。</p>
+      </details>
+      <details class="faq-item">
+        <summary>它能完美识别每一种浏览器和设备吗？</summary>
+        <p>User-Agent 字符串本身就很混乱，很多浏览器为了兼容性会携带它们所基于的其他浏览器的标记（例如 Edge 和 Chrome 都带有 "Safari" 和 "KHTML, like Gecko"）。这个工具使用覆盖常见情况的规则集，但生僻或伪造的字符串仍可能被误判。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这个字符串会被发送到别的地方吗？</summary>
+        <p>不会。解析完全在你的浏览器中用正则表达式完成，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-user-agent-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

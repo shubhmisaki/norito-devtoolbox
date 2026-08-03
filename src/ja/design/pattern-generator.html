@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSSパターンジェネレーター | norito</title>
+<meta name="description" content="ストライプ、ドット、グリッド、市松模様など、タイル張り可能なCSS背景パターンを色と間隔の調整付きで作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/design/pattern-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSSパターンジェネレーター | norito" />
+<meta property="og:description" content="ストライプ、ドット、グリッド、市松模様など、タイル張り可能なCSS背景パターンを色と間隔の調整付きで作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/design/pattern-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSSパターンジェネレーター | norito" />
+<meta name="twitter:description" content="ストライプ、ドット、グリッド、市松模様など、タイル張り可能なCSS背景パターンを色と間隔の調整付きで作成し、CSSをコピーできます。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSSパターンジェネレーター",
+  "url": "https://norito.in/ja/design/pattern-generator.html",
+  "description": "色と間隔の調整付きでタイル張り可能なCSS背景パターンを作成します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "画像ファイルを使っていますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。すべてのパターンは、繰り返しの背景として重ねられたCSSグラデーションから作られており、画像リクエストは一切ありません。ラスターのタイルではなくベクター計算なので、どのズームレベル、どの要素サイズでもパターンが鮮明なままです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "パターンは継ぎ目なくタイル状に並びますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。background-sizeがちょうど1つの繰り返し単位に設定されているため、どの要素サイズでも端から端まで目に見える継ぎ目なくパターンが繰り返されます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。パターンの生成とプレビューはすべてブラウザのCSSエンジン内で行われます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "CSSパターンジェネレーター", "item": "https://norito.in/ja/design/pattern-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSSパターンジェネレーター</p>
+    <h1>CSSパターンジェネレーター</h1>
+    <p class="lede">
+      純粋なCSSグラデーションだけでタイル張り可能な背景パターンを作成します。画像ファイルは不要で、
+      CSSをコピーできます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="patType">パターン</label>
+          <select id="patType">
+            <option value="stripes" selected>斜めストライプ</option>
+            <option value="stripesH">水平ストライプ</option>
+            <option value="dots">ドット</option>
+            <option value="grid">グリッド</option>
+            <option value="checkerboard">市松模様</option>
+            <option value="crosshatch">クロスハッチ</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="patFg">前景色</label>
+            <input type="color" id="patFg" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="patBg">背景色</label>
+            <input type="color" id="patBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="patSize">サイズ (<span id="patSizeVal">24px</span>)</label>
+          <input type="range" id="patSize" min="4" max="120" value="24" />
+        </div>
+        <div class="field">
+          <label for="patThickness">線の太さ / ドットサイズ (<span id="patThicknessVal">4px</span>)</label>
+          <input type="range" id="patThickness" min="1" max="40" value="4" />
+        </div>
+        <div class="field">
+          <label for="patOpacity">前景の不透明度 (<span id="patOpacityVal">100%</span>)</label>
+          <input type="range" id="patOpacity" min="5" max="100" value="100" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSSをコピー</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        各プリセットは、1つまたは2つのCSS<code>linear-gradient()</code>または<code>radial-gradient()</code>
+        レイヤーを、ソフトな混ざり合いのないはっきりしたカラーストップで構築します。これがなめらかな
+        グラデーションを鮮明な繰り返し形状へと変えています。<code>background-size</code>はちょうど
+        1タイル分の寸法に設定されているため、端で目に見える継ぎ目なくパターンが繰り返されます。ドットや
+        グリッドのパターンでは、形状が角で切れずに中央に来るよう、さらにbackground-positionをオフセットして
+        います。
+      </p>
+      <p>
+        すべて生成されたCSSであり、プレビューボックス自身の<code>background</code>スタイルに適用されます。
+        アップロードは一切行われず、画像リクエストも発生しません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+../design/css-gradient-generator.html|CSSグラデーションジェネレーター|線形または放射状グラデーションを視覚的に作成。
+blob-generator.html|ブロブジェネレーター|有機的なブロブ形状を生成。
+noise-texture-generator.html|ノイズテクスチャジェネレーター|粒状ノイズテクスチャを生成。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>画像ファイルを使っていますか?</summary>
+        <p>いいえ。すべてのパターンは、繰り返しの背景として重ねられたCSSグラデーションから作られており、画像リクエストは一切ありません。ラスターのタイルではなくベクター計算なので、どのズームレベル、どの要素サイズでもパターンが鮮明なままです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>パターンは継ぎ目なくタイル状に並びますか?</summary>
+        <p>はい。background-sizeがちょうど1つの繰り返し単位に設定されているため、どの要素サイズでも端から端まで目に見える継ぎ目なくパターンが繰り返されます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>これはどこかに送信されますか?</summary>
+        <p>いいえ。パターンの生成とプレビューはすべてブラウザのCSSエンジン内で行われます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-pattern-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

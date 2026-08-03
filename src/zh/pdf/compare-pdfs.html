@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>在线免费对比两份 PDF | norito</title>
+<meta name="description" content="按文字内容逐行对比两份 PDF，高亮显示新增和删除的内容。完全在浏览器中运行，不会上传任何文件。" />
+<link rel="canonical" href="https://norito.in/zh/pdf/compare-pdfs.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="在线免费对比两份 PDF | norito" />
+<meta property="og:description" content="按文字内容逐行对比两份 PDF，高亮显示新增和删除的内容。完全在浏览器中运行，不会上传任何文件。" />
+<meta property="og:url" content="https://norito.in/zh/pdf/compare-pdfs.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在线免费对比两份 PDF | norito" />
+<meta name="twitter:description" content="按文字内容逐行对比两份 PDF，高亮显示新增和删除的内容。完全在浏览器中运行，不会上传任何文件。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "对比 PDF",
+  "url": "https://norito.in/zh/pdf/compare-pdfs.html",
+  "description": "按文字内容逐行对比两份 PDF，高亮显示新增和删除的内容。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "这个工具对比的是排版设计，还是只对比文字？",
+      "acceptedAnswer": { "@type": "Answer", "text": "只对比文字内容。它会提取每份 PDF 中嵌入的文字并进行差异对比，因此能识别措辞变化、新增或删除的段落、被修改的数字，但无法识别纯视觉上的变化，比如字体替换，或者移动了图片但周围文字完全相同的情况。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这个工具能用于扫描版 PDF 吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不能。扫描页面本质上是图片，没有嵌入的文字，因此没有内容可供提取或对比，除非这份 PDF 已经经过 OCR 处理。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的 PDF 会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。两份文件都完全在你的浏览器中被读取和对比。不会上传任何内容，这对你正在对比的合同或草稿来说很重要。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "对比 PDF", "item": "https://norito.in/zh/pdf/compare-pdfs.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / 对比 PDF</p>
+    <h1>对比两份 PDF</h1>
+    <p class="lede">
+      放入两份 PDF，逐行查看它们的文字内容对比结果，新增和删除的内容都会被高亮显示。
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="two-col">
+        <div>
+          <label style="display:block; margin-bottom:8px; font-weight:600;">原始 PDF</label>
+          <div class="dropzone" id="dropA">
+            <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+            <p><strong>点击或拖放原始 PDF</strong></p>
+            <input type="file" id="fileInputA" accept="application/pdf" />
+          </div>
+          <p class="note" id="fileInfoA" style="margin-top:6px;"></p>
+        </div>
+        <div>
+          <label style="display:block; margin-bottom:8px; font-weight:600;">修改后的 PDF</label>
+          <div class="dropzone" id="dropB">
+            <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+            <p><strong>点击或拖放修改后的 PDF</strong></p>
+            <input type="file" id="fileInputB" accept="application/pdf" />
+          </div>
+          <p class="note" id="fileInfoB" style="margin-top:6px;"></p>
+        </div>
+      </div>
+
+      <p class="note" id="loadingInfo" style="display:none; margin-top:16px;">正在提取并对比文字&hellip;</p>
+      <div class="result-box error" id="errorBox" style="display:none; margin-top:16px;"></div>
+
+      <div id="diffStats" class="diff-stats" style="display:none; margin-top:16px;"></div>
+      <div id="diffOutput" class="diff-view" style="display:none; margin-top:12px;"></div>
+      <p class="note" id="emptyState" style="margin-top:16px;">放入两份 PDF 即可查看对比结果。</p>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        每份 PDF 都通过 pdf.js 读取——这正是 Firefox 用来渲染 PDF 的引擎——遍历每一页的内容
+        流，通过 <code>getTextContent()</code> 收集其中嵌入的文字。得到的两段文字随后会按行
+        拆分，并使用与 norito 的 <a href="../text-diff.html">文本对比</a> 工具相同的最长公共
+        子序列（LCS）差异算法进行对比，找出能够解释两份文档差异的最小新增和删除集合，而不是
+        简单地按行号位置对比（那样的话，插入一个段落就会导致后面所有行都被标记为“已修改”）。
+      </p>
+      <p>
+        和所有 PDF 文字提取一样，结果取决于 PDF 中是否真的包含文字。扫描页面本质是图片，
+        没有内容可供对比。提取和对比这两个步骤都在这个浏览器标签页内完成，两份文件都不会被
+        上传。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+extract-text.html|提取文字|从 PDF 中提取文字内容。
+../text-diff.html|文本对比|逐行对比两段文本的差异。
+merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>这个工具对比的是排版设计，还是只对比文字？</summary>
+        <p>只对比文字内容。它会提取每份 PDF 中嵌入的文字并进行差异对比，因此能识别措辞变化、新增或删除的段落、被修改的数字，但无法识别纯视觉上的变化，比如字体替换，或者移动了图片但周围文字完全相同的情况。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这个工具能用于扫描版 PDF 吗？</summary>
+        <p>不能。扫描页面本质上是图片，没有嵌入的文字，因此没有内容可供提取或对比，除非这份 PDF 已经经过 OCR 处理。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的 PDF 会被上传到别的地方吗？</summary>
+        <p>不会。两份文件都完全在你的浏览器中被读取和对比。不会上传任何内容，这对你正在对比的合同或草稿来说很重要。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script type="module" src="../../js/app-pdf-compare.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

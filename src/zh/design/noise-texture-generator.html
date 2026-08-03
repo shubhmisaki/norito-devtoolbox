@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>噪点纹理生成器 | norito</title>
+<meta name="description" content="通过密度、透明度和颜色控件生成颗粒/噪点纹理，下载为 PNG，或复制为 CSS data-URI 背景，全程在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/design/noise-texture-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="噪点纹理生成器 | norito" />
+<meta property="og:description" content="通过密度、透明度和颜色控件生成颗粒/噪点纹理，下载为 PNG，或复制为 CSS data-URI 背景，全程在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/design/noise-texture-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="噪点纹理生成器 | norito" />
+<meta name="twitter:description" content="通过密度、透明度和颜色控件生成颗粒/噪点纹理，下载为 PNG，或复制为 CSS data-URI 背景，全程在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "噪点纹理生成器",
+  "url": "https://norito.in/zh/design/noise-texture-generator.html",
+  "description": "通过密度、透明度和颜色控件生成颗粒/噪点纹理。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "下载的 PNG 能无缝平铺吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "它是随机的逐像素噪点，而不是重复图案，所以作为小尺寸的重复 background-image 使用时也不会出现明显接缝，因为每个像素都是独立随机生成的，没有会在平铺边缘断裂的更大结构。" }
+    },
+    {
+      "@type": "Question",
+      "name": "下载 PNG 和复制 CSS 有什么区别？",
+      "acceptedAnswer": { "@type": "Answer", "text": "下载会得到一个真正的 .png 文件，可以在样式表或 <img> 中引用。“复制为 CSS”则是把同一张图片以 base64 data URI 的形式直接嵌入 background-image 规则中，适合需要单个自包含 CSS 代码块、无需另外托管文件的场景。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这些内容会被发送到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会，纹理是在浏览器内的内存画布上逐像素生成的，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "噪点纹理生成器", "item": "https://norito.in/zh/design/noise-texture-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / 噪点纹理生成器</p>
+    <h1>噪点纹理生成器</h1>
+    <p class="lede">
+      生成可调节密度、透明度和颜色的颗粒纹理，然后下载或复制为 CSS。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="noiseSize">平铺尺寸（<span id="noiseSizeVal">128px</span>）</label>
+          <input type="range" id="noiseSize" min="32" max="512" step="32" value="128" />
+        </div>
+        <div class="field">
+          <label for="noiseDensity">密度（<span id="noiseDensityVal">50%</span>）</label>
+          <input type="range" id="noiseDensity" min="5" max="100" value="50" />
+        </div>
+        <div class="field">
+          <label for="noiseOpacity">透明度（<span id="noiseOpacityVal">30%</span>）</label>
+          <input type="range" id="noiseOpacity" min="1" max="100" value="30" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="noiseColor">颗粒颜色</label>
+            <input type="color" id="noiseColor" value="#000000" />
+          </div>
+          <div class="field">
+            <label for="noiseBg">背景颜色</label>
+            <input type="color" id="noiseBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">单色颗粒</span>
+          <label class="switch"><input type="checkbox" id="noiseMono" checked /><span class="track"></span></label>
+        </div>
+        <button type="button" id="regenBtn">重新生成</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <canvas id="noiseCanvas" width="128" height="128" style="width:100%; max-width:320px; aspect-ratio:1; border-radius:var(--radius-md); margin-bottom:16px; image-rendering:pixelated;"></canvas>
+          <div id="tiledPreview" style="height:100px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="downloadBtn">下载 PNG</button>
+            <button id="copyCssBtn" class="secondary">复制为 CSS 背景</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        一个指定平铺尺寸的画布会被逐像素填充：每个像素独立地按密度滑块的概率决定是否生成颗粒，
+        然后该颗粒颜色的透明度会按透明度滑块进行缩放。单色模式全程使用同一种颗粒颜色；关闭后每
+        个颗粒的亮度也会被随机化，呈现出更有质感、更不均匀的效果。下方的平铺预览会将同一张画布
+        作为 CSS 背景重复展示，方便查看放大后的效果。
+      </p>
+      <p>
+        下载的 PNG 和“复制为 CSS”得到的 data URI 这两种输出，都直接来自这个画布的
+        <code>toDataURL</code>/<code>toBlob</code>，完全在你的浏览器中生成，不会上传任何内容。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|CSS 图案生成器|构建可平铺的背景图案。
+blob-generator.html|SVG 随机形状生成器|生成有机的随机形状。
+favicon-generator.html|Favicon 生成器|从图片生成 favicon。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>下载的 PNG 能无缝平铺吗？</summary>
+        <p>它是随机的逐像素噪点，而不是重复图案，所以作为小尺寸的重复 background-image 使用时也不会出现明显接缝，因为每个像素都是独立随机生成的，没有会在平铺边缘断裂的更大结构。</p>
+      </details>
+      <details class="faq-item">
+        <summary>下载 PNG 和复制 CSS 有什么区别？</summary>
+        <p>下载会得到一个真正的 .png 文件，可以在样式表或 &lt;img&gt; 中引用。“复制为 CSS”则是把同一张图片以 base64 data URI 的形式直接嵌入 background-image 规则中，适合需要单个自包含 CSS 代码块、无需另外托管文件的场景。</p>
+      </details>
+      <details class="faq-item">
+        <summary>这些内容会被发送到别的地方吗？</summary>
+        <p>不会，纹理是在浏览器内的内存画布上逐像素生成的，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/zh.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-noise-texture-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

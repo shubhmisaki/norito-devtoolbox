@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>تحويل SVG إلى مكوّن React | norito</title>
+<meta name="description" content="الصق كود SVG واحصل على مكوّن React دالي (JSX) بسمات camelCase وclassName. يعمل بالكامل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/svg-to-react-component.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="تحويل SVG إلى مكوّن React | norito" />
+<meta property="og:description" content="الصق كود SVG واحصل على مكوّن React دالي (JSX) بسمات camelCase وclassName. يعمل بالكامل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/svg-to-react-component.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="تحويل SVG إلى مكوّن React | norito" />
+<meta name="twitter:description" content="الصق كود SVG واحصل على مكوّن React دالي (JSX) بسمات camelCase وclassName. يعمل بالكامل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "تحويل SVG إلى مكوّن React",
+  "url": "https://norito.in/ar/svg-to-react-component.html",
+  "description": "الصق كود SVG واحصل على مكوّن React دالي (JSX) بسمات camelCase وclassName.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما الذي يتغيّر بين SVG وJSX؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "تتحول أسماء السمات إلى camelCase (تصبح stroke-width هي strokeWidth، وfill-rule هي fillRule)، وتصبح class هي className، وتحصل الوسوم ذاتية الإغلاق على الشرطة المائلة النهائية التي يتطلبها JSX. الناتج المرئي مطابق تمامًا." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنني التحكم في الحجم واللون عبر props؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "فعّل \"قبول props\" ليقوم المكوّن بنشر {...props} على عنصر <svg> الجذري، بحيث يمكنك تجاوز width أو height أو className أو أي شيء آخر من أي مكان تستخدمه فيه، وهو النمط المعتاد لمكوّنات الأيقونات." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل هذا كود SVG الخاص بي إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا. التحويل هو تحويل نصوص/سمات بسيط يتم داخل متصفحك. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "تحويل SVG إلى مكوّن React", "item": "https://norito.in/ar/svg-to-react-component.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / تحويل SVG إلى مكوّن React</p>
+    <h1>تحويل SVG إلى مكوّن React</h1>
+    <p class="lede">
+      الصق كود SVG واحصل على مكوّن React دالي جاهز للاستيراد بسمات camelCase.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="svgInput">كود SVG</label>
+          <textarea id="svgInput" class="mono-area" rows="12">&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"&gt;
+  &lt;circle cx="12" cy="12" r="10"/&gt;
+  &lt;path d="M12 16v-4"/&gt;
+  &lt;path d="M12 8h.01"/&gt;
+&lt;/svg&gt;</textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="componentName">اسم المكوّن</label>
+            <input type="text" id="componentName" value="IconInfo" />
+          </div>
+          <div class="field" style="min-width:140px;">
+            <label for="exportStyle">نمط التصدير</label>
+            <select id="exportStyle">
+              <option value="default" selected>تصدير افتراضي (default)</option>
+              <option value="named">تصدير مُسمّى (named)</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">قبول props (نشرها على &lt;svg&gt;)</span>
+          <label class="switch"><input type="checkbox" id="optProps" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">TypeScript (‎.tsx‎)</span>
+          <label class="switch"><input type="checkbox" id="optTs" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">نسخ المكوّن</button>
+            <button id="downloadBtn" class="secondary">تنزيل الملف</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>
+        يُحلَّل SVG باستخدام محلل DOM الخاص بالمتصفح، لذا يُفهم فعليًا كترميز، لا كنمط نصي
+        مطابق فقط. يُحوَّل كل اسم سمة إلى مكافئه في React/DOM باستخدام نفس التحويل الذي يستخدمه
+        React داخليًا (<code>stroke-width</code> &larr; <code>strokeWidth</code>،
+        <code>class</code> &larr; <code>className</code>، <code>xlink:href</code> &larr;
+        <code>xlinkHref</code>، وهكذا)، وتُعاد كتابة الشجرة كـ JSX، وتُغلَّف في مكوّن دالي صغير.
+        عند تفعيل "قبول props"، يُنشر <code>{...props}</code> على العنصر الجذري بحيث يمكن لمن
+        يستدعي المكوّن تمرير <code>width</code> أو <code>className</code> أو معالج
+        <code>onClick</code> بالطريقة المعتادة في React.
+      </p>
+      <p>
+        يتم التحليل والتحويل بالكامل داخل جافاسكريبت هذه الصفحة، بناءً على DOM الذي يبنيه
+        المتصفح من مدخلاتك. لا شيء يُرفع.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|محسّن SVG|إزالة التعليقات والبيانات الوصفية من ملف SVG.
+design/favicon-generator.html|مولّد أيقونة الموقع|أنشئ أيقونة موقع من صورة.
+json-formatter.html|منسّق ومدقق JSON|تنسيق وتحقق وضغط JSON.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ما الذي يتغيّر بين SVG وJSX؟</summary>
+        <p>تتحول أسماء السمات إلى camelCase (تصبح stroke-width هي strokeWidth، وfill-rule هي fillRule)، وتصبح class هي className، وتحصل الوسوم ذاتية الإغلاق على الشرطة المائلة النهائية التي يتطلبها JSX. الناتج المرئي مطابق تمامًا.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني التحكم في الحجم واللون عبر props؟</summary>
+        <p>فعّل "قبول props" ليقوم المكوّن بنشر {...props} على عنصر &lt;svg&gt; الجذري، بحيث يمكنك تجاوز width أو height أو className أو أي شيء آخر من أي مكان تستخدمه فيه، وهو النمط المعتاد لمكوّنات الأيقونات.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا كود SVG الخاص بي إلى أي مكان؟</summary>
+        <p>لا. التحويل هو تحويل نصوص/سمات بسيط يتم داخل متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-to-react-component.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

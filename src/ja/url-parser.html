@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>URLパーサー | norito</title>
+<meta name="description" content="URLを貼り付けると、プロトコル、ホスト、ポート、パス、クエリパラメータ、ハッシュに分解して表示します。すべてブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/url-parser.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="URLパーサー | norito" />
+<meta property="og:description" content="URLを貼り付けると、プロトコル、ホスト、ポート、パス、クエリパラメータ、ハッシュに分解して表示します。すべてブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/url-parser.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="URLパーサー | norito" />
+<meta name="twitter:description" content="URLを貼り付けると、プロトコル、ホスト、ポート、パス、クエリパラメータ、ハッシュに分解して表示します。すべてブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "URLパーサー",
+  "url": "https://norito.in/ja/url-parser.html",
+  "description": "URLを貼り付けると、プロトコル、ホスト、ポート、パス、クエリパラメータ、ハッシュに分解して表示します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "クエリパラメータはどう扱われますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "?の後にあるkey=valueのペアはそれぞれデコードされ個別に一覧表示されます。繰り返しキー（?tag=a&tag=bなど）も複数行として表示されるため、何も暗黙に統合されることはありません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "相対URLでも動作しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ、プロトコル付きの完全なURLが必要です。このツールが直接使用するブラウザ自身のURLパーサーは、相対URLを解決するためのベースが必要だからです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "このURLはどこかに送信されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。解析はブラウザ内蔵のURL APIを使い、完全にクライアント側で行われます。アップロードは一切行われず、URL自体へのリクエストも発生しません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "URLパーサー", "item": "https://norito.in/ja/url-parser.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / URLパーサー</p>
+    <h1>URLパーサー</h1>
+    <p class="lede">
+      任意の完全なURLを貼り付けると、そのプロトコル、ホスト、ポート、パス、クエリパラメータ、ハッシュを分解して表示します。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="urlInput">URL</label>
+          <input type="text" id="urlInput" value="https://norito.in/blog/index.html?utm_source=newsletter&amp;utm_medium=email&amp;tag=tools#section-2" />
+        </div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="resultsWrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        これはブラウザネイティブの<code>URL</code> APIだけで動作します。ブラウザがリンクをたどる際に使うのと全く同じパーサーなので、この内訳は自作の正規表現による近似ではなく、権威ある結果です。クエリパラメータは<code>URLSearchParams</code>から取得され、パーセントデコードや繰り返しキーを正しく処理します。
+      </p>
+      <p>
+        ここではURLを実際に取得することはなく、入力したテキストを解析するだけです。ネットワークリクエストは一切発生せず、URLのどの部分もブラウザの外に出ることはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+url-encoder-decoder.html|URLエンコード/デコードツール|URLをパーセントエンコードまたはデコード。
+user-agent-parser.html|User-Agentパーサー|User-Agent文字列を解析。
+seo/utm-builder.html|UTMビルダー|キャンペーン計測用URLを作成。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>クエリパラメータはどう扱われますか?</summary>
+        <p>?の後にあるkey=valueのペアはそれぞれデコードされ個別に一覧表示されます。繰り返しキー（?tag=a&tag=bなど）も複数行として表示されるため、何も暗黙に統合されることはありません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>相対URLでも動作しますか?</summary>
+        <p>いいえ、プロトコル付きの完全なURLが必要です。このツールが直接使用するブラウザ自身のURLパーサーは、相対URLを解決するためのベースが必要だからです。</p>
+      </details>
+      <details class="faq-item">
+        <summary>このURLはどこかに送信されますか?</summary>
+        <p>いいえ。解析はブラウザ内蔵のURL APIを使い、完全にクライアント側で行われます。アップロードは一切行われず、URL自体へのリクエストも発生しません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-url-parser.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

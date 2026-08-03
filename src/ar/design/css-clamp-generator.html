@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مولّد دالة CSS Clamp(): طباعة مرنة | norito</title>
+<meta name="description" content="ابنِ قيمة CSS clamp() مرنة تتدرّج بسلاسة بين حد أدنى وحد أقصى، لأحجام خطوط ومسافات متجاوبة. معاينة حية. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/design/css-clamp-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد دالة CSS Clamp(): طباعة مرنة | norito" />
+<meta property="og:description" content="ابنِ قيمة CSS clamp() مرنة تتدرّج بسلاسة بين حد أدنى وحد أقصى، لأحجام خطوط ومسافات متجاوبة. معاينة حية. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/design/css-clamp-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد دالة CSS Clamp(): طباعة مرنة | norito" />
+<meta name="twitter:description" content="ابنِ قيمة CSS clamp() مرنة تتدرّج بسلاسة بين حد أدنى وحد أقصى، لأحجام خطوط ومسافات متجاوبة. معاينة حية. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد دالة CSS Clamp()",
+  "url": "https://norito.in/ar/design/css-clamp-generator.html",
+  "description": "ابنِ قيمة CSS clamp() مرنة تتدرّج بسلاسة بين حد أدنى وحد أقصى لعرض نافذة العرض.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما الذي تفعله clamp() فعليًا؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "تختار clamp(min, preferred, max) القيمة الوسطى، لكنها تقصّها بحيث لا تنخفض عن الحد الأدنى ولا ترتفع عن الحد الأقصى. هنا القيمة \"المفضّلة\" هي دالة خطية لعرض نافذة العرض، فتنمو النتيجة بسلاسة مع الشاشة حتى تصل إلى أحد الحدّين، ثم تبقى ثابتة." }
+    },
+    {
+      "@type": "Question",
+      "name": "لماذا نستخدم هذا بدلًا من media query؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يقفز media query بين أحجام ثابتة عند نقاط توقف محددة، وهو ما قد يبدو وكأنه قفزة مرئية مفاجئة. تتدرّج clamp() باستمرار مع نافذة العرض، فيتغيّر حجم النص والمسافات بسلاسة أثناء سحب النافذة، دون أي نقطة توقف يجب صيانتها." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل هذا إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، تُحسب الصيغة والمعاينة بالكامل داخل متصفحك. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مولّد دالة CSS Clamp()", "item": "https://norito.in/ar/design/css-clamp-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / مولّد دالة CSS Clamp()</p>
+    <h1>مولّد دالة CSS Clamp()</h1>
+    <p class="lede">
+      حدّد حجمًا أدنى وأقصى ونطاق نافذة العرض الذي يُطبَّقان عليه، واحصل على قيمة
+      <code>clamp()</code> مرنة تتدرّج بسلاسة بينهما.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="minSize">الحجم الأدنى (px)</label>
+            <input type="number" id="minSize" value="16" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="minVp">عند عرض نافذة (px)</label>
+            <input type="number" id="minVp" value="375" min="1" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="maxSize">الحجم الأقصى (px)</label>
+            <input type="number" id="maxSize" value="32" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="maxVp">عند عرض نافذة (px)</label>
+            <input type="number" id="maxVp" value="1440" min="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rootFont">حجم خط الجذر (لتحويل rem)</label>
+          <input type="number" id="rootFont" value="16" min="1" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:30px 16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <span id="previewText" style="font-weight:700; line-height:1.2;">غيّر حجم النافذة لتراني أتدرّج</span>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">نسخ CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        تُحدِّد نقطتا (عرض النافذة، الحجم) خطًا مستقيمًا. يصبح ميله معامل عرض نافذة العرض،
+        ويصبح تقاطعه مع المحور y إزاحة rem ثابتة، ليكوّنا معًا
+        <code>clamp(min, intercept + slope*100vw, max)</code>. ولأن هذا كود CSS فعلي،
+        وليس مستمعًا لحدث تغيير الحجم في جافاسكريبت، يعيد المتصفح حسابه في كل مرة يُعاد
+        فيها التخطيط دون أي اهتزاز في التمرير أو وميض بحجم خاطئ، ويستمر في العمل حتى مع
+        تعطيل جافاسكريبت.
+      </p>
+      <p>
+        تُحوَّل كل القيم إلى rem باستخدام حجم خط الجذر لديك، لذا تبقى النتيجة صحيحة
+        حتى لو غيّر المستخدم حجم الخط الأساسي في متصفحه لأغراض إمكانية الوصول. لا شيء
+        هنا يقرأ صفحتك، بل يحسب فقط الصيغة من الأرقام التي تُدخلها.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|مولّد دوال تسارع CSS Easing|محرر منحنى cubic-bezier بصري.
+border-radius-generator.html|مولّد نصف قطر الحدود|اضبط نصف قطر كل زاوية بصريًا.
+contrast-checker.html|فاحص التباين|نسبة تباين WCAG، اجتياز AA/AAA.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ما الذي تفعله clamp() فعليًا؟</summary>
+        <p>تختار clamp(min, preferred, max) القيمة الوسطى، لكنها تقصّها بحيث لا تنخفض عن الحد الأدنى ولا ترتفع عن الحد الأقصى. هنا القيمة "المفضّلة" هي دالة خطية لعرض نافذة العرض، فتنمو النتيجة بسلاسة مع الشاشة حتى تصل إلى أحد الحدّين، ثم تبقى ثابتة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>لماذا نستخدم هذا بدلًا من media query؟</summary>
+        <p>يقفز media query بين أحجام ثابتة عند نقاط توقف محددة، وهو ما قد يبدو وكأنه قفزة مرئية مفاجئة. تتدرّج clamp() باستمرار مع نافذة العرض، فيتغيّر حجم النص والمسافات بسلاسة أثناء سحب النافذة، دون أي نقطة توقف يجب صيانتها.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا إلى أي مكان؟</summary>
+        <p>لا، تُحسب الصيغة والمعاينة بالكامل داخل متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-clamp-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

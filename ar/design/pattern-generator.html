@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xrd6nlberg");
+    </script>
+
+<meta charset="UTF-8" />
+<script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#ff4d7a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<title>مولّد أنماط CSS | norito</title>
+<meta name="description" content="ابنِ أنماط خلفية CSS قابلة للتبليط: خطوط، نقاط، شبكة، رقعة شطرنج، مع تحكم في اللون والتباعد. انسخ CSS. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/design/pattern-generator.html" />
+<link rel="alternate" hreflang="en" href="https://norito.in/design/pattern-generator.html" />
+<link rel="alternate" hreflang="es" href="https://norito.in/es/design/pattern-generator.html" />
+<link rel="alternate" hreflang="zh" href="https://norito.in/zh/design/pattern-generator.html" />
+<link rel="alternate" hreflang="ar" href="https://norito.in/ar/design/pattern-generator.html" />
+<link rel="alternate" hreflang="hi" href="https://norito.in/hi/design/pattern-generator.html" />
+<link rel="alternate" hreflang="ru" href="https://norito.in/ru/design/pattern-generator.html" />
+<link rel="alternate" hreflang="ja" href="https://norito.in/ja/design/pattern-generator.html" />
+<link rel="alternate" hreflang="x-default" href="https://norito.in/design/pattern-generator.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد أنماط CSS | norito" />
+<meta property="og:description" content="ابنِ أنماط خلفية CSS قابلة للتبليط: خطوط، نقاط، شبكة، رقعة شطرنج، مع تحكم في اللون والتباعد. انسخ CSS. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/design/pattern-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد أنماط CSS | norito" />
+<meta name="twitter:description" content="ابنِ أنماط خلفية CSS قابلة للتبليط: خطوط، نقاط، شبكة، رقعة شطرنج، مع تحكم في اللون والتباعد. انسخ CSS. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد أنماط CSS",
+  "url": "https://norito.in/ar/design/pattern-generator.html",
+  "description": "ابنِ أنماط خلفية CSS قابلة للتبليط مع تحكم في اللون والتباعد.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل يستخدم هذا ملف صورة؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، يُبنى كل نمط من تدرجات CSS مُتراصّة كخلفية متكررة، دون أي طلب صورة على الإطلاق. هذا يُبقي النمط حادًا عند أي مستوى تكبير وأي حجم عنصر، لأنه رياضيات متجهة، لا بلاطة نقطية." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يتبلط النمط بسلاسة دون فواصل؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم، يُضبط background-size على وحدة تكرار واحدة بالضبط، بحيث يتكرر النمط من حافة إلى حافة دون فاصل مرئي، عند أي حجم عنصر." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل هذا إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، يُنشأ النمط ويُعاين بالكامل داخل محرك CSS في متصفحك. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مولّد أنماط CSS", "item": "https://norito.in/ar/design/pattern-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/ar/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/images/">الصور</a>
+        <div class="nav-panel">
+          <a href="/ar/compress-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">ضغط الصور<span>تقليل حجم الملف إلى حجم محدد</span></div></a>
+          <a href="/ar/placeholder-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4"/></svg><div class="nav-link-body">مولّد صور بديلة<span>صور بديلة بأي مقاس تريده</span></div></a>
+          <a href="/ar/remove-background.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><div class="nav-link-body">إزالة الخلفية<span>قص الشخص من الصورة</span></div></a>
+          <a href="/ar/resize-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">تغيير حجم الصورة<span>غيّر العرض والارتفاع، بالبكسل الدقيق أو بالنسبة المئوية</span></div></a>
+          <a href="/ar/image-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">محول الصور<span>التحويل بين JPG وPNG وWebP</span></div></a>
+          <a href="/ar/crop-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">قص الصورة<span>اسحب إطارًا للقص، بشكل حر أو بنسبة ثابتة</span></div></a>
+          <a href="/ar/remove-metadata.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div class="nav-link-body">إزالة البيانات الوصفية<span>إزالة بيانات EXIF وGPS ومعلومات الكاميرا</span></div></a>
+          <a href="/ar/watermark-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">علامة مائية على الصورة<span>أضف علامة مائية نصية مع معاينة مباشرة</span></div></a>
+          <a href="/ar/avif-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">محوّل AVIF<span>التحويل من وإلى صيغة AVIF</span></div></a>
+          <a href="/ar/heic-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">محوّل HEIC إلى JPG/PNG<span>حوّل صور الآيفون إلى JPG أو PNG</span></div></a>
+          <a href="/ar/image-dimension-inspector.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><div class="nav-link-body">فاحص أبعاد الصور<span>العرض والارتفاع والنسبة وحجم الملف</span></div></a>
+          <a href="/ar/screenshot-annotator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">أداة التعليق على لقطات الشاشة<span>أسهم ومربعات ونص وتمويه</span></div></a>
+          <a href="/ar/social-image-cropper.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg><div class="nav-link-body">أداة قص صور وسائل التواصل الاجتماعي<span>قص بالحجم الدقيق الذي تحتاجه كل منصة</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/developer/">أدوات المطورين</a>
+        <div class="nav-panel">
+          <a href="/ar/test-file-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg><div class="nav-link-body">مولّد ملفات اختبار<span>ملفات وهمية بحجم دقيق</span></div></a>
+          <a href="/ar/json-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">منسّق JSON<span>تنسيق وتحقق وضغط</span></div></a>
+          <a href="/ar/markdown-editor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><div class="nav-link-body">محرر Markdown<span>معاينة فورية، تصدير كـ ‎.md/.html</span></div></a>
+          <a href="/ar/uuid-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg><div class="nav-link-body">مولّد UUID<span>معرّفات UUID v4 عشوائية بالجملة</span></div></a>
+          <a href="/ar/base64-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg><div class="nav-link-body">ترميز / فك ترميز Base64<span>تحويل النص من وإلى Base64، آمن لـ UTF-8</span></div></a>
+          <a href="/ar/hash-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">مولّد التجزئة<span>MD5 وSHA-1 وSHA-256 وSHA-512</span></div></a>
+          <a href="/ar/timestamp-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="nav-link-body">محول الطابع الزمني<span>من طابع زمني Unix إلى تاريخ، والعكس</span></div></a>
+          <a href="/ar/json-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">أداة مقارنة JSON<span>قارن بين مستندي JSON</span></div></a>
+          <a href="/ar/jwt-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">فاك تشفير JWT<span>فك تشفير رأس وحمولة رمز JWT</span></div></a>
+          <a href="/ar/regex-tester.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">أداة اختبار Regex<span>اختبر تعبيرًا نمطيًا مع تمييز المطابقات مباشرة</span></div></a>
+          <a href="/ar/csv-to-json.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">CSV إلى JSON<span>حوّل ملف CSV إلى JSON</span></div></a>
+          <a href="/ar/csv-viewer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg><div class="nav-link-body">عارض CSV<span>اعرض وحرّر ملف CSV كجدول</span></div></a>
+          <a href="/ar/url-encoder-decoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">ترميز / فك ترميز URL<span>ترميز أو فك ترميز URL بالنسبة المئوية</span></div></a>
+          <a href="/ar/html-entity-encoder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><div class="nav-link-body">ترميز / فك ترميز كيانات HTML<span>تهريب أو إلغاء تهريب كيانات HTML</span></div></a>
+          <a href="/ar/yaml-to-json-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg><div class="nav-link-body">محوّل YAML إلى JSON<span>التحويل بين YAML وJSON، في الاتجاهين</span></div></a>
+          <a href="/ar/cron-expression-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg><div class="nav-link-body">محلّل تعبيرات Cron<span>اشرح جدول cron، وعاين عمليات التشغيل القادمة</span></div></a>
+          <a href="/ar/number-base-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">محول قاعدة الأرقام<span>ثنائي وثماني وعشري وست عشري والمزيد</span></div></a>
+          <a href="/ar/text-diff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">أداة مقارنة النصوص<span>قارن نصين سطرًا بسطر</span></div></a>
+          <a href="/ar/css-specificity-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg><div class="nav-link-body">حاسبة خصوصية CSS<span>ترتيب المحددات حسب الخصوصية</span></div></a>
+          <a href="/ar/css-variable-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg><div class="nav-link-body">مستخرج متغيرات CSS<span>استخراج الخصائص المخصصة من ملف تنسيق</span></div></a>
+          <a href="/ar/gitignore-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><div class="nav-link-body">مولّد ملف gitignore<span>ملف gitignore مدمج لتقنياتك</span></div></a>
+          <a href="/ar/json-schema-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg><div class="nav-link-body">مولّد مخطط JSON Schema<span>من عيّنة JSON إلى مخطط draft-07</span></div></a>
+          <a href="/ar/svg-optimizer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><div class="nav-link-body">محسّن SVG<span>إزالة الفائض وتقليل حجم ملف SVG</span></div></a>
+          <a href="/ar/svg-sprite-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><div class="nav-link-body">مولّد سبرايت SVG<span>دمج الأيقونات في ورقة سبرايت واحدة</span></div></a>
+          <a href="/ar/svg-to-react-component.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><div class="nav-link-body">تحويل SVG إلى مكوّن React<span>من كود SVG إلى مكوّن React</span></div></a>
+          <a href="/ar/url-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div class="nav-link-body">محلّل الروابط<span>تفكيك رابط إلى أجزائه</span></div></a>
+          <a href="/ar/user-agent-parser.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="nav-link-body">محلّل User-Agent<span>المتصفح والمحرك ونظام التشغيل من نص UA</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/text/">النصوص</a>
+        <div class="nav-panel">
+          <a href="/ar/seo-slug-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><div class="nav-link-body">مولّد روابط SEO<span>روابط نظيفة من العناوين</span></div></a>
+          <a href="/ar/limited-text-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">مولّد نص بعدد أحرف محدد<span>نص بديل بطول دقيق</span></div></a>
+          <a href="/ar/word-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">عدّاد الكلمات<span>عدد الكلمات والجمل والفقرات مباشرة</span></div></a>
+          <a href="/ar/character-counter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 7A5 5 0 0 0 7 7"/><path d="M7 7v10a5 5 0 0 0 10 0V7"/></svg><div class="nav-link-body">عدّاد الأحرف<span>عدّ الأحرف، مع حدود المنصات</span></div></a>
+          <a href="/ar/remove-duplicate-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg><div class="nav-link-body">إزالة الأسطر المكررة<span>إزالة الأسطر المكررة من قائمة</span></div></a>
+          <a href="/ar/sort-lines.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg><div class="nav-link-body">ترتيب الأسطر<span>ترتيب أبجديًا أو رقميًا أو عشوائيًا</span></div></a>
+          <a href="/ar/case-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M21 16h-6l6-8h-6"/></svg><div class="nav-link-body">محول حالة الأحرف<span>أحرف كبيرة، camelCase، snake_case والمزيد</span></div></a>
+          <a href="/ar/lorem-ipsum-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">مولّد Lorem Ipsum<span>نص بديل حسب الكلمة أو الجملة أو الفقرة</span></div></a>
+          <a href="/ar/find-and-replace.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">بحث واستبدال<span>بحث واستبدال النص، مع دعم Regex</span></div></a>
+          <a href="/ar/invisible-character-detector.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div class="nav-link-body">كاشف الأحرف غير المرئية<span>اكتشف الأحرف المخفية عديمة العرض</span></div></a>
+          <a href="/ar/markdown-table-formatter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">منسّق جداول Markdown<span>أعد محاذاة جدول Markdown غير منظم</span></div></a>
+          <a href="/ar/markdown-table-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg><div class="nav-link-body">مولّد جداول Markdown<span>من CSV/TSV إلى جدول Markdown</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/utilities/">أدوات عامة</a>
+        <div class="nav-panel">
+          <a href="/ar/password-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div class="nav-link-body">مولّد كلمات المرور<span>كلمات مرور وعبارات مرور عشوائية</span></div></a>
+          <a href="/ar/qr-code-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 17h2M17 19v2M14 19h.01M19 14h.01"/></svg><div class="nav-link-body">مولّد رمز QR<span>ألوان مخصصة وتصحيح أخطاء</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/pdf/">PDF</a>
+        <div class="nav-panel">
+          <a href="/ar/pdf/merge-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"/><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"/><path d="M15 2v5h5"/></svg><div class="nav-link-body">دمج PDF<span>ادمج عدة ملفات PDF في ملف واحد</span></div></a>
+          <a href="/ar/pdf/split-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div class="nav-link-body">تقسيم PDF<span>استخرج صفحات أو قسّم إلى ملفات</span></div></a>
+          <a href="/ar/pdf/rotate-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg><div class="nav-link-body">تدوير PDF<span>صحّح الصفحات المائلة أو المقلوبة</span></div></a>
+          <a href="/ar/pdf/pdf-to-image.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><div class="nav-link-body">PDF إلى صورة<span>حوّل الصفحات إلى صور</span></div></a>
+          <a href="/ar/pdf/jpg-png-to-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg><div class="nav-link-body">صورة إلى PDF<span>ادمج الصور في ملف PDF واحد</span></div></a>
+          <a href="/ar/pdf/organize-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><div class="nav-link-body">حذف وإعادة ترتيب<span>احذف أو أعد ترتيب الصفحات</span></div></a>
+          <a href="/ar/pdf/add-page-numbers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 12h2v6"/><path d="M10 18h4"/></svg><div class="nav-link-body">أرقام الصفحات<span>رقّم كل صفحة</span></div></a>
+          <a href="/ar/pdf/add-watermark.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 6-6"/><path d="m9 9 6 6"/></svg><div class="nav-link-body">علامة مائية<span>اطبع نصًا على كل صفحة</span></div></a>
+          <a href="/ar/pdf/extract-text.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><div class="nav-link-body">استخراج النص<span>استخرج النص من ملف PDF</span></div></a>
+          <a href="/ar/pdf/compress-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg><div class="nav-link-body">ضغط PDF<span>قلّل حجم ملف PDF</span></div></a>
+          <a href="/ar/pdf/sign-pdf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg><div class="nav-link-body">توقيع PDF<span>ارسم أو اكتب توقيعًا</span></div></a>
+          <a href="/ar/pdf/compare-pdfs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><div class="nav-link-body">مقارنة ملفي PDF<span>مقارنة نصية سطرًا بسطر بين ملفي PDF</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/seo/">SEO</a>
+        <div class="nav-panel">
+          <a href="/ar/seo/meta-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">مولّد الوسوم الوصفية<span>العنوان، الوصف، وسوم OG وTwitter</span></div></a>
+          <a href="/ar/seo/utm-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><div class="nav-link-body">مولّد روابط UTM<span>أنشئ روابط لتتبع الحملات</span></div></a>
+          <a href="/ar/seo/robots-txt-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><div class="nav-link-body">مولّد Robots.txt<span>قواعد allow/disallow، مرجع sitemap</span></div></a>
+          <a href="/ar/seo/sitemap-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">مولّد Sitemap<span>أدخل الروابط، احصل على sitemap.xml</span></div></a>
+          <a href="/ar/seo/canonical-tag-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><div class="nav-link-body">مولّد وسم Canonical<span>وسم رابط canonical موحّد</span></div></a>
+          <a href="/ar/seo/hreflang-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="nav-link-body">مولّد وسوم hreflang<span>وسوم hreflang متبادلة لكل لغة</span></div></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-cat" href="/ar/design/">Design</a>
+        <div class="nav-panel">
+          <a href="/ar/design/css-gradient-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">تدرج CSS<span>خطي أو شعاعي، انسخ CSS</span></div></a>
+          <a href="/ar/design/box-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">ظل الصندوق<span>ظلال مفردة أو متعددة الطبقات</span></div></a>
+          <a href="/ar/design/border-radius-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">نصف قطر الحدود<span>نصف قطر لكل زاوية، انسخ CSS</span></div></a>
+          <a href="/ar/design/favicon-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">مولّد أيقونة الموقع<span>كل حجم أيقونة تحتاجه</span></div></a>
+          <a href="/ar/design/color-palette-extractor.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">مستخرج لوحة الألوان<span>استخرج الألوان السائدة من صورة</span></div></a>
+          <a href="/ar/design/contrast-checker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">فاحص التباين<span>نسبة تباين WCAG، اجتياز AA/AAA</span></div></a>
+          <a href="/ar/design/color-converter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">محوّل الألوان<span>HEX وRGB وHSL وCMYK مباشرة</span></div></a>
+          <a href="/ar/design/blob-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><div class="nav-link-body">مولّد أشكال Blob بصيغة SVG<span>أشكال عضوية عشوائية</span></div></a>
+          <a href="/ar/design/css-clamp-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M4 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8"/><path d="M4 12v4"/></svg><div class="nav-link-body">مولّد دالة CSS Clamp()<span>حجم مرن يتكيف مع حجم الشاشة</span></div></a>
+          <a href="/ar/design/css-easing-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg><div class="nav-link-body">مولّد دوال تسارع CSS Easing<span>صمم منحنى cubic-bezier() مخصص</span></div></a>
+          <a href="/ar/design/css-filter-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg><div class="nav-link-body">مولّد فلاتر CSS<span>اسحب المنزلقات وانسخ فلتر CSS</span></div></a>
+          <a href="/ar/design/noise-texture-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div class="nav-link-body">مولّد نسيج الضوضاء<span>نسيج حبيبي، تحميل أو نسخ كـ CSS</span></div></a>
+          <a href="/ar/design/pattern-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg><div class="nav-link-body">مولّد أنماط CSS<span>أنماط خلفية قابلة للتكرار بدون صور</span></div></a>
+          <a href="/ar/design/tailwind-shadow-generator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="4" width="13" height="13" rx="2"/><path d="M9 9h13v13H9z" opacity="0.35"/></svg><div class="nav-link-body">مولّد ظلال Tailwind<span>ظل متعدد الطبقات كصنف Tailwind</span></div></a>
+        </div>
+      </div>
+
+      
+</nav>
+      <button type="button" class="search-trigger" id="searchTrigger" aria-label="البحث عن الأدوات" title="البحث عن الأدوات"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-switch-btn" aria-label="Language / Idioma / 语言 / اللغة / भाषा / Язык / 言語">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switch-current" id="langSwitchCurrent">AR</span>
+        </button>
+        <div class="lang-switch-panel" id="langSwitchPanel"></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / مولّد أنماط CSS</p>
+    <h1>مولّد أنماط CSS</h1>
+    <p class="lede">
+      ابنِ نمط خلفية قابل للتبليط من تدرجات CSS خالصة، دون الحاجة لملف صورة، وانسخ CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="patType">النمط</label>
+          <select id="patType">
+            <option value="stripes" selected>خطوط قطرية</option>
+            <option value="stripesH">خطوط أفقية</option>
+            <option value="dots">نقاط</option>
+            <option value="grid">شبكة</option>
+            <option value="checkerboard">رقعة شطرنج</option>
+            <option value="crosshatch">تظليل متقاطع</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="patFg">لون المقدمة</label>
+            <input type="color" id="patFg" value="#6366f1" />
+          </div>
+          <div class="field">
+            <label for="patBg">لون الخلفية</label>
+            <input type="color" id="patBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="patSize">الحجم (<span id="patSizeVal">24px</span>)</label>
+          <input type="range" id="patSize" min="4" max="120" value="24" />
+        </div>
+        <div class="field">
+          <label for="patThickness">سُمك الخط / حجم النقطة (<span id="patThicknessVal">4px</span>)</label>
+          <input type="range" id="patThickness" min="1" max="40" value="4" />
+        </div>
+        <div class="field">
+          <label for="patOpacity">شفافية المقدمة (<span id="patOpacityVal">100%</span>)</label>
+          <input type="range" id="patOpacity" min="5" max="100" value="100" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div id="preview" style="height:220px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <pre class="code-output" id="output"></pre>
+          <button id="copyBtn" style="margin-top:12px;">نسخ CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف يعمل</h2>
+      <p>
+        يبني كل نمط جاهز طبقة أو طبقتين من <code>linear-gradient()</code> أو
+        <code>radial-gradient()</code> بتوقفات لونية حادة (دون مزج ناعم بينها)، وهذا ما يحوّل تدرجًا
+        ناعمًا إلى شكل متكرر حاد الحواف. يُضبط <code>background-size</code> على أبعاد بلاطة واحدة
+        بالضبط بحيث يتكرر النمط دون فاصل مرئي عند الحواف، وتُزيح أنماط النقاط والشبكة أيضًا موضع
+        خلفيتها بحيث تقع الأشكال في المنتصف بدلًا من أن تُقصّ عند الزاوية.
+      </p>
+      <p>
+        كل شيء هو CSS مُولَّد، يُطبَّق على نمط <code>background</code> الخاص بمربع المعاينة نفسه. لا
+        شيء يُرفع، ولا يُطلب أي صورة.
+      </p>
+    </div>
+
+    <div class="related-tools">
+      <h2>أدوات ذات صلة</h2>
+      <div class="related-grid">
+        <a class="related-card" href="../design/css-gradient-generator.html">
+          <strong>مولّد تدرجات CSS</strong>
+          <span>ابنِ تدرجًا خطيًا أو دائريًا بصريًا.</span>
+        </a>
+        <a class="related-card" href="blob-generator.html">
+          <strong>مولّد أشكال Blob</strong>
+          <span>أنشئ أشكال blob عضوية.</span>
+        </a>
+        <a class="related-card" href="noise-texture-generator.html">
+          <strong>مولّد نسيج الضوضاء</strong>
+          <span>أنشئ نسيج حبيبات/ضوضاء.</span>
+        </a>
+      </div>
+    </div>
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>هل يستخدم هذا ملف صورة؟</summary>
+        <p>لا، يُبنى كل نمط من تدرجات CSS مُتراصّة كخلفية متكررة، دون أي طلب صورة على الإطلاق. هذا يُبقي النمط حادًا عند أي مستوى تكبير وأي حجم عنصر، لأنه رياضيات متجهة، لا بلاطة نقطية.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يتبلط النمط بسلاسة دون فواصل؟</summary>
+        <p>نعم، يُضبط background-size على وحدة تكرار واحدة بالضبط، بحيث يتكرر النمط من حافة إلى حافة دون فاصل مرئي، عند أي حجم عنصر.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا إلى أي مكان؟</summary>
+        <p>لا، يُنشأ النمط ويُعاين بالكامل داخل محرك CSS في متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">norito</div>
+        <p class="footer-tagline">أدوات صغيرة تحل مشكلة مزعجة واحدة، كل أداة على حدة. كل شيء يعمل داخل متصفحك، ولا يُرفع أي شيء.</p>
+      </div>
+      <div class="footer-col footer-product">
+        <h3>المنتج</h3>
+        <a href="/tools.html">كل الأدوات</a>
+        <a href="/ar/changelog.html">سجل التحديثات</a>
+        <a href="/ar/how-it-works.html">كيف يعمل</a>
+        <a href="/blog/">Blog</a>
+        <a href="/ar/compare/">Compare</a>
+        <a href="/ar/about.html">عن norito</a>
+        <a href="/ar/contact.html">تواصل معنا</a>
+        <a href="/ar/privacy.html">سياسة الخصوصية</a>
+        <a href="/ar/terms.html">شروط الخدمة</a>
+      </div>
+      <div class="footer-col">
+        <h3>PDF</h3>
+        <a href="/ar/pdf/merge-pdf.html">دمج PDF</a>
+        <a href="/ar/pdf/split-pdf.html">تقسيم PDF</a>
+        <a href="/ar/pdf/rotate-pdf.html">تدوير PDF</a>
+        <a href="/ar/pdf/pdf-to-image.html">PDF إلى صورة</a>
+        <a href="/ar/pdf/jpg-png-to-pdf.html">صورة إلى PDF</a>
+        <a href="/ar/pdf/organize-pdf.html">حذف وإعادة ترتيب</a>
+        <a href="/ar/pdf/add-page-numbers.html">أرقام الصفحات</a>
+        <a href="/ar/pdf/add-watermark.html">علامة مائية</a>
+        <a href="/ar/pdf/extract-text.html">استخراج النص</a>
+        <a href="/ar/pdf/compress-pdf.html">ضغط PDF</a>
+        <a href="/ar/pdf/sign-pdf.html">توقيع PDF</a>
+        <a href="/ar/pdf/compare-pdfs.html">مقارنة PDF</a>
+      </div>
+      <div class="footer-col">
+        <h3>الصور</h3>
+        <a href="/ar/compress-image.html">ضغط الصور</a>
+        <a href="/ar/resize-image.html">تغيير حجم الصورة</a>
+        <a href="/ar/image-converter.html">محول الصور</a>
+        <a href="/ar/crop-image.html">قص الصورة</a>
+        <a href="/ar/remove-metadata.html">إزالة البيانات الوصفية</a>
+        <a href="/ar/watermark-image.html">علامة مائية على الصورة</a>
+        <a href="/ar/placeholder-generator.html">مولّد صور بديلة</a>
+        <a href="/ar/remove-background.html">إزالة الخلفية</a>
+        <a href="/ar/avif-converter.html">محوّل AVIF</a>
+        <a href="/ar/heic-converter.html">محوّل HEIC</a>
+        <a href="/ar/image-dimension-inspector.html">أبعاد الصور</a>
+        <a href="/ar/screenshot-annotator.html">التعليق على لقطات الشاشة</a>
+        <a href="/ar/social-image-cropper.html">قص صور التواصل</a>
+      </div>
+      <div class="footer-col">
+        <h3>أدوات المطورين</h3>
+        <a href="/ar/test-file-generator.html">مولّد ملفات اختبار</a>
+        <a href="/ar/json-formatter.html">منسّق JSON</a>
+        <a href="/ar/markdown-editor.html">محرر Markdown</a>
+        <a href="/ar/uuid-generator.html">مولّد UUID</a>
+        <a href="/ar/base64-encoder.html">Base64</a>
+        <a href="/ar/hash-generator.html">مولّد التجزئة</a>
+        <a href="/ar/timestamp-converter.html">Timestamp</a>
+        <a href="/ar/json-diff.html">أداة مقارنة JSON</a>
+        <a href="/ar/jwt-decoder.html">فاك تشفير JWT</a>
+        <a href="/ar/regex-tester.html">أداة اختبار Regex</a>
+        <a href="/ar/csv-to-json.html">CSV إلى JSON</a>
+        <a href="/ar/csv-viewer.html">عارض CSV</a>
+        <a href="/ar/url-encoder-decoder.html">URL Encoder</a>
+        <a href="/ar/html-entity-encoder.html">HTML Entities</a>
+        <a href="/ar/yaml-to-json-converter.html">YAML to JSON</a>
+        <a href="/ar/cron-expression-parser.html">Cron Parser</a>
+        <a href="/ar/number-base-converter.html">Base Converter</a>
+        <a href="/ar/text-diff.html">أداة مقارنة النصوص</a>
+        <a href="/ar/css-specificity-calculator.html">حاسبة خصوصية CSS</a>
+        <a href="/ar/css-variable-extractor.html">مستخرج متغيرات CSS</a>
+        <a href="/ar/gitignore-generator.html">مولّد gitignore</a>
+        <a href="/ar/json-schema-generator.html">مولّد JSON Schema</a>
+        <a href="/ar/svg-optimizer.html">محسّن SVG</a>
+        <a href="/ar/svg-sprite-generator.html">مولّد سبرايت SVG</a>
+        <a href="/ar/svg-to-react-component.html">SVG إلى React</a>
+        <a href="/ar/url-parser.html">محلّل الروابط</a>
+        <a href="/ar/user-agent-parser.html">محلّل User-Agent</a>
+      </div>
+      <div class="footer-col">
+        <h3>النصوص</h3>
+        <a href="/ar/seo-slug-generator.html">مولّد روابط SEO</a>
+        <a href="/ar/limited-text-generator.html">مولّد نص بعدد أحرف محدد</a>
+        <a href="/ar/word-counter.html">عدّاد الكلمات</a>
+        <a href="/ar/character-counter.html">عدّاد الأحرف</a>
+        <a href="/ar/remove-duplicate-lines.html">Dedupe Lines</a>
+        <a href="/ar/sort-lines.html">ترتيب الأسطر</a>
+        <a href="/ar/case-converter.html">محول حالة الأحرف</a>
+        <a href="/ar/lorem-ipsum-generator.html">Lorem Ipsum</a>
+        <a href="/ar/find-and-replace.html">Find & Replace</a>
+        <a href="/ar/invisible-character-detector.html">الأحرف غير المرئية</a>
+        <a href="/ar/markdown-table-formatter.html">منسّق جداول Markdown</a>
+        <a href="/ar/markdown-table-generator.html">مولّد جداول Markdown</a>
+      </div>
+      <div class="footer-col">
+        <h3>أدوات عامة</h3>
+        <a href="/ar/password-generator.html">مولّد كلمات المرور</a>
+        <a href="/ar/qr-code-generator.html">مولّد رمز QR</a>
+      </div>
+      <div class="footer-col">
+        <h3>SEO</h3>
+        <a href="/ar/seo/meta-tag-generator.html">مولّد الوسوم الوصفية</a>
+        <a href="/ar/seo/utm-builder.html">مولّد روابط UTM</a>
+        <a href="/ar/seo/robots-txt-generator.html">مولّد Robots.txt</a>
+        <a href="/ar/seo/sitemap-generator.html">مولّد Sitemap</a>
+        <a href="/ar/seo/canonical-tag-generator.html">وسم Canonical</a>
+        <a href="/ar/seo/hreflang-generator.html">وسوم hreflang</a>
+      </div>
+      <div class="footer-col">
+        <h3>Design</h3>
+        <a href="/ar/design/css-gradient-generator.html">تدرج CSS</a>
+        <a href="/ar/design/box-shadow-generator.html">ظل الصندوق</a>
+        <a href="/ar/design/border-radius-generator.html">نصف قطر الحدود</a>
+        <a href="/ar/design/favicon-generator.html">مولّد أيقونة الموقع</a>
+        <a href="/ar/design/color-palette-extractor.html">مستخرج لوحة الألوان</a>
+        <a href="/ar/design/contrast-checker.html">فاحص التباين</a>
+        <a href="/ar/design/color-converter.html">محوّل الألوان</a>
+        <a href="/ar/design/blob-generator.html">مولّد أشكال Blob</a>
+        <a href="/ar/design/css-clamp-generator.html">CSS Clamp()</a>
+        <a href="/ar/design/css-easing-generator.html">تسارع CSS</a>
+        <a href="/ar/design/css-filter-generator.html">فلاتر CSS</a>
+        <a href="/ar/design/noise-texture-generator.html">نسيج الضوضاء</a>
+        <a href="/ar/design/pattern-generator.html">أنماط CSS</a>
+        <a href="/ar/design/tailwind-shadow-generator.html">ظلال Tailwind</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 norito. جميع الأدوات تعمل محليًا داخل متصفحك.</span>
+      <a href="/ar/changelog.html">سجل التحديثات</a>
+      <a href="/blog/">Blog</a>
+      <a href="/ar/compare/">Compare</a>
+      <a href="/ar/how-it-works.html">كيف يعمل</a>
+      <a href="/ar/privacy.html">سياسة الخصوصية</a>
+      <a href="/ar/terms.html">شروط الخدمة</a>
+      <a href="https://ko-fi.com/shubhmisaki" target="_blank" rel="noopener">اشترِ لي قهوة</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/i18n/ar.js"></script>
+<script src="/js/i18n-runtime.js"></script>
+<script src="/js/utils.js"></script>
+<script src="../../js/app-pattern-generator.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/theme-toggle.js"></script>
+<script src="/js/lang-switcher.js"></script>
+<script src="/js/bg-blobs.js"></script>
+<div class="cmdk-overlay" id="cmdkOverlay" hidden data-empty-text="لا توجد أدوات مطابقة لهذا البحث.">
+  <div class="cmdk-modal" role="dialog" aria-modal="true" aria-label="البحث عن الأدوات">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="البحث عن الأدوات..." aria-label="البحث عن الأدوات" autocomplete="off" />
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdkResults"></div>
+  </div>
+</div>
+
+<script src="/js/cmdk.js"></script>
+<script src="/js/sw-register.js" defer></script>
+<script src="/js/install-prompt.js" defer></script>
+</body>
+</html>

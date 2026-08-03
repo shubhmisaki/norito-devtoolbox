@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>مولّد نسيج الضوضاء | norito</title>
+<meta name="description" content="أنشئ نسيج حبيبي/ضوضاء مع تحكم في الكثافة والشفافية واللون. نزّله بصيغة PNG أو انسخه كخلفية CSS بصيغة data-URI. يعمل داخل متصفحك." />
+<link rel="canonical" href="https://norito.in/ar/design/noise-texture-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="مولّد نسيج الضوضاء | norito" />
+<meta property="og:description" content="أنشئ نسيج حبيبي/ضوضاء مع تحكم في الكثافة والشفافية واللون. نزّله بصيغة PNG أو انسخه كخلفية CSS بصيغة data-URI. يعمل داخل متصفحك." />
+<meta property="og:url" content="https://norito.in/ar/design/noise-texture-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مولّد نسيج الضوضاء | norito" />
+<meta name="twitter:description" content="أنشئ نسيج حبيبي/ضوضاء مع تحكم في الكثافة والشفافية واللون. نزّله بصيغة PNG أو انسخه كخلفية CSS بصيغة data-URI. يعمل داخل متصفحك." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مولّد نسيج الضوضاء",
+  "url": "https://norito.in/ar/design/noise-texture-generator.html",
+  "description": "أنشئ نسيج حبيبي/ضوضاء مع تحكم في الكثافة والشفافية واللون.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل ملف PNG الذي أنزّله يتكرر بلا فواصل؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "إنها ضوضاء عشوائية لكل بكسل وليست نمطًا متكررًا، لذا عند استخدامها كخلفية متكررة صغيرة لن تظهر فواصل مرئية أيضًا، لأن كل بكسل عشوائي بشكل مستقل ولا يوجد بنية أكبر تنكسر عند حافة القطعة." }
+    },
+    {
+      "@type": "Question",
+      "name": "ما الفرق بين تنزيل PNG والنسخ كـ CSS؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يمنحك التنزيل ملف .png حقيقيًا للإشارة إليه من ورقة أنماط أو وسم <img>. أما \"النسخ كـ CSS\" فيُضمِّن نفس الصورة كرابط بيانات base64 مباشرة داخل قاعدة background-image، وهو مفيد لكتلة CSS واحدة قائمة بذاتها دون ملف منفصل يجب استضافته." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يُرسل هذا إلى أي مكان؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، يُنشأ النسيج بكسلًا تلو الآخر على لوحة رسم في ذاكرة متصفحك. لا شيء يُرفع." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "مولّد نسيج الضوضاء", "item": "https://norito.in/ar/design/noise-texture-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / مولّد نسيج الضوضاء</p>
+    <h1>مولّد نسيج الضوضاء</h1>
+    <p class="lede">
+      أنشئ نسيجًا حبيبيًا بكثافة وشفافية ولون قابلة للتعديل، ثم نزّله أو انسخه
+      كـ CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="noiseSize">حجم القطعة (<span id="noiseSizeVal">128px</span>)</label>
+          <input type="range" id="noiseSize" min="32" max="512" step="32" value="128" />
+        </div>
+        <div class="field">
+          <label for="noiseDensity">الكثافة (<span id="noiseDensityVal">50%</span>)</label>
+          <input type="range" id="noiseDensity" min="5" max="100" value="50" />
+        </div>
+        <div class="field">
+          <label for="noiseOpacity">الشفافية (<span id="noiseOpacityVal">30%</span>)</label>
+          <input type="range" id="noiseOpacity" min="1" max="100" value="30" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="noiseColor">لون الحبيبات</label>
+            <input type="color" id="noiseColor" value="#000000" />
+          </div>
+          <div class="field">
+            <label for="noiseBg">لون الخلفية</label>
+            <input type="color" id="noiseBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">حبيبات أحادية اللون</span>
+          <label class="switch"><input type="checkbox" id="noiseMono" checked /><span class="track"></span></label>
+        </div>
+        <button type="button" id="regenBtn">إعادة التوليد</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <canvas id="noiseCanvas" width="128" height="128" style="width:100%; max-width:320px; aspect-ratio:1; border-radius:var(--radius-md); margin-bottom:16px; image-rendering:pixelated;"></canvas>
+          <div id="tiledPreview" style="height:100px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="downloadBtn">تنزيل PNG</button>
+            <button id="copyCssBtn" class="secondary">نسخ كخلفية CSS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>كيف تعمل</h2>
+      <p>
+        تُملأ لوحة رسم بحجم القطعة المختار بكسلًا تلو الآخر: يُقرِّر كل بكسل بشكل مستقل،
+        استنادًا إلى شريط الكثافة، ما إذا كان سيحصل على حبيبة، ثم تُقاس شفافية لون تلك
+        الحبيبة بشريط الشفافية. يستخدم الوضع الأحادي لونًا واحدًا للحبيبات في كل مكان؛
+        وإيقافه يجعل سطوع كل حبيبة عشوائيًا أيضًا، لمظهر أكثر تنوعًا وأقل انتظامًا.
+        تُكرِّر المعاينة المُبلَّطة أدناه لوحة الرسم نفسها كخلفية CSS لإظهار كيف تبدو
+        على نطاق أوسع.
+      </p>
+      <p>
+        كلا الناتجين، ملف PNG المُنزَّل ورابط بيانات "النسخ كـ CSS"، يأتيان مباشرة من
+        لوحة الرسم هذه عبر <code>toDataURL</code>/<code>toBlob</code>، بالكامل داخل
+        متصفحك. لا شيء يُرفع.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|مولّد أنماط CSS|أنشئ أنماط خلفية قابلة للتكرار.
+blob-generator.html|مولّد أشكال Blob بصيغة SVG|أنشئ أشكال Blob عضوية.
+favicon-generator.html|مولّد أيقونة الموقع|أنشئ أيقونة موقع من صورة.
+-->
+
+    <h2>أسئلة شائعة</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>هل ملف PNG الذي أنزّله يتكرر بلا فواصل؟</summary>
+        <p>إنها ضوضاء عشوائية لكل بكسل وليست نمطًا متكررًا، لذا عند استخدامها كخلفية متكررة صغيرة لن تظهر فواصل مرئية أيضًا، لأن كل بكسل عشوائي بشكل مستقل ولا يوجد بنية أكبر تنكسر عند حافة القطعة.</p>
+      </details>
+      <details class="faq-item">
+        <summary>ما الفرق بين تنزيل PNG والنسخ كـ CSS؟</summary>
+        <p>يمنحك التنزيل ملف .png حقيقيًا للإشارة إليه من ورقة أنماط أو وسم &lt;img&gt;. أما "النسخ كـ CSS" فيُضمِّن نفس الصورة كرابط بيانات base64 مباشرة داخل قاعدة background-image، وهو مفيد لكتلة CSS واحدة قائمة بذاتها دون ملف منفصل يجب استضافته.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُرسل هذا إلى أي مكان؟</summary>
+        <p>لا، يُنشأ النسيج بكسلًا تلو الآخر على لوحة رسم في ذاكرة متصفحك. لا شيء يُرفع.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ar.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-noise-texture-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

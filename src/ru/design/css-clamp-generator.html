@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Генератор CSS clamp(): плавная типографика | norito</title>
+<meta name="description" content="Создайте плавное значение CSS clamp(), которое гладко масштабируется между минимумом и максимумом — для адаптивных размеров шрифта и отступов. Живой предпросмотр, всё работает в браузере." />
+<link rel="canonical" href="https://norito.in/ru/design/css-clamp-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Генератор CSS clamp(): плавная типографика | norito" />
+<meta property="og:description" content="Создайте плавное значение CSS clamp(), которое гладко масштабируется между минимумом и максимумом — для адаптивных размеров шрифта и отступов. Живой предпросмотр, всё работает в браузере." />
+<meta property="og:url" content="https://norito.in/ru/design/css-clamp-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Генератор CSS clamp(): плавная типографика | norito" />
+<meta name="twitter:description" content="Создайте плавное значение CSS clamp(), которое гладко масштабируется между минимумом и максимумом — для адаптивных размеров шрифта и отступов. Живой предпросмотр, всё работает в браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Генератор CSS clamp()",
+  "url": "https://norito.in/ru/design/css-clamp-generator.html",
+  "description": "Создаёт плавное значение CSS clamp(), которое гладко масштабируется между минимальной и максимальной шириной окна просмотра.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что на самом деле делает clamp()?",
+      "acceptedAnswer": { "@type": "Answer", "text": "clamp(min, preferred, max) выбирает среднее из трёх значений, но не даёт результату опуститься ниже min или подняться выше max. В данном случае «предпочитаемое» значение — линейная функция от ширины окна просмотра, поэтому результат плавно растёт вместе с экраном, пока не упрётся в одну из границ, а затем остаётся неизменным." }
+    },
+    {
+      "@type": "Question",
+      "name": "Зачем использовать это вместо медиазапроса?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Медиазапрос перескакивает между фиксированными размерами на определённых точках перелома, что может выглядеть как заметный скачок. clamp() масштабируется непрерывно вместе с окном просмотра, поэтому текст и отступы плавно меняются при изменении размера окна, и не нужно поддерживать никаких breakpoint'ов." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли это куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет, формула и предпросмотр полностью вычисляются в вашем браузере. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Генератор CSS clamp()", "item": "https://norito.in/ru/design/css-clamp-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Генератор CSS clamp()</p>
+    <h1>Генератор CSS clamp()</h1>
+    <p class="lede">
+      Задайте минимальный и максимальный размер и диапазон ширины окна, к которому они
+      применяются, — получите плавное значение <code>clamp()</code>, гладко масштабирующееся
+      между ними.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field-row">
+          <div class="field">
+            <label for="minSize">Мин. размер (px)</label>
+            <input type="number" id="minSize" value="16" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="minVp">при ширине окна (px)</label>
+            <input type="number" id="minVp" value="375" min="1" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="maxSize">Макс. размер (px)</label>
+            <input type="number" id="maxSize" value="32" min="1" step="0.5" />
+          </div>
+          <div class="field">
+            <label for="maxVp">при ширине окна (px)</label>
+            <input type="number" id="maxVp" value="1440" min="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rootFont">Базовый размер шрифта (для конвертации в rem)</label>
+          <input type="number" id="rootFont" value="16" min="1" />
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div style="padding:30px 16px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <span id="previewText" style="font-weight:700; line-height:1.2;">Измените размер окна, чтобы увидеть масштабирование</span>
+          </div>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Скопировать CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        Две точки (ширина окна, размер) задают прямую линию. Её наклон становится коэффициентом
+        при ширине окна просмотра, а точка пересечения с осью Y — фиксированным смещением в rem;
+        вместе они образуют <code>clamp(min, intercept + slope*100vw, max)</code>. Поскольку это
+        настоящий CSS, а не JavaScript-обработчик изменения размера, браузер пересчитывает
+        значение при каждом проходе вёрстки без рывков при прокрутке и без мелькания неверного
+        размера, а инструмент продолжает работать даже при отключённом JavaScript.
+      </p>
+      <p>
+        Все значения переводятся в rem с учётом заданного базового размера шрифта, поэтому
+        результат остаётся корректным, даже если пользователь изменил базовый размер шрифта
+        браузера для удобства чтения. Инструмент ничего не считывает с вашей страницы — он лишь
+        вычисляет формулу по введённым вами числам.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-easing-generator.html|Генератор CSS-плавности (cubic-bezier)|Визуальный редактор кривой cubic-bezier.
+border-radius-generator.html|Генератор border-radius|Настройте border-radius для каждого угла визуально.
+contrast-checker.html|Проверка контраста|Коэффициент контрастности WCAG, проверка AA/AAA.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Что на самом деле делает clamp()?</summary>
+        <p>clamp(min, preferred, max) выбирает среднее из трёх значений, но не даёт результату опуститься ниже min или подняться выше max. В данном случае «предпочитаемое» значение — линейная функция от ширины окна просмотра, поэтому результат плавно растёт вместе с экраном, пока не упрётся в одну из границ, а затем остаётся неизменным.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Зачем использовать это вместо медиазапроса?</summary>
+        <p>Медиазапрос перескакивает между фиксированными размерами на определённых точках перелома, что может выглядеть как заметный скачок. clamp() масштабируется непрерывно вместе с окном просмотра, поэтому текст и отступы плавно меняются при изменении размера окна, и не нужно поддерживать никаких breakpoint'ов.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли это куда-либо?</summary>
+        <p>Нет, формула и предпросмотр полностью вычисляются в вашем браузере. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-clamp-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

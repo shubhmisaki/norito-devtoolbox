@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de Textura de Ruido | norito</title>
+<meta name="description" content="Genera una textura de grano/ruido con controles de densidad, opacidad y color. Descarga como PNG o cópiala como fondo CSS en data-URI. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/design/noise-texture-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de Textura de Ruido | norito" />
+<meta property="og:description" content="Genera una textura de grano/ruido con controles de densidad, opacidad y color. Descarga como PNG o cópiala como fondo CSS en data-URI. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/design/noise-texture-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de Textura de Ruido | norito" />
+<meta name="twitter:description" content="Genera una textura de grano/ruido con controles de densidad, opacidad y color. Descarga como PNG o cópiala como fondo CSS en data-URI. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de Textura de Ruido",
+  "url": "https://norito.in/es/design/noise-texture-generator.html",
+  "description": "Genera una textura de grano/ruido con controles de densidad, opacidad y color.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El PNG descargado se repetirá sin costuras?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Es ruido aleatorio píxel a píxel en lugar de un patrón repetitivo, así que usado como un background-image pequeño y repetido tampoco tendrá costuras visibles, ya que cada píxel es aleatorio de forma independiente y no hay una estructura más grande que se rompa en el borde del tile." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre la descarga PNG y la copia CSS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Descargar te da un archivo .png real para referenciar desde una hoja de estilos o un <img>. \"Copiar como CSS\" en cambio incrusta la misma imagen como una data URI en base64 directamente dentro de una regla background-image, útil para un bloque CSS autocontenido sin ningún archivo separado que alojar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envía esto a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, la textura se genera píxel a píxel en un canvas en memoria dentro de tu navegador. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de Textura de Ruido", "item": "https://norito.in/es/design/noise-texture-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de Textura de Ruido</p>
+    <h1>Generador de Textura de Ruido</h1>
+    <p class="lede">
+      Genera una textura de grano con densidad, opacidad y color ajustables, luego descárgala o
+      cópiala como CSS.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="noiseSize">Tamaño del tile (<span id="noiseSizeVal">128px</span>)</label>
+          <input type="range" id="noiseSize" min="32" max="512" step="32" value="128" />
+        </div>
+        <div class="field">
+          <label for="noiseDensity">Densidad (<span id="noiseDensityVal">50%</span>)</label>
+          <input type="range" id="noiseDensity" min="5" max="100" value="50" />
+        </div>
+        <div class="field">
+          <label for="noiseOpacity">Opacidad (<span id="noiseOpacityVal">30%</span>)</label>
+          <input type="range" id="noiseOpacity" min="1" max="100" value="30" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="noiseColor">Color del grano</label>
+            <input type="color" id="noiseColor" value="#000000" />
+          </div>
+          <div class="field">
+            <label for="noiseBg">Color de fondo</label>
+            <input type="color" id="noiseBg" value="#ffffff" />
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Grano monocromo</span>
+          <label class="switch"><input type="checkbox" id="noiseMono" checked /><span class="track"></span></label>
+        </div>
+        <button type="button" id="regenBtn">Regenerar</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <canvas id="noiseCanvas" width="128" height="128" style="width:100%; max-width:320px; aspect-ratio:1; border-radius:var(--radius-md); margin-bottom:16px; image-rendering:pixelated;"></canvas>
+          <div id="tiledPreview" style="height:100px; border-radius:var(--radius-md); margin-bottom:16px;"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="downloadBtn">Descargar PNG</button>
+            <button id="copyCssBtn" class="secondary">Copiar como fondo CSS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Se rellena píxel a píxel un canvas del tamaño de tile elegido: cada píxel tira sus propios
+        dados contra el deslizador de densidad para decidir si recibe grano, y luego el alfa de
+        color de ese grano se escala según el deslizador de opacidad. El modo monocromo usa un solo
+        color de grano en todo el lienzo; desactivarlo aleatoriza también el brillo de cada grano,
+        para un aspecto más texturizado y menos uniforme. La vista previa en mosaico de abajo repite
+        el mismo canvas como fondo CSS para mostrar cómo se comporta a escala.
+      </p>
+      <p>
+        Ambas salidas, el PNG descargado y la data URI de "copiar como CSS", provienen directamente
+        de este canvas vía <code>toDataURL</code>/<code>toBlob</code>, por completo en tu
+        navegador. No se sube nada.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+pattern-generator.html|Generador de Patrones CSS|Construye patrones de fondo repetibles.
+blob-generator.html|Generador de Blobs SVG|Genera formas orgánicas tipo blob.
+favicon-generator.html|Generador de favicon|Genera un favicon a partir de una imagen.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿El PNG descargado se repetirá sin costuras?</summary>
+        <p>Es ruido aleatorio píxel a píxel en lugar de un patrón repetitivo, así que usado como un background-image pequeño y repetido tampoco tendrá costuras visibles, ya que cada píxel es aleatorio de forma independiente y no hay una estructura más grande que se rompa en el borde del tile.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuál es la diferencia entre la descarga PNG y la copia CSS?</summary>
+        <p>Descargar te da un archivo .png real para referenciar desde una hoja de estilos o un &lt;img&gt;. "Copiar como CSS" en cambio incrusta la misma imagen como una data URI en base64 directamente dentro de una regla background-image, útil para un bloque CSS autocontenido sin ningún archivo separado que alojar.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envía esto a algún sitio?</summary>
+        <p>No, la textura se genera píxel a píxel en un canvas en memoria dentro de tu navegador. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-noise-texture-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

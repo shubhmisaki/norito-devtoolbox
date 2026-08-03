@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Image Dimension Inspector | norito</title>
+<meta name="description" content="Drop in an image and instantly see its width, height, aspect ratio, megapixels, file size, and format. Runs entirely in your browser." />
+<link rel="canonical" href="https://norito.in/image-dimension-inspector.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Image Dimension Inspector | norito" />
+<meta property="og:description" content="Drop in an image and instantly see its width, height, aspect ratio, megapixels, file size, and format. Runs entirely in your browser." />
+<meta property="og:url" content="https://norito.in/image-dimension-inspector.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Image Dimension Inspector | norito" />
+<meta name="twitter:description" content="Drop in an image and instantly see its width, height, aspect ratio, megapixels, file size, and format. Runs entirely in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image Dimension Inspector",
+  "url": "https://norito.in/image-dimension-inspector.html",
+  "description": "Drop in an image and instantly see its width, height, aspect ratio, megapixels, file size, and format.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I check multiple images at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, select or drop in several files and each one gets its own row in the results table, so you can compare dimensions across a batch at a glance." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the aspect ratio shown as?",
+      "acceptedAnswer": { "@type": "Answer", "text": "As a simplified ratio (like 16:9 or 4:3) found by dividing both dimensions by their greatest common divisor, alongside the raw decimal ratio for exact comparisons." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The file is read locally and decoded by your browser's own image engine. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Dimension Inspector", "item": "https://norito.in/image-dimension-inspector.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Image Dimension Inspector</p>
+    <h1>Image Dimension Inspector</h1>
+    <p class="lede">
+      Drop in one or more images and instantly see each one's width, height, aspect ratio,
+      megapixels, and file size.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>Click to choose images</strong>, or drag and drop them here</p>
+        <p class="note" style="margin-top:2px;">Select multiple to compare. Stays on your device, nothing is uploaded.</p>
+        <input type="file" id="fileInput" accept="image/*" multiple />
+      </div>
+      <div id="resultsWrap" style="margin-top:16px;"></div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        Each file is loaded as a local object URL into an <code>Image</code> element, which is how
+        the browser reads the actual pixel dimensions from the file's own header, not from the
+        filename or any guess. Aspect ratio is simplified by dividing both dimensions by their
+        greatest common divisor (found with the Euclidean algorithm), and file size and format
+        come straight from the file object your browser already has.
+      </p>
+      <p>
+        No image data is sent anywhere. Everything happens locally, and the object URLs are
+        released as soon as their dimensions are read.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+resize-image.html|Resize Image|Change width and height, exact or by percentage.
+social-image-cropper.html|Social Image Cropper|Crop to preset social media ratios.
+image-converter.html|Image Converter|Convert between JPG, PNG, and WebP.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Can I check multiple images at once?</summary>
+        <p>Yes, select or drop in several files and each one gets its own row in the results table, so you can compare dimensions across a batch at a glance.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the aspect ratio shown as?</summary>
+        <p>As a simplified ratio (like 16:9 or 4:3) found by dividing both dimensions by their greatest common divisor, alongside the raw decimal ratio for exact comparisons.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my image uploaded anywhere?</summary>
+        <p>No. The file is read locally and decoded by your browser's own image engine. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-image-dimension-inspector.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

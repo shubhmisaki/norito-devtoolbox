@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG Optimizer | norito</title>
+<meta name="description" content="Paste or upload an SVG, strip comments, metadata, and excess whitespace, and shrink the file size. Live before/after preview. Runs in your browser." />
+<link rel="canonical" href="https://norito.in/svg-optimizer.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG Optimizer | norito" />
+<meta property="og:description" content="Paste or upload an SVG, strip comments, metadata, and excess whitespace, and shrink the file size. Live before/after preview. Runs in your browser." />
+<meta property="og:url" content="https://norito.in/svg-optimizer.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG Optimizer | norito" />
+<meta name="twitter:description" content="Paste or upload an SVG, strip comments, metadata, and excess whitespace, and shrink the file size. Live before/after preview. Runs in your browser." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG Optimizer",
+  "url": "https://norito.in/svg-optimizer.html",
+  "description": "Paste or upload an SVG, strip comments, metadata, and excess whitespace, and shrink the file size.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will optimizing change how the SVG looks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, everything removed is either invisible metadata (comments, XML declarations, editor-specific attributes) or insignificant whitespace between tags. The rendered shape is identical, only the file's byte size shrinks." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my SVG still have a big file size after optimizing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If most of the size comes from the actual path data (many points in a complex shape) or an embedded raster image, cleanup alone won't shrink much, since that data is part of the visible content. This tool focuses on safe, lossless cleanup rather than simplifying paths, which can subtly change shapes." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my SVG uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Optimization runs entirely in your browser's JavaScript. Nothing is uploaded." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG Optimizer", "item": "https://norito.in/svg-optimizer.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVG Optimizer</p>
+    <h1>SVG Optimizer</h1>
+    <p class="lede">
+      Paste or drop in an SVG, strip comments, metadata, editor cruft, and excess whitespace.
+      See the size drop live.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Click to choose an .svg file</strong>, or drag and drop it here</p>
+          <p class="note" style="margin-top:2px;">Or paste SVG markup directly into the box below. Stays on your device.</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" />
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label for="svgInput">SVG markup</label>
+          <textarea id="svgInput" class="mono-area" rows="12" placeholder="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; ...>...</svg>"></textarea>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Remove width/height (keep viewBox only)</span>
+          <label class="switch"><input type="checkbox" id="optRemoveDims" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="previewWrap" style="padding:24px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; min-height:140px; display:flex; align-items:center; justify-content:center;">
+            <p class="note" id="previewHint">Preview appears here.</p>
+          </div>
+          <div id="sizeStats" class="note" style="margin-bottom:12px;"></div>
+          <pre class="code-output" id="output" style="text-align:left; max-height:220px; overflow:auto;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; justify-content:center;">
+            <button id="copyBtn">Copy optimized SVG</button>
+            <button id="downloadBtn" class="secondary">Download .svg</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>
+        The cleanup pass removes XML/DOCTYPE declarations, <code>&lt;!-- comments --&gt;</code>,
+        editor-only namespaces and metadata (Inkscape, Sketch, Illustrator export attributes,
+        <code>&lt;metadata&gt;</code> and <code>&lt;title&gt;</code> blocks left over from design
+        tools), and collapses redundant whitespace between tags, none of which affects how the SVG
+        renders. Optionally, it can also drop explicit <code>width</code>/<code>height</code>
+        attributes on the root element so the SVG scales purely from its <code>viewBox</code>,
+        useful when embedding it responsively.
+      </p>
+      <p>
+        Everything is text processing on the string you provide, done with your browser's own DOM
+        parser to make sure the result stays valid XML. Nothing is uploaded.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-to-react-component.html|SVG to React Component|Convert SVG markup into a JSX component.
+design/favicon-generator.html|Favicon Generator|Generate a favicon from an image.
+design/color-palette-extractor.html|Color Palette Extractor|Pull dominant colors from an image.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Will optimizing change how the SVG looks?</summary>
+        <p>No, everything removed is either invisible metadata (comments, XML declarations, editor-specific attributes) or insignificant whitespace between tags. The rendered shape is identical, only the file's byte size shrinks.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why does my SVG still have a big file size after optimizing?</summary>
+        <p>If most of the size comes from the actual path data (many points in a complex shape) or an embedded raster image, cleanup alone won't shrink much, since that data is part of the visible content. This tool focuses on safe, lossless cleanup rather than simplifying paths, which can subtly change shapes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my SVG uploaded anywhere?</summary>
+        <p>No. Optimization runs entirely in your browser's JavaScript. Nothing is uploaded.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="js/app-svg-optimizer.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

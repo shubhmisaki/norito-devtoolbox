@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Recortador de Imágenes para Redes Sociales | norito</title>
+<meta name="description" content="Recorta una foto a los tamaños exactos que necesitan Instagram, Twitter/X, LinkedIn, YouTube y Facebook. Desplaza y haz zoom para reposicionar. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/social-image-cropper.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Recortador de Imágenes para Redes Sociales | norito" />
+<meta property="og:description" content="Recorta una foto a los tamaños exactos que necesitan Instagram, Twitter/X, LinkedIn, YouTube y Facebook. Desplaza y haz zoom para reposicionar. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/social-image-cropper.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Recortador de Imágenes para Redes Sociales | norito" />
+<meta name="twitter:description" content="Recorta una foto a los tamaños exactos que necesitan Instagram, Twitter/X, LinkedIn, YouTube y Facebook. Desplaza y haz zoom para reposicionar. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Recortador de Imágenes para Redes Sociales",
+  "url": "https://norito.in/es/social-image-cropper.html",
+  "description": "Recorta una foto a los tamaños exactos que necesitan Instagram, Twitter/X, LinkedIn, YouTube y Facebook.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se posiciona el recorte por defecto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Centrado, como object-fit: cover en CSS, la proporción del preset se ajusta para llenar el marco, escalando la imagen justo lo necesario para que no quede espacio vacío, y luego se centra. Usa los deslizadores de desplazamiento para elegir qué parte de la imagen se mantiene en el marco, y el zoom para recortar más de cerca." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Descarga el tamaño exacto en píxeles que recomienda cada plataforma?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, cada preset se descarga con las dimensiones en píxeles actualmente recomendadas por esa plataforma, no solo con la proporción correcta, así que no necesitas un segundo paso de redimensionado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se sube mi foto a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El recorte ocurre por completo en tu navegador usando la API canvas. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Recortador de Imágenes para Redes Sociales", "item": "https://norito.in/es/social-image-cropper.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Recortador de Imágenes para Redes Sociales</p>
+    <h1>Recortador de Imágenes para Redes Sociales</h1>
+    <p class="lede">
+      Recorta una foto al tamaño exacto que espera una plataforma. Elige un preset, desplaza y haz zoom
+      para reposicionar, descarga.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>Haz clic para elegir una imagen</strong>, o arrástrala hasta aquí</p>
+          <p class="note" style="margin-top:2px;">Se queda en tu dispositivo, no se sube nada.</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="preset">Preset</label>
+          <select id="preset">
+            <option value="ig-post" data-w="1080" data-h="1080">Publicación de Instagram (1080&times;1080)</option>
+            <option value="ig-story" data-w="1080" data-h="1920">Historia de Instagram (1080&times;1920)</option>
+            <option value="ig-portrait" data-w="1080" data-h="1350">Publicación vertical de Instagram (1080&times;1350)</option>
+            <option value="x-header" data-w="1500" data-h="500">Encabezado de X / Twitter (1500&times;500)</option>
+            <option value="linkedin-banner" data-w="1584" data-h="396">Banner de LinkedIn (1584&times;396)</option>
+            <option value="fb-cover" data-w="820" data-h="312">Portada de Facebook (820&times;312)</option>
+            <option value="yt-thumb" data-w="1280" data-h="720">Miniatura de YouTube (1280&times;720)</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="field">
+            <label for="zoom">Zoom (<span id="zoomVal">100%</span>)</label>
+            <input type="range" id="zoom" min="100" max="300" value="100" />
+          </div>
+          <div class="field">
+            <label for="panX">Desplazamiento horizontal</label>
+            <input type="range" id="panX" min="0" max="100" value="50" />
+          </div>
+          <div class="field">
+            <label for="panY">Desplazamiento vertical</label>
+            <input type="range" id="panY" min="0" max="100" value="50" />
+          </div>
+        </div>
+
+        <button id="downloadBtn" disabled style="margin-top:12px;">Descargar imagen recortada</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="cropStage" style="background:var(--bg-subtle); border-radius:var(--radius-md); overflow:hidden; margin:0 auto; position:relative; max-width:100%;">
+            <canvas id="cropCanvas"></canvas>
+          </div>
+          <p class="note" id="previewHint" style="margin-top:12px;">Suelta una imagen y elige un preset para previsualizar el recorte.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Para cada preset, la herramienta calcula la escala necesaria para que tu imagen cubra por
+        completo la proporción de destino sin bordes vacíos, la misma lógica que hay detrás de
+        <code>object-fit: cover</code> en CSS, y luego la centra por defecto. El deslizador de zoom
+        escala aún más, y los deslizadores de desplazamiento mueven la ventana visible sobre la imagen
+        de origen; ambos se aplican como un rectángulo de origen que se pasa a
+        <code>canvas.drawImage</code>, así que el recorte siempre se renderiza a partir de la
+        resolución completa de tu imagen, no de una vista previa reducida.
+      </p>
+      <p>
+        Todo ocurre en un canvas en memoria dentro de esta pestaña. Tu foto nunca se sube, y la
+        descarga sale directamente de ese canvas.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|Recortar Imagen|Recorte libre o con proporción fija, arrastrando.
+resize-image.html|Redimensionar Imagen|Cambia el ancho y alto, exacto o por porcentaje.
+image-dimension-inspector.html|Inspector de dimensiones de imagen|Comprueba las dimensiones exactas en píxeles de una imagen.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Cómo se posiciona el recorte por defecto?</summary>
+        <p>Centrado, como object-fit: cover en CSS, la proporción del preset se ajusta para llenar el marco, escalando la imagen justo lo necesario para que no quede espacio vacío, y luego se centra. Usa los deslizadores de desplazamiento para elegir qué parte de la imagen se mantiene en el marco, y el zoom para recortar más de cerca.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Descarga el tamaño exacto en píxeles que recomienda cada plataforma?</summary>
+        <p>Sí, cada preset se descarga con las dimensiones en píxeles actualmente recomendadas por esa plataforma, no solo con la proporción correcta, así que no necesitas un segundo paso de redimensionado.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se sube mi foto a algún sitio?</summary>
+        <p>No. El recorte ocurre por completo en tu navegador usando la API canvas. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-social-image-cropper.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

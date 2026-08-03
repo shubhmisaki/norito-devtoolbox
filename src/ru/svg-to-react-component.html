@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVG в React-компонент | norito</title>
+<meta name="description" content="Вставьте разметку SVG и получите функциональный React-компонент (JSX) с атрибутами в camelCase и className. Работает полностью в вашем браузере." />
+<link rel="canonical" href="https://norito.in/ru/svg-to-react-component.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVG в React-компонент | norito" />
+<meta property="og:description" content="Вставьте разметку SVG и получите функциональный React-компонент (JSX) с атрибутами в camelCase и className. Работает полностью в вашем браузере." />
+<meta property="og:url" content="https://norito.in/ru/svg-to-react-component.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVG в React-компонент | norito" />
+<meta name="twitter:description" content="Вставьте разметку SVG и получите функциональный React-компонент (JSX) с атрибутами в camelCase и className. Работает полностью в вашем браузере." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVG в React-компонент",
+  "url": "https://norito.in/ru/svg-to-react-component.html",
+  "description": "Вставьте разметку SVG и получите функциональный React-компонент (JSX) с атрибутами в camelCase и className.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ru/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что меняется при переходе от SVG к JSX?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Названия атрибутов переводятся в camelCase (stroke-width становится strokeWidth, fill-rule становится fillRule), class становится className, а самозакрывающиеся теги получают завершающий слэш, обязательный для JSX. Визуальный результат остаётся идентичным." }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли управлять размером и цветом через props?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Включите «Принимать props», чтобы компонент разворачивал {...props} на корневом элементе <svg>, — тогда можно переопределить width, height, className или что угодно ещё оттуда, где вы используете компонент. Это стандартный паттерн для иконочных компонентов." }
+    },
+    {
+      "@type": "Question",
+      "name": "Отправляется ли мой SVG куда-либо?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Преобразование — это обычная работа со строками и атрибутами прямо в вашем браузере. Ничего не загружается." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "SVG в React-компонент", "item": "https://norito.in/ru/svg-to-react-component.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVG в React-компонент</p>
+    <h1>SVG в React-компонент</h1>
+    <p class="lede">
+      Вставьте разметку SVG и получите готовый к импорту функциональный React-компонент с
+      атрибутами в camelCase.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="field">
+          <label for="svgInput">Разметка SVG</label>
+          <textarea id="svgInput" class="mono-area" rows="12">&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"&gt;
+  &lt;circle cx="12" cy="12" r="10"/&gt;
+  &lt;path d="M12 16v-4"/&gt;
+  &lt;path d="M12 8h.01"/&gt;
+&lt;/svg&gt;</textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="componentName">Имя компонента</label>
+            <input type="text" id="componentName" value="IconInfo" />
+          </div>
+          <div class="field" style="min-width:140px;">
+            <label for="exportStyle">Тип экспорта</label>
+            <select id="exportStyle">
+              <option value="default" selected>Экспорт по умолчанию</option>
+              <option value="named">Именованный экспорт</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label">Принимать props (разворачивать на &lt;svg&gt;)</span>
+          <label class="switch"><input type="checkbox" id="optProps" checked /><span class="track"></span></label>
+        </div>
+        <div class="option-row">
+          <span class="option-label">TypeScript (.tsx)</span>
+          <label class="switch"><input type="checkbox" id="optTs" /><span class="track"></span></label>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:260px;"></pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">Скопировать компонент</button>
+            <button id="downloadBtn" class="secondary">Скачать файл</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Как это работает</h2>
+      <p>
+        SVG разбирается собственным DOM-парсером браузера, поэтому он действительно
+        понимается как разметка, а не просто сопоставляется по шаблону. Каждое имя атрибута
+        преобразуется в его React/DOM-эквивалент по тому же соответствию, которое использует
+        сам React (<code>stroke-width</code>
+        &rarr; <code>strokeWidth</code>, <code>class</code> &rarr; <code>className</code>,
+        <code>xlink:href</code> &rarr; <code>xlinkHref</code> и так далее), дерево
+        пересобирается в JSX и оборачивается в небольшой функциональный компонент. При включённой
+        опции «Принимать props» <code>{...props}</code> разворачивается на корневом элементе, так
+        что вызывающий код может передать <code>width</code>, <code>className</code> или обработчик
+        <code>onClick</code> обычным для React способом.
+      </p>
+      <p>
+        Разбор и преобразование происходят полностью в JavaScript этой страницы, работая с DOM,
+        который браузер строит из вашего ввода. Ничего не загружается.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|Оптимизатор SVG|Удалите комментарии и метаданные из SVG.
+design/favicon-generator.html|Генератор favicon|Создайте favicon из изображения.
+json-formatter.html|Форматирование и проверка JSON|Форматирование, проверка, минификация JSON.
+-->
+
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Что меняется при переходе от SVG к JSX?</summary>
+        <p>Названия атрибутов переводятся в camelCase (stroke-width становится strokeWidth, fill-rule становится fillRule), class становится className, а самозакрывающиеся теги получают завершающий слэш, обязательный для JSX. Визуальный результат остаётся идентичным.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли управлять размером и цветом через props?</summary>
+        <p>Включите «Принимать props», чтобы компонент разворачивал {...props} на корневом элементе &lt;svg&gt;, — тогда можно переопределить width, height, className или что угодно ещё оттуда, где вы используете компонент. Это стандартный паттерн для иконочных компонентов.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Отправляется ли мой SVG куда-либо?</summary>
+        <p>Нет. Преобразование — это обычная работа со строками и атрибутами прямо в вашем браузере. Ничего не загружается.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ru.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-to-react-component.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de .gitignore | norito</title>
+<meta name="description" content="Elige tus lenguajes, frameworks y editores, y obtén un archivo .gitignore combinado. Node, Python, Java, macOS, Windows, VS Code y más. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/gitignore-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de .gitignore | norito" />
+<meta property="og:description" content="Elige tus lenguajes, frameworks y editores, y obtén un archivo .gitignore combinado. Node, Python, Java, macOS, Windows, VS Code y más. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/gitignore-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de .gitignore | norito" />
+<meta name="twitter:description" content="Elige tus lenguajes, frameworks y editores, y obtén un archivo .gitignore combinado. Node, Python, Java, macOS, Windows, VS Code y más. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de .gitignore",
+  "url": "https://norito.in/es/gitignore-generator.html",
+  "description": "Elige tus lenguajes, frameworks y editores, y obtén un archivo .gitignore combinado.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo combinar varias plantillas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Marca tantas como necesites, Node y macOS y VS Code juntos, por ejemplo, y se combinan en un solo archivo sin líneas duplicadas, cada plantilla bajo su propia sección con etiqueta." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si necesito una regla que no está en ninguna plantilla?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usa el cuadro de reglas personalizadas al final. Lo que escribas ahí se añade como su propia sección, así puedes agregar rutas específicas del proyecto sin editar el archivo generado después." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Esto aplica el archivo a mi repositorio automáticamente?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, solo genera el texto. Descárgalo como .gitignore y colócalo tú mismo en la raíz de tu repositorio, o cópialo y pégalo." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de .gitignore", "item": "https://norito.in/es/gitignore-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Generador de .gitignore</p>
+    <h1>Generador de .gitignore</h1>
+    <p class="lede">
+      Marca tu stack y obtén un .gitignore combinado sin líneas duplicadas, listo para colocar en
+      tu repositorio.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Lenguajes y entornos de ejecución</h3>
+        <div class="gi-grid" id="giLangs"></div>
+        <h3>Frameworks y herramientas</h3>
+        <div class="gi-grid" id="giFrameworks"></div>
+        <h3>Editores y sistemas operativos</h3>
+        <div class="gi-grid" id="giEditors"></div>
+        <div class="field" style="margin-top:16px;">
+          <label for="customRules">Reglas personalizadas (opcional, una por línea)</label>
+          <textarea id="customRules" class="mono-area" rows="4" placeholder=".env.local
+/secrets/"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:200px;">// Marca al menos una plantilla a la izquierda para empezar.</pre>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">Copiar .gitignore</button>
+            <button id="downloadBtn" class="secondary">Descargar .gitignore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Cada casilla se corresponde con una pequeña plantilla incorporada que cubre los artefactos
+        de compilación, carpetas de dependencias y archivos de configuración local típicos de ese
+        lenguaje o herramienta, los mismos patrones que usa como punto de partida la propia
+        colección de plantillas gitignore de GitHub. Las plantillas marcadas se concatenan bajo
+        encabezados de sección con etiqueta, pasan por un proceso de eliminación de duplicados para
+        que un patrón como <code>node_modules/</code> aparezca una sola vez aunque dos plantillas
+        seleccionadas lo incluyan, y tus reglas personalizadas se añaden al final como su propia
+        sección.
+      </p>
+      <p>
+        Nada de esto lee tu proyecto real, solo ensambla texto a partir de plantillas incorporadas
+        en el JavaScript de esta página. No se sube nada.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+json-formatter.html|Formateador y validador JSON|Formatea, valida y minifica JSON.
+test-file-generator.html|Generador de archivos de prueba|Archivos de prueba exactos en bytes para cualquier tamaño o extensión.
+hash-generator.html|Generador de hashes|MD5, SHA-1, SHA-256, SHA-512.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Puedo combinar varias plantillas?</summary>
+        <p>Sí. Marca tantas como necesites, Node y macOS y VS Code juntos, por ejemplo, y se combinan en un solo archivo sin líneas duplicadas, cada plantilla bajo su propia sección con etiqueta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Y si necesito una regla que no está en ninguna plantilla?</summary>
+        <p>Usa el cuadro de reglas personalizadas al final. Lo que escribas ahí se añade como su propia sección, así puedes agregar rutas específicas del proyecto sin editar el archivo generado después.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Esto aplica el archivo a mi repositorio automáticamente?</summary>
+        <p>No, solo genera el texto. Descárgalo como .gitignore y colócalo tú mismo en la raíz de tu repositorio, o cópialo y pégalo.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-gitignore-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

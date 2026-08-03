@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>CSS ईज़िंग / क्यूबिक-बेज़ियर जनरेटर | norito</title>
+<meta name="description" content="एक विज़ुअल कर्व खींचकर कस्टम cubic-bezier() ईज़िंग फ़ंक्शन बनाएं, एनिमेशन लाइव प्रीव्यू करें, फिर CSS कॉपी करें. यह आपके ब्राउज़र में ही चलता है." />
+<link rel="canonical" href="https://norito.in/hi/design/css-easing-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS ईज़िंग / क्यूबिक-बेज़ियर जनरेटर | norito" />
+<meta property="og:description" content="एक विज़ुअल कर्व खींचकर कस्टम cubic-bezier() ईज़िंग फ़ंक्शन बनाएं, एनिमेशन लाइव प्रीव्यू करें, फिर CSS कॉपी करें. यह आपके ब्राउज़र में ही चलता है." />
+<meta property="og:url" content="https://norito.in/hi/design/css-easing-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS ईज़िंग / क्यूबिक-बेज़ियर जनरेटर | norito" />
+<meta name="twitter:description" content="एक विज़ुअल कर्व खींचकर कस्टम cubic-bezier() ईज़िंग फ़ंक्शन बनाएं, एनिमेशन लाइव प्रीव्यू करें, फिर CSS कॉपी करें. यह आपके ब्राउज़र में ही चलता है." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CSS ईज़िंग / क्यूबिक-बेज़ियर जनरेटर",
+  "url": "https://norito.in/hi/design/css-easing-generator.html",
+  "description": "एक विज़ुअल कर्व खींचकर कस्टम cubic-bezier() ईज़िंग फ़ंक्शन बनाएं, एनिमेशन लाइव प्रीव्यू करें.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/hi/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "दोनों हैंडल क्या कंट्रोल करते हैं?",
+      "acceptedAnswer": { "@type": "Answer", "text": "एक cubic-bezier ईज़िंग कर्व दो कंट्रोल पॉइंट्स से डिफ़ाइन होता है, हर एक का एक x (समय, 0 से 1) और y (प्रोग्रेस, बिना सीमा के लेकिन आमतौर पर 0 से 1) कोऑर्डिनेट होता है. किसी हैंडल को खींचना उस पॉइंट को सीधे सेट करता है; दिखने वाले चारों नंबर बिल्कुल वही हैं जो cubic-bezier() के अंदर जाते हैं." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या कर्व 100% से आगे ओवरशूट कर सकता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "हां, अगर किसी कंट्रोल पॉइंट की y वैल्यू 1 से ऊपर या 0 से नीचे जाती है, तो एनिमेशन सेटल होने से पहले थोड़ी देर के लिए अपनी एंड वैल्यू से आगे निकल जाता है या स्टार्ट वैल्यू से नीचे चला जाता है, यही \"बाउंस\" या \"एंटीसिपेशन\" इफ़ेक्ट है. इसे आज़माने के लिए किसी हैंडल को ग्राफ़ के ऊपर या नीचे खींचें." }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या यह कहीं भेजा जाता है?",
+      "acceptedAnswer": { "@type": "Answer", "text": "नहीं, कर्व और प्रीव्यू एनिमेशन पूरी तरह आपके ब्राउज़र के CSS इंजन में चलते हैं. कुछ भी अपलोड नहीं होता." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/hi/" },
+    { "@type": "ListItem", "position": 2, "name": "CSS ईज़िंग जनरेटर", "item": "https://norito.in/hi/design/css-easing-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 9-9"/><path d="M21 3c-4 0-8 1-11 4-2 2-3 5-3 8 3 0 6-1 8-3 3-3 4-7 4-11a9 9 0 0 0 2 2Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / CSS ईज़िंग जनरेटर</p>
+    <h1>CSS ईज़िंग जनरेटर</h1>
+    <p class="lede">
+      दोनों हैंडल को खींचकर एक कस्टम ईज़िंग कर्व बनाएं, बॉल को इसे लाइव प्रीव्यू करते देखें, और
+      <code>cubic-bezier()</code> वैल्यू कॉपी करें.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <svg id="curveSvg" viewBox="0 0 200 200" style="width:100%; max-width:320px; display:block; margin:0 auto; background:var(--bg-subtle); border-radius:var(--radius-md); touch-action:none;">
+          <line x1="0" y1="200" x2="200" y2="0" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+          <path id="curvePath" d="" fill="none" stroke="var(--primary)" stroke-width="3" />
+          <line id="handle1Line" x1="0" y1="200" x2="0" y2="200" stroke="var(--muted)" stroke-width="1.5" />
+          <line id="handle2Line" x1="200" y1="0" x2="200" y2="0" stroke="var(--muted)" stroke-width="1.5" />
+          <circle id="handle1" cx="0" cy="200" r="7" fill="var(--accent-live, #2fbf71)" style="cursor:grab;" />
+          <circle id="handle2" cx="200" cy="0" r="7" fill="var(--primary)" style="cursor:grab;" />
+        </svg>
+        <div class="field-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="p1x">P1 x</label>
+            <input type="number" id="p1x" min="0" max="1" step="0.01" value="0.42" />
+          </div>
+          <div class="field">
+            <label for="p1y">P1 y</label>
+            <input type="number" id="p1y" step="0.01" value="0" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="p2x">P2 x</label>
+            <input type="number" id="p2x" min="0" max="1" step="0.01" value="0.58" />
+          </div>
+          <div class="field">
+            <label for="p2y">P2 y</label>
+            <input type="number" id="p2y" step="0.01" value="1" />
+          </div>
+        </div>
+        <h3>प्रीसेट</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="secondary preset-btn" data-p="0.25,0.1,0.25,1">ease</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,1,1">ease-in</button>
+          <button type="button" class="secondary preset-btn" data-p="0,0,0.58,1">ease-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.42,0,0.58,1">ease-in-out</button>
+          <button type="button" class="secondary preset-btn" data-p="0.68,-0.55,0.27,1.55">back</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="animTrack" style="position:relative; height:60px; background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:16px; overflow:hidden;">
+            <div id="animBall" style="position:absolute; top:14px; left:6px; width:32px; height:32px; border-radius:50%; background:var(--primary);"></div>
+          </div>
+          <button type="button" id="playBtn" class="secondary" style="margin-bottom:16px;">एनिमेशन रीप्ले करें</button>
+          <pre class="code-output" id="output" style="text-align:left;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">CSS कॉपी करें</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>यह कैसे काम करता है</h2>
+      <p>
+        यह ग्राफ़ एक सेकंड में प्रोग्रेस (वर्टिकल) बनाम समय (होराइज़ॉन्टल) को प्लॉट करता है. दोनों हैंडल
+        सीधे खींचे जा सकते हैं, और नीचे दिए नंबर फ़ील्ड्स दोनों तरीक़ों से इनके साथ सिंक रहते हैं; माउस
+        या उंगली से खींचें, या किसी ख़ास कर्व से मैच करना हो तो सटीक वैल्यू टाइप करें. यही चारों नंबर
+        आपके देख रहे SVG पाथ को और प्रीव्यू बॉल पर लगे असली <code>transition-timing-function</code>
+        दोनों को फ़ीड करते हैं, यानी आप जो देख रहे हैं वह असली ईज़िंग है, कोई अनुमान नहीं.
+      </p>
+      <p>
+        सब कुछ आपके ब्राउज़र के अपने CSS ट्रांज़िशन इंजन पर चलता है. कोई एनिमेशन स्टेट या कर्व डेटा
+        कहीं नहीं भेजा जाता.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+css-clamp-generator.html|CSS Clamp() जनरेटर|व्यूपोर्ट विड्थ के साथ स्केल होने वाली फ़्लूइड वैल्यूज़.
+css-filter-generator.html|CSS फ़िल्टर जनरेटर|इमेज फ़िल्टर इफ़ेक्ट विज़ुअली बनाएं.
+box-shadow-generator.html|बॉक्स शैडो जनरेटर|CSS बॉक्स-शैडो विज़ुअली बनाएं.
+-->
+
+    <h2>सामान्य प्रश्न</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>दोनों हैंडल क्या कंट्रोल करते हैं?</summary>
+        <p>एक cubic-bezier ईज़िंग कर्व दो कंट्रोल पॉइंट्स से डिफ़ाइन होता है, हर एक का एक x (समय, 0 से 1) और y (प्रोग्रेस, बिना सीमा के लेकिन आमतौर पर 0 से 1) कोऑर्डिनेट होता है. किसी हैंडल को खींचना उस पॉइंट को सीधे सेट करता है; दिखने वाले चारों नंबर बिल्कुल वही हैं जो cubic-bezier() के अंदर जाते हैं.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या कर्व 100% से आगे ओवरशूट कर सकता है?</summary>
+        <p>हां, अगर किसी कंट्रोल पॉइंट की y वैल्यू 1 से ऊपर या 0 से नीचे जाती है, तो एनिमेशन सेटल होने से पहले थोड़ी देर के लिए अपनी एंड वैल्यू से आगे निकल जाता है या स्टार्ट वैल्यू से नीचे चला जाता है, यही "बाउंस" या "एंटीसिपेशन" इफ़ेक्ट है. इसे आज़माने के लिए किसी हैंडल को ग्राफ़ के ऊपर या नीचे खींचें.</p>
+      </details>
+      <details class="faq-item">
+        <summary>क्या यह कहीं भेजा जाता है?</summary>
+        <p>नहीं, कर्व और प्रीव्यू एनिमेशन पूरी तरह आपके ब्राउज़र के CSS इंजन में चलते हैं. कुछ भी अपलोड नहीं होता.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/hi.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-css-easing-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

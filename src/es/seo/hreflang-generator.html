@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Generador de Etiquetas hreflang | norito</title>
+<meta name="description" content="Construye un conjunto completo de etiquetas de enlace de idioma alternativo hreflang, incluyendo x-default, a partir de una lista de pares locale/URL. Funciona en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/seo/hreflang-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Generador de Etiquetas hreflang | norito" />
+<meta property="og:description" content="Construye un conjunto completo de etiquetas de enlace de idioma alternativo hreflang, incluyendo x-default, a partir de una lista de pares locale/URL. Funciona en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/seo/hreflang-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Generador de Etiquetas hreflang | norito" />
+<meta name="twitter:description" content="Construye un conjunto completo de etiquetas de enlace de idioma alternativo hreflang, incluyendo x-default, a partir de una lista de pares locale/URL. Funciona en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de Etiquetas hreflang",
+  "url": "https://norito.in/es/seo/hreflang-generator.html",
+  "description": "Construye un conjunto completo de etiquetas de enlace de idioma alternativo hreflang a partir de pares locale/URL.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Las etiquetas hreflang deben ser recíprocas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, este es el error más común con hreflang: cada página del conjunto debe enlazar a todas las demás, incluida ella misma. Google ignora explícitamente las anotaciones hreflang que no están confirmadas por un enlace de vuelta correspondiente. Esta herramienta siempre genera el conjunto completo en cada generación, incluyendo una etiqueta que se referencia a sí misma, para que puedas pegar el mismo bloque en cada versión de idioma." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué sirve x-default?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Le indica a los motores de búsqueda qué página mostrar a los visitantes cuyo idioma o región no coincide con ninguna de tus entradas hreflang específicas, normalmente tu versión por defecto o en inglés. Es opcional pero recomendado para cualquier sitio multilingüe." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se envían mis datos a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, las etiquetas se ensamblan por completo en tu navegador a partir de las filas que introduces. No se sube nada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Generador de Etiquetas hreflang", "item": "https://norito.in/es/seo/hreflang-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / Generador de Etiquetas hreflang</p>
+    <h1>Generador de Etiquetas hreflang</h1>
+    <p class="lede">
+      Añade el código de locale y la URL de cada versión de idioma, obtén el conjunto completo y
+      recíproco de etiquetas <code>hreflang</code> para pegar en todas ellas.
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div id="rowsWrap"></div>
+        <button type="button" id="addRowBtn" class="secondary" style="margin-top:4px;">+ Añadir idioma</button>
+        <div class="option-row" style="margin-top:16px;">
+          <span class="option-label">Incluir x-default</span>
+          <label class="switch"><input type="checkbox" id="optXDefault" checked /><span class="track"></span></label>
+        </div>
+        <div class="field" id="xDefaultRow">
+          <label for="xDefaultSelect">x-default apunta a</label>
+          <select id="xDefaultSelect"></select>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <pre class="code-output" id="output" style="min-height:200px;"></pre>
+          <button id="copyBtn" style="margin-top:12px;">Copiar etiquetas</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Por cada fila que añades, la herramienta genera una etiqueta
+        <code>&lt;link rel="alternate" hreflang="..." href="..." /&gt;</code>, y de forma crucial,
+        genera el <em>conjunto completo</em> en cada generación, una etiqueta por idioma incluyendo
+        una que se referencia a sí misma, porque eso es lo que exige la documentación de Google:
+        las anotaciones hreflang solo cuentan cuando son recíprocas, cada página del grupo enlaza a
+        todas las demás páginas del grupo. Pega el mismo bloque de salida en el
+        <code>&lt;head&gt;</code> de cada versión de idioma; no necesitas editar a mano qué etiqueta
+        apunta "a sí misma" en cada página.
+      </p>
+      <p>
+        Los códigos de locale no se validan contra una lista fija (BCP 47 admite muchas
+        combinaciones como <code>en</code>, <code>en-US</code>, <code>pt-BR</code>), así que
+        verifica los tuyos con los valores admitidos por Google si tienes dudas. Nada de lo que
+        introduces se sube.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+canonical-tag-generator.html|Generador de Etiquetas Canónicas|Genera una etiqueta de enlace canónico normalizada.
+meta-tag-generator.html|Generador de meta tags|Título, descripción, etiquetas OG y Twitter.
+sitemap-generator.html|Generador de sitemap|URLs entrantes, sitemap.xml resultante.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Las etiquetas hreflang deben ser recíprocas?</summary>
+        <p>Sí, este es el error más común con hreflang: cada página del conjunto debe enlazar a todas las demás, incluida ella misma. Google ignora explícitamente las anotaciones hreflang que no están confirmadas por un enlace de vuelta correspondiente. Esta herramienta siempre genera el conjunto completo en cada generación, incluyendo una etiqueta que se referencia a sí misma, para que puedas pegar el mismo bloque en cada versión de idioma.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Para qué sirve x-default?</summary>
+        <p>Le indica a los motores de búsqueda qué página mostrar a los visitantes cuyo idioma o región no coincide con ninguna de tus entradas hreflang específicas, normalmente tu versión por defecto o en inglés. Es opcional pero recomendado para cualquier sitio multilingüe.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se envían mis datos a algún sitio?</summary>
+        <p>No, las etiquetas se ensamblan por completo en tu navegador a partir de las filas que introduces. No se sube nada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../../js/i18n/es.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../../js/app-hreflang-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

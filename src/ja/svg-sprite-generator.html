@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>SVGスプライトジェネレーター | norito</title>
+<meta name="description" content="複数のSVGアイコンを、最適化された<symbol>ベースの1枚のスプライトシートに結合します。一括アップロード、ID自動生成、コピーまたはダウンロード。ブラウザ内で動作します。" />
+<link rel="canonical" href="https://norito.in/ja/svg-sprite-generator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SVGスプライトジェネレーター | norito" />
+<meta property="og:description" content="複数のSVGアイコンを、最適化された<symbol>ベースの1枚のスプライトシートに結合します。一括アップロード、ID自動生成、コピーまたはダウンロード。ブラウザ内で動作します。" />
+<meta property="og:url" content="https://norito.in/ja/svg-sprite-generator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SVGスプライトジェネレーター | norito" />
+<meta name="twitter:description" content="複数のSVGアイコンを、最適化された<symbol>ベースの1枚のスプライトシートに結合します。一括アップロード、ID自動生成、コピーまたはダウンロード。ブラウザ内で動作します。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SVGスプライトジェネレーター",
+  "url": "https://norito.in/ja/svg-sprite-generator.html",
+  "description": "複数のSVGアイコンを、最適化されたsymbolベースの1枚のスプライトシートに結合します。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/ja/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "symbolスプライトはどう機能しますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "各アイコンは、非表示の1つの<svg>の中の<symbol id=\"...\">になり、ページのHTML内のどこかに1回だけ配置されます。任意の要素は<svg><use href=\"#id\"></use></svg>でそのアイコンを描画できるため、何回使われてもブラウザは画像データを1回だけダウンロード・解析します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "アイコンのIDはどのように生成されますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "各ファイル名から生成されます。小文字化し、英数字以外の文字をハイフンに置き換え、拡張子を取り除きます。2つのファイルが同じIDになる場合は、すべてのシンボルにアクセスできるよう数字の接尾辞が追加されます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "アイコンはどこかにアップロードされますか?",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。ファイルはFile APIを使ってすべてブラウザ内で読み込まれ結合されます。アップロードは一切行われません。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "SVGスプライトジェネレーター", "item": "https://norito.in/ja/svg-sprite-generator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / SVGスプライトジェネレーター</p>
+    <h1>SVGスプライトジェネレーター</h1>
+    <p class="lede">
+      複数のSVGアイコンをドロップすると、自動生成された衝突安全なIDを持つ、1つに結合された<code>&lt;symbol&gt;</code>スプライトシートが得られます。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>クリックして.svgファイルを選択</strong>するか、ここにドラッグ&amp;ドロップしてください</p>
+          <p class="note" style="margin-top:2px;">複数のアイコンを一度に選択できます。端末内に留まり、アップロードは一切行われません。</p>
+          <input type="file" id="fileInput" accept=".svg,image/svg+xml" multiple />
+        </div>
+        <div class="batch-file-list" id="batchList" style="display:none;"></div>
+        <div class="result-box error" id="status" style="display:none;"></div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h3 id="previewHeading" style="margin-top:0; display:none;">アイコン</h3>
+          <div id="iconPreview" style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:14px;"></div>
+          <div class="field" style="text-align:left;">
+            <label>スプライト出力</label>
+            <pre class="code-output" id="output" style="max-height:220px; overflow:auto;"></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button id="copyBtn">スプライトをコピー</button>
+            <button id="downloadBtn" class="secondary">sprite.svgをダウンロード</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>仕組み</h2>
+      <p>
+        アップロードされた各SVGはブラウザ自身のDOMパーサーで解析され、その<code>viewBox</code>（viewBoxが設定されていない場合はwidth/height）が読み取られ、内側のマークアップは<code>&lt;symbol id="..." viewBox="..."&gt;</code>要素でラップされます。すべてのシンボルはその後、1つの非表示の<code>&lt;svg&gt;</code>に結合されます。これは、多数のアイコンを個別の画像ファイルやインラインコピーの代わりに1つのリクエストとして提供する、標準的な「SVGスプライト」パターンです。IDは各ファイル名から導出され、2つのファイルが衝突する場合は自動的に重複が解消されます。
+      </p>
+      <p>
+        解析と結合はすべてこのページのJavaScriptで行われます。アップロードした内容がどこかに送信されることはありません。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+svg-optimizer.html|SVGオプティマイザー|SVGからコメントとメタデータを取り除きます。
+svg-to-react-component.html|SVGからReactコンポーネントへ変換|SVGマークアップをJSXコンポーネントに変換。
+design/favicon-generator.html|ファビコンジェネレーター|画像からファビコンを生成します。
+-->
+
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>symbolスプライトはどう機能しますか?</summary>
+        <p>各アイコンは、非表示の1つの&lt;svg&gt;の中の&lt;symbol id="..."&gt;になり、ページのHTML内のどこかに1回だけ配置されます。任意の要素は&lt;svg&gt;&lt;use href="#id"&gt;&lt;/use&gt;&lt;/svg&gt;でそのアイコンを描画できるため、何回使われてもブラウザは画像データを1回だけダウンロード・解析します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>アイコンのIDはどのように生成されますか?</summary>
+        <p>各ファイル名から生成されます。小文字化し、英数字以外の文字をハイフンに置き換え、拡張子を取り除きます。2つのファイルが同じIDになる場合は、すべてのシンボルにアクセスできるよう数字の接尾辞が追加されます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>アイコンはどこかにアップロードされますか?</summary>
+        <p>いいえ。ファイルはFile APIを使ってすべてブラウザ内で読み込まれ結合されます。アップロードは一切行われません。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<script src="../js/i18n/ja.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-svg-sprite-generator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

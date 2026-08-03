@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Anotador de capturas de pantalla | norito</title>
+<meta name="description" content="Dibuja flechas, cuadros, líneas a mano alzada y texto sobre una captura de pantalla, luego difumina o descarga. Con deshacer/rehacer. Funciona por completo en tu navegador." />
+<link rel="canonical" href="https://norito.in/es/screenshot-annotator.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Anotador de capturas de pantalla | norito" />
+<meta property="og:description" content="Dibuja flechas, cuadros, líneas a mano alzada y texto sobre una captura de pantalla, luego difumina o descarga. Con deshacer/rehacer. Funciona por completo en tu navegador." />
+<meta property="og:url" content="https://norito.in/es/screenshot-annotator.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Anotador de capturas de pantalla | norito" />
+<meta name="twitter:description" content="Dibuja flechas, cuadros, líneas a mano alzada y texto sobre una captura de pantalla, luego difumina o descarga. Con deshacer/rehacer. Funciona por completo en tu navegador." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Anotador de capturas de pantalla",
+  "url": "https://norito.in/es/screenshot-annotator.html",
+  "description": "Dibuja flechas, cuadros, líneas a mano alzada y texto sobre una captura de pantalla, luego descárgala.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/es/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Para qué sirve la herramienta de difuminar/ocultar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Arrástrala sobre cualquier cosa que quieras ocultar, un correo electrónico, un número de cuenta, un rostro, y esa zona queda pixelada de forma permanente en la imagen exportada. Se aplica sobre los datos de píxel reales, no una capa CSS, así que no se puede quitar en un editor de imágenes." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo deshacer un error?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, cada forma que dibujas es un paso independiente, y Deshacer/Rehacer recorre ese historial hacia atrás y hacia adelante. Nada queda fijado en la imagen hasta que la descargas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se sube mi captura a algún sitio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Todo, dibujar, difuminar y exportar, ocurre en tu navegador sobre un canvas en memoria. No se sube nada, algo que importa dado que las capturas suelen contener información privada." }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Anotador de capturas de pantalla", "item": "https://norito.in/es/screenshot-annotator.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / Anotador de capturas de pantalla</p>
+    <h1>Anotador de capturas de pantalla</h1>
+    <p class="lede">
+      Suelta una captura de pantalla, dibuja flechas, cuadros, marcas a mano alzada y texto,
+      difumina lo privado, y luego descárgala.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel" id="editorPanel" style="display:none;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; align-items:center;">
+        <div class="tabs" id="toolTabs">
+          <button type="button" class="tab active" data-tool="arrow">Flecha</button>
+          <button type="button" class="tab" data-tool="rect">Cuadro</button>
+          <button type="button" class="tab" data-tool="freehand">Dibujar</button>
+          <button type="button" class="tab" data-tool="text">Texto</button>
+          <button type="button" class="tab" data-tool="blur">Difuminar</button>
+        </div>
+        <input type="color" id="strokeColor" value="#ef4444" title="Color" />
+        <input type="range" id="strokeWidth" min="2" max="16" value="4" title="Grosor de línea" style="width:90px;" />
+        <button type="button" id="undoBtn" class="secondary" disabled>Deshacer</button>
+        <button type="button" id="redoBtn" class="secondary" disabled>Rehacer</button>
+        <button type="button" id="clearBtn" class="secondary">Empezar de nuevo</button>
+      </div>
+      <div id="canvasWrap" style="position:relative; max-width:100%; overflow:auto; background:var(--bg-subtle); border-radius:var(--radius-md);">
+        <canvas id="annCanvas" style="max-width:100%; display:block; touch-action:none; cursor:crosshair;"></canvas>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="downloadBtn">Descargar PNG</button>
+      </div>
+    </div>
+
+    <div class="panel" id="dropPanel">
+      <div class="dropzone" id="drop">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        <p><strong>Haz clic para elegir una captura de pantalla</strong>, o arrástrala hasta aquí</p>
+        <p class="note" style="margin-top:2px;">Se queda en tu dispositivo, no se sube nada.</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>Cómo funciona</h2>
+      <p>
+        Cada anotación, flecha, cuadro, trazo a mano alzada, etiqueta de texto o zona de
+        difuminado, se guarda como un objeto de forma ligero en lugar de fijarse directamente en
+        los píxeles mientras dibujas. Con cada cambio, primero se vuelve a dibujar la captura base
+        y luego todas las formas se reproducen encima en orden, que es lo que hace funcionar
+        deshacer/rehacer: simplemente recorta o reproduce esa lista de formas. Las zonas de
+        difuminado son la única excepción que toca los píxeles directamente: muestrean y
+        promedian una cuadrícula de bloques sobre el área seleccionada (un simple desenfoque de
+        caja) para que el detalle subyacente quede realmente destruido en el archivo exportado, no
+        solo cubierto visualmente.
+      </p>
+      <p>
+        La descarga es una exportación PNG directa desde el canvas mediante <code>toBlob</code>. La
+        imagen nunca sale de tu navegador en ningún momento, algo que importa ya que las capturas
+        de pantalla suelen contener información privada.
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|Recortar Imagen|Recorte libre o con relación fija arrastrando.
+watermark-image.html|Marca de Agua en Imagen|Añade una marca de agua de texto con vista previa en vivo.
+remove-metadata.html|Eliminar Metadatos|Elimina EXIF, GPS e información de la cámara.
+-->
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Para qué sirve la herramienta de difuminar/ocultar?</summary>
+        <p>Arrástrala sobre cualquier cosa que quieras ocultar, un correo electrónico, un número de cuenta, un rostro, y esa zona queda pixelada de forma permanente en la imagen exportada. Se aplica sobre los datos de píxel reales, no una capa CSS, así que no se puede quitar en un editor de imágenes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo deshacer un error?</summary>
+        <p>Sí, cada forma que dibujas es un paso independiente, y Deshacer/Rehacer recorre ese historial hacia atrás y hacia adelante. Nada queda fijado en la imagen hasta que la descargas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se sube mi captura a algún sitio?</summary>
+        <p>No. Todo, dibujar, difuminar y exportar, ocurre en tu navegador sobre un canvas en memoria. No se sube nada, algo que importa dado que las capturas suelen contener información privada.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-screenshot-annotator.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

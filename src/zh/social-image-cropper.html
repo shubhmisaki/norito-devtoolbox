@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>社交媒体图片裁剪工具 | norito</title>
+<meta name="description" content="将照片裁剪为 Instagram、Twitter/X、LinkedIn、YouTube 和 Facebook 所需的精确尺寸预设。可平移和缩放来调整位置，完全在浏览器中运行。" />
+<link rel="canonical" href="https://norito.in/zh/social-image-cropper.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="社交媒体图片裁剪工具 | norito" />
+<meta property="og:description" content="将照片裁剪为 Instagram、Twitter/X、LinkedIn、YouTube 和 Facebook 所需的精确尺寸预设。可平移和缩放来调整位置，完全在浏览器中运行。" />
+<meta property="og:url" content="https://norito.in/zh/social-image-cropper.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="社交媒体图片裁剪工具 | norito" />
+<meta name="twitter:description" content="将照片裁剪为 Instagram、Twitter/X、LinkedIn、YouTube 和 Facebook 所需的精确尺寸预设。可平移和缩放来调整位置，完全在浏览器中运行。" />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "社交媒体图片裁剪工具",
+  "url": "https://norito.in/zh/social-image-cropper.html",
+  "description": "将照片裁剪为 Instagram、Twitter/X、LinkedIn、YouTube 和 Facebook 所需的精确尺寸预设。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/zh/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "裁剪框默认是怎么定位的？",
+      "acceptedAnswer": { "@type": "Answer", "text": "默认居中，就像 CSS 的 object-fit: cover——预设的宽高比会被放大到刚好填满画框且不留空白，然后居中显示。用平移滑块调整图片中要保留在框内的部分，用缩放滑块裁得更紧一些。" }
+    },
+    {
+      "@type": "Question",
+      "name": "输出的是每个平台建议的精确像素尺寸吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "是的，每个预设下载时都会使用该平台当前建议的精确像素尺寸，而不只是正确的比例，所以你不需要再做一次调整尺寸的操作。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的照片会被上传到别的地方吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不会。裁剪完全通过浏览器的 canvas API 在本地完成，不会上传任何内容。" }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "社交媒体图片裁剪工具", "item": "https://norito.in/zh/social-image-cropper.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="index.html">norito</a> / 社交媒体图片裁剪工具</p>
+    <h1>社交媒体图片裁剪工具</h1>
+    <p class="lede">
+      把照片裁剪成平台需要的精确尺寸。选一个预设，平移和缩放来调整位置，然后下载。
+    </p>
+    </div>
+  </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="dropzone" id="drop">
+          <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p><strong>点击选择一张图片</strong>，或将其拖放到这里</p>
+          <p class="note" style="margin-top:2px;">文件留在你的设备上，不会上传任何内容。</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="preset">预设</label>
+          <select id="preset">
+            <option value="ig-post" data-w="1080" data-h="1080">Instagram 帖子（1080&times;1080）</option>
+            <option value="ig-story" data-w="1080" data-h="1920">Instagram 快拍（1080&times;1920）</option>
+            <option value="ig-portrait" data-w="1080" data-h="1350">Instagram 竖版帖子（1080&times;1350）</option>
+            <option value="x-header" data-w="1500" data-h="500">X / Twitter 头图（1500&times;500）</option>
+            <option value="linkedin-banner" data-w="1584" data-h="396">LinkedIn 横幅（1584&times;396）</option>
+            <option value="fb-cover" data-w="820" data-h="312">Facebook 封面（820&times;312）</option>
+            <option value="yt-thumb" data-w="1280" data-h="720">YouTube 缩略图（1280&times;720）</option>
+          </select>
+        </div>
+
+        <div id="editorWrap" style="display:none;">
+          <div class="field">
+            <label for="zoom">缩放（<span id="zoomVal">100%</span>）</label>
+            <input type="range" id="zoom" min="100" max="300" value="100" />
+          </div>
+          <div class="field">
+            <label for="panX">水平平移</label>
+            <input type="range" id="panX" min="0" max="100" value="50" />
+          </div>
+          <div class="field">
+            <label for="panY">垂直平移</label>
+            <input type="range" id="panY" min="0" max="100" value="50" />
+          </div>
+        </div>
+
+        <button id="downloadBtn" disabled style="margin-top:12px;">下载裁剪后的图片</button>
+      </div>
+
+      <div>
+        <div class="panel" style="text-align:center;">
+          <div id="cropStage" style="background:var(--bg-subtle); border-radius:var(--radius-md); overflow:hidden; margin:0 auto; position:relative; max-width:100%;">
+            <canvas id="cropCanvas"></canvas>
+          </div>
+          <p class="note" id="previewHint" style="margin-top:12px;">上传一张图片并选择预设，即可预览裁剪效果。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="explain-panel">
+      <h2>工作原理</h2>
+      <p>
+        针对每个预设，工具会计算出让图片完全覆盖目标宽高比、且四周不留空白所需的缩放比例——这与 CSS <code>object-fit: cover</code> 背后的数学原理相同，然后默认居中显示。缩放滑块在此基础上进一步放大，平移滑块则移动源图片中显示的窗口区域；两者都会作为源矩形参数传给 <code>canvas.drawImage</code>，因此裁剪结果始终基于你图片的完整分辨率渲染，而不是缩小后的预览图。
+      </p>
+      <p>
+        整个过程都在这个标签页的内存画布中完成。你的照片不会被上传，下载文件直接来自这块画布。
+      </p>
+    </div>
+
+<!--RELATED-TOOLS
+crop-image.html|裁剪图片|自由裁剪或按锁定比例拖拽裁剪。
+resize-image.html|调整图片尺寸|按精确数值或百分比修改宽高。
+image-dimension-inspector.html|图片尺寸检测器|查看图片的精确像素尺寸。
+-->
+
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>裁剪框默认是怎么定位的？</summary>
+        <p>默认居中，就像 CSS 的 object-fit: cover——预设的宽高比会被放大到刚好填满画框且不留空白，然后居中显示。用平移滑块调整图片中要保留在框内的部分，用缩放滑块裁得更紧一些。</p>
+      </details>
+      <details class="faq-item">
+        <summary>输出的是每个平台建议的精确像素尺寸吗？</summary>
+        <p>是的，每个预设下载时都会使用该平台当前建议的精确像素尺寸，而不只是正确的比例，所以你不需要再做一次调整尺寸的操作。</p>
+      </details>
+      <details class="faq-item">
+        <summary>我的照片会被上传到别的地方吗？</summary>
+        <p>不会。裁剪完全通过浏览器的 canvas API 在本地完成，不会上传任何内容。</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="../js/app-social-image-cropper.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->
