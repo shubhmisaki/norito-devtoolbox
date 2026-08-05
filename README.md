@@ -1,6 +1,6 @@
 # norito
 
-63 free, no-signup utilities across PDF, Images, Developer, Text, Utilities,
+86 free, no-signup utilities across PDF, Images, Developer, Text, Utilities,
 SEO, and Design categories. Pure HTML/CSS/vanilla JS: no backend for any tool
 except where noted, no bundler, no runtime third-party requests. Everything
 runs in the visitor's browser, which means free hosting and no server costs.
