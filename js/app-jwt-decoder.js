@@ -113,6 +113,7 @@
   }
 
   els.input.addEventListener("input", decode);
+  decode();
 
   // Signature verification deliberately not offered: doing it correctly
   // needs the signing secret or public key, which this tool has no server

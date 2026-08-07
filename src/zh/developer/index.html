@@ -37,15 +37,30 @@
     { "@type": "WebApplication", "name": "测试文件生成器", "url": "https://norito.in/zh/test-file-generator.html" },
     { "@type": "WebApplication", "name": "JSON 格式化", "url": "https://norito.in/zh/json-formatter.html" },
     { "@type": "WebApplication", "name": "Markdown 编辑器", "url": "https://norito.in/zh/markdown-editor.html" },
+    { "@type": "WebApplication", "name": "UUID 生成器", "url": "https://norito.in/zh/uuid-generator.html" },
+    { "@type": "WebApplication", "name": "Base64 编码 / 解码", "url": "https://norito.in/zh/base64-encoder.html" },
+    { "@type": "WebApplication", "name": "哈希生成器", "url": "https://norito.in/zh/hash-generator.html" },
+    { "@type": "WebApplication", "name": "时间戳转换器", "url": "https://norito.in/zh/timestamp-converter.html" },
+    { "@type": "WebApplication", "name": "JSON Diff", "url": "https://norito.in/zh/json-diff.html" },
+    { "@type": "WebApplication", "name": "JWT 解码器", "url": "https://norito.in/zh/jwt-decoder.html" },
+    { "@type": "WebApplication", "name": "正则表达式测试工具", "url": "https://norito.in/zh/regex-tester.html" },
+    { "@type": "WebApplication", "name": "CSV 转 JSON", "url": "https://norito.in/zh/csv-to-json.html" },
+    { "@type": "WebApplication", "name": "CSV 查看器", "url": "https://norito.in/zh/csv-viewer.html" },
+    { "@type": "WebApplication", "name": "URL 编码 / 解码工具", "url": "https://norito.in/zh/url-encoder-decoder.html" },
+    { "@type": "WebApplication", "name": "HTML 实体编码 / 解码工具", "url": "https://norito.in/zh/html-entity-encoder.html" },
+    { "@type": "WebApplication", "name": "YAML 转 JSON 转换器", "url": "https://norito.in/zh/yaml-to-json-converter.html" },
+    { "@type": "WebApplication", "name": "Cron 表达式解析器", "url": "https://norito.in/zh/cron-expression-parser.html" },
+    { "@type": "WebApplication", "name": "进制转换器", "url": "https://norito.in/zh/number-base-converter.html" },
+    { "@type": "WebApplication", "name": "文本对比工具", "url": "https://norito.in/zh/text-diff.html" },
     { "@type": "WebApplication", "name": "CSS 优先级计算器", "url": "https://norito.in/zh/css-specificity-calculator.html" },
-    { "@type": "WebApplication", "name": "CSS 变量提取器", "url": "https://norito.in/zh/css-variable-extractor.html" },
     { "@type": "WebApplication", "name": ".gitignore 生成器", "url": "https://norito.in/zh/gitignore-generator.html" },
     { "@type": "WebApplication", "name": "JSON Schema 生成器", "url": "https://norito.in/zh/json-schema-generator.html" },
-    { "@type": "WebApplication", "name": "SVG 优化器", "url": "https://norito.in/zh/svg-optimizer.html" },
-    { "@type": "WebApplication", "name": "SVG 雪碧图生成器", "url": "https://norito.in/zh/svg-sprite-generator.html" },
-    { "@type": "WebApplication", "name": "SVG 转 React 组件", "url": "https://norito.in/zh/svg-to-react-component.html" },
+    { "@type": "WebApplication", "name": "User-Agent 解析器", "url": "https://norito.in/zh/user-agent-parser.html" },
     { "@type": "WebApplication", "name": "URL 解析器", "url": "https://norito.in/zh/url-parser.html" },
-    { "@type": "WebApplication", "name": "User-Agent 解析器", "url": "https://norito.in/zh/user-agent-parser.html" }
+    { "@type": "WebApplication", "name": "SVG 优化器", "url": "https://norito.in/zh/svg-optimizer.html" },
+    { "@type": "WebApplication", "name": "SVG 转 React 组件", "url": "https://norito.in/zh/svg-to-react-component.html" },
+    { "@type": "WebApplication", "name": "CSS 变量提取器", "url": "https://norito.in/zh/css-variable-extractor.html" },
+    { "@type": "WebApplication", "name": "SVG 雪碧图生成器", "url": "https://norito.in/zh/svg-sprite-generator.html" }
   ]
 }
 </script>
@@ -90,6 +105,7 @@
 
     <h2 id="tools" style="margin-top:8px;">开发者工具</h2>
     <div class="grid-cards">
+
       <a class="card" data-accent="pink" href="../test-file-generator.html">
         <div class="icon-chip c-pink">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
@@ -123,6 +139,171 @@
         </span>
       </a>
 
+      <a class="card" data-accent="indigo" href="../uuid-generator.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg>
+        </div>
+        <h3>UUID 生成器</h3>
+        <p>直接在浏览器中批量生成大量随机的 UUID v4 唯一标识符。支持切换大写字母格式和去除连字符两种选项，生成结果可单独复制某一个，也可以一次性全部复制。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="purple" href="../base64-encoder.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg>
+        </div>
+        <h3>Base64 编码 / 解码</h3>
+        <p>直接在浏览器中将文本编码为 Base64 或解码回来，完整支持 UTF-8 多字节字符，并可选 URL 安全变体，输入即时出结果，不经过任何服务器。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="coral" href="../hash-generator.html">
+        <div class="icon-chip c-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
+        </div>
+        <h3>哈希生成器</h3>
+        <p>即时生成任意输入文本对应的 MD5、SHA-1、SHA-256 和 SHA-512 哈希摘要值，输入内容的同时实时计算结果，全部在浏览器本地完成，不会上传到服务器。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="amber" href="../timestamp-converter.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>时间戳转换器</h3>
+        <p>在 Unix 时间戳数字与人类可读的日期时间格式之间实时双向转换。支持本地时区时间、UTC 协调世界时以及标准 ISO 8601 格式三种输出方式可选。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../json-diff.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+        </div>
+        <h3>JSON Diff</h3>
+        <p>比较两份 JSON 文档之间的差异，精确高亮显示新增、删除和修改的具体内容和字段，整个比对过程全部在浏览器中完成，文档内容不会上传到任何地方。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="rose" href="../jwt-decoder.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>JWT 解码器</h3>
+        <p>在浏览器中解码 JWT 令牌的 header 头部信息和 payload 载荷数据，查看令牌过期时间以及各标准声明字段的详细解释。签名部分不会被验证，令牌内容也不会上传。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../regex-tester.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg>
+        </div>
+        <h3>正则表达式测试工具</h3>
+        <p>在浏览器中针对你提供的示例文本实时高亮显示正则表达式的匹配结果，同时清晰列出所有捕获分组内容和完整的匹配项列表，测试内容不会上传到任何服务器。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../csv-to-json.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
+        </div>
+        <h3>CSV 转 JSON</h3>
+        <p>在浏览器中实时将 CSV 文件转换为格式化的 JSON 数据。自动检测常见分隔符，将第一行智能识别为表头字段名，转换结果可直接复制或下载，整个过程无需上传文件。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../csv-viewer.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+        </div>
+        <h3>CSV 查看器</h3>
+        <p>直接在浏览器中把 CSV 文件当作可编辑的表格来查看和操作。支持编辑单元格内容、添加或删除行与列，编辑完成后一键导出回标准 CSV 格式，全程无需上传文件。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="amber" href="../url-encoder-decoder.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+        </div>
+        <h3>URL 编码 / 解码工具</h3>
+        <p>在浏览器中实时对 URL 网址或其中的部分组件进行百分号编码或解码处理。同时支持仅编码单个组件和编码完整 URI 地址两种工作模式，内容不会被上传。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../html-entity-encoder.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>HTML 实体编码 / 解码工具</h3>
+        <p>在浏览器中实时转义或反转义 HTML 实体字符，比如 &lt;、&gt;、&amp; 等特殊符号。同时支持命名实体和数字实体两种写法，输入内容不会上传到任何地方。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../yaml-to-json-converter.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg>
+        </div>
+        <h3>YAML 转 JSON 转换器</h3>
+        <p>在浏览器中实时将 YAML 配置文件转换为 JSON 格式，也支持反方向把 JSON 转换为 YAML。完整支持映射结构、序列列表、带引号的字符串以及行内注释内容。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="purple" href="../cron-expression-parser.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg>
+        </div>
+        <h3>Cron 表达式解析器</h3>
+        <p>粘贴一个 cron 定时任务表达式，即可获得通俗易懂的中文解释，以及接下来 5 次实际运行时间的预览列表。整个解析过程完全在浏览器本地完成。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="coral" href="../number-base-converter.html">
+        <div class="icon-chip c-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+        </div>
+        <h3>进制转换器</h3>
+        <p>实时在二进制、八进制、十进制和十六进制之间相互转换任意数字，还支持 2 到 36 之间任意自定义进制系统，兼容负数处理以及任意长度的超大数字。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="rose" href="../text-diff.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+        </div>
+        <h3>文本对比工具</h3>
+        <p>逐行精确比较两段文本内容之间的具体差异，清晰显示发生变化的每一处增删修改内容。可选择忽略空格差异或大小写差异，比对结果支持一键复制，全程在浏览器中运行。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
       <a class="card" data-accent="indigo" href="../css-specificity-calculator.html">
         <div class="icon-chip c-indigo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg>
@@ -133,6 +314,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="rose" href="../gitignore-generator.html">
         <div class="icon-chip c-rose">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
@@ -143,6 +325,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="teal" href="../json-schema-generator.html">
         <div class="icon-chip c-teal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg>
@@ -153,6 +336,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="amber" href="../user-agent-parser.html">
         <div class="icon-chip c-amber">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -163,6 +347,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="purple" href="../url-parser.html">
         <div class="icon-chip c-purple">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
@@ -173,6 +358,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="indigo" href="../svg-optimizer.html">
         <div class="icon-chip c-indigo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
@@ -183,6 +369,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="rose" href="../svg-to-react-component.html">
         <div class="icon-chip c-rose">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
@@ -193,6 +380,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="indigo" href="../css-variable-extractor.html">
         <div class="icon-chip c-indigo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
@@ -203,6 +391,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
+
       <a class="card" data-accent="indigo" href="../svg-sprite-generator.html">
         <div class="icon-chip c-indigo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>

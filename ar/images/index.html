@@ -64,11 +64,16 @@
     { "@type": "WebApplication", "name": "ضغط الصور", "url": "https://norito.in/ar/compress-image.html" },
     { "@type": "WebApplication", "name": "مولّد صور بديلة", "url": "https://norito.in/ar/placeholder-generator.html" },
     { "@type": "WebApplication", "name": "إزالة الخلفية", "url": "https://norito.in/ar/remove-background.html" },
-    { "@type": "WebApplication", "name": "محوّل AVIF", "url": "https://norito.in/ar/avif-converter.html" },
-    { "@type": "WebApplication", "name": "محوّل HEIC إلى JPG/PNG", "url": "https://norito.in/ar/heic-converter.html" },
+    { "@type": "WebApplication", "name": "تغيير حجم الصورة", "url": "https://norito.in/ar/resize-image.html" },
+    { "@type": "WebApplication", "name": "محول الصور", "url": "https://norito.in/ar/image-converter.html" },
+    { "@type": "WebApplication", "name": "قص الصورة", "url": "https://norito.in/ar/crop-image.html" },
+    { "@type": "WebApplication", "name": "إزالة البيانات الوصفية", "url": "https://norito.in/ar/remove-metadata.html" },
+    { "@type": "WebApplication", "name": "علامة مائية على الصورة", "url": "https://norito.in/ar/watermark-image.html" },
     { "@type": "WebApplication", "name": "فاحص أبعاد الصور", "url": "https://norito.in/ar/image-dimension-inspector.html" },
+    { "@type": "WebApplication", "name": "أداة قص صور وسائل التواصل الاجتماعي", "url": "https://norito.in/ar/social-image-cropper.html" },
     { "@type": "WebApplication", "name": "أداة التعليق على لقطات الشاشة", "url": "https://norito.in/ar/screenshot-annotator.html" },
-    { "@type": "WebApplication", "name": "أداة قص صور وسائل التواصل الاجتماعي", "url": "https://norito.in/ar/social-image-cropper.html" }
+    { "@type": "WebApplication", "name": "محوّل HEIC إلى JPG/PNG", "url": "https://norito.in/ar/heic-converter.html" },
+    { "@type": "WebApplication", "name": "محوّل AVIF", "url": "https://norito.in/ar/avif-converter.html" }
   ]
 }
 </script>
@@ -256,6 +261,7 @@
 
     <h2 id="tools" style="margin-top:8px;">أدوات الصور</h2>
     <div class="grid-cards">
+
       <a class="card" data-accent="teal" href="../compress-image.html">
         <div class="icon-chip c-teal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
@@ -284,6 +290,61 @@
         </div>
         <h3>إزالة الخلفية</h3>
         <p>قصّ خلفية الصورة مباشرة داخل متصفحك. بلا رفع إلى أي خادم، ويعمل بنموذج مفتوح المصدر.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../resize-image.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </div>
+        <h3>تغيير حجم الصورة</h3>
+        <p>غيّر حجم صورة إلى أبعاد دقيقة أو نسبة مئوية، مباشرة في متصفحك. اقفل نسبة العرض إلى الارتفاع لتجنّب التشويه. لا شيء يُرفَع.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../image-converter.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+        </div>
+        <h3>محول الصور</h3>
+        <p>حوّل الصور بين JPG وPNG وWebP، مباشرة في متصفحك. جودة قابلة للتعديل، لا شيء يُرفَع.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="amber" href="../crop-image.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+        </div>
+        <h3>قص الصورة</h3>
+        <p>اقصص صورة بمربع قابل للسحب، مباشرة في متصفحك. شكل حر أو نسب ثابتة مثل 1:1 و4:3 و16:9. لا شيء يُرفَع.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="rose" href="../remove-metadata.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>إزالة البيانات الوصفية</h3>
+        <p>أزل EXIF وموقع GPS وبيانات وصفية مخفية أخرى من صورة، مباشرة في متصفحك. شاهد ما وُجد قبل إزالته. لا شيء يُرفَع.</p>
+        <span class="card-link">فتح الأداة
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="purple" href="../watermark-image.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        </div>
+        <h3>علامة مائية على الصورة</h3>
+        <p>أضف علامة مائية نصية إلى صورة مع معاينة مباشرة، مباشرة في متصفحك. تحكم في الحجم والشفافية والزاوية واللون والموضع. لا شيء يُرفَع.</p>
         <span class="card-link">فتح الأداة
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>

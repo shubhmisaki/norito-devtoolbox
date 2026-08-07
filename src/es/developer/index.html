@@ -37,15 +37,30 @@
     { "@type": "WebApplication", "name": "Generador de archivos de prueba", "url": "https://norito.in/es/test-file-generator.html" },
     { "@type": "WebApplication", "name": "Formateador JSON", "url": "https://norito.in/es/json-formatter.html" },
     { "@type": "WebApplication", "name": "Editor Markdown", "url": "https://norito.in/es/markdown-editor.html" },
+    { "@type": "WebApplication", "name": "Generador de UUID", "url": "https://norito.in/es/uuid-generator.html" },
+    { "@type": "WebApplication", "name": "Codificar / Decodificar Base64", "url": "https://norito.in/es/base64-encoder.html" },
+    { "@type": "WebApplication", "name": "Generador de hashes", "url": "https://norito.in/es/hash-generator.html" },
+    { "@type": "WebApplication", "name": "Conversor de Timestamp", "url": "https://norito.in/es/timestamp-converter.html" },
+    { "@type": "WebApplication", "name": "JSON Diff", "url": "https://norito.in/es/json-diff.html" },
+    { "@type": "WebApplication", "name": "Decodificador de JWT", "url": "https://norito.in/es/jwt-decoder.html" },
+    { "@type": "WebApplication", "name": "Probador de Regex", "url": "https://norito.in/es/regex-tester.html" },
+    { "@type": "WebApplication", "name": "CSV a JSON", "url": "https://norito.in/es/csv-to-json.html" },
+    { "@type": "WebApplication", "name": "Visor de CSV", "url": "https://norito.in/es/csv-viewer.html" },
+    { "@type": "WebApplication", "name": "Codificador / Decodificador de URL", "url": "https://norito.in/es/url-encoder-decoder.html" },
+    { "@type": "WebApplication", "name": "Codificador / Decodificador de Entidades HTML", "url": "https://norito.in/es/html-entity-encoder.html" },
+    { "@type": "WebApplication", "name": "Conversor YAML a JSON", "url": "https://norito.in/es/yaml-to-json-converter.html" },
+    { "@type": "WebApplication", "name": "Analizador de Expresiones Cron", "url": "https://norito.in/es/cron-expression-parser.html" },
+    { "@type": "WebApplication", "name": "Conversor de Base Numérica", "url": "https://norito.in/es/number-base-converter.html" },
+    { "@type": "WebApplication", "name": "Comparador de Texto", "url": "https://norito.in/es/text-diff.html" },
     { "@type": "WebApplication", "name": "Calculadora de especificidad CSS", "url": "https://norito.in/es/css-specificity-calculator.html" },
-    { "@type": "WebApplication", "name": "Extractor de variables CSS", "url": "https://norito.in/es/css-variable-extractor.html" },
     { "@type": "WebApplication", "name": "Generador de .gitignore", "url": "https://norito.in/es/gitignore-generator.html" },
     { "@type": "WebApplication", "name": "Generador de JSON Schema", "url": "https://norito.in/es/json-schema-generator.html" },
-    { "@type": "WebApplication", "name": "Optimizador de SVG", "url": "https://norito.in/es/svg-optimizer.html" },
-    { "@type": "WebApplication", "name": "Generador de sprites SVG", "url": "https://norito.in/es/svg-sprite-generator.html" },
-    { "@type": "WebApplication", "name": "SVG a componente React", "url": "https://norito.in/es/svg-to-react-component.html" },
+    { "@type": "WebApplication", "name": "Analizador de User-Agent", "url": "https://norito.in/es/user-agent-parser.html" },
     { "@type": "WebApplication", "name": "Analizador de URL", "url": "https://norito.in/es/url-parser.html" },
-    { "@type": "WebApplication", "name": "Analizador de User-Agent", "url": "https://norito.in/es/user-agent-parser.html" }
+    { "@type": "WebApplication", "name": "Optimizador de SVG", "url": "https://norito.in/es/svg-optimizer.html" },
+    { "@type": "WebApplication", "name": "SVG a componente React", "url": "https://norito.in/es/svg-to-react-component.html" },
+    { "@type": "WebApplication", "name": "Extractor de variables CSS", "url": "https://norito.in/es/css-variable-extractor.html" },
+    { "@type": "WebApplication", "name": "Generador de sprites SVG", "url": "https://norito.in/es/svg-sprite-generator.html" }
   ]
 }
 </script>
@@ -90,6 +105,7 @@
 
     <h2 id="tools" style="margin-top:8px;">Herramientas para desarrolladores</h2>
     <div class="grid-cards">
+
       <a class="card" data-accent="pink" href="../test-file-generator.html">
         <div class="icon-chip c-pink">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
@@ -118,6 +134,171 @@
         </div>
         <h3>Editor Markdown</h3>
         <p>Editor Markdown de doble panel con vista previa en vivo lado a lado. Exporta como HTML o Markdown.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../uuid-generator.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg>
+        </div>
+        <h3>Generador de UUID</h3>
+        <p>Genera identificadores UUID v4 aleatorios en lote, directamente en tu navegador. Opciones de mayúsculas y sin guiones, copia uno o todos.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="purple" href="../base64-encoder.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="4" height="6" rx="1"/><rect x="6" y="4" width="4" height="6" rx="1"/><path d="M6 20h4"/><path d="M14 10h4"/><path d="M6 14h2v6"/><path d="M14 4h2v6"/></svg>
+        </div>
+        <h3>Codificar / Decodificar Base64</h3>
+        <p>Codifica texto a Base64 o decodifica de vuelta, directamente en tu navegador. Maneja UTF-8 completo, con opción de variante segura para URL.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="coral" href="../hash-generator.html">
+        <div class="icon-chip c-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
+        </div>
+        <h3>Generador de hashes</h3>
+        <p>Genera hashes MD5, SHA-1, SHA-256 y SHA-512 de cualquier texto, en vivo mientras escribes, completamente en tu navegador. No se sube nada.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="amber" href="../timestamp-converter.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Conversor de Timestamp</h3>
+        <p>Convierte entre timestamps Unix y fechas legibles, en ambas direcciones, en vivo. Salida en hora local, UTC e ISO 8601.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../json-diff.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+        </div>
+        <h3>JSON Diff</h3>
+        <p>Compara dos documentos JSON y ve exactamente qué se añadió, eliminó, y cambió, en tu navegador. No se sube nada.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="rose" href="../jwt-decoder.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Decodificador de JWT</h3>
+        <p>Decodifica el header y payload de un JWT, en tu navegador. Ve la expiración y los claims estándar explicados. La firma nunca se verifica, no se sube nada.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../regex-tester.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg>
+        </div>
+        <h3>Probador de Regex</h3>
+        <p>Prueba una expresión regular contra un texto de muestra con resaltado de coincidencias en vivo. Ve grupos de captura y todas las coincidencias.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../csv-to-json.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
+        </div>
+        <h3>CSV a JSON</h3>
+        <p>Convierte CSV a JSON en vivo en tu navegador. Detecta automáticamente el delimitador, trata la primera fila como encabezados, y formatea la salida.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../csv-viewer.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+        </div>
+        <h3>Visor de CSV</h3>
+        <p>Visualiza un archivo CSV como una tabla editable directamente en tu navegador. Edita celdas, añade filas o columnas y exporta de vuelta a CSV.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="amber" href="../url-encoder-decoder.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+        </div>
+        <h3>Codificador / Decodificador de URL</h3>
+        <p>Codifica o decodifica una URL o un componente de URL (percent-encoding), en vivo en tu navegador. Modos de componente y URI completa. No se sube nada.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../html-entity-encoder.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Codificador / Decodificador de Entidades HTML</h3>
+        <p>Escapa o desescapa entidades HTML (&lt; &gt; &amp; y más), en vivo en tu navegador. Maneja entidades con nombre y numéricas. No se sube nada.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../yaml-to-json-converter.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg>
+        </div>
+        <h3>Conversor YAML a JSON</h3>
+        <p>Convierte YAML a JSON o JSON a YAML, en vivo en tu navegador. Soporta mapeos, secuencias, cadenas entre comillas y comentarios. No se sube nada.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="purple" href="../cron-expression-parser.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg>
+        </div>
+        <h3>Analizador de Expresiones Cron</h3>
+        <p>Pega una expresión cron para obtener una explicación en español sencillo y una vista previa de las próximas 5 ejecuciones. Funciona por completo en tu navegador.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="coral" href="../number-base-converter.html">
+        <div class="icon-chip c-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+        </div>
+        <h3>Conversor de Base Numérica</h3>
+        <p>Convierte números entre binario, octal, decimal y hexadecimal en vivo, más cualquier base personalizada de 2 a 36.</p>
+        <span class="card-link">Abrir herramienta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="rose" href="../text-diff.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+        </div>
+        <h3>Comparador de Texto</h3>
+        <p>Compara dos bloques de texto línea por línea y ve exactamente qué cambió. Ignora espacios o mayúsculas, copia el diff. Funciona por completo en tu navegador.</p>
         <span class="card-link">Abrir herramienta
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>

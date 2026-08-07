@@ -37,11 +37,16 @@
     { "@type": "WebApplication", "name": "压缩图片", "url": "https://norito.in/zh/compress-image.html" },
     { "@type": "WebApplication", "name": "占位图生成器", "url": "https://norito.in/zh/placeholder-generator.html" },
     { "@type": "WebApplication", "name": "去除背景", "url": "https://norito.in/zh/remove-background.html" },
-    { "@type": "WebApplication", "name": "AVIF 转换器", "url": "https://norito.in/zh/avif-converter.html" },
-    { "@type": "WebApplication", "name": "HEIC 转 JPG/PNG 转换器", "url": "https://norito.in/zh/heic-converter.html" },
+    { "@type": "WebApplication", "name": "调整图片尺寸", "url": "https://norito.in/zh/resize-image.html" },
+    { "@type": "WebApplication", "name": "图片格式转换器", "url": "https://norito.in/zh/image-converter.html" },
+    { "@type": "WebApplication", "name": "裁剪图片", "url": "https://norito.in/zh/crop-image.html" },
+    { "@type": "WebApplication", "name": "删除元数据", "url": "https://norito.in/zh/remove-metadata.html" },
+    { "@type": "WebApplication", "name": "图片水印", "url": "https://norito.in/zh/watermark-image.html" },
     { "@type": "WebApplication", "name": "图片尺寸检测器", "url": "https://norito.in/zh/image-dimension-inspector.html" },
+    { "@type": "WebApplication", "name": "社交媒体图片裁剪工具", "url": "https://norito.in/zh/social-image-cropper.html" },
     { "@type": "WebApplication", "name": "截图标注工具", "url": "https://norito.in/zh/screenshot-annotator.html" },
-    { "@type": "WebApplication", "name": "社交媒体图片裁剪工具", "url": "https://norito.in/zh/social-image-cropper.html" }
+    { "@type": "WebApplication", "name": "HEIC 转 JPG/PNG 转换器", "url": "https://norito.in/zh/heic-converter.html" },
+    { "@type": "WebApplication", "name": "AVIF 转换器", "url": "https://norito.in/zh/avif-converter.html" }
   ]
 }
 </script>
@@ -86,6 +91,7 @@
 
     <h2 id="tools" style="margin-top:8px;">图像工具</h2>
     <div class="grid-cards">
+
       <a class="card" data-accent="teal" href="../compress-image.html">
         <div class="icon-chip c-teal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
@@ -114,6 +120,61 @@
         </div>
         <h3>去除背景</h3>
         <p>直接在浏览器中抠除照片背景。无需上传到服务器，基于开源模型运行。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../resize-image.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </div>
+        <h3>调整图片尺寸</h3>
+        <p>在浏览器中把图片精确调整到你指定的具体像素尺寸，或者按设定的百分比等比例整体缩放。可选择锁定宽高比避免图片变形拉伸，处理过程全程不上传文件。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../image-converter.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+        </div>
+        <h3>图片格式转换器</h3>
+        <p>在浏览器中于 JPG、PNG、WebP 三种常见图片格式之间自由转换，输出质量可自定义调节，转换过程完全本地进行，图片文件不会上传到任何服务器。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="amber" href="../crop-image.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+        </div>
+        <h3>裁剪图片</h3>
+        <p>在浏览器中用可拖动缩放的裁剪框直接裁剪图片。支持自由比例裁剪，也可锁定为 1:1、4:3、16:9 等常见固定比例。图片全程不上传，处理后立即下载。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="rose" href="../remove-metadata.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>删除元数据</h3>
+        <p>在浏览器中彻底删除照片文件中隐藏的 EXIF 拍摄参数、GPS 地理位置信息以及其他相机元数据。删除操作执行之前会先完整列出检测到的所有具体信息供你查看确认。</p>
+        <span class="card-link">打开工具
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="purple" href="../watermark-image.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        </div>
+        <h3>图片水印</h3>
+        <p>在浏览器中为照片添加自定义文字水印，编辑过程支持实时预览效果。可自由调整水印文字的大小、不透明度、旋转角度、颜色以及在图片上的具体摆放位置。</p>
         <span class="card-link">打开工具
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>

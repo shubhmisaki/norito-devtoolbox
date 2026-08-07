@@ -37,6 +37,11 @@
     { "@type": "WebApplication", "name": "画像を圧縮", "url": "https://norito.in/ja/compress-image.html" },
     { "@type": "WebApplication", "name": "プレースホルダージェネレーター", "url": "https://norito.in/ja/placeholder-generator.html" },
     { "@type": "WebApplication", "name": "背景を削除", "url": "https://norito.in/ja/remove-background.html" },
+    { "@type": "WebApplication", "name": "画像のリサイズ", "url": "https://norito.in/ja/resize-image.html" },
+    { "@type": "WebApplication", "name": "画像コンバーター", "url": "https://norito.in/ja/image-converter.html" },
+    { "@type": "WebApplication", "name": "画像をトリミング", "url": "https://norito.in/ja/crop-image.html" },
+    { "@type": "WebApplication", "name": "メタデータを削除", "url": "https://norito.in/ja/remove-metadata.html" },
+    { "@type": "WebApplication", "name": "画像に透かしを追加", "url": "https://norito.in/ja/watermark-image.html" },
     { "@type": "WebApplication", "name": "画像サイズ検査ツール", "url": "https://norito.in/ja/image-dimension-inspector.html" },
     { "@type": "WebApplication", "name": "ソーシャルメディア画像クロッパー", "url": "https://norito.in/ja/social-image-cropper.html" },
     { "@type": "WebApplication", "name": "スクリーンショット注釈ツール", "url": "https://norito.in/ja/screenshot-annotator.html" },
@@ -86,6 +91,7 @@
 
     <h2 id="tools" style="margin-top:8px;">画像ツール</h2>
     <div class="grid-cards">
+
       <a class="card" data-accent="teal" href="../compress-image.html">
         <div class="icon-chip c-teal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
@@ -114,6 +120,61 @@
         </div>
         <h3>背景を削除</h3>
         <p>写真の背景をブラウザ内で直接切り取ります。サーバーへのアップロードは一切なく、オープンソースのモデルで動作します。</p>
+        <span class="card-link">ツールを開く
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="indigo" href="../resize-image.html">
+        <div class="icon-chip c-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </div>
+        <h3>画像のリサイズ</h3>
+        <p>ブラウザ内で画像を正確なピクセルサイズに、またはパーセンテージ指定で拡大縮小できます。アスペクト比をロックして歪みを防ぐことも可能。画像がアップロードされることはありません。</p>
+        <span class="card-link">ツールを開く
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="teal" href="../image-converter.html">
+        <div class="icon-chip c-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+        </div>
+        <h3>画像コンバーター</h3>
+        <p>ブラウザ内でJPG、PNG、WebPの3つの主要な画像形式を相互に変換できます。出力品質を自由に調整可能で、変換処理はすべてローカルで行われ、画像がアップロードされることはありません。</p>
+        <span class="card-link">ツールを開く
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="amber" href="../crop-image.html">
+        <div class="icon-chip c-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+        </div>
+        <h3>画像をトリミング</h3>
+        <p>ブラウザ内でドラッグ操作できるボックスを使って画像を自由にトリミングできます。自由な形での切り抜きのほか、1:1、4:3、16:9などの固定比率にも対応。画像は一切アップロードされません。</p>
+        <span class="card-link">ツールを開く
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="rose" href="../remove-metadata.html">
+        <div class="icon-chip c-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>メタデータを削除</h3>
+        <p>ブラウザ内で写真に埋め込まれたEXIF撮影情報、GPS位置情報、その他の隠れたメタデータを削除できます。削除を実行する前に、検出された具体的な情報の内容を確認できます。</p>
+        <span class="card-link">ツールを開く
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="card" data-accent="purple" href="../watermark-image.html">
+        <div class="icon-chip c-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        </div>
+        <h3>画像に透かしを追加</h3>
+        <p>ブラウザ内でリアルタイムプレビューを見ながら写真にテキストの透かしを追加できます。透かしのサイズ、不透明度、回転角度、色、配置位置を自由に調整可能で、アップロードは発生しません。</p>
         <span class="card-link">ツールを開く
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
