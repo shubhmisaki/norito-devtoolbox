@@ -124,6 +124,7 @@
 <main>
 
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg></div>
     <div class="tool-hero-text">
@@ -185,6 +186,7 @@
       </details>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>PDFはネイティブに、このツールに関係する2つの画像形式しかサポートしていません。JPEGとPNGスタイルの生ピクセルデータです。通常のJPGファイルの場合、pdf-libはファイルのバイトをそのまま受け取り、デコードや再エンコードなしに、品質の損失もなくPDFに埋め込みます。PNGファイルはPDFが期待する生ピクセル形式に展開されますが、これもロスレスです。その後、各画像は1つの<code>drawImage</code>命令によって1ページになります。</p>
@@ -192,6 +194,7 @@
       <p>画像がデバイスから出ることはありません。変換中にネットワークタブを見てください。画像はローカルで読み込まれ、pdf-libによってメモリ内でPDFに組み立てられ、blobからダウンロードされます。何も転送されません。画像が身分証明書のスキャンである場合、これは重要です。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 pdf-to-image.html|PDFをJPG/PNGに変換|ページを画像に変換します。
 merge-pdf.html|PDFファイルを結合|複数のPDFファイルを1つに結合します。

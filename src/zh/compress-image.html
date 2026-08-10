@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
     <div class="tool-hero-text">
@@ -149,6 +150,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>针对 JPEG 和 WebP 的质量搜索会进行八轮二分查找，遍历编码器的质量参数：以 0.5 编码，比较字节数与目标大小，再根据结果向上或向下折半区间重新编码。八轮足以将质量值精确到其完整范围的约 0.4% 以内，这也是为什么结果通常会略低于目标值而不是远低于目标值。启用调整尺寸后，同样的搜索会在逐步缩小的尺寸下重复进行，每步缩小 15%，直到找到仅凭质量就能补齐差距的比例。</p>
@@ -156,6 +158,7 @@
       <p>这一切都在本标签页内存中的画布上运行。你可以自行验证：打开开发者工具，切换到网络面板，压缩一张图片。无论方向如何，都没有任何请求携带你的图片，断网状态下工具依然能正常工作。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 placeholder-generator.html|占位图生成器|即时生成任意尺寸和颜色的占位图片。
 remove-background.html|去除背景|在浏览器中直接从照片中抠出人像。

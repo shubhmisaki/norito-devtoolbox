@@ -119,6 +119,12 @@ def expand(src_text, loc, live_path=None):
             return load(f"partials/{loc}/cmdk-overlay.html")
         if name == "FOOT-SCRIPTS-TAIL":
             return load("partials/foot-scripts-tail.html")
+        if name == "AD-TOP":
+            return load("partials/ad-top.html")
+        if name == "AD-MID":
+            return load("partials/ad-mid.html")
+        if name == "AD-NATIVE":
+            return load("partials/ad-native.html")
         if name == "HREFLANG-AUTO":
             if live_path is None:
                 raise ValueError("HREFLANG-AUTO marker used but live_path not provided")

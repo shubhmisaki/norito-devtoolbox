@@ -89,6 +89,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
     <div class="tool-hero-text">
@@ -132,6 +133,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>你的图片首先会被居中裁剪为最大的正方形，随后一次 <code>drawImage()</code> 调用会把该正方形裁剪并缩放到目标尺寸的画布上，因此非正方形的图片会被裁剪而不是拉伸或加边。这个过程会执行六次，分别对应 16、32、48、180、192 和 512 像素，每个画布都导出为 PNG。压缩包完全由 JavaScript 逐字节组装，不涉及服务器端压缩，并附带一个文本文件，里面是可直接粘贴到你网站 <code>&lt;head&gt;</code> 中的确切 <code>&lt;link&gt;</code> 标签。</p>
@@ -139,6 +141,7 @@
       <p>你上传的图片会在浏览器内存中完成解码、裁剪、缩放和压缩打包，本页面根本没有任何上传接口。生成时观察开发者工具的网络面板：唯一的传输是生成好的压缩包从内存移动到你的下载文件夹。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 css-gradient-generator.html|CSS 渐变生成器|可视化构建线性或径向渐变。
 ../../image-converter.html|图片格式转换|先把你的 logo 转换成其他格式。

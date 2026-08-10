@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>あなたの画像はローカルのオブジェクトURL（<code>URL.createObjectURL</code>）を通じて読み込まれ、ブラウザ自身の画像デコーダーでデコードされ、フルの本来の解像度でオフスクリーンのcanvasに描画され、選択した形式と品質で<code>canvas.toBlob</code>によって再エンコードされます。あなたのために処理される1つの詳細があります。JPEGにはアルファチャンネルがないため、描画前に、JPEGが変換先の場合はcanvasが白で塗りつぶされます。このステップがないと、PNGの透明部分は黒くなってしまいます。品質スライダーはJPEGとWebPにのみ適用されます。PNGエンコーディングは可逆であり、これを無視します。</p>
@@ -147,6 +149,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|画像を圧縮|変換後に正確なファイルサイズを実現。
 resize-image.html|画像のリサイズ|形式変換の前後でサイズを変更。

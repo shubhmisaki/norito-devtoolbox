@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
     <div class="tool-hero-text">
@@ -154,6 +155,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>编码调用的是浏览器自身的 <code>encodeURIComponent</code> 或 <code>encodeURI</code> 函数，与 JavaScript 代码使用的是同一函数，因此输出结果与浏览器或 HTTP 库产生的结果完全一致。每个不安全的字节会变成一个百分号加上其 UTF-8 编码的两位十六进制数字：空格变成 <code>%20</code>，多字节字符会展开成多个转义序列（é 是 <code>%C3%A9</code>）。</p>
@@ -163,6 +165,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 base64-encoder.html|Base64 编码 / 解码|文本与 Base64 互转，UTF-8 安全。
 html-entity-encoder.html|HTML 实体编码器|转义或反转义 HTML 实体。

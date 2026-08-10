@@ -98,6 +98,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
     <div class="tool-hero-text">
@@ -200,6 +201,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>Everything routes through the browser's <code>Date</code> object, which internally stores one number: milliseconds since the Unix epoch, midnight UTC on January 1, 1970. Convert a timestamp and the tool multiplies by 1,000 if you said seconds, builds a <code>Date</code>, then renders it four ways: your local time via <code>toLocaleString</code> (the browser's Intl formatter, using your own timezone and language), UTC, ISO 8601, and a relative "in 3 days / 2 hours ago" label computed by bucketing the difference from now into years, months, days, hours, minutes, or seconds.</p>
@@ -208,6 +210,7 @@
       <p>All parsing and formatting is local browser API work. Open DevTools' Network tab while you convert: no request fires, and timestamps from your logs never leave your machine.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 uuid-generator.html|UUID Generator|Bulk random UUID v4 identifiers.
 hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, and SHA-512 of any text.

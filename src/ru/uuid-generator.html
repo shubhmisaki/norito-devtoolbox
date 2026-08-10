@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Каждый ID создаётся функцией <code>crypto.randomUUID()</code> — встроенным генератором браузера. Внутри он берёт 128 бит из криптографически безопасного источника случайности операционной системы (того же, что генерирует ключи TLS), а затем фиксирует 6 из этих бит определёнными значениями: полубайт версии становится 4, а биты варианта — 10. Именно поэтому у каждого UUID здесь третья группа начинается с 4, а четвёртая — с 8, 9, a или b. Остальные 122 бита — чистая случайность, из-за чего коллизии на практике не представляют проблемы.</p>
@@ -146,6 +148,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 hash-generator.html|Генератор хешей|MD5, SHA-1, SHA-256 и SHA-512 любого текста.
 base64-encoder.html|Кодировщик / декодировщик Base64|Преобразование текста в Base64 и обратно, безопасно для UTF-8.

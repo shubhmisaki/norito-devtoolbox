@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
     <div class="tool-hero-text">
@@ -165,6 +166,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>यह कैसे काम करता है</h2>
       <p>रीसाइज़ ख़ुद एक ब्राउज़र प्रिमिटिव है: आपकी इमेज डिकोड होती है, टारगेट डाइमेंशंस पर एक <code>&lt;canvas&gt;</code> बनाया जाता है, और <code>drawImage()</code> एक ही पास में पिक्सल्स को उस पर स्केल करता है। ऐसा करते समय ब्राउज़र अपना बिल्ट-इन स्मूदिंग फ़िल्टर (एक बाइलीनियर-स्टाइल रीसैंपल) लगाता है, जो नज़दीकी पिक्सल्स को एवरेज करता है बजाय सिर्फ़ सबसे नज़दीकी वाला चुनने के, इसलिए डाउनस्केल्ड फ़ोटोज़ जैगेड होने के बजाय स्मूथ आती हैं। कैनवस को फिर <code>canvas.toBlob()</code> से JPEG या WebP के रूप में 0.92 क्वालिटी पर, या फ़ॉर्मैट ऑप्शन के आधार पर लॉसलेस PNG के रूप में री-एक्सपोर्ट किया जाता है।</p>
@@ -174,6 +176,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|इमेज कंप्रेस करें|स्पेसिफ़िक डाइमेंशंस के बजाय एक सटीक फ़ाइल साइज़ टारगेट पाएं।
 crop-image.html|इमेज क्रॉप करें|पूरी इमेज को स्केल करने के बजाय एक स्पेसिफ़िक क्षेत्र काटें।

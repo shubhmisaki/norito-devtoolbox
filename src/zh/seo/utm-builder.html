@@ -89,6 +89,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
     <div class="tool-hero-text">
@@ -143,6 +144,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>基础网址通过浏览器自带的 <code>URL</code> API 解析，这也是为什么在你输入 <code>https://</code> 之前会报错：解析器需要一个协议，而这正是你的浏览器用于真实导航的同一个解析器，所以如果这里能接受这个网址，这个网址就能正常使用。五个 <code>utm_</code> 值分别通过 <code>searchParams.set()</code> 应用，它会自动对特殊字符进行百分号编码。使用 <code>set()</code> 而不是字符串拼接，还意味着网址上已有的查询参数会被保留，清空某个字段会移除对应参数而不是留下一个空的 <code>utm_term=</code>。</p>
@@ -150,6 +152,7 @@
       <p>网址会随每次按键在本地实时组装，本页面从不请求、发送或记录它。打开开发者工具的网络面板并随意输入：不会触发任何请求。生成好的链接只有在你把它粘贴到实际投放渠道时才会真正被访问。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 meta-tag-generator.html|Meta 标签生成器|生成标题、描述和社交标签。
 ../qr-code-generator.html|二维码生成器|把带 UTM 参数的链接转换成二维码。

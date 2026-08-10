@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
     <div class="tool-hero-text">
@@ -155,6 +156,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>यह कैसे काम करता है</h2>
       <p>YAML से JSON इस पेज के लिए लिखे गए एक छोटे रिकर्सिव-डिसेंट पार्सर को चलाता है. यह पहले कमेंट्स हटाता है (सावधानी से, ताकि कोट की गई स्ट्रिंग के अंदर मौजूद <code>#</code> बचा रहे), हर लाइन का इंडेंटेशन रिकॉर्ड करता है, फिर उस तरीके से स्ट्रक्चर बनाता है जैसे YAML इसे डिफ़ाइन करता है: इंडेंटेशन नेस्टेड मैप्स खोलता है, <code>-</code> से शुरू होने वाली लाइनें सीक्वेंस बनाती हैं, और बाकी सब एक स्केलर होता है. स्केलर्स को उन्हीं नियमों से टाइप किया जाता है जो असली YAML पार्सर इस्तेमाल करते हैं: <code>true</code>/<code>false</code> बूलियन बन जाते हैं, <code>~</code> और <code>null</code>, null बन जाते हैं, बिना कोट के नंबर, नंबर बन जाते हैं, कोट की गई स्ट्रिंग्स स्ट्रिंग ही रहती हैं, और इनलाइन <code>[a, b]</code> या <code>{k: v}</code> फ़्लो सिंटैक्स भी हैंडल होता है. रिज़ल्ट को आपके चुने इंडेंट पर <code>JSON.stringify</code> से सीरियलाइज़ किया जाता है. JSON से YAML उल्टा है: <code>JSON.parse</code> इनपुट को वैलिडेट करता है, फिर एक एमिटर वैल्यू पर चलकर इंडेंटेड YAML लिखता है, और किसी भी ऐसी स्ट्रिंग को कोट करता है जो वरना नंबर, बूलियन, या null के तौर पर गलत पढ़ी जाती.</p>
@@ -164,6 +166,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 csv-to-json.html|CSV से JSON|किसी CSV फ़ाइल को JSON में बदलें.
 json-formatter.html|JSON फ़ॉर्मेटर|JSON फ़ॉर्मेट करें, वैलिडेट करें, और मिनिफ़ाई करें.

@@ -94,6 +94,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
     <div class="tool-hero-text">
@@ -161,6 +162,7 @@
     </div>
     <p class="note" style="margin:24px 0;">来自博客： <a href="../blog/pdf-compression-explained.html">为什么 PDF 压缩对扫描件效果显著，对报告文档却几乎没用</a></p>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>PDF 文件并不存储段落、句子甚至单词，它存储的是带位置的字形序列：“在这些坐标、用这种字体放置这些字符形状”。这个工具使用 Firefox 的 PDF 引擎 pdf.js，通过 <code>getTextContent()</code> 遍历每一页的内容流，收集所有文字显示操作，再把这些片段用空格拼接、折叠多余空白，逐页生成你看到的纯文本。</p>
@@ -168,6 +170,7 @@
       <p>提取会在你放入文件的瞬间于本地工作线程中完成。打开开发者工具，查看网络面板：无论是合同还是医疗报告，都不会有任何请求携带你的文档或其中的文字。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 pdf-to-image.html|PDF 转 JPG/PNG|将页面转换为图片。
 split-pdf.html|拆分 PDF|提取页面或拆分为多个文件。

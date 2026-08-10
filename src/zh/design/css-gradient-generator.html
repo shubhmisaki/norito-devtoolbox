@@ -89,6 +89,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/><path d="M12 22C7.03 22 3 17.97 3 13c4.97 0 9 4.03 9 9Z"/><path d="M12 13c0-5 4-8 4-8s-8 0-8 8"/></svg></div>
     <div class="tool-hero-text">
@@ -130,6 +131,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>每个色标都是一个包含颜色和 0 到 100 之间位置的对象。每次修改后，色标都会先按位置排序再生成结果，所以你可以按任意顺序输入位置，输出始终有效。随后它们会被拼接成 <code>linear-gradient(&lt;角度&gt;deg, ...)</code> 或 <code>radial-gradient(circle, ...)</code>，具体取决于你选择的类型。这段字符串会直接设为预览框的 <code>background</code> 并打印为输出结果，因此预览就是你的浏览器用同一段 CSS 渲染出来的，而不是近似效果。</p>
@@ -137,6 +139,7 @@
       <p>整个渐变都在本页面的 JavaScript 中构建和应用；选择颜色和拖动角度滑块不会触发任何网络请求，你可以在开发者工具的网络面板中亲自验证。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 box-shadow-generator.html|阴影生成器|可视化构建 CSS 阴影。
 border-radius-generator.html|圆角生成器|可视化设置每个角的圆角半径。

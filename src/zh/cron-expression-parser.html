@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
     <div class="tool-hero-text">
@@ -150,6 +151,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>解析器将你的表达式拆分成 5 个字段，并将每个字段展开成一组明确的允许值：分钟字段中的 <code>*/15</code> 会变成集合 {0, 15, 30, 45}，星期字段中的 <code>1-5</code> 会变成 {1, 2, 3, 4, 5}，而像 <code>1,3,5</code> 这样的列表会被合并在一起。每个值在展开时都会进行范围检查，这就是为什么像 <code>61 * * * *</code> 这样的拼写错误会立即失败，并给出明确指出具体字段和预期范围的错误提示，而不是悄无声息地生成一个永远不会触发的调度。</p>
@@ -158,6 +160,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 timestamp-converter.html|时间戳转换器|Unix 时间与日期互转。
 regex-tester.html|正则表达式测试工具|测试正则表达式，实时高亮匹配结果。

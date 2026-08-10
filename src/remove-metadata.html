@@ -89,6 +89,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
     <div class="tool-hero-text">
@@ -136,6 +137,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>When you drop in a JPEG, the tool reads the file's raw bytes with a <code>DataView</code> and walks the JPEG marker structure looking for the APP1 segment, which is where EXIF lives. Inside it parses the TIFF directory tree: IFD0 (camera make and model, software, modification date), the Exif sub-directory (original capture time, exposure, aperture, ISO), and the GPS sub-directory. It handles both byte orders (Intel and Motorola style files) and both inline and offset-stored values, then shows you a plain list of what it found before you commit to anything.</p>
@@ -144,6 +146,7 @@
       <p>Both the byte-level inspection and the canvas re-encode run in your tab. Watch DevTools' Network panel while you load and clean a photo: the image is never uploaded anywhere, which is exactly what you want from a tool whose whole job is protecting your metadata.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|Compress Image to Size|Shrink the file size after cleaning.
 image-converter.html|Image Converter|Convert to a different format.

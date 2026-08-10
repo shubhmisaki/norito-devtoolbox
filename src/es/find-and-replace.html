@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Cómo funciona</h2>
       <p>Cada búsqueda, ya sea de texto plano o regex, se compila internamente en un único <code>RegExp</code> de JavaScript. En modo texto plano tu término de búsqueda se escapa primero (para que <code>.</code>, <code>(</code>, <code>$</code> y similares coincidan literalmente), "palabra completa" envuelve el patrón en límites de palabra <code>\b</code>, y el interruptor de mayúsculas simplemente añade o quita la bandera <code>i</code>. El resultado se vuelve a renderizar en cada pulsación, y el conteo de coincidencias viene de ejecutar el mismo patrón con la bandera global antes de reemplazar. Una entrada regex inválida no borra tu texto, solo muestra el error del motor y deja la salida intacta.</p>
@@ -147,6 +149,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 regex-tester.html|Probador de Regex|Prueba una expresión regular con resaltado de coincidencias en vivo.
 remove-duplicate-lines.html|Eliminar líneas duplicadas|Elimina duplicados antes o después de ordenar.

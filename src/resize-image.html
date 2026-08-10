@@ -89,6 +89,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
     <div class="tool-hero-text">
@@ -179,6 +180,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>The resize itself is one browser primitive: your image is decoded, a <code>&lt;canvas&gt;</code> is created at the target dimensions, and <code>drawImage()</code> scales the pixels onto it in a single pass. The browser applies its built-in smoothing filter (a bilinear-style resample) while it does this, which averages neighboring pixels instead of just picking the nearest one, so downscaled photos come out smooth rather than jagged. The canvas is then re-exported with <code>canvas.toBlob()</code> as JPEG or WebP at 0.92 quality, or as lossless PNG, depending on the format option.</p>
@@ -187,6 +189,7 @@
       <p>Because the whole pipeline is decode, draw, re-encode inside your tab, your photos never leave your machine. You can verify this: open DevTools, switch to the Network tab, and resize something. No upload request appears, and the tool keeps working offline.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|Compress Image to Size|Hit an exact file size target instead of specific dimensions.
 crop-image.html|Crop Image|Cut out a specific region instead of scaling the whole image.

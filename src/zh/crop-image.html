@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>你的文件通过 <code>URL.createObjectURL</code> 加载，这是一个本地内存引用，绝不会被上传，并会缩小显示以适配编辑器窗口。你拖动的裁剪框以屏幕像素为单位进行跟踪，但当你点击裁剪的那一刻，这些坐标会按图片原始尺寸与显示尺寸之间的比例进行换算。也就是说，如果你 4000 像素宽的照片以 800 像素宽显示，屏幕上一个 200 像素宽的裁剪框，实际选中的是原图中 1000 像素宽的区域。选中的矩形随后通过 canvas API 的 <code>drawImage</code> 源矩形形式进行复制，精确地从完整分辨率的原图中提取出对应像素。</p>
@@ -145,6 +147,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 resize-image.html|调整图片尺寸|改变整体尺寸，而不是裁剪出某个区域。
 compress-image.html|压缩图片|裁剪后达到精确的文件大小目标。

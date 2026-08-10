@@ -22,6 +22,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<script src="https://pl30775972.effectivecpmnetwork.com/b8/56/71/b85671c26c7a608f3ce9b0cb31925819.js"></script>
 <title>去除照片背景：免费，浏览器内完成 | norito</title>
 <meta name="description" content="直接在浏览器中自动分析并去除人物照片的背景区域，图片全程无需上传到远程服务器处理，处理完成后可导出为透明底 PNG 图片，或替换成你自定义指定的纯色背景。" />
 <link rel="canonical" href="https://norito.in/zh/remove-background.html" />
@@ -245,6 +246,19 @@
 
 <main>
   <div class="wrap">
+    <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
+<script type="text/javascript">
+atOptions = {
+'key' : 'fad4c8a8cb2c4d00d881b41b2f1ed7d7',
+'format' : 'iframe',
+'height' : 90,
+'width' : 728,
+'params' : {}
+};
+</script>
+<script src="https://www.highperformanceformat.com/fad4c8a8cb2c4d00d881b41b2f1ed7d7/invoke.js"></script>
+</div>
+
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
     <div class="tool-hero-text">
@@ -310,12 +324,30 @@
       </div>
     </div>
 
+    <div class="ad-slot ad-slot-native" style="min-height:90px;margin:20px 0;">
+<script async="async" data-cfasync="false" src="https://pl30775973.effectivecpmnetwork.com/ea0e0da49ca1432d75be531247753024/invoke.js"></script>
+<div id="container-ea0e0da49ca1432d75be531247753024"></div>
+</div>
+
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>核心工作由 MODNet 完成，这是一个开源人像抠图网络，通过 ONNX Runtime Web（微软基于 WebAssembly 构建的 ONNX 推理引擎）运行，完全由本网站自己的文件提供服务。与普通的分割模型不同，MODNet 训练用于预测真实的 alpha 蒙版，也就是逐像素的不透明度值，而不是粗暴地判断“人物或背景”，所以头发和柔和的边缘会比硬边裁剪更接近真正的透明效果。图片首先会被缩放到最长边接近 512px，这正是模型训练时使用的分辨率。</p>
       <p>即使是真实的 alpha 蒙版，边缘也会有一些噪点，因此工具还会做一次清理：小范围的方框模糊平滑掉缩放产生的伪影，随后 alpha 曲线会经过一次平滑重映射，让接近零的背景雾化区域完全变透明，让确信的主体像素完全不透明，同时保留头发、模糊、运动这类中间的柔和过渡。</p>
       <p>这个网络的加载过程可以在开发者工具中验证：首次运行时，网络面板会显示模型和运行时文件从本网站加载，总计约 18 MB。之后无论处理多少张照片，都不会有任何请求携带你的图片，照片会完全在这个标签页内被读入内存、抠图并合成。</p>
     </div>
+
+<div class="ad-slot ad-slot-300" style="min-height:250px;max-width:300px;margin:20px auto;">
+<script type="text/javascript">
+atOptions = {
+'key' : 'd3550e997148ffe858a1a8e50a6a2fe5',
+'format' : 'iframe',
+'height' : 250,
+'width' : 300,
+'params' : {}
+};
+</script>
+<script src="https://www.highperformanceformat.com/d3550e997148ffe858a1a8e50a6a2fe5/invoke.js"></script>
+</div>
 
     <div class="related-tools">
       <h2>相关工具</h2>
@@ -502,5 +534,6 @@
 <script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
+<script src="https://pl30775974.effectivecpmnetwork.com/45/46/bd/4546bd692b42ca660c03716e49f94071.js"></script>
 </body>
 </html>

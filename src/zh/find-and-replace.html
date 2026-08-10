@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>无论是纯文本查找还是正则表达式查找，每次搜索在底层都会被编译成一个 JavaScript <code>RegExp</code> 对象。在纯文本模式下，你的搜索词会先被转义（这样 <code>.</code>、<code>(</code>、<code>$</code> 等字符会按字面意思匹配），「仅全字匹配」会用 <code>\b</code> 单词边界包裹该模式，大小写开关只是简单地添加或移除 <code>i</code> 标志。结果会在每次按键后重新渲染，匹配计数则来自在替换之前使用全局标志运行同一模式。无效的正则表达式输入不会清空你的文本，只会显示引擎的错误信息，并保持输出不变。</p>
@@ -147,6 +149,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 regex-tester.html|正则表达式测试工具|测试正则表达式，实时高亮匹配结果。
 remove-duplicate-lines.html|删除重复行|在排序前后对列表去重。

@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
     <div class="tool-hero-text">
@@ -162,6 +163,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>यह कैसे काम करता है</h2>
       <p>लाइव प्रीव्यू आपकी फ़ोटो के ऊपर लेयर्ड एक पोज़िशन्ड DOM एलिमेंट है, लेकिन फ़ाइनल इमेज एक <code>&lt;canvas&gt;</code> पर असली पिक्सल वर्क है। जब आप अप्लाई दबाते हैं, ओरिजिनल इमेज फ़ुल रिज़ॉल्यूशन पर ड्रॉ होती है, फिर canvas कॉन्टेक्स्ट को नौ एंकर पॉइंट्स में से एक पर ट्रांसलेट किया जाता है (कॉर्नर्स, एज मिडपॉइंट्स, सेंटर, हर एक 6% मार्जिन से इनसेट), आपके एंगल से रोटेट किया जाता है, और टेक्स्ट को <code>fillText()</code> से आपके कलर और ओपैसिटी के साथ <code>globalAlpha</code> के ज़रिए ड्रॉ किया जाता है। टेक्स्ट एलाइनमेंट और बेसलाइन हर एंकर के हिसाब से सेट होते हैं ताकि प्रीव्यू में "बॉटम-राइट" आउटपुट में उसी रिलेटिव जगह पर पहुंचे।</p>
@@ -171,6 +173,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 remove-metadata.html|मेटाडेटा हटाएं|किसी फ़ोटो को शेयर करने से पहले EXIF और GPS डेटा हटाएं।
 compress-image.html|इमेज कंप्रेस करें|वॉटरमार्किंग के बाद फ़ाइल साइज़ छोटा करें।

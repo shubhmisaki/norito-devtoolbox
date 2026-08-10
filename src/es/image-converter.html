@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Cómo funciona</h2>
       <p>Tu imagen se carga a través de una URL de objeto local (<code>URL.createObjectURL</code>), se decodifica con el propio decodificador de imágenes del navegador, se dibuja en un canvas fuera de pantalla a su resolución natural completa, y se vuelve a codificar con <code>canvas.toBlob</code> en el formato y calidad que elegiste. Un detalle que se maneja por ti: JPEG no tiene canal alfa, así que antes de dibujar, el canvas se rellena de blanco cuando JPEG es el destino. Sin ese paso, las áreas transparentes de un PNG saldrían negras. El control de calidad solo aplica a JPEG y WebP; la codificación PNG no tiene pérdida y lo ignora.</p>
@@ -147,6 +149,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|Comprimir imagen|Consigue un tamaño de archivo exacto después de convertir.
 resize-image.html|Redimensionar imagen|Cambia las dimensiones antes o después de convertir el formato.

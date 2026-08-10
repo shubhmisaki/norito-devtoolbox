@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
     <div class="tool-hero-text">
@@ -155,6 +156,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>كيف تعمل</h2>
       <p>يعمل محوّل YAML إلى JSON عبر محلل تنازلي تكراري صغير مكتوب خصيصًا لهذه الصفحة. يزيل أولاً التعليقات (بعناية، بحيث تنجو علامة <code>#</code> داخل سلسلة مقتبسة)، ويسجّل مسافة الإزاحة لكل سطر، ثم يبني البنية بالطريقة التي يعرّفها YAML: الإزاحة تفتح خرائط متداخلة، والأسطر التي تبدأ بـ <code>-</code> تبني تسلسلات، وكل ما عدا ذلك هو قيمة عددية (scalar). تُصنَّف القيم العددية وفق نفس القواعد التي تستخدمها محلّلات YAML الحقيقية: تصبح <code>true</code>/<code>false</code> قيمًا منطقية، وتصبح <code>~</code> و<code>null</code> قيمة null، وتصبح الأرقام المجردة أرقامًا، وتبقى السلاسل المقتبسة سلاسل، وتُعالَج أيضًا صياغة التدفق المضمّنة مثل <code>[a, b]</code> أو <code>{k: v}</code>. تُسلسَل النتيجة باستخدام <code>JSON.stringify</code> بمسافة الإزاحة التي تختارها. أما JSON إلى YAML فهو العكس: يتحقق <code>JSON.parse</code> من صحة الإدخال، ثم يمر مُصدِر عبر القيمة ويكتب YAML بإزاحة مناسبة، مع وضع أي سلسلة قد تُقرأ خطأً كرقم أو قيمة منطقية أو null بين علامتي اقتباس.</p>
@@ -164,6 +166,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 csv-to-json.html|CSV إلى JSON|حوّل ملف CSV إلى JSON.
 json-formatter.html|منسّق JSON|نسّق وتحقق ومصغّر JSON.

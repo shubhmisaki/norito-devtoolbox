@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>あなたのファイルは<code>URL.createObjectURL</code>を通じて読み込まれます。これはローカルのメモリ内参照であり、アップロードでは決してありません。そしてエディターに収まるよう縮小して表示されます。あなたがドラッグするトリミングボックスは画面上のピクセルで追跡されますが、トリミングをクリックした瞬間、その座標は画像の実際のサイズと表示サイズの比率で乗算されます。つまり、4000ピクセルの写真が800ピクセル幅で表示されている場合、画面上の200ピクセル幅のボックスは、実際の画像の1000ピクセル幅の領域を選択することになります。選択された矩形はcanvas APIの<code>drawImage</code>のソース矩形形式でコピーされ、フル解像度のオリジナルからその正確なピクセルを抽出します。</p>
@@ -145,6 +147,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 resize-image.html|画像のリサイズ|領域を切り取るのではなく、全体のサイズを変更。
 compress-image.html|画像を圧縮|トリミング後に正確なファイルサイズを実現。

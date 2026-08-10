@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
     <div class="tool-hero-text">
@@ -165,6 +166,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>リサイズ自体は1つのブラウザプリミティブです。画像がデコードされ、目標サイズで<code>&lt;canvas&gt;</code>が作成され、<code>drawImage()</code>が1回のパスでピクセルをその上にスケーリングします。この際、ブラウザは組み込みの平滑化フィルター（バイリニア方式のリサンプリング）を適用し、単に最も近いピクセルを選ぶのではなく近隣のピクセルを平均化するため、縮小した写真はギザギザではなく滑らかに仕上がります。その後、フォーマットのオプションに応じて、<code>canvas.toBlob()</code>を使って品質0.92のJPEGまたはWebP、あるいは可逆のPNGとして再エクスポートされます。</p>
@@ -174,6 +176,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|画像を圧縮|特定のサイズではなく正確なファイルサイズを実現。
 crop-image.html|画像をトリミング|画像全体を拡大縮小するのではなく特定の領域を切り取り。

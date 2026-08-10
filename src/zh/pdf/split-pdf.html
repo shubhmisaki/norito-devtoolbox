@@ -130,6 +130,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></div>
     <div class="tool-hero-text">
@@ -197,6 +198,7 @@
       </details>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>你输入的页码范围会先被解析，工具会在处理之前将每个数字与文档实际页数进行核对。随后完全在浏览器中运行的 pdf-lib 会把 PDF 的对象结构加载到内存中，并调用 <code>copyPages()</code> 提取所选页面，页面的字体、图片和图形会与存储时完全一致地一并复制。</p>
@@ -204,6 +206,7 @@
       <p>这一切都不会经过服务器。打开开发者工具，在拆分时观察网络面板：文件通过浏览器自带的 FileReader 读取，在内存中处理，下载来自本地生成的 blob。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。
 organize-pdf.html|删除和重新排列页面|删除或重新排列页面。

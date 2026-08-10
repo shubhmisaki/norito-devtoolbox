@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
     <div class="tool-hero-text">
@@ -155,6 +156,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Cómo funciona</h2>
       <p>YAML a JSON ejecuta un pequeño analizador de descenso recursivo escrito para esta página. Primero elimina los comentarios (con cuidado, para que un <code>#</code> dentro de una cadena entre comillas sobreviva), registra la indentación de cada línea, luego construye la estructura tal como YAML la define: la indentación abre mapas anidados, las líneas que empiezan con <code>-</code> construyen secuencias, y todo lo demás es un escalar. Los escalares se tipan con las mismas reglas que usan los analizadores YAML reales: <code>true</code>/<code>false</code> se convierten en booleanos, <code>~</code> y <code>null</code> se convierten en null, los números sin comillas se convierten en números, las cadenas entre comillas siguen siendo cadenas, y la sintaxis de flujo en línea <code>[a, b]</code> o <code>{k: v}</code> también se maneja. El resultado se serializa con <code>JSON.stringify</code> en la sangría que elijas. JSON a YAML es lo inverso: <code>JSON.parse</code> valida la entrada, luego un emisor recorre el valor y escribe YAML indentado, entrecomillando cualquier cadena que de otro modo se leería mal como número, booleano, o null.</p>
@@ -164,6 +166,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 csv-to-json.html|CSV a JSON|Convierte un archivo CSV a JSON.
 json-formatter.html|Formateador JSON|Formatea, valida y minifica JSON.

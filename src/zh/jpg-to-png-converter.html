@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>浏览器会把你的 JPG 解码为原始像素，这些像素会以图片完整的原始宽度和高度绘制到一个 canvas 上，然后 <code>canvas.toBlob("image/png")</code> 会把结果写为一个 PNG 文件。这个方向没有质量滑块，因为 PNG 的 DEFLATE 压缩是无损的：解码器生成的每一个像素都会被精确保存。文件本身永远不会离开你的电脑，它只是通过一个本地对象 URL 被引用，而不是被上传。</p>
@@ -145,6 +147,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|压缩图片|转换后达到精确的文件大小目标。
 resize-image.html|调整图片尺寸|在转换格式前后更改尺寸。

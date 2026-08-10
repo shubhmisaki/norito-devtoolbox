@@ -89,6 +89,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>对比度使用 WCAG 的真实相对亮度公式计算，而不是近似值。每个通道先除以 255，再通过反 sRGB 伽马曲线线性化：小于等于 0.03928 的值除以 12.92，其余的通过 <code>((c + 0.055) / 1.055)^2.4</code> 计算。线性化后的通道按 0.2126（红）、0.7152（绿）、0.0722（蓝）加权，反映了人眼对每种颜色亮度感知的贡献程度。对比度为 <code>(较亮 + 0.05) / (较暗 + 0.05)</code>，取值范围从纯色相同时的 1:1 到纯黑对纯白时的 21:1。</p>
@@ -146,6 +148,7 @@
       <p>两种颜色的每次变化都会在页面的 JavaScript 中即时完成计算。没有任何颜色值会被发送到任何地方，你可以在拖动取色器时通过开发者工具的网络面板验证。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 color-converter.html|颜色转换器|把任意颜色转换成 HEX、RGB、HSL 或 CMYK。
 color-palette-extractor.html|调色板提取器|从图片中提取主要颜色。

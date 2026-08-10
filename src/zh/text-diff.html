@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
     <div class="tool-hero-text">
@@ -128,6 +129,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>该对比功能是基于最长公共子序列（LCS）算法实现的逐行差异比较，与 <code>git diff</code> 背后的逻辑属于同一类。两段文本先被拆分成行，然后通过一张动态规划表计算出两个版本按顺序共有的最大行集合。反向遍历这张表就能得出你看到的操作结果：只存在于左侧文本的行被标记为红色删除，只存在于右侧的行被标记为绿色添加，共有的行保持中性显示，并各自附带原始行号。</p>
@@ -136,6 +138,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 json-diff.html|JSON 对比工具|比较两个 JSON 文档。
 remove-duplicate-lines.html|删除重复行|在排序前后对列表去重。

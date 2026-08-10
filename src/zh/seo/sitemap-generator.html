@@ -89,6 +89,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
     <div class="tool-hero-text">
@@ -157,6 +158,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>你输入的内容会按换行符拆分并去除首尾空格，每一行都会通过实际构造一个 <code>URL</code> 对象来验证；只有能成功解析且使用 <code>http:</code> 或 <code>https:</code> 的行才会被采纳，工具会告诉你跳过了多少行，而不是悄悄丢弃它们。每个被接受的网址都会经过一个覆盖五个特殊字符的 XML 转义器处理，这一点比看起来更重要：一个带有 <code>?page=2&amp;sort=asc</code> 且未转义的网址会导致整个文件成为无效 XML。每个条目都会生成一个 <code>&lt;loc&gt;</code>，可选地附带今天日期的 <code>&lt;lastmod&gt;</code>，以及你选择的 changefreq 和 priority。</p>
@@ -164,6 +166,7 @@
       <p>生成、验证和下载都在本页面的 JavaScript 中完成。XML 在内存中以字符串形式构建，再作为文件交给你；你的网址列表不会被上传到任何地方，你可以在生成时通过网络面板验证。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 robots-txt-generator.html|Robots.txt 生成器|在 robots.txt 中引用你新生成的站点地图。
 meta-tag-generator.html|Meta 标签生成器|生成标题、描述和社交标签。

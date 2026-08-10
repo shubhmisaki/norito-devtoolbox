@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
     <div class="tool-hero-text">
@@ -165,6 +166,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>调整尺寸本身是一个浏览器原生操作：你的图片会被解码，系统会创建一个目标尺寸的 <code>&lt;canvas&gt;</code>，然后 <code>drawImage()</code> 在一次操作中把像素缩放绘制到该画布上。浏览器在此过程中会应用内置的平滑滤镜（一种双线性风格的重采样），对相邻像素取平均值，而不是简单地选取最近的一个像素，因此缩小后的照片看起来平滑而不会出现锯齿。之后，canvas 会根据所选的格式选项，通过 <code>canvas.toBlob()</code> 以 0.92 质量重新导出为 JPEG 或 WebP，或导出为无损 PNG。</p>
@@ -174,6 +176,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|压缩图片|直接压缩到指定文件大小，而不是指定尺寸。
 crop-image.html|裁剪图片|裁剪出特定区域，而不是缩放整张图片。

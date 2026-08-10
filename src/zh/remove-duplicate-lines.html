@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg></div>
     <div class="tool-hero-text">
@@ -123,6 +124,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>这个工具会按换行符拆分你的文本，然后用一个 JavaScript <code>Set</code> 遍历所有行一次，记录已经出现过的内容。每一行的首次出现会保留在其原始位置；之后的重复项会被删除。由于只需一次遍历并且查找是常数时间，即使是数万行也能瞬间完成去重；而且与经典的 shell 命令 <code>sort | uniq</code> 不同，你的行顺序会被保留下来：不会作为副作用而被按字母排序。</p>
@@ -131,6 +133,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 sort-lines.html|行排序|按字母排序、反转或随机打乱一列文本行。
 case-converter.html|大小写转换器|在大写、小写、驼峰式等之间转换文本。

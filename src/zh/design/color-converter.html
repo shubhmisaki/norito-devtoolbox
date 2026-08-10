@@ -89,6 +89,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4V6a4 4 0 0 0-4-4Z"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/></svg></div>
     <div class="tool-hero-text">
@@ -131,6 +132,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>十六进制值通过正则表达式拆分为三组两位数，并按十六进制解析为 0 到 255 的红、绿、蓝值。HSL 遵循标准推导：明度是最大和最小通道的平均值，饱和度取决于两者之差，色相则取决于哪个通道占主导，红、绿、蓝分别锚定在 0、120、240 度。CMYK 使用简单的转换公式：黑色（K）等于 1 减去最强通道值，青、品红、黄则是各通道在扣除黑色后所缺的部分。四个输出结果都四舍五入为整数，因此来回转换可能会产生 1 的偏差。</p>
@@ -138,6 +140,7 @@
       <p>以上数学运算都在本页面的几个小函数中完成；选择颜色只会触发纯本地运算和四次 DOM 更新。没有任何请求，也没有任何发送，你可以在点击取色器时通过开发者工具的网络面板确认这一点。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 contrast-checker.html|对比度检查器|检查两种颜色是否符合 WCAG 对比度标准。
 css-gradient-generator.html|CSS 渐变生成器|用你喜欢的颜色构建渐变。

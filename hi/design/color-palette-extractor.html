@@ -22,6 +22,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<script src="https://pl30775972.effectivecpmnetwork.com/b8/56/71/b85671c26c7a608f3ce9b0cb31925819.js"></script>
 <title>कलर पैलेट एक्सट्रैक्टर: इमेज से रंग निकालें | norito</title>
 <meta name="description" content="इमेज अपलोड करें और उसके डोमिनेंट रंगों को पैलेट के रूप में निकालें, HEX और RGB वैल्यू कॉपी के लिए तैयार. पूरी तरह आपके ब्राउज़र में चलता है." />
 <link rel="canonical" href="https://norito.in/hi/design/color-palette-extractor.html" />
@@ -277,6 +278,19 @@
 
 <main>
 <div class="wrap">
+    <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
+<script type="text/javascript">
+atOptions = {
+'key' : 'fad4c8a8cb2c4d00d881b41b2f1ed7d7',
+'format' : 'iframe',
+'height' : 90,
+'width' : 728,
+'params' : {}
+};
+</script>
+<script src="https://www.highperformanceformat.com/fad4c8a8cb2c4d00d881b41b2f1ed7d7/invoke.js"></script>
+</div>
+
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
     <div class="tool-hero-text">
@@ -319,12 +333,30 @@
       </div>
     </div>
 
+    <div class="ad-slot ad-slot-native" style="min-height:90px;margin:20px 0;">
+<script async="async" data-cfasync="false" src="https://pl30775973.effectivecpmnetwork.com/ea0e0da49ca1432d75be531247753024/invoke.js"></script>
+<div id="container-ea0e0da49ca1432d75be531247753024"></div>
+</div>
+
     <div class="explain-panel">
       <h2>यह कैसे काम करता है</h2>
       <p>आपकी इमेज को एक छिपे कैनवस पर, ज़्यादा से ज़्यादा 200 पिक्सल तक छोटा करके रेंडर किया जाता है, क्योंकि छोटी इमेज असली जैसा ही कलर डिस्ट्रीब्यूशन रखती है और हज़ारों गुना तेज़ पढ़ी जाती है. <code>getImageData()</code> से रॉ RGBA डेटा निकलता है, और आधे से ज़्यादा ट्रांसपेरेंट कोई भी पिक्सल छोड़ दिया जाता है. बचा हर पिक्सल हर चैनल के 6 लेवल वाले एक मोटे ग्रिड में गिरता है, यानी कुल 216 बकेट, और हर बकेट असली वैल्यूज़ का जोड़ रखता है. बकेट को पिक्सल काउंट से सॉर्ट किया जाता है, टॉप N बकेट जीतते हैं, और हर स्वैच अपने बकेट के असली पिक्सल का औसत है, बकेट का सेंटर नहीं, जिससे नतीजे नकली-ग्रेडिएंट जैसे नहीं दिखते.</p>
       <p>इस तरीके की एक ईमानदार सीमा यह है: यह इंपोर्टेंस नहीं, एरिया नापता है. बेज दीवार के सामने खड़े किसी पोर्ट्रेट में सब्जेक्ट की नीली जैकेट का ज़िक्र आने से पहले बेज के पांच शेड्स मिलेंगे, क्योंकि दीवार में बस ज़्यादा पिक्सल हैं. अगर आपको डॉमिनेंट रंगों की बजाय एक्सेंट रंग चाहिए, तो कलर काउंट बढ़ाएं और लिस्ट के आखिर की तरफ देखें, या अपलोड करने से पहले इमेज को उस हिस्से तक क्रॉप कर लें जो मायने रखता है.</p>
       <p>इमेज कभी आपकी डिवाइस से बाहर नहीं जाती: यह एक लोकल ऑब्जेक्ट URL से लोड होती है, मेमोरी में कैनवस पर रेंडर होती है, और बाइट्स के रूप में पढ़ी जाती है, यह सब इस पेज के जावास्क्रिप्ट में होता है. यहां कोई अपलोड स्टेप है ही नहीं जिसे इंटरसेप्ट किया जा सके, और रंग निकालते समय नेटवर्क टैब खाली रहता है.</p>
     </div>
+
+<div class="ad-slot ad-slot-300" style="min-height:250px;max-width:300px;margin:20px auto;">
+<script type="text/javascript">
+atOptions = {
+'key' : 'd3550e997148ffe858a1a8e50a6a2fe5',
+'format' : 'iframe',
+'height' : 250,
+'width' : 300,
+'params' : {}
+};
+</script>
+<script src="https://www.highperformanceformat.com/d3550e997148ffe858a1a8e50a6a2fe5/invoke.js"></script>
+</div>
 
     <div class="related-tools">
       <h2>संबंधित टूल</h2>
@@ -524,5 +556,6 @@
 <script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
+<script src="https://pl30775974.effectivecpmnetwork.com/45/46/bd/4546bd692b42ca660c03716e49f94071.js"></script>
 </body>
 </html>

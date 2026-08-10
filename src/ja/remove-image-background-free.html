@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
     <div class="tool-hero-text">
@@ -142,6 +143,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>中心的な処理はMODNetが担っています。これはオープンソースのポートレートマッティングネットワークで、ONNX Runtime Web（MicrosoftによるONNX推論エンジンのWebAssembly版）を通じてブラウザ内で実行されます。ボタンを初めてクリックすると、ページはモデルとランタイム（合計約18MB、セッション中はキャッシュされます）をダウンロードし、その後写真に対してローカルで推論を実行します。単純なセグメンテーションモデルとは異なり、MODNetは「人物か背景か」という大まかな判定ではなく、ピクセルごとに実際のアルファマット（不透明度の値）を予測するよう学習されているため、髪や柔らかい輪郭がより自然な透明感に近づきます。</p>
@@ -150,6 +152,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|画像を圧縮|画質を推測することなく、目標のファイルサイズに正確に合わせる。
 placeholder-generator.html|プレースホルダー画像を生成|任意のサイズと色の画像を即座に生成。

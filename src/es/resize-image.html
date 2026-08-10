@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
     <div class="tool-hero-text">
@@ -165,6 +166,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Cómo funciona</h2>
       <p>El redimensionado en sí es una primitiva del navegador: tu imagen se decodifica, se crea un <code>&lt;canvas&gt;</code> con las dimensiones objetivo, y <code>drawImage()</code> escala los píxeles sobre él en una sola pasada. El navegador aplica su filtro de suavizado incorporado (un remuestreo tipo bilineal) mientras hace esto, que promedia píxeles vecinos en vez de simplemente elegir el más cercano, así que las fotos reducidas de tamaño salen suaves en vez de dentadas. El canvas se vuelve a exportar entonces con <code>canvas.toBlob()</code> como JPEG o WebP a calidad 0.92, o como PNG sin pérdida, dependiendo de la opción de formato.</p>
@@ -174,6 +176,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|Comprimir imagen|Consigue un tamaño de archivo exacto en vez de dimensiones específicas.
 crop-image.html|Recortar Imagen|Recorta una región específica en vez de escalar la imagen completa.

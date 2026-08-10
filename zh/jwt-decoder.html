@@ -22,6 +22,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
+<script src="https://pl30775972.effectivecpmnetwork.com/b8/56/71/b85671c26c7a608f3ce9b0cb31925819.js"></script>
 <title>JWT 解码器：在线解码 JSON Web Token | norito</title>
 <meta name="description" content="在浏览器中解码 JWT 令牌的 header 头部信息和 payload 载荷数据，查看令牌过期时间以及各标准声明字段的详细解释。签名部分不会被验证，令牌内容也不会上传。" />
 <link rel="canonical" href="https://norito.in/zh/jwt-decoder.html" />
@@ -245,6 +246,19 @@
 
 <main>
   <div class="wrap">
+    <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
+<script type="text/javascript">
+atOptions = {
+'key' : 'fad4c8a8cb2c4d00d881b41b2f1ed7d7',
+'format' : 'iframe',
+'height' : 90,
+'width' : 728,
+'params' : {}
+};
+</script>
+<script src="https://www.highperformanceformat.com/fad4c8a8cb2c4d00d881b41b2f1ed7d7/invoke.js"></script>
+</div>
+
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
     <div class="tool-hero-text">
@@ -283,6 +297,11 @@
     </div>
 
 
+    <div class="ad-slot ad-slot-native" style="min-height:90px;margin:20px 0;">
+<script async="async" data-cfasync="false" src="https://pl30775973.effectivecpmnetwork.com/ea0e0da49ca1432d75be531247753024/invoke.js"></script>
+<div id="container-ea0e0da49ca1432d75be531247753024"></div>
+</div>
+
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>一个 JWT 由三个用点连接的 Base64URL 片段组成：header、payload、signature。工具按点进行拆分，然后通过把 URL 安全字母表映射回标准 Base64（<code>-</code> 变回 <code>+</code>，<code>_</code> 变回 <code>/</code>），恢复 JWT 省略的填充字符，运行 <code>atob()</code>，再用 <code>TextDecoder</code> 将字节解码为 UTF-8，从而解码前两个片段。每个片段随后都会经过 <code>JSON.parse</code> 处理并进行格式化输出。标准声明（<code>iss</code>、<code>sub</code>、<code>aud</code>、<code>exp</code>、<code>nbf</code>、<code>iat</code>、<code>jti</code>）会被赋予易读的标签，Unix 时间戳会转换成可读日期，<code>exp</code> 会与你的系统时钟进行比较，从而告诉你该令牌是否已过期。第三段——签名——则完全不会被解析。</p>
@@ -290,6 +309,19 @@
       <p>一切都在这个页面自身的 JavaScript 中运行，使用 <code>atob</code> 和文本解码 API。打开开发者工具的 Network 标签页，粘贴一个真实令牌观察一下：不会发出任何请求，令牌永远不会离开浏览器标签页。</p>
     </div>
 
+
+<div class="ad-slot ad-slot-300" style="min-height:250px;max-width:300px;margin:20px auto;">
+<script type="text/javascript">
+atOptions = {
+'key' : 'd3550e997148ffe858a1a8e50a6a2fe5',
+'format' : 'iframe',
+'height' : 250,
+'width' : 300,
+'params' : {}
+};
+</script>
+<script src="https://www.highperformanceformat.com/d3550e997148ffe858a1a8e50a6a2fe5/invoke.js"></script>
+</div>
 
     <div class="related-tools">
       <h2>相关工具</h2>
@@ -474,5 +506,6 @@
 <script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
+<script src="https://pl30775974.effectivecpmnetwork.com/45/46/bd/4546bd692b42ca660c03716e49f94071.js"></script>
 </body>
 </html>

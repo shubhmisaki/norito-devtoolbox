@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
     <div class="tool-hero-text">
@@ -126,6 +127,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>両方の入力はまず<code>JSON.parse</code>を通ります。そのため、どちらかが有効なJSONでない場合、意味のないdiffの代わりに、パーサー自身が問題を指し示すエラーメッセージが表示されます。比較処理は、解析された2つの構造を再帰的にたどります。オブジェクトの場合は両方のキー集合の和集合を取り各キーに再帰し、配列の場合はインデックスごとに比較し、末端の値は完全に同一にシリアライズされる場合にのみ等しいとみなされます。すべての差異は<code>user.address[1].zip</code>のようなパスとして出力され、追加・削除・変更のいずれかにタグ付けされ、最後に件数として集計されます。</p>
@@ -134,6 +136,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 json-formatter.html|JSONフォーマッタ|単一のJSONドキュメントを整形・検証・圧縮。
 base64-encoder.html|Base64 エンコード / デコード|テキストを Base64 との間で変換。

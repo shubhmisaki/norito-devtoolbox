@@ -77,6 +77,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
     <div class="tool-hero-text">
@@ -129,6 +130,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>The comparison is a line-level diff built on the longest common subsequence (LCS) algorithm, the same family of logic behind <code>git diff</code>. Both texts are split into lines, then a dynamic-programming table works out the largest set of lines the two versions share in order. Walking that table back produces the operations you see: lines only in the left text become red removals, lines only in the right become green additions, shared lines stay neutral, each with its original line number.</p>
@@ -136,6 +138,7 @@
       <p>Because the DP table costs memory and time proportional to (lines in A) x (lines in B), the tool caps input at 4,000 lines per side; past that, the table alone would be tens of millions of cells and the tab would stutter. Within the cap, everything runs synchronously in your browser: both texts live only in your tab, no request fires when you type (check DevTools' Network panel), and confidential drafts or configs never touch a server.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 json-diff.html|JSON Diff|Compare two JSON documents.
 remove-duplicate-lines.html|Remove Duplicate Lines|Deduplicate a list of lines.

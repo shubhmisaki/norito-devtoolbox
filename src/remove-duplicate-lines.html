@@ -89,6 +89,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg></div>
     <div class="tool-hero-text">
@@ -133,6 +134,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>The tool splits your text on newlines, then walks the lines once with a JavaScript <code>Set</code> keeping track of what it has already seen. The first occurrence of each line is kept in its original position; later repeats are dropped. Because it's a single pass with constant-time lookups, even tens of thousands of lines dedupe instantly, and unlike the classic <code>sort | uniq</code> shell trick, your line order is preserved: nothing gets alphabetized as a side effect.</p>
@@ -140,6 +142,7 @@
       <p>Processing is a few lines of JavaScript running on the text already in your tab. Nothing is uploaded: open DevTools, switch to the Network tab, and paste or edit all you want. No request ever fires, and the tool works offline once the page has loaded, which matters if you're cleaning lists that contain emails, URLs, or anything else you'd rather not send to a random server.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 sort-lines.html|Sort Lines|Alphabetize, reverse, or shuffle a list of lines.
 case-converter.html|Case Converter|Convert text between upper, lower, camelCase, and more.

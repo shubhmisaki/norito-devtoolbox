@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
     <div class="tool-hero-text">
@@ -140,6 +141,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>核心工作由 MODNet 完成，这是一个开源人像抠图网络，通过 ONNX Runtime Web（微软基于 WebAssembly 构建的 ONNX 推理引擎）运行，完全由本网站自己的文件提供服务。与普通的分割模型不同，MODNet 训练用于预测真实的 alpha 蒙版，也就是逐像素的不透明度值，而不是粗暴地判断“人物或背景”，所以头发和柔和的边缘会比硬边裁剪更接近真正的透明效果。图片首先会被缩放到最长边接近 512px，这正是模型训练时使用的分辨率。</p>
@@ -147,6 +149,7 @@
       <p>这个网络的加载过程可以在开发者工具中验证：首次运行时，网络面板会显示模型和运行时文件从本网站加载，总计约 18 MB。之后无论处理多少张照片，都不会有任何请求携带你的图片，照片会完全在这个标签页内被读入内存、抠图并合成。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|压缩图片|直接压缩到指定文件大小，无需反复调整质量。
 placeholder-generator.html|占位图生成器|即时生成任意尺寸和颜色的占位图片。

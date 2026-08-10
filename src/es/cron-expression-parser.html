@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
     <div class="tool-hero-text">
@@ -150,6 +151,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Cómo funciona</h2>
       <p>El analizador divide tu expresión en sus 5 campos y expande cada uno en un conjunto explícito de valores permitidos: <code>*/15</code> en el campo de minutos se convierte en el conjunto {0, 15, 30, 45}, <code>1-5</code> en día-de-la-semana se convierte en {1, 2, 3, 4, 5}, y listas como <code>1,3,5</code> se unen. Cada valor se verifica contra su rango al expandirse, por eso un error tipográfico como <code>61 * * * *</code> falla de inmediato con un mensaje que nombra el campo exacto y el rango esperado, en lugar de producir silenciosamente un horario que nunca se dispara.</p>
@@ -158,6 +160,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 timestamp-converter.html|Conversor de Timestamp|Unix time a fecha, en ambas direcciones.
 regex-tester.html|Probador de Regex|Prueba una expresión regular con resaltado de coincidencias en vivo.

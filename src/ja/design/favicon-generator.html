@@ -99,6 +99,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
     <div class="tool-hero-text">
@@ -142,6 +143,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>あなたの画像はまず、収まる最大の中央寄せ正方形にトリミングされ、次に<code>drawImage()</code>の1回の呼び出しでその正方形を目的のサイズのキャンバスに一度にトリミング・スケーリングします。そのため正方形でない画像は、引き伸ばされるのではなくトリミングされて出力されます。これは各サイズごとに6回行われます。16、32、48、180、192、512ピクセルです。各キャンバスはPNGファイルとしてエクスポートされます。ZIPアーカイブはサーバー側の圧縮なしにJavaScriptでバイト単位で組み立てられ、サイトの<code>&lt;head&gt;</code>に貼り付けるための正確な<code>&lt;link&gt;</code>タグを含むテキストファイルも入っています。</p>
@@ -149,6 +151,7 @@
       <p>ドロップした画像は、ブラウザのメモリ内で完全にデコード、トリミング、リサイズ、圧縮されます。このページにはアップロードのステップは一切ありません。生成中にネットワークタブを見てみてください。転送されるのは完成したZIPファイルがメモリからダウンロードフォルダへ移動する部分だけです。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 css-gradient-generator.html|CSSグラデーションジェネレーター|線形または放射状のグラデーションをビジュアルに作成します。
 ../../image-converter.html|画像コンバーター|先にロゴを別の形式に変換します。

@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M11 4h10"/><path d="M11 8h7"/><path d="M11 12h4"/></svg></div>
     <div class="tool-hero-text">
@@ -138,6 +139,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Ваш текст разбивается по переносам строк и сортируется компаратором, выбранным в выпадающем списке. Алфавитный порядок использует <code>localeCompare</code> — языково-зависимое сравнение браузера — вместо необработанных кодов символов. Разница видна сразу: наивная сортировка по кодовым точкам ставит каждую заглавную букву перед каждой строчной (поэтому "Zebra" сортируется перед "apple"), и она искажает порядок символов с диакритическими знаками. Языково-зависимое сравнение упорядочивает слова так, как это сделал бы словарь.</p>
@@ -146,6 +148,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 remove-duplicate-lines.html|Удаление дублирующихся строк|Удаление дубликатов до или после сортировки.
 case-converter.html|Конвертер регистра|Преобразование текста между верхним, нижним регистром, camelCase и другими.

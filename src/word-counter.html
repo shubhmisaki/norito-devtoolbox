@@ -89,6 +89,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
     <div class="tool-hero-text">
@@ -127,6 +128,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>On every keystroke the counter re-derives all six stats from the raw text. Words are runs of non-whitespace, counted by splitting on the <code>\s+</code> regex; sentences are runs of text ending in <code>.</code>, <code>!</code>, or <code>?</code> followed by a space or the end of the text; paragraphs are chunks separated by blank lines. Reading time assumes 225 words per minute (a typical silent-reading pace) and speaking time assumes 130, roughly conference-talk speed, both rounded to the nearest second.</p>
@@ -135,6 +137,7 @@
       <p>Counting is a handful of regex operations in your tab. Nothing you type is transmitted anywhere: the Network panel in DevTools stays empty while you write, and the counter keeps working with the connection off.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 character-counter.html|Character Counter|Check against tweet, SMS, and meta description limits.
 limited-text-generator.html|Limited Text Generator|Generate placeholder text to an exact length.

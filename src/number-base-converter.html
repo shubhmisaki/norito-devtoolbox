@@ -77,6 +77,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
     <div class="tool-hero-text">
@@ -215,6 +216,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>Every value you type is parsed into a JavaScript <code>BigInt</code>, an arbitrary-precision integer type built into the browser. Parsing walks your input digit by digit, multiplying the running total by the base and adding each digit's value; converting back out repeatedly divides by the target base and collects remainders. Digits above 9 use letters, so base 36 runs through 0-9 then a-z. Negative numbers work too: a leading minus sign is peeled off before parsing and stuck back on at the end.</p>
@@ -222,6 +224,7 @@
       <p>Each field validates against its own base as you type, so entering a 9 in the octal box or a g in hex shows an error instead of a garbage result, and the other three fields update live from whichever one you edited. All of it happens in your tab: check the Network panel in DevTools and you'll see the page makes no requests while you type, so the numbers you convert never leave your machine.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, SHA-512.
 url-encoder-decoder.html|URL Encoder / Decoder|Percent-encode or decode a URL.

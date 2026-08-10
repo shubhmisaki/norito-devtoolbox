@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
     <div class="tool-hero-text">
@@ -172,6 +173,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>一切都通过浏览器的 <code>Date</code> 对象处理，该对象内部只存储一个数字：自 Unix 纪元（1970 年 1 月 1 日 UTC 零点）以来的毫秒数。转换时间戳时，如果你选择了「秒」，工具会先乘以 1000，构建一个 <code>Date</code> 对象，然后以四种方式呈现：通过 <code>toLocaleString</code>（浏览器的 Intl 格式化器，使用你自己的时区和语言）显示本地时间、UTC、ISO 8601，以及一个通过将与当前时刻的差值归入年、月、日、时、分或秒来计算出的「3 天后 / 2 小时前」相对时间标签。</p>
@@ -181,6 +183,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 uuid-generator.html|UUID 生成器|批量生成随机 UUID v4 标识符。
 hash-generator.html|哈希生成器|任意文本的 MD5、SHA-1、SHA-256 和 SHA-512。

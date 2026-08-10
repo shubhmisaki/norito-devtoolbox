@@ -67,6 +67,7 @@
 
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/></svg></div>
     <div class="tool-hero-text">
@@ -117,6 +118,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>كيف تعمل</h2>
       <p>تُحسب النسبة باستخدام معادلة السطوع النسبي الفعلية من WCAG، وليست تقريبًا. تُقسَّم كل قناة على 255 ثم تُحوَّل خطيًا لإلغاء منحنى غاما في sRGB، وتُرجَّح القنوات الخطية بنسب 0.2126 للأحمر و0.7152 للأخضر و0.0722 للأزرق، انعكاسًا لمدى إسهام كل لون في السطوع المُدرَك. نسبة التباين هي <code>(الأفتح + 0.05) / (الأغمق + 0.05)</code>، وتتراوح بين 1:1 للألوان المتطابقة و21:1 للأسود الخالص على الأبيض الخالص.</p>
@@ -124,6 +126,7 @@
       <p>يمر كلا اللونين بهاتين المعادلتين هنا في جافاسكريبت الصفحة مع كل تغيير. لا تُرسَل أي قيمة لونية إلى أي مكان، ويمكنك التحقق من ذلك في تبويب الشبكة أثناء تحريك أدوات اختيار اللون.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 color-converter.html|محوّل الألوان|حوّل أي لون إلى HEX أو RGB أو HSL أو CMYK.
 color-palette-extractor.html|مستخرج لوحة الألوان|استخرج الألوان السائدة من صورة.

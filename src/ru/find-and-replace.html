@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Каждый поиск, обычный или regex, внутренне компилируется в единый JavaScript <code>RegExp</code>. В режиме обычного текста ваш поисковый запрос сначала экранируется (чтобы <code>.</code>, <code>(</code>, <code>$</code> и подобные символы совпадали буквально), «целое слово» оборачивает шаблон в границы слова <code>\b</code>, а переключатель регистра просто добавляет или убирает флаг <code>i</code>. Результат перерисовывается при каждом нажатии клавиши, а счётчик совпадений получается запуском того же шаблона с глобальным флагом перед заменой. Некорректный regex-ввод не стирает ваш текст, а просто показывает ошибку движка и оставляет вывод нетронутым.</p>
@@ -147,6 +149,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 regex-tester.html|Тестер регулярных выражений|Проверьте regex с подсветкой совпадений в реальном времени.
 remove-duplicate-lines.html|Удаление дублирующихся строк|Удаление дубликатов до или после сортировки.

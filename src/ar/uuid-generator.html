@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>كيف يعمل</h2>
       <p>يأتي كل معرّف من <code>crypto.randomUUID()</code>، المولّد المدمج في المتصفح. تحت الغطاء، يسحب 128 بت من مصدر التشفير الآمن العشوائي لنظام التشغيل (نفس المصدر الذي يولّد مفاتيح TLS)، ثم يثبّت 6 من هذه البتات بقيم محددة: تصبح خانة الإصدار 4 وتصبح بتات المتغيّر 10. لهذا السبب يبدأ كل UUID هنا بالرقم 4 في بداية المجموعة الثالثة وبالرقم 8 أو 9 أو a أو b في بداية المجموعة الرابعة. أما البتات الـ122 المتبقية فهي عشوائية بحتة، وهذا ما يجعل التصادمات غير ذات أهمية عمليًا.</p>
@@ -146,6 +148,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 hash-generator.html|مولّد التجزئة|MD5 وSHA-1 وSHA-256 وSHA-512 لأي نص.
 base64-encoder.html|ترميز / فك ترميز Base64|حوّل النص من وإلى Base64، آمن مع UTF-8.

@@ -102,6 +102,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></div>
     <div class="tool-hero-text">
@@ -222,6 +223,7 @@
       </details>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>当你手绘签名时，工具会在一个 HTML 画布上捕捉你的笔迹，裁掉周围的空白区域，并将结果导出为透明 PNG。输入文字生成的签名也是同样的流程：手写风格字体会先渲染到画布上。无论哪种方式，这张 PNG 随后都会通过 pdf-lib 库嵌入 PDF 的对象结构中，并按你选择的确切位置和大小绘制到页面上。</p>
@@ -229,6 +231,7 @@
       <p>值得了解的一点区别：这里添加的是一个视觉签名，也就是叠加在页面上的一张图片，这正是大多数日常文件所需要的。它不是认证机构颁发的那种密码学数字签名，因此 PDF 阅读器不会显示“已数字签名并验证”的提示。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 add-watermark.html|添加水印|为每一页盖上文字水印。
 merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。

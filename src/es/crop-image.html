@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Cómo funciona</h2>
       <p>Tu archivo se carga a través de <code>URL.createObjectURL</code>, una referencia local en memoria, nunca una subida, y se muestra reducido para caber en el editor. El cuadro de recorte que arrastras se rastrea en píxeles de pantalla, pero en el momento en que pulsas recortar, esas coordenadas se multiplican por la proporción entre el tamaño natural de la imagen y su tamaño mostrado. Así que si tu foto de 4000px se muestra a 800px de ancho, un cuadro de 200px de ancho en pantalla selecciona una región de 1000px de ancho de la imagen real. El rectángulo seleccionado se copia entonces con la forma de rectángulo de origen de <code>drawImage</code> de la API canvas, que extrae exactamente esos píxeles del original a resolución completa.</p>
@@ -145,6 +147,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 resize-image.html|Redimensionar imagen|Cambia las dimensiones generales en vez de recortar una región.
 compress-image.html|Comprimir imagen|Consigue un tamaño de archivo exacto después de recortar.

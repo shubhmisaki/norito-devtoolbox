@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
     <div class="tool-hero-text">
@@ -113,6 +114,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>JWTはドットで結合された3つのBase64URLセグメントです。ヘッダー、ペイロード、署名です。このツールはドットで分割し、最初の2つのセグメントをデコードします。URLセーフなアルファベットを標準のBase64に戻し（<code>-</code>を<code>+</code>に、<code>_</code>を<code>/</code>に）、JWTが省略しているパディングを復元し、<code>atob()</code>を実行し、<code>TextDecoder</code>でバイト列をUTF-8としてデコードします。各セグメントはその後<code>JSON.parse</code>され、整形されて表示されます。標準クレーム（<code>iss</code>、<code>sub</code>、<code>aud</code>、<code>exp</code>、<code>nbf</code>、<code>iat</code>、<code>jti</code>）にはわかりやすいラベルが付き、Unixタイムスタンプは読みやすい日付に変換され、<code>exp</code>はあなたの時計と比較されてトークンが期限切れかどうかを教えてくれます。3番目のセグメントである署名は、一切解析されません。</p>
@@ -121,6 +123,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 base64-encoder.html|Base64 エンコード / デコード|単一のBase64セグメントを手動でデコード。
 timestamp-converter.html|タイムスタンプ変換ツール|Unixタイムスタンプを読みやすい日付に変換。

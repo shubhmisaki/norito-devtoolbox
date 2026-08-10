@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
     <div class="tool-hero-text">
@@ -172,6 +173,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>यह कैसे काम करता है</h2>
       <p>सब कुछ ब्राउज़र के <code>Date</code> ऑब्जेक्ट से होकर गुज़रता है, जो इंटरनली सिर्फ़ एक नंबर स्टोर करता है: Unix एपॉक यानी 1 जनवरी 1970 की UTC आधी रात से मिलीसेकंड। किसी टाइमस्टैंप को कन्वर्ट करने पर, अगर आपने सेकंड बताया है तो टूल उसे 1,000 से गुणा करता है, एक <code>Date</code> बनाता है, फिर उसे चार तरीकों से दिखाता है: <code>toLocaleString</code> के ज़रिए आपका लोकल टाइम (ब्राउज़र का Intl फ़ॉर्मैटर, आपकी अपनी टाइमज़ोन और भाषा इस्तेमाल करते हुए), UTC, ISO 8601, और एक रिलेटिव लेबल जैसे "3 दिन में / 2 घंटे पहले" जो अभी के फ़र्क़ को साल, महीने, दिन, घंटे, मिनट, या सेकंड में बांटकर कैलकुलेट होता है।</p>
@@ -181,6 +183,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 uuid-generator.html|UUID जनरेटर|बल्क रैंडम UUID v4 आइडेंटिफ़ायर।
 hash-generator.html|हैश जनरेटर|किसी भी टेक्स्ट के MD5, SHA-1, SHA-256, और SHA-512.

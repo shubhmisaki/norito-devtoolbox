@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>كيف يعمل</h2>
       <p>يُحمَّل ملفك عبر <code>URL.createObjectURL</code>، وهو مرجع محلي في الذاكرة، وليس رفعًا أبدًا، ويُعرَض مصغَّرًا ليناسب المحرر. يُتتبَّع مربع القص الذي تسحبه بوحدات بكسل الشاشة، لكن في اللحظة التي تضغط فيها على القص، تُضرَب تلك الإحداثيات بالنسبة بين الحجم الطبيعي للصورة وحجم عرضها. لذا إذا كانت صورتك بحجم 4000 بكسل تُعرَض بعرض 800 بكسل، فإن مربعًا بعرض 200 بكسل على الشاشة يحدد منطقة بعرض 1000 بكسل من الصورة الحقيقية. يُنسَخ المستطيل المحدَّد بعدها باستخدام شكل مستطيل المصدر لدالة <code>drawImage</code> في واجهة canvas، والتي تسحب بالضبط تلك البكسلات من الأصل بالدقة الكاملة.</p>
@@ -145,6 +147,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 resize-image.html|تغيير حجم الصورة|غيّر الأبعاد الإجمالية بدلاً من قصّ منطقة.
 compress-image.html|ضغط الصور|احصل على حجم ملف دقيق بعد القص.

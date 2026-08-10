@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>كيف يعمل</h2>
       <p>تُحمَّل صورتك عبر رابط كائن محلي (<code>URL.createObjectURL</code>)، ويُفكّ ترميزها بواسطة مُفكِّك ترميز الصور الخاص بالمتصفح نفسه، وتُرسَم على canvas خارج الشاشة بدقتها الطبيعية الكاملة، وتُعاد ترميزها بـ <code>canvas.toBlob</code> بالتنسيق والجودة اللذين اخترتهما. تفصيل واحد يُدار من أجلك: JPEG ليس لديه قناة ألفا، لذا قبل الرسم، تُملَأ اللوحة بالأبيض عندما يكون JPEG هو الهدف. بدون تلك الخطوة، ستخرج المناطق الشفافة من PNG سوداء. ينطبق منزلق الجودة فقط على JPEG وWebP؛ ترميز PNG بدون فقدان ويتجاهله.</p>
@@ -147,6 +149,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|ضغط الصور|احصل على حجم ملف دقيق بعد التحويل.
 resize-image.html|تغيير حجم الصورة|غيّر الأبعاد قبل أو بعد تحويل التنسيق.

@@ -122,6 +122,7 @@
 <!--INCLUDE:HEADER:standard-->
 <main>
 <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="10" cy="13" r="2"/><path d="m20 17-1.5-1.5a2 2 0 0 0-2.83 0L9 22"/></svg></div>
     <div class="tool-hero-text">
@@ -182,6 +183,7 @@
       </details>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>PDF 原生支持这个工具关心的两种图片格式：JPEG 和类似 PNG 的原始像素数据。对于普通 JPG，pdf-lib 会直接把你文件的字节原封不动地嵌入 PDF，不解码、不重新编码，零质量损失，生成的 PDF 体积大致等于输入的 JPEG 总和。PNG 会被拆解为 PDF 所需的原始像素格式，同样无损。每张图片随后成为一页，通过一条 <code>drawImage</code> 指令放置。</p>
@@ -189,6 +191,7 @@
       <p>你的照片不会离开你的设备。转换时观察开发者工具的网络面板：图片在本地读取，由 pdf-lib 在内存中组装成 PDF，再从 blob 下载。没有任何内容被传输，当图片是证件照或个人文件时，这一点尤为重要。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 pdf-to-image.html|PDF 转 JPG/PNG|将页面转换为图片。
 merge-pdf.html|合并 PDF|将多个 PDF 合并为一个。

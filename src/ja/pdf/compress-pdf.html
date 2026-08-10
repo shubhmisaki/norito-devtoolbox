@@ -124,6 +124,7 @@
 <main>
 
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg></div>
     <div class="tool-hero-text">
@@ -204,6 +205,7 @@
     </div>
     <p class="note" style="margin:24px 0;">ブログから： <a href="../blog/pdf-compression-explained.html">PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由</a></p>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>インターネット上のほとんどの「PDF圧縮ツール」は乱暴なことをします。各ページをJPEGに変換し、その画像をPDFに再パックするのです。これによりサイズは小さくなりますが、選択可能で検索可能なテキストが静かに破壊されます。このツールはそのようには動作しません。何かに触れる前に、まずpdf.jsを使って各ページに実際に抽出可能なテキストがあるかを確認し、ドキュメントをまったく異なる方法で処理される2種類のページに分けます。</p>
@@ -211,6 +213,7 @@
       <p>これらはすべてブラウザのメモリ内で動作します。契約書や銀行明細を圧縮しながら開発者ツールを開き、ネットワークタブを見てください。どのリクエストもファイルをどこかに運ぶことはありません。ダウンロードはローカルでblobから生成されます。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-pdf-for-email.html|メール添付用にPDFを圧縮|Gmailの25MB添付ファイル制限内にPDFを収めます。
 merge-pdf.html|PDFファイルを結合|複数のPDFファイルを1つに結合します。

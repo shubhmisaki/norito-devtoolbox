@@ -98,6 +98,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg></div>
     <div class="tool-hero-text">
@@ -164,6 +165,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>Each ID comes from <code>crypto.randomUUID()</code>, the browser's built-in generator. Under the hood it pulls 128 bits from the operating system's cryptographically secure random source (the same one that generates TLS keys), then stamps 6 of those bits with fixed values: the version nibble becomes 4 and the variant bits become 10. That's why every UUID here has a 4 at the start of the third group and an 8, 9, a, or b starting the fourth. The remaining 122 bits are pure randomness, which is what makes collisions a non-issue in practice.</p>
@@ -172,6 +174,7 @@
       <p>One practical note: v4 UUIDs are deliberately unordered, so as database primary keys they scatter inserts across an index. If you need IDs that sort by creation time, look at UUID v7, which puts a timestamp in the high bits. For everything else (request IDs, filenames, correlation tokens), random v4 is exactly right.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 hash-generator.html|Hash Generator|MD5, SHA-1, SHA-256, and SHA-512 of any text.
 base64-encoder.html|Base64 Encode / Decode|Convert text to and from Base64, UTF-8 safe.

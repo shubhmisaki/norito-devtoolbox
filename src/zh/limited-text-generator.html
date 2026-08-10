@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
     <div class="tool-hero-text">
@@ -130,6 +131,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>生成器维护着一个由 36 句手写句子组成的库，用 Fisher-Yates 算法打乱顺序，只要还能放进剩余字数预算，就会贪婪地追加完整句子。只有会导致超出限制的最后一句会被逐字符裁剪，所以生成的文本会精确落在目标字数上，最多只有一处句中断点。当句子库在较长目标下用尽时，会重新洗牌并以新顺序再次循环，这也是为什么同样长度点两次生成会得到不同的文本。</p>
@@ -137,6 +139,7 @@
       <p>生成过程只是本页面 JavaScript 中一个简单的字符串构建循环。打开开发者工具，查看网络面板，点击生成：不会触发任何请求，断网状态下工具依然能正常工作。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 seo-slug-generator.html|SEO Slug 生成器|根据任意标题实时生成简洁网址。
 markdown-editor.html|Markdown 编辑器|双栏 Markdown 编辑器，支持实时预览。

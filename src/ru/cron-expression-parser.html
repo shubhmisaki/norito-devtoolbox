@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
     <div class="tool-hero-text">
@@ -150,6 +151,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Парсер разбивает ваше выражение на 5 полей и разворачивает каждое в явный набор допустимых значений: <code>*/15</code> в поле минут превращается в набор {0, 15, 30, 45}, <code>1-5</code> в дне недели превращается в {1, 2, 3, 4, 5}, а списки вроде <code>1,3,5</code> объединяются. Каждое значение проверяется на диапазон при разворачивании, поэтому опечатка вроде <code>61 * * * *</code> сразу выдаёт ошибку с указанием конкретного поля и ожидаемого диапазона, вместо того чтобы незаметно создать расписание, которое никогда не сработает.</p>
@@ -158,6 +160,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 timestamp-converter.html|Конвертер меток времени|Unix-время в дату и обратно.
 regex-tester.html|Тестер регулярных выражений|Проверьте regex с подсветкой совпадений в реальном времени.

@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div>
     <div class="tool-hero-text">
@@ -134,6 +135,7 @@ Bob,25,Denver"></textarea>
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>यह कैसे काम करता है</h2>
       <p>फ़ाइलों को ब्राउज़र के <code>FileReader</code> API से पढ़ा जाता है और एक हाथ से लिखे गए सिंगल-पास पार्सर से पार्स किया जाता है जो RFC 4180 नियमों का पालन करता है: यह टेक्स्ट को कैरेक्टर-दर-कैरेक्टर चलता है और साथ ही ट्रैक करता है कि यह किसी कोटेड फ़ील्ड के अंदर है या नहीं। यही वह हिस्सा है जो नैव स्प्लिट-ऑन-कॉमा कन्वर्टर्स ग़लत करते हैं: कोट्स के अंदर, कॉमा और यहां तक कि लाइन ब्रेक्स भी सेल के हिस्से होते हैं, और एक डबल्ड कोट (<code>""</code>) एक लिटरल कोट कैरेक्टर होता है। डीलिमिटर ऑटो-डिटेक्शन स्मार्ट होने के बजाय प्रैगमैटिक है: यह पहली लाइन में कॉमा, सेमीकोलन, और टैब्स गिनता है और विनर चुनता है, जो यूरोपियन Excel एक्सपोर्ट्स द्वारा बनाए गए सेमीकोलन-डीलिमिटेड CSVs को सही तरीक़े से हैंडल करता है।</p>
@@ -142,6 +144,7 @@ Bob,25,Denver"></textarea>
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 csv-viewer.html|CSV व्यूअर|CSV को एक एडिटेबल टेबल के रूप में देखें और एडिट करें।
 json-formatter.html|JSON फ़ॉर्मैटर|JSON फ़ॉर्मैट, वैलिडेट और मिनिफ़ाई करें।

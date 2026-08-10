@@ -90,6 +90,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
     <div class="tool-hero-text">
@@ -144,6 +145,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Базовый URL парсится собственным интерфейсом <code>URL</code> браузера, поэтому появляется ошибка, пока вы не добавите <code>https://</code>: парсеру нужен протокол — тот же парсер, который ваш браузер использует для реальной навигации. Каждое из пяти значений <code>utm_</code> применяется через <code>searchParams.set()</code>, который автоматически кодирует специальные символы и сохраняет любые параметры запроса, уже присутствующие в URL.</p>
@@ -151,6 +153,7 @@
       <p>URL собирается локально при каждом нажатии клавиши и никогда не запрашивается и не логируется с этой страницы. Итоговая ссылка отправляется куда-либо только тогда, когда вы вставляете её в свою реальную кампанию.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 meta-tag-generator.html|Генератор мета-тегов|Создайте заголовок, описание и теги для соцсетей.
 ../qr-code-generator.html|Генератор QR-кодов|Превратите ссылку с UTM-меткой в QR-код.

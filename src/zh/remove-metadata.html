@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
     <div class="tool-hero-text">
@@ -121,6 +122,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>当你拖入一张 JPEG 图片时，工具会用 <code>DataView</code> 读取文件的原始字节，并遍历 JPEG 标记结构以寻找 APP1 分段，EXIF 数据就存放在那里。在其内部，工具会解析 TIFF 目录树：IFD0（相机品牌和型号、软件、修改日期）、Exif 子目录（原始拍摄时间、曝光、光圈、ISO），以及 GPS 子目录。它可以处理两种字节序（Intel 和 Motorola 风格的文件）以及内联和偏移存储两种值的方式，然后在你确认操作之前，向你展示一份找到内容的清晰列表。</p>
@@ -130,6 +132,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|压缩图片|清理后缩小文件大小。
 image-converter.html|图片格式转换器|转换为不同的格式。

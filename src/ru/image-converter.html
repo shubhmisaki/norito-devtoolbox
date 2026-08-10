@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
     <div class="tool-hero-text">
@@ -139,6 +140,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Ваше изображение загружается через локальный object URL (<code>URL.createObjectURL</code>), декодируется собственным декодером изображений браузера, отрисовывается на закадровом canvas в полном естественном разрешении и повторно кодируется с помощью <code>canvas.toBlob</code> в выбранном вами формате и качестве. Одна деталь обрабатывается за вас: у JPEG нет альфа-канала, поэтому перед отрисовкой canvas заполняется белым цветом, если целевой формат — JPEG. Без этого шага прозрачные области PNG получились бы чёрными. Ползунок качества применяется только к JPEG и WebP; кодирование PNG выполняется без потерь и игнорирует его.</p>
@@ -147,6 +149,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|Сжатие изображения|Достигните точного размера файла после конвертации.
 resize-image.html|Изменение размера изображения|Измените размеры до или после конвертации формата.

@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
     <div class="tool-hero-text">
@@ -142,6 +143,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>核心处理由 MODNet 完成，这是一个开源人像抠图网络，通过 ONNX Runtime Web（微软基于 WebAssembly 构建的 ONNX 推理引擎）在你的浏览器内运行。你第一次点击按钮时，页面会下载模型和运行时（共约 18 MB，缓存于本次会话），然后在本地对你的照片执行推理。与普通的分割模型不同，MODNet 会为每个像素预测真实的 alpha 遮罩（透明度值），而不是简单粗暴地判断「人物还是背景」，因此头发和柔和边缘会更接近真实的透明效果。</p>
@@ -150,6 +152,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|压缩图片|无需猜测质量，精确控制文件大小。
 placeholder-generator.html|占位图生成器|任意尺寸和颜色的即时占位图。

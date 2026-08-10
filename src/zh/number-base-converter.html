@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
     <div class="tool-hero-text">
@@ -214,6 +215,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>你输入的每个值都会被解析为 JavaScript 的 <code>BigInt</code>，这是浏览器内置的一种任意精度整数类型。解析过程逐位处理你的输入，将累计总数乘以进制基数并加上每一位的值；反向转换则反复除以目标进制并收集余数。大于 9 的数字使用字母表示，所以 36 进制会依次使用 0-9 再到 a-z。负数同样支持：解析前会先剥离开头的负号，最后再拼接回去。</p>
@@ -222,6 +224,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 hash-generator.html|哈希生成器|MD5、SHA-1、SHA-256、SHA-512。
 url-encoder-decoder.html|URL 编码 / 解码工具|对 URL 进行百分号编码或解码。

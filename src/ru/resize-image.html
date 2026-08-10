@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
     <div class="tool-hero-text">
@@ -165,6 +166,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Само изменение размера — это один браузерный примитив: ваше изображение декодируется, создаётся <code>&lt;canvas&gt;</code> с целевыми размерами, и <code>drawImage()</code> масштабирует пиксели на него за один проход. При этом браузер применяет свой встроенный фильтр сглаживания (билинейную ресемплировку), которая усредняет соседние пиксели вместо простого выбора ближайшего, поэтому уменьшенные фотографии получаются гладкими, а не зазубренными. Затем canvas повторно экспортируется через <code>canvas.toBlob()</code> как JPEG или WebP с качеством 0.92, либо как PNG без потерь, в зависимости от выбранного формата.</p>
@@ -174,6 +176,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 compress-image.html|Сжатие изображения|Достигните точного размера файла вместо конкретных размеров.
 crop-image.html|Обрезать изображение|Вырежьте определённую область вместо масштабирования всего изображения.

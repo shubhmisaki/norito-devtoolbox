@@ -116,6 +116,7 @@
 <main>
 
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
     <div class="tool-hero-text">
@@ -184,6 +185,7 @@
     </div>
     <p class="note" style="margin:24px 0;">ブログから： <a href="../blog/pdf-compression-explained.html">PDF圧縮がスキャン画像には効くのに、レポートにはほとんど効かない理由</a></p>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>PDFは段落や文、単語すら保存していません。決まった位置にある文字グリフの並びを保存しています。「このフォントでこの座標にこの形を配置する」という具合です。このツールはFirefoxのPDFエンジンであるpdf.jsを使って各ページのコンテンツストリームを走査し、<code>getTextContent()</code>を通じてすべてのテキスト描画操作を収集します。これらの断片はスペースで結合され、余分な空白は折りたたまれ、ページごとに、あなたが目にするプレーンテキストが形成されます。</p>
@@ -191,6 +193,7 @@
       <p>抽出はファイルをドロップした瞬間に、完全にローカルのワーカー内で行われます。開発者ツールを開き、ネットワークタブを見てください。契約書であれ医療報告書であれ、どのリクエストもドキュメントやそのテキストをどこかに運ぶことはありません。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 pdf-to-image.html|PDFをJPG/PNGに変換|ページを画像に変換します。
 split-pdf.html|PDFファイルを分割|PDFからページを抽出したり複数ファイルに分割したりします。

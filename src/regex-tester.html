@@ -89,6 +89,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-12"/><path d="M5 8h4"/><path d="M15 16h4"/><circle cx="5" cy="14" r="2"/><circle cx="19" cy="10" r="2"/></svg></div>
     <div class="tool-hero-text">
@@ -141,6 +142,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>Your pattern is compiled with the browser's native <code>RegExp</code> engine, the exact same engine your JavaScript code will use in production. That's the point of testing here rather than in a PCRE-based tool: syntax that differs between flavors (lookbehind support, <code>\d</code> semantics under the <code>u</code> flag, named groups) behaves here exactly as it will in Node or the browser. The flags field is sanitized to the valid set (<code>d g i m s u y</code>), and the tester quietly adds <code>g</code> internally so it can walk every match, without changing what you typed.</p>
@@ -149,6 +151,7 @@
       <p>One gotcha worth knowing: nested quantifiers like <code>(a+)+$</code> can trigger catastrophic backtracking, where match time explodes exponentially on a long almost-matching input. If the page freezes on a pattern like that, it's not the tool, it's the regex, and it will hang your production code the same way. Rewrite the pattern so quantified groups can't match the same characters in multiple ways.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 json-formatter.html|JSON Formatter|Format and validate JSON.
 seo-slug-generator.html|SEO Slug Generator|Clean URL slugs from titles.

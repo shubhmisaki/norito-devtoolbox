@@ -132,6 +132,7 @@
 <main>
 
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>
     <div class="tool-hero-text">
@@ -218,6 +219,7 @@
       </details>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>このツールはpdf.jsを使用します。これはFirefoxがPDFを表示するために使うのと同じレンダリングエンジンで、完全にブラウザ内で動作します。選択された各ページにはキャンバスが割り当てられます。ツールはpdf.jsに選んだスケールでそのページのビューポートを要求し、pdf.jsが1文字ずつ、1つのベクター形状ずつ、そのキャンバスにページの描画命令を実行します。その後キャンバスは<code>canvas.toBlob()</code>を通じてPNGまたはJPEGとしてエクスポートされます。</p>
@@ -225,6 +227,7 @@
       <p>ほとんどのコンバーターが間違える点として、JPEGは透明度をサポートしていないため、透明な背景を持つPDFページをキャンバスから直接エクスポートすると黒い背景になることがあります。このツールはJPEGが選ばれた場合、描画前にキャンバスを白で塗りつぶすため、ページは紙のように見えます。PNGは透明度をそのまま保持します。アップロードが一切行われないことは自分で確認できます。変換中に開発者ツールを開き、ネットワークタブを見てください。</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 jpg-png-to-pdf.html|JPG/PNGをPDFに変換|画像を1つのPDFにまとめます。
 extract-text.html|PDFからテキストを抽出|PDFファイルからテキストを抽出します。

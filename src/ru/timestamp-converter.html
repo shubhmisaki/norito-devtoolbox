@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
     <div class="tool-hero-text">
@@ -172,6 +173,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Как это работает</h2>
       <p>Всё проходит через объект <code>Date</code> браузера, который внутренне хранит одно число: миллисекунды с эпохи Unix, полуночи UTC 1 января 1970 года. При конвертации метки времени инструмент умножает на 1000, если вы указали секунды, строит <code>Date</code>, а затем отображает его четырьмя способами: ваше местное время через <code>toLocaleString</code> (форматтер Intl браузера, использующий ваш часовой пояс и язык), UTC, ISO 8601 и относительную метку «через 3 дня / 2 часа назад», вычисляемую путём разбиения разницы с текущим моментом на годы, месяцы, дни, часы, минуты или секунды.</p>
@@ -181,6 +183,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 uuid-generator.html|Генератор UUID|Массовая генерация случайных идентификаторов UUID v4.
 hash-generator.html|Генератор хешей|MD5, SHA-1, SHA-256 и SHA-512 любого текста.

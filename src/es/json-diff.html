@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
     <div class="tool-hero-text">
@@ -126,6 +127,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>Cómo funciona</h2>
       <p>Ambos lados pasan primero por <code>JSON.parse</code>, así que si uno no es JSON válido obtienes el propio mensaje de error del parser señalando el problema en vez de un diff inservible. La comparación recorre entonces las dos estructuras analizadas recursivamente: para objetos toma la unión de ambos conjuntos de claves y recurre en cada clave, para arrays compara índice por índice, y los valores hoja se consideran iguales solo si se serializan de forma idéntica. Cada diferencia se emite como una ruta tipo <code>user.address[1].zip</code> etiquetada como añadida, eliminada, o cambiada, y luego se resume en conteos.</p>
@@ -134,6 +136,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 json-formatter.html|Formateador JSON|Formatea, valida y minifica un único documento JSON.
 base64-encoder.html|Codificar / Decodificar Base64|Convierte texto a y desde Base64.

@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.36-.54"/></svg></div>
     <div class="tool-hero-text">
@@ -137,6 +138,7 @@
       </div>
     </div>
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>各IDはブラウザ組み込みのジェネレーターである <code>crypto.randomUUID()</code> から生成されます。内部ではOSの暗号論的に安全な乱数源（TLS鍵を生成するのと同じ源）から128ビットを取得し、そのうち6ビットに固定値を刻印します。バージョンのニブルは4に、バリアントビットは10になります。そのため、ここで生成されるすべてのUUIDは3番目のグループの先頭が4になり、4番目のグループの先頭が8、9、a、bのいずれかになります。残りの122ビットは純粋にランダムであり、これが実質的に衝突を問題にしない理由です。</p>
@@ -146,6 +148,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 hash-generator.html|ハッシュジェネレーター|任意のテキストのMD5、SHA-1、SHA-256、SHA-512。
 base64-encoder.html|Base64 エンコード / デコード|テキストを Base64 との間で変換、UTF-8 セーフ。

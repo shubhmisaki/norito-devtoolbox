@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
     <div class="tool-hero-text">
@@ -155,6 +156,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>仕組み</h2>
       <p>YAMLからJSONへの変換は、このページ専用に書かれた小さな再帰下降パーサーで行われます。まずコメントを除去し（引用符付き文字列内の<code>#</code>が誤って消えないよう慎重に処理します）、各行のインデントを記録した上で、YAMLの定義どおりに構造を構築します。インデントはネストしたマップを開き、<code>-</code>で始まる行はシーケンスを構築し、それ以外はすべてスカラー値になります。スカラー値は実際のYAMLパーサーと同じルールで型付けされます。<code>true</code>/<code>false</code>は真偽値に、<code>~</code>と<code>null</code>はnullに、引用符のない数字は数値に、引用符付き文字列はそのまま文字列となり、インラインの<code>[a, b]</code>や<code>{k: v}</code>のようなフロー構文も処理されます。結果は選択したインデントで<code>JSON.stringify</code>によりシリアライズされます。JSONからYAMLはその逆で、<code>JSON.parse</code>で入力を検証した後、エミッターが値をたどってインデント付きのYAMLを書き出し、数値・真偽値・nullと誤読されうる文字列には引用符を付けます。</p>
@@ -164,6 +166,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 csv-to-json.html|CSVからJSONへ|CSVファイルをJSONに変換。
 json-formatter.html|JSONフォーマッター|JSONの整形、検証、圧縮。

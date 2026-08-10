@@ -75,6 +75,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
     <div class="tool-hero-text">
@@ -162,6 +163,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>工作原理</h2>
       <p>实时预览是叠加在你照片上方的一个定位 DOM 元素，但最终图片是在 <code>&lt;canvas&gt;</code> 上进行的真正像素处理。当你点击应用时，原始图片会以完整分辨率绘制，然后 canvas 上下文会移动到九个锚点之一（四角、边缘中点、中心，每个都有 6% 的内边距），按你设置的角度旋转，再通过 <code>fillText()</code> 绘制文字，并使用 <code>globalAlpha</code> 应用你设置的颜色和不透明度。文字对齐和基线会根据锚点设置，因此预览中的「右下」在输出中也会落在相对相同的位置。</p>
@@ -171,6 +173,7 @@
     </div>
 
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 remove-metadata.html|删除元数据|在分享照片前清除 EXIF 和 GPS 数据。
 compress-image.html|压缩图片|加水印后缩小文件大小。

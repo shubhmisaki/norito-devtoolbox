@@ -77,6 +77,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
     <div class="tool-hero-text">
@@ -160,6 +161,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>YAML to JSON runs a small recursive-descent parser written for this page. It first strips comments (carefully, so a <code>#</code> inside a quoted string survives), records each line's indentation, then builds the structure the way YAML defines it: indentation opens nested maps, lines starting with <code>-</code> build sequences, and everything else is a scalar. Scalars are typed by the same rules real YAML parsers use: <code>true</code>/<code>false</code> become booleans, <code>~</code> and <code>null</code> become null, bare numbers become numbers, quoted strings stay strings, and inline <code>[a, b]</code> or <code>{k: v}</code> flow syntax is handled too. The result is serialized with <code>JSON.stringify</code> at your chosen indent. JSON to YAML is the reverse: <code>JSON.parse</code> validates the input, then an emitter walks the value and writes indented YAML, quoting any string that would otherwise be misread as a number, boolean, or null.</p>
@@ -168,6 +170,7 @@
       <p>Conversion happens entirely in your tab on every keystroke. No parser service is called: DevTools' Network panel stays silent while you type, so config files full of hostnames and secrets never leave your machine.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 csv-to-json.html|CSV to JSON|Convert a CSV file into JSON.
 json-formatter.html|JSON Formatter|Format, validate, and minify JSON.

@@ -89,6 +89,7 @@
 
 <main>
   <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
     <div class="tool-hero-icon icon-chip c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
     <div class="tool-hero-text">
@@ -177,6 +178,7 @@
     </div>
 
 
+    <!--INCLUDE:AD-NATIVE-->
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>The live preview is a positioned DOM element layered over your photo, but the final image is real pixel work on a <code>&lt;canvas&gt;</code>. When you hit apply, the original image is drawn at full resolution, then the canvas context is translated to one of nine anchor points (corners, edge midpoints, center, each inset by a 6% margin), rotated by your angle, and the text is drawn with <code>fillText()</code> using your color and opacity via <code>globalAlpha</code>. Text alignment and baseline are set per anchor so "bottom-right" in the preview lands in the same relative spot in the output.</p>
@@ -185,6 +187,7 @@
       <p>Both preview and final render run in your tab. Check DevTools' Network panel while you work: the photo is never uploaded, so client proofs and unreleased shots stay on your machine.</p>
     </div>
 
+<!--INCLUDE:AD-MID-->
 <!--RELATED-TOOLS
 remove-metadata.html|Remove Metadata|Strip EXIF and GPS data before sharing a photo.
 compress-image.html|Compress Image to Size|Shrink the file size after watermarking.
