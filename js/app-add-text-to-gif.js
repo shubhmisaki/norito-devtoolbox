@@ -10,12 +10,14 @@
     colorInput: document.getElementById("colorInput"),
     strokeCheck: document.getElementById("strokeCheck"),
     applyBtn: document.getElementById("applyBtn"),
+    frameList: document.getElementById("frameList"),
     result: document.getElementById("result"),
     preview: document.getElementById("preview"),
   };
 
   let currentFile = null;
   let decoded = null;
+  let strip = null;
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -32,11 +34,15 @@
     els.result.style.display = "none";
     els.preview.style.display = "none";
     els.controls.style.display = "none";
+    els.frameList.style.display = "none";
+    els.frameList.innerHTML = "";
     try {
       decoded = await decodeGifFile(file);
       els.originalInfo.textContent =
         `${file.name}: ${decoded.width}×${decoded.height}, ${decoded.frames.length} frames, ${formatBytes(file.size)}`;
       els.controls.style.display = "block";
+      els.frameList.style.display = "flex";
+      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true });
     } catch (err) {
       setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
     }

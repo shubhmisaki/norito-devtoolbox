@@ -271,7 +271,7 @@ atOptions = {
         <p>Click to choose images, or drag and drop them here.</p>
         <input type="file" id="fileInput" accept="image/*" multiple hidden />
       </div>
-      <div class="batch-file-row-list" id="frameList" style="display:none; margin-top:16px;"></div>
+      <div id="frameList" style="display:none; margin-top:16px;"></div>
 
       <div class="two-col" style="margin-top:16px;">
         <div class="field">
@@ -287,8 +287,10 @@ atOptions = {
           </select>
         </div>
       </div>
+      <button type="button" id="applyDelayBtn" style="margin-top:8px;">Apply this delay to every frame</button>
+      <p class="note">Each frame's delay can also be edited individually above, in the frame strip, along with reordering (&uarr;/&darr;) and removing frames one at a time.</p>
 
-      <button type="button" id="makeBtn" disabled style="margin-top:16px;">Create GIF</button>
+      <button type="button" id="makeBtn" disabled style="margin-top:8px;">Create GIF</button>
       <div class="result-box" id="result" style="display:none;"></div>
       <div style="margin-top:16px; text-align:center;">
         <img id="preview" alt="Generated GIF preview" style="display:none; max-width:100%; border-radius:8px;" />
@@ -303,7 +305,7 @@ atOptions = {
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>Each image you add becomes one frame. Frames play back in the order you add them, at the delay you set, then loop. The first image you drop in sets the GIF's dimensions, any images with a different size or aspect ratio are automatically scaled to fit, so nothing breaks if your source images don't match.</p>
+      <p>Each image you add becomes one frame, shown as a thumbnail in the frame strip above. Frames play back in the order you add them, then loop. Every frame has its own delay, set the global delay and apply it to all of them, or fine-tune individual frames by editing their number right in the strip. Reorder with the &uarr;/&darr; buttons or drop a frame entirely with &times;. The first image you drop in sets the GIF's dimensions, any images with a different size or aspect ratio are automatically scaled to fit, so nothing breaks if your source images don't match.</p>
       <p>Encoding runs in a Web Worker via <a href="https://github.com/jnordberg/gif.js" target="_blank" rel="noopener">gif.js</a>, an open-source client-side GIF encoder, so the browser tab stays responsive even while assembling a larger GIF. Quality trades encode speed against file size: "Best" spends more time finding an accurate color palette per frame, "Fast" is quicker but can look slightly more banded on gradients.</p>
     </div>
 

@@ -12,6 +12,7 @@
     percentInput: document.getElementById("percentInput"),
     lockRatio: document.getElementById("lockRatio"),
     resizeBtn: document.getElementById("resizeBtn"),
+    frameList: document.getElementById("frameList"),
     result: document.getElementById("result"),
     preview: document.getElementById("preview"),
   };
@@ -20,6 +21,7 @@
   let decoded = null;
   let aspectRatio = 1;
   let syncing = false;
+  let strip = null;
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -36,6 +38,8 @@
     els.result.style.display = "none";
     els.preview.style.display = "none";
     els.controls.style.display = "none";
+    els.frameList.style.display = "none";
+    els.frameList.innerHTML = "";
     try {
       decoded = await decodeGifFile(file);
       aspectRatio = decoded.width / decoded.height;
@@ -46,6 +50,8 @@
       els.heightInput.value = decoded.height;
       syncing = false;
       els.controls.style.display = "block";
+      els.frameList.style.display = "flex";
+      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true });
     } catch (err) {
       setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
     }

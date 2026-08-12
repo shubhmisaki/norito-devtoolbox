@@ -67,3 +67,23 @@
   `gifuct` object with `parseGIF()`/`decompressFrames()`, used to decode an existing GIF's frames
   (with correct disposal-method handling) for GIF Compressor, GIF Resizer, GIF Splitter, and Add
   Text to GIF.
+
+- `gifsicle/gifsicle.min.js`: gifsicle-wasm-browser v1.5.19, MIT license for the JS/build wrapper
+  (see `gifsicle/LICENSE-wrapper-MIT.md`), but the actual compression engine it wraps and ships as
+  a compiled WASM binary is **gifsicle itself, GPL-2.0-only** (Eddie Kohler and contributors, see
+  `gifsicle/LICENSE-gifsicle-GPL-2.0.md`, fetched verbatim from
+  https://github.com/kohler/gifsicle/blob/master/COPYING). This is the same compression engine
+  EZGIF's backend runs. https://github.com/renzhezhilu/gifsicle-wasm-browser
+  Installed via `npm install gifsicle-wasm-browser` and copied from `dist/gifsicle.min.js`,
+  unmodified. It's an ES module (`export default gifsicle`) that spins up a Web Worker running the
+  compiled gifsicle binary and talks to it via a CLI-style command string
+  (`gifsicle.run({ input, command })`, e.g. `--lossy=40 --colors=64 -O2 in.gif -o /out/out.gif`) —
+  the same command-line interface gifsicle exposes to any of its users, not a linked-in library
+  call. That "separate process, driven by its normal CLI interface, communicating over a
+  message-passing boundary" shape is the standard way commercial products bundle GPL command-line
+  tools (ffmpeg.wasm being the best-known example) without the surrounding code itself becoming
+  GPL-licensed — GPL-2.0 section 2 explicitly excludes "mere aggregation... on a volume of a
+  storage or distribution medium" from its copyleft requirements. Flagged here for the record since
+  every other vendored library in this project is MIT/Apache; this is the one GPL exception, used
+  only by GIF Compressor for its lossy-compression + optimization pass (frame selection, delay
+  editing, and scaling still happen in norito's own code via gif.js/gifuct-js above).

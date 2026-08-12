@@ -3,12 +3,12 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>GIF Compressor: Shrink Animated GIF File Size | Norito GIF</title>
-<meta name="description" content="Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts." />
+<meta name="description" content="Shrink an animated GIF's file size with real gifsicle-powered lossy compression, right in your browser. No uploads, no accounts." />
 <link rel="canonical" href="https://norito.in/gif/gif-compressor.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="GIF Compressor: Shrink Animated GIF File Size | Norito GIF" />
-<meta property="og:description" content="Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts." />
+<meta property="og:description" content="Shrink an animated GIF's file size with real gifsicle-powered lossy compression, right in your browser. No uploads, no accounts." />
 <meta property="og:url" content="https://norito.in/gif/gif-compressor.html" />
 <meta property="og:site_name" content="norito" />
 <meta property="og:image" content="https://norito.in/assets/og-image.png" />
@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="GIF Compressor: Shrink Animated GIF File Size | Norito GIF" />
-<meta name="twitter:description" content="Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts." />
+<meta name="twitter:description" content="Shrink an animated GIF's file size with real gifsicle-powered lossy compression, right in your browser. No uploads, no accounts." />
 <meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
 <link rel="stylesheet" href="/css/style.css" />
 
@@ -26,7 +26,7 @@
   "@type": "WebApplication",
   "name": "GIF Compressor",
   "url": "https://norito.in/gif/gif-compressor.html",
-  "description": "Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts.",
+  "description": "Shrink an animated GIF's file size with real gifsicle-powered lossy compression, right in your browser. No uploads, no accounts.",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Any (runs in browser)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -38,9 +38,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What actually shrinks the file size?", "acceptedAnswer": { "@type": "Answer", "text": "Three levers, used together or separately: scaling the pixel dimensions down, dropping every Nth frame to reduce the total frame count, and a coarser color quantization pass during re-encoding. Scaling down usually has the biggest effect." } },
-    { "@type": "Question", "name": "Will dropping frames make the animation choppy?", "acceptedAnswer": { "@type": "Answer", "text": "A little, since fewer frames means less smooth motion. The remaining frames' display time is stretched to keep the overall animation length roughly the same, so it plays at a similar speed, just with less in-between motion." } },
-    { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded, resized, and re-encoded entirely in your browser." } }
+    { "@type": "Question", "name": "What actually shrinks the file size?", "acceptedAnswer": { "@type": "Answer", "text": "Scaling the pixel dimensions down, dropping frames, and real gifsicle-powered lossy compression plus frame-difference optimization (storing only what changed between frames, plus an optional reduced color palette). Scaling down and the lossy level usually have the biggest effect." } },
+    { "@type": "Question", "name": "Will dropping frames make the animation choppy?", "acceptedAnswer": { "@type": "Answer", "text": "A little, since fewer frames means less smooth motion. When you use \"Keep frames\" to drop every Nth frame, the remaining frames' display time is stretched to keep the overall animation length roughly the same, so it plays at a similar speed, just with less in-between motion. You can also remove individual frames by hand in the frame strip." } },
+    { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded, resized, and compressed entirely in your browser, including the gifsicle compression step, which runs as WebAssembly in a Web Worker." } }
   ]
 }
 </script>
@@ -86,31 +86,36 @@
         <input type="file" id="fileInput" accept="image/gif" hidden />
       </div>
 
+      <div id="frameList" style="display:none; margin-top:16px;"></div>
+      <div class="frame-strip-toolbar" id="bulkToolbar" style="display:none;">
+        <label>Keep frames
+          <select id="skipSelect">
+            <option value="1" selected>Every frame</option>
+            <option value="2">Every 2nd frame</option>
+            <option value="3">Every 3rd frame</option>
+            <option value="4">Every 4th frame</option>
+          </select>
+        </label>
+        <button type="button" id="applySkipBtn">Apply (resets manual edits below)</button>
+      </div>
+
       <div id="controls" style="display:none; margin-top:16px;">
         <p class="note" id="originalInfo"></p>
+        <div class="field">
+          <label for="scaleInput">Scale (%)</label>
+          <input type="number" id="scaleInput" value="100" min="10" max="100" step="5" />
+        </div>
         <div class="two-col">
           <div class="field">
-            <label for="scaleInput">Scale (%)</label>
-            <input type="number" id="scaleInput" value="100" min="10" max="100" step="5" />
+            <label for="lossyInput">Lossy compression (0&ndash;200)</label>
+            <input type="number" id="lossyInput" value="30" min="0" max="200" step="5" />
           </div>
           <div class="field">
-            <label for="skipSelect">Keep frames</label>
-            <select id="skipSelect">
-              <option value="1" selected>Every frame</option>
-              <option value="2">Every 2nd frame</option>
-              <option value="3">Every 3rd frame</option>
-              <option value="4">Every 4th frame</option>
-            </select>
+            <label class="checkbox-row"><input type="checkbox" id="reduceColorsCheck" /> Reduce colors</label>
+            <input type="number" id="colorsInput" value="128" min="2" max="256" step="1" disabled />
           </div>
         </div>
-        <div class="field">
-          <label for="qualitySelect">Compression</label>
-          <select id="qualitySelect">
-            <option value="10">Light</option>
-            <option value="16" selected>Medium</option>
-            <option value="24">Heavy (smallest)</option>
-          </select>
-        </div>
+        <p class="note">Compression runs on <a href="https://www.lcdf.org/gifsicle/" target="_blank" rel="noopener">gifsicle</a>, the same engine behind most GIF-compression sites, via WebAssembly, entirely in your browser. 0 lossy is visually lossless; 30&ndash;60 is a good balance of size and quality; above 100 gets noisy.</p>
         <button type="button" id="compressBtn">Compress GIF</button>
       </div>
 
@@ -124,8 +129,8 @@
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>The GIF is decoded frame by frame in your browser (handling each frame's disposal method so the full picture is reconstructed correctly, not just the raw delta each frame stores on disk), then re-encoded with whichever levers you set: scaling every frame down to a percentage of the original size, keeping only every 2nd/3rd/4th frame, and/or a coarser color-quantization pass during encoding.</p>
-      <p>Scaling down tends to save the most, a GIF at 50% width and height is roughly a quarter the pixel data. Dropping frames helps most on animations with lots of near-duplicate frames. The compression level controls how carefully the encoder picks each frame's color palette, heavier settings encode faster and produce smaller files at some cost to color accuracy.</p>
+      <p>The GIF is decoded frame by frame in your browser (handling each frame's disposal method so the full picture is reconstructed correctly, not just the raw delta each frame stores on disk) and shown as a thumbnail strip, so you can drop a frame, reorder, or edit an individual delay before compressing. Scaling and any frame edits are applied first, then the result is run through a real WebAssembly build of <a href="https://www.lcdf.org/gifsicle/" target="_blank" rel="noopener">gifsicle</a>, the same compression engine most GIF-compression websites run on their servers, for lossy compression and frame-difference optimization (storing only what changed between frames instead of every full frame).</p>
+      <p>Scaling down tends to save the most, a GIF at 50% width and height is roughly a quarter the pixel data. The lossy level trades a bit of visual noise for a smaller file, 0 keeps it visually lossless, 30&ndash;60 is a good balance, and values past 100 start showing real artifacts. Reducing colors caps the palette size, useful for GIFs that don't need a full 256 colors.</p>
     </div>
 
     <!--INCLUDE:AD-MID-->
@@ -139,15 +144,15 @@ gif-maker.html|GIF Maker|Turn a batch of images into an animated GIF.
     <div class="faq-list">
       <details class="faq-item">
         <summary>What actually shrinks the file size?</summary>
-        <p>Three levers, used together or separately: scaling the pixel dimensions down, dropping every Nth frame to reduce the total frame count, and a coarser color quantization pass during re-encoding. Scaling down usually has the biggest effect.</p>
+        <p>Scaling the pixel dimensions down, dropping frames, and real gifsicle-powered lossy compression plus frame-difference optimization (storing only what changed between frames, plus an optional reduced color palette). Scaling down and the lossy level usually have the biggest effect.</p>
       </details>
       <details class="faq-item">
         <summary>Will dropping frames make the animation choppy?</summary>
-        <p>A little, since fewer frames means less smooth motion. The remaining frames' display time is stretched to keep the overall animation length roughly the same, so it plays at a similar speed, just with less in-between motion.</p>
+        <p>A little, since fewer frames means less smooth motion. When you use "Keep frames" to drop every Nth frame, the remaining frames' display time is stretched to keep the overall animation length roughly the same, so it plays at a similar speed, just with less in-between motion. You can also remove individual frames by hand in the frame strip.</p>
       </details>
       <details class="faq-item">
         <summary>Is my GIF uploaded anywhere?</summary>
-        <p>No, it's decoded, resized, and re-encoded entirely in your browser.</p>
+        <p>No, it's decoded, resized, and compressed entirely in your browser, including the gifsicle compression step, which runs as WebAssembly in a Web Worker.</p>
       </details>
     </div>
   </div>
@@ -158,6 +163,10 @@ gif-maker.html|GIF Maker|Turn a batch of images into an animated GIF.
 <!--INCLUDE:FOOT-SCRIPTS-HEAD-->
 <script src="/js/vendor/gif/gif.js"></script>
 <script src="/js/vendor/gif/gifuct-js.min.js"></script>
+<script type="module">
+  import gifsicle from "/js/vendor/gifsicle/gifsicle.min.js";
+  window.gifsicle = gifsicle;
+</script>
 <script src="/js/gif-common.js"></script>
 <script src="/js/app-gif-compressor.js"></script>
 <!--INCLUDE:FOOT-SCRIPTS-MID-->

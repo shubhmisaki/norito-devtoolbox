@@ -86,6 +86,8 @@
         <input type="file" id="fileInput" accept="image/gif" hidden />
       </div>
 
+      <div id="frameList" style="display:none; margin-top:16px;"></div>
+
       <div id="controls" style="display:none; margin-top:16px;">
         <p class="note" id="originalInfo"></p>
         <div class="field">
@@ -130,7 +132,7 @@
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>Each frame is decoded to a full image, your caption is drawn onto a copy of every single frame at the same position and size (with an optional black outline for readability over busy backgrounds), and the frames are re-encoded into a new GIF. Because the text is drawn fresh on every frame rather than overlaid as a separate layer, the exported file is a normal, single-layer animated GIF that works anywhere GIFs do.</p>
+      <p>Each frame is decoded to a full image and shown as a thumbnail in the frame strip above, so you can see exactly what you're captioning (and drop a frame you don't want with &times; before applying text). Your caption is drawn onto a copy of every remaining frame at the same position and size (with an optional black outline for readability over busy backgrounds), and the frames are re-encoded into a new GIF. Because the text is drawn fresh on every frame rather than overlaid as a separate layer, the exported file is a normal, single-layer animated GIF that works anywhere GIFs do.</p>
       <p>Multi-line text is supported, each line is measured and centered independently so longer captions wrap the way you'd expect.</p>
     </div>
 

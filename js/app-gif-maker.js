@@ -4,13 +4,15 @@
     fileInput: document.getElementById("fileInput"),
     frameList: document.getElementById("frameList"),
     delayInput: document.getElementById("delayInput"),
+    applyDelayBtn: document.getElementById("applyDelayBtn"),
     qualitySelect: document.getElementById("qualitySelect"),
     makeBtn: document.getElementById("makeBtn"),
     result: document.getElementById("result"),
     preview: document.getElementById("preview"),
   };
 
-  let items = []; // [{ file, img, url }]
+  let items = []; // [{ file, img, delay }]
+  let strip = null;
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -18,35 +20,28 @@
     els.result.className = "result-box " + (state || "");
   }
 
+  function onStripChange() {
+    els.makeBtn.disabled = items.length < 1;
+  }
+
   function renderList() {
     if (!items.length) {
       els.frameList.style.display = "none";
+      els.frameList.innerHTML = "";
+      strip = null;
       els.makeBtn.disabled = true;
       return;
     }
     els.frameList.style.display = "flex";
-    els.frameList.style.flexWrap = "wrap";
-    els.frameList.style.gap = "8px";
-    els.frameList.innerHTML = items
-      .map(
-        (it, i) => `<div class="batch-file-row" data-i="${i}" style="display:flex; align-items:center; gap:8px; padding:6px 10px;">
-          <span class="bf-name">${i + 1}. ${escapeHtml(it.file.name)}</span>
-          <button type="button" class="bf-remove" data-i="${i}" aria-label="Remove">&times;</button>
-        </div>`
-      )
-      .join("");
-    els.frameList.querySelectorAll(".bf-remove").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const i = Number(btn.dataset.i);
-        items.splice(i, 1);
-        renderList();
+    if (!strip) {
+      strip = renderFrameStrip(els.frameList, items, {
+        onChange: onStripChange,
+        defaultDelay: Math.max(20, Number(els.delayInput.value) || 200),
       });
-    });
+    } else {
+      strip.refresh();
+    }
     els.makeBtn.disabled = items.length < 1;
-  }
-
-  function escapeHtml(s) {
-    return String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
   async function addFiles(fileList) {
@@ -55,10 +50,11 @@
       setResult("<strong>Those don't look like images.</strong> Choose JPG, PNG, WebP, etc.", "error");
       return;
     }
+    const delay = Math.max(20, Number(els.delayInput.value) || 200);
     for (const file of files) {
       try {
         const { img } = await loadImageFile(file);
-        items.push({ file, img });
+        items.push({ file, img, delay });
       } catch (e) {
         // skip files that fail to decode
       }
@@ -73,6 +69,12 @@
     els.fileInput.click();
   });
 
+  els.applyDelayBtn.addEventListener("click", () => {
+    if (!items.length) return;
+    bulkSetDelay(items, els.delayInput.value);
+    if (strip) strip.refresh();
+  });
+
   els.makeBtn.addEventListener("click", async () => {
     if (items.length < 1) return;
     els.makeBtn.disabled = true;
@@ -81,7 +83,6 @@
     try {
       const width = items[0].img.naturalWidth || items[0].img.width;
       const height = items[0].img.naturalHeight || items[0].img.height;
-      const delay = Math.max(20, Number(els.delayInput.value) || 200);
       const quality = Number(els.qualitySelect.value) || 10;
 
       const frames = items.map((it) => {
@@ -89,7 +90,7 @@
         canvas.width = width;
         canvas.height = height;
         canvas.getContext("2d").drawImage(it.img, 0, 0, width, height);
-        return { canvas, delay };
+        return { canvas, delay: it.delay };
       });
 
       const blob = await encodeGif(frames, {
