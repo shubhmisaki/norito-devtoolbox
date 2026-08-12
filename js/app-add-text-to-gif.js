@@ -18,6 +18,7 @@
   let currentFile = null;
   let decoded = null;
   let strip = null;
+  let busy = false; // true while rendering, so a mid-flight file swap can't pull the rug out
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -26,6 +27,10 @@
   }
 
   async function handleFile(file) {
+    if (busy) {
+      setResult("<strong>Still rendering the previous GIF.</strong> Wait for it to finish first.", "error");
+      return;
+    }
     if (!file || !/image\/gif/.test(file.type)) {
       setResult("<strong>That's not a GIF.</strong> Choose a .gif file.", "error");
       return;
@@ -80,7 +85,7 @@
   }
 
   els.applyBtn.addEventListener("click", async () => {
-    if (!decoded) return;
+    if (!decoded || busy) return;
     const text = els.textInput.value.trim();
     if (!text) {
       setResult("<strong>Enter some caption text first.</strong>", "error");
@@ -94,6 +99,7 @@
       stroke: els.strokeCheck.checked,
     };
 
+    busy = true;
     els.applyBtn.disabled = true;
     els.applyBtn.textContent = "Rendering...";
     els.result.style.display = "none";
@@ -132,6 +138,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't add that caption.</strong> ${err.message || "Try again."}`, "error");
     } finally {
+      busy = false;
       els.applyBtn.disabled = false;
       els.applyBtn.textContent = "Add Text";
     }

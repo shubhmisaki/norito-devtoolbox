@@ -22,6 +22,7 @@
   let aspectRatio = 1;
   let syncing = false;
   let strip = null;
+  let busy = false; // true while resizing, so a mid-flight file swap can't pull the rug out
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -30,6 +31,10 @@
   }
 
   async function handleFile(file) {
+    if (busy) {
+      setResult("<strong>Still resizing the previous GIF.</strong> Wait for it to finish first.", "error");
+      return;
+    }
     if (!file || !/image\/gif/.test(file.type)) {
       setResult("<strong>That's not a GIF.</strong> Choose a .gif file.", "error");
       return;
@@ -100,13 +105,14 @@
   }
 
   els.resizeBtn.addEventListener("click", async () => {
-    if (!decoded) return;
+    if (!decoded || busy) return;
     const { w, h } = targetDims();
     if (!w || !h || w > 4000 || h > 4000) {
       setResult("<strong>Enter valid dimensions.</strong> Width and height must be between 1 and 4000 pixels.", "error");
       return;
     }
 
+    busy = true;
     els.resizeBtn.disabled = true;
     els.resizeBtn.textContent = "Resizing...";
     els.result.style.display = "none";
@@ -143,6 +149,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't resize that GIF.</strong> ${err.message || "Try different dimensions."}`, "error");
     } finally {
+      busy = false;
       els.resizeBtn.disabled = false;
       els.resizeBtn.textContent = "Resize GIF";
     }

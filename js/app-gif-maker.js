@@ -13,6 +13,7 @@
 
   let items = []; // [{ file, img, delay }]
   let strip = null;
+  let busy = false;
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -76,7 +77,8 @@
   });
 
   els.makeBtn.addEventListener("click", async () => {
-    if (items.length < 1) return;
+    if (items.length < 1 || busy) return;
+    busy = true;
     els.makeBtn.disabled = true;
     els.makeBtn.textContent = "Encoding...";
     els.result.style.display = "none";
@@ -117,6 +119,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't create the GIF.</strong> ${err.message || "Try fewer or smaller images."}`, "error");
     } finally {
+      busy = false;
       els.makeBtn.disabled = false;
       els.makeBtn.textContent = "Create GIF";
     }

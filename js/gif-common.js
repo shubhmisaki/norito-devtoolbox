@@ -143,6 +143,13 @@ function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, all
     return t.toDataURL("image/png");
   }
 
+  // Full re-render on every edit would normally drop keyboard focus back to
+  // <body> (the old focused button no longer exists), which is jarring if
+  // you're removing several frames in a row with a screen reader or
+  // keyboard. `pendingFocus` records where focus should land on the next
+  // render, computed by the button handler right before it calls render().
+  let pendingFocus = null;
+
   function render() {
     container.innerHTML = "";
     container.classList.add("frame-strip");
@@ -169,12 +176,14 @@ function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, all
       chip.querySelector(".frame-move-up").addEventListener("click", () => {
         if (i === 0) return;
         [frames[i - 1], frames[i]] = [frames[i], frames[i - 1]];
+        pendingFocus = { index: i - 1, selector: ".frame-move-up" };
         render();
         if (onChange) onChange();
       });
       chip.querySelector(".frame-move-down").addEventListener("click", () => {
         if (i === frames.length - 1) return;
         [frames[i + 1], frames[i]] = [frames[i], frames[i + 1]];
+        pendingFocus = { index: i + 1, selector: ".frame-move-down" };
         render();
         if (onChange) onChange();
       });
@@ -182,12 +191,30 @@ function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, all
         chip.querySelector(".frame-remove").addEventListener("click", () => {
           if (frames.length <= 1) return; // keep at least one frame
           frames.splice(i, 1);
+          // Focus the remove button of whatever frame now sits at this
+          // index, or the previous one if we just removed the last frame.
+          pendingFocus = { index: Math.min(i, frames.length - 1), selector: ".frame-remove" };
           render();
           if (onChange) onChange();
         });
       }
       container.appendChild(chip);
     });
+
+    if (pendingFocus) {
+      const chips = container.querySelectorAll(".frame-chip");
+      const chip = chips[pendingFocus.index];
+      // The intended button (e.g. "move down") can end up disabled after
+      // the re-render (a frame that just moved into the last slot loses its
+      // move-down button), and disabled elements can't receive focus, so
+      // fall back to any other enabled button in the same chip, then to any
+      // enabled button anywhere in the strip.
+      let target = chip && chip.querySelector(pendingFocus.selector);
+      if (!target || target.disabled) target = chip && chip.querySelector("button:not([disabled])");
+      if (!target) target = container.querySelector("button:not([disabled])");
+      if (target) target.focus();
+      pendingFocus = null;
+    }
   }
 
   render();

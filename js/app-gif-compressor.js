@@ -21,6 +21,7 @@
   let decoded = null; // { width, height, frames }, frames is what we actually encode from
   let originalFrames = null; // untouched snapshot from decode, for the "Keep frames" bulk action
   let strip = null;
+  let busy = false; // true while compressing, so a mid-flight file swap can't pull the rug out
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -29,6 +30,10 @@
   }
 
   async function handleFile(file) {
+    if (busy) {
+      setResult("<strong>Still compressing the previous GIF.</strong> Wait for it to finish first.", "error");
+      return;
+    }
     if (!file || !/image\/gif/.test(file.type)) {
       setResult("<strong>That's not a GIF.</strong> Choose a .gif file.", "error");
       return;
@@ -73,7 +78,8 @@
   });
 
   els.compressBtn.addEventListener("click", async () => {
-    if (!decoded || !decoded.frames.length) return;
+    if (!decoded || !decoded.frames.length || busy) return;
+    busy = true;
     const scale = Math.min(100, Math.max(10, Number(els.scaleInput.value) || 100)) / 100;
     const lossy = Math.max(0, Math.min(200, Number(els.lossyInput.value) || 0));
     const colors = els.reduceColorsCheck.checked ? Math.max(2, Math.min(256, Number(els.colorsInput.value) || 128)) : 0;
@@ -127,6 +133,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't compress that GIF.</strong> ${err.message || "Try a lower scale or lossy level."}`, "error");
     } finally {
+      busy = false;
       els.compressBtn.disabled = false;
       els.compressBtn.textContent = "Compress GIF";
     }
