@@ -50,3 +50,20 @@
   a self-contained (asm.js) build of libheif, no separate .wasm file and no network calls, so it
   decodes HEIC/HEIF entirely client-side. Used by the HEIC to JPG/PNG Converter, loaded lazily
   only on that page since it's ~1.3MB.
+
+- `gif/gif.js` + `gif/gif.worker.js`: gif.js v0.2.0, MIT license (see `gif/gif.js.LICENSE.md`).
+  https://github.com/jnordberg/gif.js
+  Installed via `npm install gif.js` and copied from `dist/`, unmodified. Encodes an animated GIF
+  from a sequence of canvas frames using a Web Worker, so encoding doesn't block the main thread.
+  Exposes a global `GIF` constructor; each tool points its `workerScript` option at
+  `/js/vendor/gif/gif.worker.js`. Used by GIF Maker, Video to GIF, GIF Compressor, GIF Resizer,
+  and Add Text to GIF (the Norito GIF suite).
+
+- `gif/gifuct-js.min.js`: gifuct-js v2.1.2, MIT license (see `gif/gifuct-js.LICENSE.md`).
+  https://github.com/matt-way/gifuct-js
+  Installed via `npm install gifuct-js`, then bundled into a single browser-ready IIFE with
+  `esbuild --bundle --format=iife --global-name=gifuct --minify` (no prebuilt UMD/browser dist is
+  published upstream; source is unmodified, only the bundling step is ours). Exposes a global
+  `gifuct` object with `parseGIF()`/`decompressFrames()`, used to decode an existing GIF's frames
+  (with correct disposal-method handling) for GIF Compressor, GIF Resizer, GIF Splitter, and Add
+  Text to GIF.

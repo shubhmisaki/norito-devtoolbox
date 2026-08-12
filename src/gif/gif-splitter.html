@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>GIF Splitter: Extract Frames as Images | Norito GIF</title>
+<meta name="description" content="Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts." />
+<link rel="canonical" href="https://norito.in/gif/gif-splitter.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="GIF Splitter: Extract Frames as Images | Norito GIF" />
+<meta property="og:description" content="Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts." />
+<meta property="og:url" content="https://norito.in/gif/gif-splitter.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GIF Splitter: Extract Frames as Images | Norito GIF" />
+<meta name="twitter:description" content="Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GIF Splitter",
+  "url": "https://norito.in/gif/gif-splitter.html",
+  "description": "Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What format are the extracted frames?", "acceptedAnswer": { "@type": "Answer", "text": "PNG, so transparency is preserved if the GIF used it. Each frame is the fully-composited image at that point in the animation, not just the raw delta GIF frames store on disk." } },
+    { "@type": "Question", "name": "Can I download just one frame?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, each frame thumbnail has its own download button, or use the \"Download all as .zip\" button to get every frame at once." } },
+    { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded and split entirely in your browser." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Norito GIF", "item": "https://norito.in/gif/" },
+    { "@type": "ListItem", "position": 3, "name": "GIF Splitter", "item": "https://norito.in/gif/gif-splitter.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Norito GIF</a> / GIF Splitter</p>
+    <h1>GIF Splitter</h1>
+    <p class="lede">
+      Extract every frame of an animated GIF as a separate PNG image, download individually or all at once.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="field dropzone" id="drop" tabindex="0">
+        <p>Click to choose a GIF, or drag and drop it here.</p>
+        <input type="file" id="fileInput" accept="image/gif" hidden />
+      </div>
+      <p class="note" id="originalInfo" style="display:none;"></p>
+      <div id="frameGrid" style="display:none; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:12px;"></div>
+      <button type="button" id="zipBtn" style="display:none; margin-top:16px;">Download all as .zip</button>
+      <div class="result-box" id="result" style="display:none;"></div>
+    </div>
+
+    <!--INCLUDE:AD-NATIVE-->
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>GIF frames are stored on disk as deltas, each frame often only records the pixels that changed since the last one, with a "disposal method" flag describing whether the previous frame should stay, be cleared, or be restored. Decoding a frame correctly means replaying all of that, not just reading one frame's raw data in isolation, otherwise partial frames come out looking wrong.</p>
+      <p>This tool reconstructs each frame as a complete image, draws it to a canvas, and exports it as a PNG (preserving transparency if the GIF used it). Everything happens locally, nothing is uploaded to decode or split the file.</p>
+    </div>
+
+    <!--INCLUDE:AD-MID-->
+<!--RELATED-TOOLS
+gif-compressor.html|GIF Compressor|Shrink an animated GIF's file size.
+gif-resizer.html|GIF Resizer|Change the width and height of an existing GIF.
+gif-maker.html|GIF Maker|Turn a batch of images into an animated GIF.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What format are the extracted frames?</summary>
+        <p>PNG, so transparency is preserved if the GIF used it. Each frame is the fully-composited image at that point in the animation, not just the raw delta GIF frames store on disk.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I download just one frame?</summary>
+        <p>Yes, each frame thumbnail has its own download button, or use the "Download all as .zip" button to get every frame at once.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my GIF uploaded anywhere?</summary>
+        <p>No, it's decoded and split entirely in your browser.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="/js/vendor/gif/gifuct-js.min.js"></script>
+<script src="/js/gif-common.js"></script>
+<script src="/js/app-gif-splitter.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>GIF Resizer: Change Width and Height | Norito GIF</title>
+<meta name="description" content="Change an animated GIF's width and height, exact pixels or by percentage, right in your browser. No uploads, no accounts." />
+<link rel="canonical" href="https://norito.in/gif/gif-resizer.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="GIF Resizer: Change Width and Height | Norito GIF" />
+<meta property="og:description" content="Change an animated GIF's width and height, exact pixels or by percentage, right in your browser. No uploads, no accounts." />
+<meta property="og:url" content="https://norito.in/gif/gif-resizer.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GIF Resizer: Change Width and Height | Norito GIF" />
+<meta name="twitter:description" content="Change an animated GIF's width and height, exact pixels or by percentage, right in your browser. No uploads, no accounts." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GIF Resizer",
+  "url": "https://norito.in/gif/gif-resizer.html",
+  "description": "Change an animated GIF's width and height, exact pixels or by percentage, right in your browser. No uploads, no accounts.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does resizing also reduce file size?", "acceptedAnswer": { "@type": "Answer", "text": "Usually yes, since a smaller canvas means less pixel data per frame, but that's a side effect. For dedicated file-size control (frame dropping, compression level), use the GIF Compressor instead." } },
+    { "@type": "Question", "name": "Will the animation timing change?", "acceptedAnswer": { "@type": "Answer", "text": "No, resizing only changes each frame's pixel dimensions. The original per-frame delay and frame count are kept exactly as they were." } },
+    { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded, scaled, and re-encoded entirely in your browser." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Norito GIF", "item": "https://norito.in/gif/" },
+    { "@type": "ListItem", "position": 3, "name": "GIF Resizer", "item": "https://norito.in/gif/gif-resizer.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Norito GIF</a> / GIF Resizer</p>
+    <h1>GIF Resizer</h1>
+    <p class="lede">
+      Change an animated GIF's width and height, exact pixels or by percentage, with aspect ratio lock.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="field dropzone" id="drop" tabindex="0">
+        <p>Click to choose a GIF, or drag and drop it here.</p>
+        <input type="file" id="fileInput" accept="image/gif" hidden />
+      </div>
+
+      <div id="controls" style="display:none; margin-top:16px;">
+        <p class="note" id="originalInfo"></p>
+
+        <div class="field">
+          <label for="mode">Mode</label>
+          <select id="mode">
+            <option value="exact">Exact dimensions</option>
+            <option value="percent">Percentage</option>
+          </select>
+        </div>
+        <div class="two-col" id="exactFields">
+          <div class="field">
+            <label for="widthInput">Width (px)</label>
+            <input type="number" id="widthInput" min="1" />
+          </div>
+          <div class="field">
+            <label for="heightInput">Height (px)</label>
+            <input type="number" id="heightInput" min="1" />
+          </div>
+        </div>
+        <div class="field" id="percentFields" style="display:none;">
+          <label for="percentInput">Scale (%)</label>
+          <input type="number" id="percentInput" value="50" min="1" max="500" />
+        </div>
+        <label class="checkbox-row"><input type="checkbox" id="lockRatio" checked /> Lock aspect ratio</label>
+
+        <button type="button" id="resizeBtn">Resize GIF</button>
+      </div>
+
+      <div class="result-box" id="result" style="display:none;"></div>
+      <div style="margin-top:16px; text-align:center;">
+        <img id="preview" alt="Resized GIF preview" style="display:none; max-width:100%; border-radius:8px;" />
+      </div>
+    </div>
+
+    <!--INCLUDE:AD-NATIVE-->
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>Every frame of the GIF is decoded to a full-size image (correctly reconstructed frame by frame, since GIF frames are often just the changed region rather than the whole picture), drawn onto a canvas at the new dimensions, and re-encoded. The original per-frame delay stays untouched, only the pixel dimensions change.</p>
+      <p>Exact mode lets you type a specific width and height, with the aspect-ratio lock keeping them proportional if you only change one. Percentage mode scales both dimensions by the same factor, useful for a quick "make it half size" without doing the math.</p>
+    </div>
+
+    <!--INCLUDE:AD-MID-->
+<!--RELATED-TOOLS
+gif-compressor.html|GIF Compressor|Shrink an animated GIF's file size.
+gif-maker.html|GIF Maker|Turn a batch of images into an animated GIF.
+gif-splitter.html|GIF Splitter|Extract every frame of a GIF as separate images.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Does resizing also reduce file size?</summary>
+        <p>Usually yes, since a smaller canvas means less pixel data per frame, but that's a side effect. For dedicated file-size control (frame dropping, compression level), use the GIF Compressor instead.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will the animation timing change?</summary>
+        <p>No, resizing only changes each frame's pixel dimensions. The original per-frame delay and frame count are kept exactly as they were.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my GIF uploaded anywhere?</summary>
+        <p>No, it's decoded, scaled, and re-encoded entirely in your browser.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="/js/vendor/gif/gif.js"></script>
+<script src="/js/vendor/gif/gifuct-js.min.js"></script>
+<script src="/js/gif-common.js"></script>
+<script src="/js/app-gif-resizer.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

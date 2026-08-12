@@ -3616,6 +3616,41 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/find-and-replace.html" />
   </url>
   <url>
+    <loc>https://norito.in/gif/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/gif/add-text-to-gif.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/gif/gif-compressor.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/gif/gif-maker.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/gif/gif-resizer.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/gif/gif-splitter.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/gif/video-to-gif.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://norito.in/gitignore-generator.html</loc>
     <lastmod>2026-08-02</lastmod>
     <priority>0.8</priority>

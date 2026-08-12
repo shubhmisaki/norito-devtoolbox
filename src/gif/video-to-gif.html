@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>Video to GIF Converter | Norito GIF</title>
+<meta name="description" content="Convert a video clip into an animated GIF, right in your browser. Pick the start/end time and frame rate. No uploads, no accounts." />
+<link rel="canonical" href="https://norito.in/gif/video-to-gif.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Video to GIF Converter | Norito GIF" />
+<meta property="og:description" content="Convert a video clip into an animated GIF, right in your browser. Pick the start/end time and frame rate. No uploads, no accounts." />
+<meta property="og:url" content="https://norito.in/gif/video-to-gif.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Video to GIF Converter | Norito GIF" />
+<meta name="twitter:description" content="Convert a video clip into an animated GIF, right in your browser. Pick the start/end time and frame rate. No uploads, no accounts." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Video to GIF Converter",
+  "url": "https://norito.in/gif/video-to-gif.html",
+  "description": "Convert a video clip into an animated GIF, right in your browser. Pick the start/end time and frame rate. No uploads, no accounts.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What video formats work?", "acceptedAnswer": { "@type": "Answer", "text": "Anything your browser can play natively, typically MP4 (H.264), WebM, and MOV. There's no server-side transcoding, playback happens in a plain <video> element." } },
+    { "@type": "Question", "name": "Why is there a frame limit?", "acceptedAnswer": { "@type": "Answer", "text": "Each frame is captured and encoded in your browser tab, not on a server, so very long clips at a high frame rate can use a lot of memory and time. Keeping clips short (a few seconds) and the frame rate modest gives the best result." } },
+    { "@type": "Question", "name": "Is my video uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. The video never leaves your device, frames are captured straight from the video element onto a canvas and encoded locally." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Norito GIF", "item": "https://norito.in/gif/" },
+    { "@type": "ListItem", "position": 3, "name": "Video to GIF", "item": "https://norito.in/gif/video-to-gif.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M10 9v6l5-3z"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Norito GIF</a> / Video to GIF</p>
+    <h1>Video to GIF</h1>
+    <p class="lede">
+      Turn a clip from a video file into an animated GIF. Pick the range and frame rate, everything renders locally.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="field dropzone" id="drop" tabindex="0">
+        <p>Click to choose a video, or drag and drop it here.</p>
+        <input type="file" id="fileInput" accept="video/*" hidden />
+      </div>
+
+      <div id="videoWrap" style="display:none; margin-top:16px;">
+        <video id="videoPreview" controls style="max-width:100%; border-radius:8px;"></video>
+        <p class="note" id="videoInfo"></p>
+
+        <div class="two-col" style="margin-top:12px;">
+          <div class="field">
+            <label for="startInput">Start time (sec)</label>
+            <input type="number" id="startInput" value="0" min="0" step="0.1" />
+          </div>
+          <div class="field">
+            <label for="endInput">End time (sec)</label>
+            <input type="number" id="endInput" value="3" min="0.1" step="0.1" />
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="field">
+            <label for="fpsSelect">Frame rate</label>
+            <select id="fpsSelect">
+              <option value="5">5 fps</option>
+              <option value="10" selected>10 fps</option>
+              <option value="15">15 fps</option>
+              <option value="20">20 fps</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="widthInput">Max width (px)</label>
+            <input type="number" id="widthInput" value="480" min="80" max="1280" step="10" />
+          </div>
+        </div>
+
+        <button type="button" id="convertBtn">Convert to GIF</button>
+      </div>
+
+      <div class="result-box" id="result" style="display:none;"></div>
+      <div style="margin-top:16px; text-align:center;">
+        <img id="preview" alt="Generated GIF preview" style="display:none; max-width:100%; border-radius:8px;" />
+      </div>
+    </div>
+
+    <!--INCLUDE:AD-NATIVE-->
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The video plays in a plain <code>&lt;video&gt;</code> element in your tab. To capture a frame, the tool seeks the video to a specific timestamp, waits for the browser to report that frame is actually decoded, then draws it onto a canvas. It repeats this at your chosen frame rate across the start/end range you set, scaling each frame down to the max width if the source is larger.</p>
+      <p>Frame capture is capped at 300 frames total (so, for example, 10 fps tops out around a 30-second range) to keep the tab responsive, longer or higher-fps requests are automatically clamped. Once every frame is captured, they're handed to the same <a href="https://github.com/jnordberg/gif.js" target="_blank" rel="noopener">gif.js</a> encoder GIF Maker uses.</p>
+    </div>
+
+    <!--INCLUDE:AD-MID-->
+<!--RELATED-TOOLS
+gif-maker.html|GIF Maker|Turn a batch of images into an animated GIF.
+gif-compressor.html|GIF Compressor|Shrink an animated GIF's file size.
+gif-resizer.html|GIF Resizer|Change the width and height of an existing GIF.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What video formats work?</summary>
+        <p>Anything your browser can play natively, typically MP4 (H.264), WebM, and MOV. There's no server-side transcoding, playback happens in a plain &lt;video&gt; element.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is there a frame limit?</summary>
+        <p>Each frame is captured and encoded in your browser tab, not on a server, so very long clips at a high frame rate can use a lot of memory and time. Keeping clips short (a few seconds) and the frame rate modest gives the best result.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my video uploaded anywhere?</summary>
+        <p>No. The video never leaves your device, frames are captured straight from the video element onto a canvas and encoded locally.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="/js/vendor/gif/gif.js"></script>
+<script src="/js/gif-common.js"></script>
+<script src="/js/app-video-to-gif.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->

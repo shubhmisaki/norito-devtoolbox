@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INCLUDE:HEAD-COMMON-->
+<title>GIF Compressor: Shrink Animated GIF File Size | Norito GIF</title>
+<meta name="description" content="Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts." />
+<link rel="canonical" href="https://norito.in/gif/gif-compressor.html" />
+<!--INCLUDE:HREFLANG-AUTO-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="GIF Compressor: Shrink Animated GIF File Size | Norito GIF" />
+<meta property="og:description" content="Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts." />
+<meta property="og:url" content="https://norito.in/gif/gif-compressor.html" />
+<meta property="og:site_name" content="norito" />
+<meta property="og:image" content="https://norito.in/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GIF Compressor: Shrink Animated GIF File Size | Norito GIF" />
+<meta name="twitter:description" content="Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts." />
+<meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GIF Compressor",
+  "url": "https://norito.in/gif/gif-compressor.html",
+  "description": "Shrink an animated GIF's file size by scaling it down or dropping frames, right in your browser. No uploads, no accounts.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebSite", "name": "norito", "url": "https://norito.in/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What actually shrinks the file size?", "acceptedAnswer": { "@type": "Answer", "text": "Three levers, used together or separately: scaling the pixel dimensions down, dropping every Nth frame to reduce the total frame count, and a coarser color quantization pass during re-encoding. Scaling down usually has the biggest effect." } },
+    { "@type": "Question", "name": "Will dropping frames make the animation choppy?", "acceptedAnswer": { "@type": "Answer", "text": "A little, since fewer frames means less smooth motion. The remaining frames' display time is stretched to keep the overall animation length roughly the same, so it plays at a similar speed, just with less in-between motion." } },
+    { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded, resized, and re-encoded entirely in your browser." } }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "norito", "item": "https://norito.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Norito GIF", "item": "https://norito.in/gif/" },
+    { "@type": "ListItem", "position": 3, "name": "GIF Compressor", "item": "https://norito.in/gif/gif-compressor.html" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!--INCLUDE:HEADER:standard-->
+
+<main>
+  <div class="wrap">
+    <!--INCLUDE:AD-TOP-->
+    <div class="tool-hero">
+    <div class="tool-hero-icon icon-chip c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg></div>
+    <div class="tool-hero-text">
+    <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Norito GIF</a> / GIF Compressor</p>
+    <h1>GIF Compressor</h1>
+    <p class="lede">
+      Shrink an animated GIF's file size by scaling it down, dropping frames, or both. Everything runs in your browser.
+    </p>
+    </div>
+  </div>
+
+    <div class="panel">
+      <div class="field dropzone" id="drop" tabindex="0">
+        <p>Click to choose a GIF, or drag and drop it here.</p>
+        <input type="file" id="fileInput" accept="image/gif" hidden />
+      </div>
+
+      <div id="controls" style="display:none; margin-top:16px;">
+        <p class="note" id="originalInfo"></p>
+        <div class="two-col">
+          <div class="field">
+            <label for="scaleInput">Scale (%)</label>
+            <input type="number" id="scaleInput" value="100" min="10" max="100" step="5" />
+          </div>
+          <div class="field">
+            <label for="skipSelect">Keep frames</label>
+            <select id="skipSelect">
+              <option value="1" selected>Every frame</option>
+              <option value="2">Every 2nd frame</option>
+              <option value="3">Every 3rd frame</option>
+              <option value="4">Every 4th frame</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="qualitySelect">Compression</label>
+          <select id="qualitySelect">
+            <option value="10">Light</option>
+            <option value="16" selected>Medium</option>
+            <option value="24">Heavy (smallest)</option>
+          </select>
+        </div>
+        <button type="button" id="compressBtn">Compress GIF</button>
+      </div>
+
+      <div class="result-box" id="result" style="display:none;"></div>
+      <div style="margin-top:16px; text-align:center;">
+        <img id="preview" alt="Compressed GIF preview" style="display:none; max-width:100%; border-radius:8px;" />
+      </div>
+    </div>
+
+    <!--INCLUDE:AD-NATIVE-->
+
+    <div class="explain-panel">
+      <h2>How it works</h2>
+      <p>The GIF is decoded frame by frame in your browser (handling each frame's disposal method so the full picture is reconstructed correctly, not just the raw delta each frame stores on disk), then re-encoded with whichever levers you set: scaling every frame down to a percentage of the original size, keeping only every 2nd/3rd/4th frame, and/or a coarser color-quantization pass during encoding.</p>
+      <p>Scaling down tends to save the most, a GIF at 50% width and height is roughly a quarter the pixel data. Dropping frames helps most on animations with lots of near-duplicate frames. The compression level controls how carefully the encoder picks each frame's color palette, heavier settings encode faster and produce smaller files at some cost to color accuracy.</p>
+    </div>
+
+    <!--INCLUDE:AD-MID-->
+<!--RELATED-TOOLS
+gif-resizer.html|GIF Resizer|Change the width and height of an existing GIF.
+gif-splitter.html|GIF Splitter|Extract every frame of a GIF as separate images.
+gif-maker.html|GIF Maker|Turn a batch of images into an animated GIF.
+-->
+
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What actually shrinks the file size?</summary>
+        <p>Three levers, used together or separately: scaling the pixel dimensions down, dropping every Nth frame to reduce the total frame count, and a coarser color quantization pass during re-encoding. Scaling down usually has the biggest effect.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will dropping frames make the animation choppy?</summary>
+        <p>A little, since fewer frames means less smooth motion. The remaining frames' display time is stretched to keep the overall animation length roughly the same, so it plays at a similar speed, just with less in-between motion.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my GIF uploaded anywhere?</summary>
+        <p>No, it's decoded, resized, and re-encoded entirely in your browser.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<!--INCLUDE:FOOTER:standard-->
+
+<!--INCLUDE:FOOT-SCRIPTS-HEAD-->
+<script src="/js/vendor/gif/gif.js"></script>
+<script src="/js/vendor/gif/gifuct-js.min.js"></script>
+<script src="/js/gif-common.js"></script>
+<script src="/js/app-gif-compressor.js"></script>
+<!--INCLUDE:FOOT-SCRIPTS-MID-->
+<!--INCLUDE:CMDK-OVERLAY-->
+
+<!--INCLUDE:FOOT-SCRIPTS-TAIL-->
