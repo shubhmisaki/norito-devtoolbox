@@ -132,20 +132,51 @@ image paste doesn't map to what those accept.
 ## Tier 3 — Heavier / structural work
 
 ### 6. Developer nav dropdown has 27 flat, ungrouped links
-The Developer mega-menu panel lists all 27 tools as one undifferentiated
-list — no sub-headers, no grouping. That's a direct Hick's Law and
-Miller's Law violation (Laws of UX; also "group related items" from the
-58-rules article): more choices than working memory can hold, presented
-with no chunking to reduce the scan cost. Images (13) and Design (14) are
-milder versions of the same issue. Cmd-K search mitigates this for users
-who already know what they want, but the nav itself doesn't help someone
-browsing. Fixing it well means an actual IA decision first (e.g.
-sub-groups like "Formatters," "Converters," "Generators," "Inspectors"
-within Developer), then touching the nav-panel CSS, the shared EN header
-partial, and all 6 locale header partials, plus deciding whether
-`tools.html` and the category hub pages should mirror the same grouping
-for consistency (NN Heuristic #4). This is a content-and-IA decision
-before it's an implementation task.
+
+**Status: done for Developer (commit pending).** Rebuilt as a 3-column mega
+dropdown, grouped by what the tool actually does rather than left flat:
+
+- **Formatters & Converters** (10): JSON Formatter, Markdown Editor, CSV
+  Viewer, Base64 Encode/Decode, CSV to JSON, YAML to JSON, Number Base
+  Converter, URL Encoder/Decoder, HTML Entity Encoder, Timestamp Converter.
+- **Generators** (8): Test File Generator, UUID Generator, Hash Generator,
+  .gitignore Generator, JSON Schema Generator, SVG Sprite Generator, SVG to
+  React Component, SVG Optimizer.
+- **Parsers, Diff & Inspectors** (9): JWT Decoder, User-Agent Parser, URL
+  Parser, Cron Expression Parser, CSS Specificity Calculator, CSS Variable
+  Extractor, Regex Tester, JSON Diff, Text Diff.
+
+All 27 tools are visible at once, no scrolling, replacing the old
+300-400px single column that needed a scrollbar to see everything —
+directly addresses Hick's Law and Miller's Law (Laws of UX) and "group
+related items" (the 58-rules article). Implemented as a new
+`.nav-panel-mega` CSS grid (3 columns on desktop, collapses to the
+existing single-column mobile accordion under 760px — the site has no
+separate mobile markup, so the same panel needs to work both ways) and
+replicated across all 6 locale headers with translated group headings,
+reusing each locale's existing translated link labels rather than
+retranslating anything. Verified structurally in jsdom: 27 unique links in
+every locale, correct headings, `nav.js`'s hamburger injection and link
+matching unaffected (it does `querySelectorAll("a")`, which finds links at
+any nesting depth).
+
+Scoped to Developer only for this pass — it's the clear violator at 27
+items. Images (13) and Design (14) are milder versions of the same issue
+and were intentionally left as single-column dropdowns; worth revisiting
+the same way if they start feeling cramped, but didn't want to restructure
+7 more locale files without being asked.
+
+**Unrelated bug surfaced during verification, not fixed (out of scope for
+this item):** `js/nav.js`'s active-link highlighting compares
+`location.pathname.split("/").pop()` (e.g. `"json-formatter.html"`,
+no leading slash) against each link's raw `href` attribute (e.g.
+`"/json-formatter.html"`, with a leading slash) — these can never be
+`===` equal, so the "you are here" bolding in the nav dropdown and category
+pill doesn't appear to fire on any page. Confirmed this reproduces
+identically on nav groups the mega-dropdown work never touched, so it
+predates this pass. Flagging it here since I found it, not fixing it here
+since it's a functional bug, not one of the heuristic/law violations this
+audit is about.
 
 ### 7. Above-the-fold ad placement on every tool page
 `AD-TOP` renders before the tool-hero on every tool page — a first-time
