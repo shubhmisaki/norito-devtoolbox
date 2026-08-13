@@ -50,8 +50,10 @@
     els.frameList.innerHTML = "";
     els.presetResults.style.display = "none";
     els.presetResults.innerHTML = "";
+    setResult(`<strong>Reading ${file.name}...</strong>`, "");
     try {
       decoded = await decodeGifFile(file);
+      els.result.style.display = "none";
       originalFrames = decoded.frames.map((f) => Object.assign({}, f));
       els.originalInfo.textContent =
         `${file.name}: ${decoded.width}×${decoded.height}, ${decoded.frames.length} frames, ${formatBytes(file.size)}`;
@@ -63,7 +65,7 @@
       // reordering -- neither affects file size, so they're not shown here.
       strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true, allowReorder: false, allowDelayEdit: false });
     } catch (err) {
-      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
+      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message ? err.message + " " : ""}Try a different file.`, "error");
     }
   }
 
@@ -157,7 +159,7 @@
       els.result.scrollIntoView({ behavior: "smooth", block: "center" });
       if (typeof celebrateSuccess === "function") celebrateSuccess(els.compressBtn, els.result);
     } catch (err) {
-      setResult(`<strong>Couldn't compress that GIF.</strong> ${err.message || "Try a lower scale or lossy level."}`, "error");
+      setResult(`<strong>Couldn't compress that GIF.</strong> ${err.message ? err.message + " " : ""}Try a lower scale or lossy level.`, "error");
     } finally {
       busy = false;
       els.compressBtn.disabled = false;
@@ -207,7 +209,7 @@
       els.presetResults.style.display = "flex";
       els.presetResults.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {
-      setResult(`<strong>Couldn't generate preview compressions.</strong> ${err.message || "Try again."}`, "error");
+      setResult(`<strong>Couldn't generate preview compressions.</strong> ${err.message ? err.message + " " : ""}Try again.`, "error");
     } finally {
       busy = false;
       els.compressBtn.disabled = false;

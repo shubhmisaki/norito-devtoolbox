@@ -10,6 +10,7 @@
     fpsSelect: document.getElementById("fpsSelect"),
     widthInput: document.getElementById("widthInput"),
     convertBtn: document.getElementById("convertBtn"),
+    cancelBtn: document.getElementById("cancelBtn"),
     result: document.getElementById("result"),
     preview: document.getElementById("preview"),
   };
@@ -18,6 +19,7 @@
   let currentUrl = null;
   let videoDuration = 0;
   let videoW = 0, videoH = 0;
+  let busy = false; // true while capturing/encoding, so a mid-flight file swap can't re-seek the same <video> out from under the running loop
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -26,6 +28,10 @@
   }
 
   function handleFile(file) {
+    if (busy) {
+      setResult("<strong>Still converting the previous video.</strong> Wait for it to finish, or cancel it, first.", "error");
+      return;
+    }
     if (!file || !file.type.startsWith("video/")) {
       setResult("<strong>That's not a video.</strong> Choose an MP4, WebM, or MOV file.", "error");
       return;
@@ -36,6 +42,7 @@
     els.videoWrap.style.display = "block";
     els.result.style.display = "none";
     els.preview.style.display = "none";
+    els.videoInfo.textContent = "Loading video...";
 
     els.videoPreview.onloadedmetadata = () => {
       videoDuration = els.videoPreview.duration;
@@ -43,16 +50,52 @@
       videoH = els.videoPreview.videoHeight;
       els.videoInfo.textContent = `${file.name}, ${videoW}×${videoH}, ${videoDuration.toFixed(1)}s, ${formatBytes(file.size)}`;
       els.startInput.value = 0;
+      els.startInput.max = videoDuration.toFixed(1);
       els.endInput.value = Math.min(3, videoDuration).toFixed(1);
       els.endInput.max = videoDuration.toFixed(1);
+      els.endInput.min = 0.1;
     };
   }
+
+  // Keep start < end without waiting for the "end before start" error to
+  // fire after clicking Convert -- adjusting one nudges the other so an
+  // invalid range is harder to end up with in the first place.
+  els.startInput.addEventListener("change", () => {
+    const start = Math.max(0, Number(els.startInput.value) || 0);
+    els.startInput.value = start;
+    if (Number(els.endInput.value) <= start) {
+      els.endInput.value = Math.min(videoDuration, start + 1).toFixed(1);
+    }
+  });
+  els.endInput.addEventListener("change", () => {
+    const end = Math.max(0.1, Number(els.endInput.value) || 0.1);
+    els.endInput.value = end;
+    if (Number(els.startInput.value) >= end) {
+      els.startInput.value = Math.max(0, end - 1).toFixed(1);
+    }
+  });
 
   els.fileInput.addEventListener("change", () => handleFile(els.fileInput.files[0]));
   wireDragDrop(els.drop, (e) => handleFile(e.dataTransfer.files[0]));
   els.drop.addEventListener("click", (e) => {
     if (e.target === els.fileInput) return;
     els.fileInput.click();
+  });
+
+  let activeGif = null;
+  let cancelRequested = false;
+
+  function cancelledError() {
+    const err = new Error("Cancelled.");
+    err.cancelled = true;
+    return err;
+  }
+
+  els.cancelBtn.addEventListener("click", () => {
+    cancelRequested = true;
+    if (activeGif) activeGif.abort();
+    els.cancelBtn.disabled = true;
+    els.cancelBtn.textContent = "Cancelling...";
   });
 
   function seekAndDraw(video, canvas, ctx, t) {
@@ -72,6 +115,7 @@
   }
 
   els.convertBtn.addEventListener("click", async () => {
+    if (busy) return;
     const start = Math.max(0, Number(els.startInput.value) || 0);
     const end = Math.min(videoDuration, Number(els.endInput.value) || 0);
     const fps = Number(els.fpsSelect.value) || 10;
@@ -92,8 +136,13 @@
     const outW = Math.round(videoW * scale);
     const outH = Math.round(videoH * scale);
 
+    busy = true;
+    cancelRequested = false;
     els.convertBtn.disabled = true;
     els.convertBtn.textContent = "Capturing frames...";
+    els.cancelBtn.style.display = "inline-block";
+    els.cancelBtn.disabled = false;
+    els.cancelBtn.textContent = "Cancel";
     els.result.style.display = "none";
 
     try {
@@ -106,6 +155,7 @@
 
       els.videoPreview.pause();
       for (let i = 0; i < frameCount; i++) {
+        if (cancelRequested) throw cancelledError();
         const t = start + i / effectiveFps;
         await seekAndDraw(els.videoPreview, canvas, ctx, Math.min(t, videoDuration - 0.01));
         const frameCanvas = document.createElement("canvas");
@@ -115,12 +165,14 @@
         frames.push({ canvas: frameCanvas, delay });
         els.convertBtn.textContent = `Capturing frames... ${i + 1}/${frameCount}`;
       }
+      if (cancelRequested) throw cancelledError();
 
       els.convertBtn.textContent = "Encoding...";
       const blob = await encodeGif(frames, {
         width: outW,
         height: outH,
         quality: 10,
+        onStart: (gif) => { activeGif = gif; },
         onProgress: (f) => { els.convertBtn.textContent = `Encoding... ${Math.round(f * 100)}%`; },
       });
 
@@ -137,10 +189,17 @@
       els.result.scrollIntoView({ behavior: "smooth", block: "center" });
       if (typeof celebrateSuccess === "function") celebrateSuccess(els.convertBtn, els.result);
     } catch (err) {
-      setResult(`<strong>Couldn't convert that video.</strong> ${err.message || "Try a shorter range."}`, "error");
+      if (err && err.cancelled) {
+        setResult("<strong>Cancelled.</strong> No GIF was created.", "");
+      } else {
+        setResult(`<strong>Couldn't convert that video.</strong> ${err.message ? err.message + " " : ""}Try a shorter range or lower frame rate.`, "error");
+      }
     } finally {
+      busy = false;
+      activeGif = null;
       els.convertBtn.disabled = false;
       els.convertBtn.textContent = "Convert to GIF";
+      els.cancelBtn.style.display = "none";
     }
   });
 })();

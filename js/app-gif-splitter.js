@@ -87,9 +87,11 @@
     els.originalInfo.style.display = "none";
     decoded = null;
     frameBlobs = [];
+    setResult(`<strong>Reading ${file.name}...</strong>`, "");
 
     try {
       decoded = await decodeGifFile(file);
+      els.result.style.display = "none";
       els.originalInfo.textContent =
         `${file.name}: ${decoded.width}×${decoded.height}, ${decoded.frames.length} frames, ${formatBytes(file.size)}`;
       els.originalInfo.style.display = "block";
@@ -101,7 +103,7 @@
       els.spriteCols.max = decoded.frames.length;
       els.spriteToolbar.style.display = "flex";
     } catch (err) {
-      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
+      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message ? err.message + " " : ""}Try a different file.`, "error");
     }
   }
 
@@ -126,7 +128,7 @@
       setResult(`<strong>Downloaded sprite sheet.</strong> ${cols}&times;${rows} grid, ${formatBytes(blob.size)}.`, "ok");
       if (typeof celebrateSuccess === "function") celebrateSuccess(els.spriteBtn, els.result, "Downloaded");
     } catch (err) {
-      setResult(`<strong>Couldn't build the sprite sheet.</strong> ${err.message || "Try again."}`, "error");
+      setResult(`<strong>Couldn't build the sprite sheet.</strong> ${err.message ? err.message + " " : ""}Try again.`, "error");
     } finally {
       els.spriteBtn.disabled = false;
       els.spriteBtn.textContent = "Download as sprite sheet";

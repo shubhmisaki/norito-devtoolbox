@@ -24,6 +24,7 @@
     cropH: document.getElementById("cropH"),
     resetCropBtn: document.getElementById("resetCropBtn"),
     resizeBtn: document.getElementById("resizeBtn"),
+    cancelBtn: document.getElementById("cancelBtn"),
     frameList: document.getElementById("frameList"),
     result: document.getElementById("result"),
     preview: document.getElementById("preview"),
@@ -36,6 +37,13 @@
   let strip = null;
   let busy = false; // true while resizing, so a mid-flight file swap can't pull the rug out
   let cropRectPx = null; // { x, y, w, h } in actual GIF pixel coordinates
+  let activeGif = null;
+
+  els.cancelBtn.addEventListener("click", () => {
+    if (activeGif) activeGif.abort();
+    els.cancelBtn.disabled = true;
+    els.cancelBtn.textContent = "Cancelling...";
+  });
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -58,8 +66,10 @@
     els.controls.style.display = "none";
     els.frameList.style.display = "none";
     els.frameList.innerHTML = "";
+    setResult(`<strong>Reading ${file.name}...</strong>`, "");
     try {
       decoded = await decodeGifFile(file);
+      els.result.style.display = "none";
       aspectRatio = decoded.width / decoded.height;
       els.originalInfo.textContent =
         `${file.name}: ${decoded.width}×${decoded.height}, ${decoded.frames.length} frames, ${formatBytes(file.size)}`;
@@ -75,7 +85,7 @@
       initCrop();
       updateModeUI();
     } catch (err) {
-      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
+      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message ? err.message + " " : ""}Try a different file.`, "error");
     }
   }
 
@@ -277,6 +287,9 @@
     busy = true;
     els.resizeBtn.disabled = true;
     els.resizeBtn.textContent = mode === "crop" ? "Cropping..." : "Resizing...";
+    els.cancelBtn.style.display = "inline-block";
+    els.cancelBtn.disabled = false;
+    els.cancelBtn.textContent = "Cancel";
     els.result.style.display = "none";
 
     try {
@@ -299,6 +312,7 @@
         width: w,
         height: h,
         quality: 10,
+        onStart: (gif) => { activeGif = gif; },
         onProgress: (f) => { els.resizeBtn.textContent = `${mode === "crop" ? "Cropping" : "Resizing"}... ${Math.round(f * 100)}%`; },
       });
 
@@ -315,11 +329,17 @@
       els.result.scrollIntoView({ behavior: "smooth", block: "center" });
       if (typeof celebrateSuccess === "function") celebrateSuccess(els.resizeBtn, els.result);
     } catch (err) {
-      setResult(`<strong>Couldn't ${mode === "crop" ? "crop" : "resize"} that GIF.</strong> ${err.message || "Try different values."}`, "error");
+      if (err && err.cancelled) {
+        setResult("<strong>Cancelled.</strong> No file was created.", "");
+      } else {
+        setResult(`<strong>Couldn't ${mode === "crop" ? "crop" : "resize"} that GIF.</strong> ${err.message ? err.message + " " : ""}Try different values.`, "error");
+      }
     } finally {
       busy = false;
+      activeGif = null;
       els.resizeBtn.disabled = false;
       els.resizeBtn.textContent = "Resize GIF";
+      els.cancelBtn.style.display = "none";
     }
   });
 })();

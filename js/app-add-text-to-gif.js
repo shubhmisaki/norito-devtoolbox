@@ -9,6 +9,7 @@
     captionsList: document.getElementById("captionsList"),
     addCaptionBtn: document.getElementById("addCaptionBtn"),
     applyBtn: document.getElementById("applyBtn"),
+    cancelBtn: document.getElementById("cancelBtn"),
     frameList: document.getElementById("frameList"),
     result: document.getElementById("result"),
     preview: document.getElementById("preview"),
@@ -30,12 +31,19 @@
   let captions = [];
   let busy = false; // true while rendering, so a mid-flight file swap can't pull the rug out
   let previewTimer = null;
+  let activeGif = null;
 
   function setResult(html, state) {
     els.result.innerHTML = html;
     els.result.style.display = "block";
     els.result.className = "result-box " + (state || "");
   }
+
+  els.cancelBtn.addEventListener("click", () => {
+    if (activeGif) activeGif.abort();
+    els.cancelBtn.disabled = true;
+    els.cancelBtn.textContent = "Cancelling...";
+  });
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -198,22 +206,27 @@
             <label class="checkbox-row" style="margin-top:24px;"><input type="checkbox" class="cap-outline" ${cap.outline ? "checked" : ""} /> Outline</label>
           </div>
         </div>
-        <div class="two-col cap-outline-fields" style="${cap.outline ? "" : "display:none;"}">
-          <div class="field"><label>Outline color</label><input type="color" class="cap-outline-color" value="${cap.outlineColor}" /></div>
-          <div class="field"><label>Outline width (px)</label><input type="number" class="cap-outline-width" min="1" max="20" value="${cap.outlineWidth}" /></div>
-        </div>
         <div class="field">
           <label class="checkbox-row"><input type="checkbox" class="cap-bg" ${cap.bg ? "checked" : ""} /> Background box</label>
         </div>
-        <div class="two-col cap-bg-fields" style="${cap.bg ? "" : "display:none;"}">
-          <div class="field"><label>Box color</label><input type="color" class="cap-bg-color" value="${cap.bgColor}" /></div>
-          <div class="field"><label>Box opacity (%)</label><input type="number" class="cap-bg-opacity" min="0" max="100" value="${cap.bgOpacity}" /></div>
-        </div>
-        <div class="two-col">
+        <details class="cap-advanced">
+          <summary>Advanced style (outline &amp; background box details)</summary>
+          <div class="two-col cap-outline-fields" style="${cap.outline ? "" : "display:none;"} margin-top:10px;">
+            <div class="field"><label>Outline color</label><input type="color" class="cap-outline-color" value="${cap.outlineColor}" /></div>
+            <div class="field"><label>Outline width (px)</label><input type="number" class="cap-outline-width" min="1" max="20" value="${cap.outlineWidth}" /></div>
+          </div>
+          <div class="two-col cap-bg-fields" style="${cap.bg ? "" : "display:none;"} margin-top:10px;">
+            <div class="field"><label>Box color</label><input type="color" class="cap-bg-color" value="${cap.bgColor}" /></div>
+            <div class="field"><label>Box opacity (%)</label><input type="number" class="cap-bg-opacity" min="0" max="100" value="${cap.bgOpacity}" /></div>
+          </div>
+          <p class="note" style="margin-top:6px;">These only apply once Outline or Background box above is turned on.</p>
+        </details>
+        ${captions.length > 1 ? `
+        <div class="two-col" style="margin-top:10px;">
           <div class="field"><label>Show from frame</label><input type="number" class="cap-start" min="1" max="${decoded.frames.length}" value="${cap.startFrame + 1}" /></div>
           <div class="field"><label>Show until frame</label><input type="number" class="cap-end" min="1" max="${decoded.frames.length}" value="${cap.endFrame + 1}" /></div>
         </div>
-        ${captions.length > 1 ? `<button type="button" class="cap-remove" style="margin-top:8px;">Remove this caption</button>` : ""}
+        <button type="button" class="cap-remove" style="margin-top:8px;">Remove this caption</button>` : ""}
       `;
       panel.querySelector(".cap-font").value = cap.font;
       wireCaptionPanel(panel, cap, i);
@@ -257,22 +270,29 @@
       schedulePreview();
     });
 
-    panel.querySelector(".cap-start").addEventListener("change", (e) => {
-      const v = Math.max(1, Math.min(decoded.frames.length, Number(e.target.value) || 1));
-      cap.startFrame = v - 1;
-      if (cap.startFrame > cap.endFrame) cap.endFrame = cap.startFrame;
-      e.target.value = cap.startFrame + 1;
-      panel.querySelector(".cap-end").value = cap.endFrame + 1;
-      schedulePreview();
-    });
-    panel.querySelector(".cap-end").addEventListener("change", (e) => {
-      const v = Math.max(1, Math.min(decoded.frames.length, Number(e.target.value) || decoded.frames.length));
-      cap.endFrame = v - 1;
-      if (cap.endFrame < cap.startFrame) cap.startFrame = cap.endFrame;
-      e.target.value = cap.endFrame + 1;
-      panel.querySelector(".cap-start").value = cap.startFrame + 1;
-      schedulePreview();
-    });
+    // Frame-range fields only exist in the DOM once there's more than one
+    // caption (a single caption spans the whole GIF by default -- showing
+    // "from frame 1 to frame N" for it would just be noise).
+    const startInput = panel.querySelector(".cap-start");
+    const endInput = panel.querySelector(".cap-end");
+    if (startInput && endInput) {
+      startInput.addEventListener("change", (e) => {
+        const v = Math.max(1, Math.min(decoded.frames.length, Number(e.target.value) || 1));
+        cap.startFrame = v - 1;
+        if (cap.startFrame > cap.endFrame) cap.endFrame = cap.startFrame;
+        e.target.value = cap.startFrame + 1;
+        endInput.value = cap.endFrame + 1;
+        schedulePreview();
+      });
+      endInput.addEventListener("change", (e) => {
+        const v = Math.max(1, Math.min(decoded.frames.length, Number(e.target.value) || decoded.frames.length));
+        cap.endFrame = v - 1;
+        if (cap.endFrame < cap.startFrame) cap.startFrame = cap.endFrame;
+        e.target.value = cap.endFrame + 1;
+        startInput.value = cap.startFrame + 1;
+        schedulePreview();
+      });
+    }
 
     const removeBtn = panel.querySelector(".cap-remove");
     if (removeBtn) {
@@ -306,8 +326,10 @@
     els.controls.style.display = "none";
     els.frameList.style.display = "none";
     els.frameList.innerHTML = "";
+    setResult(`<strong>Reading ${file.name}...</strong>`, "");
     try {
       decoded = await decodeGifFile(file);
+      els.result.style.display = "none";
       els.originalInfo.textContent =
         `${file.name}: ${decoded.width}×${decoded.height}, ${decoded.frames.length} frames, ${formatBytes(file.size)}`;
       els.controls.style.display = "block";
@@ -330,7 +352,7 @@
       renderCaptionsList();
       renderPreview();
     } catch (err) {
-      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
+      setResult(`<strong>Couldn't read that GIF.</strong> ${err.message ? err.message + " " : ""}Try a different file.`, "error");
     }
   }
 
@@ -352,6 +374,9 @@
     busy = true;
     els.applyBtn.disabled = true;
     els.applyBtn.textContent = "Rendering...";
+    els.cancelBtn.style.display = "inline-block";
+    els.cancelBtn.disabled = false;
+    els.cancelBtn.textContent = "Cancel";
     els.result.style.display = "none";
 
     try {
@@ -372,6 +397,7 @@
         width,
         height,
         quality: 10,
+        onStart: (gif) => { activeGif = gif; },
         onProgress: (f) => { els.applyBtn.textContent = `Rendering... ${Math.round(f * 100)}%`; },
       });
 
@@ -388,11 +414,17 @@
       els.result.scrollIntoView({ behavior: "smooth", block: "center" });
       if (typeof celebrateSuccess === "function") celebrateSuccess(els.applyBtn, els.result);
     } catch (err) {
-      setResult(`<strong>Couldn't add that caption.</strong> ${err.message || "Try again."}`, "error");
+      if (err && err.cancelled) {
+        setResult("<strong>Cancelled.</strong> No file was created.", "");
+      } else {
+        setResult(`<strong>Couldn't add that caption.</strong> ${err.message ? err.message + " " : ""}Try again.`, "error");
+      }
     } finally {
       busy = false;
+      activeGif = null;
       els.applyBtn.disabled = false;
       els.applyBtn.textContent = "Add Text";
+      els.cancelBtn.style.display = "none";
     }
   });
 })();

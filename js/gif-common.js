@@ -59,8 +59,12 @@ async function decodeGifFile(file) {
  * Encode a sequence of canvases (or ImageData, via drawImageDataToCanvas
  * first) into an animated GIF blob using gif.js, wrapped as a Promise.
  * frames: [{ canvas, delay }]. onProgress(fraction) is optional.
+ * onStart(gifInstance) is called synchronously before rendering starts, so a
+ * caller can stash the instance and later call gifInstance.abort() to give
+ * the user a real, working Cancel button -- this rejects the promise with a
+ * `.cancelled = true` Error rather than leaving it pending forever.
  */
-function encodeGif(frames, { width, height, quality = 10, onProgress } = {}) {
+function encodeGif(frames, { width, height, quality = 10, onProgress, onStart } = {}) {
   return new Promise((resolve, reject) => {
     const gif = new GIF({
       workers: 2,
@@ -71,6 +75,12 @@ function encodeGif(frames, { width, height, quality = 10, onProgress } = {}) {
     });
     gif.on("progress", (f) => { if (onProgress) onProgress(f); });
     gif.on("finished", (blob) => resolve(blob));
+    gif.on("abort", () => {
+      const err = new Error("Cancelled.");
+      err.cancelled = true;
+      reject(err);
+    });
+    if (onStart) onStart(gif);
     try {
       for (const f of frames) {
         gif.addFrame(f.canvas, { delay: f.delay, copy: true });
