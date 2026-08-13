@@ -92,6 +92,19 @@
   }
 
   els.drop.addEventListener("click", () => els.fileInput.click());
+
+  // Paste an image straight from the clipboard (screenshot tools, "Copy image", etc.)
+  document.addEventListener("paste", (e) => {
+    const clipItems = e.clipboardData && e.clipboardData.items;
+    if (!clipItems) return;
+    for (const item of clipItems) {
+      if (item.type && item.type.startsWith("image/")) {
+        const file = item.getAsFile();
+        if (file) { handleFile(file); e.preventDefault(); }
+        break;
+      }
+    }
+  });
   els.fileInput.addEventListener("change", (e) => handleFile(e.target.files[0]));
   wireDragDrop(els.drop, (e) => {
     const file = e.dataTransfer.files[0];

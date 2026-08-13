@@ -64,4 +64,17 @@
     if (e.target === els.fileInput) return;
     els.fileInput.click();
   });
+
+  // Paste an image straight from the clipboard (screenshot tools, "Copy image", etc.)
+  document.addEventListener("paste", (e) => {
+    const clipItems = e.clipboardData && e.clipboardData.items;
+    if (!clipItems) return;
+    for (const item of clipItems) {
+      if (item.type && item.type.startsWith("image/")) {
+        const file = item.getAsFile();
+        if (file) { handleFiles([file]); e.preventDefault(); }
+        break;
+      }
+    }
+  });
 })();

@@ -46,6 +46,9 @@ noted as such rather than reported as bugs.
 
 ## Tier 1 — Quick wins (mechanical, no design decision required)
 
+**Status: done (commit `5e9bb98`).** Both items below are fixed and rebuilt
+across all 835 pages / 7 locales.
+
 ### 1. No skip-to-content link anywhere on the site
 Every page's header partial (`partials/en/header.html` and its 6 locale
 siblings) goes straight into the logo, an 8-category mega-menu, a search
@@ -78,38 +81,53 @@ scripted find/insert rather than hand-editing ~90+ files.
 
 ## Tier 2 — Medium (a real but contained decision, then implementation)
 
+**Status: done.** All three items below are implemented and verified (52/52
+automated tests passing: the existing 45-test GIF suite plus 7 new tests for
+the undo behavior, plus a fresh smoke test across the 7 newly-touched image
+tools). Details on what actually shipped, including one correction to the
+original finding, below.
+
 ### 3. Progress feedback is inconsistent across tool categories
-The GIF suite (most recently rebuilt) now shows live "Re-encoding... 43%"
-progress and a working Cancel button for anything slow. Most of the other
-~80 tools — PDF merge/compress, image batch processing, background
-removal — show "Reading `<file>`..." and then jump straight to a finished
-or failed result, with no feedback during the actual processing step. Per
-the Doherty Threshold (Laws of UX: acknowledge any operation that might
-run past ~400ms) and NN Heuristic #4 (Consistency and Standards), the
-newest corner of the site has quietly set a UX bar the rest doesn't meet.
-Worth auditing which non-GIF tools have genuinely slow operations (large
-PDFs, big image batches, background removal, PDF-to-image at high
-resolution) and wiring the same `onProgress` pattern already proven in
-GIF Compressor into those specifically — not all 86 tools need it, most
-already resolve in well under a second.
+The GIF suite (most recently rebuilt) shows live "Re-encoding... 43%"
+progress for anything slow; most other tools didn't. Rather than touch all
+86 tools, I checked which non-GIF operations are genuinely slow enough to
+matter (Doherty Threshold: >400ms) and wired running counts into those
+specifically: **Compress PDF** now reports progress through its three real
+stages ("Analyzing pages... 4/12", "Recompressing images... 2/5",
+"Rasterizing scanned pages... 1/3" — each can legitimately take several
+seconds on a large scanned PDF), **PDF to JPG/PNG** shows "Converting...
+3/12" for multi-page exports, and **Delete & Reorder Pages** shows a
+running count while generating page thumbnails on load. Tools like Add
+Page Numbers and Add Watermark were checked and left alone deliberately —
+they use pdf-lib's synchronous vector drawing, not per-page canvas
+rendering, so even a 500-page document finishes in well under a second and
+progress text would just be noise.
 
 ### 4. No undo for destructive in-tool actions
-Removing a page in "Delete & Reorder Pages," dropping a frame in a GIF
-tool, or clearing a field — the only recovery today is re-uploading the
-source file. The UI Patterns library lists Undo as the standard pattern
-for exactly this ("Forms → Undo"). A per-tool, session-only undo stack
-(not a sitewide feature) would close this for the handful of tools where
-users are most likely to remove something by mistake.
+Checked both examples from the original finding before touching anything.
+**Delete & Reorder Pages already had this** — its "remove" button is a
+toggle (click again to restore), I'd misread the code on the first pass.
+**GIF frame removal did not** — `frames.splice()` with no way back, shared
+across GIF Maker/Compressor/Resizer/Add Text. Fixed once in the shared
+`renderFrameStrip` component in `js/gif-common.js`: removing a frame now
+pushes it onto a small undo stack (10-deep) and shows an "Undo remove"
+button (with a running count for multiple removals) at the top of the
+strip until it's used or the page reloads. Propagates to all four GIF
+tools that use the shared component.
 
 ### 5. No paste-from-clipboard support
-I checked every `js/app-*.js` file for clipboard/paste wiring — none
-exists. Every file input is click-to-browse or drag-and-drop only. Pasting
-a screenshot or copied image directly (`Ctrl+V`) is now a common
-expectation for browser-based image tools and is a clean fit for NN
-Heuristic #7 (Flexibility and Efficiency of Use for power users). Scoped
-addition to the shared dropzone wiring (`wireDragDrop` already exists as a
-shared helper, so this extends one function rather than touching every
-tool individually).
+**Correction to the original finding:** my first grep (`'paste'` with
+single quotes) missed the site's actual pattern
+(`addEventListener("paste", ...)` with double quotes) and undercounted
+this badly — 6 tools already had it (Compress Image, Remove Background,
+Resize Image, Image Converter, Remove Metadata, Color Palette Extractor).
+The real gap was narrower: 8 other single-image tools where paste is a
+natural fit and was missing — Crop Image, Watermark Image, Favicon
+Generator, Screenshot Annotator, Social Media Image Cropper, CSS Filter
+Generator, Image Dimension Inspector, and GIF Maker. All 8 now support
+`Ctrl+V`/`Cmd+V` to add an image straight from the clipboard, matching the
+existing pattern exactly. Left PDF and text-input tools alone — clipboard
+image paste doesn't map to what those accept.
 
 ## Tier 3 — Heavier / structural work
 

@@ -166,9 +166,34 @@ function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, all
   // render, computed by the button handler right before it calls render().
   let pendingFocus = null;
 
+  // Frame removal here has no confirmation dialog by design (a modal for
+  // every "remove one frame" click would be worse than just letting people
+  // undo it), so it needs a real undo instead: the last few removals stay
+  // recoverable via a button at the top of the strip, matching the Undo
+  // pattern for exactly this kind of low-friction destructive action.
+  const UNDO_LIMIT = 10;
+  let undoStack = [];
+
+  function undoRemove() {
+    const last = undoStack.pop();
+    if (!last) return;
+    frames.splice(Math.min(last.index, frames.length), 0, last.frame);
+    pendingFocus = { index: Math.min(last.index, frames.length - 1), selector: ".frame-remove" };
+    render();
+    if (onChange) onChange();
+  }
+
   function render() {
     container.innerHTML = "";
     container.classList.add("frame-strip");
+    if (allowRemove && undoStack.length) {
+      const bar = document.createElement("div");
+      bar.className = "frame-strip-undo";
+      const count = undoStack.length;
+      bar.innerHTML = `<button type="button" class="secondary frame-strip-undo-btn">Undo remove${count > 1 ? ` (${count})` : ""}</button>`;
+      bar.querySelector("button").addEventListener("click", undoRemove);
+      container.appendChild(bar);
+    }
     frames.forEach((f, i) => {
       if (f.delay == null) f.delay = defaultDelay;
       const chip = document.createElement("div");
@@ -212,7 +237,9 @@ function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, all
       if (allowRemove) {
         chip.querySelector(".frame-remove").addEventListener("click", () => {
           if (frames.length <= 1) return; // keep at least one frame
-          frames.splice(i, 1);
+          const [removed] = frames.splice(i, 1);
+          undoStack.push({ frame: removed, index: i });
+          if (undoStack.length > UNDO_LIMIT) undoStack.shift();
           // Focus the remove button of whatever frame now sits at this
           // index, or the previous one if we just removed the last frame.
           pendingFocus = { index: Math.min(i, frames.length - 1), selector: ".frame-remove" };

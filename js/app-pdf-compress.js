@@ -110,7 +110,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   // Pages with no real text (a scanned page that's just one big image) are
   // safe to fully rasterize and recompress, since there's no selectable
   // text on them to lose in the first place.
-  async function classifyPages(bytesCopy) {
+  async function classifyPages(bytesCopy, onProgress) {
     const pdf = await pdfjsLib.getDocument({ data: bytesCopy }).promise;
     const classes = [];
     for (let i = 1; i <= pdf.numPages; i++) {
@@ -118,6 +118,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
       const content = await page.getTextContent();
       const text = content.items.map((it) => it.str).join("").trim();
       classes.push(text.length >= 4 ? "text" : "scanned");
+      if (onProgress) onProgress(i, pdf.numPages);
     }
     return classes;
   }
@@ -228,9 +229,13 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 
   // ---------- main compression pipeline ----------
 
-  async function compressPdf(originalBytes, { dpi, quality }) {
+  async function compressPdf(originalBytes, { dpi, quality }, onProgress) {
+    const report = onProgress || function () {};
     const originalByteLength = originalBytes.byteLength;
-    const classes = await classifyPages(new Uint8Array(originalBytes.slice(0)));
+    report("Analyzing pages");
+    const classes = await classifyPages(new Uint8Array(originalBytes.slice(0)), (i, total) =>
+      report(`Analyzing pages... ${i}/${total}`)
+    );
     const textPageIndices = [];
     const scannedPageIndices = [];
     classes.forEach((c, i) => (c === "text" ? textPageIndices : scannedPageIndices).push(i));
@@ -243,7 +248,11 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     let imagesRecompressed = 0;
     if (textPageIndices.length) {
       const images = collectImageXObjects(doc, textPageIndices);
+      let imgDone = 0;
+      const totalImages = images.length;
       for (const { ref, stream } of images) {
+        imgDone++;
+        if (totalImages > 1) report(`Recompressing images... ${imgDone}/${totalImages}`);
         const dict = stream.dict;
         const filter = dict.lookupMaybe(PDFLib.PDFName.of("Filter"), PDFLib.PDFName);
         const isDct = filter && filter.asString() === "/DCTDecode";
@@ -275,7 +284,11 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     if (scannedPageIndices.length) {
       const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(originalBytes.slice(0)) }).promise;
       const scale = dpi / 72;
+      let scanDone = 0;
+      const totalScanned = scannedPageIndices.length;
       for (const pageIndex of scannedPageIndices) {
+        scanDone++;
+        report(`Rasterizing scanned pages... ${scanDone}/${totalScanned}`);
         const pdfPage = await pdf.getPage(pageIndex + 1);
         const baseViewport = pdfPage.getViewport({ scale: 1 });
         const viewport = pdfPage.getViewport({ scale });
@@ -322,7 +335,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
       const dpi = parseInt(els.dpiSelect.value, 10);
       const quality = parseFloat(els.qualitySelect.value);
 
-      const { bytes: outBytes, changed } = await compressPdf(currentBytes, { dpi, quality });
+      const { bytes: outBytes, changed } = await compressPdf(currentBytes, { dpi, quality }, (label) => {
+        els.compressBtn.textContent = label;
+      });
       const originalSize = currentFile.size;
 
       if (!changed) {

@@ -127,6 +127,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 
   async function renderThumbnails(pdfDoc) {
     for (let i = 1; i <= pdfDoc.numPages; i++) {
+      if (pdfDoc.numPages > 1) {
+        els.loadingInfo.textContent = `Rendering page thumbnails... ${i}/${pdfDoc.numPages}`;
+      }
       const page = await pdfDoc.getPage(i);
       const baseViewport = page.getViewport({ scale: 1 });
       const scale = THUMB_TARGET_WIDTH / baseViewport.width;

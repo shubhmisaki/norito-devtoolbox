@@ -245,6 +245,19 @@
     els.fileInput.click();
   });
 
+  // Paste an image straight from the clipboard (screenshot tools, "Copy image", etc.)
+  document.addEventListener("paste", (e) => {
+    const clipItems = e.clipboardData && e.clipboardData.items;
+    if (!clipItems) return;
+    for (const item of clipItems) {
+      if (item.type && item.type.startsWith("image/")) {
+        const file = item.getAsFile();
+        if (file) { loadFile(file); e.preventDefault(); }
+        break;
+      }
+    }
+  });
+
   els.downloadBtn.addEventListener("click", () => {
     if (!baseImg) return;
     els.canvas.toBlob((blob) => {

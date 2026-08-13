@@ -176,7 +176,15 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 
       const base = baseName(currentFile.name);
       const outputs = [];
-      for (const pageNumber of pageNumbers) {
+      // Rendering is per-page and each page can take a visible moment at
+      // higher DPI, so multi-page conversions show a running count instead
+      // of leaving the button stuck on a bare "Converting..." the whole
+      // time (Doherty Threshold: any operation that might run past ~400ms
+      // should say what's happening).
+      const showProgress = pageNumbers.length > 1;
+      for (let i = 0; i < pageNumbers.length; i++) {
+        const pageNumber = pageNumbers[i];
+        if (showProgress) els.convertBtn.textContent = `Converting... ${i + 1}/${pageNumbers.length}`;
         const blob = await renderPageToBlob(pageNumber, scale, format, quality);
         const bytes = new Uint8Array(await blob.arrayBuffer());
         outputs.push({ name: `${base}-page-${pageNumber}.${ext}`, bytes });
