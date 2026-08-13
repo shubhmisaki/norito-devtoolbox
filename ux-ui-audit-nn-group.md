@@ -207,14 +207,41 @@ performance data ever supports it, moving `AD-TOP` to after the tool-hero
 revenue question attached — a business call, not a UX one.
 
 ### 8. Ad-hoc progress-indicator patterns
-Related to #3: there are at least two different progress-UI patterns in
-the codebase already (a circular `.ring-fill`/`.ring-wrap` component used
-in a couple of tools, and plain "Compressing... 43%" text used in GIF
-Compressor). This is the same category of drift the existing
-`css-design-system-audit.md` already flagged for type scale and
-success/danger colors — a canonical "progress" component, chosen once and
-reused, would remove the inconsistency at the same time as #3 gets
-implemented, rather than as a separate pass.
+
+**Status: done (commit pending).** This item's original framing turned out
+to be wrong on inspection: a `git log --all -S"ring-wrap"` across the whole
+repo history found the `.ring-fill`/`.ring-wrap` CSS was never actually
+instantiated by any HTML or JS — dead code from an earlier design pass, not
+a second live pattern. The real drift was narrower but still real: every
+slow-operation button across the GIF, PDF, and image tools duplicated the
+same four-line "disable button, set busy label, run the operation, restore
+the original label/icon in `finally`" dance by hand, independently, in
+~20 files, with small inconsistent variations (some restored `textContent`,
+some `innerHTML`, some forgot to re-check whether the button should stay
+disabled).
+
+Consolidated into one helper, `startBusyText(el, label)` in `js/utils.js`,
+that disables the target (if it's a button), shows `"Label..."`, exposes
+`.update(progress)` for percent/fraction/custom-string updates and
+`.relabel(newLabel)` for multi-stage flows (e.g. Compress PDF's "Analyzing
+pages" → "Recompressing images" → "Rasterizing scanned pages"; Video to GIF's
+"Capturing frames" → "Encoding"), and `.done()` to restore the original
+`innerHTML` (not just text, so icon-bearing buttons come back correctly)
+and re-enable the button. Migrated all six GIF tools plus every hardcoded-
+English busy-button in the PDF and image suites (compress, to-image,
+organize, split, merge, page-numbers, rotate, sign, watermark, crop, resize,
+convert, images-to-pdf, watermark-image — including their batch-mode
+buttons where present). Deliberately left `app-compress.js`'s single-file
+button and all of `app-removebg.js` alone: both drive their busy-state text
+through the site's i18n dictionary (`I18N.compressing_label`, etc.) for
+translated locale pages, and the helper doesn't yet have a way to accept a
+pre-translated label without mangling it — folding those in would need
+i18n-awareness added to the helper itself, which is a separate, slightly
+riskier piece of work than the pure text/no-behavior-change de-duplication
+this pass was scoped to. Removed the dead `.ring-*` CSS block from
+`css/style.css` as part of this cleanup. Full 45-test regression suite plus
+the two structural checks (`smoke_tier2.js`, `nav_megawide_check.js`) still
+green after the migration.
 
 ## Suggested order of attack
 

@@ -285,8 +285,7 @@
     }
 
     busy = true;
-    els.resizeBtn.disabled = true;
-    els.resizeBtn.textContent = mode === "crop" ? "Cropping..." : "Resizing...";
+    const busyText = startBusyText(els.resizeBtn, mode === "crop" ? "Cropping" : "Resizing");
     els.cancelBtn.style.display = "inline-block";
     els.cancelBtn.disabled = false;
     els.cancelBtn.textContent = "Cancel";
@@ -313,7 +312,7 @@
         height: h,
         quality: 10,
         onStart: (gif) => { activeGif = gif; },
-        onProgress: (f) => { els.resizeBtn.textContent = `${mode === "crop" ? "Cropping" : "Resizing"}... ${Math.round(f * 100)}%`; },
+        onProgress: (f) => busyText.update(f),
       });
 
       const url = URL.createObjectURL(blob);
@@ -337,8 +336,7 @@
     } finally {
       busy = false;
       activeGif = null;
-      els.resizeBtn.disabled = false;
-      els.resizeBtn.textContent = "Resize GIF";
+      busyText.done();
       els.cancelBtn.style.display = "none";
     }
   });

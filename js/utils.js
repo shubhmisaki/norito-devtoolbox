@@ -261,12 +261,67 @@ function loadImageFile(file) {
   });
 }
 
+// ---- busy-element progress text ----
+// Centralizes the "save original content, show busy/progress text, restore
+// when done" pattern that was duplicated -- each with its own slightly
+// different formatting -- across roughly 20 app-*.js files: some rendered
+// `${Math.round(f*100)}%`, some `${i}/${total}`, some just a static
+// "Working..." with no progress value at all, and one (organize-pdf)
+// targets a separate status paragraph instead of a button. One shared
+// helper means every tool's progress text now follows the same
+// convention, and a future visual redesign (an actual progress bar/ring,
+// say) only has one call site's worth of rendering logic to change instead
+// of twenty.
+//
+// `el` is typically a <button>, but works on any element with textContent
+// (organize-pdf's `#loadingInfo` <p>, for example). For buttons, disables
+// it and restores its original innerHTML (not just textContent, in case it
+// holds an icon) when done() is called; non-button elements are left alone
+// other than their text.
+function startBusyText(el, label) {
+  const isButton = el.tagName === "BUTTON";
+  const original = el.innerHTML;
+  if (isButton) el.disabled = true;
+  el.textContent = `${label}...`;
+  return {
+    // progress: omit (or pass null/undefined) for a plain "label..." with
+    // no value; a 0-1 fraction for "label... N%"; a {current,total} pair
+    // for "label... current/total"; or a full custom string for
+    // multi-stage flows where the label itself changes between stages
+    // (Compress PDF's "Analyzing pages..." -> "Recompressing images..."),
+    // used verbatim.
+    update(progress) {
+      if (progress == null) {
+        el.textContent = `${label}...`;
+      } else if (typeof progress === "number") {
+        el.textContent = `${label}... ${Math.round(progress * 100)}%`;
+      } else if (typeof progress === "string") {
+        el.textContent = progress;
+      } else if (typeof progress.current === "number" && typeof progress.total === "number") {
+        el.textContent = `${label}... ${progress.current}/${progress.total}`;
+      }
+    },
+    // Switches to a new stage label for multi-stage flows (Video to GIF's
+    // "Capturing frames..." -> "Encoding...", Compress PDF's "Analyzing
+    // pages..." -> "Recompressing images..." -> "Rasterizing scanned
+    // pages...") without losing the original saved content done() restores.
+    relabel(newLabel) {
+      label = newLabel;
+      el.textContent = `${label}...`;
+    },
+    done() {
+      if (isButton) el.disabled = false;
+      el.innerHTML = original;
+    },
+  };
+}
+
 // Export for both browser (globals) and Node (module.exports), so the same
 // file can be unit-tested headlessly.
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     crc32, crc32Final, concatBytes, u16le, u32le, u16be, u32be,
     textBytes, randomBytes, parseSize, formatBytes, createZip, copyToClipboard,
-    wireDragDrop, loadImageFile,
+    wireDragDrop, loadImageFile, startBusyText,
   };
 }

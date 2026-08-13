@@ -118,12 +118,9 @@
     return `pages-${idxs[0] + 1}-${idxs[idxs.length - 1] + 1}.pdf`;
   }
 
-  const DEFAULT_LABEL = els.splitBtn.innerHTML;
-
   els.splitBtn.addEventListener("click", async () => {
     if (!currentBytes) return;
-    els.splitBtn.disabled = true;
-    els.splitBtn.textContent = "Splitting...";
+    const busyText = startBusyText(els.splitBtn, "Splitting");
     let finishedOk = false;
     let outBlob = null;
     let outName = "";
@@ -189,8 +186,7 @@
         "error"
       );
     } finally {
-      els.splitBtn.disabled = !currentBytes;
-      els.splitBtn.innerHTML = DEFAULT_LABEL;
+      busyText.done();
     }
 
     if (finishedOk) {

@@ -197,12 +197,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     }
   });
 
-  const DEFAULT_LABEL = els.saveBtn.innerHTML;
-
   els.saveBtn.addEventListener("click", async () => {
     if (!currentBytes || remainingCount() < 1) return;
-    els.saveBtn.disabled = true;
-    els.saveBtn.textContent = "Saving...";
+    const busyText = startBusyText(els.saveBtn, "Saving");
     let finishedOk = false;
     let outBlob = null;
     let outName = "";
@@ -234,8 +231,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
         "error"
       );
     } finally {
+      busyText.done();
       els.saveBtn.disabled = remainingCount() < 1;
-      els.saveBtn.innerHTML = DEFAULT_LABEL;
     }
 
     if (finishedOk) {

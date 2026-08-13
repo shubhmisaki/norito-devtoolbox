@@ -321,12 +321,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 
   // ---------- UI wiring ----------
 
-  const DEFAULT_LABEL = els.compressBtn.innerHTML;
-
   els.compressBtn.addEventListener("click", async () => {
     if (!currentBytes || !currentFile) return;
-    els.compressBtn.disabled = true;
-    els.compressBtn.textContent = "Compressing...";
+    const busyText = startBusyText(els.compressBtn, "Compressing");
     let finishedOk = false;
     let outBlob = null;
     let outName = "";
@@ -336,7 +333,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
       const quality = parseFloat(els.qualitySelect.value);
 
       const { bytes: outBytes, changed } = await compressPdf(currentBytes, { dpi, quality }, (label) => {
-        els.compressBtn.textContent = label;
+        busyText.update(label);
       });
       const originalSize = currentFile.size;
 
@@ -373,8 +370,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
         "error"
       );
     } finally {
-      els.compressBtn.disabled = !currentBytes;
-      els.compressBtn.innerHTML = DEFAULT_LABEL;
+      busyText.done();
     }
 
     if (finishedOk) {

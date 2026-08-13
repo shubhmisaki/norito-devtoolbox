@@ -116,12 +116,9 @@
     return { x, y };
   }
 
-  const DEFAULT_LABEL = els.applyBtn.innerHTML;
-
   els.applyBtn.addEventListener("click", async () => {
     if (!currentBytes) return;
-    els.applyBtn.disabled = true;
-    els.applyBtn.textContent = "Adding...";
+    const busyText = startBusyText(els.applyBtn, "Adding");
     let finishedOk = false;
     let outBlob = null;
     let outName = "";
@@ -166,8 +163,7 @@
         "error"
       );
     } finally {
-      els.applyBtn.disabled = !currentBytes;
-      els.applyBtn.innerHTML = DEFAULT_LABEL;
+      busyText.done();
     }
 
     if (finishedOk) {

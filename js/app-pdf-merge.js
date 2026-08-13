@@ -108,12 +108,9 @@
     if (state) els.result.classList.add(state);
   }
 
-  const DEFAULT_LABEL = els.mergeBtn.innerHTML;
-
   els.mergeBtn.addEventListener("click", async () => {
     if (items.length < 2) return;
-    els.mergeBtn.disabled = true;
-    els.mergeBtn.textContent = "Merging...";
+    const busyText = startBusyText(els.mergeBtn, "Merging");
     let finishedOk = false;
     let mergedBlob = null;
 
@@ -160,8 +157,8 @@
         "error"
       );
     } finally {
+      busyText.done();
       els.mergeBtn.disabled = items.length < 2;
-      els.mergeBtn.innerHTML = DEFAULT_LABEL;
     }
 
     // Runs after the button label has already been restored above, so the

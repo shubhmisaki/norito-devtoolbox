@@ -158,8 +158,7 @@
 
   els.cropBtn.addEventListener("click", async () => {
     if (!currentImg) return;
-    els.cropBtn.disabled = true;
-    els.cropBtn.textContent = "Cropping...";
+    const busyText = startBusyText(els.cropBtn, "Cropping");
     try {
       scaleX = currentImg.width / els.stageImg.clientWidth;
       scaleY = currentImg.height / els.stageImg.clientHeight;
@@ -197,8 +196,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't crop that image.</strong> ${err.message || "Try a different file."}`, "error");
     } finally {
-      els.cropBtn.disabled = false;
-      els.cropBtn.textContent = "Crop & download";
+      busyText.done();
     }
   });
 })();

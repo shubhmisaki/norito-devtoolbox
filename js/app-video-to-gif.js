@@ -138,8 +138,7 @@
 
     busy = true;
     cancelRequested = false;
-    els.convertBtn.disabled = true;
-    els.convertBtn.textContent = "Capturing frames...";
+    const busyText = startBusyText(els.convertBtn, "Capturing frames");
     els.cancelBtn.style.display = "inline-block";
     els.cancelBtn.disabled = false;
     els.cancelBtn.textContent = "Cancel";
@@ -163,17 +162,17 @@
         frameCanvas.height = outH;
         frameCanvas.getContext("2d").drawImage(canvas, 0, 0);
         frames.push({ canvas: frameCanvas, delay });
-        els.convertBtn.textContent = `Capturing frames... ${i + 1}/${frameCount}`;
+        busyText.update({ current: i + 1, total: frameCount });
       }
       if (cancelRequested) throw cancelledError();
 
-      els.convertBtn.textContent = "Encoding...";
+      busyText.relabel("Encoding");
       const blob = await encodeGif(frames, {
         width: outW,
         height: outH,
         quality: 10,
         onStart: (gif) => { activeGif = gif; },
-        onProgress: (f) => { els.convertBtn.textContent = `Encoding... ${Math.round(f * 100)}%`; },
+        onProgress: (f) => busyText.update(f),
       });
 
       const url = URL.createObjectURL(blob);
@@ -197,8 +196,7 @@
     } finally {
       busy = false;
       activeGif = null;
-      els.convertBtn.disabled = false;
-      els.convertBtn.textContent = "Convert to GIF";
+      busyText.done();
       els.cancelBtn.style.display = "none";
     }
   });

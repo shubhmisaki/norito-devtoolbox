@@ -146,8 +146,7 @@
     const text = els.wmText.value.trim();
     if (!text) { setResult("<strong>Enter some watermark text first.</strong>", "error"); return; }
 
-    els.applyBtn.disabled = true;
-    els.applyBtn.textContent = "Applying...";
+    const busyText = startBusyText(els.applyBtn, "Applying");
     try {
       const w = currentImg.width, h = currentImg.height;
       const canvas = document.createElement("canvas");
@@ -203,8 +202,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't watermark that image.</strong> ${err.message || "Try a different file."}`, "error");
     } finally {
-      els.applyBtn.disabled = false;
-      els.applyBtn.textContent = "Apply watermark & download";
+      busyText.done();
     }
   });
 })();

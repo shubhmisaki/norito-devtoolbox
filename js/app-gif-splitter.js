@@ -109,8 +109,7 @@
 
   els.spriteBtn.addEventListener("click", async () => {
     if (!decoded || !decoded.frames.length) return;
-    els.spriteBtn.disabled = true;
-    els.spriteBtn.textContent = "Building...";
+    const busyText = startBusyText(els.spriteBtn, "Building");
     try {
       const cols = Math.max(1, Math.min(decoded.frames.length, Math.round(Number(els.spriteCols.value)) || Math.ceil(Math.sqrt(decoded.frames.length))));
       const rows = Math.ceil(decoded.frames.length / cols);
@@ -130,8 +129,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't build the sprite sheet.</strong> ${err.message ? err.message + " " : ""}Try again.`, "error");
     } finally {
-      els.spriteBtn.disabled = false;
-      els.spriteBtn.textContent = "Download as sprite sheet";
+      busyText.done();
     }
   });
 
@@ -144,8 +142,7 @@
 
   els.zipBtn.addEventListener("click", async () => {
     if (!frameBlobs.length) return;
-    els.zipBtn.disabled = true;
-    els.zipBtn.textContent = "Zipping...";
+    const busyText = startBusyText(els.zipBtn, "Zipping");
     try {
       const entries = [];
       for (const fb of frameBlobs) {
@@ -158,8 +155,7 @@
       setResult(`<strong>Downloaded ${frameBlobs.length} frames as gif-frames.zip.</strong>`, "ok");
       if (typeof celebrateSuccess === "function") celebrateSuccess(els.zipBtn, els.frameGrid, "Downloaded");
     } finally {
-      els.zipBtn.disabled = false;
-      els.zipBtn.textContent = "Download all as .zip";
+      busyText.done();
     }
   });
 })();

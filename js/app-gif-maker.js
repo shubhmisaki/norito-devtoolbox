@@ -117,8 +117,7 @@
   els.makeBtn.addEventListener("click", async () => {
     if (items.length < 1 || busy) return;
     busy = true;
-    els.makeBtn.disabled = true;
-    els.makeBtn.textContent = "Encoding...";
+    const busyText = startBusyText(els.makeBtn, "Encoding");
     els.cancelBtn.style.display = "inline-block";
     els.cancelBtn.disabled = false;
     els.cancelBtn.textContent = "Cancel";
@@ -141,9 +140,7 @@
         height,
         quality,
         onStart: (gif) => { activeGif = gif; },
-        onProgress: (f) => {
-          els.makeBtn.textContent = `Encoding... ${Math.round(f * 100)}%`;
-        },
+        onProgress: (f) => busyText.update(f),
       });
 
       const url = URL.createObjectURL(blob);
@@ -167,8 +164,7 @@
     } finally {
       busy = false;
       activeGif = null;
-      els.makeBtn.disabled = false;
-      els.makeBtn.textContent = "Create GIF";
+      busyText.done();
       els.cancelBtn.style.display = "none";
     }
   });

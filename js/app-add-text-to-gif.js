@@ -372,8 +372,7 @@
     }
 
     busy = true;
-    els.applyBtn.disabled = true;
-    els.applyBtn.textContent = "Rendering...";
+    const busyText = startBusyText(els.applyBtn, "Rendering");
     els.cancelBtn.style.display = "inline-block";
     els.cancelBtn.disabled = false;
     els.cancelBtn.textContent = "Cancel";
@@ -398,7 +397,7 @@
         height,
         quality: 10,
         onStart: (gif) => { activeGif = gif; },
-        onProgress: (f) => { els.applyBtn.textContent = `Rendering... ${Math.round(f * 100)}%`; },
+        onProgress: (f) => busyText.update(f),
       });
 
       const url = URL.createObjectURL(blob);
@@ -422,8 +421,7 @@
     } finally {
       busy = false;
       activeGif = null;
-      els.applyBtn.disabled = false;
-      els.applyBtn.textContent = "Add Text";
+      busyText.done();
       els.cancelBtn.style.display = "none";
     }
   });

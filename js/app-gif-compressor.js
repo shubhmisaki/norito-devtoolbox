@@ -127,21 +127,18 @@
     const lossy = Math.max(0, Math.min(200, Number(els.lossyInput.value) || 0));
     const colors = els.reduceColorsCheck.checked ? Math.max(2, Math.min(256, Number(els.colorsInput.value) || 128)) : 0;
 
-    els.compressBtn.disabled = true;
     els.presetsBtn.disabled = true;
-    els.compressBtn.textContent = "Re-encoding...";
+    const busyText = startBusyText(els.compressBtn, "Re-encoding");
     els.result.style.display = "none";
     els.presetResults.style.display = "none";
 
     try {
-      const { blob: stage1Blob } = await buildStage1((f) => {
-        els.compressBtn.textContent = `Re-encoding... ${Math.round(f * 100)}%`;
-      });
+      const { blob: stage1Blob } = await buildStage1((f) => busyText.update(f));
 
       // Stage 2: real lossy compression + frame-difference optimization via
       // gifsicle (WASM), the same engine most GIF-compression sites run
       // server-side.
-      els.compressBtn.textContent = "Compressing...";
+      busyText.update("Compressing...");
       const blob = await compressWithGifsicle(stage1Blob, { lossy, colors, optimize: true });
 
       const url = URL.createObjectURL(blob);
@@ -162,9 +159,8 @@
       setResult(`<strong>Couldn't compress that GIF.</strong> ${err.message ? err.message + " " : ""}Try a lower scale or lossy level.`, "error");
     } finally {
       busy = false;
-      els.compressBtn.disabled = false;
+      busyText.done();
       els.presetsBtn.disabled = false;
-      els.compressBtn.textContent = "Compress GIF";
     }
   });
 
@@ -180,18 +176,15 @@
     const colors = els.reduceColorsCheck.checked ? Math.max(2, Math.min(256, Number(els.colorsInput.value) || 128)) : 0;
 
     els.compressBtn.disabled = true;
-    els.presetsBtn.disabled = true;
-    els.presetsBtn.textContent = "Re-encoding...";
+    const busyText = startBusyText(els.presetsBtn, "Re-encoding");
     els.result.style.display = "none";
     els.presetResults.style.display = "none";
     els.presetResults.innerHTML = "";
 
     try {
-      const { blob: stage1Blob } = await buildStage1((f) => {
-        els.presetsBtn.textContent = `Re-encoding... ${Math.round(f * 100)}%`;
-      });
+      const { blob: stage1Blob } = await buildStage1((f) => busyText.update(f));
 
-      els.presetsBtn.textContent = "Compressing...";
+      busyText.update("Compressing...");
       for (const preset of PRESETS) {
         const blob = await compressWithGifsicle(stage1Blob, { lossy: preset.lossy, colors, optimize: true });
         const url = URL.createObjectURL(blob);
@@ -213,8 +206,7 @@
     } finally {
       busy = false;
       els.compressBtn.disabled = false;
-      els.presetsBtn.disabled = false;
-      els.presetsBtn.textContent = "Compare 3 quick size options";
+      busyText.done();
     }
   });
 })();

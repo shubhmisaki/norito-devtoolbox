@@ -154,12 +154,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     return blob;
   }
 
-  const DEFAULT_LABEL = els.convertBtn.innerHTML;
-
   els.convertBtn.addEventListener("click", async () => {
     if (!currentPdf) return;
-    els.convertBtn.disabled = true;
-    els.convertBtn.textContent = "Converting...";
+    const busyText = startBusyText(els.convertBtn, "Converting");
     let finishedOk = false;
     let outBlob = null;
     let outName = "";
@@ -184,7 +181,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
       const showProgress = pageNumbers.length > 1;
       for (let i = 0; i < pageNumbers.length; i++) {
         const pageNumber = pageNumbers[i];
-        if (showProgress) els.convertBtn.textContent = `Converting... ${i + 1}/${pageNumbers.length}`;
+        if (showProgress) busyText.update({ current: i + 1, total: pageNumbers.length });
         const blob = await renderPageToBlob(pageNumber, scale, format, quality);
         const bytes = new Uint8Array(await blob.arrayBuffer());
         outputs.push({ name: `${base}-page-${pageNumber}.${ext}`, bytes });
@@ -217,8 +214,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
         "error"
       );
     } finally {
-      els.convertBtn.disabled = !currentPdf;
-      els.convertBtn.innerHTML = DEFAULT_LABEL;
+      busyText.done();
     }
 
     if (finishedOk) {

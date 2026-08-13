@@ -162,12 +162,9 @@
   };
   const FIT_SCALE = 72 / 96; // treat image pixels as 96 DPI, convert to PDF points
 
-  const DEFAULT_LABEL = els.convertBtn.innerHTML;
-
   els.convertBtn.addEventListener("click", async () => {
     if (items.length < 1) return;
-    els.convertBtn.disabled = true;
-    els.convertBtn.textContent = "Converting...";
+    const busyText = startBusyText(els.convertBtn, "Converting");
     let finishedOk = false;
     let outBlob = null;
     let outName = "images.pdf";
@@ -222,8 +219,8 @@
         "error"
       );
     } finally {
+      busyText.done();
       els.convertBtn.disabled = items.length < 1;
-      els.convertBtn.innerHTML = DEFAULT_LABEL;
     }
 
     if (finishedOk) {

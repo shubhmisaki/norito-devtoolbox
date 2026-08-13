@@ -123,8 +123,7 @@
       setResult("<strong>Enter valid dimensions.</strong> Width and height must be between 1 and 20000 pixels.", "error");
       return;
     }
-    els.resizeBtn.disabled = true;
-    els.resizeBtn.textContent = "Resizing...";
+    const busyText = startBusyText(els.resizeBtn, "Resizing");
     try {
       const canvas = document.createElement("canvas");
       canvas.width = w;
@@ -157,8 +156,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't resize that image.</strong> ${err.message || "Try a different file."}`, "error");
     } finally {
-      els.resizeBtn.disabled = false;
-      els.resizeBtn.textContent = "Resize image";
+      busyText.done();
     }
   });
 
@@ -224,8 +222,7 @@
   }
 
   async function runBatch() {
-    batchEls.resizeBtn.disabled = true;
-    batchEls.resizeBtn.textContent = "Resizing...";
+    const busyText = startBusyText(batchEls.resizeBtn, "Resizing");
     for (const bf of batchFiles) {
       try {
         const { img, url } = await loadImageFile(bf.file);
@@ -253,8 +250,7 @@
       }
       renderBatchList();
     }
-    batchEls.resizeBtn.disabled = false;
-    batchEls.resizeBtn.textContent = "Resize all";
+    busyText.done();
     const anyOk = batchFiles.some((bf) => bf.status === "ok");
     batchEls.zipBtn.disabled = !anyOk;
     if (anyOk) celebrateSuccess(batchEls.resizeBtn, batchEls.list, "Done");

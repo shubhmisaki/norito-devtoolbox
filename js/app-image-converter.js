@@ -91,8 +91,7 @@
 
   els.convertBtn.addEventListener("click", async () => {
     if (!currentImg) return;
-    els.convertBtn.disabled = true;
-    els.convertBtn.textContent = "Converting...";
+    const busyText = startBusyText(els.convertBtn, "Converting");
     try {
       const outFormat = els.format.value;
       const mime = { jpeg: "image/jpeg", png: "image/png", webp: "image/webp" }[outFormat];
@@ -131,8 +130,7 @@
     } catch (err) {
       setResult(`<strong>Couldn't convert that image.</strong> ${err.message || "Try a different file."}`, "error");
     } finally {
-      els.convertBtn.disabled = false;
-      els.convertBtn.textContent = "Convert image";
+      busyText.done();
     }
   });
 
@@ -198,8 +196,7 @@
   }
 
   async function runBatch() {
-    batchEls.convertBtn.disabled = true;
-    batchEls.convertBtn.textContent = "Converting...";
+    const busyText = startBusyText(batchEls.convertBtn, "Converting");
     const outFormat = els.format.value;
     const mime = { jpeg: "image/jpeg", png: "image/png", webp: "image/webp" }[outFormat];
     const quality = outFormat === "png" ? undefined : Number(els.quality.value) / 100;
@@ -227,8 +224,7 @@
       }
       renderBatchList();
     }
-    batchEls.convertBtn.disabled = false;
-    batchEls.convertBtn.textContent = "Convert all";
+    busyText.done();
     const anyOk = batchFiles.some((bf) => bf.status === "ok");
     batchEls.zipBtn.disabled = !anyOk;
     if (anyOk) celebrateSuccess(batchEls.convertBtn, batchEls.list, "Done");

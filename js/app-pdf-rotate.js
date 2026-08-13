@@ -122,12 +122,9 @@
     return Array.from(set).sort((a, b) => a - b);
   }
 
-  const DEFAULT_LABEL = els.rotateBtn.innerHTML;
-
   els.rotateBtn.addEventListener("click", async () => {
     if (!currentBytes) return;
-    els.rotateBtn.disabled = true;
-    els.rotateBtn.textContent = "Rotating...";
+    const busyText = startBusyText(els.rotateBtn, "Rotating");
     let finishedOk = false;
     let outBlob = null;
     let outName = "";
@@ -166,8 +163,7 @@
         "error"
       );
     } finally {
-      els.rotateBtn.disabled = !currentBytes;
-      els.rotateBtn.innerHTML = DEFAULT_LABEL;
+      busyText.done();
     }
 
     if (finishedOk) {
