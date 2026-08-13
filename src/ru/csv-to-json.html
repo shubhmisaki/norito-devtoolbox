@@ -73,7 +73,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -121,7 +121,7 @@
           <span class="option-label">Форматировать JSON</span>
           <label class="switch"><input type="checkbox" id="prettyToggle" checked /><span class="track"></span></label>
         </div>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
       </div>
       <div>
         <div class="panel">

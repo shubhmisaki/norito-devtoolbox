@@ -73,7 +73,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -88,7 +88,7 @@
   </div>
 
 
-    <div class="result-box" style="margin-bottom:28px;">
+    <div class="result-box" aria-live="polite" aria-atomic="true" style="margin-bottom:28px;">
       <span class="r-body">
         <strong>ध्यान दें:</strong> यह MODNet इस्तेमाल करता है, जो लोगों के लिए ट्यून किया गया एक पोर्ट्रेट-मैटिंग मॉडल है, सामान्य ऑब्जेक्ट या प्रोडक्ट के लिए नहीं. पोर्ट्रेट और सेल्फ़ी सबसे बेहतर काम करती हैं. मॉडल और इसके लिए ज़रूरी WebAssembly रनटाइम, दोनों मिलाकर करीब 18 MB के हैं और हर ब्राउज़र सेशन में एक बार डाउनलोड होते हैं, फिर कैश हो जाते हैं.
       </span>
@@ -122,7 +122,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
           बैकग्राउंड हटाएं
         </button>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
 
         <div class="batch-file-list" id="batchList" style="display:none;"></div>
         <div class="batch-actions" id="batchActions" style="display:none;">

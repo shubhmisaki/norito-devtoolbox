@@ -88,6 +88,7 @@
   <div class="blob blob-3"></div>
 </div>
 
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
@@ -242,7 +243,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
 <script type="text/javascript">
@@ -294,7 +295,7 @@ atOptions = {
 
       <button type="button" id="makeBtn" disabled style="margin-top:8px;">Create GIF</button>
       <button type="button" id="cancelBtn" style="display:none; margin-top:8px;">Cancel</button>
-      <div class="result-box" id="result" style="display:none;"></div>
+      <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
       <div style="margin-top:16px; text-align:center;">
         <img id="preview" alt="Generated GIF preview" style="display:none; max-width:100%; border-radius:8px;" />
       </div>

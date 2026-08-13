@@ -73,7 +73,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -94,7 +94,7 @@
           <label for="jwtInput">JWT</label>
           <textarea id="jwtInput" class="mono-output" rows="6" spellcheck="false" placeholder="Pega un JWT, p. ej. eyJhbGciOi...">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
         </div>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
         <div class="meta-panel" id="claimsPanel" style="display:none;">
           <p class="meta-summary">Claims estándar reconocidos</p>
           <div class="meta-list" id="claimsList"></div>

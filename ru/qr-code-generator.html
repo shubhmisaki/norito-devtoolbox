@@ -101,6 +101,7 @@
   <div class="blob blob-3"></div>
 </div>
 
+<a class="skip-link" href="#main">Перейти к содержимому</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/ru/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
@@ -246,7 +247,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
 <script type="text/javascript">
@@ -278,7 +279,7 @@ atOptions = {
           <label for="qrText">Содержимое</label>
           <textarea id="qrText" class="mono-area" rows="3">https://norito.in</textarea>
         </div>
-        <div class="result-box" id="qrStatus" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="qrStatus" style="display:none;"></div>
 
         <div class="field-row">
           <div class="field">

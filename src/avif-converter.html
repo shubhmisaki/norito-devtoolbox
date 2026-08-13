@@ -77,7 +77,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -112,7 +112,7 @@
           <input type="range" id="quality" min="10" max="100" value="80" />
         </div>
         <button id="convertBtn" disabled>Convert</button>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
         <div class="result-box error" id="unsupportedNote" style="display:none;"></div>
       </div>
 

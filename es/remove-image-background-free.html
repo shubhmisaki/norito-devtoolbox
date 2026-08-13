@@ -101,6 +101,7 @@
   <div class="blob blob-3"></div>
 </div>
 
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/es/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
@@ -246,7 +247,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
 <script type="text/javascript">
@@ -273,7 +274,7 @@ atOptions = {
   </div>
 
 
-    <div class="result-box" style="margin-bottom:28px;">
+    <div class="result-box" aria-live="polite" aria-atomic="true" style="margin-bottom:28px;">
       <span class="r-body">
         <strong>Ten en cuenta:</strong> esto usa MODNet, un modelo de recorte de retrato ajustado para personas, no para objetos o productos en general. Los retratos y selfies funcionan mejor. El modelo y el runtime de WebAssembly que necesita pesan unos 18 MB en total y se descargan una vez por sesión de navegador, luego quedan en caché.
       </span>
@@ -307,7 +308,7 @@ atOptions = {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
           Quitar fondo
         </button>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
 
         <div class="batch-file-list" id="batchList" style="display:none;"></div>
         <div class="batch-actions" id="batchActions" style="display:none;">

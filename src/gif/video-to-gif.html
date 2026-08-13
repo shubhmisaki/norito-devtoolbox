@@ -66,7 +66,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -120,7 +120,7 @@
         <button type="button" id="cancelBtn" style="display:none;">Cancel</button>
       </div>
 
-      <div class="result-box" id="result" style="display:none;"></div>
+      <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
       <div style="margin-top:16px; text-align:center;">
         <img id="preview" alt="Generated GIF preview" style="display:none; max-width:100%; border-radius:8px;" />
       </div>

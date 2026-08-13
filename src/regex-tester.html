@@ -87,7 +87,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -117,7 +117,7 @@
           <label for="testString">Test string</label>
           <textarea id="testString" class="mono-output" rows="6" spellcheck="false">The Quick Brown Fox jumps over the lazy Dog.</textarea>
         </div>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
         <div class="field" style="margin-top:16px;">
           <label>Highlighted matches</label>
           <div class="regex-highlighted" id="highlighted"></div>

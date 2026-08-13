@@ -73,7 +73,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -104,7 +104,7 @@
           <label for="testString">Texto de prueba</label>
           <textarea id="testString" class="mono-output" rows="6" spellcheck="false">El Rápido Zorro Marrón salta sobre el Perro perezoso.</textarea>
         </div>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
         <div class="field" style="margin-top:16px;">
           <label>Coincidencias resaltadas</label>
           <div class="regex-highlighted" id="highlighted"></div>

@@ -101,6 +101,7 @@
   <div class="blob blob-3"></div>
 </div>
 
+<a class="skip-link" href="#main">मुख्य सामग्री पर जाएँ</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/hi/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
@@ -246,7 +247,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
 <script type="text/javascript">
@@ -279,7 +280,7 @@ atOptions = {
           <label for="jwtInput">JWT</label>
           <textarea id="jwtInput" class="mono-output" rows="6" spellcheck="false" placeholder="एक JWT पेस्ट करें, जैसे eyJhbGciOi...">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
         </div>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
         <div class="meta-panel" id="claimsPanel" style="display:none;">
           <p class="meta-summary">पहचाने गए स्टैंडर्ड क्लेम्स</p>
           <div class="meta-list" id="claimsList"></div>

@@ -106,6 +106,7 @@
   <div class="blob blob-3"></div>
 </div>
 
+<a class="skip-link" href="#main">मुख्य सामग्री पर जाएँ</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/hi/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
@@ -251,7 +252,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
 <script type="text/javascript">
@@ -299,7 +300,7 @@ atOptions = {
           <input type="range" id="quality" min="10" max="100" value="80" />
         </div>
         <button id="convertBtn" disabled>कन्वर्ट करें</button>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
         <div class="result-box error" id="unsupportedNote" style="display:none;"></div>
       </div>
 

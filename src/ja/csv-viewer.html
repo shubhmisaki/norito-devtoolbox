@@ -73,7 +73,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -95,7 +95,7 @@
         <p class="note" style="margin-top:2px;">下の表で任意のセルを直接編集し、エクスポートしてください。</p>
         <input type="file" id="fileInput" accept=".csv,text/csv" />
       </div>
-      <div class="result-box" id="result" style="display:none;"></div>
+      <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
       <div class="csv-table-wrap" id="tableWrap" style="display:none;"></div>
       <div class="csv-table-actions">
         <button type="button" class="secondary" id="addRowBtn">行を追加</button>

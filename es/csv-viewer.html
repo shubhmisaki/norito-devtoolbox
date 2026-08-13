@@ -101,6 +101,7 @@
   <div class="blob blob-3"></div>
 </div>
 
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/es/index.html"><img class="logo logo-word" src="/assets/norito-wordmark.svg" alt="norito" width="113" height="44" /></a>
@@ -246,7 +247,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <div class="ad-slot ad-slot-728" style="min-height:90px;max-width:728px;margin:20px auto;overflow-x:auto;">
 <script type="text/javascript">
@@ -280,7 +281,7 @@ atOptions = {
         <p class="note" style="margin-top:2px;">Edita cualquier celda directamente en la tabla de abajo y luego exporta.</p>
         <input type="file" id="fileInput" accept=".csv,text/csv" />
       </div>
-      <div class="result-box" id="result" style="display:none;"></div>
+      <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
       <div class="csv-table-wrap" id="tableWrap" style="display:none;"></div>
       <div class="csv-table-actions">
         <button type="button" class="secondary" id="addRowBtn">Añadir fila</button>

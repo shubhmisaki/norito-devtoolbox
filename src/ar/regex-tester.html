@@ -73,7 +73,7 @@
 
 <!--INCLUDE:HEADER:standard-->
 
-<main>
+<main id="main">
   <div class="wrap">
     <!--INCLUDE:AD-TOP-->
     <div class="tool-hero">
@@ -104,7 +104,7 @@
           <label for="testString">نص الاختبار</label>
           <textarea id="testString" class="mono-output" rows="6" spellcheck="false">الثعلب البني السريع يقفز فوق الكلب الكسول.</textarea>
         </div>
-        <div class="result-box" id="result" style="display:none;"></div>
+        <div class="result-box" aria-live="polite" aria-atomic="true" id="result" style="display:none;"></div>
         <div class="field" style="margin-top:16px;">
           <label>التطابقات المميّزة</label>
           <div class="regex-highlighted" id="highlighted"></div>
