@@ -1,0 +1,30 @@
+# Explicitly disable Netlify's "Pretty URLs" post-processing step.
+#
+# Pretty URLs rewrites every internal href in the deployed HTML to strip
+# the .html extension (e.g. "/pdf/merge-pdf.html" -> "/pdf/merge-pdf") at
+# deploy time. It was silently enabled on this site's dashboard (no
+# netlify.toml existed to override it), which put every internal link on
+# every page out of sync with the site's actual convention: canonical
+# tags, hreflang tags, sitemap.xml, and structured data all use the
+# .html form consistently (see scripts/build_site.py).
+#
+# That mismatch is the root cause behind a big chunk of Google Search
+# Console's "Page indexing" report: Google discovers the extensionless
+# URLs because literally every nav/footer/related-tools link points to
+# them, then either (a) respects the self-referencing canonical on the
+# .html page and reports the extensionless URL as "Alternative page with
+# proper canonical tag", or (b) follows the _redirects 301 back to the
+# .html URL and reports it as "Page with redirect" - neither of which
+# would exist if the links Netlify serves matched the links in the
+# source HTML to begin with.
+#
+# Disabling pretty_urls here makes Netlify serve the HTML exactly as
+# built, so internal links point straight at the canonical .html URLs
+# and there's no extensionless duplicate for Google to discover at all.
+#
+# Deliberately not touching [build] (command/publish dir) or any other
+# [build.processing.*] subsection here - those stay whatever they're
+# already set to on the site's Netlify dashboard. Only pretty_urls is
+# being overridden.
+[build.processing.html]
+  pretty_urls = false
