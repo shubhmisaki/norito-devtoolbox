@@ -285,6 +285,7 @@ atOptions = {
           </select>
         </label>
         <button type="button" id="applySkipBtn">Apply (resets manual edits below)</button>
+        <button type="button" id="dedupeBtn">Remove duplicate frames</button>
       </div>
 
       <div id="controls" style="display:none; margin-top:16px;">
@@ -305,12 +306,14 @@ atOptions = {
         </div>
         <p class="note">Compression runs on <a href="https://www.lcdf.org/gifsicle/" target="_blank" rel="noopener">gifsicle</a>, the same engine behind most GIF-compression sites, via WebAssembly, entirely in your browser. 0 lossy is visually lossless; 30&ndash;60 is a good balance of size and quality; above 100 gets noisy.</p>
         <button type="button" id="compressBtn">Compress GIF</button>
+        <button type="button" id="presetsBtn">Compare 3 quick size options</button>
       </div>
 
       <div class="result-box" id="result" style="display:none;"></div>
       <div style="margin-top:16px; text-align:center;">
         <img id="preview" alt="Compressed GIF preview" style="display:none; max-width:100%; border-radius:8px;" />
       </div>
+      <div id="presetResults" style="display:none; margin-top:16px; gap:12px; flex-wrap:wrap; justify-content:center;"></div>
     </div>
 
     <div class="ad-slot ad-slot-native" style="min-height:90px;margin:20px 0;">
@@ -321,8 +324,8 @@ atOptions = {
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>The GIF is decoded frame by frame in your browser (handling each frame's disposal method so the full picture is reconstructed correctly, not just the raw delta each frame stores on disk) and shown as a thumbnail strip, so you can spot and drop a redundant or broken frame before compressing (fewer frames means a smaller file). Scaling and any dropped frames are applied first, then the result is run through a real WebAssembly build of <a href="https://www.lcdf.org/gifsicle/" target="_blank" rel="noopener">gifsicle</a>, the same compression engine most GIF-compression websites run on their servers, for lossy compression and frame-difference optimization (storing only what changed between frames instead of every full frame).</p>
-      <p>Scaling down tends to save the most, a GIF at 50% width and height is roughly a quarter the pixel data. The lossy level trades a bit of visual noise for a smaller file, 0 keeps it visually lossless, 30&ndash;60 is a good balance, and values past 100 start showing real artifacts. Reducing colors caps the palette size, useful for GIFs that don't need a full 256 colors.</p>
+      <p>The GIF is decoded frame by frame in your browser (handling each frame's disposal method so the full picture is reconstructed correctly, not just the raw delta each frame stores on disk) and shown as a thumbnail strip, so you can spot and drop a redundant or broken frame before compressing (fewer frames means a smaller file). "Remove duplicate frames" does this automatically, comparing each frame to the one before it and merging any that are visually identical, gentler than dropping every Nth frame since it only removes what's actually redundant. Scaling and any frame edits are applied first, then the result is run through a real WebAssembly build of <a href="https://www.lcdf.org/gifsicle/" target="_blank" rel="noopener">gifsicle</a>, the same compression engine most GIF-compression websites run on their servers, for lossy compression and frame-difference optimization (storing only what changed between frames instead of every full frame).</p>
+      <p>Scaling down tends to save the most, a GIF at 50% width and height is roughly a quarter the pixel data. The lossy level trades a bit of visual noise for a smaller file, 0 keeps it visually lossless, 30&ndash;60 is a good balance, and values past 100 start showing real artifacts. Reducing colors caps the palette size, useful for GIFs that don't need a full 256 colors. Not sure what lossy level to pick? "Compare 3 quick size options" runs light, balanced, and aggressive compression at once so you can just pick whichever result looks good enough.</p>
     </div>
 
     <div class="ad-slot ad-slot-300" style="min-height:250px;max-width:300px;margin:20px auto;">
@@ -552,8 +555,7 @@ atOptions = {
 <script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
-<!-- Adsterra tag disabled per user request (suspected pop-under/click-hijack behavior: hand cursor + click-anywhere opens an ad). Re-enable only after confirming which of the two sitewide Adsterra tags (this one, or head-common.html) was the culprit.
+<!-- Adsterra Social Bar (zone 30675475) -- confirmed via zone-ID offset match against the Adsterra dashboard, not the culprit for the click-hijack issue (that was the Popunder in head-common.html, left disabled). -->
 <script src="https://pl30775974.effectivecpmnetwork.com/45/46/bd/4546bd692b42ca660c03716e49f94071.js"></script>
--->
 </body>
 </html>

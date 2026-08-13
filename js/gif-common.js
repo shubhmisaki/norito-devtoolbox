@@ -255,6 +255,49 @@ function bulkKeepEveryNth(frames, n) {
   return out;
 }
 
+/** Downsample a frame to a small grayscale-ish pixel sample for cheap
+ * similarity comparisons (used by bulkRemoveDuplicates). */
+function frameSampleData(f, size = 24) {
+  const src = frameSourceEl(f);
+  const c = document.createElement("canvas");
+  c.width = size;
+  c.height = size;
+  const ctx = c.getContext("2d", { willReadFrequently: true });
+  ctx.drawImage(src, 0, 0, size, size);
+  return ctx.getImageData(0, 0, size, size).data;
+}
+
+/** Average per-channel pixel difference between two same-size samples. */
+function sampleDiff(a, b) {
+  let sum = 0;
+  for (let i = 0; i < a.length; i += 4) {
+    sum += Math.abs(a[i] - b[i]) + Math.abs(a[i + 1] - b[i + 1]) + Math.abs(a[i + 2] - b[i + 2]);
+  }
+  return sum / (a.length / 4) / 3;
+}
+
+/** Return a new array with visually-identical adjacent frames merged
+ * (dropped frame's delay folds into the frame that's kept), gentler than
+ * fixed every-Nth skipping since it only removes frames that are actually
+ * redundant. `threshold` (0-255, default 6) is the average per-channel
+ * pixel difference below which two frames count as duplicates -- lower is
+ * stricter. Does not mutate `frames`. */
+function bulkRemoveDuplicates(frames, threshold = 6) {
+  if (frames.length <= 1) return frames.slice();
+  const out = [Object.assign({}, frames[0])];
+  let lastSample = frameSampleData(frames[0]);
+  for (let i = 1; i < frames.length; i++) {
+    const sample = frameSampleData(frames[i]);
+    if (sampleDiff(lastSample, sample) < threshold) {
+      out[out.length - 1].delay = (out[out.length - 1].delay || 100) + (frames[i].delay || 100);
+    } else {
+      out.push(Object.assign({}, frames[i]));
+      lastSample = sample;
+    }
+  }
+  return out;
+}
+
 /* ---------------------------------------------------------------------
    Real compression via gifsicle (WASM), used by GIF Compressor. See
    js/vendor/README.md for the license note (gifsicle itself is GPL-2.0,

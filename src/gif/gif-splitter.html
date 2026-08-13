@@ -3,12 +3,12 @@
 <head>
     <!--INCLUDE:HEAD-COMMON-->
 <title>GIF Splitter: Extract Frames as Images | Norito GIF</title>
-<meta name="description" content="Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts." />
+<meta name="description" content="Split an animated GIF into its individual frames as PNG, JPEG, or WebP, or export a sprite sheet, right in your browser. No uploads, no accounts." />
 <link rel="canonical" href="https://norito.in/gif/gif-splitter.html" />
 <!--INCLUDE:HREFLANG-AUTO-->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="GIF Splitter: Extract Frames as Images | Norito GIF" />
-<meta property="og:description" content="Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts." />
+<meta property="og:description" content="Split an animated GIF into its individual frames as PNG, JPEG, or WebP, or export a sprite sheet, right in your browser. No uploads, no accounts." />
 <meta property="og:url" content="https://norito.in/gif/gif-splitter.html" />
 <meta property="og:site_name" content="norito" />
 <meta property="og:image" content="https://norito.in/assets/og-image.png" />
@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="GIF Splitter: Extract Frames as Images | Norito GIF" />
-<meta name="twitter:description" content="Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts." />
+<meta name="twitter:description" content="Split an animated GIF into its individual frames as PNG, JPEG, or WebP, or export a sprite sheet, right in your browser. No uploads, no accounts." />
 <meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
 <link rel="stylesheet" href="/css/style.css" />
 
@@ -26,7 +26,7 @@
   "@type": "WebApplication",
   "name": "GIF Splitter",
   "url": "https://norito.in/gif/gif-splitter.html",
-  "description": "Split an animated GIF into its individual frames and download them as PNGs, right in your browser. No uploads, no accounts.",
+  "description": "Split an animated GIF into its individual frames as PNG, JPEG, or WebP, or export a sprite sheet, right in your browser. No uploads, no accounts.",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Any (runs in browser)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -38,8 +38,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What format are the extracted frames?", "acceptedAnswer": { "@type": "Answer", "text": "PNG, so transparency is preserved if the GIF used it. Each frame is the fully-composited image at that point in the animation, not just the raw delta GIF frames store on disk." } },
+    { "@type": "Question", "name": "What formats can I export the frames as?", "acceptedAnswer": { "@type": "Answer", "text": "PNG (lossless, keeps transparency), JPEG (smaller, no transparency), or WebP (smaller, keeps transparency). Each frame is the fully-composited image at that point in the animation, not just the raw delta GIF frames store on disk." } },
     { "@type": "Question", "name": "Can I download just one frame?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, each frame thumbnail has its own download button, or use the \"Download all as .zip\" button to get every frame at once." } },
+    { "@type": "Question", "name": "What's a sprite sheet and why would I want one?", "acceptedAnswer": { "@type": "Answer", "text": "A sprite sheet arranges every frame into a single grid image instead of separate files, useful for game engines, CSS sprite animations, or previewing the whole sequence at a glance. Set the number of columns and download it as one PNG." } },
     { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded and split entirely in your browser." } }
   ]
 }
@@ -75,7 +76,7 @@
     <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Norito GIF</a> / GIF Splitter</p>
     <h1>GIF Splitter</h1>
     <p class="lede">
-      Extract every frame of an animated GIF as a separate PNG image, download individually or all at once.
+      Extract every frame of an animated GIF as a separate image (PNG, JPEG, or WebP), download individually, all at once, or as a single sprite sheet.
     </p>
     </div>
   </div>
@@ -86,8 +87,32 @@
         <input type="file" id="fileInput" accept="image/gif" hidden />
       </div>
       <p class="note" id="originalInfo" style="display:none;"></p>
+
+      <div class="two-col" id="exportControls" style="display:none; margin-top:12px;">
+        <div class="field">
+          <label for="formatSelect">Export format</label>
+          <select id="formatSelect">
+            <option value="png" selected>PNG (lossless, supports transparency)</option>
+            <option value="jpeg">JPEG (smaller, no transparency)</option>
+            <option value="webp">WebP (smaller, supports transparency)</option>
+          </select>
+        </div>
+        <div class="field" id="qualityRow" style="display:none;">
+          <label for="qualityInput">Quality (%)</label>
+          <input type="number" id="qualityInput" value="90" min="1" max="100" />
+        </div>
+      </div>
+
       <div id="frameGrid" style="display:none; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:12px;"></div>
       <button type="button" id="zipBtn" style="display:none; margin-top:16px;">Download all as .zip</button>
+
+      <div class="frame-strip-toolbar" id="spriteToolbar" style="display:none;">
+        <label>Sprite sheet columns
+          <input type="number" id="spriteCols" min="1" style="width:60px;" />
+        </label>
+        <button type="button" id="spriteBtn">Download as sprite sheet</button>
+      </div>
+
       <div class="result-box" id="result" style="display:none;"></div>
     </div>
 
@@ -96,7 +121,8 @@
     <div class="explain-panel">
       <h2>How it works</h2>
       <p>GIF frames are stored on disk as deltas, each frame often only records the pixels that changed since the last one, with a "disposal method" flag describing whether the previous frame should stay, be cleared, or be restored. Decoding a frame correctly means replaying all of that, not just reading one frame's raw data in isolation, otherwise partial frames come out looking wrong.</p>
-      <p>This tool reconstructs each frame as a complete image, draws it to a canvas, and exports it as a PNG (preserving transparency if the GIF used it). Everything happens locally, nothing is uploaded to decode or split the file.</p>
+      <p>This tool reconstructs each frame as a complete image, draws it to a canvas, and exports it in the format you pick: PNG (lossless, keeps transparency), JPEG (smaller, no transparency), or WebP (smaller, keeps transparency). Switching formats re-exports instantly without re-decoding the GIF. Everything happens locally, nothing is uploaded to decode or split the file.</p>
+      <p>Need all the frames as one file instead of a folder? "Download as sprite sheet" arranges every frame into a single grid image, useful for game engines, CSS sprite animations, or just eyeballing the whole sequence at once. Set how many columns you want, or leave it at the default square-ish layout.</p>
     </div>
 
     <!--INCLUDE:AD-MID-->
@@ -109,12 +135,16 @@ gif-maker.html|GIF Maker|Turn a batch of images into an animated GIF.
     <h2>Common questions</h2>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>What format are the extracted frames?</summary>
-        <p>PNG, so transparency is preserved if the GIF used it. Each frame is the fully-composited image at that point in the animation, not just the raw delta GIF frames store on disk.</p>
+        <summary>What formats can I export the frames as?</summary>
+        <p>PNG (lossless, keeps transparency), JPEG (smaller, no transparency), or WebP (smaller, keeps transparency). Each frame is the fully-composited image at that point in the animation, not just the raw delta GIF frames store on disk.</p>
       </details>
       <details class="faq-item">
         <summary>Can I download just one frame?</summary>
         <p>Yes, each frame thumbnail has its own download button, or use the "Download all as .zip" button to get every frame at once.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's a sprite sheet and why would I want one?</summary>
+        <p>A sprite sheet arranges every frame into a single grid image instead of separate files, useful for game engines, CSS sprite animations, or previewing the whole sequence at a glance. Set the number of columns and download it as one PNG.</p>
       </details>
       <details class="faq-item">
         <summary>Is my GIF uploaded anywhere?</summary>

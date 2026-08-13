@@ -11,6 +11,18 @@
     percentFields: document.getElementById("percentFields"),
     percentInput: document.getElementById("percentInput"),
     lockRatio: document.getElementById("lockRatio"),
+    lockRatioRow: document.getElementById("lockRatioRow"),
+    fitModeField: document.getElementById("fitModeField"),
+    fitMode: document.getElementById("fitMode"),
+    cropFields: document.getElementById("cropFields"),
+    cropPreviewWrap: document.getElementById("cropPreviewWrap"),
+    cropPreviewImg: document.getElementById("cropPreviewImg"),
+    cropRect: document.getElementById("cropRect"),
+    cropX: document.getElementById("cropX"),
+    cropY: document.getElementById("cropY"),
+    cropW: document.getElementById("cropW"),
+    cropH: document.getElementById("cropH"),
+    resetCropBtn: document.getElementById("resetCropBtn"),
     resizeBtn: document.getElementById("resizeBtn"),
     frameList: document.getElementById("frameList"),
     result: document.getElementById("result"),
@@ -23,6 +35,7 @@
   let syncing = false;
   let strip = null;
   let busy = false; // true while resizing, so a mid-flight file swap can't pull the rug out
+  let cropRectPx = null; // { x, y, w, h } in actual GIF pixel coordinates
 
   function setResult(html, state) {
     els.result.innerHTML = html;
@@ -59,6 +72,8 @@
       // Preview only: resizing doesn't touch which frames exist, their
       // order, or their timing, so none of those controls are shown here.
       strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: false, allowReorder: false, allowDelayEdit: false });
+      initCrop();
+      updateModeUI();
     } catch (err) {
       setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
     }
@@ -72,12 +87,121 @@
   });
 
   function updateModeUI() {
-    const exact = els.mode.value === "exact";
-    els.exactFields.style.display = exact ? "flex" : "block";
-    els.percentFields.style.display = exact ? "none" : "block";
+    const mode = els.mode.value;
+    els.exactFields.style.display = mode === "exact" ? "flex" : "none";
+    els.percentFields.style.display = mode === "percent" ? "block" : "none";
+    els.cropFields.style.display = mode === "crop" ? "block" : "none";
+    els.lockRatioRow.style.display = mode === "crop" ? "none" : "flex";
+    els.fitModeField.style.display = mode === "exact" && !els.lockRatio.checked ? "block" : "none";
+    if (mode === "crop" && decoded) drawCropOverlay();
   }
   els.mode.addEventListener("change", updateModeUI);
+  els.lockRatio.addEventListener("change", updateModeUI);
   updateModeUI();
+
+  /* --------------------------------------------------------------------
+     Crop mode: drag a rectangle on a preview of frame 1, or type exact
+     pixel coordinates. cropRectPx is always in real GIF pixel units;
+     the overlay div is positioned with percentages so it stays aligned
+     with the (responsively-scaled) preview image without recomputing a
+     px scale factor on resize.
+     ------------------------------------------------------------------ */
+
+  function initCrop() {
+    const frame0 = decoded.frames[0];
+    const src = frameSourceEl(frame0);
+    const canvas = document.createElement("canvas");
+    canvas.width = decoded.width;
+    canvas.height = decoded.height;
+    canvas.getContext("2d").drawImage(src, 0, 0, decoded.width, decoded.height);
+    els.cropPreviewImg.src = canvas.toDataURL("image/png");
+    cropRectPx = { x: 0, y: 0, w: decoded.width, h: decoded.height };
+    syncCropInputs();
+  }
+
+  function syncCropInputs() {
+    if (!cropRectPx) return;
+    els.cropX.value = Math.round(cropRectPx.x);
+    els.cropY.value = Math.round(cropRectPx.y);
+    els.cropW.value = Math.round(cropRectPx.w);
+    els.cropH.value = Math.round(cropRectPx.h);
+    [els.cropX, els.cropY, els.cropW, els.cropH].forEach((el) => { el.max = decoded ? Math.max(decoded.width, decoded.height) : ""; });
+  }
+
+  function drawCropOverlay() {
+    if (!cropRectPx || !decoded) return;
+    els.cropRect.style.left = `${(cropRectPx.x / decoded.width) * 100}%`;
+    els.cropRect.style.top = `${(cropRectPx.y / decoded.height) * 100}%`;
+    els.cropRect.style.width = `${(cropRectPx.w / decoded.width) * 100}%`;
+    els.cropRect.style.height = `${(cropRectPx.h / decoded.height) * 100}%`;
+  }
+
+  function clampCropRect() {
+    cropRectPx.w = Math.max(1, Math.min(cropRectPx.w, decoded.width));
+    cropRectPx.h = Math.max(1, Math.min(cropRectPx.h, decoded.height));
+    cropRectPx.x = Math.max(0, Math.min(cropRectPx.x, decoded.width - cropRectPx.w));
+    cropRectPx.y = Math.max(0, Math.min(cropRectPx.y, decoded.height - cropRectPx.h));
+  }
+
+  els.cropPreviewWrap.addEventListener("pointerdown", (e) => {
+    if (!decoded || els.mode.value !== "crop") return;
+    e.preventDefault();
+    const wrap = els.cropPreviewWrap;
+    wrap.setPointerCapture(e.pointerId);
+    const rect = wrap.getBoundingClientRect();
+    const startXFrac = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const startYFrac = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+    const startX = startXFrac * decoded.width;
+    const startY = startYFrac * decoded.height;
+
+    const move = (ev) => {
+      const xFrac = Math.max(0, Math.min(1, (ev.clientX - rect.left) / rect.width));
+      const yFrac = Math.max(0, Math.min(1, (ev.clientY - rect.top) / rect.height));
+      const curX = xFrac * decoded.width;
+      const curY = yFrac * decoded.height;
+      cropRectPx = {
+        x: Math.min(startX, curX),
+        y: Math.min(startY, curY),
+        w: Math.max(1, Math.abs(curX - startX)),
+        h: Math.max(1, Math.abs(curY - startY)),
+      };
+      clampCropRect();
+      drawCropOverlay();
+    };
+    const up = () => {
+      wrap.removeEventListener("pointermove", move);
+      wrap.removeEventListener("pointerup", up);
+      syncCropInputs();
+    };
+    wrap.addEventListener("pointermove", move);
+    wrap.addEventListener("pointerup", up);
+  });
+
+  [els.cropX, els.cropY, els.cropW, els.cropH].forEach((el) => {
+    el.addEventListener("change", () => {
+      if (!decoded || !cropRectPx) return;
+      cropRectPx = {
+        x: Math.max(0, Number(els.cropX.value) || 0),
+        y: Math.max(0, Number(els.cropY.value) || 0),
+        w: Math.max(1, Number(els.cropW.value) || 1),
+        h: Math.max(1, Number(els.cropH.value) || 1),
+      };
+      clampCropRect();
+      syncCropInputs();
+      drawCropOverlay();
+    });
+  });
+
+  els.resetCropBtn.addEventListener("click", () => {
+    if (!decoded) return;
+    cropRectPx = { x: 0, y: 0, w: decoded.width, h: decoded.height };
+    syncCropInputs();
+    drawCropOverlay();
+  });
+
+  window.addEventListener("resize", () => {
+    if (decoded && els.mode.value === "crop") drawCropOverlay();
+  });
 
   els.widthInput.addEventListener("input", () => {
     if (syncing || !els.lockRatio.checked || !decoded) return;
@@ -106,26 +230,68 @@
     };
   }
 
+  /** Draw one frame's source into a w×h canvas per the chosen fit mode:
+   * stretch (distort to fill), cover (crop to fill, no distortion), or
+   * contain (pad the extra space with transparency, no distortion, no
+   * cropping). */
+  function drawFitted(ctx, src, w, h, fit) {
+    if (fit === "stretch") {
+      ctx.drawImage(src, 0, 0, w, h);
+      return;
+    }
+    const srcRatio = decoded.width / decoded.height;
+    const dstRatio = w / h;
+    if (fit === "cover") {
+      let sw = decoded.width, sh = decoded.height, sx = 0, sy = 0;
+      if (srcRatio > dstRatio) { sw = decoded.height * dstRatio; sx = (decoded.width - sw) / 2; }
+      else { sh = decoded.width / dstRatio; sy = (decoded.height - sh) / 2; }
+      ctx.drawImage(src, sx, sy, sw, sh, 0, 0, w, h);
+    } else { // contain
+      let dw = w, dh = h;
+      if (srcRatio > dstRatio) dh = w / srcRatio;
+      else dw = h * srcRatio;
+      ctx.drawImage(src, 0, 0, decoded.width, decoded.height, (w - dw) / 2, (h - dh) / 2, dw, dh);
+    }
+  }
+
   els.resizeBtn.addEventListener("click", async () => {
     if (!decoded || busy) return;
-    const { w, h } = targetDims();
-    if (!w || !h || w > 4000 || h > 4000) {
-      setResult("<strong>Enter valid dimensions.</strong> Width and height must be between 1 and 4000 pixels.", "error");
-      return;
+    const mode = els.mode.value;
+    let w, h, frames;
+
+    if (mode === "crop") {
+      if (!cropRectPx || cropRectPx.w < 1 || cropRectPx.h < 1) {
+        setResult("<strong>Select a crop area first.</strong>", "error");
+        return;
+      }
+      w = Math.round(cropRectPx.w);
+      h = Math.round(cropRectPx.h);
+    } else {
+      ({ w, h } = targetDims());
+      if (!w || !h || w > 4000 || h > 4000) {
+        setResult("<strong>Enter valid dimensions.</strong> Width and height must be between 1 and 4000 pixels.", "error");
+        return;
+      }
     }
 
     busy = true;
     els.resizeBtn.disabled = true;
-    els.resizeBtn.textContent = "Resizing...";
+    els.resizeBtn.textContent = mode === "crop" ? "Cropping..." : "Resizing...";
     els.result.style.display = "none";
 
     try {
-      const frames = decoded.frames.map((f) => {
+      const fit = mode === "exact" && !els.lockRatio.checked ? els.fitMode.value : "stretch";
+      frames = decoded.frames.map((f) => {
         const canvas = document.createElement("canvas");
         canvas.width = w;
         canvas.height = h;
-        const src = imageDataToCanvas(f.imageData);
-        canvas.getContext("2d").drawImage(src, 0, 0, w, h);
+        const ctx = canvas.getContext("2d");
+        const src = frameSourceEl(f);
+        if (mode === "crop") {
+          ctx.drawImage(src, cropRectPx.x, cropRectPx.y, cropRectPx.w, cropRectPx.h, 0, 0, w, h);
+        } else {
+          drawFitted(ctx, src, w, h, fit);
+        }
         return { canvas, delay: f.delay };
       });
 
@@ -133,7 +299,7 @@
         width: w,
         height: h,
         quality: 10,
-        onProgress: (f) => { els.resizeBtn.textContent = `Resizing... ${Math.round(f * 100)}%`; },
+        onProgress: (f) => { els.resizeBtn.textContent = `${mode === "crop" ? "Cropping" : "Resizing"}... ${Math.round(f * 100)}%`; },
       });
 
       const url = URL.createObjectURL(blob);
@@ -141,15 +307,15 @@
       els.preview.style.display = "block";
 
       setResult(
-        `<strong>Resized to ${w}×${h}.</strong> ${formatBytes(blob.size)}.<br><br>` +
-        `<button id="dlBtn">Download resized.gif</button>`,
+        `<strong>${mode === "crop" ? "Cropped" : "Resized"} to ${w}×${h}.</strong> ${formatBytes(blob.size)}.<br><br>` +
+        `<button id="dlBtn">Download ${mode === "crop" ? "cropped" : "resized"}.gif</button>`,
         "ok"
       );
-      document.getElementById("dlBtn").addEventListener("click", () => downloadBlob(blob, "resized.gif"));
+      document.getElementById("dlBtn").addEventListener("click", () => downloadBlob(blob, mode === "crop" ? "cropped.gif" : "resized.gif"));
       els.result.scrollIntoView({ behavior: "smooth", block: "center" });
       if (typeof celebrateSuccess === "function") celebrateSuccess(els.resizeBtn, els.result);
     } catch (err) {
-      setResult(`<strong>Couldn't resize that GIF.</strong> ${err.message || "Try different dimensions."}`, "error");
+      setResult(`<strong>Couldn't ${mode === "crop" ? "crop" : "resize"} that GIF.</strong> ${err.message || "Try different values."}`, "error");
     } finally {
       busy = false;
       els.resizeBtn.disabled = false;

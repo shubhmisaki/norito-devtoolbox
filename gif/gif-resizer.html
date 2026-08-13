@@ -64,7 +64,8 @@
   "mainEntity": [
     { "@type": "Question", "name": "Does resizing also reduce file size?", "acceptedAnswer": { "@type": "Answer", "text": "Usually yes, since a smaller canvas means less pixel data per frame, but that's a side effect. For dedicated file-size control (frame dropping, compression level), use the GIF Compressor instead." } },
     { "@type": "Question", "name": "Will the animation timing change?", "acceptedAnswer": { "@type": "Answer", "text": "No, resizing only changes each frame's pixel dimensions. The original per-frame delay and frame count are kept exactly as they were." } },
-    { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded, scaled, and re-encoded entirely in your browser." } }
+    { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, it's decoded, scaled, and re-encoded entirely in your browser." } },
+    { "@type": "Question", "name": "Can I crop a GIF instead of just resizing it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, switch to Crop mode, then drag a rectangle on the preview or type exact pixel coordinates, and every frame is cropped to that region." } }
   ]
 }
 </script>
@@ -284,6 +285,7 @@ atOptions = {
           <select id="mode">
             <option value="exact">Exact dimensions</option>
             <option value="percent">Percentage</option>
+            <option value="crop">Crop</option>
           </select>
         </div>
         <div class="two-col" id="exactFields">
@@ -300,9 +302,34 @@ atOptions = {
           <label for="percentInput">Scale (%)</label>
           <input type="number" id="percentInput" value="50" min="1" max="500" />
         </div>
-        <label class="checkbox-row"><input type="checkbox" id="lockRatio" checked /> Lock aspect ratio</label>
+        <label class="checkbox-row" id="lockRatioRow"><input type="checkbox" id="lockRatio" checked /> Lock aspect ratio</label>
+        <div class="field" id="fitModeField" style="display:none;">
+          <label for="fitMode">When width/height don't match the source aspect ratio</label>
+          <select id="fitMode">
+            <option value="stretch">Stretch to fit</option>
+            <option value="cover">Cover (crop to fill)</option>
+            <option value="contain">Contain (pad with transparency)</option>
+          </select>
+        </div>
 
-        <button type="button" id="resizeBtn">Resize GIF</button>
+        <div class="field" id="cropFields" style="display:none;">
+          <label>Drag on the preview to select the crop area, or type exact pixel values below.</label>
+          <div id="cropPreviewWrap" style="position:relative; display:inline-block; max-width:100%; touch-action:none; cursor:crosshair;">
+            <img id="cropPreviewImg" alt="Crop preview" style="display:block; max-width:100%; border-radius:6px;" />
+            <div id="cropRect" style="position:absolute; border:2px solid var(--brand, #ff4d7a); background:rgba(255,77,122,0.15); box-sizing:border-box;"></div>
+          </div>
+          <div class="two-col" style="margin-top:10px;">
+            <div class="field"><label for="cropX">X (px)</label><input type="number" id="cropX" min="0" /></div>
+            <div class="field"><label for="cropY">Y (px)</label><input type="number" id="cropY" min="0" /></div>
+          </div>
+          <div class="two-col">
+            <div class="field"><label for="cropW">Width (px)</label><input type="number" id="cropW" min="1" /></div>
+            <div class="field"><label for="cropH">Height (px)</label><input type="number" id="cropH" min="1" /></div>
+          </div>
+          <button type="button" id="resetCropBtn" style="margin-top:6px;">Reset to full frame</button>
+        </div>
+
+        <button type="button" id="resizeBtn" style="margin-top:12px;">Resize GIF</button>
       </div>
 
       <div class="result-box" id="result" style="display:none;"></div>
@@ -319,8 +346,9 @@ atOptions = {
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>Every frame of the GIF is decoded to a full-size image (correctly reconstructed frame by frame, since GIF frames are often just the changed region rather than the whole picture), shown as a thumbnail in the frame strip so you can see what you're resizing, drawn onto a canvas at the new dimensions, and re-encoded. Resizing only touches pixel dimensions, so the frame order, count, and delay are all left exactly as they were.</p>
-      <p>Exact mode lets you type a specific width and height, with the aspect-ratio lock keeping them proportional if you only change one. Percentage mode scales both dimensions by the same factor, useful for a quick "make it half size" without doing the math.</p>
+      <p>Every frame of the GIF is decoded to a full-size image (correctly reconstructed frame by frame, since GIF frames are often just the changed region rather than the whole picture), shown as a thumbnail in the frame strip so you can see what you're resizing, drawn onto a canvas at the new dimensions, and re-encoded. Resizing and cropping only touch pixel dimensions, so the frame order, count, and delay are all left exactly as they were.</p>
+      <p>Exact mode lets you type a specific width and height, with the aspect-ratio lock keeping them proportional if you only change one. Percentage mode scales both dimensions by the same factor, useful for a quick "make it half size" without doing the math. If you unlock the aspect ratio and pick dimensions that don't match the source, choose how the mismatch is handled: stretch distorts the image to fill exactly, cover crops the edges to fill without distortion, and contain pads the extra space with transparency so nothing is cropped or stretched.</p>
+      <p>Crop mode lets you cut the canvas down to a specific region instead of scaling the whole thing, drag a rectangle directly on the preview or type exact pixel coordinates for precision, then every frame is cropped to that same region.</p>
     </div>
 
     <div class="ad-slot ad-slot-300" style="min-height:250px;max-width:300px;margin:20px auto;">
@@ -367,6 +395,10 @@ atOptions = {
       <details class="faq-item">
         <summary>Is my GIF uploaded anywhere?</summary>
         <p>No, it's decoded, scaled, and re-encoded entirely in your browser.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I crop a GIF instead of just resizing it?</summary>
+        <p>Yes, switch to Crop mode, then drag a rectangle on the preview or type exact pixel coordinates, and every frame is cropped to that region.</p>
       </details>
     </div>
   </div>
@@ -546,8 +578,7 @@ atOptions = {
 <script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
-<!-- Adsterra tag disabled per user request (suspected pop-under/click-hijack behavior: hand cursor + click-anywhere opens an ad). Re-enable only after confirming which of the two sitewide Adsterra tags (this one, or head-common.html) was the culprit.
+<!-- Adsterra Social Bar (zone 30675475) -- confirmed via zone-ID offset match against the Adsterra dashboard, not the culprit for the click-hijack issue (that was the Popunder in head-common.html, left disabled). -->
 <script src="https://pl30775974.effectivecpmnetwork.com/45/46/bd/4546bd692b42ca660c03716e49f94071.js"></script>
--->
 </body>
 </html>

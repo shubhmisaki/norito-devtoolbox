@@ -26,13 +26,13 @@
 <script src="https://pl30775972.effectivecpmnetwork.com/b8/56/71/b85671c26c7a608f3ce9b0cb31925819.js"></script>
 -->
 <title>Add Text to GIF | Norito GIF</title>
-<meta name="description" content="Add a text caption to an animated GIF, right in your browser. Choose position, size, and color. No uploads, no accounts." />
+<meta name="description" content="Add drag-positioned text captions to an animated GIF, with font, outline, and background box controls, right in your browser. No uploads, no accounts." />
 <link rel="canonical" href="https://norito.in/gif/add-text-to-gif.html" />
 <link rel="alternate" hreflang="en" href="https://norito.in/gif/add-text-to-gif.html" />
 <link rel="alternate" hreflang="x-default" href="https://norito.in/gif/add-text-to-gif.html" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Add Text to GIF | Norito GIF" />
-<meta property="og:description" content="Add a text caption to an animated GIF, right in your browser. Choose position, size, and color. No uploads, no accounts." />
+<meta property="og:description" content="Add drag-positioned text captions to an animated GIF, with font, outline, and background box controls, right in your browser. No uploads, no accounts." />
 <meta property="og:url" content="https://norito.in/gif/add-text-to-gif.html" />
 <meta property="og:site_name" content="norito" />
 <meta property="og:image" content="https://norito.in/assets/og-image.png" />
@@ -40,7 +40,7 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Add Text to GIF | Norito GIF" />
-<meta name="twitter:description" content="Add a text caption to an animated GIF, right in your browser. Choose position, size, and color. No uploads, no accounts." />
+<meta name="twitter:description" content="Add drag-positioned text captions to an animated GIF, with font, outline, and background box controls, right in your browser. No uploads, no accounts." />
 <meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
 <link rel="stylesheet" href="/css/style.css" />
 
@@ -50,7 +50,7 @@
   "@type": "WebApplication",
   "name": "Add Text to GIF",
   "url": "https://norito.in/gif/add-text-to-gif.html",
-  "description": "Add a text caption to an animated GIF, right in your browser. Choose position, size, and color. No uploads, no accounts.",
+  "description": "Add drag-positioned text captions to an animated GIF, with font, outline, and background box controls, right in your browser. No uploads, no accounts.",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Any (runs in browser)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -62,7 +62,8 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Does the text stay in place while the GIF animates?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the same caption at the same position and size is drawn onto every frame, so it stays fixed on screen the whole time the GIF plays." } },
+    { "@type": "Question", "name": "Does the text stay in place while the GIF animates?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, within a caption's active frame range, the same position, size, and style is drawn onto every one of those frames, so it stays fixed on screen for as long as it's set to show." } },
+    { "@type": "Question", "name": "Can I add more than one caption, like subtitles?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, use \"+ Add another caption\" to add as many as you want, each with its own text, position, style, and \"show from frame / until frame\" range, so different captions can appear on different sections of the animation." } },
     { "@type": "Question", "name": "Can I use more than one line of text?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, press Enter in the text box to start a new line, each line is centered independently within the caption block." } },
     { "@type": "Question", "name": "Is my GIF uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No, the caption is drawn and the GIF is re-encoded entirely in your browser." } }
   ]
@@ -263,7 +264,7 @@ atOptions = {
     <p class="breadcrumb"><a href="../index.html">norito</a> / <a href="index.html">Norito GIF</a> / Add Text to GIF</p>
     <h1>Add Text to GIF</h1>
     <p class="lede">
-      Caption an animated GIF with your own text, top, bottom, or center, then download.
+      Caption an animated GIF with your own text, drag it anywhere, pick a font, and add more than one caption on different sections of the animation.
     </p>
     </div>
   </div>
@@ -278,36 +279,18 @@ atOptions = {
 
       <div id="controls" style="display:none; margin-top:16px;">
         <p class="note" id="originalInfo"></p>
-        <div class="field">
-          <label for="textInput">Caption text</label>
-          <textarea id="textInput" rows="2" placeholder="Your caption..."></textarea>
+
+        <div style="text-align:center;">
+          <div id="captionPreviewWrap" style="position:relative; display:inline-block; max-width:100%; touch-action:none;">
+            <img id="captionPreviewImg" alt="Caption position preview" style="display:block; max-width:100%; border-radius:8px;" />
+          </div>
+          <p class="note">Drag a numbered handle to position that caption. Preview reflects frame 1.</p>
         </div>
-        <div class="two-col">
-          <div class="field">
-            <label for="positionSelect">Position</label>
-            <select id="positionSelect">
-              <option value="top">Top</option>
-              <option value="bottom" selected>Bottom</option>
-              <option value="center">Center</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="sizeInput">Font size (px)</label>
-            <input type="number" id="sizeInput" value="28" min="8" max="120" />
-          </div>
-        </div>
-        <div class="two-col">
-          <div class="field">
-            <label for="colorInput">Text color</label>
-            <input type="color" id="colorInput" value="#ffffff" />
-          </div>
-          <div class="field">
-            <label for="strokeCheck" style="display:flex; align-items:center; gap:8px; margin-top:24px;">
-              <input type="checkbox" id="strokeCheck" checked /> Black outline
-            </label>
-          </div>
-        </div>
-        <button type="button" id="applyBtn">Add Text</button>
+
+        <div id="captionsList"></div>
+        <button type="button" id="addCaptionBtn" style="margin-top:8px;">+ Add another caption</button>
+
+        <button type="button" id="applyBtn" style="margin-top:16px;">Add Text</button>
       </div>
 
       <div class="result-box" id="result" style="display:none;"></div>
@@ -324,8 +307,8 @@ atOptions = {
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>Each frame is decoded to a full image and shown as a thumbnail in the frame strip above, so you can see exactly what you're captioning (and drop a frame you don't want with &times; before applying text). Your caption is drawn onto a copy of every remaining frame at the same position and size (with an optional black outline for readability over busy backgrounds), and the frames are re-encoded into a new GIF. Because the text is drawn fresh on every frame rather than overlaid as a separate layer, the exported file is a normal, single-layer animated GIF that works anywhere GIFs do.</p>
-      <p>Multi-line text is supported, each line is measured and centered independently so longer captions wrap the way you'd expect.</p>
+      <p>Each frame is decoded to a full image and shown as a thumbnail in the frame strip above, so you can see exactly what you're captioning (and drop a frame you don't want with &times; before applying text). Every caption gets a numbered handle on the live preview, drag it anywhere on the image instead of picking from a fixed list of positions. Your caption is drawn onto a copy of every frame in its active range (with an optional outline in any color and thickness, plus an optional background box for readability over busy backgrounds), and the frames are re-encoded into a new GIF. Because the text is drawn fresh on every frame rather than overlaid as a separate layer, the exported file is a normal, single-layer animated GIF that works anywhere GIFs do.</p>
+      <p>Use "+ Add another caption" for subtitle-style captions, each one gets its own text, position, style, and "show from frame / until frame" range, so you can caption different sections of a longer animation differently instead of one caption stuck on the whole thing. Multi-line text is supported in every caption, each line is measured and centered independently so longer captions wrap the way you'd expect.</p>
     </div>
 
     <div class="ad-slot ad-slot-300" style="min-height:250px;max-width:300px;margin:20px auto;">
@@ -363,7 +346,11 @@ atOptions = {
     <div class="faq-list">
       <details class="faq-item">
         <summary>Does the text stay in place while the GIF animates?</summary>
-        <p>Yes, the same caption at the same position and size is drawn onto every frame, so it stays fixed on screen the whole time the GIF plays.</p>
+        <p>Yes, within a caption's active frame range, the same position, size, and style is drawn onto every one of those frames, so it stays fixed on screen for as long as it's set to show.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I add more than one caption, like subtitles?</summary>
+        <p>Yes, use "+ Add another caption" to add as many as you want, each with its own text, position, style, and "show from frame / until frame" range, so different captions can appear on different sections of the animation.</p>
       </details>
       <details class="faq-item">
         <summary>Can I use more than one line of text?</summary>
@@ -551,8 +538,7 @@ atOptions = {
 <script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
-<!-- Adsterra tag disabled per user request (suspected pop-under/click-hijack behavior: hand cursor + click-anywhere opens an ad). Re-enable only after confirming which of the two sitewide Adsterra tags (this one, or head-common.html) was the culprit.
+<!-- Adsterra Social Bar (zone 30675475) -- confirmed via zone-ID offset match against the Adsterra dashboard, not the culprit for the click-hijack issue (that was the Popunder in head-common.html, left disabled). -->
 <script src="https://pl30775974.effectivecpmnetwork.com/45/46/bd/4546bd692b42ca660c03716e49f94071.js"></script>
--->
 </body>
 </html>
