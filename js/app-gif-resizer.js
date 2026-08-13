@@ -56,7 +56,9 @@
       syncing = false;
       els.controls.style.display = "block";
       els.frameList.style.display = "flex";
-      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true });
+      // Preview only: resizing doesn't touch which frames exist, their
+      // order, or their timing, so none of those controls are shown here.
+      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: false, allowReorder: false, allowDelayEdit: false });
     } catch (err) {
       setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
     }

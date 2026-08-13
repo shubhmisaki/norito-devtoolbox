@@ -124,11 +124,17 @@ function frameSourceSize(el) {
  * options.defaultDelay: fallback delay (ms) for frames that don't have one.
  * options.allowRemove: set false to hide remove buttons (e.g. when a
  * frame count must stay fixed).
+ * options.allowReorder: set false to hide the move up/down buttons, for
+ * tools where frame order isn't something that tool touches (e.g.
+ * resizing or compressing shouldn't also let you silently reorder).
+ * options.allowDelayEdit: set false to hide the per-frame delay input
+ * entirely, for tools that don't touch timing (only GIF Maker, where
+ * you're actively building an animation's timing, needs this on).
  *
  * Returns { refresh() } — call refresh() after changing `frames` from
  * outside (e.g. a bulk toolbar action) so the strip re-renders.
  */
-function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, allowRemove = true } = {}) {
+function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, allowRemove = true, allowReorder = true, allowDelayEdit = true } = {}) {
   const THUMB = 80;
 
   function thumbDataUrl(f) {
@@ -157,36 +163,42 @@ function renderFrameStrip(container, frames, { onChange, defaultDelay = 100, all
       if (f.delay == null) f.delay = defaultDelay;
       const chip = document.createElement("div");
       chip.className = "frame-chip";
+
+      const actionButtons =
+        (allowReorder ? `<button type="button" class="frame-move-up" aria-label="Move frame ${i + 1} earlier"${i === 0 ? " disabled" : ""}>&uarr;</button>` : "") +
+        (allowReorder ? `<button type="button" class="frame-move-down" aria-label="Move frame ${i + 1} later"${i === frames.length - 1 ? " disabled" : ""}>&darr;</button>` : "") +
+        (allowRemove ? `<button type="button" class="frame-remove" aria-label="Remove frame ${i + 1}"${frames.length <= 1 ? " disabled" : ""}>&times;</button>` : "");
+
       chip.innerHTML =
         `<img class="frame-thumb" src="${thumbDataUrl(f)}" alt="Frame ${i + 1}" width="80" height="80">` +
         `<span class="frame-index">#${i + 1}</span>` +
-        `<label class="frame-delay-label">Delay<input type="number" class="frame-delay-input" min="10" max="30000" step="10" value="${f.delay}"><span>ms</span></label>` +
-        `<div class="frame-actions">` +
-        `<button type="button" class="frame-move-up" aria-label="Move frame ${i + 1} earlier"${i === 0 ? " disabled" : ""}>&uarr;</button>` +
-        `<button type="button" class="frame-move-down" aria-label="Move frame ${i + 1} later"${i === frames.length - 1 ? " disabled" : ""}>&darr;</button>` +
-        (allowRemove ? `<button type="button" class="frame-remove" aria-label="Remove frame ${i + 1}"${frames.length <= 1 ? " disabled" : ""}>&times;</button>` : "") +
-        `</div>`;
+        (allowDelayEdit ? `<label class="frame-delay-label">Delay<input type="number" class="frame-delay-input" min="10" max="30000" step="10" value="${f.delay}"><span>ms</span></label>` : "") +
+        (actionButtons ? `<div class="frame-actions">${actionButtons}</div>` : "");
 
-      chip.querySelector(".frame-delay-input").addEventListener("change", (e) => {
-        const v = Math.max(10, Math.min(30000, Number(e.target.value) || defaultDelay));
-        f.delay = v;
-        e.target.value = v;
-        if (onChange) onChange();
-      });
-      chip.querySelector(".frame-move-up").addEventListener("click", () => {
-        if (i === 0) return;
-        [frames[i - 1], frames[i]] = [frames[i], frames[i - 1]];
-        pendingFocus = { index: i - 1, selector: ".frame-move-up" };
-        render();
-        if (onChange) onChange();
-      });
-      chip.querySelector(".frame-move-down").addEventListener("click", () => {
-        if (i === frames.length - 1) return;
-        [frames[i + 1], frames[i]] = [frames[i], frames[i + 1]];
-        pendingFocus = { index: i + 1, selector: ".frame-move-down" };
-        render();
-        if (onChange) onChange();
-      });
+      if (allowDelayEdit) {
+        chip.querySelector(".frame-delay-input").addEventListener("change", (e) => {
+          const v = Math.max(10, Math.min(30000, Number(e.target.value) || defaultDelay));
+          f.delay = v;
+          e.target.value = v;
+          if (onChange) onChange();
+        });
+      }
+      if (allowReorder) {
+        chip.querySelector(".frame-move-up").addEventListener("click", () => {
+          if (i === 0) return;
+          [frames[i - 1], frames[i]] = [frames[i], frames[i - 1]];
+          pendingFocus = { index: i - 1, selector: ".frame-move-up" };
+          render();
+          if (onChange) onChange();
+        });
+        chip.querySelector(".frame-move-down").addEventListener("click", () => {
+          if (i === frames.length - 1) return;
+          [frames[i + 1], frames[i]] = [frames[i], frames[i + 1]];
+          pendingFocus = { index: i + 1, selector: ".frame-move-down" };
+          render();
+          if (onChange) onChange();
+        });
+      }
       if (allowRemove) {
         chip.querySelector(".frame-remove").addEventListener("click", () => {
           if (frames.length <= 1) return; // keep at least one frame

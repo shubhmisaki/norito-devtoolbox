@@ -47,7 +47,9 @@
         `${file.name}: ${decoded.width}×${decoded.height}, ${decoded.frames.length} frames, ${formatBytes(file.size)}`;
       els.controls.style.display = "block";
       els.frameList.style.display = "flex";
-      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true });
+      // Thumbnails so you can drop a bad frame before captioning, but no
+      // delay editing or reordering -- captioning doesn't touch timing.
+      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true, allowReorder: false, allowDelayEdit: false });
     } catch (err) {
       setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
     }

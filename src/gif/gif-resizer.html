@@ -127,7 +127,7 @@
 
     <div class="explain-panel">
       <h2>How it works</h2>
-      <p>Every frame of the GIF is decoded to a full-size image (correctly reconstructed frame by frame, since GIF frames are often just the changed region rather than the whole picture), shown as a thumbnail in the frame strip so you can see what you're resizing, drawn onto a canvas at the new dimensions, and re-encoded. Frame delays stay as they were unless you edit them directly in the strip, and you can drop a bad frame with &times; before resizing.</p>
+      <p>Every frame of the GIF is decoded to a full-size image (correctly reconstructed frame by frame, since GIF frames are often just the changed region rather than the whole picture), shown as a thumbnail in the frame strip so you can see what you're resizing, drawn onto a canvas at the new dimensions, and re-encoded. Resizing only touches pixel dimensions, so the frame order, count, and delay are all left exactly as they were.</p>
       <p>Exact mode lets you type a specific width and height, with the aspect-ratio lock keeping them proportional if you only change one. Percentage mode scales both dimensions by the same factor, useful for a quick "make it half size" without doing the math.</p>
     </div>
 

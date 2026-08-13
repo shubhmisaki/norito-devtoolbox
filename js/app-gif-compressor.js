@@ -53,7 +53,10 @@
       els.controls.style.display = "block";
       els.bulkToolbar.style.display = "flex";
       els.frameList.style.display = "flex";
-      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true });
+      // Compression-focused view: thumbnails so you can spot a bad/redundant
+      // frame to drop (fewer frames = smaller file), but no delay editing or
+      // reordering -- neither affects file size, so they're not shown here.
+      strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true, allowReorder: false, allowDelayEdit: false });
     } catch (err) {
       setResult(`<strong>Couldn't read that GIF.</strong> ${err.message || "Try a different file."}`, "error");
     }
@@ -70,7 +73,7 @@
     if (!originalFrames) return;
     const n = Number(els.skipSelect.value) || 1;
     decoded.frames = bulkKeepEveryNth(originalFrames, n);
-    strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true });
+    strip = renderFrameStrip(els.frameList, decoded.frames, { allowRemove: true, allowReorder: false, allowDelayEdit: false });
   });
 
   els.reduceColorsCheck.addEventListener("change", () => {
