@@ -10,6 +10,23 @@
   const nav = document.getElementById("siteNav");
   if (!nav) return;
 
+  // ---- measure header height so the mega-dropdown can position itself
+  // just below the header regardless of how tall it renders (locale text
+  // length, font, zoom level, etc. all affect this) ----
+  const siteHeader = document.querySelector("header.site");
+  function updateHeaderHeight() {
+    if (!siteHeader) return;
+    document.documentElement.style.setProperty(
+      "--header-h",
+      `${Math.round(siteHeader.getBoundingClientRect().height)}px`
+    );
+  }
+  updateHeaderHeight();
+  window.addEventListener("resize", updateHeaderHeight);
+  if (window.ResizeObserver && siteHeader) {
+    new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+  }
+
   const groups = Array.from(nav.querySelectorAll(".nav-group"));
   const currentFile = (location.pathname.split("/").pop() || "index.html") || "index.html";
 

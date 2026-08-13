@@ -160,11 +160,26 @@ every locale, correct headings, `nav.js`'s hamburger injection and link
 matching unaffected (it does `querySelectorAll("a")`, which finds links at
 any nesting depth).
 
-Scoped to Developer only for this pass — it's the clear violator at 27
-items. Images (13) and Design (14) are milder versions of the same issue
-and were intentionally left as single-column dropdowns; worth revisiting
-the same way if they start feeling cramped, but didn't want to restructure
-7 more locale files without being asked.
+**Update (same session, follow-up request):** the user asked for a
+consistent full-width treatment across every category, not just Developer,
+so this was extended: every nav dropdown (PDF, Images, Developer, Text,
+Utilities, SEO, Design, GIF) is now a `.nav-panel-mega` grid — full page
+content width (`min(1080px, 100vw - 32px)`, centered via
+`position:fixed;left:50%;transform:translateX(-50%)` so it aligns with the
+page's `.wrap` container regardless of which nav trigger opened it), same
+230px-minimum auto-fill card grid, same fixed-height bordered card with
+icon/title/subtext and hover lift for every link in every category. Titles
+are uniformly wrapped in `<strong>` for consistent `text-overflow:ellipsis`
+behavior. The `--header-h` CSS variable the positioning depends on is now
+actually measured in `js/nav.js` (header's real rendered height, updated on
+load/resize/ResizeObserver) instead of relying on a hardcoded fallback.
+Added `[dir=rtl] .nav-panel.nav-panel-mega{left:50%;right:auto}` so the
+centered positioning isn't reverted by the existing RTL nav rule for
+Arabic. Verified via jsdom across en/es/ja/ar: header-height variable gets
+set without throwing, every nav-panel carries `nav-panel-mega`, link counts
+per locale are unchanged (92 EN / 86 per other locale), no duplicate links,
+every title is `<strong>`-wrapped, hamburger injection still fires exactly
+once. Full existing 45-test regression suite still green.
 
 **Unrelated bug surfaced during verification, not fixed (out of scope for
 this item):** `js/nav.js`'s active-link highlighting compares
