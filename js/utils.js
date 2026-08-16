@@ -197,6 +197,81 @@ async function copyToClipboard(text) {
 // forms, across 24 app-*.js files. `onDrop(e)` is called only for the actual
 // drop, with the hover class already cleared and the default already
 // prevented -- callers just read e.dataTransfer.files.
+// ---- Whole-page drop target ----
+// Every dropzone still works exactly as before (hover the small box,
+// see it highlight, drop). This additionally turns the whole viewport
+// into a drop target on pages with exactly one dropzone -- the moment a
+// file is dragged anywhere over the window, a full-screen overlay
+// appears so people don't have to aim for a small box, and dropping
+// anywhere routes to that one dropzone's onDrop. Pages with more than
+// one dropzone (only PDF Compare, with separate File A / File B slots)
+// intentionally keep the original small-target-only behavior, since a
+// page-wide catch-all would be ambiguous about which slot a dropped file
+// should fill.
+const DROPZONE_REGISTRY = [];
+let fullPageDropWired = false;
+let dropOverlayEl = null;
+let dropDragCounter = 0;
+
+const FULLPAGE_DROP_LABEL = {
+  en: "Drop it anywhere",
+  es: "Suéltalo en cualquier lugar",
+  zh: "拖放到页面任意位置",
+  ar: "أفلته في أي مكان",
+  hi: "इसे कहीं भी छोड़ें",
+  ru: "Отпустите в любом месте",
+  ja: "どこにでもドロップできます",
+};
+
+function isFileDrag(e) {
+  return !!(e.dataTransfer && e.dataTransfer.types && Array.prototype.includes.call(e.dataTransfer.types, "Files"));
+}
+
+function ensureFullPageDrop() {
+  if (fullPageDropWired) return;
+  fullPageDropWired = true;
+
+  const lang = document.documentElement.lang === "zh-Hans" ? "zh" : (document.documentElement.lang || "en");
+  const label = FULLPAGE_DROP_LABEL[lang] || FULLPAGE_DROP_LABEL.en;
+
+  dropOverlayEl = document.createElement("div");
+  dropOverlayEl.className = "fullpage-drop-overlay";
+  dropOverlayEl.innerHTML =
+    '<div class="fullpage-drop-overlay-inner">' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>' +
+    "<span>" + label + "</span>" +
+    "</div>";
+  document.body.appendChild(dropOverlayEl);
+
+  // dragenter/dragleave fire for every element the pointer crosses, not
+  // just window-level enter/exit, so a plain counter (increment on enter,
+  // decrement on leave, show only while > 0) is the standard way to tell
+  // "left the window" apart from "moved from one child element to
+  // another" without them cancelling each other out mid-drag.
+  window.addEventListener("dragenter", (e) => {
+    if (DROPZONE_REGISTRY.length !== 1 || !isFileDrag(e)) return;
+    e.preventDefault();
+    dropDragCounter++;
+    dropOverlayEl.classList.add("active");
+  });
+  window.addEventListener("dragover", (e) => {
+    if (DROPZONE_REGISTRY.length !== 1 || !isFileDrag(e)) return;
+    e.preventDefault();
+  });
+  window.addEventListener("dragleave", (e) => {
+    if (DROPZONE_REGISTRY.length !== 1) return;
+    dropDragCounter = Math.max(0, dropDragCounter - 1);
+    if (dropDragCounter === 0) dropOverlayEl.classList.remove("active");
+  });
+  window.addEventListener("drop", (e) => {
+    if (DROPZONE_REGISTRY.length !== 1 || !isFileDrag(e)) return;
+    e.preventDefault();
+    dropDragCounter = 0;
+    dropOverlayEl.classList.remove("active");
+    DROPZONE_REGISTRY[0].onDrop(e);
+  });
+}
+
 function wireDragDrop(el, onDrop) {
   // Auto-label any <input type="file"> nested in this dropzone, using the
   // dropzone's own visible instruction text ("Click to choose an image, or
@@ -218,10 +293,14 @@ function wireDragDrop(el, onDrop) {
     if (label) fileInput.setAttribute("aria-label", label);
   }
 
-  el.addEventListener("dragover", (e) => { e.preventDefault(); el.classList.add("drag"); });
-  el.addEventListener("dragleave", (e) => { e.preventDefault(); el.classList.remove("drag"); });
+  DROPZONE_REGISTRY.push({ el, onDrop });
+  ensureFullPageDrop();
+
+  el.addEventListener("dragover", (e) => { e.preventDefault(); e.stopPropagation(); el.classList.add("drag"); });
+  el.addEventListener("dragleave", (e) => { e.preventDefault(); e.stopPropagation(); el.classList.remove("drag"); });
   el.addEventListener("drop", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     el.classList.remove("drag");
     onDrop(e);
   });
