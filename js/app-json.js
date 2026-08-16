@@ -44,6 +44,19 @@
     }
   }
 
+  function safeStringify(value, indent) {
+    // JSON.stringify's own internal recursion can still blow the call stack
+    // on pathologically deep input (thousands of nesting levels) even though
+    // renderNode()'s tree view is depth-guarded above. Isolate that so a
+    // stray exception here doesn't leave the "input" listener throwing
+    // uncaught mid-keystroke.
+    try {
+      return { ok: true, text: JSON.stringify(value, null, indent) };
+    } catch (e) {
+      return { ok: false, error: I18N.too_deeply_nested_stringify || "This JSON is too deeply nested to format." };
+    }
+  }
+
   function sortKeysDeep(value) {
     if (Array.isArray(value)) return value.map(sortKeysDeep);
     if (value && typeof value === "object") {
@@ -71,11 +84,20 @@
   }
 
   const MAX_ITEMS = 300;
+  const MAX_DEPTH = 200;
 
-  function renderNode(value, container) {
+  function renderNode(value, container, depth = 0) {
     const t = typeLabel(value);
     if (t !== "object" && t !== "array") {
       container.appendChild(renderValue(value));
+      return;
+    }
+
+    if (depth >= MAX_DEPTH) {
+      const tooDeep = document.createElement("span");
+      tooDeep.className = "jt-more";
+      tooDeep.textContent = I18N.too_deeply_nested || "… nested too deeply to display here, see Text view";
+      container.appendChild(tooDeep);
       return;
     }
 
@@ -113,7 +135,7 @@
         keyEl.textContent = `"${key}": `;
         row.appendChild(keyEl);
       }
-      renderNode(val, row);
+      renderNode(val, row, depth + 1);
       body.appendChild(row);
     });
     if (entries.length > MAX_ITEMS) {
@@ -159,7 +181,15 @@
     renderNode(data, els.treeView);
 
     const indent = els.indent.value === "tab" ? "\t" : parseInt(els.indent.value, 10);
-    els.textOutput.value = JSON.stringify(data, null, indent);
+    const stringified = safeStringify(data, indent);
+    if (stringified.ok) {
+      els.textOutput.value = stringified.text;
+    } else {
+      els.textOutput.value = "";
+      els.status.textContent = stringified.error;
+      els.status.className = "result-box error";
+      els.status.style.display = "flex";
+    }
   }
 
   els.input.addEventListener("input", render);
@@ -182,7 +212,9 @@
       if (!result.ok) return;
       lastValid = result.data;
     }
-    els.input.value = JSON.stringify(lastValid);
+    const stringified = safeStringify(lastValid);
+    if (!stringified.ok) return;
+    els.input.value = stringified.text;
     render();
     celebrateSuccess(els.minifyBtn);
   });
@@ -193,7 +225,9 @@
     let data = result.data;
     if (els.sortKeys.checked) data = sortKeysDeep(data);
     const indent = els.indent.value === "tab" ? "\t" : parseInt(els.indent.value, 10);
-    els.input.value = JSON.stringify(data, null, indent);
+    const stringified = safeStringify(data, indent);
+    if (!stringified.ok) return;
+    els.input.value = stringified.text;
     render();
     celebrateSuccess(els.formatBtn);
   });
