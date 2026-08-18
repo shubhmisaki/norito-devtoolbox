@@ -10,15 +10,15 @@ Staggered on purpose — same-week launches split attention and traffic, and doi
 - **Product Hunt: Tuesday, August 18, 2026, 12:01 AM PT.** One work-week after Show HN, gives time to fix anything HN surfaces first. Tuesday–Thursday are PH's highest-traffic days; launching right at 12:01 AM PT maximizes the full 24-hour voting window. Already logged into Product Hunt in this browser session, so this one's ready to go when the date arrives.
 - Repo visibility confirmed: `github.com/ShubhMisaki/norito-devtoolbox` is public and loads normally — the HN post's bracketed caveat about this below has been resolved.
 
-**Tool count note:** the "86" figure below is the verified count of distinct tool pages as of Aug 2026 (counted directly from `tools.html`'s card list, category by category: PDF 12, Images 13, Developer 27, Text 12, Utilities 2, SEO 6, Design 14 = 86). The homepage hero badge currently says "90" — that number is stale/inflated by 4 and should get fixed on-site before or alongside this launch push, so a sharp-eyed commenter counting cards on `tools.html` doesn't catch a mismatch. Re-count before reusing this copy later, the number will drift as tools get added.
+**Tool count note:** the "92" figure below is the verified count of distinct tool pages as of Aug 17, 2026 (counted directly from `tools.html`'s card list, category by category: PDF 12, Images 13, Developer 27, Text 12, Utilities 2, SEO 6, Design 14, GIF 6 = 92 — the GIF category shipped after the earlier "86" count and that number had gone stale in about.html until this pass). Re-count before reusing this copy later, the number will drift as tools get added.
 
 ## Product Hunt
 
 **Tagline** (60 char max):
-> 86 free browser tools. No signup, nothing leaves your device.
+> 92 free browser tools. No signup, nothing leaves your device.
 
 **Description:**
-> norito is a collection of 86 free utilities that run entirely in your browser: PDF merge/split/compress, image resize/convert/background-removal, JSON/YAML formatters, password and QR generators, text tools, SEO tools, and CSS/design generators.
+> norito is a collection of 92 free utilities that run entirely in your browser: PDF merge/split/compress, image resize/convert/background-removal, animated GIF tools, JSON/YAML formatters, password and QR generators, text tools, SEO tools, and CSS/design generators.
 >
 > No account, no watermark, no upload limit. Most tools never send your file anywhere, they process it locally with the Canvas/File/WebAssembly APIs already built into your browser, so a PDF or photo you run through norito never leaves your device. That's not a privacy *policy*, it's checkable: open the Network tab in DevTools while you use one and see for yourself.
 >
@@ -32,7 +32,7 @@ Staggered on purpose — same-week launches split attention and traffic, and doi
 ## AlternativeTo
 
 **Description:**
-> A collection of 86 free, no-signup browser tools covering PDF (merge, split, compress, rotate, compare), images (resize, convert, compress, background removal, watermark, crop, AVIF/HEIC), developer utilities (JSON/YAML formatters, regex tester, JWT decoder, UUID/hash generators, SVG tools), text tools, SEO utilities, and CSS/design generators. Most tools process files entirely client-side, nothing is uploaded to a server. Free, ad-supported, no account required. Available in 7 languages.
+> A collection of 92 free, no-signup browser tools covering PDF (merge, split, compress, rotate, compare), images (resize, convert, compress, background removal, watermark, crop, AVIF/HEIC), animated GIFs (make, compress, resize, split, caption), developer utilities (JSON/YAML formatters, regex tester, JWT decoder, UUID/hash generators, SVG tools), text tools, SEO utilities, and CSS/design generators. Most tools process files entirely client-side, nothing is uploaded to a server. Free, ad-supported, no account required. Available in 7 languages.
 
 **Suggested "Alternative to" tags** (attach norito as an alternative to the specific tool it competes with, not just a generic category — check each one still applies before submitting):
 - Smallpdf, iLovePDF (PDF tools)
@@ -43,12 +43,12 @@ Staggered on purpose — same-week launches split attention and traffic, and doi
 ## Hacker News (Show HN)
 
 **Title:**
-> Show HN: norito – 86 free browser tools, most run entirely client-side
+> Show HN: norito – 92 free browser tools, most run entirely client-side
 
 **Post body:**
-> I built norito, a set of free web utilities (PDF, image, dev, text tools) after getting tired of tools that gate basic features behind signup or a paywall.
+> I built norito, a set of free web utilities after getting tired of tools that gate basic features behind signup or a paywall. It started as a couple of PDF tools and has grown into 92 of them across eight categories, PDF, image, animated GIF, developer, text, SEO, and CSS/design, most recently a full GIF suite (maker, compressor with real frame-level dedup, resizer, splitter, captioning).
 >
-> The technical bit HN will probably care about most: every tool processes files entirely in the browser, none of them upload anything (verified this by grepping the whole codebase for outbound fetch/XHR calls — the only one that exists loads the WASM runtime binary itself, never user data). Image compression uses canvas.toBlob with a binary-search on quality/dimensions to hit an exact target file size. Background removal runs a quantized MODNet model through ONNX Runtime Web (WASM), fully client-side, about 18MB downloaded once and cached. PDF tools use pdf-lib and pdf.js.
+> The technical bit HN will probably care about most: every tool processes files entirely in the browser, none of them upload anything (verified this by grepping the whole codebase for outbound fetch/XHR calls — the only one that exists loads the WASM runtime binary itself, never user data). Image compression uses canvas.toBlob with a binary-search on quality/dimensions to hit an exact target file size. Background removal runs a quantized MODNet model through ONNX Runtime Web (WASM), fully client-side, about 18MB downloaded once and cached. GIF compression runs gifsicle compiled to WASM. PDF tools use pdf-lib and pdf.js.
 >
 > No backend, no database, no server-side file processing at all — every tool runs client-side. It's a static site (Netlify), so hosting cost is close to zero regardless of traffic. Source is at github.com/ShubhMisaki/norito-devtoolbox under MIT.
 >
@@ -62,7 +62,7 @@ Staggered on purpose — same-week launches split attention and traffic, and doi
 ## Reddit (r/webdev, r/SideProject, r/InternetIsBeautiful — check each sub's self-promo rules before posting, some require an X:1 non-self-promo ratio or mod approval first)
 
 **Title:**
-> I built 86 free browser tools (PDF, image, dev utilities) that mostly don't touch a server
+> I built 92 free browser tools (PDF, image, GIF, dev utilities) that mostly don't touch a server
 
 **Post body:**
 > Built this over [actual timeframe — fill in before posting, I don't have a reliable source for how long this took you] — norito.in. It's a static site, one page per tool, most of them process your file entirely client-side (canvas/WASM), so nothing gets uploaded for things like image compression, resizing, or background removal.
