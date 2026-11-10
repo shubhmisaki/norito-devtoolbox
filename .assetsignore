@@ -1,0 +1,7 @@
+wrangler.jsonc
+netlify.toml
+scripts
+partials
+src
+.github
+*.md

@@ -1,0 +1,15 @@
+{
+  // Cloudflare Workers (static assets) config for norito.in
+  // Deploys the repo root as-is: built pages are committed, so no build step.
+  "name": "norito",
+  "compatibility_date": "2026-11-10",
+  "assets": {
+    "directory": "./",
+    // Serve files exactly as named (/about.html stays /about.html).
+    // Default "auto-trailing-slash" would 307-redirect .html URLs to
+    // extensionless ones and fight the canonical/_redirects setup.
+    "html_handling": "none",
+    // Serve /404.html with a real 404 status for unknown paths.
+    "not_found_handling": "404-page"
+  }
+}
