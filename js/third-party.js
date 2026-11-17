@@ -65,7 +65,16 @@
     }
   }
 
+  // AdSense (auto ads) used to sit in <head> on every page. It is ~300 KB of
+  // JS that nothing on the page waits for, so it loads with the other
+  // third parties, after the page is interactive. The account is still
+  // declared in <head> via <meta name="google-adsense-account">.
+  function loadAdSense() {
+    loadScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4040839176833351", { crossorigin: "anonymous" });
+  }
+
   function loadAds() {
+    loadAdSense();
     var slots = document.querySelectorAll(".ad-slot[data-ad]");
     if (slots.length) {
       if ("IntersectionObserver" in window) {
