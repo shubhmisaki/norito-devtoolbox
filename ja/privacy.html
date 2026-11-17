@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
 <head>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "xrd6nlberg");
-    </script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-695Y7WZTCT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-695Y7WZTCT');
-</script>
-
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 <script>(function(){try{var t=localStorage.getItem("norito:theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Analytics + ads load after the page is interactive: see /js/third-party.js. gtag() is stubbed here so early events queue. -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-695Y7WZTCT");</script>
+<script src="/js/third-party.js" defer></script>
 <link rel="icon" type="image/svg+xml" href="/assets/norito-mark.svg" />
 <link rel="icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -31,14 +17,12 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=optional" rel="stylesheet" /></noscript>
-<!-- Adsterra tag disabled per user request (suspected pop-under/click-hijack behavior: hand cursor + click-anywhere opens an ad). Re-enable only after confirming which of the two sitewide Adsterra tags (this one, or foot-scripts-tail.html) was the culprit.
-<script src="https://pl30775972.effectivecpmnetwork.com/b8/56/71/b85671c26c7a608f3ce9b0cb31925819.js"></script>
--->
+
 <title>プライバシーポリシー | norito</title>
-<meta name="description" content="noritoがデータをどう扱うか:ツールはすべてブラウザ内で完結し、何もアップロードされません。Google AdSense、Google Fonts、Netlifyホスティングが収集する情報、そしてお問い合わせ方法について説明します。" />
+<meta name="description" content="noritoがデータをどう扱うか:ツールはすべてブラウザ内で完結し、何もアップロードされません。Google AdSense、Google Fonts、Cloudflareホスティングが収集する情報、そしてお問い合わせ方法について説明します。" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="プライバシーポリシー | norito" />
-<meta property="og:description" content="noritoがデータをどう扱うか:ツールはすべてブラウザ内で完結し、何もアップロードされません。Google AdSense、Google Fonts、Netlifyホスティングが収集する情報、そしてお問い合わせ方法について説明します。" />
+<meta property="og:description" content="noritoがデータをどう扱うか:ツールはすべてブラウザ内で完結し、何もアップロードされません。Google AdSense、Google Fonts、Cloudflareホスティングが収集する情報、そしてお問い合わせ方法について説明します。" />
 <meta property="og:url" content="https://norito.in/ja/privacy.html" />
 <meta property="og:site_name" content="norito" />
 <meta property="og:image" content="https://norito.in/assets/og-image.png" />
@@ -46,7 +30,7 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="プライバシーポリシー | norito" />
-<meta name="twitter:description" content="noritoがデータをどう扱うか:ツールはすべてブラウザ内で完結し、何もアップロードされません。Google AdSense、Google Fonts、Netlifyホスティングが収集する情報、そしてお問い合わせ方法について説明します。" />
+<meta name="twitter:description" content="noritoがデータをどう扱うか:ツールはすべてブラウザ内で完結し、何もアップロードされません。Google AdSense、Google Fonts、Cloudflareホスティングが収集する情報、そしてお問い合わせ方法について説明します。" />
 <meta name="twitter:image" content="https://norito.in/assets/og-image.png" />
 <link rel="canonical" href="https://norito.in/ja/privacy.html" />
 <link rel="alternate" hreflang="en" href="https://norito.in/privacy.html" />
@@ -280,6 +264,16 @@
       EU/英国にお住まいの場合、Googleが広告をパーソナライズする前に
       同意を求める通知を表示することがあります。</p>
 
+    <h2>Google Analytics</h2>
+
+    <p>このサイトでは、アクセス数や利用されているツールを把握して改善に役立てるため、Google Analytics 4 を使用しています。閲覧されたページと、いくつかの匿名の操作（ツールが使われた、結果がダウンロードまたはコピーされた、など）を記録します。ファイルの内容やツールに入力した内容を記録することは一切ありません。そのために Google は Cookie を設定します。詳しくは <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google のプライバシー ポリシー</a>をご覧いただくか、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google アナリティクス オプトアウト アドオン</a>でブロックできます。</p>
+
+
+    <h2>Adsterra</h2>
+
+    <p>ツールページには Adsterra の広告も表示されます。Adsterra とそのパートナーは、広告の選択と計測のために Cookie や類似の識別子を使用することがあります。詳しくは <a href="https://adsterra.com/privacy-policy/" target="_blank" rel="noopener">Adsterra のプライバシーポリシー</a>をご覧ください。広告はツール本体の後に読み込まれ、処理するファイルにアクセスすることはありません。</p>
+
+
     <h2>Google Fonts</h2>
     <p>このサイトはGoogle Fontsから2つの書体(InterとPoppins)を読み込んでいます。Googleの
       サーバーからフォントを読み込むと、外部サーバーへのリクエストと同様に、ブラウザのIPアドレスと
@@ -288,7 +282,7 @@
       リクエストです。</p>
 
     <h2>ホスティングのログ</h2>
-    <p>このサイトはNetlifyでホストされており、他のホスティングプロバイダーと同様に
+    <p>このサイトはCloudflareでホストされており、他のホスティングプロバイダーと同様に
       セキュリティとパフォーマンスの目的で標準的なサーバーログ(IPアドレス、ブラウザの種類、
       リクエストされたページ)を保持します。私たちは集計された匿名の
       トラフィックレポート以外にアクセスできません。</p>
@@ -467,7 +461,5 @@
 <script src="/js/cmdk.js"></script>
 <script src="/js/sw-register.js" defer></script>
 <script src="/js/install-prompt.js" defer></script>
-<!-- Adsterra Social Bar (zone 30675475) -- confirmed via zone-ID offset match against the Adsterra dashboard, not the culprit for the click-hijack issue (that was the Popunder in head-common.html, left disabled). -->
-<script src="https://pl30775974.effectivecpmnetwork.com/45/46/bd/4546bd692b42ca660c03716e49f94071.js"></script>
 </body>
 </html>

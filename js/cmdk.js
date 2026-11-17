@@ -26,6 +26,72 @@
   }
 
   var TOOLS = buildTools();
+
+  // ---- recently used ---------------------------------------------------
+  // Stored as locale-independent paths ("/json-formatter.html") so the list
+  // follows the visitor across languages. Stays on this device only.
+  var RECENT_KEY = "norito:recent";
+  var LOCALE_RE = /^\/(es|zh|ar|hi|ru|ja)(?=\/)/;
+  function toolKey(href) {
+    try {
+      return new URL(href, location.href).pathname.replace(LOCALE_RE, "");
+    } catch (e) {
+      return href;
+    }
+  }
+  function readRecents() {
+    try {
+      var v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
+      return Array.isArray(v) ? v : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function recentTools() {
+    var byKey = {};
+    TOOLS.forEach(function (t) { byKey[toolKey(t.href)] = t; });
+    return readRecents().map(function (k) { return byKey[k]; }).filter(Boolean);
+  }
+  function withRecentsFirst(list) {
+    var recent = recentTools();
+    if (!recent.length) return list;
+    return recent.concat(list.filter(function (t) { return recent.indexOf(t) === -1; }));
+  }
+  (function recordVisit() {
+    var here = location.pathname.replace(LOCALE_RE, "");
+    var isTool = TOOLS.some(function (t) { return toolKey(t.href) === here; });
+    if (!isTool) return;
+    try {
+      var list = readRecents().filter(function (k) { return k !== here; });
+      list.unshift(here);
+      localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, 6)));
+    } catch (e) {}
+  })();
+
+  // Homepage: a "jump back in" row under the hero search, shown only to
+  // returning visitors who have actually used a tool before.
+  (function renderRecentRow() {
+    var hero = document.querySelector(".hero-search-trigger");
+    if (!hero) return;
+    var recent = recentTools().slice(0, 4);
+    if (!recent.length) return;
+    var labels = { en: "Recently used", es: "Usadas recientemente", zh: "最近使用", ar: "المستخدمة مؤخرًا", hi: "हाल ही में इस्तेमाल किए गए", ru: "Недавние", ja: "最近使ったツール" };
+    var lang = (document.documentElement.lang || "en").slice(0, 2);
+    var row = document.createElement("nav");
+    row.className = "recent-row";
+    row.setAttribute("aria-label", labels[lang] || labels.en);
+    var label = document.createElement("span");
+    label.className = "recent-label";
+    label.textContent = labels[lang] || labels.en;
+    row.appendChild(label);
+    recent.forEach(function (t) {
+      var a = document.createElement("a");
+      a.href = t.href;
+      a.textContent = t.name;
+      row.appendChild(a);
+    });
+    hero.insertAdjacentElement("afterend", row);
+  })();
   var activeIndex = 0;
 
   var emptyText = overlay.getAttribute("data-empty-text") || "No tools match that search.";
@@ -63,7 +129,7 @@
     overlay.hidden = false;
     document.body.classList.add("nav-open-lock");
     input.value = "";
-    render(TOOLS);
+    render(withRecentsFirst(TOOLS));
     setTimeout(function () {
       input.focus();
     }, 10);
@@ -75,17 +141,32 @@
     if (trigger) trigger.focus();
   }
 
+  // Every word in the query must appear somewhere in the name, description
+  // or category; name matches rank first, so "pdf merge" finds Merge PDF
+  // and "json" lists JSON Formatter before tools that merely mention JSON.
+  function search(query) {
+    var words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) return withRecentsFirst(TOOLS);
+    var scored = [];
+    TOOLS.forEach(function (tool) {
+      var name = tool.name.toLowerCase();
+      var hay = name + " " + tool.desc.toLowerCase() + " " + tool.cat.toLowerCase();
+      var score = 0;
+      for (var i = 0; i < words.length; i++) {
+        var w = words[i];
+        if (hay.indexOf(w) === -1) return;
+        if (name.indexOf(w) === 0) score += 3;
+        else if (name.indexOf(w) !== -1) score += 2;
+        else score += 1;
+      }
+      scored.push({ tool: tool, score: score });
+    });
+    scored.sort(function (a, b) { return b.score - a.score; });
+    return scored.map(function (x) { return x.tool; });
+  }
+
   function filter(query) {
-    var q = query.trim().toLowerCase();
-    if (!q) {
-      render(TOOLS);
-      return;
-    }
-    render(
-      TOOLS.filter(function (tool) {
-        return tool.name.toLowerCase().indexOf(q) !== -1 || tool.desc.toLowerCase().indexOf(q) !== -1;
-      })
-    );
+    render(search(query));
   }
 
   if (trigger) trigger.addEventListener("click", open);

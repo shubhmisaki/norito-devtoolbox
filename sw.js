@@ -8,7 +8,7 @@
 // after that, and updates roll out automatically because static assets use
 // stale-while-revalidate (serve the cached copy instantly, refresh it in
 // the background for next time).
-const CACHE_VERSION = "norito-v2";
+const CACHE_VERSION = "norito-v3";
 const APP_SHELL = ["/", "/index.html", "/offline.html", "/manifest.json", "/css/style.css", "/js/nav.js", "/js/theme-toggle.js", "/js/bg-blobs.js", "/js/cmdk.js", "/assets/norito-wordmark.svg", "/assets/icon-192.png"];
 
 self.addEventListener("install", (event) => {

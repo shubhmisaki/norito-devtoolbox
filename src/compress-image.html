@@ -115,6 +115,16 @@
     </div>
   </div>
 
+    <nav class="size-chips" aria-label="Common target sizes">
+      <span class="size-chips-label">Common sizes</span>
+      <a class="size-chip" href="compress-image-to-20kb.html">20 KB</a>
+      <a class="size-chip" href="compress-image-to-50kb.html">50 KB</a>
+      <a class="size-chip" href="compress-image-to-100kb.html">100 KB</a>
+      <a class="size-chip" href="compress-image-to-200kb.html">200 KB</a>
+      <a class="size-chip" href="compress-image-to-500kb.html">500 KB</a>
+      <a class="size-chip" href="compress-image-to-1mb.html">1 MB</a>
+      <span class="size-chip current" aria-current="page">Any size</span>
+    </nav>
     <div class="two-col">
       <div class="panel">
         <div class="dropzone" id="drop">
@@ -157,7 +167,7 @@
             <div class="option-label">Allow resizing</div>
             <div class="option-hint">Off by default. Keeps the original width and height. Turn on to shrink dimensions too, for smaller targets quality alone can't reach.</div>
           </div>
-          <label class="switch"><input type="checkbox" id="allowResize" /><span class="track"></span></label>
+          <label class="switch"><input aria-label="Allow resizing" type="checkbox" id="allowResize" /><span class="track"></span></label>
         </div>
 
         <button id="compressBtn" disabled>

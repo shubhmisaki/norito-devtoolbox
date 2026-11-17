@@ -24,6 +24,29 @@
     return div.innerHTML;
   }
 
+  // Markdown allows raw HTML, so pasted content (a README, an email, an
+  // issue body) can carry <script>, event handlers or javascript: links.
+  // The preview is parsed in an inert <template> and stripped of anything
+  // that can execute before it touches the live page.
+  const BLOCKED_TAGS = "script,style,iframe,object,embed,link,meta,base,form,frame,frameset,applet,noscript,template";
+  function sanitizeHtml(html) {
+    const tpl = document.createElement("template");
+    tpl.innerHTML = html;
+    tpl.content.querySelectorAll(BLOCKED_TAGS).forEach((el) => el.remove());
+    tpl.content.querySelectorAll("*").forEach((el) => {
+      [...el.attributes].forEach((attr) => {
+        const name = attr.name.toLowerCase();
+        const value = attr.value.replace(/[\u0000- ]/g, "").toLowerCase();
+        const isUrlAttr = name === "href" || name === "src" || name === "xlink:href" || name === "action" || name === "formaction";
+        if (name.startsWith("on") || name === "srcdoc" || (isUrlAttr && /^(javascript|vbscript|data:text\/html)/.test(value))) {
+          el.removeAttribute(attr.name);
+        }
+      });
+      if (el.tagName === "A" && el.getAttribute("target") === "_blank") el.setAttribute("rel", "noopener noreferrer");
+    });
+    return tpl.innerHTML;
+  }
+
   // Render never throws out to the caller: a bad paste or a missing library
   // used to freeze the preview and the character count with zero feedback,
   // which is what "the editor is broken" looks like from the outside.
@@ -41,7 +64,7 @@
     }
 
     try {
-      els.preview.innerHTML = window.marked.parse(md);
+      els.preview.innerHTML = sanitizeHtml(window.marked.parse(md));
     } catch (err) {
       console.error("Markdown render failed:", err);
       els.preview.innerHTML =

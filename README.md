@@ -60,14 +60,38 @@ Then open `http://localhost:8000`. Serving over HTTP (rather than opening
 files directly) avoids `file://` restrictions some browsers apply to
 `canvas.toBlob` and Web Workers, which several tools rely on.
 
-## Deploy for free
+## Deploy
 
-Any static host works:
+Production runs on **Cloudflare Workers (static assets)**, deployed
+automatically from `main` by Cloudflare's GitHub integration (no build
+command; deploy command `npx wrangler deploy`). The moving parts:
 
-- **Netlify**: drag the `devtoolbox` folder onto app.netlify.com/drop.
-- **Vercel**: `npx vercel` from inside this folder.
-- **GitHub Pages**: push to a repo, enable Pages on `main`.
-- **Cloudflare Pages**: connect the repo or drag-and-drop.
+- `wrangler.jsonc`: serves the repo root with `html_handling: "none"` so
+  pages keep their `.html` URLs (canonicals, hreflang and the sitemap all use
+  them). Because that also turns off automatic directory indexes, `_redirects`
+  carries an explicit `200` rule for every `/dir/` -> `/dir/index.html`.
+- `.assetsignore`: keeps `src/`, `partials/`, `scripts/`, docs and repo
+  internals out of the published site.
+- `_headers`: security headers and cache lifetimes.
+- `.github/workflows/indexnow.yml` + `scripts/indexnow.py`: after each push,
+  submits the changed pages to IndexNow (Bing, Yandex and others).
+- `www.norito.in` is 301-redirected to the apex by a Cloudflare Redirect Rule
+  (dashboard, not in this repo).
+
+### Third-party scripts
+
+Nothing third-party is allowed to block a tool. `js/third-party.js` loads
+Google Analytics and Clarity on idle after `load`, fills ad slots only when
+they scroll near the viewport, and sends a small set of anonymous product
+events (`tool_start`, `tool_output`, `search_open`, `search_select`,
+`support_click`, `pwa_install`, `js_error`). New ad units go in
+`partials/ad-*.html` as `data-ad` placeholders, never as inline `<script>`.
+
+### Preset pages
+
+`scripts/gen_compress_presets.py` generates the `compress-image-to-*.html`
+pages from `src/compress-image.html`. Edit the table in that script, not the
+generated files.
 
 One thing to check on whichever host you pick: make sure it serves `.wasm`
 files with the `application/wasm` content type (all four of the above do by

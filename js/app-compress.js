@@ -39,10 +39,12 @@
   }
   (function restorePrefs() {
     const p = loadPrefs();
-    if (p.unit) els.unit.value = p.unit;
+    // Preset landing pages (compress-image-to-100kb.html etc.) ship their own
+    // size and unit in the markup; a remembered unit must not override that.
+    if (p.unit && !els.size.hasAttribute("data-preset")) els.unit.value = p.unit;
     if (typeof p.allowResize === "boolean" && els.allowResize) els.allowResize.checked = p.allowResize;
   })();
-  els.unit.addEventListener("change", () => savePref("unit", els.unit.value));
+  els.unit.addEventListener("change", () => { if (!els.size.hasAttribute("data-preset")) savePref("unit", els.unit.value); });
   if (els.allowResize) {
     els.allowResize.addEventListener("change", () => savePref("allowResize", els.allowResize.checked));
   }
