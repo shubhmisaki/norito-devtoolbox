@@ -132,7 +132,32 @@ def expand(src_text, loc, live_path=None):
         raise ValueError(f"unknown include marker: {name}")
     out = MARKER_RE.sub(repl, src_text)
     out = RELATED_BLOCK_RE.sub(lambda m: render_related_tools(m.group(1), loc), out)
-    return out
+    return version_assets(out)
+
+# Cache busting: /css and /js are served with a 7-day cache on unversioned
+# URLs, so a deploy could leave returning visitors with new HTML and old
+# CSS/JS. Append ?v=<content hash> to every local css/js reference; the URL
+# changes only when the file's bytes change. Vendor files are immutable
+# already and left alone.
+import hashlib
+_ASSET_RE = re.compile(r'''(?P<pre>(?:src|href)=["'])(?P<path>/(?:css|js)/[^"'?#]+\.(?:css|js))(?P<post>["'])''')
+_hash_cache = {}
+def asset_hash(path):
+    if path not in _hash_cache:
+        try:
+            _hash_cache[path] = hashlib.sha1(open(path.lstrip("/"), "rb").read()).hexdigest()[:8]
+        except OSError:
+            _hash_cache[path] = None
+    return _hash_cache[path]
+
+def version_assets(html):
+    def r(m):
+        p = m.group("path")
+        if p.startswith("/js/vendor/"):
+            return m.group(0)
+        h = asset_hash(p)
+        return m.group(0) if not h else f'{m.group("pre")}{p}?v={h}{m.group("post")}'
+    return _ASSET_RE.sub(r, html)
 
 # All pages now share the one common (mega-sitemap) footer per locale, so
 # nothing needs to be excluded any more.
