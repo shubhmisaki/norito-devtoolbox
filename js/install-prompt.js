@@ -75,7 +75,22 @@
   window.addEventListener("beforeinstallprompt", function (e) {
     e.preventDefault();
     deferredPrompt = e;
-    showBanner();
+    // Don't greet a first-time visitor with an install prompt before they
+    // have done anything. Offer it once the site has proved useful: either
+    // they have already completed a task on an earlier visit, or they
+    // complete one now.
+    if (usesSoFar() >= 1) showBanner();
+  });
+
+  function usesSoFar() {
+    try {
+      return parseInt(localStorage.getItem("norito:uses"), 10) || 0;
+    } catch (e) {
+      return 0;
+    }
+  }
+  window.addEventListener("norito:output", function () {
+    if (deferredPrompt) setTimeout(showBanner, 1500);
   });
 
   window.addEventListener("appinstalled", function () {

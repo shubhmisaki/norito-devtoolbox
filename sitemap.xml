@@ -6827,6 +6827,11 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/jpg-to-png-converter.html" />
   </url>
   <url>
+    <loc>https://norito.in/jpg-to-webp-converter.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://norito.in/json-diff.html</loc>
     <lastmod>2026-07-14</lastmod>
     <priority>0.8</priority>
@@ -7163,6 +7168,16 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://norito.in/ru/placeholder-generator.html" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://norito.in/ja/placeholder-generator.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/placeholder-generator.html" />
+  </url>
+  <url>
+    <loc>https://norito.in/png-to-jpg-converter.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/png-to-webp-converter.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://norito.in/qr-code-generator.html</loc>
@@ -9092,6 +9107,16 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://norito.in/ru/watermark-image.html" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://norito.in/ja/watermark-image.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://norito.in/watermark-image.html" />
+  </url>
+  <url>
+    <loc>https://norito.in/webp-to-jpg-converter.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norito.in/webp-to-png-converter.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://norito.in/word-counter.html</loc>

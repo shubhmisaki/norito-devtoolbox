@@ -132,6 +132,16 @@
     lastOutput = now;
     start("output");
     track("tool_output", { method: method });
+    // Lifetime count of completed tasks on this device. Drives the install
+    // prompt and the support note (see install-prompt.js, support-note.js).
+    var uses = 0;
+    try {
+      uses = (parseInt(localStorage.getItem("norito:uses"), 10) || 0) + 1;
+      localStorage.setItem("norito:uses", String(uses));
+    } catch (e) {}
+    try {
+      window.dispatchEvent(new CustomEvent("norito:output", { detail: { uses: uses, method: method } }));
+    } catch (e) {}
   }
   var anchorClick = HTMLAnchorElement.prototype.click;
   HTMLAnchorElement.prototype.click = function () {

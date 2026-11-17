@@ -28,3 +28,8 @@
 a.size-chip:hover{border-color:var(--primary);color:var(--primary)}
 .size-chip.current{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
 @media (max-width:760px){.ad-slot-728{display:none}}
+.support-note .install-banner-text{padding-left:4px}
+.support-note .install-banner-text span{font-size:.82rem;color:var(--text-secondary);line-height:1.4}
+.support-note .install-banner-btn{white-space:nowrap;text-decoration:none;flex-shrink:0}
+.support-note .install-banner-text span{display:block}
+@media (max-width:520px){.support-note .install-banner-inner{flex-wrap:wrap}.support-note .install-banner-text{flex-basis:calc(100% - 48px)}}
