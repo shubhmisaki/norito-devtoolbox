@@ -297,7 +297,7 @@
       that text selectable, only scanned pages and embedded photos get recompressed. Nothing
       is uploaded, it all happens on your device.
     </p>
-    <p class="note">Compressing to email a PDF? Try the <a href="compress-pdf-for-email.html">email-size preset</a>.</p>
+    <p class="note">Need a specific size? Pick a target below, or jump to <a href="compress-pdf-to-100kb.html">100 KB</a>, <a href="compress-pdf-to-200kb.html">200 KB</a>, <a href="compress-pdf-to-500kb.html">500 KB</a> or <a href="compress-pdf-for-email.html">the email-size preset</a>.</p>
     </div>
   </div>
 
@@ -306,6 +306,14 @@
       <div class="r-body"><strong>Your text stays text.</strong> Any page with real, selectable text is left completely alone, only its embedded photos are recompressed. Only pages that are already just one big scanned image get flattened again, since there's nothing to lose there. If a PDF has nothing left to safely shrink, you'll get the original back unchanged rather than something bigger.</div>
     </div>
 
+    <nav class="size-chips" aria-label="Common target sizes">
+      <span class="size-chips-label">Common sizes</span>
+      <a class="size-chip" href="compress-pdf-to-100kb.html">100 KB</a>
+      <a class="size-chip" href="compress-pdf-to-200kb.html">200 KB</a>
+      <a class="size-chip" href="compress-pdf-to-500kb.html">500 KB</a>
+      <a class="size-chip" href="compress-pdf-to-1mb.html">1 MB</a>
+      <span class="size-chip current" aria-current="page">Any size</span>
+    </nav>
     <div class="panel">
       <div class="dropzone" id="drop">
         <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
@@ -334,6 +342,23 @@
           </select>
         </div>
       </div>
+      <div class="field-row" style="margin-bottom:12px;">
+        <div class="field">
+          <label for="targetSelect">Target size</label>
+          <select id="targetSelect" disabled>
+            <option value="0">No target (use the settings above)</option>
+            <option value="100">Under 100 KB</option>
+            <option value="200">Under 200 KB</option>
+            <option value="500">Under 500 KB</option>
+            <option value="1024">Under 1 MB</option>
+            <option value="2048">Under 2 MB</option>
+          </select>
+        </div>
+      </div>
+      <label class="note" style="display:flex; gap:8px; align-items:flex-start; margin:0 0 20px;">
+        <input type="checkbox" id="allowFlatten" disabled style="margin-top:3px;" />
+        <span>If needed, convert pages to images to reach the target. The file gets much smaller, but text is no longer selectable.</span>
+      </label>
       <p class="note" style="margin-top:-12px; margin-bottom:20px;">Resolution and quality only affect scanned pages and embedded photos, real text is never touched.</p>
 
       <button id="compressBtn" disabled>

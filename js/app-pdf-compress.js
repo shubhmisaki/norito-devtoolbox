@@ -12,6 +12,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     fileInfo: document.getElementById("fileInfo"),
     dpiSelect: document.getElementById("dpiSelect"),
     qualitySelect: document.getElementById("qualitySelect"),
+    // Optional (only on pages that offer a target size).
+    targetSelect: document.getElementById("targetSelect"),
+    flattenBox: document.getElementById("allowFlatten"),
     compressBtn: document.getElementById("compressBtn"),
     result: document.getElementById("result"),
   };
@@ -44,7 +47,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 
   // ---------- file load ----------
 
-  const CONTROLS = [els.dpiSelect, els.qualitySelect];
+  const CONTROLS = [els.dpiSelect, els.qualitySelect, els.targetSelect, els.flattenBox].filter(Boolean);
 
   function resetFileState() {
     currentFile = null;
@@ -229,7 +232,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 
   // ---------- main compression pipeline ----------
 
-  async function compressPdf(originalBytes, { dpi, quality }, onProgress) {
+  async function compressPdf(originalBytes, { dpi, quality, forceRaster }, onProgress) {
     const report = onProgress || function () {};
     const originalByteLength = originalBytes.byteLength;
     report("Analyzing pages");
@@ -238,7 +241,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     );
     const textPageIndices = [];
     const scannedPageIndices = [];
-    classes.forEach((c, i) => (c === "text" ? textPageIndices : scannedPageIndices).push(i));
+    classes.forEach((c, i) => ((c === "text" && !forceRaster) ? textPageIndices : scannedPageIndices).push(i));
 
     const doc = await PDFLib.PDFDocument.load(originalBytes.slice(0));
     const maxDim = dpi * 14; // generous cap; only trims images stored far larger than any reasonable page
@@ -314,9 +317,32 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     const outBytes = await doc.save();
 
     if (outBytes.length >= originalByteLength) {
-      return { bytes: null, changed: false };
+      return { bytes: null, changed: false, size: outBytes.length };
     }
-    return { bytes: outBytes, changed: true };
+    return { bytes: outBytes, changed: true, size: outBytes.length };
+  }
+
+  // ---------- target-size search ----------
+
+  // Tries progressively smaller settings until the output fits the target.
+  // Stage 1 keeps real text as text (only photos and scans are recompressed).
+  // Stage 2 only runs if the user ticked the box: every page is rendered to
+  // a JPEG, which is the only way to reach a very small size for a PDF that
+  // is mostly text or vector art. Returns the best (smallest) result found.
+  const LADDER = [[150, 0.75], [120, 0.6], [100, 0.5], [85, 0.45], [72, 0.4], [60, 0.35]];
+
+  async function compressToTarget(originalBytes, targetBytes, startDpi, startQuality, allowFlatten, report) {
+    let best = null;
+    const attempts = [];
+    LADDER.forEach(([d, q]) => { if (d <= startDpi || attempts.length === 0) attempts.push({ dpi: Math.min(d, startDpi), quality: Math.min(q, startQuality), forceRaster: false }); });
+    if (allowFlatten) LADDER.forEach(([d, q]) => attempts.push({ dpi: d, quality: q, forceRaster: true }));
+    for (let i = 0; i < attempts.length; i++) {
+      const a = attempts[i];
+      const r = await compressPdf(originalBytes, a, (label) => report(`Try ${i + 1}/${attempts.length}: ${label}`));
+      if (r.bytes && (!best || r.bytes.length < best.bytes.length)) best = { bytes: r.bytes, changed: true, flattened: a.forceRaster };
+      if (best && best.bytes.length <= targetBytes) break;
+    }
+    return best || { bytes: null, changed: false };
   }
 
   // ---------- UI wiring ----------
@@ -332,10 +358,23 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
       const dpi = parseInt(els.dpiSelect.value, 10);
       const quality = parseFloat(els.qualitySelect.value);
 
-      const { bytes: outBytes, changed } = await compressPdf(currentBytes, { dpi, quality }, (label) => {
-        busyText.update(label);
-      });
+      const targetKb = els.targetSelect ? parseInt(els.targetSelect.value, 10) || 0 : 0;
+      let outBytes, changed, flattened = false;
+      if (targetKb > 0) {
+        const r = await compressToTarget(
+          currentBytes, targetKb * 1024, dpi, quality,
+          !!(els.flattenBox && els.flattenBox.checked),
+          (label) => busyText.update(label)
+        );
+        outBytes = r.bytes; changed = r.changed; flattened = !!r.flattened;
+      } else {
+        const r = await compressPdf(currentBytes, { dpi, quality }, (label) => {
+          busyText.update(label);
+        });
+        outBytes = r.bytes; changed = r.changed;
+      }
       const originalSize = currentFile.size;
+      const missedTarget = targetKb > 0 && changed && outBytes.length > targetKb * 1024;
 
       if (!changed) {
         outBlob = new Blob([currentBytes.slice(0)], { type: "application/pdf" });
@@ -357,7 +396,15 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
         setResult(
           `${ICON_OK}<div class="r-body"><strong>Created ${escapeHtml(outName)}</strong><br>` +
             `${formatBytes(originalSize)} &rarr; ${formatBytes(newSize)} (about ${pct}% smaller). ` +
-            `Any page with real text keeps that text selectable, only scanned pages and embedded photos were recompressed. ` +
+            (missedTarget
+              ? `<strong>This is the smallest it would go, still above your ${formatBytes(targetKb * 1024)} target.</strong> ` +
+                (els.flattenBox && !els.flattenBox.checked
+                  ? `Most of this file is text or vector art, so tick &ldquo;convert pages to images&rdquo; to push it further. `
+                  : `Try splitting the file into parts, or removing pages you don't need. `)
+              : (targetKb > 0 ? `Under your ${formatBytes(targetKb * 1024)} target. ` : "")) +
+            (flattened
+              ? `Pages were converted to images to reach this size, so the text is no longer selectable. `
+              : `Any page with real text keeps that text selectable, only scanned pages and embedded photos were recompressed. `) +
             `Download started automatically.` +
             `<div><button type="button" id="dlAgainBtn" style="margin-top:12px;">Download again</button></div></div>`,
           "ok"
